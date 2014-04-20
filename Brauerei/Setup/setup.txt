@@ -1,0 +1,5 @@
+port;888
+Heizung;1
+Ruehrwerk;2
+Pumpe;8
+Alarm;128

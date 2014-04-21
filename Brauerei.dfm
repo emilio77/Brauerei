@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 303
-  Top = 73
+  Left = 118
+  Top = 44
   BorderStyle = bsSingle
   Caption = 'Brauerei V01.00'
   ClientHeight = 632

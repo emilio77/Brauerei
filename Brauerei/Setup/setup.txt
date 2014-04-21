@@ -3,3 +3,4 @@ Heizung;1
 Ruehrwerk;2
 Pumpe;8
 Alarm;128
+Taktungstemperatur;2.0

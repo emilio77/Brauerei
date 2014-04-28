@@ -134,7 +134,7 @@ FormatDisassembly=0
 LimitDisassembly=5
 EnabledPlugins=modules|processes|hardware
 [Filters]
-Filter1ExceptionClasses=
+Filter1ExceptionClasses=EDBEditError
 Filter1DontCreateBugReport=1
 Filter1DontCreateScreenshot=1
 Filter1DontSuspendThreads=1

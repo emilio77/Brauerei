@@ -4,13 +4,3 @@ Ruehrwerk;2
 Pumpe;8
 Alarm;128
 Taktungstemperatur;2.0
-Einschaltpuls bis 60°C;5
-Ausschaltpuls bis 60°C;10
-Einschaltpuls bis 70°C;8
-Ausschaltpuls bis 70°C;10
-Einschaltpuls bis 80°C;10
-Ausschaltpuls bis 80°C;10
-Einschaltpuls bis 90°C;10
-Ausschaltpuls bis 90°C;5
-Einschaltpuls bis 100°C;10
-Ausschaltpuls bis 100°C;0

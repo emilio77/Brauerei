@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 235
-  Top = 104
+  Left = 250
+  Top = 88
   BorderStyle = bsSingle
   Caption = 'Brauerei V01.00'
   ClientHeight = 632
@@ -4126,7 +4126,7 @@ object Form1: TForm1
         OnClick = Button18Click
       end
       object Button19: TButton
-        Left = 464
+        Left = 480
         Top = 548
         Width = 97
         Height = 33
@@ -4155,12 +4155,11 @@ object Form1: TForm1
         OnClick = Button22Click
       end
       object Button23: TButton
-        Left = 288
+        Left = 337
         Top = 548
-        Width = 108
+        Width = 120
         Height = 33
         Caption = 'AutoUpdate Ein'
-        Enabled = False
         TabOrder = 11
         OnClick = Button23Click
       end
@@ -4353,6 +4352,6 @@ object Form1: TForm1
     Interval = 30000
     OnTimer = LogUpdateTimerTimer
     Left = 756
-    Top = 584
+    Top = 472
   end
 end

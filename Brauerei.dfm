@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 118
-  Top = 44
+  Left = 235
+  Top = 104
   BorderStyle = bsSingle
   Caption = 'Brauerei V01.00'
   ClientHeight = 632
@@ -2959,45 +2959,6 @@ object Form1: TForm1
             91A91A91A91A91A91A91A91A91A91A91A91A91A9FEB43207378E28FFD9}
           Stretch = True
         end
-        object Label61: TLabel
-          Left = 511
-          Top = 68
-          Width = 7
-          Height = 13
-          Caption = '/'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -11
-          Font.Name = 'MS Sans Serif'
-          Font.Style = [fsBold]
-          ParentFont = False
-        end
-        object Label62: TLabel
-          Left = 563
-          Top = 68
-          Width = 25
-          Height = 13
-          Caption = 'sek.'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -11
-          Font.Name = 'MS Sans Serif'
-          Font.Style = [fsBold]
-          ParentFont = False
-        end
-        object Label65: TLabel
-          Left = 478
-          Top = 50
-          Width = 77
-          Height = 13
-          Caption = 'EIN   /   AUS'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -11
-          Font.Name = 'MS Sans Serif'
-          Font.Style = [fsBold]
-          ParentFont = False
-        end
         object CheckBox34: TCheckBox
           Left = 456
           Top = 32
@@ -3013,38 +2974,6 @@ object Form1: TForm1
           ParentFont = False
           State = cbChecked
           TabOrder = 0
-        end
-        object Edit54: TEdit
-          Left = 475
-          Top = 64
-          Width = 33
-          Height = 21
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -11
-          Font.Name = 'MS Sans Serif'
-          Font.Style = [fsBold]
-          ParentFont = False
-          TabOrder = 1
-          Text = '10'
-          OnChange = Edit54Change
-          OnKeyPress = Edit54KeyPress
-        end
-        object Edit55: TEdit
-          Left = 523
-          Top = 64
-          Width = 33
-          Height = 21
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -11
-          Font.Name = 'MS Sans Serif'
-          Font.Style = [fsBold]
-          ParentFont = False
-          TabOrder = 2
-          Text = '10'
-          OnChange = Edit55Change
-          OnKeyPress = Edit55KeyPress
         end
       end
       object Edit1: TEdit
@@ -4197,7 +4126,7 @@ object Form1: TForm1
         OnClick = Button18Click
       end
       object Button19: TButton
-        Left = 352
+        Left = 464
         Top = 548
         Width = 97
         Height = 33
@@ -4206,7 +4135,7 @@ object Form1: TForm1
         OnClick = Button19Click
       end
       object Button21: TButton
-        Left = 472
+        Left = 592
         Top = 548
         Width = 33
         Height = 33
@@ -4216,7 +4145,7 @@ object Form1: TForm1
         OnClick = Button21Click
       end
       object Button22: TButton
-        Left = 512
+        Left = 632
         Top = 548
         Width = 33
         Height = 33
@@ -4224,6 +4153,16 @@ object Form1: TForm1
         Enabled = False
         TabOrder = 10
         OnClick = Button22Click
+      end
+      object Button23: TButton
+        Left = 288
+        Top = 548
+        Width = 108
+        Height = 33
+        Caption = 'AutoUpdate Ein'
+        Enabled = False
+        TabOrder = 11
+        OnClick = Button23Click
       end
     end
     object TabSheet3: TTabSheet
@@ -4408,5 +4347,12 @@ object Form1: TForm1
     OnTimer = SimulationTimerTimer
     Left = 756
     Top = 512
+  end
+  object LogUpdateTimer: TTimer
+    Enabled = False
+    Interval = 30000
+    OnTimer = LogUpdateTimerTimer
+    Left = 756
+    Top = 584
   end
 end

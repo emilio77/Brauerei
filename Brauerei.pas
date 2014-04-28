@@ -218,18 +218,13 @@ type
     Panel3: TPanel;
     Label59: TLabel;
     Edit53: TEdit;
-    Label60: TLabel;
+    Label60: TLabel;              
     Gauge11: TGauge;
     CheckBox34: TCheckBox;
     Button17: TButton;
-    Edit54: TEdit;
-    Edit55: TEdit;
-    Label61: TLabel;
-    Label62: TLabel;
     Panel4: TPanel;
     Label63: TLabel;
     Label64: TLabel;
-    Label65: TLabel;
     Button18: TButton;
     Button19: TButton;
     Button21: TButton;
@@ -237,6 +232,8 @@ type
     Button20: TButton;
     SimulationTimer: TTimer;
     Label66: TLabel;
+    LogUpdateTimer: TTimer;
+    Button23: TButton;
     procedure Button7Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
@@ -283,8 +280,6 @@ type
     procedure LogTimerTimer(Sender: TObject);
     procedure Button16Click(Sender: TObject);
     procedure PageControl1Change(Sender: TObject);
-    procedure Edit55KeyPress(Sender: TObject; var Key: Char);
-    procedure Edit54KeyPress(Sender: TObject; var Key: Char);
     procedure Button17Click(Sender: TObject);
     procedure Button18Click(Sender: TObject);
     procedure Button19Click(Sender: TObject);
@@ -292,8 +287,6 @@ type
     procedure Button21Click(Sender: TObject);
     procedure Button20Click(Sender: TObject);
     procedure SimulationTimerTimer(Sender: TObject);
-    procedure Edit54Change(Sender: TObject);
-    procedure Edit55Change(Sender: TObject);
     procedure Edit9Exit(Sender: TObject);
     procedure Edit11Exit(Sender: TObject);
     procedure Edit13Exit(Sender: TObject);
@@ -318,6 +311,8 @@ type
     procedure Edit48Exit(Sender: TObject);
     procedure Edit49Exit(Sender: TObject);
     procedure Edit50Exit(Sender: TObject);
+    procedure Button23Click(Sender: TObject);
+    procedure LogUpdateTimerTimer(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -330,8 +325,9 @@ var
   Temperatur,x,Graphic,LogName: String;
   Tempfloat,Solltemp,Deltatemp,SimTemp,TWert: Extended;
   Ruehrwerk,Heizung,Alarm,Pumpe,HWert,RWert,PWert,AWert,LPTCode,zeit,zeit2,
-  zeit3,zeitpause,fortschritt,rast,Intdummy,CountLines, gesfortschritt,
-  rastzahl, startpunkt, endpunkt, y: integer;
+  zeit3,zeitpause,fortschritt,rast,Intdummy,CountLines,gesfortschritt,
+  rastzahl, startpunkt,endpunkt,y,Ein60,Aus60,Ein70,Aus70,Ein80,Aus80,Ein90,
+  Aus90,Ein100,Aus100,EinIst,AusIst: integer;
   Port: word;
   myFile,myLogFile,SimFile: TextFile;
   pause,start,stop,AlarmEin,Rasttemp1,Rasttemp2,Rasttemp3,Rasttemp4,Rasttemp5,
@@ -507,9 +503,7 @@ end;
 
 procedure settings_speichern(Form:TForm1; filename:string);
 begin
-  WriteLn(myFile, Form.Edit54.Text);                     // zusätzliche Settingsdate speichern (nur mit Rezeptdaten)
-  WriteLn(myFile, Form.Edit55.Text);
-  WriteLn(myFile, Form.CheckBox31.Checked);
+  WriteLn(myFile, Form.CheckBox31.Checked);        // zusätzliche Settingsdate speichern (nur mit Rezeptdaten)
   WriteLn(myFile, Form.CheckBox32.Checked);
   WriteLn(myFile, Form.CheckBox34.Checked);
 end;
@@ -592,139 +586,135 @@ end;
 
 procedure settings_laden(Form:TForm1; filename:string);
 begin
-  ReadLn(myFile, x); Form.Edit54.Text:=x;                       // zusätzliche Settingsdate laden (nur mit Rezeptdaten)
-  ReadLn(myFile, x); Form.Edit55.Text:=x;
-  ReadLn(myFile, x); Form.CheckBox31.Checked:=strtobool(x);
+  ReadLn(myFile, x); Form.CheckBox31.Checked:=strtobool(x);    // zusätzliche Settingsdate laden (nur mit Rezeptdaten)
   ReadLn(myFile, x); Form.CheckBox32.Checked:=strtobool(x);
   ReadLn(myFile, x); Form.CheckBox34.Checked:=strtobool(x);
 end;
 
-procedure writechart(Form:TForm1; zoom:boolean);
+procedure writechart(Form:TForm1);
 var
   I: Integer;
   s,t: TLineSeries;
   s2: TAreaSeries;
 begin
-  if zoom=false then
-  begin
-    startpunkt:=0;   //wenn nicht gezoomt komplette Tabelle anzeigen
-    endpunkt:=CountLines;
-  end;
-  with Form.Chart1 do
-  begin
-    s := Form.Series1;  // Kurve erstellen Ist-Temperatur
-    t := Form.Series2;  // Kurve erstellen Soll-Temperatur
-    s.Clear;  // Inhalt von der Kurve loeschen
-    t.Clear;
-    s.ParentChart := Form.Chart1; // Kurve an Chart festbinden
-    s.XValues.DateTime := True;  // X-Achse auf Datum umstellen
-    BottomAxis.DateTimeFormat := 'hh:mm:ss'; // bzw: 'dd-mm-yy hh:mm:ss'
-    BottomAxis.Minimum := 0;
-    BottomAxis.Maximum := StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]); // X-Achse Startpunkt
-    BottomAxis.Minimum := StrToTime(Form.StringGrid1.Cells[1,startpunkt]); // X-Achse Endpunkt
-    LeftAxis.Minimum := 0;
-    LeftAxis.Maximum := StrToFloat(Form.StringGrid1.Cells[6,startpunkt])+1; // Y-Achse Reset max
-    LeftAxis.Minimum := StrToFloat(Form.StringGrid1.Cells[6,startpunkt]); // Y-Achse Reset min
-    BottomAxis.Automatic := False;
-    LeftAxis.Automatic := False;
-    for i:= startpunkt to endpunkt-1 do
+  try
+    with Form.Chart1 do
     begin
-       s.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[6,i]));  // Wert in Chart einfügen
-       if LeftAxis.Maximum<StrToFloat(Form.StringGrid1.Cells[6,i])+2 then LeftAxis.Maximum:=StrToFloat(Form.StringGrid1.Cells[6,i])+2; // Y-Achse Korrektur max
-       if LeftAxis.Minimum>StrToFloat(Form.StringGrid1.Cells[6,i])-2 then LeftAxis.Minimum:=StrToFloat(Form.StringGrid1.Cells[6,i])-2; // Y-Achse Korrektur min
+      s := Form.Series1;  // Kurve erstellen Ist-Temperatur
+      t := Form.Series2;  // Kurve erstellen Soll-Temperatur
+      s.Clear;  // Inhalt von der Kurve loeschen
+      t.Clear;
+      s.ParentChart := Form.Chart1; // Kurve an Chart festbinden
+      s.XValues.DateTime := True;  // X-Achse auf Datum umstellen
+      BottomAxis.DateTimeFormat := 'hh:mm:ss'; // bzw: 'dd-mm-yy hh:mm:ss'
+      BottomAxis.Minimum := 0;
+      BottomAxis.Maximum := StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]); // X-Achse Startpunkt
+      BottomAxis.Minimum := StrToTime(Form.StringGrid1.Cells[1,startpunkt]); // X-Achse Endpunkt
+      LeftAxis.Minimum := 0;
+      LeftAxis.Maximum := StrToFloat(Form.StringGrid1.Cells[6,startpunkt])+1; // Y-Achse Reset max
+      LeftAxis.Minimum := StrToFloat(Form.StringGrid1.Cells[6,startpunkt]); // Y-Achse Reset min
+      BottomAxis.Automatic := False;
+      LeftAxis.Automatic := False;
+      for i:= startpunkt to endpunkt-1 do
+      begin
+         s.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[6,i]));  // Wert in Chart einfügen
+         if LeftAxis.Maximum<StrToFloat(Form.StringGrid1.Cells[6,i])+2 then LeftAxis.Maximum:=StrToFloat(Form.StringGrid1.Cells[6,i])+2; // Y-Achse Korrektur max
+         if LeftAxis.Minimum>StrToFloat(Form.StringGrid1.Cells[6,i])-2 then LeftAxis.Minimum:=StrToFloat(Form.StringGrid1.Cells[6,i])-2; // Y-Achse Korrektur min
+      end;
+      t.ParentChart := Form.Chart1;
+      for i:= startpunkt to endpunkt-1 do
+      begin
+         t.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[7,i]));
+         if LeftAxis.Maximum<StrToFloat(Form.StringGrid1.Cells[7,i])+2 then LeftAxis.Maximum:=StrToFloat(Form.StringGrid1.Cells[7,i])+2;
+         if LeftAxis.Minimum>StrToFloat(Form.StringGrid1.Cells[7,i])-2 then LeftAxis.Minimum:=StrToFloat(Form.StringGrid1.Cells[7,i])-2;
+      end;
     end;
-    t.ParentChart := Form.Chart1;
-    for i:= startpunkt to endpunkt-1 do
+    with Form.Chart2 do
     begin
-       t.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[7,i]));
-       if LeftAxis.Maximum<StrToFloat(Form.StringGrid1.Cells[7,i])+2 then LeftAxis.Maximum:=StrToFloat(Form.StringGrid1.Cells[7,i])+2;
-       if LeftAxis.Minimum>StrToFloat(Form.StringGrid1.Cells[7,i])-2 then LeftAxis.Minimum:=StrToFloat(Form.StringGrid1.Cells[7,i])-2;
+      s2 := form.series3; // Kurve erstellen Heizung
+      s2.Clear;
+      s2.ParentChart := Form.Chart2;
+      s2.XValues.DateTime := True;
+      BottomAxis.DateTimeFormat := 'hh:mm:ss';
+      BottomAxis.Minimum := 0;
+      BottomAxis.Maximum := StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]);
+      BottomAxis.Minimum := StrToTime(Form.StringGrid1.Cells[1,startpunkt]);
+      LeftAxis.Maximum := 1.05;
+      LeftAxis.Minimum := -0.05;
+      BottomAxis.Automatic := False;
+      LeftAxis.Automatic := False;
+      for i:= startpunkt to endpunkt-1 do
+      begin
+        if i>0 then s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[2,i-1]));
+        s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[2,i]));
+      end;
     end;
-  end;
-  with Form.Chart2 do
-  begin
-    s2 := form.series3; // Kurve erstellen Heizung
-    s2.Clear;
-    s2.ParentChart := Form.Chart2;
-    s2.XValues.DateTime := True;
-    BottomAxis.DateTimeFormat := 'hh:mm:ss';
-    BottomAxis.Minimum := 0;
-    BottomAxis.Maximum := StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]);
-    BottomAxis.Minimum := StrToTime(Form.StringGrid1.Cells[1,startpunkt]);
-    LeftAxis.Maximum := 1.05;
-    LeftAxis.Minimum := -0.05;
-    BottomAxis.Automatic := False;
-    LeftAxis.Automatic := False;
-    for i:= startpunkt to endpunkt-1 do
+    with Form.Chart3 do
     begin
-      if i>0 then s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[2,i-1]));
-      s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[2,i]));
+      s2 := Form.series4;  // Kurve erstellen Rührwerk
+      s2.Clear;
+      s2.ParentChart := Form.Chart3;
+      s2.XValues.DateTime := True;
+      BottomAxis.DateTimeFormat := 'hh:mm:ss';
+      BottomAxis.DateTimeFormat := 'hh:mm:ss';
+      BottomAxis.Minimum := 0;
+      BottomAxis.Maximum := StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]);
+      BottomAxis.Minimum := StrToTime(Form.StringGrid1.Cells[1,startpunkt]);
+      BottomAxis.DateTimeFormat := 'hh:mm:ss'; // bzw: 'dd-mm-yy hh:mm:ss'
+      LeftAxis.Maximum := 1.05;
+      LeftAxis.Minimum := -0.05;
+      BottomAxis.Automatic := False;
+      LeftAxis.Automatic := False;
+      for i:= startpunkt to endpunkt-1 do
+      begin
+        if i>0 then s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[3,i-1]));
+        s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[3,i]));
+      end;
     end;
-  end;
-  with Form.Chart3 do
-  begin
-    s2 := Form.series4;  // Kurve erstellen Rührwerk
-    s2.Clear;
-    s2.ParentChart := Form.Chart3;
-    s2.XValues.DateTime := True;
-    BottomAxis.DateTimeFormat := 'hh:mm:ss';
-    BottomAxis.DateTimeFormat := 'hh:mm:ss';
-    BottomAxis.Minimum := 0;
-    BottomAxis.Maximum := StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]);
-    BottomAxis.Minimum := StrToTime(Form.StringGrid1.Cells[1,startpunkt]);    BottomAxis.DateTimeFormat := 'hh:mm:ss'; // bzw: 'dd-mm-yy hh:mm:ss'
-    LeftAxis.Maximum := 1.05;
-    LeftAxis.Minimum := -0.05;
-    BottomAxis.Automatic := False;
-    LeftAxis.Automatic := False;
-    for i:= startpunkt to endpunkt-1 do
+    with Form.Chart4 do
     begin
-      if i>0 then s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[3,i-1]));
-      s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[3,i]));
+      s2 := Form.series5;  // Kurve erstellen Pumpe
+      s2.Clear;
+      s2.ParentChart := Form.Chart4;
+      s2.XValues.DateTime := True;
+      BottomAxis.DateTimeFormat := 'hh:mm:ss';
+      BottomAxis.DateTimeFormat := 'hh:mm:ss';
+      BottomAxis.Minimum := 0;
+      BottomAxis.Maximum := StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]);
+      BottomAxis.Minimum := StrToTime(Form.StringGrid1.Cells[1,startpunkt]);
+      LeftAxis.Maximum := 1.05;
+      LeftAxis.Minimum := -0.05;
+      BottomAxis.Automatic := False;
+      LeftAxis.Automatic := False;
+      for i:= startpunkt to endpunkt-1 do
+      begin
+        if i>0 then s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[4,i-1]));
+        s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[4,i]));
+      end;
     end;
-  end;
-  with Form.Chart4 do
-  begin
-    s2 := Form.series5;  // Kurve erstellen Pumpe
-    s2.Clear;
-    s2.ParentChart := Form.Chart4;
-    s2.XValues.DateTime := True;
-    BottomAxis.DateTimeFormat := 'hh:mm:ss';
-    BottomAxis.DateTimeFormat := 'hh:mm:ss';
-    BottomAxis.Minimum := 0;
-    BottomAxis.Maximum := StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]);
-    BottomAxis.Minimum := StrToTime(Form.StringGrid1.Cells[1,startpunkt]);
-    LeftAxis.Maximum := 1.05;
-    LeftAxis.Minimum := -0.05;
-    BottomAxis.Automatic := False;
-    LeftAxis.Automatic := False;
-    for i:= startpunkt to endpunkt-1 do
+    with Form.Chart5 do
     begin
-      if i>0 then s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[4,i-1]));
-      s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[4,i]));
+      s2 := Form.series6;  // Kurve erstellen Alarm
+      s2.Clear;
+      s2.ParentChart := Form.Chart5;
+      s2.XValues.DateTime := True;
+      BottomAxis.DateTimeFormat := 'hh:mm:ss';
+      BottomAxis.DateTimeFormat := 'hh:mm:ss';
+      BottomAxis.Minimum := 0;
+      BottomAxis.Maximum := StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]);
+      BottomAxis.Minimum := StrToTime(Form.StringGrid1.Cells[1,startpunkt]);
+      LeftAxis.Maximum := 1.05;
+      LeftAxis.Minimum := -0.05;
+      BottomAxis.Automatic := False;
+      LeftAxis.Automatic := False;
+      for i:= startpunkt to endpunkt-1 do
+      begin
+        if i>0 then s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[5,i-1]));
+        s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[5,i]));
+      end;
     end;
+  except
   end;
-  with Form.Chart5 do
-  begin
-    s2 := Form.series6;  // Kurve erstellen Alarm
-    s2.Clear;
-    s2.ParentChart := Form.Chart5;
-    s2.XValues.DateTime := True;
-    BottomAxis.DateTimeFormat := 'hh:mm:ss';
-    BottomAxis.DateTimeFormat := 'hh:mm:ss';
-    BottomAxis.Minimum := 0;
-    BottomAxis.Maximum := StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]);
-    BottomAxis.Minimum := StrToTime(Form.StringGrid1.Cells[1,startpunkt]);
-    LeftAxis.Maximum := 1.05;
-    LeftAxis.Minimum := -0.05;
-    BottomAxis.Automatic := False;
-    LeftAxis.Automatic := False;
-    for i:= startpunkt to endpunkt-1 do
-    begin
-      if i>0 then s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[5,i-1]));
-      s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[5,i]));
-    end;
-  end;
-
 end;
 
 procedure ReadTabFile(FN: TFileName; FieldSeparator: Char; SG: TStringGrid);
@@ -737,8 +727,8 @@ var
   StartPos: Integer;
   InitialCol: Integer;
 begin
-  Les_Strings := TStringList.Create;
   try
+    Les_Strings := TStringList.Create;
     Les_Strings.LoadFromFile(FN);                        // Datei laden
     CountLines := Les_Strings.Count + SG.FixedRows;      // Anzahl der Zeilen ermitteln
     SG.RowCount := CountLines;                           // Anpassung der Grid-Größe
@@ -759,8 +749,8 @@ begin
         TabPos := Pos(FieldSeparator, S);
       until TabPos = 0;
     end;
-  finally
     Les_Strings.Free;
+  except
   end;
 end;
 
@@ -842,41 +832,60 @@ end;
 
 procedure TForm1.Timer1Timer(Sender: TObject);            // Timer für Temperaturmessung
 var
-  buttonSelected:integer;
   tf:extended;
   tfs:string;
+  sl3:TStringList;
+  TempFile:textfile;
+  ZeilenAnzahl:integer;
 begin
-  try
-    sl:=TStringList.Create; //Objekt erzeugen
-    sl.LoadFromFile('C:\Brauerei\Temperatur\log.txt');  //Datei in Stringliste laden
-    sl2:=TStringList.Create;
-    try
-      sl2.Delimiter:=';';
-      sl2.DelimitedText:=sl[sl.Count-1];
-      Temperatur:=sl2[sl2.Count-1]+' °C';
-      try
-        Tempfloat:=strtofloat(sl2[sl2.Count-1]);
-      except
-        Tempfloat:=0;
-        Temperatur:='0.0 °C';
-      end;
-      try
-        tf:=strtofloat(sl2[sl2.Count-1]);
-        tfs:=floattostr(round(tf));
-        Graphic:='C:\Brauerei\Graphics\Thermo'+tfs+'.jpg';
-        Image1.Picture.LoadFromFile(Graphic);
-      except
-        Timer1.Enabled:=false;
-        buttonSelected:=MessageDlg('Unzulässiger Temperaturwert ' + #13 + '- Temperaturmessung fortsetzen?', mtWarning, [mbAbort,mbRetry], 0);
-        if buttonSelected = mrRetry then Timer1.Enabled:=true;
-      end;
-    finally
-      sl2.Free;
-    end;
-  finally
-    sl.free; //Objekt wieder freigeben
-  end;
-  panel1.Caption:=Temperatur;
+  DecimalSeparator:='.';
+//  DeleteFile(PChar('C:\Brauerei\Temperatur\logtemp.txt'));
+//  CopyFile(PChar('C:\Brauerei\Temperatur\log.txt'),PChar('C:\Brauerei\Temperatur\logtemp.txt'),true);
+//  try
+//  try
+//    sl:=TStringList.Create; //Objekt erzeugen
+//    sl.LoadFromFile('C:\Brauerei\Temperatur\logtemp.txt');  //Datei in Stringliste laden
+//    sl2:=TStringList.Create;
+//    sl2.Delimiter:=';';
+//    sl2.DelimitedText:=sl[sl.Count-1];
+
+
+
+  AssignFile (TempFile,'C:\Brauerei\Temperatur\log.txt');
+  try reset (TempFile); except exit; end;
+  WHILE NOT EOF (TempFile) DO BEGIN
+  ZeilenAnzahl := ZeilenAnzahl + 1;
+  readln (TempFile, tfs);
+  END;
+  CloseFile(TempFile);
+//    Temperatur:=sl2[sl2.Count-1]+' °C';
+//    Tempfloat:=strtofloat(sl2[sl2.Count-1]);
+//    tf:=strtofloat(sl2[sl2.Count-1]);
+
+    sl3:=TStringList.Create;
+    sl3.Delimiter:=';';
+    sl3.DelimitedText:=tfs;
+    tfs:=sl3[sl3.Count-1];
+    Temperatur:=tfs+' °C';
+    Tempfloat:=strtofloat(tfs);
+    tf:=strtofloat(tfs);
+    tfs:=floattostr(round(tf));
+    if tf<0 then tfs:='0';
+    if tf>100 then tfs:='100';
+    Graphic:='C:\Brauerei\Graphics\Thermo'+tfs+'.jpg';
+    Image1.Picture.LoadFromFile(Graphic);
+    panel1.Caption:=Temperatur;
+
+
+//  finally
+//    sl.free; //Objekt wieder freigeben
+//    sl2.free;
+//  end;
+//  except
+//    sl.free; //Objekt wieder freigeben
+//    sl2.free;
+//    exit;
+//  end;
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
@@ -893,11 +902,13 @@ begin
   pause:=false;
   stop:=true;
   start:=false;
-  if DeleteFile('C:\Brauerei\Temperatur\log.txt') then ;
-  AssignFile(myFile, 'C:\Brauerei\Temperatur\log.txt');
-  ReWrite(myFile);
-  Writeln(myFile, '01-01-2000 00:00:00;21.0');
-  CloseFile(myFile);
+  if DeleteFile('C:\Brauerei\Temperatur\log.txt') then
+  begin
+    AssignFile(myFile, 'C:\Brauerei\Temperatur\log.txt');
+    ReWrite(myFile);
+    Writeln(myFile, '01-01-2000 00:00:00;21.0');
+    CloseFile(myFile);
+  end;
   Timer1.Enabled:=true;
   DecimalSeparator:='.';
   try
@@ -918,6 +929,28 @@ begin
       try AWert:=strtoint(sl2[sl2.Count-1]); except AWert:=128; end;
       sl2.DelimitedText:=sl[5];
       try TWert:=strtofloat(sl2[sl2.Count-1]) except TWert:=2.0; end;
+      sl2.DelimitedText:=sl[6];
+      try Ein60:=strtoint(sl2[sl2.Count-1]); except Ein60:=5; end;
+      sl2.DelimitedText:=sl[7];
+      try Aus60:=strtoint(sl2[sl2.Count-1]); except Aus60:=10; end;
+      sl2.DelimitedText:=sl[8];
+      try Ein70:=strtoint(sl2[sl2.Count-1]); except Ein70:=8; end;
+      sl2.DelimitedText:=sl[9];
+      try Aus70:=strtoint(sl2[sl2.Count-1]); except Aus70:=10; end;
+      sl2.DelimitedText:=sl[10];
+      try Ein80:=strtoint(sl2[sl2.Count-1]); except Ein80:=10; end;
+      sl2.DelimitedText:=sl[11];
+      try Aus80:=strtoint(sl2[sl2.Count-1]); except Aus80:=10; end;
+      sl2.DelimitedText:=sl[12];
+      try Ein90:=strtoint(sl2[sl2.Count-1]); except Ein90:=10; end;
+      sl2.DelimitedText:=sl[13];
+      try Aus90:=strtoint(sl2[sl2.Count-1]); except Aus90:=5; end;
+      sl2.DelimitedText:=sl[14];
+      try Ein100:=strtoint(sl2[sl2.Count-1]); except Ein100:=10; end;
+      sl2.DelimitedText:=sl[15];
+      try Aus100:=strtoint(sl2[sl2.Count-1]); except Aus100:=0; end;
+      AusIst:=Aus60;
+      EinIst:=Ein60;
     finally
       sl2.Free;
     end;
@@ -929,6 +962,9 @@ begin
   Heizung:=0;
   Alarm:=0;
   Pumpe:=0;
+  LPTCode:=0;
+  try Edit52.Text:=inttostr(LPTCode); finally end;
+  Out32(Port,LPTCode);
 end;
 
 procedure TForm1.Button13Click(Sender: TObject);
@@ -1111,6 +1147,7 @@ begin
       Button16.Enabled:=false;
       Button18.Enabled:=true;
       Button20.Enabled:=false;
+      Button23.Enabled:=true;
       Graphic:='C:\Brauerei\Graphics\Automatik-aktiv.jpg';
       Image5.Picture.LoadFromFile(Graphic);
       stop:=false;
@@ -1125,6 +1162,7 @@ end;
 
 procedure TForm1.Timer2Timer(Sender: TObject);
 begin
+  DecimalSeparator:='.';
   if AlarmEin=true then
   else if (Edit21.Text<>'0') or (Rastnull1=true) then
   begin
@@ -1328,6 +1366,16 @@ begin
   gesfortschritt:=round(gesfortschritt/rastzahl-0.5);
   Edit53.Text:=inttostr(zeit);
   Gauge11.progress:=gesfortschritt;
+  if solltemp<60 then
+  begin EinIst:=Ein60; AusIst:=Aus60; end
+  else if solltemp<70 then
+  begin EinIst:=Ein70; AusIst:=Aus70; end
+  else if solltemp<80 then
+  begin EinIst:=Ein80; AusIst:=Aus80; end
+  else if solltemp<90 then
+  begin EinIst:=Ein90; AusIst:=Aus90; end
+  else
+  begin EinIst:=Ein100; AusIst:=Aus100; end;
   Panel4.Caption:=FloatToStrF(solltemp,ffFixed,10,1)+' °C';
   if (zeit=0) and (start=true) and (Rastende=true) then Form1.Button3Click(Sender);
 end;
@@ -1431,6 +1479,7 @@ begin
   Button16.Enabled:=true;
   Button18.Enabled:=false;
   Button20.Enabled:=true;
+  Button23.Enabled:=true;
   Edit21.Visible:=true;
   Label26.Visible:=true;
   Gauge1.Visible:=true;
@@ -1495,32 +1544,43 @@ end;
 
 procedure TForm1.Button5Click(Sender: TObject);
 begin
-  if (start=true) and (CheckBox1.Checked=true) and (Edit21.Text<>'0') then begin Edit21.Text:='0'; Gauge1.Progress:=100; Rasttemp2:=false; end
-  else if (start=true) and (CheckBox2.Checked=true) and (Edit22.Text<>'0') then begin Edit22.Text:='0'; Gauge2.Progress:=100; Rasttemp3:=false; end
-  else if (start=true) and (CheckBox3.Checked=true) and (Edit23.Text<>'0') then begin Edit23.Text:='0'; Gauge3.Progress:=100; Rasttemp4:=false;  end
-  else if (start=true) and (CheckBox4.Checked=true) and (Edit24.Text<>'0') then begin Edit24.Text:='0'; Gauge4.Progress:=100; Rasttemp5:=false;  end
-  else if (start=true) and (CheckBox5.Checked=true) and (Edit25.Text<>'0') then begin Edit25.Text:='0'; Gauge5.Progress:=100; Rasttemp6:=false;  end
-  else if (start=true) and (CheckBox6.Checked=true) and (Edit26.Text<>'0') then begin Edit26.Text:='0'; Gauge6.Progress:=100; Rasttemp7:=false;  end
-  else if (start=true) and (CheckBox7.Checked=true) and (Edit27.Text<>'0') then begin Edit27.Text:='0'; Gauge7.Progress:=100; Rasttemp8:=false;  end
-  else if (start=true) and (CheckBox8.Checked=true) and (Edit28.Text<>'0') then begin Edit28.Text:='0'; Gauge8.Progress:=100; Rasttemp9:=false;  end
-  else if (start=true) and (CheckBox9.Checked=true) and (Edit29.Text<>'0') then begin Edit29.Text:='0'; Gauge9.Progress:=100; Rasttemp10:=false;  end
-  else if (start=true) and (CheckBox10.Checked=true) and (Edit30.Text<>'0') then begin Edit30.Text:='0'; Gauge10.Progress:=100; end;
+  if (start=true) and ((Edit21.Text<>'0') or (Rastnull1=true)) then begin Edit21.Text:='0'; Gauge1.Progress:=100; Rasttemp1:=true; Rastnull1:=false; end
+  else if (start=true) and ((Edit22.Text<>'0') or (Rastnull2=true)) then begin Edit22.Text:='0'; Gauge2.Progress:=100; Rasttemp2:=true; Rastnull2:=false; end
+  else if (start=true) and ((Edit23.Text<>'0') or (Rastnull3=true)) then begin Edit23.Text:='0'; Gauge3.Progress:=100; Rasttemp3:=true; Rastnull3:=false; end
+  else if (start=true) and ((Edit24.Text<>'0') or (Rastnull4=true)) then begin Edit24.Text:='0'; Gauge4.Progress:=100; Rasttemp4:=true; Rastnull4:=false; end
+  else if (start=true) and ((Edit25.Text<>'0') or (Rastnull5=true)) then begin Edit25.Text:='0'; Gauge5.Progress:=100; Rasttemp5:=true; Rastnull5:=false; end
+  else if (start=true) and ((Edit26.Text<>'0') or (Rastnull6=true)) then begin Edit26.Text:='0'; Gauge6.Progress:=100; Rasttemp6:=true; Rastnull6:=false; end
+  else if (start=true) and ((Edit27.Text<>'0') or (Rastnull7=true)) then begin Edit27.Text:='0'; Gauge7.Progress:=100; Rasttemp7:=true; Rastnull7:=false; end
+  else if (start=true) and ((Edit28.Text<>'0') or (Rastnull8=true)) then begin Edit28.Text:='0'; Gauge8.Progress:=100; Rasttemp8:=true; Rastnull8:=false; end
+  else if (start=true) and ((Edit29.Text<>'0') or (Rastnull9=true)) then begin Edit29.Text:='0'; Gauge9.Progress:=100; Rasttemp9:=true; Rastnull9:=false; end
+  else if (start=true) and ((Edit30.Text<>'0') or (Rastnull10=true)) then begin Edit30.Text:='0'; Gauge10.Progress:=100; Rasttemp10:=true; Rastnull10:=false; end;
   zeit:=strtoint(Edit21.Text)+strtoint(Edit22.Text)+strtoint(Edit23.Text)+strtoint(Edit24.Text)+strtoint(Edit25.Text)+strtoint(Edit26.Text)+strtoint(Edit27.Text)+strtoint(Edit28.Text)+strtoint(Edit29.Text)+strtoint(Edit30.Text);
-  if zeit=0 then Form1.Button3Click(Sender);
+  if zeit=0 then begin Form1.Button3Click(Sender); Edit53.Text:='0'; Gauge11.Progress:=100; end else Timer2.Enabled:=true;
 end;
 
 procedure TForm1.Button4Click(Sender: TObject);
 begin
-  if (start=true) and (CheckBox10.Checked=true) and (Gauge10.Progress<>0) then begin Edit30.Text:=Edit20.Text; Gauge10.Progress:=0; Rasttemp10:=false; end
-  else if (start=true) and (CheckBox9.Checked=true) and (Gauge9.Progress<>0) then begin Edit29.Text:=Edit18.Text; Gauge9.Progress:=0; Gauge10.Progress:=0; Rasttemp9:=false; end
-  else if (start=true) and (CheckBox8.Checked=true) and (Gauge8.Progress<>0) then begin Edit28.Text:=Edit16.Text; Gauge8.Progress:=0; Gauge9.Progress:=0; Rasttemp8:=false; end
-  else if (start=true) and (CheckBox7.Checked=true) and (Gauge7.Progress<>0) then begin Edit27.Text:=Edit14.Text; Gauge7.Progress:=0; Gauge8.Progress:=0; Rasttemp7:=false; end
-  else if (start=true) and (CheckBox6.Checked=true) and (Gauge6.Progress<>0) then begin Edit26.Text:=Edit12.Text; Gauge6.Progress:=0; Gauge7.Progress:=0; Rasttemp6:=false; end
-  else if (start=true) and (CheckBox5.Checked=true) and (Gauge5.Progress<>0) then begin Edit25.Text:=Edit10.Text; Gauge5.Progress:=0; Gauge6.Progress:=0; Rasttemp5:=false; end
-  else if (start=true) and (CheckBox4.Checked=true) and (Gauge4.Progress<>0) then begin Edit24.Text:=Edit8.Text; Gauge4.Progress:=0; Gauge5.Progress:=0; Rasttemp4:=false; end
-  else if (start=true) and (CheckBox3.Checked=true) and (Gauge3.Progress<>0) then begin Edit23.Text:=Edit6.Text; Gauge3.Progress:=0; Gauge4.Progress:=0; Rasttemp3:=false; end
-  else if (start=true) and (CheckBox2.Checked=true) and (Gauge2.Progress<>0) then begin Edit22.Text:=Edit4.Text; Gauge2.Progress:=0; Gauge3.Progress:=0; Rasttemp2:=false; end
-  else if (start=true) and (CheckBox1.Checked=true) and (Gauge1.Progress<>0) then begin Edit21.Text:=Edit2.Text; Gauge1.Progress:=0; Gauge2.Progress:=0; Rasttemp1:=false; end;
+  if (start=true) and (CheckBox10.Checked=true) and (Edit20.Text='0') and (Rastnull10=false) then begin Edit30.Text:=Edit20.Text; Gauge10.Progress:=0; Rasttemp10:=false; Rastnull10:=true; end
+  else if (start=true) and (CheckBox10.Checked=true) and (Gauge10.Progress<>0) then begin Edit30.Text:=Edit20.Text; Gauge10.Progress:=0; Rasttemp10:=false; end
+  else if (start=true) and (CheckBox9.Checked=true) and (Edit18.Text='0') and (Rastnull9=false) then begin Edit29.Text:=Edit18.Text; Gauge9.Progress:=0; Rasttemp9:=false; Rastnull9:=true; end
+  else if (start=true) and (CheckBox9.Checked=true) and (Gauge9.Progress<>0) then begin Edit29.Text:=Edit18.Text; Gauge9.Progress:=0; Rasttemp9:=false; end
+  else if (start=true) and (CheckBox8.Checked=true) and (Edit16.Text='0') and (Rastnull8=false) then begin Edit28.Text:=Edit16.Text; Gauge8.Progress:=0; Rasttemp8:=false; Rastnull8:=true; end
+  else if (start=true) and (CheckBox8.Checked=true) and (Gauge8.Progress<>0) then begin Edit28.Text:=Edit16.Text; Gauge8.Progress:=0; Rasttemp8:=false; end
+  else if (start=true) and (CheckBox7.Checked=true) and (Edit14.Text='0') and (Rastnull7=false) then begin Edit27.Text:=Edit14.Text; Gauge7.Progress:=0; Rasttemp7:=false; Rastnull7:=true; end
+  else if (start=true) and (CheckBox7.Checked=true) and (Gauge7.Progress<>0) then begin Edit27.Text:=Edit14.Text; Gauge7.Progress:=0; Rasttemp7:=false; end
+  else if (start=true) and (CheckBox6.Checked=true) and (Edit12.Text='0') and (Rastnull6=false) then begin Edit26.Text:=Edit12.Text; Gauge6.Progress:=0; Rasttemp6:=false; Rastnull6:=true; end
+  else if (start=true) and (CheckBox6.Checked=true) and (Gauge6.Progress<>0) then begin Edit26.Text:=Edit12.Text; Gauge6.Progress:=0; Rasttemp6:=false; end
+  else if (start=true) and (CheckBox5.Checked=true) and (Edit10.Text='0') and (Rastnull5=false) then begin Edit25.Text:=Edit10.Text; Gauge5.Progress:=0; Rasttemp5:=false; Rastnull5:=true; end
+  else if (start=true) and (CheckBox5.Checked=true) and (Gauge5.Progress<>0) then begin Edit25.Text:=Edit10.Text; Gauge5.Progress:=0; Rasttemp5:=false; end
+  else if (start=true) and (CheckBox4.Checked=true) and (Edit8.Text='0') and (Rastnull4=false) then begin Edit24.Text:=Edit8.Text; Gauge4.Progress:=0; Rasttemp4:=false; Rastnull4:=true; end
+  else if (start=true) and (CheckBox4.Checked=true) and (Gauge4.Progress<>0) then begin Edit24.Text:=Edit8.Text; Gauge4.Progress:=0; Rasttemp4:=false; end
+  else if (start=true) and (CheckBox3.Checked=true) and (Edit6.Text='0') and (Rastnull3=false) then begin Edit23.Text:=Edit6.Text; Gauge3.Progress:=0; Rasttemp3:=false; Rastnull3:=true; end
+  else if (start=true) and (CheckBox3.Checked=true) and (Gauge3.Progress<>0) then begin Edit23.Text:=Edit6.Text; Gauge3.Progress:=0; Rasttemp3:=false; end
+  else if (start=true) and (CheckBox2.Checked=true) and (Edit4.Text='0') and (Rastnull2=false) then begin Edit22.Text:=Edit4.Text; Gauge2.Progress:=0; Rasttemp2:=false; Rastnull2:=true; end
+  else if (start=true) and (CheckBox2.Checked=true) and (Gauge2.Progress<>0) then begin Edit22.Text:=Edit4.Text; Gauge2.Progress:=0; Rasttemp2:=false; end
+  else if (start=true) and (CheckBox1.Checked=true) and (Edit2.Text='0') and (Rastnull1=false) then begin Edit21.Text:=Edit2.Text; Gauge1.Progress:=0; Rasttemp1:=false; Rastnull1:=true; end
+  else if (start=true) and (CheckBox1.Checked=true) and (Gauge1.Progress<>0) then begin Edit21.Text:=Edit2.Text; Gauge1.Progress:=0; Rasttemp1:=false; end;
+  Timer2.Enabled:=true;
 end;
 
 procedure TForm1.TimerREinTimer(Sender: TObject);
@@ -1583,10 +1643,12 @@ begin
   begin
     if CheckBox34.Checked=true then
     begin
-      if TimerHEin.Interval<>strtoint(Edit55.Text)*1000 then
+      if TimerHEin.Interval<>AusIst*1000 then
       begin
-        TimerHEin.Interval:=strtoint(Edit55.Text)*1000;
-        TimerHAus.Interval:=strtoint(Edit54.Text)*1000;
+        TimerHEin.Interval:=AusIst*1000;
+        TimerHAus.Interval:=EinIst*1000;
+        if TimerHEin.Interval=0 then begin TimerHEin.Interval:=800; TimerHAus.Interval:=1500000; end;
+        if TimerHAus.Interval=0 then begin TimerHAus.Interval:=800; TimerHEin.Interval:=1500000; end;
         Form1.TimerHEinTimer(Sender);
       end;
     end
@@ -1676,6 +1738,7 @@ end;
 
 procedure TForm1.LogTimerTimer(Sender: TObject);
 begin
+  try
   Write(myLogFile, FormatDateTime('dd.mm.yyyy', now));
   Write(myLogFile, ';');
   Write(myLogFile, FormatDateTime('hh:nn:ss', now));
@@ -1684,10 +1747,13 @@ begin
   if Ruehrwerk>0 then Write(myLogFile, '1;') else Write(myLogFile, '0;');
   if Pumpe>0 then Write(myLogFile, '1;') else Write(myLogFile, '0;');
   if AlarmEin=true then Write(myLogFile, '1;') else Write(myLogFile, '0;');
+  DecimalSeparator:='.';
   Write(myLogFile, floattostr(tempfloat));
   Write(myLogFile, ';');
   Write(myLogFile, floattostr(solltemp));
   WriteLn(myLogFile, ';');
+  except
+  end;
 end;
 
 procedure TForm1.Button16Click(Sender: TObject);
@@ -1701,40 +1767,38 @@ begin
   if OpenDialog1.Execute then ReadTabFile(OpenDialog1.FileName, ';', StringGrid1);
   OpenDialog1.Filter:='Rezept-Datei|*.rzt|Alle Dateien|*.*';
   OpenDialog1.InitialDir:='C:\Brauerei\Rezepte';
-  writechart(Form1, false);
+  startpunkt:=1;
+  endpunkt:=StringGrid1.RowCount-1;
+  writechart(Form1);
 end;
 
 procedure TForm1.PageControl1Change(Sender: TObject);
 var
   ueberschreiben:boolean;
 begin
+  DecimalSeparator:='.';
   Button21.Enabled:=false;
   Button22.Enabled:=false;
   Button19.Caption:='1h Zoom';
-  if (start=true) and (CheckBox32.Checked=true) then
-  begin
-    DeleteFile(PChar('C:\Brauerei\log\temp.log'));
-    CopyFile(PChar(LogName),PChar('C:\Brauerei\log\temp.log'),true);
-    ReadTabFile('C:\Brauerei\log\temp.log', ';', StringGrid1);
-    if StringGrid1.RowCount>=2 then begin StringGrid1.RowCount:=StringGrid1.RowCount -1; CountLines:= StringGrid1.RowCount; writechart(Form1, false); end;
-  end
-  else
-  begin
-    if StringGrid1.RowCount<10 then ReadTabFile('C:\Brauerei\log\Test-Log.log', ';', StringGrid1);
-    writechart(Form1, false);
+  try
+    if (start=true) and (CheckBox32.Checked=true) then
+    begin
+      DeleteFile(PChar('C:\Brauerei\log\temp.log'));
+      CopyFile(PChar(LogName),PChar('C:\Brauerei\log\temp.log'),true);
+      ReadTabFile('C:\Brauerei\log\temp.log', ';', StringGrid1);
+      if StringGrid1.RowCount>=2 then begin startpunkt:=1; endpunkt:=StringGrid1.RowCount-1; writechart(Form1); end;
+    end
+    else
+    begin
+      if StringGrid1.RowCount<10 then ReadTabFile('C:\Brauerei\log\Test-Log.log', ';', StringGrid1);
+      startpunkt:=1;
+      endpunkt:=StringGrid1.RowCount-1;
+      writechart(Form1);
+    end;
+    if StringGrid1.RowCount>=720 then Button19.Enabled:=true else Button19.Enabled:=false;
+    webbrowser1.Navigate('C:\Brauerei\Help\Help.html');
+  except
   end;
-  if StringGrid1.RowCount>=720 then Button19.Enabled:=true else Button19.Enabled:=false;
-  webbrowser1.Navigate('C:\Brauerei\Help\Help.html');
-end;
-
-procedure TForm1.Edit55KeyPress(Sender: TObject; var Key: Char);
-begin
-  if not (Key in ['0'..'9']) then Key := #0;
-end;
-
-procedure TForm1.Edit54KeyPress(Sender: TObject; var Key: Char);
-begin
-  if not (Key in ['0'..'9']) then Key := #0;
 end;
 
 procedure TForm1.Button17Click(Sender: TObject);
@@ -1759,14 +1823,16 @@ begin
     Button19.Caption:='Zoom out';
     startpunkt:=1;
     endpunkt:=720;
-    writechart(Form1, true);
+    writechart(Form1);
   end
   else
   begin
     Button21.Enabled:=false;
     Button22.Enabled:=false;
     Button19.Caption:='1h Zoom';
-    writechart(Form1, false);
+    startpunkt:=1;
+    endpunkt:=StringGrid1.RowCount-1;;
+    writechart(Form1);
   end;
 end;
 
@@ -1774,8 +1840,8 @@ procedure TForm1.Button22Click(Sender: TObject);
 begin
   startpunkt:=startpunkt+120;
   endpunkt:=endpunkt+120;
-  if StringGrid1.RowCount<endpunkt then begin endpunkt:=StringGrid1.RowCount; startpunkt:=endpunkt-719; end;
-  writechart(Form1, true);
+  if StringGrid1.RowCount-1<endpunkt then begin endpunkt:=StringGrid1.RowCount-1; startpunkt:=endpunkt-719; end;
+  writechart(Form1);
 end;
 
 procedure TForm1.Button21Click(Sender: TObject);
@@ -1783,7 +1849,7 @@ begin
   startpunkt:=startpunkt-120;
   endpunkt:=endpunkt-120;
   if startpunkt<1 then begin endpunkt:=720; startpunkt:=1; end;
-  writechart(Form1, true);
+  writechart(Form1);
 end;
 
 procedure TForm1.Button20Click(Sender: TObject);
@@ -1805,32 +1871,21 @@ end;
 
 procedure TForm1.SimulationTimerTimer(Sender: TObject);
 begin
-  if Heizung=HWert then
-  begin
-    if SimTemp<100 then SimTemp:=SimTemp+0.1;
-  end
-  else
-  begin
-    if SimTemp>21 then SimTemp:=SimTemp-0.05;
+  try
+    if Heizung=HWert then
+    begin
+      if SimTemp<100 then SimTemp:=SimTemp+0.1;
+    end
+    else
+    begin
+      if SimTemp>21 then SimTemp:=SimTemp-0.05;
+    end;
+    AssignFile(SimFile, 'C:\Brauerei\Temperatur\log.txt');
+    Append(SimFile);
+    Writeln(SimFile, 'Simulation;'+FloatToStrF(SimTemp,ffFixed,10,1));
+    CloseFile(SimFile);
+  except
   end;
-  AssignFile(SimFile, 'C:\Brauerei\Temperatur\log.txt');
-  Append(SimFile);
-  Writeln(SimFile, 'Simulation;'+FloatToStrF(SimTemp,ffFixed,10,1));
-  CloseFile(SimFile);
-end;
-
-procedure TForm1.Edit54Change(Sender: TObject);
-begin
-  y:=strtoint(Edit54.Text);
-  if y>100 then Edit54.Text:='100';
-  Edit54.SelStart := Length(Edit54.Text);
-end;
-
-procedure TForm1.Edit55Change(Sender: TObject);
-begin
-  y:=strtoint(Edit55.Text);
-  if y>100 then Edit55.Text:='100';
-  Edit54.SelStart := Length(Edit54.Text);
 end;
 
 procedure TForm1.Edit9Exit(Sender: TObject);
@@ -2071,6 +2126,25 @@ procedure TForm1.Edit44Exit(Sender: TObject);
 begin
   try Intdummy:=strtoint(Edit44.Text) except begin Edit44.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
   if Intdummy>999 then begin Edit44.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
+end;
+
+procedure TForm1.Button23Click(Sender: TObject);
+begin
+  If Button23.Caption='AutoUpdate Ein' then
+  begin
+    Button23.Caption:='AutoUpdate Aus';
+    LogUpdateTimer.Enabled:=true;
+  end
+  else
+  begin
+    Button23.Caption:='AutoUpdate Ein';
+    LogUpdateTimer.Enabled:=false;
+  end;
+end;
+
+procedure TForm1.LogUpdateTimerTimer(Sender: TObject);
+begin
+  Form1.PageControl1Change(Sender);
 end;
 
 end.

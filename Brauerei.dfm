@@ -699,7 +699,7 @@ object Form1: TForm1
     Top = 8
     Width = 777
     Height = 617
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     TabOrder = 3
     OnChange = PageControl1Change
     object TabSheet1: TTabSheet
@@ -4116,7 +4116,7 @@ object Form1: TForm1
         end
       end
       object Button18: TButton
-        Left = 152
+        Left = 176
         Top = 548
         Width = 129
         Height = 33
@@ -4126,7 +4126,7 @@ object Form1: TForm1
         OnClick = Button18Click
       end
       object Button19: TButton
-        Left = 480
+        Left = 472
         Top = 548
         Width = 97
         Height = 33
@@ -4135,7 +4135,7 @@ object Form1: TForm1
         OnClick = Button19Click
       end
       object Button21: TButton
-        Left = 592
+        Left = 688
         Top = 548
         Width = 33
         Height = 33
@@ -4145,7 +4145,7 @@ object Form1: TForm1
         OnClick = Button21Click
       end
       object Button22: TButton
-        Left = 632
+        Left = 728
         Top = 548
         Width = 33
         Height = 33
@@ -4155,13 +4155,22 @@ object Form1: TForm1
         OnClick = Button22Click
       end
       object Button23: TButton
-        Left = 337
+        Left = 313
         Top = 548
         Width = 120
         Height = 33
         Caption = 'AutoUpdate Ein'
         TabOrder = 11
         OnClick = Button23Click
+      end
+      object Button24: TButton
+        Left = 576
+        Top = 548
+        Width = 97
+        Height = 33
+        Caption = '30min Zoom'
+        TabOrder = 12
+        OnClick = Button24Click
       end
     end
     object TabSheet3: TTabSheet

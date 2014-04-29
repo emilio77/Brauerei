@@ -234,6 +234,7 @@ type
     Label66: TLabel;
     Button23: TButton;
     LogUpdateTimer: TTimer;
+    Button24: TButton;
     procedure Button7Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
@@ -315,6 +316,7 @@ type
     procedure Edit50Exit(Sender: TObject);
     procedure Button23Click(Sender: TObject);
     procedure LogUpdateTimerTimer(Sender: TObject);
+    procedure Button24Click(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -1736,6 +1738,7 @@ begin
   Button21.Enabled:=false;
   Button22.Enabled:=false;
   Button19.Caption:='1h Zoom';
+  Button24.Caption:='30min Zoom';
   OpenDialog1.FileName:='';
   OpenDialog1.Filter:='Log-Datei|*.log|Alle Dateien|*.*';
   OpenDialog1.InitialDir:='C:\Brauerei\log';
@@ -1755,6 +1758,7 @@ begin
   Button21.Enabled:=false;
   Button22.Enabled:=false;
   Button19.Caption:='1h Zoom';
+  Button24.Caption:='30min Zoom';
   try
     if (start=true) and (CheckBox32.Checked=true) then
     begin
@@ -1771,6 +1775,7 @@ begin
       writechart(Form1);
     end;
     if StringGrid1.RowCount>=720 then Button19.Enabled:=true else Button19.Enabled:=false;
+    if StringGrid1.RowCount>=360 then Button24.Enabled:=true else Button24.Enabled:=false;
     webbrowser1.Navigate('C:\Brauerei\Help\Help.html');
   except
   end;
@@ -1803,6 +1808,7 @@ procedure TForm1.Button19Click(Sender: TObject);
 begin
   if Button19.Caption='1h Zoom' then
   begin
+    Button24.Caption:='30min Zoom';
     Button21.Enabled:=true;
     Button22.Enabled:=true;
     Button19.Caption:='Zoom out';
@@ -1815,9 +1821,7 @@ begin
     Button21.Enabled:=false;
     Button22.Enabled:=false;
     Button19.Caption:='1h Zoom';
-    startpunkt:=1;
-    endpunkt:=StringGrid1.RowCount-1;;
-    writechart(Form1);
+    Form1.PageControl1Change(Sender);
   end;
 end;
 
@@ -2134,6 +2138,26 @@ end;
 procedure TForm1.LogUpdateTimerTimer(Sender: TObject);
 begin
   Form1.PageControl1Change(Sender);
+end;
+
+procedure TForm1.Button24Click(Sender: TObject);
+begin
+  if Button24.Caption='30min Zoom' then
+  begin
+    Button21.Enabled:=true;
+    Button22.Enabled:=true;
+    Button24.Caption:='Zoom out';
+    startpunkt:=1;
+    endpunkt:=360;
+    writechart(Form1);
+  end
+  else
+  begin
+    Button21.Enabled:=false;
+    Button22.Enabled:=false;
+    Button24.Caption:='30min Zoom';
+    Form1.PageControl1Change(Sender);
+  end;
 end;
 
 end.

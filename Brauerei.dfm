@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 250
-  Top = 88
+  Left = 214
+  Top = 118
   BorderStyle = bsSingle
   Caption = 'Brauerei V01.00'
   ClientHeight = 632
@@ -3876,6 +3876,93 @@ object Form1: TForm1
         TopAxis.Visible = False
         View3D = False
         TabOrder = 1
+        object Label61: TLabel
+          Left = 680
+          Top = 208
+          Width = 71
+          Height = 13
+          Caption = 'Status Rast:'
+        end
+        object ProgressBar1: TProgressBar
+          Left = 680
+          Top = 224
+          Width = 81
+          Height = 9
+          Position = 20
+          TabOrder = 0
+        end
+        object ProgressBar2: TProgressBar
+          Left = 680
+          Top = 240
+          Width = 81
+          Height = 9
+          Position = 20
+          TabOrder = 1
+        end
+        object ProgressBar3: TProgressBar
+          Left = 680
+          Top = 256
+          Width = 81
+          Height = 9
+          Position = 20
+          TabOrder = 2
+        end
+        object ProgressBar4: TProgressBar
+          Left = 680
+          Top = 272
+          Width = 81
+          Height = 9
+          Position = 20
+          TabOrder = 3
+        end
+        object ProgressBar5: TProgressBar
+          Left = 680
+          Top = 288
+          Width = 81
+          Height = 9
+          Position = 20
+          TabOrder = 4
+        end
+        object ProgressBar6: TProgressBar
+          Left = 680
+          Top = 304
+          Width = 81
+          Height = 9
+          Position = 20
+          TabOrder = 5
+        end
+        object ProgressBar7: TProgressBar
+          Left = 680
+          Top = 320
+          Width = 81
+          Height = 9
+          Position = 20
+          TabOrder = 6
+        end
+        object ProgressBar8: TProgressBar
+          Left = 680
+          Top = 336
+          Width = 81
+          Height = 9
+          Position = 20
+          TabOrder = 7
+        end
+        object ProgressBar9: TProgressBar
+          Left = 680
+          Top = 352
+          Width = 81
+          Height = 9
+          Position = 20
+          TabOrder = 8
+        end
+        object ProgressBar10: TProgressBar
+          Left = 680
+          Top = 368
+          Width = 81
+          Height = 9
+          Position = 20
+          TabOrder = 9
+        end
         object Series1: TLineSeries
           Marks.ArrowLength = 8
           Marks.Visible = False
@@ -4160,6 +4247,7 @@ object Form1: TForm1
         Width = 120
         Height = 33
         Caption = 'AutoUpdate Ein'
+        Enabled = False
         TabOrder = 11
         OnClick = Button23Click
       end

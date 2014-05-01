@@ -235,6 +235,17 @@ type
     Button23: TButton;
     LogUpdateTimer: TTimer;
     Button24: TButton;
+    ProgressBar1: TProgressBar;
+    ProgressBar2: TProgressBar;
+    ProgressBar3: TProgressBar;
+    ProgressBar4: TProgressBar;
+    ProgressBar5: TProgressBar;
+    ProgressBar6: TProgressBar;
+    ProgressBar7: TProgressBar;
+    ProgressBar8: TProgressBar;
+    ProgressBar9: TProgressBar;
+    ProgressBar10: TProgressBar;
+    Label61: TLabel;
     procedure Button7Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
@@ -1122,8 +1133,9 @@ begin
       Button12.Enabled:=false;
       Button13.Enabled:=false;
       Button16.Enabled:=false;
-      Button18.Enabled:=true;
       Button20.Enabled:=false;
+      if checkbox32.checked=true then Button18.Enabled:=true;
+      if checkbox32.checked=true then Button23.Enabled:=true;
       Graphic:='C:\Brauerei\Graphics\Automatik-aktiv.jpg';
       Image5.Picture.LoadFromFile(Graphic);
       stop:=false;
@@ -1455,7 +1467,7 @@ begin
   Button16.Enabled:=true;
   Button18.Enabled:=false;
   Button20.Enabled:=true;
-  Button23.Enabled:=true;
+  Button23.Enabled:=false;
   Edit21.Visible:=true;
   Label26.Visible:=true;
   Gauge1.Visible:=true;
@@ -1766,6 +1778,27 @@ begin
       CopyFile(PChar(LogName),PChar('C:\Brauerei\log\temp.log'),true);
       ReadTabFile('C:\Brauerei\log\temp.log', ';', StringGrid1);
       if StringGrid1.RowCount>=2 then begin startpunkt:=1; endpunkt:=StringGrid1.RowCount-1; writechart(Form1); end;
+      Progressbar1.Visible:=Gauge1.Visible;
+      Progressbar2.Visible:=Gauge2.Visible;
+      Progressbar3.Visible:=Gauge3.Visible;
+      Progressbar4.Visible:=Gauge4.Visible;
+      Progressbar5.Visible:=Gauge5.Visible;
+      Progressbar6.Visible:=Gauge6.Visible;
+      Progressbar7.Visible:=Gauge7.Visible;
+      Progressbar8.Visible:=Gauge8.Visible;
+      Progressbar9.Visible:=Gauge9.Visible;
+      Progressbar10.Visible:=Gauge10.Visible;
+      Label61.Visible:=true;
+      Progressbar1.Position:=Gauge1.Progress;
+      Progressbar2.Position:=Gauge2.Progress;
+      Progressbar3.Position:=Gauge3.Progress;
+      Progressbar4.Position:=Gauge4.Progress;
+      Progressbar5.Position:=Gauge5.Progress;
+      Progressbar6.Position:=Gauge6.Progress;
+      Progressbar7.Position:=Gauge7.Progress;
+      Progressbar8.Position:=Gauge8.Progress;
+      Progressbar9.Position:=Gauge9.Progress;
+      Progressbar10.Position:=Gauge10.Progress;
     end
     else
     begin
@@ -1773,6 +1806,17 @@ begin
       startpunkt:=1;
       endpunkt:=StringGrid1.RowCount-1;
       writechart(Form1);
+      Progressbar1.Visible:=false;
+      Progressbar2.Visible:=false;
+      Progressbar3.Visible:=false;
+      Progressbar4.Visible:=false;
+      Progressbar5.Visible:=false;
+      Progressbar6.Visible:=false;
+      Progressbar7.Visible:=false;
+      Progressbar8.Visible:=false;
+      Progressbar9.Visible:=false;
+      Progressbar10.Visible:=false;
+      Label61.Visible:=false;
     end;
     if StringGrid1.RowCount>=720 then Button19.Enabled:=true else Button19.Enabled:=false;
     if StringGrid1.RowCount>=360 then Button24.Enabled:=true else Button24.Enabled:=false;

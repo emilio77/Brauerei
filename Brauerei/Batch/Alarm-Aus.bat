@@ -1,0 +1,1 @@
+c:\Brauerei\Batch\Parallel.exe 888 0xxxxxxx a

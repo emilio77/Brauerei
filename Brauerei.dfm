@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 214
-  Top = 118
+  Left = 318
+  Top = 46
   BorderStyle = bsSingle
   Caption = 'Brauerei V01.00'
   ClientHeight = 632
@@ -12,6 +12,7 @@ object Form1: TForm1
   Font.Name = 'MS Sans Serif'
   Font.Style = [fsBold]
   OldCreateOrder = False
+  OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   DesignSize = (
     977
@@ -2961,7 +2962,7 @@ object Form1: TForm1
         end
         object CheckBox34: TCheckBox
           Left = 456
-          Top = 32
+          Top = 8
           Width = 137
           Height = 17
           Caption = 'Heizung gepulst'
@@ -2974,6 +2975,22 @@ object Form1: TForm1
           ParentFont = False
           State = cbChecked
           TabOrder = 0
+        end
+        object CheckBox33: TCheckBox
+          Left = 600
+          Top = 8
+          Width = 137
+          Height = 17
+          Caption = 'Sensor '#252'berwachen'
+          Checked = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+          State = cbChecked
+          TabOrder = 1
         end
       end
       object Edit1: TEdit
@@ -3547,7 +3564,7 @@ object Form1: TForm1
       end
       object CheckBox31: TCheckBox
         Left = 464
-        Top = 16
+        Top = 40
         Width = 105
         Height = 17
         Caption = 'Alarm gepulst'
@@ -3798,11 +3815,11 @@ object Form1: TForm1
         OnExit = Edit50Exit
       end
       object CheckBox32: TCheckBox
-        Left = 616
-        Top = 16
+        Left = 464
+        Top = 64
         Width = 137
         Height = 17
-        Caption = 'Log-Datei schreiben'
+        Caption = 'Log schreiben'
         Checked = True
         State = cbChecked
         TabOrder = 97
@@ -3818,9 +3835,9 @@ object Form1: TForm1
         OnClick = Button11Click
       end
       object Button17: TButton
-        Left = 616
+        Left = 608
         Top = 64
-        Width = 137
+        Width = 145
         Height = 33
         Caption = 'Settings speichern'
         TabOrder = 99
@@ -4311,7 +4328,7 @@ object Form1: TForm1
   object Edit51: TEdit
     Left = 833
     Top = 602
-    Width = 33
+    Width = 48
     Height = 21
     TabStop = False
     Anchors = [akRight, akBottom]
@@ -4442,13 +4459,19 @@ object Form1: TForm1
     Interval = 5000
     OnTimer = SimulationTimerTimer
     Left = 756
-    Top = 512
+    Top = 472
   end
   object LogUpdateTimer: TTimer
     Enabled = False
     Interval = 30000
     OnTimer = LogUpdateTimerTimer
     Left = 756
-    Top = 472
+    Top = 432
+  end
+  object Ueberwachungstimer: TTimer
+    Interval = 60000
+    OnTimer = UeberwachungstimerTimer
+    Left = 756
+    Top = 512
   end
 end

@@ -1,11 +1,6 @@
 program Project1;
 
 uses
-  madExcept,
-  madLinkDisAsm,
-  madListHardware,
-  madListProcesses,
-  madListModules,
   Forms,
   Brauerei in 'Brauerei.pas' {Form1};
 

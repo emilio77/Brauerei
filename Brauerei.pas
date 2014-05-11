@@ -2276,7 +2276,22 @@ procedure TForm1.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 var buttonSelected:integer;
 begin
   buttonSelected:=MessageDlg('Programm wirklich beenden?', mtWarning, [mbOK, mbAbort], 0);
-  if buttonSelected = mrOK then application.terminate else CanClose:=false;
+  if buttonSelected = mrOK then
+  begin
+    LPTCode:=0;
+    Ruehrwerk:=0;
+    RStore:=0;
+    Heizung:=0;
+    HStore:=0;
+    Alarm:=0;
+    AStore:=0;
+    Pumpe:=0;
+    PStore:=0;
+    if steuerung='LPT' then Out32(Port,LPTCode); //LPT-Code an LPT-Port ausgeben
+    if steuerung='BATCH' then BatchOut(Sender); //LPT-Code als Batch ausgeben
+    application.terminate;
+  end
+  else CanClose:=false;
 end;
 
 procedure TForm1.UeberwachungstimerTimer(Sender: TObject);

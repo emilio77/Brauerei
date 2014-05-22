@@ -1,0 +1,8 @@
+- Sensorüberwachung
+  - Wenn keine Zeitänderung, Zeit nicht Simulation und Start true dann Alarm
+- Heizungsüberwachung
+  - Wenn Heizung ein und Temperatur sinkt 3° weiter Alarm 
+  - Wenn Heizung aus und Temperatur steigt 3° weiter Alarm 
+
+- Badge-Datei Steuerung
+  - Einstellung über settings.txt

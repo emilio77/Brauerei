@@ -1993,245 +1993,53 @@ begin
   CloseFile(SimFile);
 end;
 
-procedure TForm1.Edit9Exit(Sender: TObject);
+procedure editcheck(changededit: TEdit; min:integer; max:integer; fail:string);
 begin
-try Intdummy:=strtoint(Edit9.Text) except begin Edit9.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>100 then begin Edit9.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end;
+  try Intdummy:=strtoint(changededit.Text) except begin changededit.Text:=fail; ShowMessage('Unerlaubte Eingabe!'); end; end;
+  if (Intdummy>max) or (Intdummy<min) then begin changededit.Text:=fail; ShowMessage('Unerlaubte Eingabe!'); end;
 end;
 
-procedure TForm1.Edit11Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit11.Text) except begin Edit11.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>100 then begin Edit11.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
+procedure TForm1.Edit1Exit(Sender: TObject); begin editcheck(Edit1,0,100,'20'); end;
+procedure TForm1.Edit2Exit(Sender: TObject); begin editcheck(Edit2,0,999,'60'); end;
+procedure TForm1.Edit3Exit(Sender: TObject); begin editcheck(Edit3,0,100,'20'); end;
+procedure TForm1.Edit4Exit(Sender: TObject); begin editcheck(Edit4,0,999,'60'); end;
+procedure TForm1.Edit5Exit(Sender: TObject); begin editcheck(Edit5,0,100,'20'); end;
+procedure TForm1.Edit6Exit(Sender: TObject); begin editcheck(Edit6,0,999,'60'); end;
+procedure TForm1.Edit7Exit(Sender: TObject); begin editcheck(Edit7,0,100,'20'); end;
+procedure TForm1.Edit8Exit(Sender: TObject); begin editcheck(Edit8,0,999,'60'); end;
+procedure TForm1.Edit9Exit(Sender: TObject); begin editcheck(Edit9,0,100,'20'); end;
+procedure TForm1.Edit10Exit(Sender: TObject); begin editcheck(Edit10,0,999,'60'); end;
+procedure TForm1.Edit11Exit(Sender: TObject); begin editcheck(Edit11,0,100,'20'); end;
+procedure TForm1.Edit12Exit(Sender: TObject); begin editcheck(Edit12,0,999,'60'); end;
+procedure TForm1.Edit13Exit(Sender: TObject); begin editcheck(Edit13,0,100,'20'); end;
+procedure TForm1.Edit14Exit(Sender: TObject); begin editcheck(Edit14,0,999,'60'); end;
+procedure TForm1.Edit15Exit(Sender: TObject); begin editcheck(Edit15,0,100,'20'); end;
+procedure TForm1.Edit16Exit(Sender: TObject); begin editcheck(Edit16,0,999,'60'); end;
+procedure TForm1.Edit17Exit(Sender: TObject); begin editcheck(Edit17,0,100,'20'); end;
+procedure TForm1.Edit18Exit(Sender: TObject); begin editcheck(Edit18,0,999,'60'); end;
+procedure TForm1.Edit19Exit(Sender: TObject); begin editcheck(Edit19,0,100,'20'); end;
+procedure TForm1.Edit20Exit(Sender: TObject); begin editcheck(Edit20,0,999,'60'); end;
 
-procedure TForm1.Edit13Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit13.Text) except begin Edit13.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>100 then begin Edit13.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit15Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit15.Text) except begin Edit15.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>100 then begin Edit15.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit17Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit17.Text) except begin Edit17.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>100 then begin Edit17.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit19Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit19.Text) except begin Edit19.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>100 then begin Edit19.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit38Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit38.Text) except begin Edit38.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit38.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit10Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit10.Text) except begin Edit10.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit10.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit12Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit12.Text) except begin Edit12.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit12.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit14Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit14.Text) except begin Edit14.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit14.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit16Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit16.Text) except begin Edit16.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit16.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit18Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit18.Text) except begin Edit18.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit18.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit20Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit20.Text) except begin Edit20.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit20.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit47Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit47.Text) except begin Edit47.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit47.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit35Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit35.Text) except begin Edit35.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit35.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit36Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit36.Text) except begin Edit36.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit36.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit37Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit37.Text) except begin Edit37.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit37.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit39Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit39.Text) except begin Edit39.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit39.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit40Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit40.Text) except begin Edit40.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit40.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit45Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit45.Text) except begin Edit45.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit45.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit46Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit46.Text) except begin Edit46.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit46.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit48Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit48.Text) except begin Edit48.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit48.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit49Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit49.Text) except begin Edit49.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit49.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit50Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit50.Text) except begin Edit50.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit50.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit1Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit1.Text) except begin Edit1.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>100 then begin Edit1.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit2Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit2.Text) except begin Edit2.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit2.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit31Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit31.Text) except begin Edit31.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit31.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit41Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit41.Text) except begin Edit41.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit41.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit3Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit3.Text) except begin Edit3.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>100 then begin Edit3.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit4Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit4.Text) except begin Edit4.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit4.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit33Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit33.Text) except begin Edit33.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit33.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit43Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit43.Text) except begin Edit43.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit43.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit7Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit7.Text) except begin Edit7.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>100 then begin Edit7.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit5Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit5.Text) except begin Edit5.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>100 then begin Edit5.Text:='20'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit6Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit6.Text) except begin Edit6.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit6.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit32Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit32.Text) except begin Edit32.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit32.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit42Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit42.Text) except begin Edit42.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit42.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit8Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit8.Text) except begin Edit8.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit8.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit34Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit34.Text) except begin Edit34.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit34.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
-
-procedure TForm1.Edit44Exit(Sender: TObject);
-begin
-  try Intdummy:=strtoint(Edit44.Text) except begin Edit44.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if Intdummy>999 then begin Edit44.Text:='60'; ShowMessage('Unerlaubte Eingabe!'); end;
-end;
+procedure TForm1.Edit31Exit(Sender: TObject); begin editcheck(Edit31,0,999,'60'); end;
+procedure TForm1.Edit32Exit(Sender: TObject); begin editcheck(Edit32,0,999,'60'); end;
+procedure TForm1.Edit33Exit(Sender: TObject); begin editcheck(Edit33,0,999,'60'); end;
+procedure TForm1.Edit34Exit(Sender: TObject); begin editcheck(Edit34,0,999,'60'); end;
+procedure TForm1.Edit35Exit(Sender: TObject); begin editcheck(Edit35,0,999,'60'); end;
+procedure TForm1.Edit36Exit(Sender: TObject); begin editcheck(Edit36,0,999,'60'); end;
+procedure TForm1.Edit37Exit(Sender: TObject); begin editcheck(Edit37,0,999,'60'); end;
+procedure TForm1.Edit38Exit(Sender: TObject); begin editcheck(Edit38,0,999,'60'); end;
+procedure TForm1.Edit39Exit(Sender: TObject); begin editcheck(Edit39,0,999,'60'); end;
+procedure TForm1.Edit40Exit(Sender: TObject); begin editcheck(Edit40,0,999,'60'); end;
+procedure TForm1.Edit41Exit(Sender: TObject); begin editcheck(Edit41,0,999,'60'); end;
+procedure TForm1.Edit42Exit(Sender: TObject); begin editcheck(Edit42,0,999,'60'); end;
+procedure TForm1.Edit43Exit(Sender: TObject); begin editcheck(Edit43,0,999,'60'); end;
+procedure TForm1.Edit44Exit(Sender: TObject); begin editcheck(Edit44,0,999,'60'); end;
+procedure TForm1.Edit45Exit(Sender: TObject); begin editcheck(Edit45,0,999,'60'); end;
+procedure TForm1.Edit46Exit(Sender: TObject); begin editcheck(Edit46,0,999,'60'); end;
+procedure TForm1.Edit47Exit(Sender: TObject); begin editcheck(Edit47,0,999,'60') ;end;
+procedure TForm1.Edit48Exit(Sender: TObject); begin editcheck(Edit48,0,999,'60'); end;
+procedure TForm1.Edit49Exit(Sender: TObject); begin editcheck(Edit49,0,999,'60'); end;
+procedure TForm1.Edit50Exit(Sender: TObject); begin editcheck(Edit50,0,999,'60'); end;
 
 procedure TForm1.Button23Click(Sender: TObject);
 begin

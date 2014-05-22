@@ -21,7 +21,7 @@ object Form1: TForm1
   TextHeight = 13
   object Image1: TImage
     Left = 792
-    Top = 28
+    Top = 20
     Width = 177
     Height = 470
     IncrementalDisplay = True
@@ -700,7 +700,7 @@ object Form1: TForm1
     Top = 8
     Width = 777
     Height = 617
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     TabOrder = 3
     OnChange = PageControl1Change
     object TabSheet1: TTabSheet

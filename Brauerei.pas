@@ -343,7 +343,7 @@ var
   sl,sl2: TStringList;
   Temperatur,x,Graphic,LogName,Steuerung,BHEin,BHAus,BREin,BRAus,BPEin,BPAus,
   BAEin,BAAus,TimeTempStr,TimeTempStore: String;
-  Tempfloat,Solltemp,Deltatemp,SimTemp,TWert: Extended;
+  Tempfloat,Solltemp,Deltatemp,SimTemp,TWert,Gradient, GradientWert: Extended;
   Ruehrwerk,Heizung,Alarm,Pumpe,HWert,RWert,PWert,AWert,RStore,PStore,HStore,
   AStore,LPTCode,zeit,zeit2,zeit3,zeitpause,fortschritt,rast,Intdummy,
   CountLines,gesfortschritt,rastzahl, startpunkt,endpunkt,y,Ein60,Aus60,Ein70,
@@ -354,6 +354,7 @@ var
   Rasttemp6,Rasttemp7,Rasttemp8,Rasttemp9,Rasttemp10,Rastnull1,Rastnull2,
   Rastnull3,Rastnull4,Rastnull5,Rastnull6,Rastnull7,Rastnull8,Rastnull9,
   Rastnull10,Rastende: boolean;
+  Gradientgetter: Array[1..60] of Extended;
 
 implementation
 
@@ -813,6 +814,15 @@ begin
   end;
 end;
 
+procedure GetGradient(Sender: TObject);
+var
+  i: integer;
+begin
+  for i:=1 to 59 do Gradientgetter[i]:=Gradientgetter[i+1];
+  Gradientgetter[60]:=Tempfloat;
+  Gradient:=Gradientgetter[60]-Gradientgetter[1];
+end;
+
 procedure TForm1.Button8Click(Sender: TObject);
 begin
   if Button8.Caption='Rührwerk Ein' then
@@ -919,9 +929,12 @@ begin
   Graphic:='C:\Brauerei\Graphics\Thermo'+tfs+'.jpg';
   Image1.Picture.LoadFromFile(Graphic);
   panel1.Caption:=Temperatur;
+  GetGradient(Sender);
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
+var
+  i: integer;
 begin
   self.DoubleBuffered:=true;
   PageControl1.ActivePage:=TabSheet1;
@@ -1000,6 +1013,8 @@ begin
       try Ein100:=strtoint(sl2[sl2.Count-1]); except Ein100:=10; end;
       sl2.DelimitedText:=sl[24];
       try Aus100:=strtoint(sl2[sl2.Count-1]); except Aus100:=0; end;
+      sl2.DelimitedText:=sl[25];
+      try GradientWert:=strtofloat(sl2[sl2.Count-1]); except GradientWert:=0.5; end;
       AusIst:=Aus60;
       EinIst:=Ein60;
     finally
@@ -1021,6 +1036,9 @@ begin
   PStore:=0;
   if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(Port,LPTCode); end; //LPT-Code an LPT-Port ausgeben
   if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
+  Form1.Timer1Timer(Sender);
+  for i:=1 to 60 do Gradientgetter[i]:=Tempfloat;
+  Gradient:=0.0;
 end;
 
 procedure TForm1.Button13Click(Sender: TObject);
@@ -1056,9 +1074,9 @@ begin
       Image2.Picture.LoadFromFile('C:\Brauerei\Graphics\Feuer-aus.jpg');
       Image6.Picture.LoadFromFile('C:\Brauerei\Graphics\Alarm-aus.jpg');
       LPTCode:=Pumpe;
-     if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(Port,LPTCode); end; //LPT-Code an LPT-Port ausgeben
-     if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
-     if checkbox32.Checked=true then
+      if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(Port,LPTCode); end; //LPT-Code an LPT-Port ausgeben
+      if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
+      if checkbox32.Checked=true then
       begin
         LogName:=FormatDateTime('ddmmyyyyhhnnss', now);
         LogTimer.Enabled:=true;
@@ -1696,7 +1714,7 @@ begin
       Form1.TimerHEinTimer(Sender);
     end;
   end
-  else if Deltatemp>0 then
+  else if (Deltatemp>0) and (Gradient<GradientWert) then
   begin
     if CheckBox34.Checked=true then
     begin
@@ -1941,7 +1959,7 @@ procedure TForm1.Button22Click(Sender: TObject);
 begin
   startpunkt:=startpunkt+120;
   endpunkt:=endpunkt+120;
-  if StringGrid1.RowCount-1<endpunkt then begin endpunkt:=StringGrid1.RowCount-1; startpunkt:=endpunkt-719; end;
+  if StringGrid1.RowCount-1<endpunkt then begin endpunkt:=StringGrid1.RowCount-1; if button24.caption='Zoom out' then startpunkt:=endpunkt-359 else startpunkt:=endpunkt-719; end;
   writechart(Form1);
 end;
 
@@ -1949,7 +1967,7 @@ procedure TForm1.Button21Click(Sender: TObject);
 begin
   startpunkt:=startpunkt-120;
   endpunkt:=endpunkt-120;
-  if startpunkt<1 then begin endpunkt:=720; startpunkt:=1; end;
+  if startpunkt<1 then begin if button24.caption='Zoom out' then endpunkt:=360 else endpunkt:=720; startpunkt:=1; end;
   writechart(Form1);
 end;
 
@@ -2064,6 +2082,7 @@ procedure TForm1.Button24Click(Sender: TObject);
 begin
   if Button24.Caption='30min Zoom' then
   begin
+    Button19.Caption:='1h Zoom';
     Button21.Enabled:=true;
     Button22.Enabled:=true;
     Button24.Caption:='Zoom out';

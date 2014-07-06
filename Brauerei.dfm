@@ -700,7 +700,7 @@ object Form1: TForm1
     Top = 8
     Width = 777
     Height = 617
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     TabOrder = 3
     OnChange = PageControl1Change
     object TabSheet1: TTabSheet
@@ -4380,7 +4380,7 @@ object Form1: TForm1
   object Timer1: TTimer
     Enabled = False
     OnTimer = Timer1Timer
-    Left = 864
+    Left = 928
   end
   object SaveDialog1: TSaveDialog
     DefaultExt = 'rzt'
@@ -4452,7 +4452,7 @@ object Form1: TForm1
     Enabled = False
     Interval = 5000
     OnTimer = LogTimerTimer
-    Left = 936
+    Left = 864
   end
   object SimulationTimer: TTimer
     Enabled = False

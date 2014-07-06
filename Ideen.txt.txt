@@ -1,3 +1,9 @@
 - Korrekturen bei 30 min zoom  --> erledigt
 
 - Überschwingungsdämpfer --> erledigt
+
+- 0 Minuten Rast mit Brauruf funktioniert nicht (der Brauruf (Rast1)) --> erledigt
+
+- Rührwerkfehler (600/0) --> erledigt
+
+- Rast funktioniert nicht im ersten Durchgang ( Starttemp wird nicht erkannt ) --> erledigt

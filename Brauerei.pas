@@ -1242,7 +1242,7 @@ begin
     if Rasttemp1=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=strtoint(Edit41.Text)*1000; TimerRAus.Interval:=strtoint(Edit31.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit41.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit31.Text)*1000;
       if CheckBox21.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit1.Text);
     end;
@@ -1260,7 +1260,7 @@ begin
     if Rasttemp2=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=strtoint(Edit42.Text)*1000; TimerRAus.Interval:=strtoint(Edit32.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit42.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit32.Text)*1000;
       if CheckBox22.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit3.Text);
     end;
@@ -1278,7 +1278,7 @@ begin
     if Rasttemp3=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=strtoint(Edit43.Text)*1000; TimerRAus.Interval:=strtoint(Edit33.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit43.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit33.Text)*1000;
       if CheckBox23.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit5.Text);
     end;
@@ -1296,7 +1296,7 @@ begin
     if Rasttemp4=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=strtoint(Edit44.Text)*1000; TimerRAus.Interval:=strtoint(Edit34.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit44.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit34.Text)*1000;
       if CheckBox24.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit7.Text);
     end;
@@ -1314,7 +1314,7 @@ begin
     if Rasttemp5=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=strtoint(Edit45.Text)*1000; TimerRAus.Interval:=strtoint(Edit35.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit45.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit35.Text)*1000;
       if CheckBox25.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit9.Text);
     end;
@@ -1332,7 +1332,7 @@ begin
     if Rasttemp6=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=strtoint(Edit46.Text)*1000; TimerRAus.Interval:=strtoint(Edit36.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit46.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit36.Text)*1000;
       if CheckBox26.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit11.Text);
     end;
@@ -1350,7 +1350,7 @@ begin
     if Rasttemp7=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=strtoint(Edit47.Text)*1000; TimerRAus.Interval:=strtoint(Edit37.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit47.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit37.Text)*1000;
       if CheckBox27.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit13.Text);
     end;
@@ -1368,7 +1368,7 @@ begin
     if Rasttemp8=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=strtoint(Edit48.Text)*1000; TimerRAus.Interval:=strtoint(Edit38.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit48.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit38.Text)*1000;
       if CheckBox28.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit15.Text);
     end;
@@ -1386,7 +1386,7 @@ begin
     if Rasttemp9=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=strtoint(Edit49.Text)*1000; TimerRAus.Interval:=strtoint(Edit39.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit49.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit39.Text)*1000;
       if CheckBox29.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit17.Text);
     end;
@@ -1404,7 +1404,7 @@ begin
     if Rasttemp10=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=strtoint(Edit50.Text)*1000; TimerRAus.Interval:=strtoint(Edit40.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit50.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit40.Text)*1000;
       if CheckBox30.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit19.Text);
     end;
@@ -1725,6 +1725,27 @@ begin
         if TimerHEin.Interval=0 then begin TimerHEin.Interval:=800; TimerHAus.Interval:=1500000; end;
         if TimerHAus.Interval=0 then begin TimerHAus.Interval:=800; TimerHEin.Interval:=1500000; end;
         Form1.TimerHEinTimer(Sender);
+      end;
+    end
+    else
+    begin
+      if TimerHEin.Interval<>900 then
+      begin
+        TimerHEin.Interval:=900;
+        TimerHAus.Interval:=1500000;
+        Form1.TimerHEinTimer(Sender);
+      end;
+    end;
+  end
+  else if (Deltatemp>0) and (Gradient>=GradientWert) then
+  begin
+    if CheckBox34.Checked=true then
+    begin
+      if TimerHEin.Interval<>AusIst*1000 then
+      begin
+        TimerHEin.Interval:=1500000;
+        TimerHAus.Interval:=900;
+        Form1.TimerHAusTimer(Sender);
       end;
     end
     else

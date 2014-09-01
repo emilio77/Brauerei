@@ -700,7 +700,7 @@ object Form1: TForm1
     Top = 8
     Width = 777
     Height = 617
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     TabOrder = 3
     OnChange = PageControl1Change
     object TabSheet1: TTabSheet

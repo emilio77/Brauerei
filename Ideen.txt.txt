@@ -1,3 +1,5 @@
+- Autoupdate aus bei Ende Brauprozess  --> erledigt
+
 - Korrekturen bei 30 min zoom  --> erledigt
 
 - Überschwingungsdämpfer --> erledigt

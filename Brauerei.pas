@@ -1585,7 +1585,14 @@ begin
   Gauge10.Visible:=true;
   Graphic:='C:\Brauerei\Graphics\Automatik-inaktiv.jpg';
   Image5.Picture.LoadFromFile(Graphic);
-  if stop=false then begin MessageDlg('Brauvorgang wurde beendet ' + #13 + '- mit OK fortsetzen!', mtInformation, [mbOK], 0); LogTimer.Enabled:=false; if checkbox32.Checked=true then CloseFile(myLogFile) end;
+  if stop=false then
+  begin
+    MessageDlg('Brauvorgang wurde beendet ' + #13 + '- mit OK fortsetzen!', mtInformation, [mbOK], 0);
+    LogTimer.Enabled:=false;
+    LogUpdateTimer.Enabled:=false;
+    Button23.Caption:='AutoUpdate Ein';
+    if checkbox32.Checked=true then CloseFile(myLogFile);
+  end;
   stop:=true;
   pause:=false;
   start:=false;

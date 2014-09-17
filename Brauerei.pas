@@ -5,7 +5,8 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Gauges, StdCtrls, Menus, ExtCtrls, jpeg, TeeProcs, TeEngine,
-  Chart, DbChart, ComCtrls, Grids, Series, OleCtrls, SHDocVw, ShellApi;
+  Chart, DbChart, ComCtrls, Grids, Series, OleCtrls, SHDocVw, ShellApi,
+  Printers;
 
 type
   TForm1 = class(TForm)
@@ -248,6 +249,8 @@ type
     Label61: TLabel;
     CheckBox33: TCheckBox;
     Ueberwachungstimer: TTimer;
+    PrintDialog1: TPrintDialog;
+    Button25: TButton;
     procedure Button7Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
@@ -332,6 +335,7 @@ type
     procedure Button24Click(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure UeberwachungstimerTimer(Sender: TObject);
+    procedure Button25Click(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -2161,6 +2165,73 @@ begin
     end;
     TimeTempStore:=TimeTempStr;
   end;
+end;
+
+
+
+procedure TForm1.Button25Click(Sender: TObject);
+var
+RPage, RChart: TRect;
+ResX, ResY, Y: Integer;
+begin
+if PrintDialog1.execute then
+begin
+Printer.Orientation := poPortrait;
+printer.BeginDoc;
+try
+printer.canvas.font.Name := 'Arial';
+// get physical page dimensions
+RPage := Rect( 0,0,GetDeviceCaps(Printer.handle, PHYSICALWIDTH),GetDeviceCaps(Printer.handle, PHYSICALHEIGHT));
+// get printer resolution, in dots per inch
+ResX := GetDeviceCaps(Printer.handle, LOGPIXELSX);
+ResY := GetDeviceCaps(Printer.handle, LOGPIXELSY);
+// Apply some margins
+RPage.Left := ResX div 2; // left margin 0,5 inch
+RPage.Right := RPage.Right - ResX div 2; // right margin 0.5 inch
+RPage.Top := ResX div 2; // top margin 0,5 inch
+RPage.Bottom := RPage.Bottom - ResY div 2; // bottom margin 0,5 inch
+// move to origin of printer coordinate system, which is the top left
+// corner of the printable area, not of the physical page
+OffsetRect(Rpage, GetDeviceCaps(Printer.handle, PHYSICALOFFSETY),GetDeviceCaps(Printer.handle, PHYSICALOFFSETY));
+// print a title for the page
+printer.canvas.font.Size := 18;
+printer.canvas.font.Style := [fsBold,fsUnderline];
+Y:= RPage.Top;
+printer.canvas.TextOut(RPage.Left+ResX div 4, Y, 'Dokumentation des Brauvorgangs vom '+StringGrid1.Cells[0,startpunkt]);
+Y:= Y + printer.canvas.TextHeight('Üy') +ResX div 4;
+// print the chart, assuming ResX = ResY here for simplicities sake
+// set up a rect that places the chart on the left half of the
+// page, with some gutter space between left and right half.
+// Hight of rect is calculated to preserve the aspect ratio of the
+// chart.
+RChart := Rect(RPage.Left, Y,(RPage.Right-RPage.Left-60) + RPage.Left, Y);
+RChart.Bottom := RChart.Top + Round( Chart1.Height / Chart1.Width * (RChart.Right-RChart.Left));
+Chart1.PrintPartialCanvas(Printer.canvas, RChart);
+// print second chart
+RChart.Top := RChart.Bottom + ResX div 10;
+RChart.Bottom := RChart.Top + Round( Chart2.Height / Chart2.Width * (RChart.Right-RChart.Left));
+Chart2.PrintPartialCanvas(Printer.canvas, RChart);
+// print third chart
+RChart.Top := RChart.Bottom + ResX div 10;
+RChart.Bottom := RChart.Top + Round( Chart3.Height / Chart3.Width * (RChart.Right-RChart.Left));
+Chart3.PrintPartialCanvas(Printer.canvas, RChart);
+// print fourth chart
+RChart.Top := RChart.Bottom + ResX div 10;
+RChart.Bottom := RChart.Top + Round( Chart4.Height / Chart4.Width * (RChart.Right-RChart.Left));
+Chart4.PrintPartialCanvas(Printer.canvas, RChart);
+// print fifth chart
+RChart.Top := RChart.Bottom + ResX div 10;
+RChart.Bottom := RChart.Top + Round( Chart5.Height / Chart5.Width * (RChart.Right-RChart.Left));
+Chart5.PrintPartialCanvas(Printer.canvas, RChart);
+// place a one line description below the chart
+printer.canvas.font.Size := 10;
+printer.canvas.font.Style := [];
+Y:= RChart.Bottom + ResY div 5;
+printer.canvas.TextOut(RChart.Left+ResX div 4, Y, 'Aufzeichnung vom '+StringGrid1.Cells[0,startpunkt]+', '+StringGrid1.Cells[1,startpunkt]+' bis '+StringGrid1.Cells[0,endpunkt-1]+', '+StringGrid1.Cells[1,endpunkt-1]);
+finally
+Printer.EndDoc;
+end;
+end;
 end;
 
 end.

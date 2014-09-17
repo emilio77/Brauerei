@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 318
-  Top = 46
+  Left = 290
+  Top = 191
   BorderStyle = bsSingle
   Caption = 'Brauerei V01.00'
   ClientHeight = 632
@@ -3860,7 +3860,7 @@ object Form1: TForm1
       object Button16: TButton
         Left = 8
         Top = 548
-        Width = 129
+        Width = 113
         Height = 33
         Caption = 'Log-Datei Laden'
         TabOrder = 0
@@ -4016,8 +4016,8 @@ object Form1: TForm1
         end
       end
       object StringGrid1: TStringGrid
-        Left = 152
-        Top = 512
+        Left = -120
+        Top = 176
         Width = 609
         Height = 73
         ColCount = 8
@@ -4220,9 +4220,9 @@ object Form1: TForm1
         end
       end
       object Button18: TButton
-        Left = 176
+        Left = 266
         Top = 548
-        Width = 129
+        Width = 105
         Height = 33
         Caption = 'Aktualisieren'
         Enabled = False
@@ -4230,9 +4230,9 @@ object Form1: TForm1
         OnClick = Button18Click
       end
       object Button19: TButton
-        Left = 472
+        Left = 504
         Top = 548
-        Width = 97
+        Width = 81
         Height = 33
         Caption = '1h Zoom'
         TabOrder = 8
@@ -4259,9 +4259,9 @@ object Form1: TForm1
         OnClick = Button22Click
       end
       object Button23: TButton
-        Left = 313
+        Left = 379
         Top = 548
-        Width = 120
+        Width = 105
         Height = 33
         Caption = 'AutoUpdate Ein'
         Enabled = False
@@ -4269,13 +4269,22 @@ object Form1: TForm1
         OnClick = Button23Click
       end
       object Button24: TButton
-        Left = 576
+        Left = 592
         Top = 548
-        Width = 97
+        Width = 81
         Height = 33
         Caption = '30min Zoom'
         TabOrder = 12
         OnClick = Button24Click
+      end
+      object Button25: TButton
+        Left = 131
+        Top = 548
+        Width = 113
+        Height = 33
+        Caption = 'Log drucken'
+        TabOrder = 13
+        OnClick = Button25Click
       end
     end
     object TabSheet3: TTabSheet
@@ -4473,5 +4482,8 @@ object Form1: TForm1
     OnTimer = UeberwachungstimerTimer
     Left = 756
     Top = 512
+  end
+  object PrintDialog1: TPrintDialog
+    Left = 832
   end
 end

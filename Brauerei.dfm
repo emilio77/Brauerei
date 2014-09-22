@@ -700,8 +700,8 @@ object Form1: TForm1
     Top = 8
     Width = 777
     Height = 617
-    ActivePage = TabSheet2
-    TabOrder = 3
+    ActivePage = TabSheet1
+    TabOrder = 0
     OnChange = PageControl1Change
     object TabSheet1: TTabSheet
       Caption = 'Brauprozess'
@@ -1214,6 +1214,7 @@ object Form1: TForm1
           Top = 9
           Width = 41
           Height = 21
+          TabStop = False
           ReadOnly = True
           TabOrder = 0
           Text = '90'
@@ -2998,7 +2999,7 @@ object Form1: TForm1
         Top = 200
         Width = 41
         Height = 21
-        TabOrder = 1
+        TabOrder = 17
         Text = '20'
         OnExit = Edit1Exit
       end
@@ -3008,14 +3009,14 @@ object Form1: TForm1
         Width = 57
         Height = 25
         Caption = 'Rast 1'
-        TabOrder = 2
+        TabOrder = 16
       end
       object Edit2: TEdit
         Left = 168
         Top = 200
         Width = 41
         Height = 21
-        TabOrder = 3
+        TabOrder = 18
         Text = '60'
         OnExit = Edit2Exit
       end
@@ -3024,7 +3025,7 @@ object Form1: TForm1
         Top = 232
         Width = 41
         Height = 21
-        TabOrder = 4
+        TabOrder = 24
         Text = '20'
         OnExit = Edit3Exit
       end
@@ -3034,14 +3035,14 @@ object Form1: TForm1
         Width = 57
         Height = 25
         Caption = 'Rast 2'
-        TabOrder = 5
+        TabOrder = 23
       end
       object Edit4: TEdit
         Left = 168
         Top = 232
         Width = 41
         Height = 21
-        TabOrder = 6
+        TabOrder = 25
         Text = '60'
         OnExit = Edit4Exit
       end
@@ -3050,7 +3051,7 @@ object Form1: TForm1
         Top = 264
         Width = 41
         Height = 21
-        TabOrder = 7
+        TabOrder = 31
         Text = '20'
         OnExit = Edit5Exit
       end
@@ -3060,14 +3061,14 @@ object Form1: TForm1
         Width = 57
         Height = 25
         Caption = 'Rast 3'
-        TabOrder = 8
+        TabOrder = 30
       end
       object Edit6: TEdit
         Left = 168
         Top = 264
         Width = 41
         Height = 21
-        TabOrder = 9
+        TabOrder = 32
         Text = '60'
         OnExit = Edit6Exit
       end
@@ -3076,7 +3077,7 @@ object Form1: TForm1
         Top = 296
         Width = 41
         Height = 21
-        TabOrder = 10
+        TabOrder = 38
         Text = '20'
         OnExit = Edit7Exit
       end
@@ -3086,14 +3087,14 @@ object Form1: TForm1
         Width = 57
         Height = 25
         Caption = 'Rast 4'
-        TabOrder = 11
+        TabOrder = 37
       end
       object Edit8: TEdit
         Left = 168
         Top = 296
         Width = 41
         Height = 21
-        TabOrder = 12
+        TabOrder = 39
         Text = '60'
         OnExit = Edit8Exit
       end
@@ -3102,7 +3103,7 @@ object Form1: TForm1
         Top = 328
         Width = 41
         Height = 21
-        TabOrder = 13
+        TabOrder = 45
         Text = '20'
         OnExit = Edit9Exit
       end
@@ -3112,14 +3113,14 @@ object Form1: TForm1
         Width = 57
         Height = 25
         Caption = 'Rast 5'
-        TabOrder = 14
+        TabOrder = 44
       end
       object Edit10: TEdit
         Left = 168
         Top = 328
         Width = 41
         Height = 21
-        TabOrder = 15
+        TabOrder = 46
         Text = '60'
         OnExit = Edit10Exit
       end
@@ -3128,7 +3129,7 @@ object Form1: TForm1
         Top = 360
         Width = 41
         Height = 21
-        TabOrder = 16
+        TabOrder = 52
         Text = '20'
         OnExit = Edit11Exit
       end
@@ -3138,14 +3139,14 @@ object Form1: TForm1
         Width = 57
         Height = 25
         Caption = 'Rast 6'
-        TabOrder = 17
+        TabOrder = 51
       end
       object Edit12: TEdit
         Left = 168
         Top = 360
         Width = 41
         Height = 21
-        TabOrder = 18
+        TabOrder = 53
         Text = '60'
         OnExit = Edit12Exit
       end
@@ -3154,7 +3155,7 @@ object Form1: TForm1
         Top = 392
         Width = 41
         Height = 21
-        TabOrder = 19
+        TabOrder = 59
         Text = '20'
         OnExit = Edit13Exit
       end
@@ -3164,14 +3165,14 @@ object Form1: TForm1
         Width = 57
         Height = 25
         Caption = 'Rast 7'
-        TabOrder = 20
+        TabOrder = 58
       end
       object Edit14: TEdit
         Left = 168
         Top = 392
         Width = 41
         Height = 21
-        TabOrder = 21
+        TabOrder = 60
         Text = '60'
         OnExit = Edit14Exit
       end
@@ -3180,49 +3181,49 @@ object Form1: TForm1
         Top = 200
         Width = 25
         Height = 25
-        TabOrder = 22
+        TabOrder = 19
       end
       object CheckBox12: TCheckBox
         Left = 264
         Top = 232
         Width = 25
         Height = 25
-        TabOrder = 23
+        TabOrder = 26
       end
       object CheckBox13: TCheckBox
         Left = 264
         Top = 264
         Width = 25
         Height = 25
-        TabOrder = 24
+        TabOrder = 33
       end
       object CheckBox14: TCheckBox
         Left = 264
         Top = 296
         Width = 25
         Height = 25
-        TabOrder = 25
+        TabOrder = 40
       end
       object CheckBox15: TCheckBox
         Left = 264
         Top = 328
         Width = 25
         Height = 25
-        TabOrder = 26
+        TabOrder = 47
       end
       object CheckBox16: TCheckBox
         Left = 264
         Top = 360
         Width = 25
         Height = 25
-        TabOrder = 27
+        TabOrder = 54
       end
       object CheckBox17: TCheckBox
         Left = 264
         Top = 392
         Width = 25
         Height = 25
-        TabOrder = 28
+        TabOrder = 61
       end
       object Edit21: TEdit
         Left = 664
@@ -3231,7 +3232,7 @@ object Form1: TForm1
         Height = 21
         TabStop = False
         ReadOnly = True
-        TabOrder = 29
+        TabOrder = 99
         Text = '60'
       end
       object Edit22: TEdit
@@ -3241,7 +3242,7 @@ object Form1: TForm1
         Height = 21
         TabStop = False
         ReadOnly = True
-        TabOrder = 30
+        TabOrder = 100
         Text = '60'
       end
       object Edit23: TEdit
@@ -3251,7 +3252,7 @@ object Form1: TForm1
         Height = 21
         TabStop = False
         ReadOnly = True
-        TabOrder = 31
+        TabOrder = 90
         Text = '60'
       end
       object Edit24: TEdit
@@ -3261,7 +3262,7 @@ object Form1: TForm1
         Height = 21
         TabStop = False
         ReadOnly = True
-        TabOrder = 32
+        TabOrder = 91
         Text = '60'
       end
       object Edit25: TEdit
@@ -3271,7 +3272,7 @@ object Form1: TForm1
         Height = 21
         TabStop = False
         ReadOnly = True
-        TabOrder = 33
+        TabOrder = 92
         Text = '60'
       end
       object Edit26: TEdit
@@ -3281,7 +3282,7 @@ object Form1: TForm1
         Height = 21
         TabStop = False
         ReadOnly = True
-        TabOrder = 34
+        TabOrder = 93
         Text = '60'
       end
       object Edit27: TEdit
@@ -3291,7 +3292,7 @@ object Form1: TForm1
         Height = 21
         TabStop = False
         ReadOnly = True
-        TabOrder = 35
+        TabOrder = 94
         Text = '60'
       end
       object Button1: TButton
@@ -3300,7 +3301,7 @@ object Form1: TForm1
         Width = 73
         Height = 33
         Caption = 'Start'
-        TabOrder = 36
+        TabOrder = 4
         OnClick = Button1Click
       end
       object Button2: TButton
@@ -3309,7 +3310,7 @@ object Form1: TForm1
         Width = 73
         Height = 33
         Caption = 'Pause'
-        TabOrder = 37
+        TabOrder = 5
         OnClick = Button2Click
       end
       object Button3: TButton
@@ -3318,7 +3319,7 @@ object Form1: TForm1
         Width = 73
         Height = 33
         Caption = 'Stop'
-        TabOrder = 38
+        TabOrder = 6
         OnClick = Button3Click
       end
       object Button4: TButton
@@ -3327,7 +3328,7 @@ object Form1: TForm1
         Width = 33
         Height = 33
         Caption = '<<'
-        TabOrder = 39
+        TabOrder = 7
         OnClick = Button4Click
       end
       object Button5: TButton
@@ -3336,7 +3337,7 @@ object Form1: TForm1
         Width = 33
         Height = 33
         Caption = '>>'
-        TabOrder = 40
+        TabOrder = 8
         OnClick = Button5Click
       end
       object CheckBox21: TCheckBox
@@ -3344,56 +3345,56 @@ object Form1: TForm1
         Top = 200
         Width = 25
         Height = 25
-        TabOrder = 41
+        TabOrder = 20
       end
       object CheckBox22: TCheckBox
         Left = 320
         Top = 232
         Width = 25
         Height = 25
-        TabOrder = 42
+        TabOrder = 27
       end
       object CheckBox23: TCheckBox
         Left = 320
         Top = 264
         Width = 25
         Height = 25
-        TabOrder = 43
+        TabOrder = 34
       end
       object CheckBox24: TCheckBox
         Left = 320
         Top = 296
         Width = 25
         Height = 25
-        TabOrder = 44
+        TabOrder = 41
       end
       object CheckBox25: TCheckBox
         Left = 320
         Top = 328
         Width = 25
         Height = 25
-        TabOrder = 45
+        TabOrder = 48
       end
       object CheckBox26: TCheckBox
         Left = 320
         Top = 360
         Width = 25
         Height = 25
-        TabOrder = 46
+        TabOrder = 55
       end
       object CheckBox27: TCheckBox
         Left = 320
         Top = 392
         Width = 25
         Height = 25
-        TabOrder = 47
+        TabOrder = 62
       end
       object Edit31: TEdit
         Left = 344
         Top = 200
         Width = 41
         Height = 21
-        TabOrder = 48
+        TabOrder = 21
         Text = '60'
         OnExit = Edit31Exit
       end
@@ -3402,7 +3403,7 @@ object Form1: TForm1
         Top = 232
         Width = 41
         Height = 21
-        TabOrder = 49
+        TabOrder = 28
         Text = '60'
         OnExit = Edit32Exit
       end
@@ -3411,7 +3412,7 @@ object Form1: TForm1
         Top = 264
         Width = 41
         Height = 21
-        TabOrder = 50
+        TabOrder = 35
         Text = '60'
         OnExit = Edit33Exit
       end
@@ -3420,7 +3421,7 @@ object Form1: TForm1
         Top = 296
         Width = 41
         Height = 21
-        TabOrder = 51
+        TabOrder = 42
         Text = '60'
         OnExit = Edit34Exit
       end
@@ -3429,7 +3430,7 @@ object Form1: TForm1
         Top = 328
         Width = 41
         Height = 21
-        TabOrder = 52
+        TabOrder = 49
         Text = '60'
         OnExit = Edit35Exit
       end
@@ -3438,7 +3439,7 @@ object Form1: TForm1
         Top = 360
         Width = 41
         Height = 21
-        TabOrder = 53
+        TabOrder = 56
         Text = '60'
         OnExit = Edit36Exit
       end
@@ -3447,7 +3448,7 @@ object Form1: TForm1
         Top = 392
         Width = 41
         Height = 21
-        TabOrder = 54
+        TabOrder = 63
         Text = '60'
         OnExit = Edit37Exit
       end
@@ -3456,7 +3457,7 @@ object Form1: TForm1
         Top = 200
         Width = 41
         Height = 21
-        TabOrder = 55
+        TabOrder = 22
         Text = '60'
         OnExit = Edit41Exit
       end
@@ -3465,7 +3466,7 @@ object Form1: TForm1
         Top = 232
         Width = 41
         Height = 21
-        TabOrder = 56
+        TabOrder = 29
         Text = '60'
         OnExit = Edit42Exit
       end
@@ -3474,7 +3475,7 @@ object Form1: TForm1
         Top = 264
         Width = 41
         Height = 21
-        TabOrder = 57
+        TabOrder = 36
         Text = '60'
         OnExit = Edit43Exit
       end
@@ -3483,7 +3484,7 @@ object Form1: TForm1
         Top = 296
         Width = 41
         Height = 21
-        TabOrder = 58
+        TabOrder = 43
         Text = '60'
         OnExit = Edit44Exit
       end
@@ -3492,7 +3493,7 @@ object Form1: TForm1
         Top = 328
         Width = 41
         Height = 21
-        TabOrder = 59
+        TabOrder = 50
         Text = '60'
         OnExit = Edit45Exit
       end
@@ -3501,7 +3502,7 @@ object Form1: TForm1
         Top = 360
         Width = 41
         Height = 21
-        TabOrder = 60
+        TabOrder = 57
         Text = '60'
         OnExit = Edit46Exit
       end
@@ -3510,27 +3511,27 @@ object Form1: TForm1
         Top = 392
         Width = 41
         Height = 21
-        TabOrder = 61
+        TabOrder = 64
         Text = '60'
         OnExit = Edit47Exit
       end
       object Button8: TButton
         Left = 512
-        Top = 248
+        Top = 240
         Width = 193
         Height = 33
         Caption = 'R'#252'hrwerk Ein'
-        TabOrder = 62
+        TabOrder = 12
         Visible = False
         OnClick = Button8Click
       end
       object Button9: TButton
         Left = 512
-        Top = 200
+        Top = 184
         Width = 193
         Height = 33
         Caption = 'Heizung Ein'
-        TabOrder = 63
+        TabOrder = 11
         Visible = False
         OnClick = Button9Click
       end
@@ -3540,7 +3541,7 @@ object Form1: TForm1
         Width = 193
         Height = 33
         Caption = 'Pumpe Ein'
-        TabOrder = 64
+        TabOrder = 13
         Visible = False
         OnClick = Button10Click
       end
@@ -3550,7 +3551,7 @@ object Form1: TForm1
         Width = 49
         Height = 33
         Caption = '+1min.'
-        TabOrder = 66
+        TabOrder = 9
         OnClick = Button14Click
       end
       object Button15: TButton
@@ -3559,7 +3560,7 @@ object Form1: TForm1
         Width = 49
         Height = 33
         Caption = '-1min.'
-        TabOrder = 67
+        TabOrder = 10
         OnClick = Button15Click
       end
       object CheckBox31: TCheckBox
@@ -3570,7 +3571,7 @@ object Form1: TForm1
         Caption = 'Alarm gepulst'
         Checked = True
         State = cbChecked
-        TabOrder = 68
+        TabOrder = 1
         OnClick = CheckBox31Click
       end
       object Edit15: TEdit
@@ -3578,7 +3579,7 @@ object Form1: TForm1
         Top = 424
         Width = 41
         Height = 21
-        TabOrder = 69
+        TabOrder = 66
         Text = '20'
         OnExit = Edit15Exit
       end
@@ -3588,14 +3589,14 @@ object Form1: TForm1
         Width = 57
         Height = 25
         Caption = 'Rast 8'
-        TabOrder = 70
+        TabOrder = 65
       end
       object Edit16: TEdit
         Left = 168
         Top = 424
         Width = 41
         Height = 21
-        TabOrder = 71
+        TabOrder = 67
         Text = '60'
         OnExit = Edit16Exit
       end
@@ -3604,7 +3605,7 @@ object Form1: TForm1
         Top = 456
         Width = 41
         Height = 21
-        TabOrder = 72
+        TabOrder = 73
         Text = '20'
         OnExit = Edit17Exit
       end
@@ -3614,7 +3615,7 @@ object Form1: TForm1
         Width = 57
         Height = 25
         Caption = 'Rast 9'
-        TabOrder = 73
+        TabOrder = 72
       end
       object Edit18: TEdit
         Left = 168
@@ -3630,7 +3631,7 @@ object Form1: TForm1
         Top = 488
         Width = 41
         Height = 21
-        TabOrder = 75
+        TabOrder = 80
         Text = '20'
         OnExit = Edit19Exit
       end
@@ -3640,14 +3641,14 @@ object Form1: TForm1
         Width = 65
         Height = 25
         Caption = 'Rast 10'
-        TabOrder = 76
+        TabOrder = 79
       end
       object Edit20: TEdit
         Left = 168
         Top = 488
         Width = 41
         Height = 21
-        TabOrder = 77
+        TabOrder = 81
         Text = '60'
         OnExit = Edit20Exit
       end
@@ -3656,35 +3657,35 @@ object Form1: TForm1
         Top = 424
         Width = 25
         Height = 25
-        TabOrder = 78
+        TabOrder = 68
       end
       object CheckBox19: TCheckBox
         Left = 264
         Top = 456
         Width = 25
         Height = 25
-        TabOrder = 79
+        TabOrder = 75
       end
       object CheckBox20: TCheckBox
         Left = 264
         Top = 484
         Width = 25
         Height = 25
-        TabOrder = 80
+        TabOrder = 82
       end
       object CheckBox28: TCheckBox
         Left = 320
         Top = 424
         Width = 25
         Height = 25
-        TabOrder = 81
+        TabOrder = 69
       end
       object CheckBox29: TCheckBox
         Left = 320
         Top = 456
         Width = 25
         Height = 25
-        TabOrder = 82
+        TabOrder = 76
       end
       object CheckBox30: TCheckBox
         Left = 320
@@ -3698,7 +3699,7 @@ object Form1: TForm1
         Top = 424
         Width = 41
         Height = 21
-        TabOrder = 84
+        TabOrder = 70
         Text = '60'
         OnExit = Edit38Exit
       end
@@ -3707,7 +3708,7 @@ object Form1: TForm1
         Top = 456
         Width = 41
         Height = 21
-        TabOrder = 85
+        TabOrder = 77
         Text = '60'
         OnExit = Edit39Exit
       end
@@ -3716,7 +3717,7 @@ object Form1: TForm1
         Top = 488
         Width = 41
         Height = 21
-        TabOrder = 86
+        TabOrder = 84
         Text = '60'
         OnExit = Edit40Exit
       end
@@ -3736,7 +3737,7 @@ object Form1: TForm1
         Width = 105
         Height = 33
         Caption = 'Manuell'
-        TabOrder = 88
+        TabOrder = 86
         OnClick = Button7Click
       end
       object Button12: TButton
@@ -3745,7 +3746,7 @@ object Form1: TForm1
         Width = 105
         Height = 33
         Caption = 'Laden'
-        TabOrder = 89
+        TabOrder = 88
         OnClick = Button12Click
       end
       object Button13: TButton
@@ -3754,7 +3755,7 @@ object Form1: TForm1
         Width = 105
         Height = 33
         Caption = 'Speichern'
-        TabOrder = 90
+        TabOrder = 89
         OnClick = Button13Click
       end
       object Edit28: TEdit
@@ -3764,7 +3765,7 @@ object Form1: TForm1
         Height = 21
         TabStop = False
         ReadOnly = True
-        TabOrder = 91
+        TabOrder = 95
         Text = '60'
       end
       object Edit29: TEdit
@@ -3774,7 +3775,7 @@ object Form1: TForm1
         Height = 21
         TabStop = False
         ReadOnly = True
-        TabOrder = 92
+        TabOrder = 96
         Text = '60'
       end
       object Edit30: TEdit
@@ -3784,7 +3785,7 @@ object Form1: TForm1
         Height = 21
         TabStop = False
         ReadOnly = True
-        TabOrder = 93
+        TabOrder = 97
         Text = '60'
       end
       object Edit48: TEdit
@@ -3792,7 +3793,7 @@ object Form1: TForm1
         Top = 424
         Width = 41
         Height = 21
-        TabOrder = 94
+        TabOrder = 71
         Text = '60'
         OnExit = Edit48Exit
       end
@@ -3801,7 +3802,7 @@ object Form1: TForm1
         Top = 456
         Width = 41
         Height = 21
-        TabOrder = 95
+        TabOrder = 78
         Text = '60'
         OnExit = Edit49Exit
       end
@@ -3810,7 +3811,7 @@ object Form1: TForm1
         Top = 488
         Width = 41
         Height = 21
-        TabOrder = 96
+        TabOrder = 85
         Text = '60'
         OnExit = Edit50Exit
       end
@@ -3822,7 +3823,7 @@ object Form1: TForm1
         Caption = 'Log schreiben'
         Checked = True
         State = cbChecked
-        TabOrder = 97
+        TabOrder = 2
       end
       object Button11: TButton
         Left = 512
@@ -3830,7 +3831,7 @@ object Form1: TForm1
         Width = 193
         Height = 33
         Caption = 'Alarm Ein'
-        TabOrder = 65
+        TabOrder = 14
         Visible = False
         OnClick = Button11Click
       end
@@ -3840,7 +3841,7 @@ object Form1: TForm1
         Width = 145
         Height = 33
         Caption = 'Settings speichern'
-        TabOrder = 99
+        TabOrder = 3
         OnClick = Button17Click
       end
       object Button20: TButton
@@ -3849,7 +3850,7 @@ object Form1: TForm1
         Width = 193
         Height = 33
         Caption = 'Simulation Ein'
-        TabOrder = 100
+        TabOrder = 15
         Visible = False
         OnClick = Button20Click
       end
@@ -3892,7 +3893,7 @@ object Form1: TForm1
         RightAxis.Visible = False
         TopAxis.Visible = False
         View3D = False
-        TabOrder = 1
+        TabOrder = 8
         object Label61: TLabel
           Left = 680
           Top = 208
@@ -4016,14 +4017,14 @@ object Form1: TForm1
         end
       end
       object StringGrid1: TStringGrid
-        Left = -120
-        Top = 176
+        Left = 48
+        Top = 288
         Width = 609
         Height = 73
         ColCount = 8
         FixedCols = 0
         FixedRows = 0
-        TabOrder = 2
+        TabOrder = 9
         Visible = False
       end
       object Chart2: TChart
@@ -4053,7 +4054,7 @@ object Form1: TForm1
         TopAxis.Visible = False
         View3D = False
         BevelWidth = 3
-        TabOrder = 3
+        TabOrder = 10
         object Series3: TAreaSeries
           Marks.ArrowLength = 8
           Marks.Visible = False
@@ -4101,7 +4102,7 @@ object Form1: TForm1
         TopAxis.Visible = False
         View3D = False
         BevelWidth = 3
-        TabOrder = 4
+        TabOrder = 11
         object Series4: TAreaSeries
           Marks.ArrowLength = 8
           Marks.Visible = False
@@ -4149,7 +4150,7 @@ object Form1: TForm1
         TopAxis.Visible = False
         View3D = False
         BevelWidth = 3
-        TabOrder = 5
+        TabOrder = 12
         object Series5: TAreaSeries
           Marks.ArrowLength = 8
           Marks.Visible = False
@@ -4198,7 +4199,7 @@ object Form1: TForm1
         TopAxis.Visible = False
         View3D = False
         BevelWidth = 3
-        TabOrder = 6
+        TabOrder = 13
         object Series6: TAreaSeries
           Marks.ArrowLength = 8
           Marks.Visible = False
@@ -4226,7 +4227,7 @@ object Form1: TForm1
         Height = 33
         Caption = 'Aktualisieren'
         Enabled = False
-        TabOrder = 7
+        TabOrder = 2
         OnClick = Button18Click
       end
       object Button19: TButton
@@ -4235,7 +4236,7 @@ object Form1: TForm1
         Width = 81
         Height = 33
         Caption = '1h Zoom'
-        TabOrder = 8
+        TabOrder = 4
         OnClick = Button19Click
       end
       object Button21: TButton
@@ -4245,7 +4246,7 @@ object Form1: TForm1
         Height = 33
         Caption = '<'
         Enabled = False
-        TabOrder = 9
+        TabOrder = 6
         OnClick = Button21Click
       end
       object Button22: TButton
@@ -4255,7 +4256,7 @@ object Form1: TForm1
         Height = 33
         Caption = '>'
         Enabled = False
-        TabOrder = 10
+        TabOrder = 7
         OnClick = Button22Click
       end
       object Button23: TButton
@@ -4265,7 +4266,7 @@ object Form1: TForm1
         Height = 33
         Caption = 'AutoUpdate Ein'
         Enabled = False
-        TabOrder = 11
+        TabOrder = 3
         OnClick = Button23Click
       end
       object Button24: TButton
@@ -4274,7 +4275,7 @@ object Form1: TForm1
         Width = 81
         Height = 33
         Caption = '30min Zoom'
-        TabOrder = 12
+        TabOrder = 5
         OnClick = Button24Click
       end
       object Button25: TButton
@@ -4283,7 +4284,7 @@ object Form1: TForm1
         Width = 113
         Height = 33
         Caption = 'Log drucken'
-        TabOrder = 13
+        TabOrder = 1
         OnClick = Button25Click
       end
     end
@@ -4319,7 +4320,7 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 0
+    TabOrder = 1
     object Label63: TLabel
       Left = 3
       Top = 3
@@ -4344,7 +4345,7 @@ object Form1: TForm1
     BiDiMode = bdLeftToRight
     ParentBiDiMode = False
     ReadOnly = True
-    TabOrder = 1
+    TabOrder = 2
     Text = '0'
   end
   object Edit52: TEdit
@@ -4356,7 +4357,7 @@ object Form1: TForm1
     BiDiMode = bdLeftToRight
     ParentBiDiMode = False
     ReadOnly = True
-    TabOrder = 2
+    TabOrder = 3
     Text = '0'
   end
   object Panel4: TPanel

@@ -357,8 +357,10 @@ var
   pause,start,stop,AlarmEin,Rasttemp1,Rasttemp2,Rasttemp3,Rasttemp4,Rasttemp5,
   Rasttemp6,Rasttemp7,Rasttemp8,Rasttemp9,Rasttemp10,Rastnull1,Rastnull2,
   Rastnull3,Rastnull4,Rastnull5,Rastnull6,Rastnull7,Rastnull8,Rastnull9,
-  Rastnull10,Rastende: boolean;
+  Rastnull10,Rastende,PauseLogTimerHEin,PauseLogTimerHAus,PauseLogTimerHSet,
+  PauseLogTimerREin,PauseLogTimerRAus: boolean;
   Gradientgetter: Array[1..60] of Extended;
+
 
 implementation
 
@@ -1074,6 +1076,11 @@ begin
   begin
     if pause=false then
     begin
+      PauseLogTimerHEin:=false;
+      PauseLogTimerHAus:=false;
+      PauseLogTimerHSet:=false;
+      PauseLogTimerREin:=false;
+      PauseLogTimerRAus:=false;
       Image3.Picture.LoadFromFile('C:\Brauerei\Graphics\Ruehrwerk-aus.jpg');
       Image2.Picture.LoadFromFile('C:\Brauerei\Graphics\Feuer-aus.jpg');
       Image6.Picture.LoadFromFile('C:\Brauerei\Graphics\Alarm-aus.jpg');
@@ -1140,7 +1147,15 @@ begin
       Rasttemp10:=false;
       Rastende:=false;
     end
-    else zeit3:=zeit3-zeitpause+GetTickCount;
+    else
+    begin
+      zeit3:=zeit3-zeitpause+GetTickCount;
+      if PauseLogTimerHEin=true then begin PauseLogTimerHEin:=false; TimerHEin.Enabled:=true; end;
+      if PauseLogTimerHAus=true then begin PauseLogTimerHAus:=false; TimerHAus.Enabled:=true; end;
+      if PauseLogTimerHSet=true then begin PauseLogTimerHSet:=false; TimerHSet.Enabled:=true; end;
+      if PauseLogTimerREin=true then begin PauseLogTimerREin:=false; Form1.TimerREinTimer(Sender); end;
+      if PauseLogTimerRAus=true then begin PauseLogTimerRAus:=false; Form1.TimerRAusTimer(Sender); end;
+    end;
     zeit:=strtoint(Edit21.Text)+strtoint(Edit22.Text)+strtoint(Edit23.Text)+strtoint(Edit24.Text)+strtoint(Edit25.Text)+strtoint(Edit26.Text)+strtoint(Edit27.Text)+strtoint(Edit28.Text)+strtoint(Edit29.Text)+strtoint(Edit30.Text);
     if zeit<>0 then
     begin
@@ -1606,6 +1621,13 @@ procedure TForm1.Button2Click(Sender: TObject);
 begin
   if start=true then
   begin
+    Form1.TimerHAusTimer(Sender);
+    Form1.TimerRAusTimer(Sender);
+    if TimerHEin.Enabled=true then begin PauseLogTimerHEin:=true; TimerHEin.Enabled:=false; end;
+    if TimerHAus.Enabled=true then begin PauseLogTimerHAus:=true; TimerHAus.Enabled:=false; end;
+    if TimerHSet.Enabled=true then begin PauseLogTimerHSet:=true; TimerHSet.Enabled:=false; end;
+    if TimerREin.Enabled=true then begin PauseLogTimerREin:=true; TimerREin.Enabled:=false; end;
+    if TimerRAus.Enabled=true then begin PauseLogTimerRAus:=true; TimerRAus.Enabled:=false; end;
     zeitpause:=GetTickCount;
     Timer2.Enabled:=false;
     stop:=false;

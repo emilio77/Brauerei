@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 290
   Top = 191
   BorderStyle = bsSingle
-  Caption = 'Brauerei V01.00'
+  Caption = 'Brauerei V01.10'
   ClientHeight = 632
   ClientWidth = 977
   Color = clBtnFace
@@ -3827,7 +3827,7 @@ object Form1: TForm1
       end
       object Button11: TButton
         Left = 512
-        Top = 344
+        Top = 352
         Width = 193
         Height = 33
         Caption = 'Alarm Ein'
@@ -4390,19 +4390,19 @@ object Form1: TForm1
   object Timer1: TTimer
     Enabled = False
     OnTimer = Timer1Timer
-    Left = 928
+    Left = 912
   end
   object SaveDialog1: TSaveDialog
     DefaultExt = 'rzt'
     Filter = 'Rezept-Datei|*.rzt|Alle Dateien|*.*'
     InitialDir = 'C:\Brauerei\Rezepte'
-    Left = 800
+    Left = 784
   end
   object OpenDialog1: TOpenDialog
     DefaultExt = 'rzt'
     Filter = 'Rezept-Datei|*.rzt|Alle Dateien|*.*'
     InitialDir = 'C:\Brauerei\Rezepte'
-    Left = 768
+    Left = 752
   end
   object TimerHAus: TTimer
     Enabled = False
@@ -4456,13 +4456,13 @@ object Form1: TForm1
   object Timer2: TTimer
     Enabled = False
     OnTimer = Timer2Timer
-    Left = 896
+    Left = 880
   end
   object LogTimer: TTimer
     Enabled = False
     Interval = 5000
     OnTimer = LogTimerTimer
-    Left = 864
+    Left = 848
   end
   object SimulationTimer: TTimer
     Enabled = False
@@ -4485,6 +4485,12 @@ object Form1: TForm1
     Top = 512
   end
   object PrintDialog1: TPrintDialog
-    Left = 832
+    Left = 816
+  end
+  object USB_Update_Tmr: TTimer
+    Enabled = False
+    Interval = 5000
+    OnTimer = USB_Update_TmrTimer
+    Left = 944
   end
 end

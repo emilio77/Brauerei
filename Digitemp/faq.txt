@@ -1,0 +1,103 @@
+DigiTemp v2.4 Frequently Asked Questions
+Copyright 2002 by Brian C. Lane <bcl@brianlane.com> www.brianlane.com
+
+Q. Where Do I buy Parts?
+   www.ibutton.com sells the DS9097U-009 for $10 as of this writing. Go
+   to their online store and look for the Serial Port Adapter Section.
+   Click on the 'Blue Dot and One Wire Connectivity'
+
+   I order my temperature sensors directly from Dallas Semiconductor
+   at 1-800-336-6933 (http://www.dalsemi.com/sales/credit_card.html)
+
+   They also have the old style adapter that DigiTemp v1.4 uses available
+   as part #DS9097 or DS9097E described as  passive adapters.
+
+   DigiKey as all of the parts needed to build the passive adapter. See
+   the HOWTO.TXT document for DigiKey part numbers.
+
+!  DigiKey is now carrying temperature sensors on their website. Do a
+   search for DS1820, DS1822, DS18B20 to find them.
+
+Q. How do I connect it to the RJ-11 of the DS9097-U
+   Take a look at the DS9097-U data sheet at
+     http://www.dalsemi.com/datasheets/pdfs/9097u.pdf
+   Ground is the pin on the right and data is the pin on the left (using
+   the two center pins of the RJ-11).
+   Even with this information you will probably get it backwards the first
+   time so make a temporary connecting the first time and confirm that 
+   you have the correct polarity.
+
+Q. How many can I connect?
+   Read the Dallas Semiconductor Tech. Brief on the One Wire Network.
+   http://www.dalsemi.com/techbriefs/tb1.html it covers everything you
+   want to know and more. The limit comes down to wiring, how much you
+   have and how good it is. Other than that you can connect as many as
+   you need.
+
+Q. How long can the wire be?
+   Again, read the Tech. Brief above. This depends on the cable. Using
+   better cable will allow you to extend the cable longer distances.
+
+Q. I have glitches in my data, what do I do?
+   The first step is to check all of your connections to make sure
+   they are soldered or well connected.
+
+   Next, is your cable decent quality? Cat-5 is the best, with twisted
+   telephone cable coming in second.
+
+   If you are still having problems you should try Using a Schottky
+   diode across the cable's end. Connect the diode reverse-biased with
+   the cathode (the stripe) on the data line and anode on the return. 
+
+   I used a 1N5818 across my attic sensor -- before adding this I was
+   getting multiple glitches per hour. Now I have seen 1 glitch in
+   about 2 weeks. 
+
+Q. What is the difference between the DS9097-U and the App. Note 74 type
+   of adapter.
+   The DS9097-U adapter uses a serial port to 1-wire conversion chip that
+   makes talking to the 1-wire network easier. DigiTemp v2.x uses this
+   type of adapter (the DS9097U-009 and -S09 both work fine).
+
+   The old style of adapter (sometimes called passive or App. Note #74)
+   used only diodes and resistors to convert the serial port voltages to
+   the one-wire voltages. Dallas still sells adapters of this type, part
+   number DS9097 and DS9097E that is built on this design. DigiTemp v1.x
+   supports this type of adapter, and include a HOWTO document with
+   instructions for building your own.
+
+Q. Which 1-wire temperature sensors are supported?
+
+   DS1820
+   DS18S20
+   DS18B20
+   DS1822
+   DS1920
+   
+Q. Are 1-Wire HUBs supported?
+
+   Yes, DigiTemp v2.3 for Linux added HUB support, and v1.7 for Windows
+   added HUB support to the windows branch of the project. HUB support
+   is planned for DigiTemp v1.7 for Linux, as well as a tray icon version
+   for Windows.
+   DigiTemp v2.4 for Windows also includes HUB support.
+   Sorry for all the different version numbers. I was planning on dropping
+   passive adapter support after the DS9097U-009 came out, but there are
+   enough people using them that I am planning on integrating passive and
+   DS9097U-009 support into a single code tree in v3.0
+   
+Q. I am getting intermittent readings with CRC errors and 85C readings
+
+   Check to make sure you have the +5v pin grounded if you are using 
+   parasite power mode (ie. no +5v power applied). If this doesn't clear
+   things up, try the suggestions for clearing up glitches in the data.
+
+Q. How do I run digitemp from windows?
+
+   You can run it from a DOS window, or you can create a shortcut for it.
+   When you create the shortcut you can add the command line arguments
+   to the command name.
+
+   Be aware that this is under Win98. I have no experience with Win2K,
+   Me, XP, NT, etc.
+   

@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Gauges, StdCtrls, Menus, ExtCtrls, jpeg, TeeProcs, TeEngine,
   Chart, DbChart, ComCtrls, Grids, Series, OleCtrls, SHDocVw, ShellApi,
-  Printers;
+  Printers,synaser;
 
 type
   TForm1 = class(TForm)
@@ -251,6 +251,7 @@ type
     Ueberwachungstimer: TTimer;
     PrintDialog1: TPrintDialog;
     Button25: TButton;
+    USB_Update_Tmr: TTimer;
     procedure Button7Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
@@ -336,6 +337,7 @@ type
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure UeberwachungstimerTimer(Sender: TObject);
     procedure Button25Click(Sender: TObject);
+    procedure USB_Update_TmrTimer(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -346,20 +348,22 @@ var
   Form1: TForm1;
   sl,sl2: TStringList;
   Temperatur,x,Graphic,LogName,Steuerung,BHEin,BHAus,BREin,BRAus,BPEin,BPAus,
-  BAEin,BAAus,TimeTempStr,TimeTempStore: String;
+  BAEin,BAAus,TimeTempStr,TimeTempStore,USBPort,pfad: String;
   Tempfloat,Solltemp,Deltatemp,SimTemp,TWert,Gradient, GradientWert: Extended;
   Ruehrwerk,Heizung,Alarm,Pumpe,HWert,RWert,PWert,AWert,RStore,PStore,HStore,
   AStore,LPTCode,zeit,zeit2,zeit3,zeitpause,fortschritt,rast,Intdummy,
   CountLines,gesfortschritt,rastzahl, startpunkt,endpunkt,y,Ein60,Aus60,Ein70,
   Aus70,Ein80,Aus80,Ein90,Aus90,Ein100,Aus100,EinIst,AusIst: integer;
-  Port: word;
+  LPTPort: word;
   myFile,myLogFile,SimFile: TextFile;
   pause,start,stop,AlarmEin,Rasttemp1,Rasttemp2,Rasttemp3,Rasttemp4,Rasttemp5,
   Rasttemp6,Rasttemp7,Rasttemp8,Rasttemp9,Rasttemp10,Rastnull1,Rastnull2,
   Rastnull3,Rastnull4,Rastnull5,Rastnull6,Rastnull7,Rastnull8,Rastnull9,
   Rastnull10,Rastende,PauseLogTimerHEin,PauseLogTimerHAus,PauseLogTimerHSet,
   PauseLogTimerREin,PauseLogTimerRAus: boolean;
+  USBHWert,USBRWert,USBPWert,USBAWert: char;
   Gradientgetter: Array[1..60] of Extended;
+  ser: TBlockSerial;
 
 
 implementation
@@ -452,6 +456,29 @@ end;
 procedure Out32(wAddr:word;bOut:byte);stdcall; external 'inpout32.dll'    // Parallelportausgabe
 
 function Inp32(wAddr:word):integer;stdcall; external 'inpout32.dll'       // Parallelporteingabe
+
+procedure USBOpenLine ;
+begin with Form1 do begin
+  ser.Connect(USBPort);
+  if ser.LastError<>sOK then begin Edit52.Text:='NoCom'; exit ; end ;
+  ser.Config({Baud}9600, {Bits}8, {Parity}'N', {StopBits}0, {Xon/Xoff}false, {DTR/CTS}false);
+  if ser.LastError<>sOK then begin Edit52.Text:='BadConf' ; exit ; end ;
+end ; end ;
+
+procedure USBCloseLine ;
+begin with Form1 do begin
+  ser.CloseSocket ;
+end ; end ;
+
+procedure USBOut(Sender: TObject);
+begin
+  USBOpenLine;
+  if (Ruehrwerk<>0) then ser.SendString(char($FF)+char(USBRWert)+char($01)) else ser.SendString(char($FF)+char(USBRWert)+char($00));
+  if (Heizung<>0) then ser.SendString(char($FF)+char(USBHWert)+char($01)) else ser.SendString(char($FF)+char(USBHWert)+char($00));
+  if (Alarm<>0) then ser.SendString(char($FF)+char(USBAWert)+char($01)) else ser.SendString(char($FF)+char(USBAWert)+char($00));
+  if (Pumpe<>0) then ser.SendString(char($FF)+char(USBPWert)+char($01)) else ser.SendString(char($FF)+char(USBPWert)+char($00));
+  USBCloseLine;
+end;
 
 procedure BatchOut(Sender: TObject);
 begin
@@ -835,17 +862,18 @@ begin
   begin
     Button8.Caption:='Rührwerk Aus';
     Ruehrwerk:=RWert;
-    Image3.Picture.LoadFromFile('C:\Brauerei\Graphics\Ruehrwerk-ein.jpg');
+    Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-ein.jpg');
   end
   else
   begin
     Button8.Caption:='Rührwerk Ein';
     Ruehrwerk:=0;
-    Image3.Picture.LoadFromFile('C:\Brauerei\Graphics\Ruehrwerk-aus.jpg');
+    Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-aus.jpg');
   end;
   LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;  //LPT-Code errechnen
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(Port,LPTCode); end; //LPT-Code an LPT-Port ausgeben
+  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
   if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
+  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
 end;
 
 procedure TForm1.Button9Click(Sender: TObject);
@@ -854,17 +882,18 @@ begin
   begin
     Button9.Caption:='Heizung Aus';
     Heizung:=HWert;
-    Image2.Picture.LoadFromFile('C:\Brauerei\Graphics\Feuer-ein.jpg');
+    Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-ein.jpg');
   end
   else
   begin
     Button9.Caption:='Heizung Ein';
     Heizung:=0;
-    Image2.Picture.LoadFromFile('C:\Brauerei\Graphics\Feuer-aus.jpg');
+    Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-aus.jpg');
   end;
   LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(Port,LPTCode); end; //LPT-Code an LPT-Port ausgeben
+  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
   if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
+  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
 end;
 
 procedure TForm1.Button10Click(Sender: TObject);
@@ -873,17 +902,18 @@ begin
   begin
     Button10.Caption:='Pumpe Aus';
     Pumpe:=PWert;
-    Image4.Picture.LoadFromFile('C:\Brauerei\Graphics\Pumpe-ein.jpg');
+    Image4.Picture.LoadFromFile(pfad + 'Graphics\Pumpe-ein.jpg');
   end
   else
   begin
     Button10.Caption:='Pumpe Ein';
     Pumpe:=0;
-    Image4.Picture.LoadFromFile('C:\Brauerei\Graphics\Pumpe-aus.jpg');
+    Image4.Picture.LoadFromFile(pfad + 'Graphics\Pumpe-aus.jpg');
   end;
   LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(Port,LPTCode); end; //LPT-Code an LPT-Port ausgeben
+  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
   if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
+  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
 end;
 
 procedure TForm1.Button11Click(Sender: TObject);
@@ -892,17 +922,18 @@ begin
   begin
     Button11.Caption:='Alarm Aus';
     Alarm:=AWert;
-    Image6.Picture.LoadFromFile('C:\Brauerei\Graphics\Alarm-ein.jpg')
+    Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-ein.jpg')
   end
   else
   begin
     Button11.Caption:='Alarm Ein';
     Alarm:=0;
-    Image6.Picture.LoadFromFile('C:\Brauerei\Graphics\Alarm-aus.jpg');
+    Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-aus.jpg');
   end;
   LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(Port,LPTCode); end; //LPT-Code an LPT-Port ausgeben
+  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
   if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
+  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
 end;
 
 procedure TForm1.Timer1Timer(Sender: TObject);            // Timer für Temperaturmessung
@@ -914,7 +945,7 @@ var
   ZeilenAnzahl:integer;
 begin
   DecimalSeparator:='.';
-  AssignFile (TempFile,'C:\Brauerei\Temperatur\log.txt');
+  AssignFile (TempFile,pfad + 'Temperatur\log.txt');
   try reset (TempFile); except exit; end;
   while not EOF (TempFile) do
   begin
@@ -932,7 +963,7 @@ begin
   tfs:=floattostr(round(tf));
   if tf<0 then tfs:='0';
   if tf>100 then tfs:='100';
-  Graphic:='C:\Brauerei\Graphics\Thermo'+tfs+'.jpg';
+  Graphic:=pfad + 'Graphics\Thermo'+tfs+'.jpg';
   Image1.Picture.LoadFromFile(Graphic);
   panel1.Caption:=Temperatur;
   GetGradient(Sender);
@@ -942,84 +973,91 @@ procedure TForm1.FormCreate(Sender: TObject);
 var
   i: integer;
 begin
+  pfad:=ExtractFilePath(ParamStr(0));
+  ser:=TBlockserial.Create;
+  ser.RaiseExcept:=False;
   self.DoubleBuffered:=true;
   PageControl1.ActivePage:=TabSheet1;
-  if FileExists('C:\Brauerei\Setup\settings.txt') then
+  if FileExists(pfad+'Setup\settings.txt') then
   begin
-    laden(Form1, 'C:\Brauerei\Setup\settings.txt');
-    settings_laden(Form1, 'C:\Brauerei\Setup\settings.txt');
+    laden(Form1, pfad+'Setup\settings.txt');
+    settings_laden(Form1, pfad+'Setup\settings.txt');
     CloseFile(myFile);
   end;
   AlarmEin:=false;
   pause:=false;
   stop:=true;
   start:=false;
-  if DeleteFile('C:\Brauerei\Temperatur\log.txt') then
-  begin
-    AssignFile(myFile, 'C:\Brauerei\Temperatur\log.txt');
-    ReWrite(myFile);
-    Writeln(myFile, '01-01-2000 00:00:00;21.0');
-    CloseFile(myFile);
-  end;
-  Timer1.Enabled:=true;
   DecimalSeparator:='.';
   try
     sl:=TStringList.Create; //Objekt erzeugen
-    sl.LoadFromFile('C:\Brauerei\Setup\Setup.txt');  //Datei in Stringliste laden
+    sl.LoadFromFile(pfad+'Setup\Setup.txt');  //Datei in Stringliste laden
     sl2:=TStringList.Create;
     sl2.Delimiter:=';';
     try
       sl2.DelimitedText:=sl[0];
-      try Steuerung:=sl2[sl2.Count-1]; except Steuerung:='LPT'; end;
+      try if sl2[sl2.Count-1]<>'Standard' then pfad:=sl2[sl2.Count-1]; except ; end;
       sl2.DelimitedText:=sl[1];
-      try Port:=strtoint(sl2[sl2.Count-1]); except Port:=888; end;
+      try Steuerung:=sl2[sl2.Count-1]; except Steuerung:='LPT'; end;
       sl2.DelimitedText:=sl[2];
-      try HWert:=strtoint(sl2[sl2.Count-1]); except HWert:=1; end;
+      try LPTPort:=strtoint(sl2[sl2.Count-1]); except LPTPort:=888; end;
       sl2.DelimitedText:=sl[3];
-      try RWert:=strtoint(sl2[sl2.Count-1]); except RWert:=2; end;
+      try HWert:=strtoint(sl2[sl2.Count-1]); except HWert:=1; end;
       sl2.DelimitedText:=sl[4];
-      try PWert:=strtoint(sl2[sl2.Count-1]); except PWert:=8; end;
+      try RWert:=strtoint(sl2[sl2.Count-1]); except RWert:=2; end;
       sl2.DelimitedText:=sl[5];
-      try AWert:=strtoint(sl2[sl2.Count-1]); except AWert:=128; end;
+      try PWert:=strtoint(sl2[sl2.Count-1]); except PWert:=8; end;
       sl2.DelimitedText:=sl[6];
-      try BHEin:=sl2[sl2.Count-1]; except BHEin:='none'; end;
+      try AWert:=strtoint(sl2[sl2.Count-1]); except AWert:=128; end;
       sl2.DelimitedText:=sl[7];
-      try BHAus:=sl2[sl2.Count-1]; except BHAus:='none'; end;
+      try USBPort:=sl2[sl2.Count-1]; except USBPort:='COM3'; end;
       sl2.DelimitedText:=sl[8];
-      try BREin:=sl2[sl2.Count-1]; except BREin:='none'; end;
+      try USBHWert:=sl2[sl2.Count-1][1]; dec(USBHWert, $30); except USBHWert:=char($01); end;
       sl2.DelimitedText:=sl[9];
-      try BRAus:=sl2[sl2.Count-1]; except BRAus:='none'; end;
+      try USBRWert:=sl2[sl2.Count-1][1]; dec(USBRWert, $30); except USBRWert:=char($02); end;
       sl2.DelimitedText:=sl[10];
-      try BPEin:=sl2[sl2.Count-1]; except BPEin:='none'; end;
+      try USBPWert:=sl2[sl2.Count-1][1]; dec(USBPWert, $30); except USBPWert:=char($03); end;
       sl2.DelimitedText:=sl[11];
-      try BPAus:=sl2[sl2.Count-1]; except BPAus:='none'; end;
+      try USBAWert:=sl2[sl2.Count-1][1]; dec(USBAWert, $30); except USBAWert:=char($04); end;
       sl2.DelimitedText:=sl[12];
-      try BAEin:=sl2[sl2.Count-1]; except BAEin:='none'; end;
+      try BHEin:=sl2[sl2.Count-1]; except BHEin:='none'; end;
       sl2.DelimitedText:=sl[13];
-      try BAAus:=sl2[sl2.Count-1]; except BAAus:='none'; end;
+      try BHAus:=sl2[sl2.Count-1]; except BHAus:='none'; end;
       sl2.DelimitedText:=sl[14];
-      try TWert:=strtofloat(sl2[sl2.Count-1]); except TWert:=2.0; end;
+      try BREin:=sl2[sl2.Count-1]; except BREin:='none'; end;
       sl2.DelimitedText:=sl[15];
-      try Ein60:=strtoint(sl2[sl2.Count-1]); except Ein60:=5; end;
+      try BRAus:=sl2[sl2.Count-1]; except BRAus:='none'; end;
       sl2.DelimitedText:=sl[16];
-      try Aus60:=strtoint(sl2[sl2.Count-1]); except Aus60:=10; end;
+      try BPEin:=sl2[sl2.Count-1]; except BPEin:='none'; end;
       sl2.DelimitedText:=sl[17];
-      try Ein70:=strtoint(sl2[sl2.Count-1]); except Ein70:=8; end;
+      try BPAus:=sl2[sl2.Count-1]; except BPAus:='none'; end;
       sl2.DelimitedText:=sl[18];
-      try Aus70:=strtoint(sl2[sl2.Count-1]); except Aus70:=10; end;
+      try BAEin:=sl2[sl2.Count-1]; except BAEin:='none'; end;
       sl2.DelimitedText:=sl[19];
-      try Ein80:=strtoint(sl2[sl2.Count-1]); except Ein80:=10; end;
+      try BAAus:=sl2[sl2.Count-1]; except BAAus:='none'; end;
       sl2.DelimitedText:=sl[20];
-      try Aus80:=strtoint(sl2[sl2.Count-1]); except Aus80:=10; end;
+      try TWert:=strtofloat(sl2[sl2.Count-1]); except TWert:=2.0; end;
       sl2.DelimitedText:=sl[21];
-      try Ein90:=strtoint(sl2[sl2.Count-1]); except Ein90:=10; end;
+      try Ein60:=strtoint(sl2[sl2.Count-1]); except Ein60:=5; end;
       sl2.DelimitedText:=sl[22];
-      try Aus90:=strtoint(sl2[sl2.Count-1]); except Aus90:=5; end;
+      try Aus60:=strtoint(sl2[sl2.Count-1]); except Aus60:=10; end;
       sl2.DelimitedText:=sl[23];
-      try Ein100:=strtoint(sl2[sl2.Count-1]); except Ein100:=10; end;
+      try Ein70:=strtoint(sl2[sl2.Count-1]); except Ein70:=8; end;
       sl2.DelimitedText:=sl[24];
-      try Aus100:=strtoint(sl2[sl2.Count-1]); except Aus100:=0; end;
+      try Aus70:=strtoint(sl2[sl2.Count-1]); except Aus70:=10; end;
       sl2.DelimitedText:=sl[25];
+      try Ein80:=strtoint(sl2[sl2.Count-1]); except Ein80:=10; end;
+      sl2.DelimitedText:=sl[26];
+      try Aus80:=strtoint(sl2[sl2.Count-1]); except Aus80:=10; end;
+      sl2.DelimitedText:=sl[27];
+      try Ein90:=strtoint(sl2[sl2.Count-1]); except Ein90:=10; end;
+      sl2.DelimitedText:=sl[28];
+      try Aus90:=strtoint(sl2[sl2.Count-1]); except Aus90:=5; end;
+      sl2.DelimitedText:=sl[29];
+      try Ein100:=strtoint(sl2[sl2.Count-1]); except Ein100:=10; end;
+      sl2.DelimitedText:=sl[30];
+      try Aus100:=strtoint(sl2[sl2.Count-1]); except Aus100:=0; end;
+      sl2.DelimitedText:=sl[31];
       try GradientWert:=strtofloat(sl2[sl2.Count-1]); except GradientWert:=0.5; end;
       AusIst:=Aus60;
       EinIst:=Ein60;
@@ -1029,8 +1067,17 @@ begin
   finally
     sl.Free;
   end;
-  if steuerung='LPT' then Edit51.Text:=inttostr(Port);
+  if DeleteFile(pfad+'Temperatur\log.txt') then
+  begin
+    AssignFile(myFile, pfad+'Temperatur\log.txt');
+    ReWrite(myFile);
+    Writeln(myFile, '01-01-2000 00:00:00;21.0');
+    CloseFile(myFile);
+  end;
+  Timer1.Enabled:=true;
+  if steuerung='LPT' then Edit51.Text:=inttostr(LPTPort);
   if steuerung='BATCH' then Edit51.Text:='Batch';
+  if steuerung='USB' then Edit51.Text:=USBPort;
   Ruehrwerk:=0;
   Heizung:=0;
   Alarm:=0;
@@ -1040,8 +1087,9 @@ begin
   HStore:=0;
   AStore:=0;
   PStore:=0;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(Port,LPTCode); end; //LPT-Code an LPT-Port ausgeben
+  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
   if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
+  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); USB_Update_Tmr.Enabled:=true; end; //LPT-Code an USB-Port ausgeben
   Form1.Timer1Timer(Sender);
   for i:=1 to 60 do Gradientgetter[i]:=Tempfloat;
   Gradient:=0.0;
@@ -1081,17 +1129,18 @@ begin
       PauseLogTimerHSet:=false;
       PauseLogTimerREin:=false;
       PauseLogTimerRAus:=false;
-      Image3.Picture.LoadFromFile('C:\Brauerei\Graphics\Ruehrwerk-aus.jpg');
-      Image2.Picture.LoadFromFile('C:\Brauerei\Graphics\Feuer-aus.jpg');
-      Image6.Picture.LoadFromFile('C:\Brauerei\Graphics\Alarm-aus.jpg');
+      Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-aus.jpg');
+      Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-aus.jpg');
+      Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-aus.jpg');
       LPTCode:=Pumpe;
-      if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(Port,LPTCode); end; //LPT-Code an LPT-Port ausgeben
+      if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
       if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
+      if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
       if checkbox32.Checked=true then
       begin
         LogName:=FormatDateTime('ddmmyyyyhhnnss', now);
         LogTimer.Enabled:=true;
-        LogName:='C:\Brauerei\log\log_'+LogName+'.log';
+        LogName:=pfad + 'log\log_'+LogName+'.log';
         AssignFile(myLogFile, LogName);
         rewrite(myLogFile);
       end;
@@ -1240,7 +1289,7 @@ begin
       Button20.Enabled:=false;
       if checkbox32.checked=true then Button18.Enabled:=true;
       if checkbox32.checked=true then Button23.Enabled:=true;
-      Graphic:='C:\Brauerei\Graphics\Automatik-aktiv.jpg';
+      Graphic:=pfad + 'Graphics\Automatik-aktiv.jpg';
       Image5.Picture.LoadFromFile(Graphic);
       stop:=false;
       pause:=false;
@@ -1602,7 +1651,7 @@ begin
   Edit30.Visible:=true;
   Label35.Visible:=true;
   Gauge10.Visible:=true;
-  Graphic:='C:\Brauerei\Graphics\Automatik-inaktiv.jpg';
+  Graphic:=pfad + 'Graphics\Automatik-inaktiv.jpg';
   Image5.Picture.LoadFromFile(Graphic);
   if stop=false then
   begin
@@ -1633,7 +1682,7 @@ begin
     stop:=false;
     pause:=true;
     start:=false;
-    Graphic:='C:\Brauerei\Graphics\Automatik-pause.jpg';
+    Graphic:=pfad + 'Graphics\Automatik-pause.jpg';
     Image5.Picture.LoadFromFile(Graphic);
   end;
 end;
@@ -1693,11 +1742,12 @@ end;
 procedure TForm1.TimerREinTimer(Sender: TObject);
 begin
   Ruehrwerk:=RWert;
-  Image3.Picture.LoadFromFile('C:\Brauerei\Graphics\Ruehrwerk-ein.jpg');
+  Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-ein.jpg');
   LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
   try Edit52.Text:=inttostr(LPTCode); finally end;
-  if steuerung='LPT' then Out32(Port,LPTCode); //LPT-Code an LPT-Port ausgeben
-  if steuerung='BATCH' then BatchOut(Sender); //LPT-Code als Batch ausgeben
+  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
+  if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
+  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
   TimerREin.Enabled:=false;
   TimerRAus.Enabled:=true;
 end;
@@ -1705,10 +1755,11 @@ end;
 procedure TForm1.TimerRAusTimer(Sender: TObject);
 begin
   Ruehrwerk:=0;
-  Image3.Picture.LoadFromFile('C:\Brauerei\Graphics\Ruehrwerk-aus.jpg');
+  Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-aus.jpg');
   LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(Port,LPTCode); end; //LPT-Code an LPT-Port ausgeben
+  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
   if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
+  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
   TimerRAus.Enabled:=false;
   TimerREin.Enabled:=true;
 end;
@@ -1716,10 +1767,11 @@ end;
 procedure TForm1.TimerHEinTimer(Sender: TObject);
 begin
   Heizung:=HWert;
-  Image2.Picture.LoadFromFile('C:\Brauerei\Graphics\Feuer-ein.jpg');
+  Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-ein.jpg');
   LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(Port,LPTCode); end; //LPT-Code an LPT-Port ausgeben
+  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
   if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
+  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
   TimerHEin.Enabled:=false;
   TimerHAus.Enabled:=true;
 end;
@@ -1727,10 +1779,11 @@ end;
 procedure TForm1.TimerHAusTimer(Sender: TObject);
 begin
   Heizung:=0;
-  Image2.Picture.LoadFromFile('C:\Brauerei\Graphics\Feuer-aus.jpg');
+  Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-aus.jpg');
   LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(Port,LPTCode); end; //LPT-Code an LPT-Port ausgeben
+  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
   if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
+  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
   TimerHAus.Enabled:=false;
   TimerHEin.Enabled:=true;
 end;
@@ -1807,10 +1860,11 @@ end;
 procedure TForm1.TimerAAusTimer(Sender: TObject);
 begin
   Alarm:=0;
-  Image6.Picture.LoadFromFile('C:\Brauerei\Graphics\Alarm-aus.jpg');
+  Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-aus.jpg');
   LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(Port,LPTCode); end; //LPT-Code an LPT-Port ausgeben
+  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
   if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
+  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
   TimerAAus.Enabled:=false;
   TimerAEin.Enabled:=true;
 end;
@@ -1818,10 +1872,11 @@ end;
 procedure TForm1.TimerAEinTimer(Sender: TObject);
 begin
   Alarm:=AWert;
-  Image6.Picture.LoadFromFile('C:\Brauerei\Graphics\Alarm-ein.jpg');
+  Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-ein.jpg');
   LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(Port,LPTCode); end; //LPT-Code an LPT-Port ausgeben
+  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
   if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
+  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
   TimerAEin.Enabled:=false;
   TimerAAus.Enabled:=true;
 end;
@@ -1893,10 +1948,10 @@ begin
   Button24.Caption:='30min Zoom';
   OpenDialog1.FileName:='';
   OpenDialog1.Filter:='Log-Datei|*.log|Alle Dateien|*.*';
-  OpenDialog1.InitialDir:='C:\Brauerei\log';
+  OpenDialog1.InitialDir:=pfad + 'log';
   if OpenDialog1.Execute then ReadTabFile(OpenDialog1.FileName, ';', StringGrid1);
   OpenDialog1.Filter:='Rezept-Datei|*.rzt|Alle Dateien|*.*';
-  OpenDialog1.InitialDir:='C:\Brauerei\Rezepte';
+  OpenDialog1.InitialDir:=pfad + 'Rezepte';
   startpunkt:=1;
   endpunkt:=StringGrid1.RowCount-1;
   writechart(Form1);
@@ -1914,9 +1969,9 @@ begin
   try
     if (start=true) and (CheckBox32.Checked=true) then
     begin
-      DeleteFile(PChar('C:\Brauerei\log\temp.log'));
-      CopyFile(PChar(LogName),PChar('C:\Brauerei\log\temp.log'),true);
-      ReadTabFile('C:\Brauerei\log\temp.log', ';', StringGrid1);
+      DeleteFile(PChar(pfad + 'log\temp.log'));
+      CopyFile(PChar(LogName),PChar(pfad + 'log\temp.log'),true);
+      ReadTabFile(pfad + 'log\temp.log', ';', StringGrid1);
       if StringGrid1.RowCount>=2 then begin startpunkt:=1; endpunkt:=StringGrid1.RowCount-1; writechart(Form1); end;
       Progressbar1.Visible:=Gauge1.Visible;
       Progressbar2.Visible:=Gauge2.Visible;
@@ -1942,7 +1997,7 @@ begin
     end
     else
     begin
-      if StringGrid1.RowCount<10 then ReadTabFile('C:\Brauerei\log\Test-Log.log', ';', StringGrid1);
+      if StringGrid1.RowCount<10 then ReadTabFile(pfad + 'log\Test-Log.log', ';', StringGrid1);
       startpunkt:=1;
       endpunkt:=StringGrid1.RowCount-1;
       writechart(Form1);
@@ -1960,7 +2015,7 @@ begin
     end;
     if StringGrid1.RowCount>=720 then Button19.Enabled:=true else Button19.Enabled:=false;
     if StringGrid1.RowCount>=360 then Button24.Enabled:=true else Button24.Enabled:=false;
-    webbrowser1.Navigate('C:\Brauerei\Help\Help.html');
+    webbrowser1.Navigate(pfad + 'Help\Help.html');
   except
   end;
 end;
@@ -1977,9 +2032,9 @@ end;
 
 procedure TForm1.Button17Click(Sender: TObject);
 begin
-  if DeleteFile('C:\Brauerei\Setup\settings.txt') then MessageDlg('Settings wurden überschrieben !', mtInformation, [mbOK], 0);
-  speichern(Form1, 'C:\Brauerei\Setup\settings.txt');
-  settings_speichern(Form1, 'C:\Brauerei\Setup\settings.txt');
+  if DeleteFile(pfad + 'Setup\settings.txt') then MessageDlg('Settings wurden überschrieben !', mtInformation, [mbOK], 0);
+  speichern(Form1, pfad + 'Setup\settings.txt');
+  settings_speichern(Form1, pfad + 'Setup\settings.txt');
   CloseFile(myFile);
 end;
 
@@ -2053,13 +2108,13 @@ begin
     begin
       if SimTemp>21 then SimTemp:=SimTemp-0.05;
     end;
-    AssignFile(SimFile, 'C:\Brauerei\Temperatur\log.txt');
+    AssignFile(SimFile, pfad + 'Temperatur\log.txt');
     Append(SimFile);
     Writeln(SimFile, 'Simulation;'+FloatToStrF(SimTemp,ffFixed,10,1));
     CloseFile(SimFile);
   except
   end;
-  AssignFile(SimFile, 'C:\Brauerei\Temperatur\log.txt');
+  AssignFile(SimFile, pfad + 'Temperatur\log.txt');
   Append(SimFile);
   Writeln(SimFile, 'Simulation;'+FloatToStrF(SimTemp,ffFixed,10,1));
   CloseFile(SimFile);
@@ -2168,8 +2223,9 @@ begin
     AStore:=0;
     Pumpe:=0;
     PStore:=0;
-    if steuerung='LPT' then Out32(Port,LPTCode); //LPT-Code an LPT-Port ausgeben
+    if steuerung='LPT' then Out32(LPTPort,LPTCode); //LPT-Code an LPT-Port ausgeben
     if steuerung='BATCH' then BatchOut(Sender); //LPT-Code als Batch ausgeben
+    if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
     application.terminate;
   end
   else CanClose:=false;
@@ -2256,4 +2312,15 @@ end;
 end;
 end;
 
+procedure TForm1.USB_Update_TmrTimer(Sender: TObject);
+begin
+  USBOut(Sender);
+end;
+
 end.
+
+
+
+
+
+

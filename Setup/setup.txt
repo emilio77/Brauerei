@@ -1,0 +1,32 @@
+Installationsverzeichnis;Standard
+Steuerung über "BATCH", "USB oder "LPT";USB
+LPT-Port;888
+LPT-Heizung;1
+LPT-Ruehrwerk;2
+LPT-Pumpe;8
+LPT-Alarm;128
+USB-Port;COM3
+USB-Heizung;1
+USB-Ruehrwerk;2
+USB-Pumpe;3
+USB-Alarm;4
+Batch-Heizung-Ein;C:\Brauerei\Batch\Heizung-Ein.bat
+Batch-Heizung-Aus;C:\Brauerei\Batch\Heizung-Aus.bat
+Batch-Ruehrwerk-Ein;C:\Brauerei\Batch\Ruehrwerk-Ein.bat
+Batch-Ruehrwerk-Aus;C:\Brauerei\Batch\Ruehrwerk-Aus.bat
+Batch-Pumpe-Ein;C:\Brauerei\Batch\Pumpe-Ein.bat
+Batch-Pumpe-Aus;C:\Brauerei\Batch\Pumpe-Aus.bat
+Batch-Alarm-Ein;C:\Brauerei\Batch\Alarm-Ein.bat
+Batch-Alarm-Aus;C:\Brauerei\Batch\Alarm-Aus.bat
+Taktungstemperatur;2.0
+Einschaltpuls bis 60°C;5
+Ausschaltpuls bis 60°C;10
+Einschaltpuls bis 70°C;8
+Ausschaltpuls bis 70°C;10
+Einschaltpuls bis 80°C;10
+Ausschaltpuls bis 80°C;10
+Einschaltpuls bis 90°C;10
+Ausschaltpuls bis 90°C;5
+Einschaltpuls bis 100°C;10
+Ausschaltpuls bis 100°C;0
+Überschwingungsdämpfung;0.4

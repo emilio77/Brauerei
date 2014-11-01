@@ -5,7 +5,7 @@ LPT-Heizung;1
 LPT-Ruehrwerk;2
 LPT-Pumpe;8
 LPT-Alarm;128
-USB-Karten-Typ "Denkovi" oder "KMTronic";Denkovi
+USB-Karten-Typ "DENKOVI" oder "KMTRONIC";DENKOVI
 Denkovi-Device-Index;1
 USB-Port;COM3
 USB-Heizung;1

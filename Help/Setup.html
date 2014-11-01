@@ -7,7 +7,8 @@
 	<META NAME="AUTHOR" CONTENT="Andreas Wehrle">
 	<META NAME="CREATED" CONTENT="20140414;21331864">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
-	<META NAME="CHANGED" CONTENT="20141019;13331400">
+	<META NAME="CHANGED" CONTENT="20141101;18133632">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
@@ -32,32 +33,20 @@
 	</STYLE>
 </HEAD>
 <BODY LANG="de-DE" DIR="LTR">
-<P STYLE="margin-bottom: 0cm">Hilfe Datei zu Brauerei V 1.10 &ndash;
+<P STYLE="margin-bottom: 0cm">Hilfe Datei zu Brauerei V 1.20 &ndash;
 by Emilio &ndash; <A HREF="Help.html">HOME</A></P>
-<P STYLE="margin-bottom: 0cm"><U><B>Programmeinstellungen &uuml;ber
-Text-Datei &ndash; Setup.txt:</B></U></P>
-<P STYLE="margin-bottom: 0cm"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: normal">Einstellungen
-f&uuml;r die Steuerung k&ouml;nnen &uuml;ber die Text-Datei
-</SPAN></SPAN></FONT><FONT COLOR="#0000ff"><U><SPAN STYLE="font-weight: normal">\Setup\Setup.txt
-</SPAN></U></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: normal">konfiguriert
-werden.</SPAN></SPAN></FONT></P>
-<P STYLE="margin-bottom: 0cm"><IMG SRC="Setup_html_7d16f4fc.jpg" NAME="Grafik1" ALIGN=LEFT WIDTH=510 HEIGHT=564 BORDER=0><BR CLEAR=LEFT><BR>
+<P STYLE="margin-bottom: 0cm"><U><B>Programmeinstellungen:</B></U></P>
+<P STYLE="margin-bottom: 0cm"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: normal">Der
+Einstellungen-Reiter ist nur bei inaktivem Brauprozess verf&uuml;gbar.</SPAN></SPAN></FONT></P>
+<P STYLE="margin-bottom: 0cm"><IMG SRC="Setup_html_4bccca89.jpg" NAME="Grafik1" ALIGN=LEFT WIDTH=643 HEIGHT=434 BORDER=0><BR CLEAR=LEFT><BR>
 </P>
 <OL>
-	<LI><P STYLE="margin-bottom: 0cm">Installationsverzeichnis, wenn ein
-	anderes Verzeichnis genutzt werden soll sonst 'Standard'</P>
 	<LI><P STYLE="margin-bottom: 0cm">Steuerung der Schalthardware &uuml;ber
 	Batch-Dateien oder den USB- oder Parallelport</P>
-	<LI><P STYLE="margin-bottom: 0cm">Port: Adresse des LPT-Ports</P>
-	<LI><P STYLE="margin-bottom: 0cm">LPT-Heizung: Dezimalwert des
-	Port-Bits f&uuml;r die Heizung ( Tabelle siehe unten )</P>
-	<LI><P STYLE="margin-bottom: 0cm">LPT-R&uuml;hrwerk: Dezimalwert des
-	Port-Bits f&uuml;r das R&uuml;hrwerk ( Tabelle siehe unten )</P>
-	<LI><P STYLE="margin-bottom: 0cm">LPT-Pumpe: Dezimalwert des
-	Port-Bits f&uuml;r die Pumpe ( Tabelle siehe unten )</P>
-	<LI><P STYLE="margin-bottom: 0cm">LPT-Alarm: Dezimalwert des
-	Port-Bits f&uuml;r den Alarm ( Tabelle siehe unten )</P>
-	<LI><P STYLE="margin-bottom: 0cm">COM-Port der KMTronic-Hardware</P>
+	<LI><P STYLE="margin-bottom: 0cm">USB-Kartentyp Denkovi oder
+	KMTronic</P>
+	<LI><P STYLE="margin-bottom: 0cm">COM-Port der KMTronic-Hardware bzw
+	Device-Index f&uuml;r Denkovi-Hardware</P>
 	<LI><P STYLE="margin-bottom: 0cm">USB-Heizung: Relais f&uuml;r die
 	Heizung</P>
 	<LI><P STYLE="margin-bottom: 0cm">USB-R&uuml;hrwerk: Relais f&uuml;r
@@ -67,8 +56,31 @@ werden.</SPAN></SPAN></FONT></P>
 	</P>
 	<LI><P STYLE="margin-bottom: 0cm">USB-Alarm: Relais f&uuml;r den
 	Alarm</P>
+	<LI><P STYLE="margin-bottom: 0cm">Port: Adresse des LPT-Ports</P>
+	<LI><P STYLE="margin-bottom: 0cm">LPT-Heizung: Dezimalwert des
+	Port-Bits f&uuml;r die Heizung ( Tabelle siehe unten )</P>
+	<LI><P STYLE="margin-bottom: 0cm">LPT-R&uuml;hrwerk: Dezimalwert des
+	Port-Bits f&uuml;r das R&uuml;hrwerk ( Tabelle siehe unten )</P>
+	<LI><P STYLE="margin-bottom: 0cm">LPT-Pumpe: Dezimalwert des
+	Port-Bits f&uuml;r die Pumpe ( Tabelle siehe unten )</P>
+	<LI><P STYLE="margin-bottom: 0cm">LPT-Alarm: Dezimalwert des
+	Port-Bits f&uuml;r den Alarm ( Tabelle siehe unten )</P>
 	<LI><P STYLE="margin-bottom: 0cm">Batchdateien f&uuml;r die
-	Hardwaresteuerung</P>
+	Hardwaresteuerung &ndash; Heizung Ein</P>
+	<LI><P STYLE="margin-bottom: 0cm">Batchdateien f&uuml;r die
+	Hardwaresteuerung &ndash; Heizung Aus</P>
+	<LI><P STYLE="margin-bottom: 0cm">Batchdateien f&uuml;r die
+	Hardwaresteuerung &ndash; R&uuml;hrwerk Ein</P>
+	<LI><P STYLE="margin-bottom: 0cm">Batchdateien f&uuml;r die
+	Hardwaresteuerung &ndash; R&uuml;hrwerk Aus</P>
+	<LI><P STYLE="margin-bottom: 0cm">Batchdateien f&uuml;r die
+	Hardwaresteuerung &ndash; Pumpe Ein</P>
+	<LI><P STYLE="margin-bottom: 0cm">Batchdateien f&uuml;r die
+	Hardwaresteuerung &ndash; Pumpe Aus</P>
+	<LI><P STYLE="margin-bottom: 0cm">Batchdateien f&uuml;r die
+	Hardwaresteuerung &ndash; Alarm Ein</P>
+	<LI><P STYLE="margin-bottom: 0cm">Batchdateien f&uuml;r die
+	Hardwaresteuerung &ndash; Alarm Aus</P>
 	<LI><P STYLE="margin-bottom: 0cm">Taktungstemperatur: Ist die
 	Temperaturdifferenz kleiner dieser Eingabe wird getaktet</P>
 	<LI><P STYLE="margin-bottom: 0cm">Verh&auml;ltnis des Einschalt- zum
@@ -78,6 +90,26 @@ werden.</SPAN></SPAN></FONT></P>
 	die hier fesgelegte Zahl werden die Einschaltpulse der Heizung so
 	lange ausgesetzt bis der Gradient unterschritten oder die
 	Zieltemperatur erreicht wird</P>
+	<LI><P STYLE="margin-bottom: 0cm">Start-Button f&uuml;r
+	Temperaturmessung mit Digitemp; die Digitemp.bat wird gestartet. Der
+	COM-Port ist in dieser Batchdateien fest hinterlegt und kann direkt
+	in der Batchdatei ge&auml;ndert werden.<BR>Sollte die
+	Temperaturmessung w&auml;hrend des Brauprozesses ausfallen kann die
+	Batchdatei durch Doppel-Klick auf die Thermometer-Grafik erneut
+	gestartet werden.</P>
+	<LI><P STYLE="margin-bottom: 0cm">Start-Button f&uuml;r
+	Temperaturmessung mit Digitemp; die Digitemp_variabel.bat wird
+	gestartet. Der COM-Port wird beim Start der Batchdateien abgefragt.
+	<BR>Sollte die Temperaturmessung w&auml;hrend des Brauprozesses
+	ausfallen kann die Batchdatei durch Doppel-Klick auf die
+	Thermometer-Grafik erneut gestartet werden.</P>
+	<LI><P STYLE="margin-bottom: 0cm">Start-Button f&uuml;r
+	Temperaturmessung f&uuml;r beliebige Temperatursoftware; die
+	Externe_Sensorsoftware.bat wird gestartet. Hier k&ouml;nnt ihr eine
+	beliebige Software in der Batch-Datei eintragen.<BR> Sollte die
+	Temperaturmessung w&auml;hrend des Brauprozesses ausfallen kann die
+	Batchdatei durch Doppel-Klick auf die Thermometer-Grafik erneut
+	gestartet werden</P>
 </OL>
 <P STYLE="margin-bottom: 0cm">LPT-Digitalwerte:</P>
 <TABLE WIDTH=320 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">

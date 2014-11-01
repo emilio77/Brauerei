@@ -9,6 +9,7 @@ uses
   Printers,synaser;
 
 type
+  FT_Result = Integer;
   TForm1 = class(TForm)
     Timer1: TTimer;
     SaveDialog1: TSaveDialog;
@@ -252,6 +253,94 @@ type
     PrintDialog1: TPrintDialog;
     Button25: TButton;
     USB_Update_Tmr: TTimer;
+    TabSheet4: TTabSheet;
+    GroupBox1: TGroupBox;
+    Label62: TLabel;
+    Label65: TLabel;
+    Label67: TLabel;
+    Label68: TLabel;
+    Label69: TLabel;
+    Label70: TLabel;
+    Label71: TLabel;
+    Label72: TLabel;
+    Edit54: TEdit;
+    Edit55: TEdit;
+    Edit56: TEdit;
+    Edit57: TEdit;
+    Edit58: TEdit;
+    Edit59: TEdit;
+    Edit60: TEdit;
+    Edit61: TEdit;
+    Label73: TLabel;
+    ComboBox1: TComboBox;
+    GroupBox2: TGroupBox;
+    Label74: TLabel;
+    Label76: TLabel;
+    Label77: TLabel;
+    Label78: TLabel;
+    Label79: TLabel;
+    Label80: TLabel;
+    ComboBox2: TComboBox;
+    ComboBox3: TComboBox;
+    ComboBox4: TComboBox;
+    ComboBox5: TComboBox;
+    ComboBox6: TComboBox;
+    ComboBox7: TComboBox;
+    GroupBox3: TGroupBox;
+    Label75: TLabel;
+    Label82: TLabel;
+    Label83: TLabel;
+    Label84: TLabel;
+    Label85: TLabel;
+    ComboBox8: TComboBox;
+    ComboBox9: TComboBox;
+    ComboBox10: TComboBox;
+    ComboBox11: TComboBox;
+    ComboBox12: TComboBox;
+    GroupBox4: TGroupBox;
+    Label88: TLabel;
+    ComboBox13: TComboBox;
+    Label90: TLabel;
+    Label81: TLabel;
+    Label86: TLabel;
+    ComboBox14: TComboBox;
+    Label87: TLabel;
+    ComboBox15: TComboBox;
+    Label89: TLabel;
+    Label91: TLabel;
+    Label92: TLabel;
+    Label93: TLabel;
+    Label94: TLabel;
+    ComboBox17: TComboBox;
+    ComboBox18: TComboBox;
+    Label95: TLabel;
+    Label96: TLabel;
+    Label97: TLabel;
+    Label98: TLabel;
+    Label99: TLabel;
+    Label100: TLabel;
+    ComboBox19: TComboBox;
+    ComboBox20: TComboBox;
+    ComboBox21: TComboBox;
+    ComboBox22: TComboBox;
+    Label101: TLabel;
+    Label102: TLabel;
+    Label103: TLabel;
+    Label104: TLabel;
+    Label105: TLabel;
+    Label106: TLabel;
+    ComboBox23: TComboBox;
+    ComboBox24: TComboBox;
+    Label107: TLabel;
+    Label108: TLabel;
+    ComboBox25: TComboBox;
+    Label109: TLabel;
+    Label110: TLabel;
+    ComboBox16: TComboBox;
+    Label111: TLabel;
+    Button26: TButton;
+    Button27: TButton;
+    Button28: TButton;
     procedure Button7Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
@@ -338,6 +427,43 @@ type
     procedure UeberwachungstimerTimer(Sender: TObject);
     procedure Button25Click(Sender: TObject);
     procedure USB_Update_TmrTimer(Sender: TObject);
+    procedure ComboBox2Change(Sender: TObject);
+    procedure ComboBox1Change(Sender: TObject);
+    procedure ComboBox7Change(Sender: TObject);
+    procedure ComboBox16Change(Sender: TObject);
+    procedure ComboBox3Change(Sender: TObject);
+    procedure ComboBox4Change(Sender: TObject);
+    procedure ComboBox5Change(Sender: TObject);
+    procedure ComboBox6Change(Sender: TObject);
+    procedure ComboBox8Change(Sender: TObject);
+    procedure ComboBox9Change(Sender: TObject);
+    procedure ComboBox10Change(Sender: TObject);
+    procedure ComboBox11Change(Sender: TObject);
+    procedure ComboBox12Change(Sender: TObject);
+    procedure Edit54Exit(Sender: TObject);
+    procedure Edit55Exit(Sender: TObject);
+    procedure Edit56Exit(Sender: TObject);
+    procedure Edit57Exit(Sender: TObject);
+    procedure Edit58Exit(Sender: TObject);
+    procedure Edit59Exit(Sender: TObject);
+    procedure Edit60Exit(Sender: TObject);
+    procedure Edit61Exit(Sender: TObject);
+    procedure ComboBox13Change(Sender: TObject);
+    procedure ComboBox14Change(Sender: TObject);
+    procedure ComboBox15Change(Sender: TObject);
+    procedure ComboBox17Change(Sender: TObject);
+    procedure ComboBox18Change(Sender: TObject);
+    procedure ComboBox19Change(Sender: TObject);
+    procedure ComboBox20Change(Sender: TObject);
+    procedure ComboBox21Change(Sender: TObject);
+    procedure ComboBox22Change(Sender: TObject);
+    procedure ComboBox24Change(Sender: TObject);
+    procedure ComboBox23Change(Sender: TObject);
+    procedure ComboBox25Change(Sender: TObject);
+    procedure Button26Click(Sender: TObject);
+    procedure Button27Click(Sender: TObject);
+    procedure Button28Click(Sender: TObject);
+    procedure Image1DblClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -348,14 +474,15 @@ var
   Form1: TForm1;
   sl,sl2: TStringList;
   Temperatur,x,Graphic,LogName,Steuerung,BHEin,BHAus,BREin,BRAus,BPEin,BPAus,
-  BAEin,BAAus,TimeTempStr,TimeTempStore,USBPort,pfad: String;
+  BAEin,BAAus,TimeTempStr,TimeTempStore,USBPort,USBTyp,pfad: String;
   Tempfloat,Solltemp,Deltatemp,SimTemp,TWert,Gradient, GradientWert: Extended;
   Ruehrwerk,Heizung,Alarm,Pumpe,HWert,RWert,PWert,AWert,RStore,PStore,HStore,
   AStore,LPTCode,zeit,zeit2,zeit3,zeitpause,fortschritt,rast,Intdummy,
   CountLines,gesfortschritt,rastzahl, startpunkt,endpunkt,y,Ein60,Aus60,Ein70,
-  Aus70,Ein80,Aus80,Ein90,Aus90,Ein100,Aus100,EinIst,AusIst: integer;
+  Aus70,Ein80,Aus80,Ein90,Aus90,Ein100,Aus100,EinIst,AusIst,USBHIntWert,
+  USBRIntWert,USBPIntWert,USBAIntWert,DeviceIndex,sensorreset: integer;
   LPTPort: word;
-  myFile,myLogFile,SimFile: TextFile;
+  myFile,myLogFile,SimFile,mySetup: TextFile;
   pause,start,stop,AlarmEin,Rasttemp1,Rasttemp2,Rasttemp3,Rasttemp4,Rasttemp5,
   Rasttemp6,Rasttemp7,Rasttemp8,Rasttemp9,Rasttemp10,Rastnull1,Rastnull2,
   Rastnull3,Rastnull4,Rastnull5,Rastnull6,Rastnull7,Rastnull8,Rastnull9,
@@ -364,6 +491,9 @@ var
   USBHWert,USBRWert,USBPWert,USBAWert: char;
   Gradientgetter: Array[1..60] of Extended;
   ser: TBlockSerial;
+  FT_HANDLE : DWord = 0;
+  FT_Out : Byte;
+  FT_OUT_INT,RESULT,Write_Result,Charint,Description  : Integer;
 
 
 implementation
@@ -453,16 +583,43 @@ begin
    Button20.Visible:=false;
 end;
 
+//LPT:
 procedure Out32(wAddr:word;bOut:byte);stdcall; external 'inpout32.dll'    // Parallelportausgabe
-
 function Inp32(wAddr:word):integer;stdcall; external 'inpout32.dll'       // Parallelporteingabe
 
+//Denkovi:
+function FT_Open(Index:Integer; ftHandle:Pointer):FT_Result; stdcall; External 'FTD2XX.DLL' name 'FT_Open';
+function FT_Close(ftHandle:Dword):FT_Result; stdcall; External 'FTD2XX.DLL' name 'FT_Close';
+function FT_Write(ftHandle:Dword; FTOutBuf:Pointer; BufferSize:LongInt; ResultPtr:Pointer):FT_Result; stdcall; External 'FTD2XX.DLL' name 'FT_Write';
+function FT_SetBaudRate(ftHandle:Dword; BaudRate:DWord):FT_Result; stdcall; External 'FTD2XX.DLL' name 'FT_SetBaudRate';
+function FT_SetBitMode(ftHandle:Dword; Mask,Enable:Byte):FT_Result; stdcall; External 'FTD2XX.DLL' name 'FT_SetBitMode';
+procedure USB2OUT;
+begin
+  FT_OUT_INT:=0;
+  if (Ruehrwerk<>0) then FT_OUT_INT:=FT_OUT_INT+USBRIntWert;
+  if (Heizung<>0) then FT_OUT_INT:=FT_OUT_INT+USBHIntWert;
+  if (Alarm<>0) then FT_OUT_INT:=FT_OUT_INT+USBAIntWert;
+  if (Pumpe<>0) then FT_OUT_INT:=FT_OUT_INT+USBPIntWert;
+  FT_OUT:=FT_OUT_INT;
+  RESULT:=FT_Open(DeviceIndex,@FT_Handle);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+  RESULT:=FT_SetBaudRate(FT_Handle,921600);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+  RESULT:=FT_SetBitMode(FT_Handle,255,4);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+  RESULT:=FT_Write(FT_Handle,@FT_OUT,1,@Write_Result);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+  RESULT:=FT_Close(FT_HANDLE);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+end;
+
+//KMTronic:
 procedure USBOpenLine ;
 begin with Form1 do begin
   ser.Connect(USBPort);
-  if ser.LastError<>sOK then begin Edit52.Text:='NoCom'; exit ; end ;
+  if ser.LastError<>sOK then begin Edit51.Text:='Err' ; exit ; end else Form1.Edit51.Text:=USBPort;
   ser.Config({Baud}9600, {Bits}8, {Parity}'N', {StopBits}0, {Xon/Xoff}false, {DTR/CTS}false);
-  if ser.LastError<>sOK then begin Edit52.Text:='BadConf' ; exit ; end ;
+  if ser.LastError<>sOK then begin Edit51.Text:='Err' ; exit ; end else Form1.Edit51.Text:=USBPort;
 end ; end ;
 
 procedure USBCloseLine ;
@@ -470,7 +627,7 @@ begin with Form1 do begin
   ser.CloseSocket ;
 end ; end ;
 
-procedure USBOut(Sender: TObject);
+procedure USBOut ;
 begin
   USBOpenLine;
   if (Ruehrwerk<>0) then ser.SendString(char($FF)+char(USBRWert)+char($01)) else ser.SendString(char($FF)+char(USBRWert)+char($00));
@@ -480,7 +637,8 @@ begin
   USBCloseLine;
 end;
 
-procedure BatchOut(Sender: TObject);
+//Batch:
+procedure BatchOut;
 begin
   if (Ruehrwerk<>0) and (Ruehrwerk<>RStore) then
     if ShellExecute(Application.Handle,'open',PChar(BREin),nil, nil, SW_MINIMIZE) <= 32 then
@@ -514,6 +672,15 @@ begin
     if ShellExecute(Application.Handle,'open',PChar(BPAus),nil, nil, SW_MINIMIZE) <= 32 then
     ShowMessage('Es ist ein Fehler beim ausführen von '+BPAus+' aufgetreten') else
     PStore:=Pumpe;
+end;
+
+procedure Schalten(Form:TForm1);
+begin
+  LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;  //LPT-Code errechnen
+  if steuerung='LPT' then begin Form1.Edit52.Text:=inttostr(LPTCode);  Form1.Edit51.Text:=inttostr(LPTPort); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
+  if steuerung='BATCH' then begin Form1.Edit52.Text:='off'; BatchOut;  Form1.Edit51.Text:=''; end; //LPT-Code als Batch ausgeben
+  if (steuerung='USB') and (usbtyp='KMTronic') then begin Form1.Edit52.Text:='USB'; Form1.Edit51.Text:=USBPort; USBOut; end; //LPT-Code an USB-Port ausgeben
+  if (steuerung='USB') and (usbtyp='Denkovi') then begin Form1.Edit52.Text:='USB'; Form1.Edit51.Text:=inttostr(DeviceIndex); USB2Out; end; //LPT-Code an USB-Port ausgeben
 end;
 
 procedure speichern(Form:TForm1; filename:string);
@@ -682,6 +849,172 @@ begin
   ReadLn(myFile, x); Form.CheckBox32.Checked:=strtobool(x);
   ReadLn(myFile, x); Form.CheckBox33.Checked:=strtobool(x);
   ReadLn(myFile, x); Form.CheckBox34.Checked:=strtobool(x);
+end;
+
+procedure setup_speichern(Form:TForm1);
+begin
+  AssignFile(mySetup, pfad+'Setup\setup.txt');                // Setup speichern
+  ReWrite(mySetup);
+  WriteLn(mySetup,'Installationsverzeichnis;Standard');
+  WriteLn(mySetup,'Steuerung über "BATCH", "USB oder "LPT";'+Form.ComboBox1.Text);
+  WriteLn(mySetup,'LPT-Port;'+Form.ComboBox8.Text);
+  WriteLn(mySetup,'LPT-Heizung;'+Form.ComboBox9.Text);
+  WriteLn(mySetup,'LPT-Ruehrwerk;'+Form.ComboBox10.Text);
+  WriteLn(mySetup,'LPT-Pumpe;'+Form.ComboBox11.Text);
+  WriteLn(mySetup,'LPT-Alarm;'+Form.ComboBox12.Text);
+  WriteLn(mySetup,'USB-Karten-Typ "Denkovi" oder "KMTronic";'+Form.ComboBox2.Text);
+  WriteLn(mySetup,'Denkovi-Device-Index;'+Form.ComboBox16.Text);
+  WriteLn(mySetup,'USB-Port;'+Form.ComboBox7.Text);
+  WriteLn(mySetup,'USB-Heizung;'+Form.ComboBox3.Text);
+  WriteLn(mySetup,'USB-Ruehrwerk;'+Form.ComboBox4.Text);
+  WriteLn(mySetup,'USB-Pumpe;'+Form.ComboBox5.Text);
+  WriteLn(mySetup,'USB-Alarm;'+Form.ComboBox6.Text);
+  WriteLn(mySetup,'Batch-Heizung-Ein;'+Form.Edit54.Text);
+  WriteLn(mySetup,'Batch-Heizung-Aus;'+Form.Edit55.Text);
+  WriteLn(mySetup,'Batch-Ruehrwerk-Ein;'+Form.Edit56.Text);
+  WriteLn(mySetup,'Batch-Ruehrwerk-Aus;'+Form.Edit57.Text);
+  WriteLn(mySetup,'Batch-Pumpe-Ein;'+Form.Edit58.Text);
+  WriteLn(mySetup,'Batch-Pumpe-Aus;'+Form.Edit59.Text);
+  WriteLn(mySetup,'Batch-Alarm-Ein;'+Form.Edit60.Text);
+  WriteLn(mySetup,'Batch-Alarm-Aus;'+Form.Edit61.Text);
+  WriteLn(mySetup,'Taktungstemperatur;'+Form.ComboBox13.Text);
+  WriteLn(mySetup,'Einschaltpuls bis 60°C;'+Form.ComboBox14.Text);
+  WriteLn(mySetup,'Ausschaltpuls bis 60°C;'+Form.ComboBox15.Text);
+  WriteLn(mySetup,'Einschaltpuls bis 70°C;'+Form.ComboBox17.Text);
+  WriteLn(mySetup,'Ausschaltpuls bis 70°C;'+Form.ComboBox18.Text);
+  WriteLn(mySetup,'Einschaltpuls bis 80°C;'+Form.ComboBox19.Text);
+  WriteLn(mySetup,'Ausschaltpuls bis 80°C;'+Form.ComboBox20.Text);
+  WriteLn(mySetup,'Einschaltpuls bis 90°C;'+Form.ComboBox21.Text);
+  WriteLn(mySetup,'Ausschaltpuls bis 90°C;'+Form.ComboBox22.Text);
+  WriteLn(mySetup,'Einschaltpuls bis 100°C;'+Form.ComboBox24.Text);
+  WriteLn(mySetup,'Ausschaltpuls bis 100°C;'+Form.ComboBox23.Text);
+  WriteLn(mySetup,'Überschwingungsdämpfung;'+Form.ComboBox25.Text);
+  CloseFile(mySetup);
+  Steuerung:=Form.ComboBox1.Text;
+  LPTPort:=strtoint(Form.ComboBox8.Text);
+  HWert:=strtoint(Form.ComboBox9.Text);
+  RWert:=strtoint(Form.ComboBox10.Text);
+  PWert:=strtoint(Form.ComboBox11.Text);
+  AWert:=strtoint(Form.ComboBox12.Text);
+  USBTyp:=Form.ComboBox2.Text;
+  DeviceIndex:=strtoint(Form.ComboBox16.Text);
+  USBPort:=Form.ComboBox7.Text;
+  USBHWert:=Form.ComboBox3.Text[1]; dec(USBHWert, $30);
+  USBRWert:=Form.ComboBox4.Text[1]; dec(USBRWert, $30);
+  USBPWert:=Form.ComboBox5.Text[1]; dec(USBPWert, $30);
+  USBAWert:=Form.ComboBox6.Text[1]; dec(USBAWert, $30);
+  BHEin:=Form.Edit54.Text;
+  BHAus:=Form.Edit55.Text;
+  BREin:=Form.Edit56.Text;
+  BRAus:=Form.Edit57.Text;
+  BPEin:=Form.Edit58.Text;
+  BPAus:=Form.Edit59.Text;
+  BAEin:=Form.Edit60.Text;
+  BAAus:=Form.Edit61.Text;
+  TWert:=strtofloat(Form.ComboBox13.Text);
+  Ein60:=strtoint(Form.ComboBox14.Text);
+  Aus60:=strtoint(Form.ComboBox15.Text);
+  Ein70:=strtoint(Form.ComboBox17.Text);
+  Aus70:=strtoint(Form.ComboBox18.Text);
+  Ein80:=strtoint(Form.ComboBox19.Text);
+  Aus80:=strtoint(Form.ComboBox20.Text);
+  Ein90:=strtoint(Form.ComboBox21.Text);
+  Aus90:=strtoint(Form.ComboBox22.Text);
+  Ein100:=strtoint(Form.ComboBox24.Text);
+  Aus100:=strtoint(Form.ComboBox23.Text);
+  GradientWert:=strtofloat(Form.ComboBox25.Text);
+  If Steuerung='USB' then Form1.USB_Update_Tmr.Enabled:=true else Form1.USB_Update_Tmr.Enabled:=true;
+end;
+
+procedure setup_laden(Form:TForm1);
+begin
+  try
+    sl:=TStringList.Create; //Objekt erzeugen
+    sl.LoadFromFile(pfad+'Setup\Setup.txt');  //Datei in Stringliste laden
+    sl2:=TStringList.Create;
+    sl2.Delimiter:=';';
+    try
+      sl2.DelimitedText:=sl[0];
+      try if sl2[sl2.Count-1]<>'Standard' then pfad:=sl2[sl2.Count-1]; except ; end;
+      sl2.DelimitedText:=sl[1];
+      try Steuerung:=sl2[sl2.Count-1]; Form.ComboBox1.Text:=sl2[sl2.Count-1]; except Steuerung:='LPT'; end;
+      sl2.DelimitedText:=sl[2];
+      try LPTPort:=strtoint(sl2[sl2.Count-1]); Form.ComboBox8.Text:=sl2[sl2.Count-1]; except LPTPort:=888; end;
+      sl2.DelimitedText:=sl[3];
+      try HWert:=strtoint(sl2[sl2.Count-1]); Form.ComboBox9.Text:=sl2[sl2.Count-1]; except HWert:=1; end;
+      sl2.DelimitedText:=sl[4];
+      try RWert:=strtoint(sl2[sl2.Count-1]); Form.ComboBox10.Text:=sl2[sl2.Count-1]; except RWert:=2; end;
+      sl2.DelimitedText:=sl[5];
+      try PWert:=strtoint(sl2[sl2.Count-1]); Form.ComboBox11.Text:=sl2[sl2.Count-1]; except PWert:=8; end;
+      sl2.DelimitedText:=sl[6];
+      try AWert:=strtoint(sl2[sl2.Count-1]); Form.ComboBox12.Text:=sl2[sl2.Count-1]; except AWert:=128; end;
+      sl2.DelimitedText:=sl[7];
+      try USBTyp:=sl2[sl2.Count-1]; Form.ComboBox2.Text:=sl2[sl2.Count-1]; except USBTyp:='Denkovi'; end;
+      sl2.DelimitedText:=sl[8];
+      try DeviceIndex:=strtoint(sl2[sl2.Count-1]); Form.ComboBox16.Text:=sl2[sl2.Count-1]; except DeviceIndex:=0; end;
+      sl2.DelimitedText:=sl[9];
+      try USBPort:=sl2[sl2.Count-1]; Form.ComboBox7.Text:=sl2[sl2.Count-1]; except USBPort:='COM3'; end;
+      sl2.DelimitedText:=sl[10];
+      try USBHWert:=sl2[sl2.Count-1][1]; Form.ComboBox3.Text:=sl2[sl2.Count-1]; dec(USBHWert, $30); except USBHWert:=char($01); end;
+      sl2.DelimitedText:=sl[11];
+      try USBRWert:=sl2[sl2.Count-1][1]; Form.ComboBox4.Text:=sl2[sl2.Count-1]; dec(USBRWert, $30); except USBRWert:=char($02); end;
+      sl2.DelimitedText:=sl[12];
+      try USBPWert:=sl2[sl2.Count-1][1]; Form.ComboBox5.Text:=sl2[sl2.Count-1]; dec(USBPWert, $30); except USBPWert:=char($03); end;
+      sl2.DelimitedText:=sl[13];
+      try USBAWert:=sl2[sl2.Count-1][1]; Form.ComboBox6.Text:=sl2[sl2.Count-1]; dec(USBAWert, $30); except USBAWert:=char($04); end;
+      sl2.DelimitedText:=sl[14];
+      try BHEin:=sl2[sl2.Count-1]; Form.Edit54.Text:=sl2[sl2.Count-1]; except BHEin:='none'; end;
+      sl2.DelimitedText:=sl[15];
+      try BHAus:=sl2[sl2.Count-1]; Form.Edit55.Text:=sl2[sl2.Count-1]; except BHAus:='none'; end;
+      sl2.DelimitedText:=sl[16];
+      try BREin:=sl2[sl2.Count-1]; Form.Edit56.Text:=sl2[sl2.Count-1]; except BREin:='none'; end;
+      sl2.DelimitedText:=sl[17];
+      try BRAus:=sl2[sl2.Count-1]; Form.Edit57.Text:=sl2[sl2.Count-1]; except BRAus:='none'; end;
+      sl2.DelimitedText:=sl[18];
+      try BPEin:=sl2[sl2.Count-1]; Form.Edit58.Text:=sl2[sl2.Count-1]; except BPEin:='none'; end;
+      sl2.DelimitedText:=sl[19];
+      try BPAus:=sl2[sl2.Count-1]; Form.Edit59.Text:=sl2[sl2.Count-1]; except BPAus:='none'; end;
+      sl2.DelimitedText:=sl[20];
+      try BAEin:=sl2[sl2.Count-1]; Form.Edit60.Text:=sl2[sl2.Count-1]; except BAEin:='none'; end;
+      sl2.DelimitedText:=sl[21];
+      try BAAus:=sl2[sl2.Count-1]; Form.Edit61.Text:=sl2[sl2.Count-1]; except BAAus:='none'; end;
+      sl2.DelimitedText:=sl[22];
+      try TWert:=strtofloat(sl2[sl2.Count-1]); Form.ComboBox13.Text:=sl2[sl2.Count-1]; except TWert:=2.0; end;
+      sl2.DelimitedText:=sl[23];
+      try Ein60:=strtoint(sl2[sl2.Count-1]); Form.ComboBox14.Text:=sl2[sl2.Count-1]; except Ein60:=5; end;
+      sl2.DelimitedText:=sl[24];
+      try Aus60:=strtoint(sl2[sl2.Count-1]); Form.ComboBox15.Text:=sl2[sl2.Count-1]; except Aus60:=10; end;
+      sl2.DelimitedText:=sl[25];
+      try Ein70:=strtoint(sl2[sl2.Count-1]); Form.ComboBox17.Text:=sl2[sl2.Count-1]; except Ein70:=8; end;
+      sl2.DelimitedText:=sl[26];
+      try Aus70:=strtoint(sl2[sl2.Count-1]); Form.ComboBox18.Text:=sl2[sl2.Count-1]; except Aus70:=10; end;
+      sl2.DelimitedText:=sl[27];
+      try Ein80:=strtoint(sl2[sl2.Count-1]); Form.ComboBox19.Text:=sl2[sl2.Count-1]; except Ein80:=10; end;
+      sl2.DelimitedText:=sl[28];
+      try Aus80:=strtoint(sl2[sl2.Count-1]); Form.ComboBox20.Text:=sl2[sl2.Count-1]; except Aus80:=10; end;
+      sl2.DelimitedText:=sl[29];
+      try Ein90:=strtoint(sl2[sl2.Count-1]); Form.ComboBox21.Text:=sl2[sl2.Count-1]; except Ein90:=10; end;
+      sl2.DelimitedText:=sl[30];
+      try Aus90:=strtoint(sl2[sl2.Count-1]); Form.ComboBox22.Text:=sl2[sl2.Count-1]; except Aus90:=5; end;
+      sl2.DelimitedText:=sl[31];
+      try Ein100:=strtoint(sl2[sl2.Count-1]); Form.ComboBox24.Text:=sl2[sl2.Count-1]; except Ein100:=10; end;
+      sl2.DelimitedText:=sl[32];
+      try Aus100:=strtoint(sl2[sl2.Count-1]); Form.ComboBox23.Text:=sl2[sl2.Count-1]; except Aus100:=0; end;
+      sl2.DelimitedText:=sl[33];
+      try GradientWert:=strtofloat(sl2[sl2.Count-1]); Form.ComboBox25.Text:=sl2[sl2.Count-1]; except GradientWert:=0.5; end;
+      AusIst:=Aus60;
+      EinIst:=Ein60;
+      If Steuerung='USB' then Form1.USB_Update_Tmr.Enabled:=true;
+      If USBHWert=char(1) then USBHIntWert:=2 else if USBHWert=char(2) then USBHIntWert:=8 else if USBHWert=char(3) then USBHIntWert:=32 else USBHIntWert:=128;
+      If USBRWert=char(1) then USBRIntWert:=2 else if USBRWert=char(2) then USBRIntWert:=8 else if USBRWert=char(3) then USBRIntWert:=32 else USBRIntWert:=128;
+      If USBAWert=char(1) then USBAIntWert:=2 else if USBAWert=char(2) then USBAIntWert:=8 else if USBAWert=char(3) then USBAIntWert:=32 else USBAIntWert:=128;
+      If USBPWert=char(1) then USBPIntWert:=2 else if USBPWert=char(2) then USBPIntWert:=8 else if USBPWert=char(3) then USBPIntWert:=32 else USBPIntWert:=128;
+    finally
+      sl2.Free;
+    end;
+  finally
+    sl.Free;
+  end;
 end;
 
 procedure writechart(Form:TForm1);
@@ -870,10 +1203,7 @@ begin
     Ruehrwerk:=0;
     Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-aus.jpg');
   end;
-  LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;  //LPT-Code errechnen
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
-  if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
-  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
+  Schalten(Form1);
 end;
 
 procedure TForm1.Button9Click(Sender: TObject);
@@ -890,10 +1220,7 @@ begin
     Heizung:=0;
     Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-aus.jpg');
   end;
-  LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
-  if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
-  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
+  Schalten(Form1);
 end;
 
 procedure TForm1.Button10Click(Sender: TObject);
@@ -910,10 +1237,7 @@ begin
     Pumpe:=0;
     Image4.Picture.LoadFromFile(pfad + 'Graphics\Pumpe-aus.jpg');
   end;
-  LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
-  if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
-  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
+  Schalten(Form1);
 end;
 
 procedure TForm1.Button11Click(Sender: TObject);
@@ -930,10 +1254,7 @@ begin
     Alarm:=0;
     Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-aus.jpg');
   end;
-  LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
-  if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
-  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
+  Schalten(Form1);
 end;
 
 procedure TForm1.Timer1Timer(Sender: TObject);            // Timer für Temperaturmessung
@@ -989,84 +1310,7 @@ begin
   stop:=true;
   start:=false;
   DecimalSeparator:='.';
-  try
-    sl:=TStringList.Create; //Objekt erzeugen
-    sl.LoadFromFile(pfad+'Setup\Setup.txt');  //Datei in Stringliste laden
-    sl2:=TStringList.Create;
-    sl2.Delimiter:=';';
-    try
-      sl2.DelimitedText:=sl[0];
-      try if sl2[sl2.Count-1]<>'Standard' then pfad:=sl2[sl2.Count-1]; except ; end;
-      sl2.DelimitedText:=sl[1];
-      try Steuerung:=sl2[sl2.Count-1]; except Steuerung:='LPT'; end;
-      sl2.DelimitedText:=sl[2];
-      try LPTPort:=strtoint(sl2[sl2.Count-1]); except LPTPort:=888; end;
-      sl2.DelimitedText:=sl[3];
-      try HWert:=strtoint(sl2[sl2.Count-1]); except HWert:=1; end;
-      sl2.DelimitedText:=sl[4];
-      try RWert:=strtoint(sl2[sl2.Count-1]); except RWert:=2; end;
-      sl2.DelimitedText:=sl[5];
-      try PWert:=strtoint(sl2[sl2.Count-1]); except PWert:=8; end;
-      sl2.DelimitedText:=sl[6];
-      try AWert:=strtoint(sl2[sl2.Count-1]); except AWert:=128; end;
-      sl2.DelimitedText:=sl[7];
-      try USBPort:=sl2[sl2.Count-1]; except USBPort:='COM3'; end;
-      sl2.DelimitedText:=sl[8];
-      try USBHWert:=sl2[sl2.Count-1][1]; dec(USBHWert, $30); except USBHWert:=char($01); end;
-      sl2.DelimitedText:=sl[9];
-      try USBRWert:=sl2[sl2.Count-1][1]; dec(USBRWert, $30); except USBRWert:=char($02); end;
-      sl2.DelimitedText:=sl[10];
-      try USBPWert:=sl2[sl2.Count-1][1]; dec(USBPWert, $30); except USBPWert:=char($03); end;
-      sl2.DelimitedText:=sl[11];
-      try USBAWert:=sl2[sl2.Count-1][1]; dec(USBAWert, $30); except USBAWert:=char($04); end;
-      sl2.DelimitedText:=sl[12];
-      try BHEin:=sl2[sl2.Count-1]; except BHEin:='none'; end;
-      sl2.DelimitedText:=sl[13];
-      try BHAus:=sl2[sl2.Count-1]; except BHAus:='none'; end;
-      sl2.DelimitedText:=sl[14];
-      try BREin:=sl2[sl2.Count-1]; except BREin:='none'; end;
-      sl2.DelimitedText:=sl[15];
-      try BRAus:=sl2[sl2.Count-1]; except BRAus:='none'; end;
-      sl2.DelimitedText:=sl[16];
-      try BPEin:=sl2[sl2.Count-1]; except BPEin:='none'; end;
-      sl2.DelimitedText:=sl[17];
-      try BPAus:=sl2[sl2.Count-1]; except BPAus:='none'; end;
-      sl2.DelimitedText:=sl[18];
-      try BAEin:=sl2[sl2.Count-1]; except BAEin:='none'; end;
-      sl2.DelimitedText:=sl[19];
-      try BAAus:=sl2[sl2.Count-1]; except BAAus:='none'; end;
-      sl2.DelimitedText:=sl[20];
-      try TWert:=strtofloat(sl2[sl2.Count-1]); except TWert:=2.0; end;
-      sl2.DelimitedText:=sl[21];
-      try Ein60:=strtoint(sl2[sl2.Count-1]); except Ein60:=5; end;
-      sl2.DelimitedText:=sl[22];
-      try Aus60:=strtoint(sl2[sl2.Count-1]); except Aus60:=10; end;
-      sl2.DelimitedText:=sl[23];
-      try Ein70:=strtoint(sl2[sl2.Count-1]); except Ein70:=8; end;
-      sl2.DelimitedText:=sl[24];
-      try Aus70:=strtoint(sl2[sl2.Count-1]); except Aus70:=10; end;
-      sl2.DelimitedText:=sl[25];
-      try Ein80:=strtoint(sl2[sl2.Count-1]); except Ein80:=10; end;
-      sl2.DelimitedText:=sl[26];
-      try Aus80:=strtoint(sl2[sl2.Count-1]); except Aus80:=10; end;
-      sl2.DelimitedText:=sl[27];
-      try Ein90:=strtoint(sl2[sl2.Count-1]); except Ein90:=10; end;
-      sl2.DelimitedText:=sl[28];
-      try Aus90:=strtoint(sl2[sl2.Count-1]); except Aus90:=5; end;
-      sl2.DelimitedText:=sl[29];
-      try Ein100:=strtoint(sl2[sl2.Count-1]); except Ein100:=10; end;
-      sl2.DelimitedText:=sl[30];
-      try Aus100:=strtoint(sl2[sl2.Count-1]); except Aus100:=0; end;
-      sl2.DelimitedText:=sl[31];
-      try GradientWert:=strtofloat(sl2[sl2.Count-1]); except GradientWert:=0.5; end;
-      AusIst:=Aus60;
-      EinIst:=Ein60;
-    finally
-      sl2.Free;
-    end;
-  finally
-    sl.Free;
-  end;
+  setup_laden(Form1);
   if DeleteFile(pfad+'Temperatur\log.txt') then
   begin
     AssignFile(myFile, pfad+'Temperatur\log.txt');
@@ -1075,9 +1319,6 @@ begin
     CloseFile(myFile);
   end;
   Timer1.Enabled:=true;
-  if steuerung='LPT' then Edit51.Text:=inttostr(LPTPort);
-  if steuerung='BATCH' then Edit51.Text:='Batch';
-  if steuerung='USB' then Edit51.Text:=USBPort;
   Ruehrwerk:=0;
   Heizung:=0;
   Alarm:=0;
@@ -1087,9 +1328,8 @@ begin
   HStore:=0;
   AStore:=0;
   PStore:=0;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
-  if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
-  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); USB_Update_Tmr.Enabled:=true; end; //LPT-Code an USB-Port ausgeben
+  sensorreset:=0;
+  Schalten(Form1);
   Form1.Timer1Timer(Sender);
   for i:=1 to 60 do Gradientgetter[i]:=Tempfloat;
   Gradient:=0.0;
@@ -1132,10 +1372,7 @@ begin
       Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-aus.jpg');
       Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-aus.jpg');
       Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-aus.jpg');
-      LPTCode:=Pumpe;
-      if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
-      if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
-      if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
+      Schalten(Form1);
       if checkbox32.Checked=true then
       begin
         LogName:=FormatDateTime('ddmmyyyyhhnnss', now);
@@ -1287,6 +1524,7 @@ begin
       Button13.Enabled:=false;
       Button16.Enabled:=false;
       Button20.Enabled:=false;
+      TabSheet4.TabVisible:=false;
       if checkbox32.checked=true then Button18.Enabled:=true;
       if checkbox32.checked=true then Button23.Enabled:=true;
       Graphic:=pfad + 'Graphics\Automatik-aktiv.jpg';
@@ -1651,6 +1889,7 @@ begin
   Edit30.Visible:=true;
   Label35.Visible:=true;
   Gauge10.Visible:=true;
+  TabSheet4.TabVisible:=true;
   Graphic:=pfad + 'Graphics\Automatik-inaktiv.jpg';
   Image5.Picture.LoadFromFile(Graphic);
   if stop=false then
@@ -1743,11 +1982,7 @@ procedure TForm1.TimerREinTimer(Sender: TObject);
 begin
   Ruehrwerk:=RWert;
   Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-ein.jpg');
-  LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  try Edit52.Text:=inttostr(LPTCode); finally end;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
-  if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
-  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
+  Schalten(Form1);
   TimerREin.Enabled:=false;
   TimerRAus.Enabled:=true;
 end;
@@ -1756,10 +1991,7 @@ procedure TForm1.TimerRAusTimer(Sender: TObject);
 begin
   Ruehrwerk:=0;
   Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-aus.jpg');
-  LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
-  if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
-  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
+  Schalten(Form1);
   TimerRAus.Enabled:=false;
   TimerREin.Enabled:=true;
 end;
@@ -1768,10 +2000,7 @@ procedure TForm1.TimerHEinTimer(Sender: TObject);
 begin
   Heizung:=HWert;
   Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-ein.jpg');
-  LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
-  if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
-  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
+  Schalten(Form1);
   TimerHEin.Enabled:=false;
   TimerHAus.Enabled:=true;
 end;
@@ -1781,9 +2010,7 @@ begin
   Heizung:=0;
   Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-aus.jpg');
   LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
-  if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
-  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
+  Schalten(Form1);
   TimerHAus.Enabled:=false;
   TimerHEin.Enabled:=true;
 end;
@@ -1861,10 +2088,7 @@ procedure TForm1.TimerAAusTimer(Sender: TObject);
 begin
   Alarm:=0;
   Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-aus.jpg');
-  LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
-  if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
-  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
+  Schalten(Form1);
   TimerAAus.Enabled:=false;
   TimerAEin.Enabled:=true;
 end;
@@ -1873,10 +2097,7 @@ procedure TForm1.TimerAEinTimer(Sender: TObject);
 begin
   Alarm:=AWert;
   Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-ein.jpg');
-  LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  if steuerung='LPT' then begin Edit52.Text:=inttostr(LPTCode); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
-  if steuerung='BATCH' then begin Edit52.Text:='off'; BatchOut(Sender); end; //LPT-Code als Batch ausgeben
-  if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
+  Schalten(Form1);
   TimerAEin.Enabled:=false;
   TimerAAus.Enabled:=true;
 end;
@@ -2146,7 +2367,6 @@ procedure TForm1.Edit17Exit(Sender: TObject); begin editcheck(Edit17,0,100,'20')
 procedure TForm1.Edit18Exit(Sender: TObject); begin editcheck(Edit18,0,999,'60'); end;
 procedure TForm1.Edit19Exit(Sender: TObject); begin editcheck(Edit19,0,100,'20'); end;
 procedure TForm1.Edit20Exit(Sender: TObject); begin editcheck(Edit20,0,999,'60'); end;
-
 procedure TForm1.Edit31Exit(Sender: TObject); begin editcheck(Edit31,0,999,'60'); end;
 procedure TForm1.Edit32Exit(Sender: TObject); begin editcheck(Edit32,0,999,'60'); end;
 procedure TForm1.Edit33Exit(Sender: TObject); begin editcheck(Edit33,0,999,'60'); end;
@@ -2223,9 +2443,7 @@ begin
     AStore:=0;
     Pumpe:=0;
     PStore:=0;
-    if steuerung='LPT' then Out32(LPTPort,LPTCode); //LPT-Code an LPT-Port ausgeben
-    if steuerung='BATCH' then BatchOut(Sender); //LPT-Code als Batch ausgeben
-    if steuerung='USB' then begin Edit52.Text:='USB'; USBOut(Sender); end; //LPT-Code an USB-Port ausgeben
+    Schalten(Form1);
     application.terminate;
   end
   else CanClose:=false;
@@ -2314,7 +2532,221 @@ end;
 
 procedure TForm1.USB_Update_TmrTimer(Sender: TObject);
 begin
-  USBOut(Sender);
+  if Steuerung<>'USB' then begin USB_Update_Tmr.Enabled:=false; exit; end;
+  if usbtyp='Denkovi' then USB2Out else USBOut;
+end;
+
+procedure setupgeaendert;
+begin
+  setup_speichern(Form1);
+  Schalten(Form1);
+end;
+
+procedure TForm1.ComboBox2Change(Sender: TObject);
+begin
+  if ComboBox2.Text='Denkovi' then
+  begin
+    ComboBox7.Visible:=false;
+    ComboBox16.Visible:=true;
+    Label76.Visible:=false;
+    Label111.Visible:=true;
+  end
+  else
+  begin
+    ComboBox16.Visible:=false;
+    ComboBox7.Visible:=true;
+    Label111.Visible:=false;
+    Label76.Visible:=true;
+  end;
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox1Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox7Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox16Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox3Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox4Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox5Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox6Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox8Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox9Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox10Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox11Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox12Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.Edit54Exit(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.Edit55Exit(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.Edit56Exit(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.Edit57Exit(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.Edit58Exit(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.Edit59Exit(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.Edit60Exit(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.Edit61Exit(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox13Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox14Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox15Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox17Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox18Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox19Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox20Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox21Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox22Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox24Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox23Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox25Change(Sender: TObject);
+begin
+  setupgeaendert;
+end;
+
+procedure TForm1.Button26Click(Sender: TObject);
+begin
+  if ShellExecute(Application.Handle,'open',PChar(pfad+'Digitemp\Digitemp.bat'),nil,PChar(pfad+'Digitemp\'), SW_MINIMIZE) <= 32 then
+  ShowMessage('Es ist ein Fehler beim ausführen von Digitemp aufgetreten') else ;
+  sensorreset:=1;
+end;
+
+procedure TForm1.Button27Click(Sender: TObject);
+begin
+  if ShellExecute(Application.Handle,'open',PChar(pfad+'Digitemp\Digitemp_variabel.bat'),nil,PChar(pfad+'Digitemp\'), SW_SHOWNORMAL) <= 32 then
+  ShowMessage('Es ist ein Fehler beim ausführen von Digitemp aufgetreten') else ;
+  Sensorreset:=2;
+end;
+
+procedure TForm1.Button28Click(Sender: TObject);
+begin
+  if ShellExecute(Application.Handle,'open',PChar(pfad+'Digitemp\Externe_Sensorsoftware.bat'),nil,PChar(pfad+'Digitemp\'), SW_MINIMIZE) <= 32 then
+  ShowMessage('Es ist ein Fehler beim ausführen von Digitemp aufgetreten') else ;
+  sensorreset:=3;
+end;
+
+procedure TForm1.Image1DblClick(Sender: TObject);
+begin
+  if sensorreset=1 then Form1.Button26Click(Sender);
+  if sensorreset=2 then Form1.Button27Click(Sender);
+  if sensorreset=3 then Form1.Button28Click(Sender);
 end;
 
 end.

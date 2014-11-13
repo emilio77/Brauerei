@@ -341,6 +341,8 @@ type
     Button26: TButton;
     Button27: TButton;
     Button28: TButton;
+    Batch_Update_Tmr: TTimer;
+    CheckBox35: TCheckBox;
     procedure Button7Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
@@ -464,6 +466,8 @@ type
     procedure Button27Click(Sender: TObject);
     procedure Button28Click(Sender: TObject);
     procedure Image1DblClick(Sender: TObject);
+    procedure CheckBox35Click(Sender: TObject);
+    procedure Batch_Update_TmrTimer(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -641,35 +645,35 @@ end;
 procedure BatchOut;
 begin
   if (Ruehrwerk<>0) and (Ruehrwerk<>RStore) then
-    if ShellExecute(Application.Handle,'open',PChar(BREin),nil, nil, SW_MINIMIZE) <= 32 then
+    if ShellExecute(Application.Handle,'open',PChar(BREin),nil, nil, SW_HIDE) <= 32 then
     ShowMessage('Es ist ein Fehler beim ausführen von '+BREin+' aufgetreten') else
     RStore:=Ruehrwerk;
   if (Ruehrwerk=0) and (Ruehrwerk<>RStore) then
-    if ShellExecute(Application.Handle,'open',PChar(BRAus),nil, nil, SW_MINIMIZE) <= 32 then
+    if ShellExecute(Application.Handle,'open',PChar(BRAus),nil, nil, SW_HIDE) <= 32 then
     ShowMessage('Es ist ein Fehler beim ausführen von '+BRAus+' aufgetreten') else
     RStore:=Ruehrwerk;
   if (Heizung<>0) and (Heizung<>HStore) then
-    if ShellExecute(Application.Handle,'open',PChar(BHEin),nil, nil, SW_MINIMIZE) <= 32 then
+    if ShellExecute(Application.Handle,'open',PChar(BHEin),nil, nil, SW_HIDE) <= 32 then
     ShowMessage('Es ist ein Fehler beim ausführen von '+BHEin+' aufgetreten') else
     HStore:=Heizung;
   if (Heizung=0) and (Heizung<>HStore) then
-    if ShellExecute(Application.Handle,'open',PChar(BHAus),nil, nil, SW_MINIMIZE) <= 32 then
+    if ShellExecute(Application.Handle,'open',PChar(BHAus),nil, nil, SW_HIDE) <= 32 then
     ShowMessage('Es ist ein Fehler beim ausführen von '+BHAus+' aufgetreten') else
     HStore:=Heizung;
   if (Alarm<>0) and (Alarm<>AStore) then
-    if ShellExecute(Application.Handle,'open',PChar(BAEin),nil, nil, SW_MINIMIZE) <= 32 then
+    if ShellExecute(Application.Handle,'open',PChar(BAEin),nil, nil, SW_HIDE) <= 32 then
     ShowMessage('Es ist ein Fehler beim ausführen von '+BAEin+' aufgetreten') else
     AStore:=Alarm;
   if (Alarm=0) and (Alarm<>AStore) then
-    if ShellExecute(Application.Handle,'open',PChar(BAAus),nil, nil, SW_MINIMIZE) <= 32 then
+    if ShellExecute(Application.Handle,'open',PChar(BAAus),nil, nil, SW_HIDE) <= 32 then
     ShowMessage('Es ist ein Fehler beim ausführen von '+BAAus+' aufgetreten') else
     AStore:=Alarm;
   if (Pumpe<>0) and (Pumpe<>PStore) then
-    if ShellExecute(Application.Handle,'open',PChar(BPEin),nil, nil, SW_MINIMIZE) <= 32 then
+    if ShellExecute(Application.Handle,'open',PChar(BPEin),nil, nil, SW_HIDE) <= 32 then
     ShowMessage('Es ist ein Fehler beim ausführen von '+BPEin+' aufgetreten') else
     PStore:=Pumpe;
   if (Pumpe=0) and (Pumpe<>PStore) then
-    if ShellExecute(Application.Handle,'open',PChar(BPAus),nil, nil, SW_MINIMIZE) <= 32 then
+    if ShellExecute(Application.Handle,'open',PChar(BPAus),nil, nil, SW_HIDE) <= 32 then
     ShowMessage('Es ist ein Fehler beim ausführen von '+BPAus+' aufgetreten') else
     PStore:=Pumpe;
 end;
@@ -852,6 +856,7 @@ begin
 end;
 
 procedure setup_speichern(Form:TForm1);
+var dummyfilename:string;
 begin
   AssignFile(mySetup, pfad+'Setup\setup.txt');                // Setup speichern
   ReWrite(mySetup);
@@ -869,14 +874,22 @@ begin
   WriteLn(mySetup,'USB-Ruehrwerk;'+Form.ComboBox4.Text);
   WriteLn(mySetup,'USB-Pumpe;'+Form.ComboBox5.Text);
   WriteLn(mySetup,'USB-Alarm;'+Form.ComboBox6.Text);
-  WriteLn(mySetup,'Batch-Heizung-Ein;'+Form.Edit54.Text);
-  WriteLn(mySetup,'Batch-Heizung-Aus;'+Form.Edit55.Text);
-  WriteLn(mySetup,'Batch-Ruehrwerk-Ein;'+Form.Edit56.Text);
-  WriteLn(mySetup,'Batch-Ruehrwerk-Aus;'+Form.Edit57.Text);
-  WriteLn(mySetup,'Batch-Pumpe-Ein;'+Form.Edit58.Text);
-  WriteLn(mySetup,'Batch-Pumpe-Aus;'+Form.Edit59.Text);
-  WriteLn(mySetup,'Batch-Alarm-Ein;'+Form.Edit60.Text);
-  WriteLn(mySetup,'Batch-Alarm-Aus;'+Form.Edit61.Text);
+  dummyfilename:=stringreplace(Form.Edit54.Text,' ','€€€',[rfReplaceAll]);
+  WriteLn(mySetup,'Batch-Heizung-Ein;'+dummyfilename);
+  dummyfilename:=stringreplace(Form.Edit55.Text,' ','€€€',[rfReplaceAll]);
+  WriteLn(mySetup,'Batch-Heizung-Aus;'+dummyfilename);
+  dummyfilename:=stringreplace(Form.Edit56.Text,' ','€€€',[rfReplaceAll]);
+  WriteLn(mySetup,'Batch-Ruehrwerk-Ein;'+dummyfilename);
+  dummyfilename:=stringreplace(Form.Edit57.Text,' ','€€€',[rfReplaceAll]);
+  WriteLn(mySetup,'Batch-Ruehrwerk-Aus;'+dummyfilename);
+  dummyfilename:=stringreplace(Form.Edit58.Text,' ','€€€',[rfReplaceAll]);
+  WriteLn(mySetup,'Batch-Pumpe-Ein;'+dummyfilename);
+  dummyfilename:=stringreplace(Form.Edit59.Text,' ','€€€',[rfReplaceAll]);
+  WriteLn(mySetup,'Batch-Pumpe-Aus;'+dummyfilename);
+  dummyfilename:=stringreplace(Form.Edit60.Text,' ','€€€',[rfReplaceAll]);
+  WriteLn(mySetup,'Batch-Alarm-Ein;'+dummyfilename);
+  dummyfilename:=stringreplace(Form.Edit61.Text,' ','€€€',[rfReplaceAll]);
+  WriteLn(mySetup,'Batch-Alarm-Aus;'+dummyfilename);
   WriteLn(mySetup,'Taktungstemperatur;'+Form.ComboBox13.Text);
   WriteLn(mySetup,'Einschaltpuls bis 60°C;'+Form.ComboBox14.Text);
   WriteLn(mySetup,'Ausschaltpuls bis 60°C;'+Form.ComboBox15.Text);
@@ -889,6 +902,7 @@ begin
   WriteLn(mySetup,'Einschaltpuls bis 100°C;'+Form.ComboBox24.Text);
   WriteLn(mySetup,'Ausschaltpuls bis 100°C;'+Form.ComboBox23.Text);
   WriteLn(mySetup,'Überschwingungsdämpfung;'+Form.ComboBox25.Text);
+  if Form.CheckBox35.Checked=true then WriteLn(mySetup,'Batchwiederholung;1') else WriteLn(mySetup,'Batchwiederholung;0');
   CloseFile(mySetup);
   Steuerung:=Form.ComboBox1.Text;
   LPTPort:=strtoint(Form.ComboBox8.Text);
@@ -924,9 +938,11 @@ begin
   Aus100:=strtoint(Form.ComboBox23.Text);
   GradientWert:=strtofloat(Form.ComboBox25.Text);
   If Steuerung='USB' then Form1.USB_Update_Tmr.Enabled:=true else Form1.USB_Update_Tmr.Enabled:=true;
+  If Steuerung='BATCH' then Form1.Batch_Update_Tmr.Enabled:=true else Form1.Batch_Update_Tmr.Enabled:=true;
 end;
 
 procedure setup_laden(Form:TForm1);
+var dummyfilename:string;
 begin
   try
     sl:=TStringList.Create; //Objekt erzeugen
@@ -963,21 +979,21 @@ begin
       sl2.DelimitedText:=sl[13];
       try USBAWert:=sl2[sl2.Count-1][1]; Form.ComboBox6.Text:=sl2[sl2.Count-1]; dec(USBAWert, $30); except USBAWert:=char($04); end;
       sl2.DelimitedText:=sl[14];
-      try BHEin:=sl2[sl2.Count-1]; Form.Edit54.Text:=sl2[sl2.Count-1]; except BHEin:='none'; end;
+      try BHEin:=sl2[sl2.Count-1]; BHEin:=stringreplace(BHEin,'€€€',' ',[rfReplaceAll]); Form.Edit54.Text:=BHEin; except BHEin:='none'; end;
       sl2.DelimitedText:=sl[15];
-      try BHAus:=sl2[sl2.Count-1]; Form.Edit55.Text:=sl2[sl2.Count-1]; except BHAus:='none'; end;
+      try BHAus:=sl2[sl2.Count-1]; BHAus:=stringreplace(BHAus,'€€€',' ',[rfReplaceAll]); Form.Edit55.Text:=BHAus; except BHAus:='none'; end;
       sl2.DelimitedText:=sl[16];
-      try BREin:=sl2[sl2.Count-1]; Form.Edit56.Text:=sl2[sl2.Count-1]; except BREin:='none'; end;
+      try BREin:=sl2[sl2.Count-1]; BREin:=stringreplace(BREin,'€€€',' ',[rfReplaceAll]); Form.Edit56.Text:=BREin; except BREin:='none'; end;
       sl2.DelimitedText:=sl[17];
-      try BRAus:=sl2[sl2.Count-1]; Form.Edit57.Text:=sl2[sl2.Count-1]; except BRAus:='none'; end;
+      try BRAus:=sl2[sl2.Count-1]; BRAus:=stringreplace(BRAus,'€€€',' ',[rfReplaceAll]); Form.Edit57.Text:=BRAus; except BRAus:='none'; end;
       sl2.DelimitedText:=sl[18];
-      try BPEin:=sl2[sl2.Count-1]; Form.Edit58.Text:=sl2[sl2.Count-1]; except BPEin:='none'; end;
+      try BPEin:=sl2[sl2.Count-1]; BPEin:=stringreplace(BPEin,'€€€',' ',[rfReplaceAll]); Form.Edit58.Text:=BPEin; except BPEin:='none'; end;
       sl2.DelimitedText:=sl[19];
-      try BPAus:=sl2[sl2.Count-1]; Form.Edit59.Text:=sl2[sl2.Count-1]; except BPAus:='none'; end;
+      try BPAus:=sl2[sl2.Count-1]; BPAus:=stringreplace(BPAus,'€€€',' ',[rfReplaceAll]); Form.Edit59.Text:=BPAus; except BPAus:='none'; end;
       sl2.DelimitedText:=sl[20];
-      try BAEin:=sl2[sl2.Count-1]; Form.Edit60.Text:=sl2[sl2.Count-1]; except BAEin:='none'; end;
+      try BAEin:=sl2[sl2.Count-1]; BAEin:=stringreplace(BAEin,'€€€',' ',[rfReplaceAll]); Form.Edit60.Text:=BAEin; except BAEin:='none'; end;
       sl2.DelimitedText:=sl[21];
-      try BAAus:=sl2[sl2.Count-1]; Form.Edit61.Text:=sl2[sl2.Count-1]; except BAAus:='none'; end;
+      try BAAus:=sl2[sl2.Count-1]; BAAus:=stringreplace(BAAus,'€€€',' ',[rfReplaceAll]); Form.Edit61.Text:=BAAus; except BAAus:='none'; end;
       sl2.DelimitedText:=sl[22];
       try TWert:=strtofloat(sl2[sl2.Count-1]); Form.ComboBox13.Text:=sl2[sl2.Count-1]; except TWert:=2.0; end;
       sl2.DelimitedText:=sl[23];
@@ -1002,9 +1018,12 @@ begin
       try Aus100:=strtoint(sl2[sl2.Count-1]); Form.ComboBox23.Text:=sl2[sl2.Count-1]; except Aus100:=0; end;
       sl2.DelimitedText:=sl[33];
       try GradientWert:=strtofloat(sl2[sl2.Count-1]); Form.ComboBox25.Text:=sl2[sl2.Count-1]; except GradientWert:=0.5; end;
+      sl2.DelimitedText:=sl[34];
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox35.Checked:=true else Form.CheckBox35.Checked:=false; except Form.CheckBox35.Checked:=false end;
       AusIst:=Aus60;
       EinIst:=Ein60;
       If Steuerung='USB' then Form1.USB_Update_Tmr.Enabled:=true;
+      If Steuerung='BATCH' then Form1.Batch_Update_Tmr.Enabled:=true;
       If USBHWert=char(1) then USBHIntWert:=2 else if USBHWert=char(2) then USBHIntWert:=8 else if USBHWert=char(3) then USBHIntWert:=32 else USBHIntWert:=128;
       If USBRWert=char(1) then USBRIntWert:=2 else if USBRWert=char(2) then USBRIntWert:=8 else if USBRWert=char(3) then USBRIntWert:=32 else USBRIntWert:=128;
       If USBAWert=char(1) then USBAIntWert:=2 else if USBAWert=char(2) then USBAIntWert:=8 else if USBAWert=char(3) then USBAIntWert:=32 else USBAIntWert:=128;
@@ -1034,8 +1053,8 @@ begin
       s.XValues.DateTime := True;  // X-Achse auf Datum umstellen
       BottomAxis.DateTimeFormat := 'hh:mm:ss'; // bzw: 'dd-mm-yy hh:mm:ss'
       BottomAxis.Minimum := 0;
-      BottomAxis.Maximum := StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]); // X-Achse Startpunkt
-      BottomAxis.Minimum := StrToTime(Form.StringGrid1.Cells[1,startpunkt]); // X-Achse Endpunkt
+      BottomAxis.Maximum := StrToDate(Form.StringGrid1.Cells[0,endpunkt-1])+StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]); // X-Achse Startpunkt
+      BottomAxis.Minimum := StrToDate(Form.StringGrid1.Cells[0,startpunkt])+StrToTime(Form.StringGrid1.Cells[1,startpunkt]); // X-Achse Endpunkt
       LeftAxis.Minimum := 0;
       LeftAxis.Maximum := StrToFloat(Form.StringGrid1.Cells[6,startpunkt])+1; // Y-Achse Reset max
       LeftAxis.Minimum := StrToFloat(Form.StringGrid1.Cells[6,startpunkt]); // Y-Achse Reset min
@@ -1043,16 +1062,16 @@ begin
       LeftAxis.Automatic := False;
       for i:= startpunkt to endpunkt-1 do
       begin
-         s.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[6,i]));  // Wert in Chart einfägen
-         if LeftAxis.Maximum<StrToFloat(Form.StringGrid1.Cells[6,i])+2 then LeftAxis.Maximum:=StrToFloat(Form.StringGrid1.Cells[6,i])+2; // Y-Achse Korrektur max
-         if LeftAxis.Minimum>StrToFloat(Form.StringGrid1.Cells[6,i])-2 then LeftAxis.Minimum:=StrToFloat(Form.StringGrid1.Cells[6,i])-2; // Y-Achse Korrektur min
+        s.AddXY(StrToDate(Form.StringGrid1.Cells[0,i])+StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[6,i]));  // Wert in Chart einfägen
+        if LeftAxis.Maximum<StrToFloat(Form.StringGrid1.Cells[6,i])+2 then LeftAxis.Maximum:=StrToFloat(Form.StringGrid1.Cells[6,i])+2; // Y-Achse Korrektur max
+        if LeftAxis.Minimum>StrToFloat(Form.StringGrid1.Cells[6,i])-2 then LeftAxis.Minimum:=StrToFloat(Form.StringGrid1.Cells[6,i])-2; // Y-Achse Korrektur min
       end;
       t.ParentChart := Form.Chart1;
       for i:= startpunkt to endpunkt-1 do
       begin
-         t.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[7,i]));
-         if LeftAxis.Maximum<StrToFloat(Form.StringGrid1.Cells[7,i])+2 then LeftAxis.Maximum:=StrToFloat(Form.StringGrid1.Cells[7,i])+2;
-         if LeftAxis.Minimum>StrToFloat(Form.StringGrid1.Cells[7,i])-2 then LeftAxis.Minimum:=StrToFloat(Form.StringGrid1.Cells[7,i])-2;
+        t.AddXY(StrToDate(Form.StringGrid1.Cells[0,i])+StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[7,i]));
+        if LeftAxis.Maximum<StrToFloat(Form.StringGrid1.Cells[7,i])+2 then LeftAxis.Maximum:=StrToFloat(Form.StringGrid1.Cells[7,i])+2;
+        if LeftAxis.Minimum>StrToFloat(Form.StringGrid1.Cells[7,i])-2 then LeftAxis.Minimum:=StrToFloat(Form.StringGrid1.Cells[7,i])-2;
       end;
     end;
     with Form.Chart2 do
@@ -1063,16 +1082,16 @@ begin
       s2.XValues.DateTime := True;
       BottomAxis.DateTimeFormat := 'hh:mm:ss';
       BottomAxis.Minimum := 0;
-      BottomAxis.Maximum := StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]);
-      BottomAxis.Minimum := StrToTime(Form.StringGrid1.Cells[1,startpunkt]);
+      BottomAxis.Maximum := StrToDate(Form.StringGrid1.Cells[0,endpunkt-1])+StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]);
+      BottomAxis.Minimum := StrToDate(Form.StringGrid1.Cells[0,startpunkt])+StrToTime(Form.StringGrid1.Cells[1,startpunkt]);
       LeftAxis.Maximum := 1.05;
       LeftAxis.Minimum := -0.05;
       BottomAxis.Automatic := False;
       LeftAxis.Automatic := False;
       for i:= startpunkt to endpunkt-1 do
       begin
-        if i>0 then s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[2,i-1]));
-        s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[2,i]));
+        if i>0 then s2.AddXY(StrToDate(Form.StringGrid1.Cells[0,i])+StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[2,i-1]));
+        s2.AddXY(StrToDate(Form.StringGrid1.Cells[0,i])+StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[2,i]));
       end;
     end;
     with Form.Chart3 do
@@ -1082,10 +1101,9 @@ begin
       s2.ParentChart := Form.Chart3;
       s2.XValues.DateTime := True;
       BottomAxis.DateTimeFormat := 'hh:mm:ss';
-      BottomAxis.DateTimeFormat := 'hh:mm:ss';
       BottomAxis.Minimum := 0;
-      BottomAxis.Maximum := StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]);
-      BottomAxis.Minimum := StrToTime(Form.StringGrid1.Cells[1,startpunkt]);
+      BottomAxis.Maximum := StrToDate(Form.StringGrid1.Cells[0,endpunkt-1])+StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]);
+      BottomAxis.Minimum := StrToDate(Form.StringGrid1.Cells[0,startpunkt])+StrToTime(Form.StringGrid1.Cells[1,startpunkt]);
       BottomAxis.DateTimeFormat := 'hh:mm:ss'; // bzw: 'dd-mm-yy hh:mm:ss'
       LeftAxis.Maximum := 1.05;
       LeftAxis.Minimum := -0.05;
@@ -1093,52 +1111,50 @@ begin
       LeftAxis.Automatic := False;
       for i:= startpunkt to endpunkt-1 do
       begin
-        if i>0 then s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[3,i-1]));
-        s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[3,i]));
+        if i>0 then s2.AddXY(StrToDate(Form.StringGrid1.Cells[0,i])+StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[3,i-1]));
+        s2.AddXY(StrToDate(Form.StringGrid1.Cells[0,i])+StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[3,i]));
       end;
     end;
-  with Form.Chart4 do
-  begin
-    s2 := Form.series5;  // Kurve erstellen Pumpe
-    s2.Clear;
-    s2.ParentChart := Form.Chart4;
-    s2.XValues.DateTime := True;
-    BottomAxis.DateTimeFormat := 'hh:mm:ss';
-    BottomAxis.DateTimeFormat := 'hh:mm:ss';
-    BottomAxis.Minimum := 0;
-    BottomAxis.Maximum := StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]);
-    BottomAxis.Minimum := StrToTime(Form.StringGrid1.Cells[1,startpunkt]);
-    LeftAxis.Maximum := 1.05;
-    LeftAxis.Minimum := -0.05;
-    BottomAxis.Automatic := False;
-    LeftAxis.Automatic := False;
-    for i:= startpunkt to endpunkt-1 do
+    with Form.Chart4 do
     begin
-      if i>0 then s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[4,i-1]));
-      s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[4,i]));
+      s2 := Form.series5;  // Kurve erstellen Pumpe
+      s2.Clear;
+      s2.ParentChart := Form.Chart4;
+      s2.XValues.DateTime := True;
+      BottomAxis.DateTimeFormat := 'hh:mm:ss';
+      BottomAxis.Minimum := 0;
+      BottomAxis.Maximum := StrToDate(Form.StringGrid1.Cells[0,endpunkt-1])+StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]);
+      BottomAxis.Minimum := StrToDate(Form.StringGrid1.Cells[0,startpunkt])+StrToTime(Form.StringGrid1.Cells[1,startpunkt]);
+      LeftAxis.Maximum := 1.05;
+      LeftAxis.Minimum := -0.05;
+      BottomAxis.Automatic := False;
+      LeftAxis.Automatic := False;
+      for i:= startpunkt to endpunkt-1 do
+      begin
+        if i>0 then s2.AddXY(StrToDate(Form.StringGrid1.Cells[0,i])+StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[4,i-1]));
+        s2.AddXY(StrToDate(Form.StringGrid1.Cells[0,i])+StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[4,i]));
+      end;
     end;
-  end;
-  with Form.Chart5 do
-  begin
-    s2 := Form.series6;  // Kurve erstellen Alarm
-    s2.Clear;
-    s2.ParentChart := Form.Chart5;
-    s2.XValues.DateTime := True;
-    BottomAxis.DateTimeFormat := 'hh:mm:ss';
-    BottomAxis.DateTimeFormat := 'hh:mm:ss';
-    BottomAxis.Minimum := 0;
-    BottomAxis.Maximum := StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]);
-    BottomAxis.Minimum := StrToTime(Form.StringGrid1.Cells[1,startpunkt]);
-    LeftAxis.Maximum := 1.05;
-    LeftAxis.Minimum := -0.05;
-    BottomAxis.Automatic := False;
-    LeftAxis.Automatic := False;
-    for i:= startpunkt to endpunkt-1 do
+    with Form.Chart5 do
     begin
-      if i>0 then s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[5,i-1]));
-      s2.AddXY(StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[5,i]));
+      s2 := Form.series6;  // Kurve erstellen Alarm
+      s2.Clear;
+      s2.ParentChart := Form.Chart5;
+      s2.XValues.DateTime := True;
+      BottomAxis.DateTimeFormat := 'hh:mm:ss';
+      BottomAxis.Minimum := 0;
+      BottomAxis.Maximum := StrToDate(Form.StringGrid1.Cells[0,endpunkt-1])+StrToTime(Form.StringGrid1.Cells[1,endpunkt-1]);
+      BottomAxis.Minimum := StrToDate(Form.StringGrid1.Cells[0,startpunkt])+StrToTime(Form.StringGrid1.Cells[1,startpunkt]);
+      LeftAxis.Maximum := 1.05;
+      LeftAxis.Minimum := -0.05;
+      BottomAxis.Automatic := False;
+      LeftAxis.Automatic := False;
+      for i:= startpunkt to endpunkt-1 do
+      begin
+        if i>0 then s2.AddXY(StrToDate(Form.StringGrid1.Cells[0,i])+StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[5,i-1]));
+        s2.AddXY(StrToDate(Form.StringGrid1.Cells[0,i])+StrToTime(Form.StringGrid1.Cells[1,i]),StrToFloat(Form.StringGrid1.Cells[5,i]));
+      end;
     end;
-  end;
   except
   end;
 end;
@@ -1324,10 +1340,10 @@ begin
   Alarm:=0;
   Pumpe:=0;
   LPTCode:=0;
-  RStore:=0;
-  HStore:=0;
-  AStore:=0;
-  PStore:=0;
+  RStore:=1;
+  HStore:=1;
+  AStore:=1;
+  PStore:=1;
   sensorreset:=0;
   Schalten(Form1);
   Form1.Timer1Timer(Sender);
@@ -1894,11 +1910,11 @@ begin
   Image5.Picture.LoadFromFile(Graphic);
   if stop=false then
   begin
-    MessageDlg('Brauvorgang wurde beendet ' + #13 + '- mit OK fortsetzen!', mtInformation, [mbOK], 0);
     LogTimer.Enabled:=false;
     LogUpdateTimer.Enabled:=false;
     Button23.Caption:='AutoUpdate Ein';
     if checkbox32.Checked=true then CloseFile(myLogFile);
+    MessageDlg('Brauvorgang wurde beendet ' + #13 + '- mit OK fortsetzen!', mtInformation, [mbOK], 0);
   end;
   stop:=true;
   pause:=false;
@@ -2436,13 +2452,9 @@ begin
   begin
     LPTCode:=0;
     Ruehrwerk:=0;
-    RStore:=0;
     Heizung:=0;
-    HStore:=0;
     Alarm:=0;
-    AStore:=0;
     Pumpe:=0;
-    PStore:=0;
     Schalten(Form1);
     application.terminate;
   end
@@ -2463,70 +2475,67 @@ begin
   end;
 end;
 
-
-
 procedure TForm1.Button25Click(Sender: TObject);
-var
-RPage, RChart: TRect;
-ResX, ResY, Y: Integer;
+var RPage, RChart: TRect;
+    ResX, ResY, Y: Integer;
 begin
-if PrintDialog1.execute then
-begin
-Printer.Orientation := poPortrait;
-printer.BeginDoc;
-try
-printer.canvas.font.Name := 'Arial';
-// get physical page dimensions
-RPage := Rect( 0,0,GetDeviceCaps(Printer.handle, PHYSICALWIDTH),GetDeviceCaps(Printer.handle, PHYSICALHEIGHT));
-// get printer resolution, in dots per inch
-ResX := GetDeviceCaps(Printer.handle, LOGPIXELSX);
-ResY := GetDeviceCaps(Printer.handle, LOGPIXELSY);
-// Apply some margins
-RPage.Left := ResX div 2; // left margin 0,5 inch
-RPage.Right := RPage.Right - ResX div 2; // right margin 0.5 inch
-RPage.Top := ResX div 2; // top margin 0,5 inch
-RPage.Bottom := RPage.Bottom - ResY div 2; // bottom margin 0,5 inch
-// move to origin of printer coordinate system, which is the top left
-// corner of the printable area, not of the physical page
-OffsetRect(Rpage, GetDeviceCaps(Printer.handle, PHYSICALOFFSETY),GetDeviceCaps(Printer.handle, PHYSICALOFFSETY));
-// print a title for the page
-printer.canvas.font.Size := 18;
-printer.canvas.font.Style := [fsBold,fsUnderline];
-Y:= RPage.Top;
-printer.canvas.TextOut(RPage.Left+ResX div 4, Y, 'Dokumentation des Brauvorgangs vom '+StringGrid1.Cells[0,startpunkt]);
-Y:= Y + printer.canvas.TextHeight('Üy') +ResX div 4;
-// print the chart, assuming ResX = ResY here for simplicities sake
-// set up a rect that places the chart on the left half of the
-// page, with some gutter space between left and right half.
-// Hight of rect is calculated to preserve the aspect ratio of the
-// chart.
-RChart := Rect(RPage.Left, Y,(RPage.Right-RPage.Left-60) + RPage.Left, Y);
-RChart.Bottom := RChart.Top + Round( Chart1.Height / Chart1.Width * (RChart.Right-RChart.Left));
-Chart1.PrintPartialCanvas(Printer.canvas, RChart);
-// print second chart
-RChart.Top := RChart.Bottom + ResX div 10;
-RChart.Bottom := RChart.Top + Round( Chart2.Height / Chart2.Width * (RChart.Right-RChart.Left));
-Chart2.PrintPartialCanvas(Printer.canvas, RChart);
-// print third chart
-RChart.Top := RChart.Bottom + ResX div 10;
-RChart.Bottom := RChart.Top + Round( Chart3.Height / Chart3.Width * (RChart.Right-RChart.Left));
-Chart3.PrintPartialCanvas(Printer.canvas, RChart);
-// print fourth chart
-RChart.Top := RChart.Bottom + ResX div 10;
-RChart.Bottom := RChart.Top + Round( Chart4.Height / Chart4.Width * (RChart.Right-RChart.Left));
-Chart4.PrintPartialCanvas(Printer.canvas, RChart);
-// print fifth chart
-RChart.Top := RChart.Bottom + ResX div 10;
-RChart.Bottom := RChart.Top + Round( Chart5.Height / Chart5.Width * (RChart.Right-RChart.Left));
-Chart5.PrintPartialCanvas(Printer.canvas, RChart);
-// place a one line description below the chart
-printer.canvas.font.Size := 10;
-printer.canvas.font.Style := [];
-Y:= RChart.Bottom + ResY div 5;
-printer.canvas.TextOut(RChart.Left+ResX div 4, Y, 'Aufzeichnung vom '+StringGrid1.Cells[0,startpunkt]+', '+StringGrid1.Cells[1,startpunkt]+' bis '+StringGrid1.Cells[0,endpunkt-1]+', '+StringGrid1.Cells[1,endpunkt-1]);
-finally
-Printer.EndDoc;
-end;
+  if PrintDialog1.execute then
+  begin
+    Printer.Orientation := poPortrait;
+    printer.BeginDoc;
+    try
+    printer.canvas.font.Name := 'Arial';
+    // get physical page dimensions
+    RPage := Rect( 0,0,GetDeviceCaps(Printer.handle, PHYSICALWIDTH),GetDeviceCaps(Printer.handle, PHYSICALHEIGHT));
+    // get printer resolution, in dots per inch
+    ResX := GetDeviceCaps(Printer.handle, LOGPIXELSX);
+    ResY := GetDeviceCaps(Printer.handle, LOGPIXELSY);
+    // Apply some margins
+    RPage.Left := ResX div 2; // left margin 0,5 inch
+    RPage.Right := RPage.Right - ResX div 2; // right margin 0.5 inch
+    RPage.Top := ResX div 2; // top margin 0,5 inch
+    RPage.Bottom := RPage.Bottom - ResY div 2; // bottom margin 0,5 inch
+    // move to origin of printer coordinate system, which is the top left
+    // corner of the printable area, not of the physical page
+    OffsetRect(Rpage, GetDeviceCaps(Printer.handle, PHYSICALOFFSETY),GetDeviceCaps(Printer.handle, PHYSICALOFFSETY));
+    // print a title for the page
+    printer.canvas.font.Size := 18;
+    printer.canvas.font.Style := [fsBold,fsUnderline];
+    Y:= RPage.Top;
+    printer.canvas.TextOut(RPage.Left+ResX div 4, Y, 'Dokumentation des Brauvorgangs vom '+StringGrid1.Cells[0,startpunkt]);
+    Y:= Y + printer.canvas.TextHeight('Üy') +ResX div 4;
+    // print the chart, assuming ResX = ResY here for simplicities sake
+    // set up a rect that places the chart on the left half of the
+    // page, with some gutter space between left and right half.
+    // Hight of rect is calculated to preserve the aspect ratio of the
+    // chart.
+    RChart := Rect(RPage.Left, Y,(RPage.Right-RPage.Left-60) + RPage.Left, Y);
+    RChart.Bottom := RChart.Top + Round( Chart1.Height / Chart1.Width * (RChart.Right-RChart.Left));
+    Chart1.PrintPartialCanvas(Printer.canvas, RChart);
+    // print second chart
+    RChart.Top := RChart.Bottom + ResX div 10;
+    RChart.Bottom := RChart.Top + Round( Chart2.Height / Chart2.Width * (RChart.Right-RChart.Left));
+    Chart2.PrintPartialCanvas(Printer.canvas, RChart);
+    // print third chart
+    RChart.Top := RChart.Bottom + ResX div 10;
+    RChart.Bottom := RChart.Top + Round( Chart3.Height / Chart3.Width * (RChart.Right-RChart.Left));
+    Chart3.PrintPartialCanvas(Printer.canvas, RChart);
+    // print fourth chart
+    RChart.Top := RChart.Bottom + ResX div 10;
+    RChart.Bottom := RChart.Top + Round( Chart4.Height / Chart4.Width * (RChart.Right-RChart.Left));
+    Chart4.PrintPartialCanvas(Printer.canvas, RChart);
+    // print fifth chart
+    RChart.Top := RChart.Bottom + ResX div 10;
+    RChart.Bottom := RChart.Top + Round( Chart5.Height / Chart5.Width * (RChart.Right-RChart.Left));
+    Chart5.PrintPartialCanvas(Printer.canvas, RChart);
+    // place a one line description below the chart
+    printer.canvas.font.Size := 10;
+    printer.canvas.font.Style := [];
+    Y:= RChart.Bottom + ResY div 5;
+    printer.canvas.TextOut(RChart.Left+ResX div 4, Y, 'Aufzeichnung vom '+StringGrid1.Cells[0,startpunkt]+', '+StringGrid1.Cells[1,startpunkt]+' bis '+StringGrid1.Cells[0,endpunkt-1]+', '+StringGrid1.Cells[1,endpunkt-1]);
+    finally
+    Printer.EndDoc;
+  end;
 end;
 end;
 
@@ -2534,6 +2543,12 @@ procedure TForm1.USB_Update_TmrTimer(Sender: TObject);
 begin
   if Steuerung<>'USB' then begin USB_Update_Tmr.Enabled:=false; exit; end;
   if usbtyp='Denkovi' then USB2Out else USBOut;
+end;
+
+procedure TForm1.Batch_Update_TmrTimer(Sender: TObject);
+begin
+  if Steuerung<>'Batch' then begin Batch_Update_Tmr.Enabled:=false; exit; end;
+  BatchOut;
 end;
 
 procedure setupgeaendert;
@@ -2561,165 +2576,39 @@ begin
   setupgeaendert;
 end;
 
-procedure TForm1.ComboBox1Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox7Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox16Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox3Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox4Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox5Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox6Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox8Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox9Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox10Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox11Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox12Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.Edit54Exit(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.Edit55Exit(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.Edit56Exit(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.Edit57Exit(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.Edit58Exit(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.Edit59Exit(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.Edit60Exit(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.Edit61Exit(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox13Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox14Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox15Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox17Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox18Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox19Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox20Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox21Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox22Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox24Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox23Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
-
-procedure TForm1.ComboBox25Change(Sender: TObject);
-begin
-  setupgeaendert;
-end;
+procedure TForm1.ComboBox1Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox7Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox16Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox3Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox4Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox5Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox6Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox8Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox9Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox10Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox11Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox12Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.Edit54Exit(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.Edit55Exit(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.Edit56Exit(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.Edit57Exit(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.Edit58Exit(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.Edit59Exit(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.Edit60Exit(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.Edit61Exit(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox13Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox14Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox15Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox17Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox18Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox19Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox20Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox21Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox22Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox24Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox23Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox25Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.CheckBox35Click(Sender: TObject); begin setupgeaendert; end;
 
 procedure TForm1.Button26Click(Sender: TObject);
 begin

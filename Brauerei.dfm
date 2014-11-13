@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 597
   Top = 112
   BorderStyle = bsSingle
-  Caption = 'Brauerei V01.20'
+  Caption = 'Brauerei V01.21'
   ClientHeight = 632
   ClientWidth = 977
   Color = clBtnFace
@@ -715,7 +715,7 @@ object Form1: TForm1
     Top = 8
     Width = 777
     Height = 617
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     TabOrder = 0
     OnChange = PageControl1Change
     object TabSheet1: TTabSheet
@@ -4308,16 +4308,16 @@ object Form1: TForm1
       ImageIndex = 3
       object Label73: TLabel
         Left = 16
-        Top = 36
+        Top = 28
         Width = 115
         Height = 13
         Caption = 'Hardwaresteuerung:'
       end
       object GroupBox1: TGroupBox
         Left = 16
-        Top = 272
+        Top = 264
         Width = 433
-        Height = 233
+        Height = 249
         Caption = 'Batch-Datei-Steuerung'
         TabOrder = 0
         object Label62: TLabel
@@ -4448,10 +4448,19 @@ object Form1: TForm1
           Text = 'C:\Brauerei\Batch\Alarm-Aus.bat'
           OnExit = Edit61Exit
         end
+        object CheckBox35: TCheckBox
+          Left = 96
+          Top = 224
+          Width = 321
+          Height = 17
+          Caption = 'Batchausgabe zyklisch wiederholen'
+          TabOrder = 8
+          OnClick = CheckBox35Click
+        end
       end
       object ComboBox1: TComboBox
         Left = 144
-        Top = 32
+        Top = 24
         Width = 81
         Height = 21
         ItemHeight = 13
@@ -4465,7 +4474,7 @@ object Form1: TForm1
       end
       object GroupBox2: TGroupBox
         Left = 16
-        Top = 72
+        Top = 64
         Width = 217
         Height = 177
         Caption = 'USB-Steuerung'
@@ -4634,7 +4643,7 @@ object Form1: TForm1
       end
       object GroupBox3: TGroupBox
         Left = 256
-        Top = 72
+        Top = 64
         Width = 193
         Height = 177
         Caption = 'LPT-Steuerung'
@@ -4767,9 +4776,9 @@ object Form1: TForm1
       end
       object GroupBox4: TGroupBox
         Left = 480
-        Top = 72
+        Top = 64
         Width = 265
-        Height = 433
+        Height = 449
         Caption = 'Heizkurven-Manipulation'
         TabOrder = 4
         object Label88: TLabel
@@ -8277,19 +8286,19 @@ object Form1: TForm1
   object Timer1: TTimer
     Enabled = False
     OnTimer = Timer1Timer
-    Left = 912
+    Left = 880
   end
   object SaveDialog1: TSaveDialog
     DefaultExt = 'rzt'
     Filter = 'Rezept-Datei|*.rzt|Alle Dateien|*.*'
     InitialDir = 'C:\Brauerei\Rezepte'
-    Left = 784
+    Left = 752
   end
   object OpenDialog1: TOpenDialog
     DefaultExt = 'rzt'
     Filter = 'Rezept-Datei|*.rzt|Alle Dateien|*.*'
     InitialDir = 'C:\Brauerei\Rezepte'
-    Left = 752
+    Left = 720
   end
   object TimerHAus: TTimer
     Enabled = False
@@ -8343,13 +8352,13 @@ object Form1: TForm1
   object Timer2: TTimer
     Enabled = False
     OnTimer = Timer2Timer
-    Left = 880
+    Left = 848
   end
   object LogTimer: TTimer
     Enabled = False
     Interval = 5000
     OnTimer = LogTimerTimer
-    Left = 848
+    Left = 816
   end
   object SimulationTimer: TTimer
     Enabled = False
@@ -8372,12 +8381,18 @@ object Form1: TForm1
     Top = 512
   end
   object PrintDialog1: TPrintDialog
-    Left = 816
+    Left = 784
   end
   object USB_Update_Tmr: TTimer
     Enabled = False
     Interval = 5000
     OnTimer = USB_Update_TmrTimer
+    Left = 912
+  end
+  object Batch_Update_Tmr: TTimer
+    Enabled = False
+    Interval = 5000
+    OnTimer = Batch_Update_TmrTimer
     Left = 944
   end
 end

@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 597
   Top = 112
   BorderStyle = bsSingle
-  Caption = 'Brauerei V01.21'
+  Caption = 'Brauerei V01.30'
   ClientHeight = 632
   ClientWidth = 977
   Color = clBtnFace
@@ -715,7 +715,7 @@ object Form1: TForm1
     Top = 8
     Width = 777
     Height = 617
-    ActivePage = TabSheet2
+    ActivePage = TabSheet4
     TabOrder = 0
     OnChange = PageControl1Change
     object TabSheet1: TTabSheet
@@ -3008,6 +3008,38 @@ object Form1: TForm1
           State = cbChecked
           TabOrder = 1
         end
+        object CheckBox36: TCheckBox
+          Left = 456
+          Top = 29
+          Width = 137
+          Height = 19
+          Caption = 'Heizung Gradient'
+          Checked = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+          State = cbChecked
+          TabOrder = 2
+        end
+        object CheckBox37: TCheckBox
+          Left = 456
+          Top = 52
+          Width = 137
+          Height = 17
+          Caption = 'Heizung Hysterese'
+          Checked = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+          State = cbChecked
+          TabOrder = 3
+        end
       end
       object Edit1: TEdit
         Left = 96
@@ -3580,7 +3612,7 @@ object Form1: TForm1
       end
       object CheckBox31: TCheckBox
         Left = 464
-        Top = 40
+        Top = 82
         Width = 105
         Height = 17
         Caption = 'Alarm gepulst'
@@ -3831,8 +3863,8 @@ object Form1: TForm1
         OnExit = Edit50Exit
       end
       object CheckBox32: TCheckBox
-        Left = 464
-        Top = 64
+        Left = 608
+        Top = 38
         Width = 137
         Height = 17
         Caption = 'Log schreiben'
@@ -4784,9 +4816,9 @@ object Form1: TForm1
         object Label88: TLabel
           Left = 17
           Top = 28
-          Width = 125
+          Width = 139
           Height = 13
-          Caption = 'Takttemperatur Delta:'
+          Caption = 'Takt- / Gradientbereich:'
         end
         object Label90: TLabel
           Left = 225
@@ -4938,9 +4970,9 @@ object Form1: TForm1
         object Label109: TLabel
           Left = 17
           Top = 308
-          Width = 144
+          Width = 115
           Height = 13
-          Caption = 'Gradient '#220'berschwingen:'
+          Caption = 'Zul'#228'ssiger Gradient:'
         end
         object Label110: TLabel
           Left = 225
@@ -4948,6 +4980,27 @@ object Form1: TForm1
           Width = 9
           Height = 13
           Caption = 'K'
+        end
+        object Label112: TLabel
+          Left = 17
+          Top = 340
+          Width = 95
+          Height = 13
+          Caption = 'Schalthysterese:'
+        end
+        object Label113: TLabel
+          Left = 225
+          Top = 340
+          Width = 9
+          Height = 13
+          Caption = 'K'
+        end
+        object Label114: TLabel
+          Left = 17
+          Top = 396
+          Width = 184
+          Height = 13
+          Caption = 'Name der Temperatur-Textdatei:'
         end
         object ComboBox13: TComboBox
           Left = 168
@@ -8154,6 +8207,58 @@ object Form1: TForm1
             '2.9'
             '3.0'
             #9)
+        end
+        object ComboBox26: TComboBox
+          Left = 168
+          Top = 336
+          Width = 49
+          Height = 21
+          ItemHeight = 13
+          TabOrder = 12
+          Text = '2.0'
+          OnChange = ComboBox26Change
+          Items.Strings = (
+            '0.0'
+            '0.1'
+            '0.2'
+            '0.3'
+            '0.4'
+            '0.5'
+            '0.6'
+            '0.7'
+            '0.8'
+            '0.9'
+            '1.0'
+            '1.1'
+            '1.2'
+            '1.3'
+            '1.4'
+            '1.5'
+            '1.6'
+            '1.7'
+            '1.8'
+            '1.9'
+            '2.0'
+            '2.1'
+            '2.2'
+            '2.3'
+            '2.4'
+            '2.5'
+            '2.6'
+            '2.7'
+            '2.8'
+            '2.9'
+            '3.0'
+            #9)
+        end
+        object Edit62: TEdit
+          Left = 16
+          Top = 416
+          Width = 233
+          Height = 21
+          TabOrder = 13
+          Text = 'log.txt'
+          OnExit = Edit62Exit
         end
       end
       object Button26: TButton

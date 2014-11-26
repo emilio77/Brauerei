@@ -343,6 +343,13 @@ type
     Button28: TButton;
     Batch_Update_Tmr: TTimer;
     CheckBox35: TCheckBox;
+    CheckBox36: TCheckBox;
+    CheckBox37: TCheckBox;
+    Label112: TLabel;
+    ComboBox26: TComboBox;
+    Label113: TLabel;
+    Label114: TLabel;
+    Edit62: TEdit;
     procedure Button7Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
@@ -468,6 +475,8 @@ type
     procedure Image1DblClick(Sender: TObject);
     procedure CheckBox35Click(Sender: TObject);
     procedure Batch_Update_TmrTimer(Sender: TObject);
+    procedure ComboBox26Change(Sender: TObject);
+    procedure Edit62Exit(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -478,15 +487,16 @@ var
   Form1: TForm1;
   sl,sl2: TStringList;
   Temperatur,x,Graphic,LogName,Steuerung,BHEin,BHAus,BREin,BRAus,BPEin,BPAus,
-  BAEin,BAAus,TimeTempStr,TimeTempStore,USBPort,USBTyp,pfad: String;
-  Tempfloat,Solltemp,Deltatemp,SimTemp,TWert,Gradient, GradientWert: Extended;
+  BAEin,BAAus,TimeTempStr,TimeTempStore,USBPort,USBTyp,pfad, tempdateiname: String;
+  Tempfloat,Solltemp,Deltatemp,SimTemp,TWert,Gradient, GradientWert,
+  GradientUebergabe, Hysterese: Extended;
   Ruehrwerk,Heizung,Alarm,Pumpe,HWert,RWert,PWert,AWert,RStore,PStore,HStore,
   AStore,LPTCode,zeit,zeit2,zeit3,zeitpause,fortschritt,rast,Intdummy,
   CountLines,gesfortschritt,rastzahl, startpunkt,endpunkt,y,Ein60,Aus60,Ein70,
   Aus70,Ein80,Aus80,Ein90,Aus90,Ein100,Aus100,EinIst,AusIst,USBHIntWert,
   USBRIntWert,USBPIntWert,USBAIntWert,DeviceIndex,sensorreset: integer;
   LPTPort: word;
-  myFile,myLogFile,SimFile,mySetup: TextFile;
+  myFile,myLogFile,SimFile,mySetup,myDisplay: TextFile;
   pause,start,stop,AlarmEin,Rasttemp1,Rasttemp2,Rasttemp3,Rasttemp4,Rasttemp5,
   Rasttemp6,Rasttemp7,Rasttemp8,Rasttemp9,Rasttemp10,Rastnull1,Rastnull2,
   Rastnull3,Rastnull4,Rastnull5,Rastnull6,Rastnull7,Rastnull8,Rastnull9,
@@ -769,6 +779,8 @@ begin
   WriteLn(myFile, Form.CheckBox32.Checked);
   WriteLn(myFile, Form.CheckBox33.Checked);
   WriteLn(myFile, Form.CheckBox34.Checked);
+  WriteLn(myFile, Form.CheckBox36.Checked);
+  WriteLn(myFile, Form.CheckBox37.Checked);
 end;
 
 procedure laden(Form:TForm1; filename:string);
@@ -853,6 +865,8 @@ begin
   ReadLn(myFile, x); Form.CheckBox32.Checked:=strtobool(x);
   ReadLn(myFile, x); Form.CheckBox33.Checked:=strtobool(x);
   ReadLn(myFile, x); Form.CheckBox34.Checked:=strtobool(x);
+  ReadLn(myFile, x); Form.CheckBox36.Checked:=strtobool(x);
+  ReadLn(myFile, x); Form.CheckBox37.Checked:=strtobool(x);
 end;
 
 procedure setup_speichern(Form:TForm1);
@@ -902,7 +916,10 @@ begin
   WriteLn(mySetup,'Einschaltpuls bis 100°C;'+Form.ComboBox24.Text);
   WriteLn(mySetup,'Ausschaltpuls bis 100°C;'+Form.ComboBox23.Text);
   WriteLn(mySetup,'Überschwingungsdämpfung;'+Form.ComboBox25.Text);
+  WriteLn(mySetup,'Schalthysterese;'+Form.ComboBox26.Text);
   if Form.CheckBox35.Checked=true then WriteLn(mySetup,'Batchwiederholung;1') else WriteLn(mySetup,'Batchwiederholung;0');
+  dummyfilename:=stringreplace(Form.Edit62.Text,' ','€€€',[rfReplaceAll]);
+  WriteLn(mySetup,'Temperatur-Textdatei;'+dummyfilename);
   CloseFile(mySetup);
   Steuerung:=Form.ComboBox1.Text;
   LPTPort:=strtoint(Form.ComboBox8.Text);
@@ -925,6 +942,7 @@ begin
   BPAus:=Form.Edit59.Text;
   BAEin:=Form.Edit60.Text;
   BAAus:=Form.Edit61.Text;
+  tempdateiname:=Form.Edit62.Text;
   TWert:=strtofloat(Form.ComboBox13.Text);
   Ein60:=strtoint(Form.ComboBox14.Text);
   Aus60:=strtoint(Form.ComboBox15.Text);
@@ -937,6 +955,7 @@ begin
   Ein100:=strtoint(Form.ComboBox24.Text);
   Aus100:=strtoint(Form.ComboBox23.Text);
   GradientWert:=strtofloat(Form.ComboBox25.Text);
+  Hysterese:=strtofloat(Form.ComboBox26.Text);
   If Steuerung='USB' then Form1.USB_Update_Tmr.Enabled:=true else Form1.USB_Update_Tmr.Enabled:=true;
   If Steuerung='BATCH' then Form1.Batch_Update_Tmr.Enabled:=true else Form1.Batch_Update_Tmr.Enabled:=true;
 end;
@@ -1019,7 +1038,11 @@ begin
       sl2.DelimitedText:=sl[33];
       try GradientWert:=strtofloat(sl2[sl2.Count-1]); Form.ComboBox25.Text:=sl2[sl2.Count-1]; except GradientWert:=0.5; end;
       sl2.DelimitedText:=sl[34];
+      try GradientWert:=strtofloat(sl2[sl2.Count-1]); Form.ComboBox26.Text:=sl2[sl2.Count-1]; except GradientWert:=0.5; end;
+      sl2.DelimitedText:=sl[35];
       try if sl2[sl2.Count-1]='1' then Form.CheckBox35.Checked:=true else Form.CheckBox35.Checked:=false; except Form.CheckBox35.Checked:=false end;
+      sl2.DelimitedText:=sl[36];
+      try tempdateiname:=sl2[sl2.Count-1]; tempdateiname:=stringreplace(tempdateiname,'€€€',' ',[rfReplaceAll]); Form.Edit62.Text:=tempdateiname; except tempdateiname:='none'; end;
       AusIst:=Aus60;
       EinIst:=Ein60;
       If Steuerung='USB' then Form1.USB_Update_Tmr.Enabled:=true;
@@ -1034,6 +1057,25 @@ begin
   finally
     sl.Free;
   end;
+end;
+
+procedure Display(Form:TForm1; filename:string);
+var strcopy:String;
+begin
+  AssignFile(myDisplay, filename);                // Displaydaten speichern
+  ReWrite(myDisplay);
+  strcopy:=copy(Form1.Panel1.Caption, 1, Length(Form1.Panel1.Caption)- 3);
+  WriteLn(myDisplay, strcopy);
+  strcopy:=copy(Form1.Panel4.Caption, 1, Length(Form1.Panel4.Caption)- 3);
+  WriteLn(myDisplay, strcopy);
+  if (Heizung<>0) then WriteLn(myDisplay, '1') else WriteLn(myDisplay, '0');
+  if (Ruehrwerk<>0) then WriteLn(myDisplay, '1') else WriteLn(myDisplay, '0');
+  if (Pumpe<>0) then WriteLn(myDisplay, '1') else WriteLn(myDisplay, '0');    
+  if (Alarm<>0) then WriteLn(myDisplay, '1') else WriteLn(myDisplay, '0');
+  if (Start=true) then WriteLn(myDisplay, 'aktiv');
+  if (Stop=true) then WriteLn(myDisplay, 'inaktiv');
+  if (Pause=true) then WriteLn(myDisplay, 'pausiert');
+  CloseFile(myDisplay);
 end;
 
 procedure writechart(Form:TForm1);
@@ -1282,7 +1324,14 @@ var
   ZeilenAnzahl:integer;
 begin
   DecimalSeparator:='.';
-  AssignFile (TempFile,pfad + 'Temperatur\log.txt');
+  if FileExists(pfad+'Temperatur\' + tempdateiname) then else
+  begin
+    AssignFile(myFile, pfad+'Temperatur\' + tempdateiname);
+    ReWrite(myFile);
+    Writeln(myFile, '01-01-2000 00:00:00;21.0');
+    CloseFile(myFile);
+  end;
+  AssignFile (TempFile,pfad + 'Temperatur\' + tempdateiname);
   try reset (TempFile); except exit; end;
   while not EOF (TempFile) do
   begin
@@ -1304,6 +1353,7 @@ begin
   Image1.Picture.LoadFromFile(Graphic);
   panel1.Caption:=Temperatur;
   GetGradient(Sender);
+  Display(Form1, pfad + 'Display\display.txt');
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
@@ -1327,9 +1377,10 @@ begin
   start:=false;
   DecimalSeparator:='.';
   setup_laden(Form1);
-  if DeleteFile(pfad+'Temperatur\log.txt') then
+  Form1.ComboBox2Change(Sender);
+  if DeleteFile(pfad+'Temperatur\' + tempdateiname) then
   begin
-    AssignFile(myFile, pfad+'Temperatur\log.txt');
+    AssignFile(myFile, pfad+'Temperatur\' + tempdateiname);
     ReWrite(myFile);
     Writeln(myFile, '01-01-2000 00:00:00;21.0');
     CloseFile(myFile);
@@ -1349,6 +1400,7 @@ begin
   Form1.Timer1Timer(Sender);
   for i:=1 to 60 do Gradientgetter[i]:=Tempfloat;
   Gradient:=0.0;
+  Display(Form1, pfad + 'Display\display.txt');
 end;
 
 procedure TForm1.Button13Click(Sender: TObject);
@@ -2034,6 +2086,8 @@ end;
 procedure TForm1.TimerHSetTimer(Sender: TObject);
 begin
   Deltatemp:=Solltemp-Tempfloat;
+  if (TimerHEin.Interval=999) and (CheckBox37.Checked=true) then Deltatemp:=Deltatemp-Hysterese;
+  if CheckBox36.Checked=true then GradientUebergabe:=GradientWert else GradientUebergabe:=999.9;
   if Deltatemp>TWert then
   begin
     if TimerHEin.Interval<>900 then
@@ -2043,7 +2097,7 @@ begin
       Form1.TimerHEinTimer(Sender);
     end;
   end
-  else if (Deltatemp>0) and (Gradient<GradientWert) then
+  else if (Deltatemp>0) and (Gradient<GradientUebergabe) then
   begin
     if CheckBox34.Checked=true then
     begin
@@ -2066,27 +2120,15 @@ begin
       end;
     end;
   end
-  else if (Deltatemp>0) and (Gradient>=GradientWert) then
+  else if (Deltatemp>0) and (Gradient>=GradientUebergabe) then
   begin
-    if CheckBox34.Checked=true then
-    begin
-      if TimerHEin.Interval<>AusIst*1000 then
+      if TimerHEin.Interval<>1500000 then
       begin
         TimerHEin.Interval:=1500000;
         TimerHAus.Interval:=900;
         Form1.TimerHAusTimer(Sender);
       end;
     end
-    else
-    begin
-      if TimerHEin.Interval<>900 then
-      begin
-        TimerHEin.Interval:=900;
-        TimerHAus.Interval:=1500000;
-        Form1.TimerHEinTimer(Sender);
-      end;
-    end;
-  end
   else
   begin
     if TimerHEin.Interval<>999 then
@@ -2336,6 +2378,13 @@ end;
 
 procedure TForm1.SimulationTimerTimer(Sender: TObject);
 begin
+  if FileExists(pfad+'Temperatur\' + tempdateiname) then else
+  begin
+    AssignFile(myFile, pfad+'Temperatur\' + tempdateiname);
+    ReWrite(myFile);
+    Writeln(myFile, '01-01-2000 00:00:00;21.0');
+    CloseFile(myFile);
+  end;
   try
     if Heizung=HWert then
     begin
@@ -2345,13 +2394,13 @@ begin
     begin
       if SimTemp>21 then SimTemp:=SimTemp-0.05;
     end;
-    AssignFile(SimFile, pfad + 'Temperatur\log.txt');
+    AssignFile(SimFile, pfad + 'Temperatur\' + tempdateiname);
     Append(SimFile);
     Writeln(SimFile, 'Simulation;'+FloatToStrF(SimTemp,ffFixed,10,1));
     CloseFile(SimFile);
   except
   end;
-  AssignFile(SimFile, pfad + 'Temperatur\log.txt');
+  AssignFile(SimFile, pfad + 'Temperatur\' + tempdateiname);
   Append(SimFile);
   Writeln(SimFile, 'Simulation;'+FloatToStrF(SimTemp,ffFixed,10,1));
   CloseFile(SimFile);
@@ -2364,45 +2413,45 @@ begin
 end;
 
 procedure TForm1.Edit1Exit(Sender: TObject); begin editcheck(Edit1,0,100,'20'); end;
-procedure TForm1.Edit2Exit(Sender: TObject); begin editcheck(Edit2,0,999,'60'); end;
+procedure TForm1.Edit2Exit(Sender: TObject); begin editcheck(Edit2,0,9999,'60'); end;
 procedure TForm1.Edit3Exit(Sender: TObject); begin editcheck(Edit3,0,100,'20'); end;
-procedure TForm1.Edit4Exit(Sender: TObject); begin editcheck(Edit4,0,999,'60'); end;
+procedure TForm1.Edit4Exit(Sender: TObject); begin editcheck(Edit4,0,9999,'60'); end;
 procedure TForm1.Edit5Exit(Sender: TObject); begin editcheck(Edit5,0,100,'20'); end;
-procedure TForm1.Edit6Exit(Sender: TObject); begin editcheck(Edit6,0,999,'60'); end;
+procedure TForm1.Edit6Exit(Sender: TObject); begin editcheck(Edit6,0,9999,'60'); end;
 procedure TForm1.Edit7Exit(Sender: TObject); begin editcheck(Edit7,0,100,'20'); end;
-procedure TForm1.Edit8Exit(Sender: TObject); begin editcheck(Edit8,0,999,'60'); end;
+procedure TForm1.Edit8Exit(Sender: TObject); begin editcheck(Edit8,0,9999,'60'); end;
 procedure TForm1.Edit9Exit(Sender: TObject); begin editcheck(Edit9,0,100,'20'); end;
-procedure TForm1.Edit10Exit(Sender: TObject); begin editcheck(Edit10,0,999,'60'); end;
+procedure TForm1.Edit10Exit(Sender: TObject); begin editcheck(Edit10,0,9999,'60'); end;
 procedure TForm1.Edit11Exit(Sender: TObject); begin editcheck(Edit11,0,100,'20'); end;
-procedure TForm1.Edit12Exit(Sender: TObject); begin editcheck(Edit12,0,999,'60'); end;
+procedure TForm1.Edit12Exit(Sender: TObject); begin editcheck(Edit12,0,9999,'60'); end;
 procedure TForm1.Edit13Exit(Sender: TObject); begin editcheck(Edit13,0,100,'20'); end;
-procedure TForm1.Edit14Exit(Sender: TObject); begin editcheck(Edit14,0,999,'60'); end;
+procedure TForm1.Edit14Exit(Sender: TObject); begin editcheck(Edit14,0,9999,'60'); end;
 procedure TForm1.Edit15Exit(Sender: TObject); begin editcheck(Edit15,0,100,'20'); end;
-procedure TForm1.Edit16Exit(Sender: TObject); begin editcheck(Edit16,0,999,'60'); end;
+procedure TForm1.Edit16Exit(Sender: TObject); begin editcheck(Edit16,0,9999,'60'); end;
 procedure TForm1.Edit17Exit(Sender: TObject); begin editcheck(Edit17,0,100,'20'); end;
-procedure TForm1.Edit18Exit(Sender: TObject); begin editcheck(Edit18,0,999,'60'); end;
+procedure TForm1.Edit18Exit(Sender: TObject); begin editcheck(Edit18,0,9999,'60'); end;
 procedure TForm1.Edit19Exit(Sender: TObject); begin editcheck(Edit19,0,100,'20'); end;
-procedure TForm1.Edit20Exit(Sender: TObject); begin editcheck(Edit20,0,999,'60'); end;
-procedure TForm1.Edit31Exit(Sender: TObject); begin editcheck(Edit31,0,999,'60'); end;
-procedure TForm1.Edit32Exit(Sender: TObject); begin editcheck(Edit32,0,999,'60'); end;
-procedure TForm1.Edit33Exit(Sender: TObject); begin editcheck(Edit33,0,999,'60'); end;
-procedure TForm1.Edit34Exit(Sender: TObject); begin editcheck(Edit34,0,999,'60'); end;
-procedure TForm1.Edit35Exit(Sender: TObject); begin editcheck(Edit35,0,999,'60'); end;
-procedure TForm1.Edit36Exit(Sender: TObject); begin editcheck(Edit36,0,999,'60'); end;
-procedure TForm1.Edit37Exit(Sender: TObject); begin editcheck(Edit37,0,999,'60'); end;
-procedure TForm1.Edit38Exit(Sender: TObject); begin editcheck(Edit38,0,999,'60'); end;
-procedure TForm1.Edit39Exit(Sender: TObject); begin editcheck(Edit39,0,999,'60'); end;
-procedure TForm1.Edit40Exit(Sender: TObject); begin editcheck(Edit40,0,999,'60'); end;
-procedure TForm1.Edit41Exit(Sender: TObject); begin editcheck(Edit41,0,999,'60'); end;
-procedure TForm1.Edit42Exit(Sender: TObject); begin editcheck(Edit42,0,999,'60'); end;
-procedure TForm1.Edit43Exit(Sender: TObject); begin editcheck(Edit43,0,999,'60'); end;
-procedure TForm1.Edit44Exit(Sender: TObject); begin editcheck(Edit44,0,999,'60'); end;
-procedure TForm1.Edit45Exit(Sender: TObject); begin editcheck(Edit45,0,999,'60'); end;
-procedure TForm1.Edit46Exit(Sender: TObject); begin editcheck(Edit46,0,999,'60'); end;
-procedure TForm1.Edit47Exit(Sender: TObject); begin editcheck(Edit47,0,999,'60') ;end;
-procedure TForm1.Edit48Exit(Sender: TObject); begin editcheck(Edit48,0,999,'60'); end;
-procedure TForm1.Edit49Exit(Sender: TObject); begin editcheck(Edit49,0,999,'60'); end;
-procedure TForm1.Edit50Exit(Sender: TObject); begin editcheck(Edit50,0,999,'60'); end;
+procedure TForm1.Edit20Exit(Sender: TObject); begin editcheck(Edit20,0,9999,'60'); end;
+procedure TForm1.Edit31Exit(Sender: TObject); begin editcheck(Edit31,0,9999,'60'); end;
+procedure TForm1.Edit32Exit(Sender: TObject); begin editcheck(Edit32,0,9999,'60'); end;
+procedure TForm1.Edit33Exit(Sender: TObject); begin editcheck(Edit33,0,9999,'60'); end;
+procedure TForm1.Edit34Exit(Sender: TObject); begin editcheck(Edit34,0,9999,'60'); end;
+procedure TForm1.Edit35Exit(Sender: TObject); begin editcheck(Edit35,0,9999,'60'); end;
+procedure TForm1.Edit36Exit(Sender: TObject); begin editcheck(Edit36,0,9999,'60'); end;
+procedure TForm1.Edit37Exit(Sender: TObject); begin editcheck(Edit37,0,9999,'60'); end;
+procedure TForm1.Edit38Exit(Sender: TObject); begin editcheck(Edit38,0,9999,'60'); end;
+procedure TForm1.Edit39Exit(Sender: TObject); begin editcheck(Edit39,0,9999,'60'); end;
+procedure TForm1.Edit40Exit(Sender: TObject); begin editcheck(Edit40,0,9999,'60'); end;
+procedure TForm1.Edit41Exit(Sender: TObject); begin editcheck(Edit41,0,9999,'60'); end;
+procedure TForm1.Edit42Exit(Sender: TObject); begin editcheck(Edit42,0,9999,'60'); end;
+procedure TForm1.Edit43Exit(Sender: TObject); begin editcheck(Edit43,0,9999,'60'); end;
+procedure TForm1.Edit44Exit(Sender: TObject); begin editcheck(Edit44,0,9999,'60'); end;
+procedure TForm1.Edit45Exit(Sender: TObject); begin editcheck(Edit45,0,9999,'60'); end;
+procedure TForm1.Edit46Exit(Sender: TObject); begin editcheck(Edit46,0,9999,'60'); end;
+procedure TForm1.Edit47Exit(Sender: TObject); begin editcheck(Edit47,0,9999,'60') ;end;
+procedure TForm1.Edit48Exit(Sender: TObject); begin editcheck(Edit48,0,9999,'60'); end;
+procedure TForm1.Edit49Exit(Sender: TObject); begin editcheck(Edit49,0,9999,'60'); end;
+procedure TForm1.Edit50Exit(Sender: TObject); begin editcheck(Edit50,0,9999,'60'); end;
 
 procedure TForm1.Button23Click(Sender: TObject);
 begin
@@ -2596,6 +2645,7 @@ procedure TForm1.Edit58Exit(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.Edit59Exit(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.Edit60Exit(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.Edit61Exit(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.Edit62Exit(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.ComboBox13Change(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.ComboBox14Change(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.ComboBox15Change(Sender: TObject); begin setupgeaendert; end;
@@ -2608,6 +2658,7 @@ procedure TForm1.ComboBox22Change(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.ComboBox24Change(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.ComboBox23Change(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.ComboBox25Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox26Change(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.CheckBox35Click(Sender: TObject); begin setupgeaendert; end;
 
 procedure TForm1.Button26Click(Sender: TObject);

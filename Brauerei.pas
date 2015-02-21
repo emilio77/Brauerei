@@ -39,7 +39,7 @@ type
     Series1: TLineSeries;
     Series2: TLineSeries;
     Chart2: TChart;
-    Series3: TAreaSeries;
+    Series3: TAreaSeries;                         
     Chart3: TChart;
     Series4: TAreaSeries;
     Chart4: TChart;
@@ -350,6 +350,34 @@ type
     Label113: TLabel;
     Label114: TLabel;
     Edit62: TEdit;
+    TimerDlgMove: TTimer;
+    Edit63: TEdit;
+    Edit64: TEdit;
+    Edit65: TEdit;
+    Edit66: TEdit;
+    Edit67: TEdit;
+    Edit68: TEdit;
+    Edit69: TEdit;
+    Edit70: TEdit;
+    Edit71: TEdit;
+    Edit72: TEdit;
+    Button29: TButton;
+    Button30: TButton;
+    Label115: TLabel;
+    CheckBox38: TCheckBox;
+    CheckBox39: TCheckBox;
+    CheckBox40: TCheckBox;
+    StartTimer: TTimer;
+    Edit73: TEdit;
+    Edit74: TEdit;
+    Edit75: TEdit;
+    Edit76: TEdit;
+    Edit77: TEdit;
+    Edit78: TEdit;
+    Edit79: TEdit;
+    Edit80: TEdit;
+    Edit81: TEdit;
+    Edit82: TEdit;
     procedure Button7Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
@@ -477,6 +505,16 @@ type
     procedure Batch_Update_TmrTimer(Sender: TObject);
     procedure ComboBox26Change(Sender: TObject);
     procedure Edit62Exit(Sender: TObject);
+    procedure OpenDialog1Show(Sender: TObject);
+    procedure TimerDlgMoveTimer(Sender: TObject);
+    procedure PrintDialog1Show(Sender: TObject);
+    procedure SaveDialog1Show(Sender: TObject);
+    procedure Button29Click(Sender: TObject);
+    procedure Button30Click(Sender: TObject);
+    procedure CheckBox38Click(Sender: TObject);
+    procedure CheckBox39Click(Sender: TObject);
+    procedure CheckBox40Click(Sender: TObject);
+    procedure StartTimerTimer(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -516,6 +554,29 @@ implementation
 {$R *.dfm}
 
 
+function MyMessageDlgPos(const Msg: string; DlgType: TMsgDlgType; Buttons: TMsgDlgButtons; Captions: array of string; xPos: Integer; yPos: Integer ): Integer;
+var
+  aMsgDlg: TForm;
+  i: Integer;
+  dlgButton: TButton;
+  CaptionIndex: Integer;
+begin
+  aMsgDlg := CreateMessageDialog(Msg, DlgType, Buttons);
+  captionIndex := 0;
+  for i := 0 to aMsgDlg.ComponentCount - 1 do
+  begin
+    aMsgDlg.Left := xPos;
+    aMsgDlg.Top := yPos;
+    if (aMsgDlg.Components[i] is TButton) then
+    begin
+      dlgButton := TButton(aMsgDlg.Components[i]);
+      if CaptionIndex > High(Captions) then Break;
+      dlgButton.Caption := Captions[CaptionIndex];
+      Inc(CaptionIndex);
+    end;
+  end;
+  Result := aMsgDlg.ShowModal;
+end;
 
 procedure TForm1.Button7Click(Sender: TObject);
 begin
@@ -565,6 +626,23 @@ begin
    Button10.Visible:=true;
    Button11.Visible:=true;
    Button20.Visible:=true;
+   Button29.Visible:=false;
+   Button30.Visible:=false;
+   Edit63.Visible:=false;
+   Edit64.Visible:=false;
+   Edit65.Visible:=false;
+   Edit66.Visible:=false;
+   Edit67.Visible:=false;
+   Edit68.Visible:=false;
+   Edit69.Visible:=false;
+   Edit70.Visible:=false;
+   Edit71.Visible:=false;
+   Edit72.Visible:=false;
+   Label1.Visible:=true;
+   Label3.Visible:=true;
+   Label23.Visible:=true;
+   Label36.Visible:=true;
+   Label115.Visible:=false;
 end;
 
 procedure TForm1.Button6Click(Sender: TObject);
@@ -595,6 +673,8 @@ begin
    Button10.Visible:=false;
    Button11.Visible:=false;
    Button20.Visible:=false;
+   Button29.Visible:=true;
+   Label115.Visible:=false;
 end;
 
 //LPT:
@@ -603,6 +683,7 @@ function Inp32(wAddr:word):integer;stdcall; external 'inpout32.dll'       // Par
 
 //Denkovi:
 function FT_Open(Index:Integer; ftHandle:Pointer):FT_Result; stdcall; External 'FTD2XX.DLL' name 'FT_Open';
+Function FT_OpenEx(pArg1:Pointer; Flags:DWORD; ftHandle:Pointer):FT_Result; stdcall; External 'FTD2XX.DLL' name 'FT_OpenEx';
 function FT_Close(ftHandle:Dword):FT_Result; stdcall; External 'FTD2XX.DLL' name 'FT_Close';
 function FT_Write(ftHandle:Dword; FTOutBuf:Pointer; BufferSize:LongInt; ResultPtr:Pointer):FT_Result; stdcall; External 'FTD2XX.DLL' name 'FT_Write';
 function FT_SetBaudRate(ftHandle:Dword; BaudRate:DWord):FT_Result; stdcall; External 'FTD2XX.DLL' name 'FT_SetBaudRate';
@@ -656,35 +737,35 @@ procedure BatchOut;
 begin
   if (Ruehrwerk<>0) and (Ruehrwerk<>RStore) then
     if ShellExecute(Application.Handle,'open',PChar(BREin),nil, nil, SW_HIDE) <= 32 then
-    ShowMessage('Es ist ein Fehler beim ausführen von '+BREin+' aufgetreten') else
+    ShowMessagePos('Es ist ein Fehler beim ausführen von '+BREin+' aufgetreten', Form1.Left+350, Form1.Top+250) else
     RStore:=Ruehrwerk;
   if (Ruehrwerk=0) and (Ruehrwerk<>RStore) then
     if ShellExecute(Application.Handle,'open',PChar(BRAus),nil, nil, SW_HIDE) <= 32 then
-    ShowMessage('Es ist ein Fehler beim ausführen von '+BRAus+' aufgetreten') else
+    ShowMessagePos('Es ist ein Fehler beim ausführen von '+BRAus+' aufgetreten', Form1.Left+350, Form1.Top+250) else
     RStore:=Ruehrwerk;
   if (Heizung<>0) and (Heizung<>HStore) then
     if ShellExecute(Application.Handle,'open',PChar(BHEin),nil, nil, SW_HIDE) <= 32 then
-    ShowMessage('Es ist ein Fehler beim ausführen von '+BHEin+' aufgetreten') else
+    ShowMessagePos('Es ist ein Fehler beim ausführen von '+BHEin+' aufgetreten', Form1.Left+350, Form1.Top+250) else
     HStore:=Heizung;
   if (Heizung=0) and (Heizung<>HStore) then
     if ShellExecute(Application.Handle,'open',PChar(BHAus),nil, nil, SW_HIDE) <= 32 then
-    ShowMessage('Es ist ein Fehler beim ausführen von '+BHAus+' aufgetreten') else
+    ShowMessagePos('Es ist ein Fehler beim ausführen von '+BHAus+' aufgetreten', Form1.Left+350, Form1.Top+250) else
     HStore:=Heizung;
   if (Alarm<>0) and (Alarm<>AStore) then
     if ShellExecute(Application.Handle,'open',PChar(BAEin),nil, nil, SW_HIDE) <= 32 then
-    ShowMessage('Es ist ein Fehler beim ausführen von '+BAEin+' aufgetreten') else
+    ShowMessagePos('Es ist ein Fehler beim ausführen von '+BAEin+' aufgetreten', Form1.Left+350, Form1.Top+250) else
     AStore:=Alarm;
   if (Alarm=0) and (Alarm<>AStore) then
     if ShellExecute(Application.Handle,'open',PChar(BAAus),nil, nil, SW_HIDE) <= 32 then
-    ShowMessage('Es ist ein Fehler beim ausführen von '+BAAus+' aufgetreten') else
+    ShowMessagePos('Es ist ein Fehler beim ausführen von '+BAAus+' aufgetreten', Form1.Left+350, Form1.Top+250) else
     AStore:=Alarm;
   if (Pumpe<>0) and (Pumpe<>PStore) then
     if ShellExecute(Application.Handle,'open',PChar(BPEin),nil, nil, SW_HIDE) <= 32 then
-    ShowMessage('Es ist ein Fehler beim ausführen von '+BPEin+' aufgetreten') else
+    ShowMessagePos('Es ist ein Fehler beim ausführen von '+BPEin+' aufgetreten', Form1.Left+350, Form1.Top+250) else
     PStore:=Pumpe;
   if (Pumpe=0) and (Pumpe<>PStore) then
     if ShellExecute(Application.Handle,'open',PChar(BPAus),nil, nil, SW_HIDE) <= 32 then
-    ShowMessage('Es ist ein Fehler beim ausführen von '+BPAus+' aufgetreten') else
+    ShowMessagePos('Es ist ein Fehler beim ausführen von '+BPAus+' aufgetreten', Form1.Left+350, Form1.Top+250) else
     PStore:=Pumpe;
 end;
 
@@ -771,6 +852,26 @@ begin
   WriteLn(myFile, Form.CheckBox28.Checked);
   WriteLn(myFile, Form.CheckBox29.Checked);
   WriteLn(myFile, Form.CheckBox30.Checked);
+  WriteLn(myFile, Form.Edit63.Text);
+  WriteLn(myFile, Form.Edit64.Text);
+  WriteLn(myFile, Form.Edit65.Text);
+  WriteLn(myFile, Form.Edit66.Text);
+  WriteLn(myFile, Form.Edit67.Text);
+  WriteLn(myFile, Form.Edit68.Text);
+  WriteLn(myFile, Form.Edit69.Text);
+  WriteLn(myFile, Form.Edit70.Text);
+  WriteLn(myFile, Form.Edit71.Text);
+  WriteLn(myFile, Form.Edit72.Text);
+  WriteLn(myFile, Form.Edit73.Text);
+  WriteLn(myFile, Form.Edit74.Text);
+  WriteLn(myFile, Form.Edit75.Text);
+  WriteLn(myFile, Form.Edit76.Text);
+  WriteLn(myFile, Form.Edit77.Text);
+  WriteLn(myFile, Form.Edit78.Text);
+  WriteLn(myFile, Form.Edit79.Text);
+  WriteLn(myFile, Form.Edit80.Text);
+  WriteLn(myFile, Form.Edit81.Text);
+  WriteLn(myFile, Form.Edit82.Text);
 end;
 
 procedure settings_speichern(Form:TForm1; filename:string);
@@ -857,6 +958,36 @@ begin
   ReadLn(myFile, x); Form.CheckBox28.Checked:=strtobool(x);
   ReadLn(myFile, x); Form.CheckBox29.Checked:=strtobool(x);
   ReadLn(myFile, x); Form.CheckBox30.Checked:=strtobool(x);
+  try ReadLn(myFile, x); Form.Edit63.Text:=x; except Form.Edit63.Text:='' end;
+  try ReadLn(myFile, x); Form.Edit64.Text:=x; except Form.Edit64.Text:='' end;
+  try ReadLn(myFile, x); Form.Edit65.Text:=x; except Form.Edit65.Text:='' end;
+  try ReadLn(myFile, x); Form.Edit66.Text:=x; except Form.Edit66.Text:='' end;
+  try ReadLn(myFile, x); Form.Edit67.Text:=x; except Form.Edit67.Text:='' end;
+  try ReadLn(myFile, x); Form.Edit68.Text:=x; except Form.Edit68.Text:='' end;
+  try ReadLn(myFile, x); Form.Edit69.Text:=x; except Form.Edit69.Text:='' end;
+  try ReadLn(myFile, x); Form.Edit70.Text:=x; except Form.Edit70.Text:='' end;
+  try ReadLn(myFile, x); Form.Edit71.Text:=x; except Form.Edit71.Text:='' end;
+  try ReadLn(myFile, x); Form.Edit72.Text:=x; except Form.Edit72.Text:='' end;
+  try ReadLn(myFile, x); except x:='Rast 1'; end;
+  if x='' then x:='Rast 1'; Form.Edit73.Text:=x; Form.CheckBox1.Caption:=x;
+  try ReadLn(myFile, x); except x:='Rast 2'; end;
+  if x='' then x:='Rast 2'; Form.Edit74.Text:=x; Form.CheckBox2.Caption:=x;
+  try ReadLn(myFile, x); except x:='Rast 3'; end;
+  if x='' then x:='Rast 3'; Form.Edit75.Text:=x; Form.CheckBox3.Caption:=x;
+  try ReadLn(myFile, x); except x:='Rast 4'; end;
+  if x='' then x:='Rast 4'; Form.Edit76.Text:=x; Form.CheckBox4.Caption:=x;
+  try ReadLn(myFile, x); except x:='Rast 5'; end;
+  if x='' then x:='Rast 5'; Form.Edit77.Text:=x; Form.CheckBox5.Caption:=x;
+  try ReadLn(myFile, x); except x:='Rast 6'; end;
+  if x='' then x:='Rast 6'; Form.Edit78.Text:=x; Form.CheckBox6.Caption:=x;
+  try ReadLn(myFile, x); except x:='Rast 7'; end;
+  if x='' then x:='Rast 7'; Form.Edit79.Text:=x; Form.CheckBox7.Caption:=x;
+  try ReadLn(myFile, x); except x:='Rast 8'; end;
+  if x='' then x:='Rast 8'; Form.Edit80.Text:=x; Form.CheckBox8.Caption:=x;
+  try ReadLn(myFile, x); except x:='Rast 9'; end;
+  if x='' then x:='Rast 9'; Form.Edit81.Text:=x; Form.CheckBox9.Caption:=x;
+  try ReadLn(myFile, x); except x:='Rast 10'; end;
+  if x='' then x:='Rast 10'; Form.Edit82.Text:=x; Form.CheckBox10.Caption:=x;
 end;
 
 procedure settings_laden(Form:TForm1; filename:string);
@@ -920,6 +1051,9 @@ begin
   if Form.CheckBox35.Checked=true then WriteLn(mySetup,'Batchwiederholung;1') else WriteLn(mySetup,'Batchwiederholung;0');
   dummyfilename:=stringreplace(Form.Edit62.Text,' ','€€€',[rfReplaceAll]);
   WriteLn(mySetup,'Temperatur-Textdatei;'+dummyfilename);
+  if Form.CheckBox38.Checked=true then WriteLn(mySetup,'Autostart Digitemp.bat;1') else WriteLn(mySetup,'Autostart Digitemp.bat;0');
+  if Form.CheckBox39.Checked=true then WriteLn(mySetup,'Autostart Digitemp_variabel.bat;1') else WriteLn(mySetup,'Autostart Digitemp_variabel.bat;0');
+  if Form.CheckBox40.Checked=true then WriteLn(mySetup,'Autostart Externe_Sensorsoftware.bat;1') else WriteLn(mySetup,'Autostart Externe_Sensorsoftware.bat;0');
   CloseFile(mySetup);
   Steuerung:=Form.ComboBox1.Text;
   LPTPort:=strtoint(Form.ComboBox8.Text);
@@ -1043,6 +1177,12 @@ begin
       try if sl2[sl2.Count-1]='1' then Form.CheckBox35.Checked:=true else Form.CheckBox35.Checked:=false; except Form.CheckBox35.Checked:=false end;
       sl2.DelimitedText:=sl[36];
       try tempdateiname:=sl2[sl2.Count-1]; tempdateiname:=stringreplace(tempdateiname,'€€€',' ',[rfReplaceAll]); Form.Edit62.Text:=tempdateiname; except tempdateiname:='none'; end;
+      sl2.DelimitedText:=sl[37];
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox38.Checked:=true else Form.CheckBox38.Checked:=false; except Form.CheckBox38.Checked:=false end;
+      sl2.DelimitedText:=sl[38];
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox39.Checked:=true else Form.CheckBox39.Checked:=false; except Form.CheckBox39.Checked:=false end;
+      sl2.DelimitedText:=sl[39];
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox40.Checked:=true else Form.CheckBox40.Checked:=false; except Form.CheckBox40.Checked:=false end;
       AusIst:=Aus60;
       EinIst:=Ein60;
       If Steuerung='USB' then Form1.USB_Update_Tmr.Enabled:=true;
@@ -1062,20 +1202,24 @@ end;
 procedure Display(Form:TForm1; filename:string);
 var strcopy:String;
 begin
-  AssignFile(myDisplay, filename);                // Displaydaten speichern
-  ReWrite(myDisplay);
-  strcopy:=copy(Form1.Panel1.Caption, 1, Length(Form1.Panel1.Caption)- 3);
-  WriteLn(myDisplay, strcopy);
-  strcopy:=copy(Form1.Panel4.Caption, 1, Length(Form1.Panel4.Caption)- 3);
-  WriteLn(myDisplay, strcopy);
-  if (Heizung<>0) then WriteLn(myDisplay, '1') else WriteLn(myDisplay, '0');
-  if (Ruehrwerk<>0) then WriteLn(myDisplay, '1') else WriteLn(myDisplay, '0');
-  if (Pumpe<>0) then WriteLn(myDisplay, '1') else WriteLn(myDisplay, '0');    
-  if (Alarm<>0) then WriteLn(myDisplay, '1') else WriteLn(myDisplay, '0');
-  if (Start=true) then WriteLn(myDisplay, 'aktiv');
-  if (Stop=true) then WriteLn(myDisplay, 'inaktiv');
-  if (Pause=true) then WriteLn(myDisplay, 'pausiert');
-  CloseFile(myDisplay);
+  try
+    AssignFile(myDisplay, filename);                // Displaydaten speichern
+    ReWrite(myDisplay);
+    strcopy:=copy(Form1.Panel1.Caption, 1, Length(Form1.Panel1.Caption)- 3);
+    WriteLn(myDisplay, strcopy);
+    strcopy:=copy(Form1.Panel4.Caption, 1, Length(Form1.Panel4.Caption)- 3);
+    WriteLn(myDisplay, strcopy);
+    if (Heizung<>0) then WriteLn(myDisplay, '1') else WriteLn(myDisplay, '0');
+    if (Ruehrwerk<>0) then WriteLn(myDisplay, '1') else WriteLn(myDisplay, '0');
+    if (Pumpe<>0) then WriteLn(myDisplay, '1') else WriteLn(myDisplay, '0');
+    if (Alarm<>0) then WriteLn(myDisplay, '1') else WriteLn(myDisplay, '0');
+    if (Start=true) then WriteLn(myDisplay, 'aktiv');
+    if (Stop=true) then WriteLn(myDisplay, 'inaktiv');
+    if (Pause=true) then WriteLn(myDisplay, 'pausiert');
+    CloseFile(myDisplay);
+  except
+    exit;
+  end;
 end;
 
 procedure writechart(Form:TForm1);
@@ -1331,14 +1475,18 @@ begin
     Writeln(myFile, '01-01-2000 00:00:00;21.0');
     CloseFile(myFile);
   end;
-  AssignFile (TempFile,pfad + 'Temperatur\' + tempdateiname);
-  try reset (TempFile); except exit; end;
-  while not EOF (TempFile) do
-  begin
-    ZeilenAnzahl := ZeilenAnzahl + 1;
-    readln (TempFile, TimeTempStr);
+  try
+    AssignFile (TempFile,pfad + 'Temperatur\' + tempdateiname);
+    reset (TempFile);
+    while not EOF (TempFile) do
+    begin
+      ZeilenAnzahl := ZeilenAnzahl + 1;
+      readln (TempFile, TimeTempStr);
+    end;
+    CloseFile(TempFile);
+  except
+    exit;
   end;
-  CloseFile(TempFile);
   sl3:=TStringList.Create;
   sl3.Delimiter:=';';
   sl3.DelimitedText:=TimeTempStr;
@@ -1360,7 +1508,12 @@ procedure TForm1.FormCreate(Sender: TObject);
 var
   i: integer;
 begin
+  rast:=0;
+  Form1.Top:=20;
+  Form1.Left:=20;
   pfad:=ExtractFilePath(ParamStr(0));
+  OpenDialog1.InitialDir:=pfad+'Rezepte';
+  SaveDialog1.InitialDir:=pfad+'Rezepte';
   ser:=TBlockserial.Create;
   ser.RaiseExcept:=False;
   self.DoubleBuffered:=true;
@@ -1371,6 +1524,7 @@ begin
     settings_laden(Form1, pfad+'Setup\settings.txt');
     CloseFile(myFile);
   end;
+  Form1.Button30Click(Sender);
   AlarmEin:=false;
   pause:=false;
   stop:=true;
@@ -1401,13 +1555,14 @@ begin
   for i:=1 to 60 do Gradientgetter[i]:=Tempfloat;
   Gradient:=0.0;
   Display(Form1, pfad + 'Display\display.txt');
+  StartTimer.Enabled:=true;
 end;
 
 procedure TForm1.Button13Click(Sender: TObject);
 begin
   if SaveDialog1.Execute then
   begin
-    if DeleteFile(SaveDialog1.FileName) then MessageDlg('Rezept wurde überschrieben !', mtInformation, [mbOK], 0);
+    if DeleteFile(SaveDialog1.FileName) then MessageDlgPos('Rezept wurde überschrieben !', mtInformation, [mbOK], 0, Form1.Left+350, Form1.Top+250);
     speichern(Form1, SaveDialog1.FileName);
     CloseFile(myFile);
   end;
@@ -1428,6 +1583,7 @@ begin
   TimerHEin.Interval:=1000;
   TimerHAus.Interval:=1000;
   TimerHSet.Enabled:=true;
+  Form1.Button30Click(Sender);
   if start=false then
   begin
     if pause=false then
@@ -1626,6 +1782,7 @@ begin
     if (start=true) and (Rasttemp1=true) then Edit21.Text:=inttostr(round((zeit2-zeit+29999)/60000));
     if Rastnull1=false then fortschritt:=round(zeit/zeit2*100) else fortschritt:=0;
     Gauge1.Progress:=fortschritt;
+    rast:=1;
     if rasttemp1=true then rastnull1:=false;
     if (Edit21.Text='0') and (CheckBox11.Checked=true) and (rastnull1=false) then AlarmEin:=true;
   end
@@ -1644,6 +1801,7 @@ begin
     if (start=true) and (Rasttemp2=true) then Edit22.Text:=inttostr(round((zeit2-zeit+29999)/60000));
     if Rastnull2=false then fortschritt:=round(zeit/zeit2*100) else fortschritt:=0;
     Gauge2.Progress:=fortschritt;
+    rast:=2;
     if rasttemp2=true then rastnull2:=false;
     if (Edit22.Text='0') and (CheckBox12.Checked=true) and (rastnull2=false) then AlarmEin:=true;
   end
@@ -1662,6 +1820,7 @@ begin
     if (start=true) and (Rasttemp3=true) then Edit23.Text:=inttostr(round((zeit2-zeit+29999)/60000));
     if Rastnull3=false then fortschritt:=round(zeit/zeit2*100) else fortschritt:=0;
     Gauge3.Progress:=fortschritt;
+    rast:=3;
     if rasttemp3=true then rastnull3:=false;
     if (Edit23.Text='0') and (CheckBox13.Checked=true) and (rastnull3=false) then AlarmEin:=true;
   end
@@ -1680,6 +1839,7 @@ begin
     if (start=true) and (Rasttemp4=true) then Edit24.Text:=inttostr(round((zeit2-zeit+29999)/60000));
     if Rastnull4=false then fortschritt:=round(zeit/zeit2*100) else fortschritt:=0;
     Gauge4.Progress:=fortschritt;
+    rast:=4;
     if rasttemp4=true then rastnull4:=false;
     if (Edit24.Text='0') and (CheckBox14.Checked=true) and (rastnull4=false) then AlarmEin:=true;
   end
@@ -1698,6 +1858,7 @@ begin
     if (start=true) and (Rasttemp5=true) then Edit25.Text:=inttostr(round((zeit2-zeit+29999)/60000));
     if Rastnull5=false then fortschritt:=round(zeit/zeit2*100) else fortschritt:=0;
     Gauge5.Progress:=fortschritt;
+    rast:=5;
     if rasttemp5=true then rastnull5:=false;
     if (Edit25.Text='0') and (CheckBox15.Checked=true) and (rastnull5=false) then AlarmEin:=true;
   end
@@ -1716,6 +1877,7 @@ begin
     if (start=true) and (Rasttemp6=true) then Edit26.Text:=inttostr(round((zeit2-zeit+29999)/60000));
     if Rastnull6=false then fortschritt:=round(zeit/zeit2*100) else fortschritt:=0;
     Gauge6.Progress:=fortschritt;
+    rast:=6;
     if rasttemp6=true then rastnull6:=false;
     if (Edit26.Text='0') and (CheckBox16.Checked=true) and (rastnull6=false) then AlarmEin:=true;
   end
@@ -1734,6 +1896,7 @@ begin
     if (start=true) and (Rasttemp7=true) then Edit27.Text:=inttostr(round((zeit2-zeit+29999)/60000));
     if Rastnull7=false then fortschritt:=round(zeit/zeit2*100) else fortschritt:=0;
     Gauge7.Progress:=fortschritt;
+    rast:=7;
     if rasttemp7=true then rastnull7:=false;
     if (Edit27.Text='0') and (CheckBox17.Checked=true) and (rastnull7=false) then AlarmEin:=true;
   end
@@ -1752,6 +1915,7 @@ begin
     if (start=true) and (Rasttemp8=true) then Edit28.Text:=inttostr(round((zeit2-zeit+29999)/60000));
     if Rastnull8=false then fortschritt:=round(zeit/zeit2*100) else fortschritt:=0;
     Gauge8.Progress:=fortschritt;
+    rast:=8;
     if rasttemp8=true then rastnull8:=false;
     if (Edit28.Text='0') and (CheckBox18.Checked=true) and (rastnull8=false) then AlarmEin:=true;
   end
@@ -1770,6 +1934,7 @@ begin
     if (start=true) and (Rasttemp9=true) then Edit29.Text:=inttostr(round((zeit2-zeit+29999)/60000));
     if Rastnull9=false then fortschritt:=round(zeit/zeit2*100) else fortschritt:=0;
     Gauge9.Progress:=fortschritt;
+    rast:=9;
     if rasttemp9=true then rastnull9:=false;
     if (Edit29.Text='0') and (CheckBox19.Checked=true) and (rastnull9=false) then AlarmEin:=true;
   end
@@ -1788,6 +1953,7 @@ begin
     if (start=true) and (Rasttemp10=true) then Edit30.Text:=inttostr(round((zeit2-zeit+29999)/60000));
     if Rastnull10=false then fortschritt:=round(zeit/zeit2*100) else fortschritt:=0;
     Gauge10.Progress:=fortschritt;
+    rast:=10;
     if rasttemp10=true then rastnull10:=false;
     if (Edit30.Text='0') and (CheckBox20.Checked=true) and (rastnull10=false) then AlarmEin:=true;
   end
@@ -1966,11 +2132,12 @@ begin
     LogUpdateTimer.Enabled:=false;
     Button23.Caption:='AutoUpdate Ein';
     if checkbox32.Checked=true then CloseFile(myLogFile);
-    MessageDlg('Brauvorgang wurde beendet ' + #13 + '- mit OK fortsetzen!', mtInformation, [mbOK], 0);
+    MessageDlgPos('Brauvorgang wurde beendet ' + #13 + '- mit OK fortsetzen!', mtInformation, [mbOK], 0, Form1.Left+350, Form1.Top+250);
   end;
   stop:=true;
   pause:=false;
   start:=false;
+  rast:=0;
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
@@ -2162,21 +2329,37 @@ end;
 
 procedure TForm1.MessageTimerTimer(Sender: TObject);
 var
-  buttonSelected:integer;
+  buttonSelected, position:integer;
+  rasttext:string;
 begin
+  if rast=1 then rasttext:=Edit63.Text
+  else if rast=2 then rasttext:=Edit64.Text
+  else if rast=3 then rasttext:=Edit65.Text
+  else if rast=4 then rasttext:=Edit66.Text
+  else if rast=5 then rasttext:=Edit67.Text
+  else if rast=6 then rasttext:=Edit68.Text
+  else if rast=7 then rasttext:=Edit69.Text
+  else if rast=8 then rasttext:=Edit70.Text
+  else if rast=9 then rasttext:=Edit61.Text
+  else if rast=10 then rasttext:=Edit62.Text;
   if AlarmEin=true then
   begin
+    repeat
+    begin
     Form1.TimerAEinTimer(Sender);
     MessageTimer.Enabled:=false;
-    buttonSelected:=MessageDlg('Rast wurde beendet !' + #13 + '- Abbrechen für stillen Alarm ' + #13 + '- OK um Brauvorgang fortzusetzen.', mtInformation, [mbOK, mbAbort], 0);
+    if length(rasttext)<50 then position:=350 else if length(rasttext)<70 then position:=265 else if length(rasttext)<90 then position:=180 else position:=100;
+    buttonSelected:=MyMessageDlgPos('Rast wurde beendet !' + #13 +#13 + rasttext + #13 +#13 + '- OK um Brauvorgang fortzusetzen.', mtInformation, [mbOK, mbAbort], ['OK', 'stiller Alarm'], Form1.Left+Position, Form1.Top+250);
     if buttonSelected = mrAbort then
     begin
       TimerAEin.Interval:=1500000;
       TimerAAus.Interval:=900;
-      MessageDlg('Rast wurde beendet !' + #13 + '- OK um Brauvorgang fortzusetzen.', mtInformation, [mbOK], 0);
+      buttonSelected:=MyMessageDlgPos('Rast wurde beendet !' + #13 +#13 + rasttext + #13 +#13 + '- OK um Brauvorgang fortzusetzen.', mtInformation, [mbOK, mbAbort], ['OK', 'lauter Alarm'], Form1.Left+Position, Form1.Top+250);
       TimerAEin.Interval:=4000;
       TimerAAus.Interval:=1000;
     end;
+    end
+    until buttonSelected = mrOK;
     AlarmEin:=false;
     MessageTimer.Enabled:=true;
     Form1.TimerAAusTimer(Sender);
@@ -2311,7 +2494,7 @@ end;
 
 procedure TForm1.Button17Click(Sender: TObject);
 begin
-  if DeleteFile(pfad + 'Setup\settings.txt') then MessageDlg('Settings wurden überschrieben !', mtInformation, [mbOK], 0);
+  if DeleteFile(pfad + 'Setup\settings.txt') then MessageDlgPos('Settings wurden überschrieben !', mtInformation, [mbOK], 0, Form1.Left+350, Form1.Top+250);
   speichern(Form1, pfad + 'Setup\settings.txt');
   settings_speichern(Form1, pfad + 'Setup\settings.txt');
   CloseFile(myFile);
@@ -2363,6 +2546,8 @@ procedure TForm1.Button20Click(Sender: TObject);
 begin
   if Button20.Caption='Simulation Ein' then
   begin
+    if CheckBox34.Checked=true or CheckBox34.Checked=true
+    then ShowMessagePos('Vorsicht! Damit die Simulation richtig'+ #13 +'funktioniert sollte der Gradient sowie'+ #13 +'die Pulsung ausgeschaltet sein!', Form1.Left+350, Form1.Top+250);
     Button20.Caption:='Simulation Aus';
     SimulationTimer.Enabled:=true;
     Label66.Visible:=true;
@@ -2378,14 +2563,14 @@ end;
 
 procedure TForm1.SimulationTimerTimer(Sender: TObject);
 begin
-  if FileExists(pfad+'Temperatur\' + tempdateiname) then else
-  begin
-    AssignFile(myFile, pfad+'Temperatur\' + tempdateiname);
-    ReWrite(myFile);
-    Writeln(myFile, '01-01-2000 00:00:00;21.0');
-    CloseFile(myFile);
-  end;
   try
+    if FileExists(pfad+'Temperatur\' + tempdateiname) then else
+    begin
+      AssignFile(myFile, pfad+'Temperatur\' + tempdateiname);
+      ReWrite(myFile);
+      Writeln(myFile, '01-01-2000 00:00:00;21.0');
+      CloseFile(myFile);
+    end;
     if Heizung=HWert then
     begin
       if SimTemp<100 then SimTemp:=SimTemp+0.1;
@@ -2398,18 +2583,18 @@ begin
     Append(SimFile);
     Writeln(SimFile, 'Simulation;'+FloatToStrF(SimTemp,ffFixed,10,1));
     CloseFile(SimFile);
+    AssignFile(SimFile, pfad + 'Temperatur\' + tempdateiname);
+    Append(SimFile);
+    Writeln(SimFile, 'Simulation;'+FloatToStrF(SimTemp,ffFixed,10,1));
+    CloseFile(SimFile);
   except
   end;
-  AssignFile(SimFile, pfad + 'Temperatur\' + tempdateiname);
-  Append(SimFile);
-  Writeln(SimFile, 'Simulation;'+FloatToStrF(SimTemp,ffFixed,10,1));
-  CloseFile(SimFile);
 end;
 
 procedure editcheck(changededit: TEdit; min:integer; max:integer; fail:string);
 begin
-  try Intdummy:=strtoint(changededit.Text) except begin changededit.Text:=fail; ShowMessage('Unerlaubte Eingabe!'); end; end;
-  if (Intdummy>max) or (Intdummy<min) then begin changededit.Text:=fail; ShowMessage('Unerlaubte Eingabe!'); end;
+  try Intdummy:=strtoint(changededit.Text) except begin changededit.Text:=fail; ShowMessagePos('Unerlaubte Eingabe!', Form1.Left+350, Form1.Top+250); end; end;
+  if (Intdummy>max) or (Intdummy<min) then begin changededit.Text:=fail; ShowMessagePos('Unerlaubte Eingabe!', Form1.Left+350, Form1.Top+250); end;
 end;
 
 procedure TForm1.Edit1Exit(Sender: TObject); begin editcheck(Edit1,0,100,'20'); end;
@@ -2496,7 +2681,7 @@ end;
 procedure TForm1.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 var buttonSelected:integer;
 begin
-  buttonSelected:=MessageDlg('Programm wirklich beenden?', mtWarning, [mbOK, mbAbort], 0);
+  buttonSelected:=MessageDlgPos('Programm wirklich beenden?', mtWarning, [mbOK, mbAbort], 0, Form1.Left+350, Form1.Top+250);
   if buttonSelected = mrOK then
   begin
     LPTCode:=0;
@@ -2517,7 +2702,7 @@ begin
   begin
     if TimeTempStore=TimeTempStr then
     begin
-      buttonSelected:=MessageDlg('Seit min. 1 Minute kein neuer Temperaturmesswert', mtWarning, [mbOK, mbAbort], 0);
+      buttonSelected:=MessageDlgPos('Seit min. 1 Minute kein neuer Temperaturmesswert', mtWarning, [mbOK, mbAbort], 0, Form1.Left+350, Form1.Top+250);
       if buttonSelected = mrAbort then CheckBox33.Checked:=false;
     end;
     TimeTempStore:=TimeTempStr;
@@ -2664,21 +2849,21 @@ procedure TForm1.CheckBox35Click(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.Button26Click(Sender: TObject);
 begin
   if ShellExecute(Application.Handle,'open',PChar(pfad+'Digitemp\Digitemp.bat'),nil,PChar(pfad+'Digitemp\'), SW_MINIMIZE) <= 32 then
-  ShowMessage('Es ist ein Fehler beim ausführen von Digitemp aufgetreten') else ;
+  ShowMessagePos('Es ist ein Fehler beim ausführen von Digitemp aufgetreten', Form1.Left+350, Form1.Top+250) else ;
   sensorreset:=1;
 end;
 
 procedure TForm1.Button27Click(Sender: TObject);
 begin
   if ShellExecute(Application.Handle,'open',PChar(pfad+'Digitemp\Digitemp_variabel.bat'),nil,PChar(pfad+'Digitemp\'), SW_SHOWNORMAL) <= 32 then
-  ShowMessage('Es ist ein Fehler beim ausführen von Digitemp aufgetreten') else ;
+  ShowMessagePos('Es ist ein Fehler beim ausführen von Digitemp aufgetreten', Form1.Left+350, Form1.Top+250) else ;
   Sensorreset:=2;
 end;
 
 procedure TForm1.Button28Click(Sender: TObject);
 begin
   if ShellExecute(Application.Handle,'open',PChar(pfad+'Digitemp\Externe_Sensorsoftware.bat'),nil,PChar(pfad+'Digitemp\'), SW_MINIMIZE) <= 32 then
-  ShowMessage('Es ist ein Fehler beim ausführen von Digitemp aufgetreten') else ;
+  ShowMessagePos('Es ist ein Fehler beim ausführen von Digitemp aufgetreten', Form1.Left+350, Form1.Top+250) else ;
   sensorreset:=3;
 end;
 
@@ -2687,6 +2872,143 @@ begin
   if sensorreset=1 then Form1.Button26Click(Sender);
   if sensorreset=2 then Form1.Button27Click(Sender);
   if sensorreset=3 then Form1.Button28Click(Sender);
+end;
+
+procedure TForm1.OpenDialog1Show(Sender: TObject);
+begin
+  TimerDlgMove.Enabled:=true;
+end;
+
+procedure TForm1.SaveDialog1Show(Sender: TObject);
+begin
+  TimerDlgMove.Enabled:=true;
+end;
+
+procedure TForm1.PrintDialog1Show(Sender: TObject);
+begin
+  TimerDlgMove.Enabled:=true;
+end;
+
+procedure TForm1.TimerDlgMoveTimer(Sender: TObject);
+begin
+  SetWindowPos(GetParent(OpenDialog1.Handle), 0, Form1.Left+200, Form1.Top+100, 0, 0, SWP_NOSIZE);
+  SetWindowPos(GetParent(SaveDialog1.Handle), 0, Form1.Left+200, Form1.Top+100, 0, 0, SWP_NOSIZE);
+  SetWindowPos(PrintDialog1.Handle, 0, Form1.Left+200, Form1.Top+100, 0, 0, SWP_NOSIZE);
+  TimerDlgMove.Enabled:=false;
+end;
+
+procedure TForm1.Button29Click(Sender: TObject);
+begin
+   Button29.Visible:=false;
+   Button30.Visible:=true;
+   Edit63.Visible:=true;
+   Edit64.Visible:=true;
+   Edit65.Visible:=true;
+   Edit66.Visible:=true;
+   Edit67.Visible:=true;
+   Edit68.Visible:=true;
+   Edit69.Visible:=true;
+   Edit70.Visible:=true;
+   Edit71.Visible:=true;
+   Edit72.Visible:=true;
+   Edit73.Visible:=true;
+   Edit74.Visible:=true;
+   Edit75.Visible:=true;
+   Edit76.Visible:=true;
+   Edit77.Visible:=true;
+   Edit78.Visible:=true;
+   Edit79.Visible:=true;
+   Edit80.Visible:=true;
+   Edit81.Visible:=true;
+   Edit82.Visible:=true;
+   Label1.Visible:=false;
+   Label3.Visible:=false;
+   Label23.Visible:=false;
+   Label24.Visible:=false;
+   Label25.Visible:=false;
+   Label36.Visible:=false;
+   Label115.Visible:=true;
+end;
+
+procedure TForm1.Button30Click(Sender: TObject);
+begin
+   CheckBox1.Caption:=Edit73.Text;
+   CheckBox2.Caption:=Edit74.Text;
+   CheckBox3.Caption:=Edit75.Text;
+   CheckBox4.Caption:=Edit76.Text;
+   CheckBox5.Caption:=Edit77.Text;
+   CheckBox6.Caption:=Edit78.Text;
+   CheckBox7.Caption:=Edit79.Text;
+   CheckBox8.Caption:=Edit80.Text;
+   CheckBox9.Caption:=Edit81.Text;
+   CheckBox10.Caption:=Edit82.Text;
+   Button29.Visible:=true;
+   Button30.Visible:=false;
+   Edit63.Visible:=false;
+   Edit64.Visible:=false;
+   Edit65.Visible:=false;
+   Edit66.Visible:=false;
+   Edit67.Visible:=false;
+   Edit68.Visible:=false;
+   Edit69.Visible:=false;
+   Edit70.Visible:=false;
+   Edit71.Visible:=false;
+   Edit72.Visible:=false;
+   Edit73.Visible:=false;
+   Edit74.Visible:=false;
+   Edit75.Visible:=false;
+   Edit76.Visible:=false;
+   Edit77.Visible:=false;
+   Edit78.Visible:=false;
+   Edit79.Visible:=false;
+   Edit80.Visible:=false;
+   Edit81.Visible:=false;
+   Edit82.Visible:=false;
+   Label1.Visible:=true;
+   Label3.Visible:=true;
+   Label23.Visible:=true;
+   Label24.Visible:=true;
+   Label25.Visible:=true;
+   Label36.Visible:=true;
+   Label115.Visible:=false;
+end;
+
+procedure TForm1.CheckBox38Click(Sender: TObject);
+begin
+  if Checkbox38.Checked=true then
+    begin
+      Checkbox39.Checked:=false;
+      Checkbox40.Checked:=false;
+    end;
+  setupgeaendert;
+end;
+
+procedure TForm1.CheckBox39Click(Sender: TObject);
+begin
+  if Checkbox39.Checked=true then
+    begin
+      Checkbox38.Checked:=false;
+      Checkbox40.Checked:=false;
+    end;
+  setupgeaendert;
+end;
+
+procedure TForm1.CheckBox40Click(Sender: TObject);
+begin
+  if Checkbox40.Checked=true then
+    begin
+      Checkbox38.Checked:=false;
+      Checkbox39.Checked:=false;
+    end;
+  setupgeaendert;
+end;
+
+procedure TForm1.StartTimerTimer(Sender: TObject);
+begin
+  if Checkbox38.Checked=true then Form1.Button26Click(Sender);
+  if Checkbox39.Checked=true then Form1.Button27Click(Sender);
+  if Checkbox40.Checked=true then Form1.Button28Click(Sender);
+  StartTimer.Enabled:=false;
 end;
 
 end.

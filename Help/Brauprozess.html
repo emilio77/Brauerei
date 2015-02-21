@@ -7,7 +7,10 @@
 	<META NAME="AUTHOR" CONTENT="Andreas Wehrle">
 	<META NAME="CREATED" CONTENT="20140414;21331864">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
-	<META NAME="CHANGED" CONTENT="20141113;19041512">
+	<META NAME="CHANGED" CONTENT="20141127;21022796">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
@@ -31,7 +34,7 @@
 	</STYLE>
 </HEAD>
 <BODY LANG="de-DE" DIR="LTR">
-<P STYLE="margin-bottom: 0cm">Hilfe Datei zu Brauerei V 1.21 &ndash;
+<P STYLE="margin-bottom: 0cm">Hilfe Datei zu Brauerei V 1.30 &ndash;
 by Emilio - <A HREF="Help.html">HOME</A> 
 </P>
 <P STYLE="margin-bottom: 0cm"><U><B>Brauprozess:</B></U></P>
@@ -55,10 +58,18 @@ Bildschirmdarstellungen:</P>
 	Brauautomatik ( gr&uuml;n=an / gelb= pause / rot=aus )</P>
 	<LI><P STYLE="margin-bottom: 0cm">Zustandsanzeige f&uuml;r Alarm (
 	gr&uuml;n=an / rot=aus )</P>
-	<LI><P STYLE="margin-bottom: 0cm">Alarm pulsen oder Dauersignal</P>
 	<LI><P STYLE="margin-bottom: 0cm">Heizung wird vor Erreichung der
 	Zieltemperatur gepulst.Die Temperaturdifferenz bei welcher gepulst
-	wird so wie die Pulsweite, kann in der Setup.txt eingestellt werden.</P>
+	wird so wie die Pulsweite, kann in den Einstellungen angepasst
+	werden.</P>
+	<LI><P STYLE="margin-bottom: 0cm">Heizung wird vor Erreichung der
+	Zieltemperatur auf einen maximalen Gradienten gepr&uuml;ft. Ist der
+	Gradient zu steil, wird die Heizung ausgeschaltet. Die
+	Temperaturdifferenz bei welcher gepr&uuml;ft wird so wie der
+	maximale Gradient, kann in den Einstellungen angepasst werden.</P>
+	<LI><P STYLE="margin-bottom: 0cm">Schalthysterese, kann in den
+	Einstellungen angepasst werden.</P>
+	<LI><P STYLE="margin-bottom: 0cm">Alarm pulsen oder Dauersignal</P>
 	<LI><P STYLE="margin-bottom: 0cm">Sensor&uuml;berwachung &ndash;
 	Ver&auml;ndert sich die log.txt w&auml;hrend gestartetem Brauprozess
 	binnen einer Minute nicht wird ein Alarm ausgegeben.</P>
@@ -129,11 +140,11 @@ Bildschirmdarstellungen:</P>
 	die Temperatur um 1,2&deg;/Minute bei ausgeschalteter Heizung sinkt
 	die Temperatur um 0,6&deg;/Minute.</P>
 	<LI><P STYLE="margin-bottom: 0cm; font-weight: normal; text-decoration: none">
-	Umschaltung zwischen Manuell und Automatik Bildschirm</P>
-	<LI><P STYLE="margin-bottom: 0cm; font-weight: normal; text-decoration: none">
 	alle Rezepteinstellungen k&ouml;nnen auch im Manuellen Bildschirm
 	ver&auml;ndert, gespeichert oder geladen werden. Details siehe
 	Automatik.</P>
+	<LI><P STYLE="margin-bottom: 0cm; font-weight: normal; text-decoration: none">
+	Umschaltung zwischen Manuell und Automatik Bildschirm.</P>
 </OL>
 </BODY>
 </HTML>

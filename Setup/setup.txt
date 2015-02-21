@@ -7,7 +7,7 @@ LPT-Pumpe;8
 LPT-Alarm;128
 USB-Karten-Typ "Denkovi" oder "KMTronic";KMTronic
 Denkovi-Device-Index;0
-USB-Port;COM3
+USB-Port;COM5
 USB-Heizung;1
 USB-Ruehrwerk;2
 USB-Pumpe;3
@@ -33,5 +33,8 @@ Einschaltpuls bis 100°C;10
 Ausschaltpuls bis 100°C;0
 Überschwingungsdämpfung;1.0
 Schalthysterese;0.5
-Batchwiederholung;1
+Batchwiederholung;0
 Temperatur-Textdatei;log.txt
+Autostart Digitemp.bat;0
+Autostart Digitemp_variabel.bat;0
+Autostart Externe_Sensorsoftware.bat;0

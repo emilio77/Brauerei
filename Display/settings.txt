@@ -1,3 +1,0 @@
-COM8
-9600 Baud
-Auto

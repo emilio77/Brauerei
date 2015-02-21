@@ -1,8 +1,9 @@
 object Form1: TForm1
-  Left = 597
-  Top = 112
+  Left = 361
+  Top = 236
+  BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = 'Brauerei V01.30'
+  Caption = 'Brauerei V01.31'
   ClientHeight = 632
   ClientWidth = 977
   Color = clBtnFace
@@ -21,7 +22,7 @@ object Form1: TForm1
   TextHeight = 13
   object Image1: TImage
     Left = 792
-    Top = 20
+    Top = 28
     Width = 177
     Height = 470
     IncrementalDisplay = True
@@ -715,436 +716,444 @@ object Form1: TForm1
     Top = 8
     Width = 777
     Height = 617
-    ActivePage = TabSheet4
+    ActivePage = TabSheet1
     TabOrder = 0
     OnChange = PageControl1Change
     object TabSheet1: TTabSheet
       Caption = 'Brauprozess'
+      object Label115: TLabel
+        Left = 137
+        Top = 184
+        Width = 89
+        Height = 13
+        Caption = 'Brauerruf Texte'
+        Visible = False
+      end
       object Label1: TLabel
-        Left = 96
+        Left = 134
         Top = 184
         Width = 65
         Height = 13
         Caption = 'Temperatur'
       end
       object Label2: TLabel
-        Left = 144
+        Left = 176
         Top = 203
         Width = 14
         Height = 13
         Caption = #176'C'
       end
       object Label3: TLabel
-        Left = 168
+        Left = 219
         Top = 184
         Width = 35
         Height = 13
         Caption = 'Dauer'
       end
       object Label4: TLabel
-        Left = 216
+        Left = 259
         Top = 203
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label5: TLabel
-        Left = 144
+        Left = 176
         Top = 235
         Width = 14
         Height = 13
         Caption = #176'C'
       end
       object Label6: TLabel
-        Left = 216
+        Left = 259
         Top = 235
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label7: TLabel
-        Left = 144
+        Left = 176
         Top = 267
         Width = 14
         Height = 13
         Caption = #176'C'
       end
       object Label8: TLabel
-        Left = 216
+        Left = 259
         Top = 267
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label9: TLabel
-        Left = 144
+        Left = 176
         Top = 299
         Width = 14
         Height = 13
         Caption = #176'C'
       end
       object Label10: TLabel
-        Left = 216
+        Left = 259
         Top = 299
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label11: TLabel
-        Left = 144
+        Left = 176
         Top = 331
         Width = 14
         Height = 13
         Caption = #176'C'
       end
       object Label12: TLabel
-        Left = 216
+        Left = 259
         Top = 331
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label13: TLabel
-        Left = 144
+        Left = 176
         Top = 363
         Width = 14
         Height = 13
         Caption = #176'C'
       end
       object Label14: TLabel
-        Left = 216
+        Left = 259
         Top = 363
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label15: TLabel
-        Left = 144
+        Left = 176
         Top = 395
         Width = 14
         Height = 13
         Caption = #176'C'
       end
       object Label16: TLabel
-        Left = 216
+        Left = 259
         Top = 395
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label23: TLabel
-        Left = 248
+        Left = 289
         Top = 184
         Width = 53
         Height = 13
         Caption = 'Brauerruf'
       end
       object Gauge1: TGauge
-        Left = 513
-        Top = 203
+        Left = 534
+        Top = 202
         Width = 137
         Height = 17
         ForeColor = clMoneyGreen
         Progress = 0
       end
       object Gauge2: TGauge
-        Left = 513
-        Top = 235
+        Left = 534
+        Top = 234
         Width = 137
         Height = 17
         ForeColor = clMoneyGreen
         Progress = 0
       end
       object Gauge3: TGauge
-        Left = 513
-        Top = 267
+        Left = 534
+        Top = 266
         Width = 137
         Height = 17
         ForeColor = clMoneyGreen
         Progress = 0
       end
       object Gauge4: TGauge
-        Left = 513
-        Top = 299
+        Left = 534
+        Top = 298
         Width = 137
         Height = 17
         ForeColor = clMoneyGreen
         Progress = 0
       end
       object Gauge5: TGauge
-        Left = 513
-        Top = 331
+        Left = 534
+        Top = 330
         Width = 137
         Height = 17
         ForeColor = clMoneyGreen
         Progress = 0
       end
       object Gauge6: TGauge
-        Left = 513
-        Top = 363
+        Left = 534
+        Top = 362
         Width = 137
         Height = 17
         ForeColor = clMoneyGreen
         Progress = 0
       end
       object Gauge7: TGauge
-        Left = 513
-        Top = 395
+        Left = 534
+        Top = 394
         Width = 137
         Height = 17
         ForeColor = clMoneyGreen
         Progress = 0
       end
       object Label24: TLabel
-        Left = 512
+        Left = 536
         Top = 184
         Width = 58
         Height = 13
         Caption = 'Fortschritt'
       end
       object Label25: TLabel
-        Left = 664
+        Left = 684
         Top = 184
         Width = 59
         Height = 13
         Caption = 'Restdauer'
       end
       object Label26: TLabel
-        Left = 712
+        Left = 726
         Top = 203
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label27: TLabel
-        Left = 712
+        Left = 726
         Top = 235
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label28: TLabel
-        Left = 712
+        Left = 726
         Top = 267
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label29: TLabel
-        Left = 712
+        Left = 726
         Top = 299
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label30: TLabel
-        Left = 712
+        Left = 726
         Top = 331
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label31: TLabel
-        Left = 712
+        Left = 726
         Top = 363
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label32: TLabel
-        Left = 712
+        Left = 726
         Top = 395
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label36: TLabel
-        Left = 320
+        Left = 365
         Top = 184
-        Width = 159
+        Width = 119
         Height = 13
-        Caption = 'R'#252'hrwerk / Takt (EIN/AUS)'
+        Caption = 'R'#252'hrwerk (EIN/AUS)'
       end
       object Label38: TLabel
-        Left = 448
+        Left = 482
         Top = 203
         Width = 25
         Height = 13
         Caption = 'sek.'
       end
       object Label37: TLabel
-        Left = 448
+        Left = 482
         Top = 235
         Width = 25
         Height = 13
         Caption = 'sek.'
       end
       object Label39: TLabel
-        Left = 448
+        Left = 482
         Top = 267
         Width = 25
         Height = 13
         Caption = 'sek.'
       end
       object Label40: TLabel
-        Left = 448
+        Left = 482
         Top = 299
         Width = 25
         Height = 13
         Caption = 'sek.'
       end
       object Label41: TLabel
-        Left = 448
+        Left = 482
         Top = 331
         Width = 25
         Height = 13
         Caption = 'sek.'
       end
       object Label42: TLabel
-        Left = 448
+        Left = 482
         Top = 363
         Width = 25
         Height = 13
         Caption = 'sek.'
       end
       object Label43: TLabel
-        Left = 448
+        Left = 482
         Top = 395
         Width = 25
         Height = 13
         Caption = 'sek.'
       end
       object Label47: TLabel
-        Left = 389
+        Left = 423
         Top = 235
         Width = 7
         Height = 13
         Caption = '/'
       end
       object Label48: TLabel
-        Left = 389
+        Left = 423
         Top = 203
         Width = 7
         Height = 13
         Caption = '/'
       end
       object Label49: TLabel
-        Left = 389
+        Left = 423
         Top = 299
         Width = 7
         Height = 13
         Caption = '/'
       end
       object Label50: TLabel
-        Left = 389
+        Left = 423
         Top = 267
         Width = 7
         Height = 13
         Caption = '/'
       end
       object Label51: TLabel
-        Left = 389
+        Left = 423
         Top = 363
         Width = 7
         Height = 13
         Caption = '/'
       end
       object Label52: TLabel
-        Left = 389
+        Left = 423
         Top = 331
         Width = 7
         Height = 13
         Caption = '/'
       end
       object Label54: TLabel
-        Left = 389
+        Left = 423
         Top = 395
         Width = 7
         Height = 13
         Caption = '/'
       end
       object Label17: TLabel
-        Left = 144
+        Left = 176
         Top = 427
         Width = 14
         Height = 13
         Caption = #176'C'
       end
       object Label18: TLabel
-        Left = 216
+        Left = 259
         Top = 427
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label19: TLabel
-        Left = 144
+        Left = 176
         Top = 459
         Width = 14
         Height = 13
         Caption = #176'C'
       end
       object Label20: TLabel
-        Left = 216
+        Left = 259
         Top = 459
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label21: TLabel
-        Left = 144
+        Left = 176
         Top = 491
         Width = 14
         Height = 13
         Caption = #176'C'
       end
       object Label22: TLabel
-        Left = 216
+        Left = 259
         Top = 491
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label53: TLabel
-        Left = 389
+        Left = 423
         Top = 427
         Width = 7
         Height = 13
         Caption = '/'
       end
       object Label55: TLabel
-        Left = 389
+        Left = 423
         Top = 491
         Width = 7
         Height = 13
         Caption = '/'
       end
       object Label56: TLabel
-        Left = 389
+        Left = 423
         Top = 459
         Width = 7
         Height = 13
         Caption = '/'
       end
       object Gauge8: TGauge
-        Left = 513
-        Top = 427
+        Left = 534
+        Top = 426
         Width = 137
         Height = 17
         ForeColor = clMoneyGreen
         Progress = 0
       end
       object Gauge9: TGauge
-        Left = 513
-        Top = 459
+        Left = 534
+        Top = 458
         Width = 137
         Height = 17
         ForeColor = clMoneyGreen
         Progress = 0
       end
       object Gauge10: TGauge
-        Left = 513
-        Top = 491
+        Left = 534
+        Top = 490
         Width = 137
         Height = 17
         Color = clBtnFace
@@ -1153,46 +1162,65 @@ object Form1: TForm1
         Progress = 0
       end
       object Label33: TLabel
-        Left = 712
+        Left = 726
         Top = 427
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label34: TLabel
-        Left = 712
+        Left = 726
         Top = 459
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label35: TLabel
-        Left = 712
+        Left = 726
         Top = 491
         Width = 24
         Height = 13
         Caption = 'min.'
       end
       object Label44: TLabel
-        Left = 448
+        Left = 482
         Top = 427
         Width = 25
         Height = 13
         Caption = 'sek.'
       end
       object Label45: TLabel
-        Left = 448
+        Left = 482
         Top = 459
         Width = 25
         Height = 13
         Caption = 'sek.'
       end
       object Label46: TLabel
-        Left = 448
+        Left = 482
         Top = 491
         Width = 25
         Height = 13
         Caption = 'sek.'
+      end
+      object Button9: TButton
+        Left = 544
+        Top = 200
+        Width = 193
+        Height = 33
+        Caption = 'Heizung Ein'
+        TabOrder = 11
+        Visible = False
+        OnClick = Button9Click
+      end
+      object Edit33: TEdit
+        Left = 378
+        Top = 264
+        Width = 41
+        Height = 21
+        TabOrder = 35
+        Text = '60'
+        OnExit = Edit33Exit
       end
       object Panel3: TPanel
         Left = 416
@@ -1208,14 +1236,14 @@ object Form1: TForm1
           Caption = 'Gesamtrast:'
         end
         object Label60: TLabel
-          Left = 296
+          Left = 310
           Top = 13
           Width = 24
           Height = 13
           Caption = 'min.'
         end
         object Gauge11: TGauge
-          Left = 97
+          Left = 117
           Top = 11
           Width = 137
           Height = 17
@@ -1225,7 +1253,7 @@ object Form1: TForm1
           Progress = 0
         end
         object Edit53: TEdit
-          Left = 248
+          Left = 268
           Top = 9
           Width = 41
           Height = 21
@@ -3042,7 +3070,7 @@ object Form1: TForm1
         end
       end
       object Edit1: TEdit
-        Left = 96
+        Left = 136
         Top = 200
         Width = 41
         Height = 21
@@ -3053,13 +3081,13 @@ object Form1: TForm1
       object CheckBox1: TCheckBox
         Left = 16
         Top = 200
-        Width = 57
+        Width = 113
         Height = 25
         Caption = 'Rast 1'
         TabOrder = 16
       end
       object Edit2: TEdit
-        Left = 168
+        Left = 217
         Top = 200
         Width = 41
         Height = 21
@@ -3068,7 +3096,7 @@ object Form1: TForm1
         OnExit = Edit2Exit
       end
       object Edit3: TEdit
-        Left = 96
+        Left = 136
         Top = 232
         Width = 41
         Height = 21
@@ -3079,13 +3107,13 @@ object Form1: TForm1
       object CheckBox2: TCheckBox
         Left = 16
         Top = 232
-        Width = 57
+        Width = 113
         Height = 25
         Caption = 'Rast 2'
         TabOrder = 23
       end
       object Edit4: TEdit
-        Left = 168
+        Left = 217
         Top = 232
         Width = 41
         Height = 21
@@ -3094,7 +3122,7 @@ object Form1: TForm1
         OnExit = Edit4Exit
       end
       object Edit5: TEdit
-        Left = 96
+        Left = 136
         Top = 264
         Width = 41
         Height = 21
@@ -3105,13 +3133,13 @@ object Form1: TForm1
       object CheckBox3: TCheckBox
         Left = 16
         Top = 264
-        Width = 57
+        Width = 113
         Height = 25
         Caption = 'Rast 3'
         TabOrder = 30
       end
       object Edit6: TEdit
-        Left = 168
+        Left = 217
         Top = 264
         Width = 41
         Height = 21
@@ -3120,7 +3148,7 @@ object Form1: TForm1
         OnExit = Edit6Exit
       end
       object Edit7: TEdit
-        Left = 96
+        Left = 136
         Top = 296
         Width = 41
         Height = 21
@@ -3131,13 +3159,13 @@ object Form1: TForm1
       object CheckBox4: TCheckBox
         Left = 16
         Top = 296
-        Width = 57
+        Width = 113
         Height = 25
         Caption = 'Rast 4'
         TabOrder = 37
       end
       object Edit8: TEdit
-        Left = 168
+        Left = 217
         Top = 296
         Width = 41
         Height = 21
@@ -3146,7 +3174,7 @@ object Form1: TForm1
         OnExit = Edit8Exit
       end
       object Edit9: TEdit
-        Left = 96
+        Left = 136
         Top = 328
         Width = 41
         Height = 21
@@ -3157,13 +3185,13 @@ object Form1: TForm1
       object CheckBox5: TCheckBox
         Left = 16
         Top = 328
-        Width = 57
+        Width = 113
         Height = 25
         Caption = 'Rast 5'
         TabOrder = 44
       end
       object Edit10: TEdit
-        Left = 168
+        Left = 217
         Top = 328
         Width = 41
         Height = 21
@@ -3172,7 +3200,7 @@ object Form1: TForm1
         OnExit = Edit10Exit
       end
       object Edit11: TEdit
-        Left = 96
+        Left = 136
         Top = 360
         Width = 41
         Height = 21
@@ -3183,13 +3211,13 @@ object Form1: TForm1
       object CheckBox6: TCheckBox
         Left = 16
         Top = 360
-        Width = 57
+        Width = 113
         Height = 25
         Caption = 'Rast 6'
         TabOrder = 51
       end
       object Edit12: TEdit
-        Left = 168
+        Left = 217
         Top = 360
         Width = 41
         Height = 21
@@ -3198,7 +3226,7 @@ object Form1: TForm1
         OnExit = Edit12Exit
       end
       object Edit13: TEdit
-        Left = 96
+        Left = 136
         Top = 392
         Width = 41
         Height = 21
@@ -3209,13 +3237,13 @@ object Form1: TForm1
       object CheckBox7: TCheckBox
         Left = 16
         Top = 392
-        Width = 57
+        Width = 113
         Height = 25
         Caption = 'Rast 7'
         TabOrder = 58
       end
       object Edit14: TEdit
-        Left = 168
+        Left = 217
         Top = 392
         Width = 41
         Height = 21
@@ -3224,56 +3252,56 @@ object Form1: TForm1
         OnExit = Edit14Exit
       end
       object CheckBox11: TCheckBox
-        Left = 264
+        Left = 305
         Top = 200
         Width = 25
         Height = 25
         TabOrder = 19
       end
       object CheckBox12: TCheckBox
-        Left = 264
+        Left = 305
         Top = 232
         Width = 25
         Height = 25
         TabOrder = 26
       end
       object CheckBox13: TCheckBox
-        Left = 264
+        Left = 305
         Top = 264
         Width = 25
         Height = 25
         TabOrder = 33
       end
       object CheckBox14: TCheckBox
-        Left = 264
+        Left = 305
         Top = 296
         Width = 25
         Height = 25
         TabOrder = 40
       end
       object CheckBox15: TCheckBox
-        Left = 264
+        Left = 305
         Top = 328
         Width = 25
         Height = 25
         TabOrder = 47
       end
       object CheckBox16: TCheckBox
-        Left = 264
+        Left = 305
         Top = 360
         Width = 25
         Height = 25
         TabOrder = 54
       end
       object CheckBox17: TCheckBox
-        Left = 264
+        Left = 305
         Top = 392
         Width = 25
         Height = 25
         TabOrder = 61
       end
       object Edit21: TEdit
-        Left = 664
+        Left = 684
         Top = 200
         Width = 41
         Height = 21
@@ -3283,7 +3311,7 @@ object Form1: TForm1
         Text = '60'
       end
       object Edit22: TEdit
-        Left = 664
+        Left = 684
         Top = 232
         Width = 41
         Height = 21
@@ -3293,7 +3321,7 @@ object Form1: TForm1
         Text = '60'
       end
       object Edit23: TEdit
-        Left = 664
+        Left = 684
         Top = 264
         Width = 41
         Height = 21
@@ -3303,7 +3331,7 @@ object Form1: TForm1
         Text = '60'
       end
       object Edit24: TEdit
-        Left = 664
+        Left = 684
         Top = 296
         Width = 41
         Height = 21
@@ -3313,7 +3341,7 @@ object Form1: TForm1
         Text = '60'
       end
       object Edit25: TEdit
-        Left = 664
+        Left = 684
         Top = 328
         Width = 41
         Height = 21
@@ -3323,7 +3351,7 @@ object Form1: TForm1
         Text = '60'
       end
       object Edit26: TEdit
-        Left = 664
+        Left = 684
         Top = 360
         Width = 41
         Height = 21
@@ -3333,7 +3361,7 @@ object Form1: TForm1
         Text = '60'
       end
       object Edit27: TEdit
-        Left = 664
+        Left = 684
         Top = 392
         Width = 41
         Height = 21
@@ -3388,56 +3416,56 @@ object Form1: TForm1
         OnClick = Button5Click
       end
       object CheckBox21: TCheckBox
-        Left = 320
+        Left = 354
         Top = 200
         Width = 25
         Height = 25
         TabOrder = 20
       end
       object CheckBox22: TCheckBox
-        Left = 320
+        Left = 354
         Top = 232
         Width = 25
         Height = 25
         TabOrder = 27
       end
       object CheckBox23: TCheckBox
-        Left = 320
+        Left = 354
         Top = 264
         Width = 25
         Height = 25
         TabOrder = 34
       end
       object CheckBox24: TCheckBox
-        Left = 320
+        Left = 354
         Top = 296
         Width = 25
         Height = 25
         TabOrder = 41
       end
       object CheckBox25: TCheckBox
-        Left = 320
+        Left = 354
         Top = 328
         Width = 25
         Height = 25
         TabOrder = 48
       end
       object CheckBox26: TCheckBox
-        Left = 320
+        Left = 354
         Top = 360
         Width = 25
         Height = 25
         TabOrder = 55
       end
       object CheckBox27: TCheckBox
-        Left = 320
+        Left = 354
         Top = 392
         Width = 25
         Height = 25
         TabOrder = 62
       end
       object Edit31: TEdit
-        Left = 344
+        Left = 378
         Top = 200
         Width = 41
         Height = 21
@@ -3446,7 +3474,7 @@ object Form1: TForm1
         OnExit = Edit31Exit
       end
       object Edit32: TEdit
-        Left = 344
+        Left = 378
         Top = 232
         Width = 41
         Height = 21
@@ -3454,17 +3482,8 @@ object Form1: TForm1
         Text = '60'
         OnExit = Edit32Exit
       end
-      object Edit33: TEdit
-        Left = 344
-        Top = 264
-        Width = 41
-        Height = 21
-        TabOrder = 35
-        Text = '60'
-        OnExit = Edit33Exit
-      end
       object Edit34: TEdit
-        Left = 344
+        Left = 378
         Top = 296
         Width = 41
         Height = 21
@@ -3473,7 +3492,7 @@ object Form1: TForm1
         OnExit = Edit34Exit
       end
       object Edit35: TEdit
-        Left = 344
+        Left = 378
         Top = 328
         Width = 41
         Height = 21
@@ -3482,7 +3501,7 @@ object Form1: TForm1
         OnExit = Edit35Exit
       end
       object Edit36: TEdit
-        Left = 344
+        Left = 378
         Top = 360
         Width = 41
         Height = 21
@@ -3491,7 +3510,7 @@ object Form1: TForm1
         OnExit = Edit36Exit
       end
       object Edit37: TEdit
-        Left = 344
+        Left = 378
         Top = 392
         Width = 41
         Height = 21
@@ -3500,7 +3519,7 @@ object Form1: TForm1
         OnExit = Edit37Exit
       end
       object Edit41: TEdit
-        Left = 400
+        Left = 434
         Top = 200
         Width = 41
         Height = 21
@@ -3509,7 +3528,7 @@ object Form1: TForm1
         OnExit = Edit41Exit
       end
       object Edit42: TEdit
-        Left = 400
+        Left = 434
         Top = 232
         Width = 41
         Height = 21
@@ -3518,7 +3537,7 @@ object Form1: TForm1
         OnExit = Edit42Exit
       end
       object Edit43: TEdit
-        Left = 400
+        Left = 434
         Top = 264
         Width = 41
         Height = 21
@@ -3527,7 +3546,7 @@ object Form1: TForm1
         OnExit = Edit43Exit
       end
       object Edit44: TEdit
-        Left = 400
+        Left = 434
         Top = 296
         Width = 41
         Height = 21
@@ -3536,7 +3555,7 @@ object Form1: TForm1
         OnExit = Edit44Exit
       end
       object Edit45: TEdit
-        Left = 400
+        Left = 434
         Top = 328
         Width = 41
         Height = 21
@@ -3545,7 +3564,7 @@ object Form1: TForm1
         OnExit = Edit45Exit
       end
       object Edit46: TEdit
-        Left = 400
+        Left = 434
         Top = 360
         Width = 41
         Height = 21
@@ -3554,7 +3573,7 @@ object Form1: TForm1
         OnExit = Edit46Exit
       end
       object Edit47: TEdit
-        Left = 400
+        Left = 434
         Top = 392
         Width = 41
         Height = 21
@@ -3563,8 +3582,8 @@ object Form1: TForm1
         OnExit = Edit47Exit
       end
       object Button8: TButton
-        Left = 512
-        Top = 240
+        Left = 544
+        Top = 256
         Width = 193
         Height = 33
         Caption = 'R'#252'hrwerk Ein'
@@ -3572,19 +3591,9 @@ object Form1: TForm1
         Visible = False
         OnClick = Button8Click
       end
-      object Button9: TButton
-        Left = 512
-        Top = 184
-        Width = 193
-        Height = 33
-        Caption = 'Heizung Ein'
-        TabOrder = 11
-        Visible = False
-        OnClick = Button9Click
-      end
       object Button10: TButton
-        Left = 512
-        Top = 296
+        Left = 544
+        Top = 312
         Width = 193
         Height = 33
         Caption = 'Pumpe Ein'
@@ -3622,7 +3631,7 @@ object Form1: TForm1
         OnClick = CheckBox31Click
       end
       object Edit15: TEdit
-        Left = 96
+        Left = 136
         Top = 424
         Width = 41
         Height = 21
@@ -3633,13 +3642,13 @@ object Form1: TForm1
       object CheckBox8: TCheckBox
         Left = 16
         Top = 424
-        Width = 57
+        Width = 113
         Height = 25
         Caption = 'Rast 8'
         TabOrder = 65
       end
       object Edit16: TEdit
-        Left = 168
+        Left = 217
         Top = 424
         Width = 41
         Height = 21
@@ -3648,7 +3657,7 @@ object Form1: TForm1
         OnExit = Edit16Exit
       end
       object Edit17: TEdit
-        Left = 96
+        Left = 136
         Top = 456
         Width = 41
         Height = 21
@@ -3659,13 +3668,13 @@ object Form1: TForm1
       object CheckBox9: TCheckBox
         Left = 16
         Top = 456
-        Width = 57
+        Width = 113
         Height = 25
         Caption = 'Rast 9'
         TabOrder = 72
       end
       object Edit18: TEdit
-        Left = 168
+        Left = 217
         Top = 456
         Width = 41
         Height = 21
@@ -3674,7 +3683,7 @@ object Form1: TForm1
         OnExit = Edit18Exit
       end
       object Edit19: TEdit
-        Left = 96
+        Left = 136
         Top = 488
         Width = 41
         Height = 21
@@ -3685,13 +3694,13 @@ object Form1: TForm1
       object CheckBox10: TCheckBox
         Left = 16
         Top = 484
-        Width = 65
+        Width = 113
         Height = 25
         Caption = 'Rast 10'
         TabOrder = 79
       end
       object Edit20: TEdit
-        Left = 168
+        Left = 217
         Top = 488
         Width = 41
         Height = 21
@@ -3700,49 +3709,49 @@ object Form1: TForm1
         OnExit = Edit20Exit
       end
       object CheckBox18: TCheckBox
-        Left = 264
+        Left = 305
         Top = 424
         Width = 25
         Height = 25
         TabOrder = 68
       end
       object CheckBox19: TCheckBox
-        Left = 264
+        Left = 305
         Top = 456
         Width = 25
         Height = 25
         TabOrder = 75
       end
       object CheckBox20: TCheckBox
-        Left = 264
+        Left = 305
         Top = 484
         Width = 25
         Height = 25
         TabOrder = 82
       end
       object CheckBox28: TCheckBox
-        Left = 320
+        Left = 354
         Top = 424
         Width = 25
         Height = 25
         TabOrder = 69
       end
       object CheckBox29: TCheckBox
-        Left = 320
+        Left = 354
         Top = 456
         Width = 25
         Height = 25
         TabOrder = 76
       end
       object CheckBox30: TCheckBox
-        Left = 320
+        Left = 354
         Top = 484
         Width = 25
         Height = 25
         TabOrder = 83
       end
       object Edit38: TEdit
-        Left = 344
+        Left = 378
         Top = 424
         Width = 41
         Height = 21
@@ -3751,7 +3760,7 @@ object Form1: TForm1
         OnExit = Edit38Exit
       end
       object Edit39: TEdit
-        Left = 344
+        Left = 378
         Top = 456
         Width = 41
         Height = 21
@@ -3760,7 +3769,7 @@ object Form1: TForm1
         OnExit = Edit39Exit
       end
       object Edit40: TEdit
-        Left = 344
+        Left = 378
         Top = 488
         Width = 41
         Height = 21
@@ -3806,7 +3815,7 @@ object Form1: TForm1
         OnClick = Button13Click
       end
       object Edit28: TEdit
-        Left = 664
+        Left = 684
         Top = 424
         Width = 41
         Height = 21
@@ -3816,7 +3825,7 @@ object Form1: TForm1
         Text = '60'
       end
       object Edit29: TEdit
-        Left = 664
+        Left = 684
         Top = 456
         Width = 41
         Height = 21
@@ -3826,7 +3835,7 @@ object Form1: TForm1
         Text = '60'
       end
       object Edit30: TEdit
-        Left = 664
+        Left = 684
         Top = 488
         Width = 41
         Height = 21
@@ -3836,7 +3845,7 @@ object Form1: TForm1
         Text = '60'
       end
       object Edit48: TEdit
-        Left = 400
+        Left = 434
         Top = 424
         Width = 41
         Height = 21
@@ -3845,7 +3854,7 @@ object Form1: TForm1
         OnExit = Edit48Exit
       end
       object Edit49: TEdit
-        Left = 400
+        Left = 434
         Top = 456
         Width = 41
         Height = 21
@@ -3854,7 +3863,7 @@ object Form1: TForm1
         OnExit = Edit49Exit
       end
       object Edit50: TEdit
-        Left = 400
+        Left = 434
         Top = 488
         Width = 41
         Height = 21
@@ -3873,8 +3882,8 @@ object Form1: TForm1
         TabOrder = 2
       end
       object Button11: TButton
-        Left = 512
-        Top = 352
+        Left = 544
+        Top = 368
         Width = 193
         Height = 33
         Caption = 'Alarm Ein'
@@ -3892,14 +3901,203 @@ object Form1: TForm1
         OnClick = Button17Click
       end
       object Button20: TButton
-        Left = 512
-        Top = 480
+        Left = 544
+        Top = 472
         Width = 193
         Height = 33
         Caption = 'Simulation Ein'
         TabOrder = 15
         Visible = False
         OnClick = Button20Click
+      end
+      object Button29: TButton
+        Left = 584
+        Top = 120
+        Width = 169
+        Height = 33
+        Caption = 'Rast- und Brauerruf Texte'
+        TabOrder = 111
+        OnClick = Button29Click
+      end
+      object Button30: TButton
+        Left = 584
+        Top = 120
+        Width = 169
+        Height = 33
+        Caption = 'Rasteinstellungen'
+        TabOrder = 112
+        Visible = False
+        OnClick = Button30Click
+      end
+      object Edit63: TEdit
+        Left = 136
+        Top = 200
+        Width = 625
+        Height = 21
+        TabOrder = 101
+        Visible = False
+      end
+      object Edit70: TEdit
+        Left = 136
+        Top = 424
+        Width = 625
+        Height = 21
+        TabOrder = 108
+        Visible = False
+      end
+      object Edit65: TEdit
+        Left = 136
+        Top = 264
+        Width = 625
+        Height = 21
+        TabOrder = 103
+        Visible = False
+      end
+      object Edit66: TEdit
+        Left = 136
+        Top = 296
+        Width = 625
+        Height = 21
+        TabOrder = 104
+        Visible = False
+      end
+      object Edit67: TEdit
+        Left = 136
+        Top = 328
+        Width = 625
+        Height = 21
+        TabOrder = 105
+        Visible = False
+      end
+      object Edit68: TEdit
+        Left = 136
+        Top = 360
+        Width = 625
+        Height = 21
+        TabOrder = 106
+        Visible = False
+      end
+      object Edit69: TEdit
+        Left = 136
+        Top = 392
+        Width = 625
+        Height = 21
+        TabOrder = 107
+        Visible = False
+      end
+      object Edit64: TEdit
+        Left = 136
+        Top = 232
+        Width = 625
+        Height = 21
+        TabOrder = 102
+        Visible = False
+      end
+      object Edit71: TEdit
+        Left = 136
+        Top = 456
+        Width = 625
+        Height = 21
+        TabOrder = 109
+        Visible = False
+      end
+      object Edit72: TEdit
+        Left = 136
+        Top = 488
+        Width = 625
+        Height = 21
+        TabOrder = 110
+        Visible = False
+      end
+      object Edit73: TEdit
+        Left = 32
+        Top = 200
+        Width = 97
+        Height = 21
+        TabOrder = 113
+        Text = 'Rast 1'
+        Visible = False
+      end
+      object Edit74: TEdit
+        Left = 32
+        Top = 232
+        Width = 97
+        Height = 21
+        TabOrder = 114
+        Text = 'Rast 2'
+        Visible = False
+      end
+      object Edit75: TEdit
+        Left = 32
+        Top = 264
+        Width = 97
+        Height = 21
+        TabOrder = 115
+        Text = 'Rast 3'
+        Visible = False
+      end
+      object Edit76: TEdit
+        Left = 32
+        Top = 296
+        Width = 97
+        Height = 21
+        TabOrder = 116
+        Text = 'Rast 4'
+        Visible = False
+      end
+      object Edit77: TEdit
+        Left = 32
+        Top = 328
+        Width = 97
+        Height = 21
+        TabOrder = 117
+        Text = 'Rast 5'
+        Visible = False
+      end
+      object Edit78: TEdit
+        Left = 32
+        Top = 360
+        Width = 97
+        Height = 21
+        TabOrder = 118
+        Text = 'Rast 6'
+        Visible = False
+      end
+      object Edit79: TEdit
+        Left = 32
+        Top = 392
+        Width = 97
+        Height = 21
+        TabOrder = 119
+        Text = 'Rast 7'
+        Visible = False
+      end
+      object Edit80: TEdit
+        Left = 32
+        Top = 424
+        Width = 97
+        Height = 21
+        TabOrder = 120
+        Text = 'Rast 8'
+        Visible = False
+      end
+      object Edit81: TEdit
+        Left = 32
+        Top = 456
+        Width = 97
+        Height = 21
+        TabOrder = 121
+        Text = 'Rast 9'
+        Visible = False
+      end
+      object Edit82: TEdit
+        Left = 32
+        Top = 488
+        Width = 97
+        Height = 21
+        TabOrder = 122
+        Text = 'Rast 10'
+        Visible = False
       end
     end
     object TabSheet2: TTabSheet
@@ -4347,7 +4545,7 @@ object Form1: TForm1
       end
       object GroupBox1: TGroupBox
         Left = 16
-        Top = 264
+        Top = 256
         Width = 433
         Height = 249
         Caption = 'Batch-Datei-Steuerung'
@@ -4810,7 +5008,7 @@ object Form1: TForm1
         Left = 480
         Top = 64
         Width = 265
-        Height = 449
+        Height = 441
         Caption = 'Heizkurven-Manipulation'
         TabOrder = 4
         object Label88: TLabel
@@ -4997,7 +5195,7 @@ object Form1: TForm1
         end
         object Label114: TLabel
           Left = 17
-          Top = 396
+          Top = 380
           Width = 184
           Height = 13
           Caption = 'Name der Temperatur-Textdatei:'
@@ -8253,7 +8451,7 @@ object Form1: TForm1
         end
         object Edit62: TEdit
           Left = 16
-          Top = 416
+          Top = 408
           Width = 233
           Height = 21
           TabOrder = 13
@@ -8263,7 +8461,7 @@ object Form1: TForm1
       end
       object Button26: TButton
         Left = 16
-        Top = 528
+        Top = 520
         Width = 193
         Height = 41
         Caption = 'Digitemp.bat starten'
@@ -8272,7 +8470,7 @@ object Form1: TForm1
       end
       object Button27: TButton
         Left = 232
-        Top = 528
+        Top = 520
         Width = 217
         Height = 41
         Caption = 'Digitemp_variabel.bat starten'
@@ -8281,12 +8479,39 @@ object Form1: TForm1
       end
       object Button28: TButton
         Left = 480
-        Top = 528
+        Top = 520
         Width = 265
         Height = 41
         Caption = 'Externe_Sensorsoftware.bat starten'
         TabOrder = 7
         OnClick = Button28Click
+      end
+      object CheckBox38: TCheckBox
+        Left = 24
+        Top = 564
+        Width = 193
+        Height = 17
+        Caption = 'Autostart bei Programmstart'
+        TabOrder = 8
+        OnClick = CheckBox38Click
+      end
+      object CheckBox39: TCheckBox
+        Left = 240
+        Top = 564
+        Width = 193
+        Height = 17
+        Caption = 'Autostart bei Programmstart'
+        TabOrder = 9
+        OnClick = CheckBox39Click
+      end
+      object CheckBox40: TCheckBox
+        Left = 488
+        Top = 564
+        Width = 193
+        Height = 17
+        Caption = 'Autostart bei Programmstart'
+        TabOrder = 10
+        OnClick = CheckBox40Click
       end
     end
     object TabSheet3: TTabSheet
@@ -8311,23 +8536,25 @@ object Form1: TForm1
   end
   object Panel1: TPanel
     Left = 792
-    Top = 500
+    Top = 503
     Width = 177
-    Height = 41
+    Height = 45
+    Alignment = taRightJustify
+    BorderWidth = 5
     Caption = '21.0 '#176'C'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -24
-    Font.Name = 'MS Sans Serif'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clGreen
+    Font.Height = -48
+    Font.Name = 'DS-Digital'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
     object Label63: TLabel
       Left = 3
       Top = 3
-      Width = 25
+      Width = 21
       Height = 13
-      Caption = 'IST:'
+      Caption = 'IST'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -8363,23 +8590,25 @@ object Form1: TForm1
   end
   object Panel4: TPanel
     Left = 792
-    Top = 548
+    Top = 552
     Width = 177
-    Height = 41
-    Caption = '21.0 '#176'C'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -24
-    Font.Name = 'MS Sans Serif'
+    Height = 45
+    Alignment = taRightJustify
+    BorderWidth = 5
+    Caption = '78.0 '#176'C'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -48
+    Font.Name = 'DS-Digital'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 4
     object Label64: TLabel
       Left = 2
       Top = 3
-      Width = 36
+      Width = 32
       Height = 13
-      Caption = 'SOLL:'
+      Caption = 'SOLL'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -8391,19 +8620,21 @@ object Form1: TForm1
   object Timer1: TTimer
     Enabled = False
     OnTimer = Timer1Timer
-    Left = 880
+    Left = 848
   end
   object SaveDialog1: TSaveDialog
-    DefaultExt = 'rzt'
-    Filter = 'Rezept-Datei|*.rzt|Alle Dateien|*.*'
-    InitialDir = 'C:\Brauerei\Rezepte'
-    Left = 752
-  end
-  object OpenDialog1: TOpenDialog
+    OnShow = SaveDialog1Show
     DefaultExt = 'rzt'
     Filter = 'Rezept-Datei|*.rzt|Alle Dateien|*.*'
     InitialDir = 'C:\Brauerei\Rezepte'
     Left = 720
+  end
+  object OpenDialog1: TOpenDialog
+    OnShow = OpenDialog1Show
+    DefaultExt = 'rzt'
+    Filter = 'Rezept-Datei|*.rzt|Alle Dateien|*.*'
+    InitialDir = 'C:\Brauerei\Rezepte'
+    Left = 688
   end
   object TimerHAus: TTimer
     Enabled = False
@@ -8457,13 +8688,13 @@ object Form1: TForm1
   object Timer2: TTimer
     Enabled = False
     OnTimer = Timer2Timer
-    Left = 848
+    Left = 816
   end
   object LogTimer: TTimer
     Enabled = False
     Interval = 5000
     OnTimer = LogTimerTimer
-    Left = 816
+    Left = 784
   end
   object SimulationTimer: TTimer
     Enabled = False
@@ -8486,18 +8717,32 @@ object Form1: TForm1
     Top = 512
   end
   object PrintDialog1: TPrintDialog
-    Left = 784
+    OnShow = PrintDialog1Show
+    Left = 752
   end
   object USB_Update_Tmr: TTimer
     Enabled = False
     Interval = 5000
     OnTimer = USB_Update_TmrTimer
-    Left = 912
+    Left = 880
   end
   object Batch_Update_Tmr: TTimer
     Enabled = False
     Interval = 5000
     OnTimer = Batch_Update_TmrTimer
+    Left = 912
+  end
+  object TimerDlgMove: TTimer
+    Enabled = False
+    Interval = 50
+    OnTimer = TimerDlgMoveTimer
+    Left = 756
+    Top = 393
+  end
+  object StartTimer: TTimer
+    Enabled = False
+    Interval = 500
+    OnTimer = StartTimerTimer
     Left = 944
   end
 end

@@ -88,9 +88,14 @@ Rast 7
 Rast 8
 Rast 9
 Rast 10
+Alarm pulsen
+TRUE
+FALSE
 TRUE
 TRUE
 FALSE
-TRUE
-TRUE
+Gesamtprozeﬂ
 FALSE
+FALSE
+FALSE
+10

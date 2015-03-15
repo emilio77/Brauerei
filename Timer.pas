@@ -77,6 +77,8 @@ procedure TForm2.BitBtn1Click(Sender: TObject);
 begin
   Form2.Visible:=false;
   Label5.Caption:='true';
+  DateTimePicker1.Time:=DateTimePicker2.Time;
+  DateTimePicker2.Date:=DateTimePicker1.Date;
 end;
 
 procedure TForm2.Edit2Exit(Sender: TObject);

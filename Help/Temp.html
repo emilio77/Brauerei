@@ -7,7 +7,10 @@
 	<META NAME="AUTHOR" CONTENT="Andreas Wehrle">
 	<META NAME="CREATED" CONTENT="20140414;21331864">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
-	<META NAME="CHANGED" CONTENT="20141127;21072037">
+	<META NAME="CHANGED" CONTENT="20150315;9592372">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
@@ -28,14 +31,14 @@
 	</STYLE>
 </HEAD>
 <BODY LANG="de-DE" DIR="LTR">
-<P STYLE="margin-bottom: 0cm">Hilfe Datei zu Brauerei V 1.30 &ndash;
+<P STYLE="margin-bottom: 0cm">Hilfe Datei zu Brauerei V 1.40 &ndash;
 by Emilio &ndash; <A HREF="Help.html">HOME</A></P>
 <P STYLE="margin-bottom: 0cm"><U><B>Temperatur-Steuerung &uuml;ber
 Text-Datei:</B></U></P>
 <P STYLE="margin-bottom: 0cm"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: normal">Die
 Temperaturmessung erfolgt &uuml;ber die Semikolon getrennte
 Textdatei. Der Dateiname kann in den Einstellungen angepasst werden.
-Standardm&auml;&szlig;ig ist der Dateiname  </SPAN></SPAN><FONT COLOR="#0000ff"><U><SPAN STYLE="font-weight: normal">\Temperatur\log.txt</SPAN></U></FONT>
+Standardm&auml;&szlig;ig ist der Dateiname </SPAN></SPAN><FONT COLOR="#0000ff"><U><SPAN STYLE="font-weight: normal">\Temperatur\log.txt</SPAN></U></FONT>
 eingestellt. Die Hardware f&uuml;r die Temperaturmessung muss eine
 Log-Datei erzeugen die wie folgt aussieht...</P>
 <P STYLE="margin-bottom: 0cm"><IMG SRC="Temp_html_4fa1b440.jpg" NAME="Grafik1" ALIGN=LEFT WIDTH=394 HEIGHT=265 BORDER=0><BR CLEAR=LEFT><BR>
@@ -54,12 +57,24 @@ erstellen. Ich selber benutzen ein Arduino-Eigenbau.
 <P STYLE="margin-bottom: 0cm">Im Verzeichnis <FONT COLOR="#0000ff"><U><SPAN STYLE="font-weight: normal">Digitemp\</SPAN></U></FONT><FONT COLOR="#0000ff"><SPAN STYLE="text-decoration: none">
 </SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: normal">befindet
 sich eine bei mir unter Windows 8.1 funktionierende Digitemp-Version.
-Zus&auml;tzlich habe ich dort noch zwei Batchdateien hinterlegt
-(Digitemp.bat und Digitemp_variabel.bat) welche die entsprechende
+Zus&auml;tzlich habe ich dort noch einige Batchdateien hinterlegt
+(Digitemp.bat und Digitemp_variabel.bat...) welche die entsprechende
 Text-Datei erzeugen. Bei Digitemp.bat muss euer COM-Port des Sensors
 in der Batchdatei angepasst werden. Bei Digitemp_variabel.bat wird
 der COM-Port beim Start abgefragt. Diese Batchdateien k&ouml;nnen
 direkt aus dem Programm im Einstellungs-Ordner gestartet werden. Mehr
 dazu in der Hilfe zu den Einstellungen bzw. zur Hardware.</SPAN></SPAN></FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: normal">Digitemp
+hat unter Windows leider das Problem, dass es den Prozessor zwischen
+zwei Messungen stark auslastet. F&uuml;r langsame Rechner kann
+deshalb auch das von mir erstellte DigitempControl benutzt werden.
+Das Programm startet ein Batchdatei welche nur eine Messung mit
+Digitemp macht. Im Programm kann dann eingestellt werden in welchem
+Takt dies wiederholt werden soll. In den Standard-Einstellungen wird
+dieses Programm &uuml;be die Extern_Sensorsoftware.bat gestartet. Das
+Programm wiederum startet die digtemp_one.bat.</SPAN></SPAN></FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><SPAN STYLE="font-weight: normal">Die
+Systemlast wird durch Nutzung dieses Programms deutlich reduziert und
+ist somit besonders f&uuml;r sehr langsame Rechner zu empfehlen.</SPAN></SPAN></FONT></P>
 </BODY>
 </HTML>

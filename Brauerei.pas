@@ -542,14 +542,14 @@ type
 var
   Form1: TForm1;
   sl,sl2: TStringList;
-  Temperatur,x,Graphic,LogName,Steuerung,BHEin,BHAus,BREin,BRAus,BPEin,BPAus,
+  Temperatur,xwert,Graphic,LogName,Steuerung,BHEin,BHAus,BREin,BRAus,BPEin,BPAus,
   BAEin,BAAus,TimeTempStr,TimeTempStore,USBPort,USBTyp,pfad, tempdateiname,
   sensorverzoegerung: String;
   Tempfloat,Solltemp,Deltatemp,SimTemp,TWert,Gradient, GradientWert,
   GradientUebergabe, Hysterese, Aufheizrate: Extended;
   Ruehrwerk,Heizung,Alarm,Pumpe,HWert,RWert,PWert,AWert,RStore,PStore,HStore,
   AStore,LPTCode,restrastzeit,zeit2,zeit3,zeitpause,fortschritt,rast,Intdummy,
-  CountLines,restrastgauge,gesrastzeit, startpunkt,endpunkt,y,Ein60,Aus60,Ein70,
+  CountLines,restrastgauge,gesrastzeit, startpunkt,endpunkt,Ein60,Aus60,Ein70,
   Aus70,Ein80,Aus80,Ein90,Aus90,Ein100,Aus100,EinIst,AusIst,USBHIntWert,
   USBRIntWert,USBPIntWert,USBAIntWert,DeviceIndex,sensorreset,
   StartTemp,maxsolltemp,gesheizzeit,restheizzeit,gesprozesszeit,restprozesszeit,
@@ -560,7 +560,7 @@ var
   Rasttemp6,Rasttemp7,Rasttemp8,Rasttemp9,Rasttemp10,Rastnull1,Rastnull2,
   Rastnull3,Rastnull4,Rastnull5,Rastnull6,Rastnull7,Rastnull8,Rastnull9,
   Rastnull10,Rastende,PauseLogTimerHEin,PauseLogTimerHAus,PauseLogTimerHSet,
-  PauseLogTimerREin,PauseLogTimerRAus: boolean;
+  PauseLogTimerREin,PauseLogTimerRAus,Rastnullges: boolean;
   USBHWert,USBRWert,USBPWert,USBAWert: char;
   Gradientgetter: Array[1..60] of Extended;
   ser: TBlockSerial;
@@ -737,6 +737,7 @@ begin
   if (Alarm<>0) then FT_OUT_INT:=FT_OUT_INT+USBAIntWert;
   if (Pumpe<>0) then FT_OUT_INT:=FT_OUT_INT+USBPIntWert;
   FT_OUT:=FT_OUT_INT;
+  RESULT:=FT_Close(FT_HANDLE);
   RESULT:=FT_Open(DeviceIndex,@FT_Handle);
   if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
   RESULT:=FT_SetBaudRate(FT_Handle,921600);
@@ -934,122 +935,122 @@ procedure laden(Form:TForm1; filename:string);
 begin
   AssignFile(myFile, filename);                          // Rezeptdaten laden
   Reset(myFile);
-  ReadLn(myFile, x); Form.Edit1.Text:=x;
-  ReadLn(myFile, x); Form.Edit2.Text:=x;
-  ReadLn(myFile, x); Form.Edit3.Text:=x;
-  ReadLn(myFile, x); Form.Edit4.Text:=x;
-  ReadLn(myFile, x); Form.Edit5.Text:=x;
-  ReadLn(myFile, x); Form.Edit6.Text:=x;
-  ReadLn(myFile, x); Form.Edit7.Text:=x;
-  ReadLn(myFile, x); Form.Edit8.Text:=x;
-  ReadLn(myFile, x); Form.Edit9.Text:=x;
-  ReadLn(myFile, x); Form.Edit10.Text:=x;
-  ReadLn(myFile, x); Form.Edit11.Text:=x;
-  ReadLn(myFile, x); Form.Edit12.Text:=x;
-  ReadLn(myFile, x); Form.Edit13.Text:=x;
-  ReadLn(myFile, x); Form.Edit14.Text:=x;
-  ReadLn(myFile, x); Form.Edit15.Text:=x;
-  ReadLn(myFile, x); Form.Edit16.Text:=x;
-  ReadLn(myFile, x); Form.Edit17.Text:=x;
-  ReadLn(myFile, x); Form.Edit18.Text:=x;
-  ReadLn(myFile, x); Form.Edit19.Text:=x;
-  ReadLn(myFile, x); Form.Edit20.Text:=x;
-  ReadLn(myFile, x); Form.Edit31.Text:=x;
-  ReadLn(myFile, x); Form.Edit32.Text:=x;
-  ReadLn(myFile, x); Form.Edit33.Text:=x;
-  ReadLn(myFile, x); Form.Edit34.Text:=x;
-  ReadLn(myFile, x); Form.Edit35.Text:=x;
-  ReadLn(myFile, x); Form.Edit36.Text:=x;
-  ReadLn(myFile, x); Form.Edit37.Text:=x;
-  ReadLn(myFile, x); Form.Edit38.Text:=x;
-  ReadLn(myFile, x); Form.Edit39.Text:=x;
-  ReadLn(myFile, x); Form.Edit40.Text:=x;
-  ReadLn(myFile, x); Form.Edit41.Text:=x;
-  ReadLn(myFile, x); Form.Edit42.Text:=x;
-  ReadLn(myFile, x); Form.Edit43.Text:=x;
-  ReadLn(myFile, x); Form.Edit44.Text:=x;
-  ReadLn(myFile, x); Form.Edit45.Text:=x;
-  ReadLn(myFile, x); Form.Edit46.Text:=x;
-  ReadLn(myFile, x); Form.Edit47.Text:=x;
-  ReadLn(myFile, x); Form.Edit48.Text:=x;
-  ReadLn(myFile, x); Form.Edit49.Text:=x;
-  ReadLn(myFile, x); Form.Edit50.Text:=x;
-  ReadLn(myFile, x); Form.CheckBox1.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox2.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox3.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox4.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox5.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox6.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox7.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox8.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox9.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox10.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox11.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox12.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox13.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox14.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox15.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox16.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox17.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox18.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox19.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox20.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox21.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox22.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox23.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox24.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox25.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox26.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox27.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox28.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox29.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox30.Checked:=strtobool(x);
-  try ReadLn(myFile, x); Form.Edit63.Text:=x; except Form.Edit63.Text:='' end;
-  try ReadLn(myFile, x); Form.Edit64.Text:=x; except Form.Edit64.Text:='' end;
-  try ReadLn(myFile, x); Form.Edit65.Text:=x; except Form.Edit65.Text:='' end;
-  try ReadLn(myFile, x); Form.Edit66.Text:=x; except Form.Edit66.Text:='' end;
-  try ReadLn(myFile, x); Form.Edit67.Text:=x; except Form.Edit67.Text:='' end;
-  try ReadLn(myFile, x); Form.Edit68.Text:=x; except Form.Edit68.Text:='' end;
-  try ReadLn(myFile, x); Form.Edit69.Text:=x; except Form.Edit69.Text:='' end;
-  try ReadLn(myFile, x); Form.Edit70.Text:=x; except Form.Edit70.Text:='' end;
-  try ReadLn(myFile, x); Form.Edit71.Text:=x; except Form.Edit71.Text:='' end;
-  try ReadLn(myFile, x); Form.Edit72.Text:=x; except Form.Edit72.Text:='' end;
-  try ReadLn(myFile, x); except x:='Rast 1'; end;
-  if x='' then x:='Rast 1'; Form.Edit73.Text:=x; Form.CheckBox1.Caption:=x;
-  try ReadLn(myFile, x); except x:='Rast 2'; end;
-  if x='' then x:='Rast 2'; Form.Edit74.Text:=x; Form.CheckBox2.Caption:=x;
-  try ReadLn(myFile, x); except x:='Rast 3'; end;
-  if x='' then x:='Rast 3'; Form.Edit75.Text:=x; Form.CheckBox3.Caption:=x;
-  try ReadLn(myFile, x); except x:='Rast 4'; end;
-  if x='' then x:='Rast 4'; Form.Edit76.Text:=x; Form.CheckBox4.Caption:=x;
-  try ReadLn(myFile, x); except x:='Rast 5'; end;
-  if x='' then x:='Rast 5'; Form.Edit77.Text:=x; Form.CheckBox5.Caption:=x;
-  try ReadLn(myFile, x); except x:='Rast 6'; end;
-  if x='' then x:='Rast 6'; Form.Edit78.Text:=x; Form.CheckBox6.Caption:=x;
-  try ReadLn(myFile, x); except x:='Rast 7'; end;
-  if x='' then x:='Rast 7'; Form.Edit79.Text:=x; Form.CheckBox7.Caption:=x;
-  try ReadLn(myFile, x); except x:='Rast 8'; end;
-  if x='' then x:='Rast 8'; Form.Edit80.Text:=x; Form.CheckBox8.Caption:=x;
-  try ReadLn(myFile, x); except x:='Rast 9'; end;
-  if x='' then x:='Rast 9'; Form.Edit81.Text:=x; Form.CheckBox9.Caption:=x;
-  try ReadLn(myFile, x); except x:='Rast 10'; end;
-  if x='' then x:='Rast 10'; Form.Edit82.Text:=x; Form.CheckBox10.Caption:=x;
+  ReadLn(myFile, xwert); Form.Edit1.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit2.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit3.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit4.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit5.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit6.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit7.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit8.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit9.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit10.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit11.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit12.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit13.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit14.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit15.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit16.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit17.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit18.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit19.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit20.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit31.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit32.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit33.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit34.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit35.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit36.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit37.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit38.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit39.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit40.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit41.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit42.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit43.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit44.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit45.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit46.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit47.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit48.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit49.Text:=xwert;
+  ReadLn(myFile, xwert); Form.Edit50.Text:=xwert;
+  ReadLn(myFile, xwert); Form.CheckBox1.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox2.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox3.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox4.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox5.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox6.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox7.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox8.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox9.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox10.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox11.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox12.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox13.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox14.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox15.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox16.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox17.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox18.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox19.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox20.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox21.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox22.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox23.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox24.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox25.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox26.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox27.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox28.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox29.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox30.Checked:=strtobool(xwert);
+  try ReadLn(myFile, xwert); Form.Edit63.Text:=xwert; except Form.Edit63.Text:='' end;
+  try ReadLn(myFile, xwert); Form.Edit64.Text:=xwert; except Form.Edit64.Text:='' end;
+  try ReadLn(myFile, xwert); Form.Edit65.Text:=xwert; except Form.Edit65.Text:='' end;
+  try ReadLn(myFile, xwert); Form.Edit66.Text:=xwert; except Form.Edit66.Text:='' end;
+  try ReadLn(myFile, xwert); Form.Edit67.Text:=xwert; except Form.Edit67.Text:='' end;
+  try ReadLn(myFile, xwert); Form.Edit68.Text:=xwert; except Form.Edit68.Text:='' end;
+  try ReadLn(myFile, xwert); Form.Edit69.Text:=xwert; except Form.Edit69.Text:='' end;
+  try ReadLn(myFile, xwert); Form.Edit70.Text:=xwert; except Form.Edit70.Text:='' end;
+  try ReadLn(myFile, xwert); Form.Edit71.Text:=xwert; except Form.Edit71.Text:='' end;
+  try ReadLn(myFile, xwert); Form.Edit72.Text:=xwert; except Form.Edit72.Text:='' end;
+  try ReadLn(myFile, xwert); except xwert:='Rast 1'; end;
+  if xwert='' then xwert:='Rast 1'; Form.Edit73.Text:=xwert; Form.CheckBox1.Caption:=xwert;
+  try ReadLn(myFile, xwert); except xwert:='Rast 2'; end;
+  if xwert='' then xwert:='Rast 2'; Form.Edit74.Text:=xwert; Form.CheckBox2.Caption:=xwert;
+  try ReadLn(myFile, xwert); except xwert:='Rast 3'; end;
+  if xwert='' then xwert:='Rast 3'; Form.Edit75.Text:=xwert; Form.CheckBox3.Caption:=xwert;
+  try ReadLn(myFile, xwert); except xwert:='Rast 4'; end;
+  if xwert='' then xwert:='Rast 4'; Form.Edit76.Text:=xwert; Form.CheckBox4.Caption:=xwert;
+  try ReadLn(myFile, xwert); except xwert:='Rast 5'; end;
+  if xwert='' then xwert:='Rast 5'; Form.Edit77.Text:=xwert; Form.CheckBox5.Caption:=xwert;
+  try ReadLn(myFile, xwert); except xwert:='Rast 6'; end;
+  if xwert='' then xwert:='Rast 6'; Form.Edit78.Text:=xwert; Form.CheckBox6.Caption:=xwert;
+  try ReadLn(myFile, xwert); except xwert:='Rast 7'; end;
+  if xwert='' then xwert:='Rast 7'; Form.Edit79.Text:=xwert; Form.CheckBox7.Caption:=xwert;
+  try ReadLn(myFile, xwert); except xwert:='Rast 8'; end;
+  if xwert='' then xwert:='Rast 8'; Form.Edit80.Text:=xwert; Form.CheckBox8.Caption:=xwert;
+  try ReadLn(myFile, xwert); except xwert:='Rast 9'; end;
+  if xwert='' then xwert:='Rast 9'; Form.Edit81.Text:=xwert; Form.CheckBox9.Caption:=xwert;
+  try ReadLn(myFile, xwert); except xwert:='Rast 10'; end;
+  if xwert='' then xwert:='Rast 10'; Form.Edit82.Text:=xwert; Form.CheckBox10.Caption:=xwert;
 end;
 
 procedure settings_laden(Form:TForm1; filename:string);
 begin
   Timerstartbatstatus:=0;
-  ReadLn(myFile, x); Form.Button1.Caption:=x;    // zusätzliche Settingsdate laden (nur mit Rezeptdaten)
-  ReadLn(myFile, x); Form.CheckBox32.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox33.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox34.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox36.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.CheckBox37.Checked:=strtobool(x);
-  ReadLn(myFile, x); Form.Button31.Caption:=x;
-  ReadLn(myFile, x); if strtobool(x)=true then Timerstartbatstatus:=1;
-  ReadLn(myFile, x); if strtobool(x)=true then Timerstartbatstatus:=2;
-  ReadLn(myFile, x); if strtobool(x)=true then Timerstartbatstatus:=3;
-  ReadLn(myFile, x); sensorverzoegerung:=x;
+  ReadLn(myFile, xwert); Form.Button1.Caption:=xwert;    // zusätzliche Settingsdate laden (nur mit Rezeptdaten)
+  ReadLn(myFile, xwert); Form.CheckBox32.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox33.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox34.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox36.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.CheckBox37.Checked:=strtobool(xwert);
+  ReadLn(myFile, xwert); Form.Button31.Caption:=xwert;
+  ReadLn(myFile, xwert); if strtobool(xwert)=true then Timerstartbatstatus:=1;
+  ReadLn(myFile, xwert); if strtobool(xwert)=true then Timerstartbatstatus:=2;
+  ReadLn(myFile, xwert); if strtobool(xwert)=true then Timerstartbatstatus:=3;
+  ReadLn(myFile, xwert); sensorverzoegerung:=xwert;
   gesamtanzeigegeaendert;
 end;
 
@@ -1454,13 +1455,13 @@ begin
   begin
     Button8.Caption:='Rührwerk Aus';
     Ruehrwerk:=RWert;
-    Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-ein.jpg');
+    Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-ein.bmp');
   end
   else
   begin
     Button8.Caption:='Rührwerk Ein';
     Ruehrwerk:=0;
-    Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-aus.jpg');
+    Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-aus.bmp');
   end;
   Schalten(Form1);
 end;
@@ -1471,13 +1472,13 @@ begin
   begin
     Button9.Caption:='Heizung Aus';
     Heizung:=HWert;
-    Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-ein.jpg');
+    Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-ein.bmp');
   end
   else
   begin
     Button9.Caption:='Heizung Ein';
     Heizung:=0;
-    Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-aus.jpg');
+    Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-aus.bmp');
   end;
   Schalten(Form1);
 end;
@@ -1488,13 +1489,13 @@ begin
   begin
     Button10.Caption:='Pumpe Aus';
     Pumpe:=PWert;
-    Image4.Picture.LoadFromFile(pfad + 'Graphics\Pumpe-ein.jpg');
+    Image4.Picture.LoadFromFile(pfad + 'Graphics\Pumpe-ein.bmp');
   end
   else
   begin
     Button10.Caption:='Pumpe Ein';
     Pumpe:=0;
-    Image4.Picture.LoadFromFile(pfad + 'Graphics\Pumpe-aus.jpg');
+    Image4.Picture.LoadFromFile(pfad + 'Graphics\Pumpe-aus.bmp');
   end;
   Schalten(Form1);
 end;
@@ -1505,13 +1506,13 @@ begin
   begin
     Button11.Caption:='Alarm Aus';
     Alarm:=AWert;
-    Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-ein.jpg')
+    Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-ein.bmp')
   end
   else
   begin
     Button11.Caption:='Alarm Ein';
     Alarm:=0;
-    Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-aus.jpg');
+    Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-aus.bmp');
   end;
   Schalten(Form1);
 end;
@@ -1522,7 +1523,9 @@ var
   tfs:string;
   sl3:TStringList;
   TempFile:textfile;
+  linecounter:integer;
 begin
+  linecounter:=0;
   DecimalSeparator:='.';
   if FileExists(pfad+'Temperatur\' + tempdateiname) then else
   begin
@@ -1537,8 +1540,18 @@ begin
     while not EOF (TempFile) do
     begin
       readln (TempFile, TimeTempStr);
+      linecounter:=linecounter+1;
     end;
     CloseFile(TempFile);
+    if linecounter>100 then
+    begin
+      linecounter:=0;
+      DeleteFile(pfad+'Temperatur\' + tempdateiname);
+      AssignFile(myFile, pfad+'Temperatur\' + tempdateiname);
+      ReWrite(myFile);
+      Writeln(myFile, TimeTempStr);
+      CloseFile(myFile);
+    end;
   except
     exit;
   end;
@@ -1636,6 +1649,8 @@ end;
 
 procedure TForm1.BitBtn1Click(Sender: TObject);
 begin
+  if (CheckBox1.Checked=false) and (CheckBox2.Checked=false) and (CheckBox3.Checked=false) and (CheckBox4.Checked=false) and (CheckBox5.Checked=false) and (CheckBox6.Checked=false) and
+  (CheckBox7.Checked=false) and (CheckBox8.Checked=false) and (CheckBox9.Checked=false) and (CheckBox10.Checked=false) then exit;
   TimerHEin.Interval:=1000;
   TimerHAus.Interval:=1000;
   TimerHSet.Enabled:=true;
@@ -1650,9 +1665,9 @@ begin
       PauseLogTimerHSet:=false;
       PauseLogTimerREin:=false;
       PauseLogTimerRAus:=false;
-      Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-aus.jpg');
-      Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-aus.jpg');
-      Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-aus.jpg');
+      Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-aus.bmp');
+      Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-aus.bmp');
+      Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-aus.bmp');
       Schalten(Form1);
       if checkbox32.Checked=true then
       begin
@@ -1672,16 +1687,17 @@ begin
       if CheckBox8.Checked=true then Edit28.Text:=Edit16.Text else Edit28.Text:='0';
       if CheckBox9.Checked=true then Edit29.Text:=Edit18.Text else Edit29.Text:='0';
       if CheckBox10.Checked=true then Edit30.Text:=Edit20.Text else Edit30.Text:='0';
-      if (CheckBox1.Checked=true) and (Edit2.Text='0') then Rastnull1:=true else Rastnull1:=false;
-      if (CheckBox2.Checked=true) and (Edit4.Text='0') then Rastnull2:=true else Rastnull2:=false;
-      if (CheckBox3.Checked=true) and (Edit6.Text='0') then Rastnull3:=true else Rastnull3:=false;
-      if (CheckBox4.Checked=true) and (Edit8.Text='0') then Rastnull4:=true else Rastnull4:=false;
-      if (CheckBox5.Checked=true) and (Edit10.Text='0') then Rastnull5:=true else Rastnull5:=false;
-      if (CheckBox6.Checked=true) and (Edit12.Text='0') then Rastnull6:=true else Rastnull6:=false;
-      if (CheckBox7.Checked=true) and (Edit14.Text='0') then Rastnull7:=true else Rastnull7:=false;
-      if (CheckBox8.Checked=true) and (Edit16.Text='0') then Rastnull8:=true else Rastnull8:=false;
-      if (CheckBox9.Checked=true) and (Edit18.Text='0') then Rastnull9:=true else Rastnull9:=false;
-      if (CheckBox10.Checked=true) and (Edit20.Text='0') then Rastnull10:=true else Rastnull10:=false;
+      Rastnullges:=false;
+      if (CheckBox1.Checked=true) and (Edit2.Text='0') then begin Rastnull1:=true; Rastnullges:=true; end else Rastnull1:=false;
+      if (CheckBox2.Checked=true) and (Edit4.Text='0') then begin Rastnull2:=true; Rastnullges:=true; end else Rastnull2:=false;
+      if (CheckBox3.Checked=true) and (Edit6.Text='0') then begin Rastnull3:=true; Rastnullges:=true; end else Rastnull3:=false;
+      if (CheckBox4.Checked=true) and (Edit8.Text='0') then begin Rastnull4:=true; Rastnullges:=true; end else Rastnull4:=false;
+      if (CheckBox5.Checked=true) and (Edit10.Text='0') then begin Rastnull5:=true; Rastnullges:=true; end else Rastnull5:=false;
+      if (CheckBox6.Checked=true) and (Edit12.Text='0') then begin Rastnull6:=true; Rastnullges:=true; end else Rastnull6:=false;
+      if (CheckBox7.Checked=true) and (Edit14.Text='0') then begin Rastnull7:=true; Rastnullges:=true; end else Rastnull7:=false;
+      if (CheckBox8.Checked=true) and (Edit16.Text='0') then begin Rastnull8:=true; Rastnullges:=true; end else Rastnull8:=false;
+      if (CheckBox9.Checked=true) and (Edit18.Text='0') then begin Rastnull9:=true; Rastnullges:=true; end else Rastnull9:=false;
+      if (CheckBox10.Checked=true) and (Edit20.Text='0') then begin Rastnull10:=true; Rastnullges:=true; end else Rastnull10:=false;
       if (CheckBox1.Checked=false) or (Edit2.Text='0') then begin Edit21.Visible:=false; Label26.Visible:=false; Gauge1.Visible:=false; end;
       if (CheckBox2.Checked=false) or (Edit4.Text='0') then begin Edit22.Visible:=false; Label27.Visible:=false; Gauge2.Visible:=false; end;
       if (CheckBox3.Checked=false) or (Edit6.Text='0') then begin Edit23.Visible:=false; Label28.Visible:=false; Gauge3.Visible:=false; end;
@@ -1725,7 +1741,7 @@ begin
       if PauseLogTimerRAus=true then begin PauseLogTimerRAus:=false; Form1.TimerRAusTimer(Sender); end;
     end;
     restrastzeit:=strtoint(Edit21.Text)+strtoint(Edit22.Text)+strtoint(Edit23.Text)+strtoint(Edit24.Text)+strtoint(Edit25.Text)+strtoint(Edit26.Text)+strtoint(Edit27.Text)+strtoint(Edit28.Text)+strtoint(Edit29.Text)+strtoint(Edit30.Text);
-    if restrastzeit<>0 then
+    if (restrastzeit<>0) or (rastnullges=true) then
     begin
       Timer2.Enabled:=true;
       Edit1.Enabled:=false;
@@ -1809,7 +1825,7 @@ begin
       TabSheet4.TabVisible:=false;
       if checkbox32.checked=true then Button18.Enabled:=true;
       if checkbox32.checked=true then Button23.Enabled:=true;
-      Graphic:=pfad + 'Graphics\Automatik-aktiv.jpg';
+      Graphic:=pfad + 'Graphics\Automatik-aktiv.bmp';
       Image5.Picture.LoadFromFile(Graphic);
       stop:=false;
       pause:=false;
@@ -1817,11 +1833,13 @@ begin
       start:=true;
     end;
   end;
+  GesUpdateTimer.Enabled:=true;
   restrastzeit:=strtoint(Edit21.Text)+strtoint(Edit22.Text)+strtoint(Edit23.Text)+strtoint(Edit24.Text)+strtoint(Edit25.Text)+strtoint(Edit26.Text)+strtoint(Edit27.Text)+strtoint(Edit28.Text)+strtoint(Edit29.Text)+strtoint(Edit30.Text);
-  if restrastzeit=0 then Form1.BitBtn3Click(Sender);
+  if (restrastzeit=0) and (Rastnullges=false) then Form1.BitBtn3Click(Sender);
 end;
 
 procedure TForm1.Timer2Timer(Sender: TObject);
+var i:integer;
 begin
   DecimalSeparator:='.';
   if AlarmEin=true then
@@ -1841,6 +1859,7 @@ begin
     if Rastnull1=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge1.Progress:=fortschritt;
     rast:=1;
+    CheckBox1.Color:=clInfoBk;
     if rasttemp1=true then rastnull1:=false;
     if (Edit21.Text='0') and (CheckBox11.Checked=true) and (rastnull1=false) then AlarmEin:=true;
   end
@@ -1860,6 +1879,7 @@ begin
     if Rastnull2=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge2.Progress:=fortschritt;
     rast:=2;
+    CheckBox2.Color:=clInfoBk;
     if rasttemp2=true then rastnull2:=false;
     if (Edit22.Text='0') and (CheckBox12.Checked=true) and (rastnull2=false) then AlarmEin:=true;
   end
@@ -1879,6 +1899,7 @@ begin
     if Rastnull3=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge3.Progress:=fortschritt;
     rast:=3;
+    CheckBox3.Color:=clInfoBk;
     if rasttemp3=true then rastnull3:=false;
     if (Edit23.Text='0') and (CheckBox13.Checked=true) and (rastnull3=false) then AlarmEin:=true;
   end
@@ -1898,6 +1919,7 @@ begin
     if Rastnull4=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge4.Progress:=fortschritt;
     rast:=4;
+    CheckBox4.Color:=clInfoBk;
     if rasttemp4=true then rastnull4:=false;
     if (Edit24.Text='0') and (CheckBox14.Checked=true) and (rastnull4=false) then AlarmEin:=true;
   end
@@ -1917,6 +1939,7 @@ begin
     if Rastnull5=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge5.Progress:=fortschritt;
     rast:=5;
+    CheckBox5.Color:=clInfoBk;
     if rasttemp5=true then rastnull5:=false;
     if (Edit25.Text='0') and (CheckBox15.Checked=true) and (rastnull5=false) then AlarmEin:=true;
   end
@@ -1936,6 +1959,7 @@ begin
     if Rastnull6=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge6.Progress:=fortschritt;
     rast:=6;
+    CheckBox6.Color:=clInfoBk;
     if rasttemp6=true then rastnull6:=false;
     if (Edit26.Text='0') and (CheckBox16.Checked=true) and (rastnull6=false) then AlarmEin:=true;
   end
@@ -1955,6 +1979,7 @@ begin
     if Rastnull7=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge7.Progress:=fortschritt;
     rast:=7;
+    CheckBox7.Color:=clInfoBk;
     if rasttemp7=true then rastnull7:=false;
     if (Edit27.Text='0') and (CheckBox17.Checked=true) and (rastnull7=false) then AlarmEin:=true;
   end
@@ -1974,6 +1999,7 @@ begin
     if Rastnull8=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge8.Progress:=fortschritt;
     rast:=8;
+    CheckBox8.Color:=clInfoBk;
     if rasttemp8=true then rastnull8:=false;
     if (Edit28.Text='0') and (CheckBox18.Checked=true) and (rastnull8=false) then AlarmEin:=true;
   end
@@ -1993,6 +2019,7 @@ begin
     if Rastnull9=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge9.Progress:=fortschritt;
     rast:=9;
+    CheckBox9.Color:=clInfoBk;
     if rasttemp9=true then rastnull9:=false;
     if (Edit29.Text='0') and (CheckBox19.Checked=true) and (rastnull9=false) then AlarmEin:=true;
   end
@@ -2012,6 +2039,7 @@ begin
     if Rastnull10=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge10.Progress:=fortschritt;
     rast:=10;
+    CheckBox10.Color:=clInfoBk;
     if rasttemp10=true then rastnull10:=false;
     if (Edit30.Text='0') and (CheckBox20.Checked=true) and (rastnull10=false) then AlarmEin:=true;
   end
@@ -2021,28 +2049,15 @@ begin
     TimerREin.Enabled:=false;
     Rastende:=true;
   end;
-  restrastzeit:=strtoint(Edit21.Text)+strtoint(Edit22.Text)+strtoint(Edit23.Text)+strtoint(Edit24.Text)+strtoint(Edit25.Text)+strtoint(Edit26.Text)+strtoint(Edit27.Text)+strtoint(Edit28.Text)+strtoint(Edit29.Text)+strtoint(Edit30.Text);
-  gesrastzeit:=0;
-  restrastgauge:=0;
-  if CheckBox1.checked=true then begin restrastgauge:=restrastgauge+(Gauge1.Progress*strtoint(Edit2.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit2.Text); if strtoint(Edit1.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit1.Text); end;
-  if CheckBox2.checked=true then begin restrastgauge:=restrastgauge+(Gauge2.Progress*strtoint(Edit4.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit4.Text); if strtoint(Edit3.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit3.Text); end;
-  if CheckBox3.checked=true then begin restrastgauge:=restrastgauge+(Gauge3.Progress*strtoint(Edit6.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit6.Text); if strtoint(Edit5.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit5.Text); end;
-  if CheckBox4.checked=true then begin restrastgauge:=restrastgauge+(Gauge4.Progress*strtoint(Edit8.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit8.Text); if strtoint(Edit7.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit7.Text); end;
-  if CheckBox5.checked=true then begin restrastgauge:=restrastgauge+(Gauge5.Progress*strtoint(Edit10.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit10.Text); if strtoint(Edit9.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit9.Text); end;
-  if CheckBox6.checked=true then begin restrastgauge:=restrastgauge+(Gauge6.Progress*strtoint(Edit12.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit12.Text); if strtoint(Edit11.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit11.Text); end;
-  if CheckBox7.checked=true then begin restrastgauge:=restrastgauge+(Gauge7.Progress*strtoint(Edit14.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit14.Text); if strtoint(Edit13.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit13.Text); end;
-  if CheckBox8.checked=true then begin restrastgauge:=restrastgauge+(Gauge8.Progress*strtoint(Edit16.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit16.Text); if strtoint(Edit15.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit15.Text); end;
-  if CheckBox9.checked=true then begin restrastgauge:=restrastgauge+(Gauge9.Progress*strtoint(Edit18.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit18.Text); if strtoint(Edit17.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit17.Text); end;
-  if CheckBox10.checked=true then begin restrastgauge:=restrastgauge+(Gauge10.Progress*strtoint(Edit20.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit20.Text); if strtoint(Edit19.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit19.Text); end;
-  restrastgauge:=round(restrastgauge/gesrastzeit-0.5);
-  gesheizzeit:=round((maxsolltemp-StartTemp)/Aufheizrate);
-  if gesheizzeit<0 then gesheizzeit:=0;
-  restheizzeit:=round((maxsolltemp-TempFloat)/Aufheizrate);
-  if restheizzeit<0 then restheizzeit:=0;
-  gesprozesszeit:=gesheizzeit+gesrastzeit;
-  restprozesszeit:=restheizzeit+restrastzeit;
-  if gesheizzeit>0 then restheizgauge:=round((gesheizzeit-restheizzeit)/gesheizzeit*100) else restheizgauge:=100;
-  restprozessgauge:=round(((gesprozesszeit-restprozesszeit)/gesprozesszeit*100)-0.5);
+  if rast<10 then CheckBox10.Color:=clBtnFace;
+  if rast<9 then CheckBox9.Color:=clBtnFace;
+  if rast<8 then CheckBox8.Color:=clBtnFace;
+  if rast<7 then CheckBox7.Color:=clBtnFace;
+  if rast<6 then CheckBox6.Color:=clBtnFace;
+  if rast<5 then CheckBox5.Color:=clBtnFace;
+  if rast<4 then CheckBox4.Color:=clBtnFace;
+  if rast<3 then CheckBox3.Color:=clBtnFace;
+  if rast<2 then CheckBox2.Color:=clBtnFace;
   Form1.GesUpdateTimerTimer(Sender);
   if solltemp<60 then
   begin EinIst:=Ein60; AusIst:=Aus60; end
@@ -2055,7 +2070,7 @@ begin
   else
   begin EinIst:=Ein100; AusIst:=Aus100; end;
   Panel4.Caption:=FloatToStrF(solltemp,ffFixed,10,1)+' °C';
-  if (restrastzeit=0) and (start=true) and (Rastende=true) then Form1.BitBtn3Click(Sender);
+  if (restprozesszeit=0) and (start=true) and (Rastende=true) then Form1.BitBtn3Click(Sender);
 end;
 
 procedure TForm1.BitBtn3Click(Sender: TObject);
@@ -2190,7 +2205,7 @@ begin
   Label35.Visible:=true;
   Gauge10.Visible:=true;
   TabSheet4.TabVisible:=true;
-  Graphic:=pfad + 'Graphics\Automatik-inaktiv.jpg';
+  Graphic:=pfad + 'Graphics\Automatik-inaktiv.bmp';
   Image5.Picture.LoadFromFile(Graphic);
   if stop=false then
   begin
@@ -2209,6 +2224,18 @@ begin
   pause:=false;
   start:=false;
   rast:=0;
+  Form1.GesUpdateTimer.Enabled:=false;
+  GesUpdateTimerTimer(Sender);
+  CheckBox1.Color:=clBtnFace;
+  CheckBox2.Color:=clBtnFace;
+  CheckBox3.Color:=clBtnFace;
+  CheckBox4.Color:=clBtnFace;
+  CheckBox5.Color:=clBtnFace;
+  CheckBox6.Color:=clBtnFace;
+  CheckBox7.Color:=clBtnFace;
+  CheckBox8.Color:=clBtnFace;
+  CheckBox9.Color:=clBtnFace;
+  CheckBox10.Color:=clBtnFace;
 end;
 
 procedure TForm1.BitBtn2Click(Sender: TObject);
@@ -2227,7 +2254,7 @@ begin
     stop:=false;
     pause:=true;
     start:=false;
-    Graphic:=pfad + 'Graphics\Automatik-pause.jpg';
+    Graphic:=pfad + 'Graphics\Automatik-pause.bmp';
     Image5.Picture.LoadFromFile(Graphic);
   end;
 end;
@@ -2246,15 +2273,25 @@ procedure TForm1.BitBtn5Click(Sender: TObject);
 begin
   if (start=true) then
   begin
-    if (Edit21.Text<>'0') or (Rastnull1=true) then begin Edit21.Text:='0'; Gauge1.Progress:=100; Rasttemp1:=true; Rastnull1:=false; end
+    if rasttemp1=false then rasttemp1:=true
+    else if (Edit21.Text<>'0') or (Rastnull1=true) then begin Edit21.Text:='0'; Gauge1.Progress:=100; Rasttemp1:=true; Rastnull1:=false; end
+    else if rasttemp2=false then rasttemp2:=true
     else if (Edit22.Text<>'0') or (Rastnull2=true) then begin Edit22.Text:='0'; Gauge2.Progress:=100; Rasttemp2:=true; Rastnull2:=false; end
+    else if rasttemp3=false then rasttemp3:=true
     else if (Edit23.Text<>'0') or (Rastnull3=true) then begin Edit23.Text:='0'; Gauge3.Progress:=100; Rasttemp3:=true; Rastnull3:=false; end
+    else if rasttemp4=false then rasttemp4:=true
     else if (Edit24.Text<>'0') or (Rastnull4=true) then begin Edit24.Text:='0'; Gauge4.Progress:=100; Rasttemp4:=true; Rastnull4:=false; end
+    else if rasttemp5=false then rasttemp5:=true
     else if (Edit25.Text<>'0') or (Rastnull5=true) then begin Edit25.Text:='0'; Gauge5.Progress:=100; Rasttemp5:=true; Rastnull5:=false; end
+    else if rasttemp6=false then rasttemp6:=true
     else if (Edit26.Text<>'0') or (Rastnull6=true) then begin Edit26.Text:='0'; Gauge6.Progress:=100; Rasttemp6:=true; Rastnull6:=false; end
+    else if rasttemp7=false then rasttemp7:=true
     else if (Edit27.Text<>'0') or (Rastnull7=true) then begin Edit27.Text:='0'; Gauge7.Progress:=100; Rasttemp7:=true; Rastnull7:=false; end
+    else if rasttemp8=false then rasttemp8:=true
     else if (Edit28.Text<>'0') or (Rastnull8=true) then begin Edit28.Text:='0'; Gauge8.Progress:=100; Rasttemp8:=true; Rastnull8:=false; end
+    else if rasttemp9=false then rasttemp9:=true
     else if (Edit29.Text<>'0') or (Rastnull9=true) then begin Edit29.Text:='0'; Gauge9.Progress:=100; Rasttemp9:=true; Rastnull9:=false; end
+    else if rasttemp10=false then rasttemp10:=true
     else if (Edit30.Text<>'0') or (Rastnull10=true) then begin Edit30.Text:='0'; Gauge10.Progress:=100; Rasttemp10:=true; Rastnull10:=false; end;
     restrastzeit:=strtoint(Edit21.Text)+strtoint(Edit22.Text)+strtoint(Edit23.Text)+strtoint(Edit24.Text)+strtoint(Edit25.Text)+strtoint(Edit26.Text)+strtoint(Edit27.Text)+strtoint(Edit28.Text)+strtoint(Edit29.Text)+strtoint(Edit30.Text);
     if restrastzeit=0 then Form1.BitBtn3Click(Sender);
@@ -2268,24 +2305,25 @@ begin
   begin
     if (CheckBox10.Checked=true) and (Edit20.Text='0') and (Rastnull10=false) then begin Edit30.Text:=Edit20.Text; Gauge10.Progress:=0; Rasttemp10:=false; Rastnull10:=true; end
     else if (CheckBox10.Checked=true) and (Gauge10.Progress<>0) then begin Edit30.Text:=Edit20.Text; Gauge10.Progress:=0; Rasttemp10:=false; end
-    else if (CheckBox9.Checked=true) and (Edit18.Text='0') and (Rastnull9=false) then begin Edit29.Text:=Edit18.Text; Gauge9.Progress:=0; Rasttemp9:=false; Rastnull9:=true; end
-    else if (CheckBox9.Checked=true) and (Gauge9.Progress<>0) then begin Edit29.Text:=Edit18.Text; Gauge9.Progress:=0; Rasttemp9:=false; end
-    else if (CheckBox8.Checked=true) and (Edit16.Text='0') and (Rastnull8=false) then begin Edit28.Text:=Edit16.Text; Gauge8.Progress:=0; Rasttemp8:=false; Rastnull8:=true; end
-    else if (CheckBox8.Checked=true) and (Gauge8.Progress<>0) then begin Edit28.Text:=Edit16.Text; Gauge8.Progress:=0; Rasttemp8:=false; end
-    else if (CheckBox7.Checked=true) and (Edit14.Text='0') and (Rastnull7=false) then begin Edit27.Text:=Edit14.Text; Gauge7.Progress:=0; Rasttemp7:=false; Rastnull7:=true; end
-    else if (CheckBox7.Checked=true) and (Gauge7.Progress<>0) then begin Edit27.Text:=Edit14.Text; Gauge7.Progress:=0; Rasttemp7:=false; end
-    else if (CheckBox6.Checked=true) and (Edit12.Text='0') and (Rastnull6=false) then begin Edit26.Text:=Edit12.Text; Gauge6.Progress:=0; Rasttemp6:=false; Rastnull6:=true; end
-    else if (CheckBox6.Checked=true) and (Gauge6.Progress<>0) then begin Edit26.Text:=Edit12.Text; Gauge6.Progress:=0; Rasttemp6:=false; end
-    else if (CheckBox5.Checked=true) and (Edit10.Text='0') and (Rastnull5=false) then begin Edit25.Text:=Edit10.Text; Gauge5.Progress:=0; Rasttemp5:=false; Rastnull5:=true; end
-    else if (CheckBox5.Checked=true) and (Gauge5.Progress<>0) then begin Edit25.Text:=Edit10.Text; Gauge5.Progress:=0; Rasttemp5:=false; end
-    else if (CheckBox4.Checked=true) and (Edit8.Text='0') and (Rastnull4=false) then begin Edit24.Text:=Edit8.Text; Gauge4.Progress:=0; Rasttemp4:=false; Rastnull4:=true; end
-    else if (CheckBox4.Checked=true) and (Gauge4.Progress<>0) then begin Edit24.Text:=Edit8.Text; Gauge4.Progress:=0; Rasttemp4:=false; end
-    else if (CheckBox3.Checked=true) and (Edit6.Text='0') and (Rastnull3=false) then begin Edit23.Text:=Edit6.Text; Gauge3.Progress:=0; Rasttemp3:=false; Rastnull3:=true; end
-    else if (CheckBox3.Checked=true) and (Gauge3.Progress<>0) then begin Edit23.Text:=Edit6.Text; Gauge3.Progress:=0; Rasttemp3:=false; end
-    else if (CheckBox2.Checked=true) and (Edit4.Text='0') and (Rastnull2=false) then begin Edit22.Text:=Edit4.Text; Gauge2.Progress:=0; Rasttemp2:=false; Rastnull2:=true; end
-    else if (CheckBox2.Checked=true) and (Gauge2.Progress<>0) then begin Edit22.Text:=Edit4.Text; Gauge2.Progress:=0; Rasttemp2:=false; end
-    else if (CheckBox1.Checked=true) and (Edit2.Text='0') and (Rastnull1=false) then begin Edit21.Text:=Edit2.Text; Gauge1.Progress:=0; Rasttemp1:=false; Rastnull1:=true; end
-    else if (CheckBox1.Checked=true) and (Gauge1.Progress<>0) then begin Edit21.Text:=Edit2.Text; Gauge1.Progress:=0; Rasttemp1:=false; end;
+    else if (CheckBox9.Checked=true) and (Edit18.Text='0') and (Rastnull9=false) then begin Edit29.Text:=Edit18.Text; Gauge9.Progress:=0; Rasttemp9:=false; Rastnull9:=true; CheckBox10.Color:=clBtnFace; end
+    else if (CheckBox9.Checked=true) and (Gauge9.Progress<>0) then begin Edit29.Text:=Edit18.Text; Gauge9.Progress:=0; Rasttemp9:=false; CheckBox10.Color:=clBtnFace; end
+    else if (CheckBox8.Checked=true) and (Edit16.Text='0') and (Rastnull8=false) then begin Edit28.Text:=Edit16.Text; Gauge8.Progress:=0; Rasttemp8:=false; Rastnull8:=true; CheckBox9.Color:=clBtnFace; end
+    else if (CheckBox8.Checked=true) and (Gauge8.Progress<>0) then begin Edit28.Text:=Edit16.Text; Gauge8.Progress:=0; Rasttemp8:=false; CheckBox9.Color:=clBtnFace; end
+    else if (CheckBox7.Checked=true) and (Edit14.Text='0') and (Rastnull7=false) then begin Edit27.Text:=Edit14.Text; Gauge7.Progress:=0; Rasttemp7:=false; Rastnull7:=true; CheckBox8.Color:=clBtnFace; end
+    else if (CheckBox7.Checked=true) and (Gauge7.Progress<>0) then begin Edit27.Text:=Edit14.Text; Gauge7.Progress:=0; Rasttemp7:=false; CheckBox8.Color:=clBtnFace; end
+    else if (CheckBox6.Checked=true) and (Edit12.Text='0') and (Rastnull6=false) then begin Edit26.Text:=Edit12.Text; Gauge6.Progress:=0; Rasttemp6:=false; Rastnull6:=true; CheckBox7.Color:=clBtnFace; end
+    else if (CheckBox6.Checked=true) and (Gauge6.Progress<>0) then begin Edit26.Text:=Edit12.Text; Gauge6.Progress:=0; Rasttemp6:=false; CheckBox7.Color:=clBtnFace; end
+    else if (CheckBox5.Checked=true) and (Edit10.Text='0') and (Rastnull5=false) then begin Edit25.Text:=Edit10.Text; Gauge5.Progress:=0; Rasttemp5:=false; Rastnull5:=true; CheckBox6.Color:=clBtnFace; end
+    else if (CheckBox5.Checked=true) and (Gauge5.Progress<>0) then begin Edit25.Text:=Edit10.Text; Gauge5.Progress:=0; Rasttemp5:=false; CheckBox6.Color:=clBtnFace; end
+    else if (CheckBox4.Checked=true) and (Edit8.Text='0') and (Rastnull4=false) then begin Edit24.Text:=Edit8.Text; Gauge4.Progress:=0; Rasttemp4:=false; Rastnull4:=true; CheckBox5.Color:=clBtnFace; end
+    else if (CheckBox4.Checked=true) and (Gauge4.Progress<>0) then begin Edit24.Text:=Edit8.Text; Gauge4.Progress:=0; Rasttemp4:=false; CheckBox5.Color:=clBtnFace; end
+    else if (CheckBox3.Checked=true) and (Edit6.Text='0') and (Rastnull3=false) then begin Edit23.Text:=Edit6.Text; Gauge3.Progress:=0; Rasttemp3:=false; Rastnull3:=true; CheckBox4.Color:=clBtnFace; end
+    else if (CheckBox3.Checked=true) and (Gauge3.Progress<>0) then begin Edit23.Text:=Edit6.Text; Gauge3.Progress:=0; Rasttemp3:=false; CheckBox4.Color:=clBtnFace; end
+    else if (CheckBox2.Checked=true) and (Edit4.Text='0') and (Rastnull2=false) then begin Edit22.Text:=Edit4.Text; Gauge2.Progress:=0; Rasttemp2:=false; Rastnull2:=true; CheckBox3.Color:=clBtnFace; end
+    else if (CheckBox2.Checked=true) and (Gauge2.Progress<>0) then begin Edit22.Text:=Edit4.Text; Gauge2.Progress:=0; Rasttemp2:=false; CheckBox3.Color:=clBtnFace; end
+    else if (CheckBox1.Checked=true) and (Edit2.Text='0') and (Rastnull1=false) then begin Edit21.Text:=Edit2.Text; Gauge1.Progress:=0; Rasttemp1:=false; Rastnull1:=true; CheckBox2.Color:=clBtnFace; end
+    else if (CheckBox1.Checked=true) and (Gauge1.Progress<>0) then begin Edit21.Text:=Edit2.Text; Gauge1.Progress:=0; Rasttemp1:=false; CheckBox2.Color:=clBtnFace; end;
+
     Form1.Timer2Timer(Sender);
     //Timer2.Enabled:=true;
   end;
@@ -2294,7 +2332,7 @@ end;
 procedure TForm1.TimerREinTimer(Sender: TObject);
 begin
   Ruehrwerk:=RWert;
-  Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-ein.jpg');
+  Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-ein.bmp');
   Schalten(Form1);
   TimerREin.Enabled:=false;
   TimerRAus.Enabled:=true;
@@ -2303,7 +2341,7 @@ end;
 procedure TForm1.TimerRAusTimer(Sender: TObject);
 begin
   Ruehrwerk:=0;
-  Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-aus.jpg');
+  Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-aus.bmp');
   Schalten(Form1);
   TimerRAus.Enabled:=false;
   TimerREin.Enabled:=true;
@@ -2312,7 +2350,7 @@ end;
 procedure TForm1.TimerHEinTimer(Sender: TObject);
 begin
   Heizung:=HWert;
-  Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-ein.jpg');
+  Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-ein.bmp');
   Schalten(Form1);
   TimerHEin.Enabled:=false;
   TimerHAus.Enabled:=true;
@@ -2321,7 +2359,7 @@ end;
 procedure TForm1.TimerHAusTimer(Sender: TObject);
 begin
   Heizung:=0;
-  Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-aus.jpg');
+  Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-aus.bmp');
   LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
   Schalten(Form1);
   TimerHAus.Enabled:=false;
@@ -2390,7 +2428,7 @@ end;
 procedure TForm1.TimerAAusTimer(Sender: TObject);
 begin
   Alarm:=0;
-  Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-aus.jpg');
+  Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-aus.bmp');
   Schalten(Form1);
   TimerAAus.Enabled:=false;
   TimerAEin.Enabled:=true;
@@ -2399,7 +2437,7 @@ end;
 procedure TForm1.TimerAEinTimer(Sender: TObject);
 begin
   Alarm:=AWert;
-  Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-ein.jpg');
+  Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-ein.bmp');
   Schalten(Form1);
   TimerAEin.Enabled:=false;
   TimerAAus.Enabled:=true;
@@ -2418,8 +2456,8 @@ begin
   else if rast=6 then rasttext:=Edit68.Text
   else if rast=7 then rasttext:=Edit69.Text
   else if rast=8 then rasttext:=Edit70.Text
-  else if rast=9 then rasttext:=Edit61.Text
-  else if rast=10 then rasttext:=Edit62.Text;
+  else if rast=9 then rasttext:=Edit71.Text
+  else if rast=10 then rasttext:=Edit72.Text;
   if AlarmEin=true then
   begin
     repeat
@@ -2756,9 +2794,6 @@ begin
   end;
 end;
 
-
-
-
 procedure TForm1.BitBtn13Click(Sender: TObject);
 var RPage, RChart: TRect;
     ResX, ResY, Y: Integer;
@@ -3075,6 +3110,28 @@ end;
 procedure TForm1.GesUpdateTimerTimer(Sender: TObject);
 var eta:extended;
 begin
+  restrastzeit:=strtoint(Edit21.Text)+strtoint(Edit22.Text)+strtoint(Edit23.Text)+strtoint(Edit24.Text)+strtoint(Edit25.Text)+strtoint(Edit26.Text)+strtoint(Edit27.Text)+strtoint(Edit28.Text)+strtoint(Edit29.Text)+strtoint(Edit30.Text);
+  gesrastzeit:=0;
+  restrastgauge:=0;
+  if CheckBox1.checked=true then begin restrastgauge:=restrastgauge+(Gauge1.Progress*strtoint(Edit2.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit2.Text); if strtoint(Edit1.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit1.Text); end;
+  if CheckBox2.checked=true then begin restrastgauge:=restrastgauge+(Gauge2.Progress*strtoint(Edit4.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit4.Text); if strtoint(Edit3.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit3.Text); end;
+  if CheckBox3.checked=true then begin restrastgauge:=restrastgauge+(Gauge3.Progress*strtoint(Edit6.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit6.Text); if strtoint(Edit5.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit5.Text); end;
+  if CheckBox4.checked=true then begin restrastgauge:=restrastgauge+(Gauge4.Progress*strtoint(Edit8.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit8.Text); if strtoint(Edit7.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit7.Text); end;
+  if CheckBox5.checked=true then begin restrastgauge:=restrastgauge+(Gauge5.Progress*strtoint(Edit10.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit10.Text); if strtoint(Edit9.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit9.Text); end;
+  if CheckBox6.checked=true then begin restrastgauge:=restrastgauge+(Gauge6.Progress*strtoint(Edit12.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit12.Text); if strtoint(Edit11.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit11.Text); end;
+  if CheckBox7.checked=true then begin restrastgauge:=restrastgauge+(Gauge7.Progress*strtoint(Edit14.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit14.Text); if strtoint(Edit13.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit13.Text); end;
+  if CheckBox8.checked=true then begin restrastgauge:=restrastgauge+(Gauge8.Progress*strtoint(Edit16.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit16.Text); if strtoint(Edit15.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit15.Text); end;
+  if CheckBox9.checked=true then begin restrastgauge:=restrastgauge+(Gauge9.Progress*strtoint(Edit18.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit18.Text); if strtoint(Edit17.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit17.Text); end;
+  if CheckBox10.checked=true then begin restrastgauge:=restrastgauge+(Gauge10.Progress*strtoint(Edit20.Text)); gesrastzeit:=gesrastzeit+strtoint(Edit20.Text); if strtoint(Edit19.Text)>maxsolltemp then maxsolltemp:=strtoint(Edit19.Text); end;
+  if gesrastzeit>0 then restrastgauge:=round(restrastgauge/gesrastzeit-0.5) else restrastgauge:=100;
+  gesheizzeit:=round((maxsolltemp-StartTemp)/Aufheizrate);
+  if gesheizzeit<0 then gesheizzeit:=0;
+  restheizzeit:=round((maxsolltemp-TempFloat)/Aufheizrate);
+  if restheizzeit<0 then restheizzeit:=0;
+  gesprozesszeit:=gesheizzeit+gesrastzeit;
+  restprozesszeit:=restheizzeit+restrastzeit;
+  if gesheizzeit>0 then restheizgauge:=round((gesheizzeit-restheizzeit)/gesheizzeit*100) else restheizgauge:=100;
+  if gesprozesszeit>0 then restprozessgauge:=round(((gesprozesszeit-restprozesszeit)/gesprozesszeit*100)-0.5) else restprozessgauge:=100;
   if start=true then
   begin
     if Button31.Caption='Gesamtrast' then
@@ -3133,7 +3190,7 @@ begin
     begin
       BitBtn1.Enabled:=false;
       BitBtn2.Enabled:=false;
-      Graphic:=pfad + 'Graphics\Automatik-timer.jpg';
+      Graphic:=pfad + 'Graphics\Automatik-timer.bmp';
       Image5.Picture.LoadFromFile(Graphic);
       TimerTimer.Enabled:=true;
     end

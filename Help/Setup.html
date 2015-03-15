@@ -7,7 +7,10 @@
 	<META NAME="AUTHOR" CONTENT="Andreas Wehrle">
 	<META NAME="CREATED" CONTENT="20140414;21331864">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
-	<META NAME="CHANGED" CONTENT="20141127;21342440">
+	<META NAME="CHANGED" CONTENT="20150309;21021767">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
@@ -36,7 +39,7 @@
 	</STYLE>
 </HEAD>
 <BODY LANG="de-DE" DIR="LTR">
-<P STYLE="margin-bottom: 0cm">Hilfe Datei zu Brauerei V 1.30 &ndash;
+<P STYLE="margin-bottom: 0cm">Hilfe Datei zu Brauerei V 1.40 &ndash;
 by Emilio &ndash; <A HREF="Help.html">HOME</A></P>
 <P STYLE="margin-bottom: 0cm"><U><B>Programmeinstellungen:</B></U></P>
 <P STYLE="margin-bottom: 0cm; font-weight: normal; text-decoration: none">
@@ -70,21 +73,7 @@ Brauprozess verf&uuml;gbar.</FONT></P>
 	<LI><P STYLE="margin-bottom: 0cm">LPT-Alarm: Dezimalwert des
 	Port-Bits f&uuml;r den Alarm ( Tabelle siehe unten )</P>
 	<LI><P STYLE="margin-bottom: 0cm">Batchdateien f&uuml;r die
-	Hardwaresteuerung &ndash; Heizung Ein</P>
-	<LI><P STYLE="margin-bottom: 0cm">Batchdateien f&uuml;r die
-	Hardwaresteuerung &ndash; Heizung Aus</P>
-	<LI><P STYLE="margin-bottom: 0cm">Batchdateien f&uuml;r die
-	Hardwaresteuerung &ndash; R&uuml;hrwerk Ein</P>
-	<LI><P STYLE="margin-bottom: 0cm">Batchdateien f&uuml;r die
-	Hardwaresteuerung &ndash; R&uuml;hrwerk Aus</P>
-	<LI><P STYLE="margin-bottom: 0cm">Batchdateien f&uuml;r die
-	Hardwaresteuerung &ndash; Pumpe Ein</P>
-	<LI><P STYLE="margin-bottom: 0cm">Batchdateien f&uuml;r die
-	Hardwaresteuerung &ndash; Pumpe Aus</P>
-	<LI><P STYLE="margin-bottom: 0cm">Batchdateien f&uuml;r die
-	Hardwaresteuerung &ndash; Alarm Ein</P>
-	<LI><P STYLE="margin-bottom: 0cm">Batchdateien f&uuml;r die
-	Hardwaresteuerung &ndash; Alarm Aus</P>
+	Hardwaresteuerung</P>
 	<LI><P STYLE="margin-bottom: 0cm">Hier kann gew&auml;hlt werden ob
 	die Batchbefehle zyklisch wiederholt werden sollen.</P>
 	<LI><P STYLE="margin-bottom: 0cm">Taktungstemperatur: Ist die
@@ -99,6 +88,8 @@ Brauprozess verf&uuml;gbar.</FONT></P>
 	<LI><P STYLE="margin-bottom: 0cm">Hyteresewert: Nach dem erreichen
 	der Zieltemperatur wird die Heizung erst wieder nach unterschreiten
 	der Zieltemperatur minus des Hysteresewerts wieder eingeschaltet.</P>
+	<LI><P STYLE="margin-bottom: 0cm">Aufheizrate zur Berechnung der
+	Heizzeit und ETA</P>
 	<LI><P STYLE="margin-bottom: 0cm">Dateiname des
 	Temperatur-Textfiles.</P>
 	<LI><P STYLE="margin-bottom: 0cm">Start-Button f&uuml;r
@@ -107,20 +98,26 @@ Brauprozess verf&uuml;gbar.</FONT></P>
 	in der Batchdatei ge&auml;ndert werden.<BR>Sollte die
 	Temperaturmessung w&auml;hrend des Brauprozesses ausfallen kann die
 	Batchdatei durch Doppel-Klick auf die Thermometer-Grafik erneut
-	gestartet werden.</P>
+	gestartet werden.<BR>Wird der Haken bei &bdquo;Autostart bei
+	Programmstart&ldquo; gesetzt, wird die Aktion beim Start der
+	Brauerei ausgef&uuml;hrt.</P>
 	<LI><P STYLE="margin-bottom: 0cm">Start-Button f&uuml;r
 	Temperaturmessung mit Digitemp; die Digitemp_variabel.bat wird
 	gestartet. Der COM-Port wird beim Start der Batchdateien abgefragt.
 	<BR>Sollte die Temperaturmessung w&auml;hrend des Brauprozesses
 	ausfallen kann die Batchdatei durch Doppel-Klick auf die
-	Thermometer-Grafik erneut gestartet werden.</P>
+	Thermometer-Grafik erneut gestartet werden.<BR>Wird der Haken bei
+	&bdquo;Autostart bei Programmstart&ldquo; gesetzt, wird die Aktion
+	beim Start der Brauerei ausgef&uuml;hrt.</P>
 	<LI><P STYLE="margin-bottom: 0cm">Start-Button f&uuml;r
 	Temperaturmessung f&uuml;r beliebige Temperatursoftware; die
 	Externe_Sensorsoftware.bat wird gestartet. Hier k&ouml;nnt ihr eine
 	beliebige Software in der Batch-Datei eintragen.<BR>Sollte die
 	Temperaturmessung w&auml;hrend des Brauprozesses ausfallen kann die
 	Batchdatei durch Doppel-Klick auf die Thermometer-Grafik erneut
-	gestartet werden</P>
+	gestartet werden.<BR>Wird der Haken bei &bdquo;Autostart bei
+	Programmstart&ldquo; gesetzt, wird die Aktion beim Start der
+	Brauerei ausgef&uuml;hrt.</P>
 </OL>
 <P STYLE="margin-bottom: 0cm">LPT-Digitalwerte:</P>
 <TABLE WIDTH=320 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">

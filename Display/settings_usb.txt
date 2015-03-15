@@ -1,0 +1,4 @@
+COM8
+DS18B20
+C:\Brauerei\Temperatur\log.txt
+C:\Brauerei\Display\display.txt

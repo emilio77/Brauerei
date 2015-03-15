@@ -7,7 +7,12 @@
 	<META NAME="AUTHOR" CONTENT="Andreas Wehrle">
 	<META NAME="CREATED" CONTENT="20140414;21331864">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
-	<META NAME="CHANGED" CONTENT="20141127;21022796">
+	<META NAME="CHANGED" CONTENT="20150309;20313591">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
@@ -34,7 +39,7 @@
 	</STYLE>
 </HEAD>
 <BODY LANG="de-DE" DIR="LTR">
-<P STYLE="margin-bottom: 0cm">Hilfe Datei zu Brauerei V 1.30 &ndash;
+<P STYLE="margin-bottom: 0cm">Hilfe Datei zu Brauerei V 1.40 &ndash;
 by Emilio - <A HREF="Help.html">HOME</A> 
 </P>
 <P STYLE="margin-bottom: 0cm"><U><B>Brauprozess:</B></U></P>
@@ -69,22 +74,30 @@ Bildschirmdarstellungen:</P>
 	maximale Gradient, kann in den Einstellungen angepasst werden.</P>
 	<LI><P STYLE="margin-bottom: 0cm">Schalthysterese, kann in den
 	Einstellungen angepasst werden.</P>
-	<LI><P STYLE="margin-bottom: 0cm">Alarm pulsen oder Dauersignal</P>
-	<LI><P STYLE="margin-bottom: 0cm">Sensor&uuml;berwachung &ndash;
-	Ver&auml;ndert sich die log.txt w&auml;hrend gestartetem Brauprozess
-	binnen einer Minute nicht wird ein Alarm ausgegeben.</P>
 	<LI><P STYLE="margin-bottom: 0cm">Logdateien w&auml;hrend des
 	Brauprozesses als Dokumentation erstellen <A HREF="Log.html">&larr;
 	Details</A></P>
+	<LI><P STYLE="margin-bottom: 0cm">Sensor&uuml;berwachung &ndash;
+	Ver&auml;ndert sich die log.txt w&auml;hrend gestartetem Brauprozess
+	binnen einer Minute nicht wird ein Alarm ausgegeben.</P>
+	<LI><P STYLE="margin-bottom: 0cm">Alarm still, pulsen oder
+	Dauersignal</P>
 	<LI><P STYLE="margin-bottom: 0cm">Starteinstellungen f&uuml;r
-	(6)-(9) und (16)-(20) speichern</P>
+	(6)-(11), (20)-(24) und (29) speichern</P>
 	<LI><P STYLE="margin-bottom: 0cm">Brauprozess starten</P>
 	<LI><P STYLE="margin-bottom: 0cm">Brauprozess pausieren</P>
 	<LI><P STYLE="margin-bottom: 0cm">Brauprozess stoppen</P>
+	<LI><P STYLE="margin-bottom: 0cm">Timer gesteuerter Start des
+	Brauprozesses <A HREF="Timer.html">&larr; Details</A></P>
 	<LI><P STYLE="margin-bottom: 0cm">Rast &uuml;berspringen / zur&uuml;ck
 	springen</P>
 	<LI><P STYLE="margin-bottom: 0cm">Rastzeit um eine Minute erh&ouml;hen
 	/ reduzieren</P>
+	<LI><P STYLE="margin-bottom: 0cm">Rast- und Brauerruf-Text-Eingabe.
+	Mit dem Button wird auf die Ansicht zur Eingabe der Rast- und
+	Brauerruf-Texte umgeschaltet. Dort kann pro Rast ein Rastname und
+	ein Text eingegeben werde, der beim Brauerruf angezeigt wird. Die
+	Texte werden mit dem Rezept gespeichert.</P>
 	<LI><P STYLE="margin-bottom: 0cm">Aktivierung f&uuml;r die einzelnen
 	Rasten</P>
 	<LI><P STYLE="margin-bottom: 0cm">Ziel-Temperatur f&uuml;r Rast
@@ -102,8 +115,10 @@ Bildschirmdarstellungen:</P>
 	</P>
 	<LI><P STYLE="margin-bottom: 0cm">Rezept speichern (16)-(20) 
 	</P>
-	<LI><P STYLE="margin-bottom: 0cm">Fortschritt des Gesamtprozesses
-	w&auml;hrend des gestarteten Automatikbetriebs ( nicht editierbar)</P>
+	<LI><P STYLE="margin-bottom: 0cm">Umschaltung der
+	Gesamt-Fortschrittsanzeige zwischen Gesamtprozesses, Gesamtrastzeit,
+	Gesamtheizzeit und ETA (Expected Time of Abmaischen ) w&auml;hrend
+	des gestarteten Automatikbetriebs ( nicht editierbar)</P>
 	<LI><P STYLE="margin-bottom: 0cm">Grafische
 	Ist-Temperatur-Anzeige<BR>Wurde die Temperaurmessung (z.B. Digitemp)
 	&uuml;ber das Programm gestartet kann bei Ausf&auml;llen der Messung
@@ -136,15 +151,16 @@ Bildschirmdarstellungen:</P>
 	<LI><P STYLE="margin-bottom: 0cm; font-weight: normal; text-decoration: none">
 	Simulation Ein/Aus (nur bei nicht gestarteter Automatik bedienbar ).
 	Bei eingeschalteter Simulation wird die Temperaturdatei durch das
-	Programm geschrieben. Bei eingeschalteter Heizung erh&ouml;ht sich
-	die Temperatur um 1,2&deg;/Minute bei ausgeschalteter Heizung sinkt
-	die Temperatur um 0,6&deg;/Minute.</P>
+	Programm geschrieben. Hierzu kann der Schieberegler (8) zur
+	Einstellung der Temperatur verwendet werden.</P>
 	<LI><P STYLE="margin-bottom: 0cm; font-weight: normal; text-decoration: none">
-	alle Rezepteinstellungen k&ouml;nnen auch im Manuellen Bildschirm
+	Alle Rezepteinstellungen k&ouml;nnen auch im Manuellen Bildschirm
 	ver&auml;ndert, gespeichert oder geladen werden. Details siehe
 	Automatik.</P>
 	<LI><P STYLE="margin-bottom: 0cm; font-weight: normal; text-decoration: none">
 	Umschaltung zwischen Manuell und Automatik Bildschirm.</P>
+	<LI><P STYLE="margin-bottom: 0cm; font-weight: normal; text-decoration: none">
+	Schieberegler f&uuml;r Heizungssimulation</P>
 </OL>
 </BODY>
 </HTML>

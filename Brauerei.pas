@@ -38,7 +38,7 @@ type
     Series1: TLineSeries;
     Series2: TLineSeries;
     Chart2: TChart;
-    Series3: TAreaSeries;                         
+    Series3: TAreaSeries;
     Chart3: TChart;
     Series4: TAreaSeries;
     Chart4: TChart;
@@ -47,162 +47,12 @@ type
     Series6: TAreaSeries;
     WebBrowser1: TWebBrowser;
     TabSheet1: TTabSheet;
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
-    Label5: TLabel;
-    Label6: TLabel;
-    Label7: TLabel;
-    Label8: TLabel;
-    Label9: TLabel;
-    Label10: TLabel;
-    Label11: TLabel;
-    Label12: TLabel;
-    Label13: TLabel;
-    Label14: TLabel;
-    Label15: TLabel;
-    Label16: TLabel;
-    Label23: TLabel;
-    Gauge1: TGauge;
-    Gauge2: TGauge;
-    Gauge3: TGauge;
-    Gauge4: TGauge;
-    Gauge5: TGauge;
-    Gauge6: TGauge;
-    Gauge7: TGauge;
-    Label24: TLabel;
-    Label25: TLabel;
-    Label26: TLabel;
-    Label27: TLabel;
-    Label28: TLabel;
-    Label29: TLabel;
-    Label30: TLabel;
-    Label31: TLabel;
-    Label32: TLabel;
-    Label36: TLabel;
-    Label38: TLabel;
-    Label37: TLabel;
-    Label39: TLabel;
-    Label40: TLabel;
-    Label41: TLabel;
-    Label42: TLabel;
-    Label43: TLabel;
-    Label47: TLabel;
-    Label48: TLabel;
-    Label49: TLabel;
-    Label50: TLabel;
-    Label51: TLabel;
-    Label52: TLabel;
-    Label54: TLabel;
-    Label17: TLabel;
-    Label18: TLabel;
-    Label19: TLabel;
-    Label20: TLabel;
-    Label21: TLabel;
-    Label22: TLabel;
-    Label53: TLabel;
-    Label55: TLabel;
-    Label56: TLabel;
-    Gauge8: TGauge;
-    Gauge9: TGauge;
-    Gauge10: TGauge;
-    Label33: TLabel;
-    Label34: TLabel;
-    Label35: TLabel;
-    Label44: TLabel;
-    Label45: TLabel;
-    Label46: TLabel;
     Panel2: TPanel;
     Image2: TImage;
     Image3: TImage;
     Image4: TImage;
     Image5: TImage;
     Image6: TImage;
-    Edit1: TEdit;
-    CheckBox1: TCheckBox;
-    Edit2: TEdit;
-    Edit3: TEdit;
-    CheckBox2: TCheckBox;
-    Edit4: TEdit;
-    Edit5: TEdit;
-    CheckBox3: TCheckBox;
-    Edit6: TEdit;
-    Edit7: TEdit;
-    CheckBox4: TCheckBox;
-    Edit8: TEdit;
-    Edit9: TEdit;
-    CheckBox5: TCheckBox;
-    Edit10: TEdit;
-    Edit11: TEdit;
-    CheckBox6: TCheckBox;
-    Edit12: TEdit;
-    Edit13: TEdit;
-    CheckBox7: TCheckBox;
-    Edit14: TEdit;
-    CheckBox11: TCheckBox;
-    CheckBox12: TCheckBox;
-    CheckBox13: TCheckBox;
-    CheckBox14: TCheckBox;
-    CheckBox15: TCheckBox;
-    CheckBox16: TCheckBox;
-    CheckBox17: TCheckBox;
-    Edit21: TEdit;
-    Edit22: TEdit;
-    Edit23: TEdit;
-    Edit24: TEdit;
-    Edit25: TEdit;
-    Edit26: TEdit;
-    Edit27: TEdit;
-    CheckBox21: TCheckBox;
-    CheckBox22: TCheckBox;
-    CheckBox23: TCheckBox;
-    CheckBox24: TCheckBox;
-    CheckBox25: TCheckBox;
-    CheckBox26: TCheckBox;
-    CheckBox27: TCheckBox;
-    Edit31: TEdit;
-    Edit32: TEdit;
-    Edit33: TEdit;
-    Edit34: TEdit;
-    Edit35: TEdit;
-    Edit36: TEdit;
-    Edit37: TEdit;
-    Edit41: TEdit;
-    Edit42: TEdit;
-    Edit43: TEdit;
-    Edit44: TEdit;
-    Edit45: TEdit;
-    Edit46: TEdit;
-    Edit47: TEdit;
-    Button8: TButton;
-    Button9: TButton;
-    Button10: TButton;
-    Button11: TButton;
-    Edit15: TEdit;
-    CheckBox8: TCheckBox;
-    Edit16: TEdit;
-    Edit17: TEdit;
-    CheckBox9: TCheckBox;
-    Edit18: TEdit;
-    Edit19: TEdit;
-    CheckBox10: TCheckBox;
-    Edit20: TEdit;
-    CheckBox18: TCheckBox;
-    CheckBox19: TCheckBox;
-    CheckBox20: TCheckBox;
-    CheckBox28: TCheckBox;
-    CheckBox29: TCheckBox;
-    CheckBox30: TCheckBox;
-    Edit38: TEdit;
-    Edit39: TEdit;
-    Edit40: TEdit;
-    Edit28: TEdit;
-    Edit29: TEdit;
-    Edit30: TEdit;
-    Edit48: TEdit;
-    Edit49: TEdit;
-    Edit50: TEdit;
     CheckBox32: TCheckBox;
     Panel3: TPanel;
     Edit53: TEdit;
@@ -215,7 +65,6 @@ type
     Label64: TLabel;
     Button18: TButton;
     Button19: TButton;
-    Button20: TButton;
     SimulationTimer: TTimer;
     Label66: TLabel;
     Button23: TButton;
@@ -296,26 +145,18 @@ type
     Label94: TLabel;
     ComboBox17: TComboBox;
     ComboBox18: TComboBox;
-    Label95: TLabel;
     Label96: TLabel;
     Label97: TLabel;
-    Label98: TLabel;
-    Label99: TLabel;
     Label100: TLabel;
     ComboBox19: TComboBox;
     ComboBox20: TComboBox;
     ComboBox21: TComboBox;
     ComboBox22: TComboBox;
-    Label101: TLabel;
     Label102: TLabel;
-    Label103: TLabel;
     Label104: TLabel;
-    Label105: TLabel;
-    Label106: TLabel;
     ComboBox23: TComboBox;
     ComboBox24: TComboBox;
     Label107: TLabel;
-    Label108: TLabel;
     ComboBox25: TComboBox;
     Label109: TLabel;
     Label110: TLabel;
@@ -323,43 +164,17 @@ type
     Label111: TLabel;
     Button26: TButton;
     Button27: TButton;
-    Button28: TButton;       
+    Button28: TButton;
     Batch_Update_Tmr: TTimer;
     CheckBox35: TCheckBox;
     CheckBox36: TCheckBox;
     CheckBox37: TCheckBox;
-    Label112: TLabel;
-    ComboBox26: TComboBox;
-    Label113: TLabel;
     Edit62: TEdit;
     TimerDlgMove: TTimer;
-    Edit63: TEdit;
-    Edit64: TEdit;
-    Edit65: TEdit;
-    Edit66: TEdit;
-    Edit67: TEdit;
-    Edit68: TEdit;
-    Edit69: TEdit;
-    Edit70: TEdit;
-    Edit71: TEdit;
-    Edit72: TEdit;
-    Button29: TButton;
-    Button30: TButton;
-    Label115: TLabel;
     CheckBox38: TCheckBox;
     CheckBox39: TCheckBox;
     CheckBox40: TCheckBox;
     StartTimer: TTimer;
-    Edit73: TEdit;
-    Edit74: TEdit;
-    Edit75: TEdit;
-    Edit76: TEdit;
-    Edit77: TEdit;
-    Edit78: TEdit;
-    Edit79: TEdit;
-    Edit80: TEdit;
-    Edit81: TEdit;
-    Edit82: TEdit;
     Button31: TButton;
     GesUpdateTimer: TTimer;
     Panel5: TPanel;
@@ -368,6 +183,22 @@ type
     ComboBox27: TComboBox;
     Label116: TLabel;
     GroupBox6: TGroupBox;
+    BitBtn12: TBitBtn;
+    BitBtn13: TBitBtn;
+    BitBtn14: TBitBtn;
+    BitBtn15: TBitBtn;
+    TimerDialogTimer: TTimer;
+    TimerTimer: TTimer;
+    Timer3: TTimer;
+    Button1: TButton;
+    TrackBar1: TTrackBar;
+    GroupBox7: TGroupBox;
+    Label112: TLabel;
+    Label113: TLabel;
+    ComboBox26: TComboBox;
+    Panel6: TPanel;
+    Button29: TButton;
+    Button30: TButton;
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
@@ -375,20 +206,203 @@ type
     BitBtn5: TBitBtn;
     BitBtn6: TBitBtn;
     BitBtn7: TBitBtn;
+    BitBtn16: TBitBtn;
+    Panel7: TPanel;
     BitBtn9: TBitBtn;
     BitBtn8: TBitBtn;
     BitBtn10: TBitBtn;
     BitBtn11: TBitBtn;
-    BitBtn12: TBitBtn;
-    BitBtn13: TBitBtn;
-    BitBtn14: TBitBtn;
-    BitBtn15: TBitBtn;
-    BitBtn16: TBitBtn;
-    TimerDialogTimer: TTimer;
-    TimerTimer: TTimer;
-    Timer3: TTimer;
-    Button1: TButton;
-    TrackBar1: TTrackBar;
+    Panel8: TPanel;
+    Edit82: TEdit;
+    Edit81: TEdit;
+    Edit80: TEdit;
+    Edit79: TEdit;
+    Edit78: TEdit;
+    Edit77: TEdit;
+    Edit76: TEdit;
+    Edit75: TEdit;
+    Edit74: TEdit;
+    Edit73: TEdit;
+    Panel10: TPanel;
+    Edit63: TEdit;
+    Edit70: TEdit;
+    Edit65: TEdit;
+    Edit66: TEdit;
+    Edit67: TEdit;
+    Edit68: TEdit;
+    Edit69: TEdit;
+    Edit64: TEdit;
+    Edit71: TEdit;
+    Edit72: TEdit;
+    Label115: TLabel;
+    Panel11: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    Label18: TLabel;
+    Label19: TLabel;
+    Label20: TLabel;
+    Label21: TLabel;
+    Label22: TLabel;
+    Edit1: TEdit;
+    CheckBox1: TCheckBox;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    CheckBox2: TCheckBox;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    CheckBox3: TCheckBox;
+    Edit6: TEdit;
+    Edit7: TEdit;
+    CheckBox4: TCheckBox;
+    Edit8: TEdit;
+    Edit9: TEdit;
+    CheckBox5: TCheckBox;
+    Edit10: TEdit;
+    Edit11: TEdit;
+    CheckBox6: TCheckBox;
+    Edit12: TEdit;
+    Edit13: TEdit;
+    CheckBox7: TCheckBox;
+    Edit14: TEdit;
+    Edit15: TEdit;
+    CheckBox8: TCheckBox;
+    Edit16: TEdit;
+    Edit17: TEdit;
+    CheckBox9: TCheckBox;
+    Edit18: TEdit;
+    Edit19: TEdit;
+    CheckBox10: TCheckBox;
+    Edit20: TEdit;
+    Panel9: TPanel;
+    Label23: TLabel;
+    Label36: TLabel;
+    Label38: TLabel;
+    Label37: TLabel;
+    Label39: TLabel;
+    Label40: TLabel;
+    Label41: TLabel;
+    Label42: TLabel;
+    Label43: TLabel;
+    Label47: TLabel;
+    Label48: TLabel;
+    Label49: TLabel;
+    Label50: TLabel;
+    Label51: TLabel;
+    Label52: TLabel;
+    Label54: TLabel;
+    Label53: TLabel;
+    Label55: TLabel;
+    Label56: TLabel;
+    Label44: TLabel;
+    Label45: TLabel;
+    Label46: TLabel;
+    Edit33: TEdit;
+    CheckBox11: TCheckBox;
+    CheckBox12: TCheckBox;
+    CheckBox13: TCheckBox;
+    CheckBox14: TCheckBox;
+    CheckBox15: TCheckBox;
+    CheckBox16: TCheckBox;
+    CheckBox17: TCheckBox;
+    CheckBox21: TCheckBox;
+    CheckBox22: TCheckBox;
+    CheckBox23: TCheckBox;
+    CheckBox24: TCheckBox;
+    CheckBox25: TCheckBox;
+    CheckBox26: TCheckBox;
+    CheckBox27: TCheckBox;
+    Edit31: TEdit;
+    Edit32: TEdit;
+    Edit34: TEdit;
+    Edit35: TEdit;
+    Edit36: TEdit;
+    Edit37: TEdit;
+    Edit41: TEdit;
+    Edit42: TEdit;
+    Edit43: TEdit;
+    Edit44: TEdit;
+    Edit45: TEdit;
+    Edit46: TEdit;
+    Edit47: TEdit;
+    CheckBox18: TCheckBox;
+    CheckBox19: TCheckBox;
+    CheckBox20: TCheckBox;
+    CheckBox28: TCheckBox;
+    CheckBox29: TCheckBox;
+    CheckBox30: TCheckBox;
+    Edit38: TEdit;
+    Edit39: TEdit;
+    Edit40: TEdit;
+    Edit48: TEdit;
+    Edit49: TEdit;
+    Edit50: TEdit;
+    Panel12: TPanel;
+    Button9: TButton;
+    Button8: TButton;
+    Button10: TButton;
+    Button11: TButton;
+    Button20: TButton;
+    Panel13: TPanel;
+    Gauge1: TGauge;
+    Gauge2: TGauge;
+    Gauge3: TGauge;
+    Gauge4: TGauge;
+    Gauge5: TGauge;
+    Gauge6: TGauge;
+    Gauge7: TGauge;
+    Label24: TLabel;
+    Label25: TLabel;
+    Label26: TLabel;
+    Label27: TLabel;
+    Label28: TLabel;
+    Label29: TLabel;
+    Label30: TLabel;
+    Label31: TLabel;
+    Label32: TLabel;
+    Gauge8: TGauge;
+    Gauge9: TGauge;
+    Gauge10: TGauge;
+    Label33: TLabel;
+    Label34: TLabel;
+    Label35: TLabel;
+    Edit21: TEdit;
+    Edit22: TEdit;
+    Edit23: TEdit;
+    Edit24: TEdit;
+    Edit25: TEdit;
+    Edit26: TEdit;
+    Edit27: TEdit;
+    Edit28: TEdit;
+    Edit29: TEdit;
+    Edit30: TEdit;
+    TimerKSet: TTimer;
+    TimerKEin: TTimer;
+    TimerKAus: TTimer;
+    ComboBox29: TComboBox;
+    Label95: TLabel;
+    Label98: TLabel;
+    GroupBox8: TGroupBox;
+    ComboBox28: TComboBox;
+    Label99: TLabel;
+    Label101: TLabel;
+    ComboBox30: TComboBox;
+    ComboBox31: TComboBox;
+    Label103: TLabel;
     procedure Button8Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
@@ -533,6 +547,13 @@ type
     procedure TimerTimerTimer(Sender: TObject);
     procedure Timer3Timer(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure ComboBox28Change(Sender: TObject);
+    procedure TimerKSetTimer(Sender: TObject);
+    procedure TimerKEinTimer(Sender: TObject);
+    procedure TimerKAusTimer(Sender: TObject);
+    procedure ComboBox29Change(Sender: TObject);
+    procedure ComboBox31Change(Sender: TObject);
+    procedure ComboBox30Change(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -544,9 +565,9 @@ var
   sl,sl2: TStringList;
   Temperatur,xwert,Graphic,LogName,Steuerung,BHEin,BHAus,BREin,BRAus,BPEin,BPAus,
   BAEin,BAAus,TimeTempStr,TimeTempStore,USBPort,USBTyp,pfad, tempdateiname,
-  sensorverzoegerung: String;
-  Tempfloat,Solltemp,Deltatemp,SimTemp,TWert,Gradient, GradientWert,
-  GradientUebergabe, Hysterese, Aufheizrate: Extended;
+  sensorverzoegerung, Relais4: String;
+  Tempfloat,Solltemp,Deltatemp,Deltatemp2,SimTemp,TWert,Gradient, GradientWert,
+  GradientUebergabe, Hysterese, Hysterese2, Aufheizrate: Extended;
   Ruehrwerk,Heizung,Alarm,Pumpe,HWert,RWert,PWert,AWert,RStore,PStore,HStore,
   AStore,LPTCode,restrastzeit,zeit2,zeit3,zeitpause,fortschritt,rast,Intdummy,
   CountLines,restrastgauge,gesrastzeit, startpunkt,endpunkt,Ein60,Aus60,Ein70,
@@ -560,7 +581,8 @@ var
   Rasttemp6,Rasttemp7,Rasttemp8,Rasttemp9,Rasttemp10,Rastnull1,Rastnull2,
   Rastnull3,Rastnull4,Rastnull5,Rastnull6,Rastnull7,Rastnull8,Rastnull9,
   Rastnull10,Rastende,PauseLogTimerHEin,PauseLogTimerHAus,PauseLogTimerHSet,
-  PauseLogTimerREin,PauseLogTimerRAus,Rastnullges: boolean;
+  PauseLogTimerREin,PauseLogTimerRAus,PauseLogTimerKEin,PauseLogTimerKAus,
+  PauseLogTimerKSet,Rastnullges,Temperaturrast: boolean;
   USBHWert,USBRWert,USBPWert,USBAWert: char;
   Gradientgetter: Array[1..60] of Extended;
   ser: TBlockSerial;
@@ -619,103 +641,26 @@ end;
 
 procedure TForm1.BitBtn10Click(Sender: TObject);
 begin
-   BitBtn1.Visible:=false;         // Alle Bedieneinheiten für den Automodus einschalten
-   BitBtn2.Visible:=false;
-   BitBtn3.Visible:=false;
-   BitBtn4.Visible:=false;
-   BitBtn5.Visible:=false;
-   BitBtn11.Visible:=true;
+   Panel6.Visible:=false;
+   Panel8.Visible:=false;
+   Panel10.Visible:=false;
+   Panel12.Visible:=true;
+   Panel13.Visible:=false;
    BitBtn10.Visible:=false;
-   BitBtn6.Visible:=false;
-   BitBtn7.Visible:=false;
-   BitBtn16.Visible:=false;
-   Label24.Visible:=false;
-   Label25.Visible:=false;
-   Label26.Visible:=false;
-   Label27.Visible:=false;
-   Label28.Visible:=false;
-   Label29.Visible:=false;
-   Label30.Visible:=false;
-   Label31.Visible:=false;
-   Label32.Visible:=false;
-   Label33.Visible:=false;
-   Label34.Visible:=false;
-   Label35.Visible:=false;
-   Gauge10.Visible:=false;
-   Gauge1.Visible:=false;
-   Gauge2.Visible:=false;
-   Gauge3.Visible:=false;
-   Gauge4.Visible:=false;
-   Gauge5.Visible:=false;
-   Gauge6.Visible:=false;
-   Gauge7.Visible:=false;
-   Gauge8.Visible:=false;
-   Gauge9.Visible:=false;
-   Edit21.Visible:=false;
-   Edit22.Visible:=false;
-   Edit23.Visible:=false;
-   Edit24.Visible:=false;
-   Edit25.Visible:=false;
-   Edit26.Visible:=false;
-   Edit27.Visible:=false;
-   Edit28.Visible:=false;
-   Edit29.Visible:=false;
-   Edit30.Visible:=false;
-   Button8.Visible:=true;
-   Button9.Visible:=true;
-   Button10.Visible:=true;
-   Button11.Visible:=true;
-   Button20.Visible:=true;
-   Button29.Visible:=false;
-   Button30.Visible:=false;
-   Edit63.Visible:=false;
-   Edit64.Visible:=false;
-   Edit65.Visible:=false;
-   Edit66.Visible:=false;
-   Edit67.Visible:=false;
-   Edit68.Visible:=false;
-   Edit69.Visible:=false;
-   Edit70.Visible:=false;
-   Edit71.Visible:=false;
-   Edit72.Visible:=false;
-   Label1.Visible:=true;
-   Label3.Visible:=true;
-   Label23.Visible:=true;
-   Label36.Visible:=true;
-   Label115.Visible:=false;
+   BitBtn11.Visible:=true;
 end;
 
 procedure TForm1.BitBtn11Click(Sender: TObject);
 begin
-   BitBtn1.Visible:=true;          // Alle Bedieneinheiten für den Manuellmodus einschalten
-   BitBtn2.Visible:=true;
-   BitBtn3.Visible:=true;
-   BitBtn4.Visible:=true;
-   BitBtn5.Visible:=true;
-   BitBtn11.Visible:=false;
-   BitBtn10.Visible:=true;
-   BitBtn6.Visible:=true;
-   BitBtn7.Visible:=true;
-   BitBtn16.Visible:=true;
-   Label24.Visible:=true;
-   Label25.Visible:=true;
-   if (start=false) or ((CheckBox10.Checked=true) and (Edit20.Text<>'0')) then begin Gauge10.Visible:=true; Edit30.Visible:=true; Label35.Visible:=true; end;    // Gauge und Edit einschalten wenn Automodus nicht gestartet oder Rast aktiv
-   if (start=false) or ((CheckBox1.Checked=true) and (Edit2.Text<>'0')) then begin Gauge1.Visible:=true; Edit21.Visible:=true; Label26.Visible:=true; end;
-   if (start=false) or ((CheckBox2.Checked=true) and (Edit4.Text<>'0')) then begin Gauge2.Visible:=true; Edit22.Visible:=true; Label27.Visible:=true; end;
-   if (start=false) or ((CheckBox3.Checked=true) and (Edit6.Text<>'0')) then begin Gauge3.Visible:=true; Edit23.Visible:=true; Label28.Visible:=true; end;
-   if (start=false) or ((CheckBox4.Checked=true) and (Edit8.Text<>'0')) then begin Gauge4.Visible:=true; Edit24.Visible:=true; Label29.Visible:=true; end;
-   if (start=false) or ((CheckBox5.Checked=true) and (Edit10.Text<>'0')) then begin Gauge5.Visible:=true; Edit25.Visible:=true; Label30.Visible:=true; end;
-   if (start=false) or ((CheckBox6.Checked=true) and (Edit12.Text<>'0')) then begin Gauge6.Visible:=true; Edit26.Visible:=true; Label31.Visible:=true; end;
-   if (start=false) or ((CheckBox7.Checked=true) and (Edit14.Text<>'0')) then begin Gauge7.Visible:=true; Edit27.Visible:=true; Label32.Visible:=true; end;
-   if (start=false) or ((CheckBox8.Checked=true) and (Edit16.Text<>'0')) then begin Gauge8.Visible:=true; Edit28.Visible:=true; Label33.Visible:=true; end;
-   if (start=false) or ((CheckBox9.Checked=true) and (Edit18.Text<>'0')) then begin Gauge9.Visible:=true; Edit29.Visible:=true; Label34.Visible:=true; end;
-   Button8.Visible:=false;
-   Button9.Visible:=false;
-   Button10.Visible:=false;
-   Button11.Visible:=false;
-   Button20.Visible:=false;
+   Panel6.Visible:=true;
+   Panel8.Visible:=false;
+   Panel10.Visible:=false;
+   Panel12.Visible:=false;
+   Panel13.Visible:=true;
    Button29.Visible:=true;
-   Label115.Visible:=false;
+   Button30.Visible:=false;
+   BitBtn10.Visible:=true;
+   BitBtn11.Visible:=false;
 end;
 
 //LPT:
@@ -1101,7 +1046,7 @@ begin
   WriteLn(mySetup,'Einschaltpuls bis 100°C;'+Form.ComboBox24.Text);
   WriteLn(mySetup,'Ausschaltpuls bis 100°C;'+Form.ComboBox23.Text);
   WriteLn(mySetup,'Überschwingungsdämpfung;'+Form.ComboBox25.Text);
-  WriteLn(mySetup,'Schalthysterese;'+Form.ComboBox26.Text);
+  WriteLn(mySetup,'Schalthysterese Heizung;'+Form.ComboBox26.Text);
   if Form.CheckBox35.Checked=true then WriteLn(mySetup,'Batchwiederholung;1') else WriteLn(mySetup,'Batchwiederholung;0');
   dummyfilename:=stringreplace(Form.Edit62.Text,' ','€€€',[rfReplaceAll]);
   WriteLn(mySetup,'Temperatur-Textdatei;'+dummyfilename);
@@ -1109,6 +1054,10 @@ begin
   if Form.CheckBox39.Checked=true then WriteLn(mySetup,'Autostart Digitemp_variabel.bat;1') else WriteLn(mySetup,'Autostart Digitemp_variabel.bat;0');
   if Form.CheckBox40.Checked=true then WriteLn(mySetup,'Autostart Externe_Sensorsoftware.bat;1') else WriteLn(mySetup,'Autostart Externe_Sensorsoftware.bat;0');
   WriteLn(mySetup,'Aufheizrate pro Minute;'+Form.ComboBox27.Text);
+  WriteLn(mySetup,'Relais4;'+Relais4);
+  WriteLn(mySetup,'Schalthysterese Kühlung;'+Form.ComboBox29.Text);
+  if Temperaturrast=true then WriteLn(mySetup,'Rastbegin temperaturabhängig;1') else WriteLn(mySetup,'Rastbegin temperaturabhängig;0');
+  WriteLn(mySetup,'Rastzeiteinheit;'+Form.ComboBox30.Text);
   CloseFile(mySetup);
   Steuerung:=Form.ComboBox1.Text;
   LPTPort:=strtoint(Form.ComboBox8.Text);
@@ -1145,6 +1094,7 @@ begin
   Aus100:=strtoint(Form.ComboBox23.Text);
   GradientWert:=strtofloat(Form.ComboBox25.Text);
   Hysterese:=strtofloat(Form.ComboBox26.Text);
+  Hysterese2:=strtofloat(Form.ComboBox29.Text);
   Aufheizrate:=strtofloat(Form.ComboBox27.Text);
   If Steuerung='USB' then Form1.USB_Update_Tmr.Enabled:=true else Form1.USB_Update_Tmr.Enabled:=true;
   If Steuerung='BATCH' then Form1.Batch_Update_Tmr.Enabled:=true else Form1.Batch_Update_Tmr.Enabled:=true;
@@ -1241,6 +1191,17 @@ begin
       try if sl2[sl2.Count-1]='1' then Form.CheckBox40.Checked:=true else Form.CheckBox40.Checked:=false; except Form.CheckBox40.Checked:=false end;
       sl2.DelimitedText:=sl[40];
       try Aufheizrate:=strtofloat(sl2[sl2.Count-1]); Form.ComboBox27.Text:=sl2[sl2.Count-1]; except Aufheizrate:=1.0; end;
+      sl2.DelimitedText:=sl[41];
+      try Relais4:=sl2[sl2.Count-1]; except Relais4:='Kühlung'; end;
+      Form.ComboBox28.Text:='Heizung, Rührwerk, '+Relais4+', Alarm';
+      sl2.DelimitedText:=sl[42];
+      try Hysterese2:=strtofloat(sl2[sl2.Count-1]); Form.ComboBox29.Text:=sl2[sl2.Count-1]; except Hysterese2:=1.0; end;
+      sl2.DelimitedText:=sl[43];
+      try if sl2[sl2.Count-1]='1' then begin Form.ComboBox31.Text:='Bei Rasttemperaturüberschreitung'; Temperaturrast:=true; end
+      else begin Form.ComboBox31.Text:='Temperaturunabhängig'; Temperaturrast:=false; end; except
+      begin Form.ComboBox31.Text:='Bei Rasttemperaturüberschreitung'; Temperaturrast:=true; end; end;
+      sl2.DelimitedText:=sl[44];
+      try Form.ComboBox30.Text:=sl2[sl2.Count-1]; except Form.ComboBox30.Text:='Minuten'; end;
       AusIst:=Aus60;
       EinIst:=Ein60;
       If Steuerung='USB' then Form1.USB_Update_Tmr.Enabled:=true;
@@ -1485,17 +1446,17 @@ end;
 
 procedure TForm1.Button10Click(Sender: TObject);
 begin
-  if Button10.Caption='Pumpe Ein' then
+  if Button10.Caption=Relais4+' Ein' then
   begin
-    Button10.Caption:='Pumpe Aus';
+    Button10.Caption:=Relais4+' Aus';
     Pumpe:=PWert;
-    Image4.Picture.LoadFromFile(pfad + 'Graphics\Pumpe-ein.bmp');
+    Image4.Picture.LoadFromFile(pfad + 'Graphics\'+Relais4+'-ein.bmp');
   end
   else
   begin
-    Button10.Caption:='Pumpe Ein';
+    Button10.Caption:=Relais4+' Ein';
     Pumpe:=0;
-    Image4.Picture.LoadFromFile(pfad + 'Graphics\Pumpe-aus.bmp');
+    Image4.Picture.LoadFromFile(pfad + 'Graphics\'+Relais4+'-aus.bmp');
   end;
   Schalten(Form1);
 end;
@@ -1576,6 +1537,7 @@ procedure TForm1.FormCreate(Sender: TObject);
 var
   i: integer;
 begin
+  Relais4:='Kühlung';
   rast:=0;
   Form1.Top:=20;
   Form1.Left:=20;
@@ -1625,6 +1587,8 @@ begin
   Gradient:=0.0;
   Display(Form1, pfad + 'Display\display.txt');
   StartTimer.Enabled:=true;
+  Form1.ComboBox28Change(Sender);
+  Form1.ComboBox1Change(Sender);
 end;
 
 procedure TForm1.BitBtn9Click(Sender: TObject);
@@ -1654,6 +1618,9 @@ begin
   TimerHEin.Interval:=1000;
   TimerHAus.Interval:=1000;
   TimerHSet.Enabled:=true;
+  TimerKEin.Interval:=1000;
+  TimerKAus.Interval:=1000;
+  if relais4='Kühlung' then TimerKSet.Enabled:=true;
   BitBtn16.Enabled:=false;
   Form1.Button30Click(Sender);
   if start=false then
@@ -1663,8 +1630,12 @@ begin
       PauseLogTimerHEin:=false;
       PauseLogTimerHAus:=false;
       PauseLogTimerHSet:=false;
+      PauseLogTimerKEin:=false;
+      PauseLogTimerKAus:=false;
+      PauseLogTimerKSet:=false;
       PauseLogTimerREin:=false;
       PauseLogTimerRAus:=false;
+      if Relais4='Kühlung' then Image4.Picture.LoadFromFile(pfad + 'Graphics\Kühlung-aus.bmp');
       Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-aus.bmp');
       Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-aus.bmp');
       Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-aus.bmp');
@@ -1734,94 +1705,29 @@ begin
     else
     begin
       zeit3:=zeit3-zeitpause+GetTickCount;
+      if PauseLogTimerKEin=true then begin PauseLogTimerKEin:=false; TimerKEin.Enabled:=true; end;
+      if PauseLogTimerKAus=true then begin PauseLogTimerKAus:=false; TimerKAus.Enabled:=true; end;
+      if PauseLogTimerKSet=true then begin PauseLogTimerKSet:=false; TimerKSet.Enabled:=true; end;
       if PauseLogTimerHEin=true then begin PauseLogTimerHEin:=false; TimerHEin.Enabled:=true; end;
       if PauseLogTimerHAus=true then begin PauseLogTimerHAus:=false; TimerHAus.Enabled:=true; end;
       if PauseLogTimerHSet=true then begin PauseLogTimerHSet:=false; TimerHSet.Enabled:=true; end;
       if PauseLogTimerREin=true then begin PauseLogTimerREin:=false; Form1.TimerREinTimer(Sender); end;
-      if PauseLogTimerRAus=true then begin PauseLogTimerRAus:=false; Form1.TimerRAusTimer(Sender); end;
+      if PauseLogTimerRAus=true then begin PauseLogTimerRAus:=false; Form1.TimerREinTimer(Sender); end;
     end;
     restrastzeit:=strtoint(Edit21.Text)+strtoint(Edit22.Text)+strtoint(Edit23.Text)+strtoint(Edit24.Text)+strtoint(Edit25.Text)+strtoint(Edit26.Text)+strtoint(Edit27.Text)+strtoint(Edit28.Text)+strtoint(Edit29.Text)+strtoint(Edit30.Text);
     if (restrastzeit<>0) or (rastnullges=true) then
     begin
       Timer2.Enabled:=true;
-      Edit1.Enabled:=false;
-      Edit2.Enabled:=false;
-      Edit3.Enabled:=false;
-      Edit4.Enabled:=false;
-      Edit5.Enabled:=false;
-      Edit6.Enabled:=false;
-      Edit7.Enabled:=false;
-      Edit8.Enabled:=false;
-      Edit9.Enabled:=false;
-      Edit10.Enabled:=false;
-      Edit11.Enabled:=false;
-      Edit12.Enabled:=false;
-      Edit13.Enabled:=false;
-      Edit14.Enabled:=false;
-      Edit15.Enabled:=false;
-      Edit16.Enabled:=false;
-      Edit17.Enabled:=false;
-      Edit18.Enabled:=false;
-      Edit19.Enabled:=false;
-      Edit20.Enabled:=false;
-      Edit31.Enabled:=false;
-      Edit32.Enabled:=false;
-      Edit33.Enabled:=false;
-      Edit34.Enabled:=false;
-      Edit35.Enabled:=false;
-      Edit36.Enabled:=false;
-      Edit37.Enabled:=false;
-      Edit38.Enabled:=false;
-      Edit39.Enabled:=false;
-      Edit40.Enabled:=false;
-      Edit41.Enabled:=false;
-      Edit42.Enabled:=false;
-      Edit43.Enabled:=false;
-      Edit44.Enabled:=false;
-      Edit45.Enabled:=false;
-      Edit46.Enabled:=false;
-      Edit47.Enabled:=false;
-      Edit48.Enabled:=false;
-      Edit49.Enabled:=false;
-      Edit50.Enabled:=false;
-      CheckBox1.Enabled:=false;
-      CheckBox2.Enabled:=false;
-      CheckBox3.Enabled:=false;
-      CheckBox4.Enabled:=false;
-      CheckBox5.Enabled:=false;
-      CheckBox6.Enabled:=false;
-      CheckBox7.Enabled:=false;
-      CheckBox8.Enabled:=false;
-      CheckBox9.Enabled:=false;
-      CheckBox10.Enabled:=false;
-      CheckBox11.Enabled:=false;
-      CheckBox12.Enabled:=false;
-      CheckBox13.Enabled:=false;
-      CheckBox14.Enabled:=false;
-      CheckBox15.Enabled:=false;
-      CheckBox16.Enabled:=false;
-      CheckBox17.Enabled:=false;
-      CheckBox18.Enabled:=false;
-      CheckBox19.Enabled:=false;
-      CheckBox20.Enabled:=false;
-      CheckBox21.Enabled:=false;
-      CheckBox22.Enabled:=false;
-      CheckBox23.Enabled:=false;
-      CheckBox24.Enabled:=false;
-      CheckBox25.Enabled:=false;
-      CheckBox26.Enabled:=false;
-      CheckBox27.Enabled:=false;
-      CheckBox28.Enabled:=false;
-      CheckBox29.Enabled:=false;
-      CheckBox30.Enabled:=false;
+      Panel9.Enabled:=false;
+      Panel11.Enabled:=false;
       CheckBox32.Enabled:=false;
       Button8.Enabled:=false;
       Button9.Enabled:=false;
+      if relais4='Kühlung' then Button10.Enabled:=false;
       Button11.Enabled:=false;
       BitBtn8.Enabled:=false;
       BitBtn9.Enabled:=false;
       BitBtn12.Enabled:=false;
-      Button20.Enabled:=false;
       TabSheet4.TabVisible:=false;
       if checkbox32.checked=true then Button18.Enabled:=true;
       if checkbox32.checked=true then Button23.Enabled:=true;
@@ -1851,6 +1757,7 @@ begin
       TimerREin.Interval:=100+strtoint(Edit41.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit31.Text)*1000;
       if CheckBox21.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit1.Text);
+      if Temperaturrast=false then Rasttemp1:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit1.Text)) or (Rasttemp1=true) then Rasttemp1:=true else Timer2.Enabled:=false;
@@ -1871,6 +1778,7 @@ begin
       TimerREin.Interval:=100+strtoint(Edit42.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit32.Text)*1000;
       if CheckBox22.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit3.Text);
+      if Temperaturrast=false then Rasttemp2:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit3.Text)) or (Rasttemp2=true) then Rasttemp2:=true else Timer2.Enabled:=false;
@@ -1891,6 +1799,7 @@ begin
       TimerREin.Interval:=100+strtoint(Edit43.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit33.Text)*1000;
       if CheckBox23.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit5.Text);
+      if Temperaturrast=false then Rasttemp3:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit5.Text)) or (Rasttemp3=true) then Rasttemp3:=true else Timer2.Enabled:=false;
@@ -1911,6 +1820,7 @@ begin
       TimerREin.Interval:=100+strtoint(Edit44.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit34.Text)*1000;
       if CheckBox24.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit7.Text);
+      if Temperaturrast=false then Rasttemp4:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit7.Text)) or (Rasttemp4=true) then Rasttemp4:=true else Timer2.Enabled:=false;
@@ -1931,6 +1841,7 @@ begin
       TimerREin.Interval:=100+strtoint(Edit45.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit35.Text)*1000;
       if CheckBox25.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit9.Text);
+      if Temperaturrast=false then Rasttemp5:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit9.Text)) or (Rasttemp5=true) then Rasttemp5:=true else Timer2.Enabled:=false;
@@ -1951,6 +1862,7 @@ begin
       TimerREin.Interval:=100+strtoint(Edit46.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit36.Text)*1000;
       if CheckBox26.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit11.Text);
+      if Temperaturrast=false then Rasttemp6:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit11.Text)) or (Rasttemp6=true) then Rasttemp6:=true else Timer2.Enabled:=false;
@@ -1971,6 +1883,7 @@ begin
       TimerREin.Interval:=100+strtoint(Edit47.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit37.Text)*1000;
       if CheckBox27.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit13.Text);
+      if Temperaturrast=false then Rasttemp7:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit13.Text)) or (Rasttemp7=true) then Rasttemp7:=true else Timer2.Enabled:=false;
@@ -1991,6 +1904,7 @@ begin
       TimerREin.Interval:=100+strtoint(Edit48.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit38.Text)*1000;
       if CheckBox28.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit15.Text);
+      if Temperaturrast=false then Rasttemp8:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit15.Text)) or (Rasttemp8=true) then Rasttemp8:=true else Timer2.Enabled:=false;
@@ -2011,6 +1925,7 @@ begin
       TimerREin.Interval:=100+strtoint(Edit49.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit39.Text)*1000;
       if CheckBox29.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit17.Text);
+      if Temperaturrast=false then Rasttemp9:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit17.Text)) or (Rasttemp9=true) then Rasttemp9:=true else Timer2.Enabled:=false;
@@ -2031,6 +1946,7 @@ begin
       TimerREin.Interval:=100+strtoint(Edit50.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit40.Text)*1000;
       if CheckBox30.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit19.Text);
+      if Temperaturrast=false then Rasttemp10:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit19.Text)) or (Rasttemp10=true) then Rasttemp10:=true else Timer2.Enabled:=false;
@@ -2075,10 +1991,14 @@ end;
 
 procedure TForm1.BitBtn3Click(Sender: TObject);
 begin
+  if Relais4='Kühlung' then Form1.TimerKAusTimer(Sender);
   Form1.TimerHAusTimer(Sender);
   Form1.TimerRAusTimer(Sender);
   BitBtn16.Enabled:=true;
   Timer2.Enabled:=false;
+  TimerKEin.Enabled:=false;
+  TimerKAus.Enabled:=false;
+  TimerKSet.Enabled:=false;
   TimerHEin.Enabled:=false;
   TimerHAus.Enabled:=false;
   TimerHSet.Enabled:=false;
@@ -2094,85 +2014,17 @@ begin
   Rasttemp8:=false;
   Rasttemp9:=false;
   Rasttemp10:=false;
-  Edit1.Enabled:=true;
-  Edit2.Enabled:=true;
-  Edit3.Enabled:=true;
-  Edit4.Enabled:=true;
-  Edit5.Enabled:=true;
-  Edit6.Enabled:=true;
-  Edit7.Enabled:=true;
-  Edit8.Enabled:=true;
-  Edit9.Enabled:=true;
-  Edit10.Enabled:=true;
-  Edit11.Enabled:=true;
-  Edit12.Enabled:=true;
-  Edit13.Enabled:=true;
-  Edit14.Enabled:=true;
-  Edit15.Enabled:=true;
-  Edit16.Enabled:=true;
-  Edit17.Enabled:=true;
-  Edit18.Enabled:=true;
-  Edit19.Enabled:=true;
-  Edit20.Enabled:=true;
-  Edit31.Enabled:=true;
-  Edit32.Enabled:=true;
-  Edit33.Enabled:=true;
-  Edit34.Enabled:=true;
-  Edit35.Enabled:=true;
-  Edit36.Enabled:=true;
-  Edit37.Enabled:=true;
-  Edit38.Enabled:=true;
-  Edit39.Enabled:=true;
-  Edit40.Enabled:=true;
-  Edit41.Enabled:=true;
-  Edit42.Enabled:=true;
-  Edit43.Enabled:=true;
-  Edit44.Enabled:=true;
-  Edit45.Enabled:=true;
-  Edit46.Enabled:=true;
-  Edit47.Enabled:=true;
-  Edit48.Enabled:=true;
-  Edit49.Enabled:=true;
-  Edit50.Enabled:=true;
-  CheckBox1.Enabled:=true;
-  CheckBox2.Enabled:=true;
-  CheckBox3.Enabled:=true;
-  CheckBox4.Enabled:=true;
-  CheckBox5.Enabled:=true;
-  CheckBox6.Enabled:=true;
-  CheckBox7.Enabled:=true;
-  CheckBox8.Enabled:=true;
-  CheckBox9.Enabled:=true;
-  CheckBox10.Enabled:=true;
-  CheckBox11.Enabled:=true;
-  CheckBox12.Enabled:=true;
-  CheckBox13.Enabled:=true;
-  CheckBox14.Enabled:=true;
-  CheckBox15.Enabled:=true;
-  CheckBox16.Enabled:=true;
-  CheckBox17.Enabled:=true;
-  CheckBox18.Enabled:=true;
-  CheckBox19.Enabled:=true;
-  CheckBox20.Enabled:=true;
-  CheckBox21.Enabled:=true;
-  CheckBox22.Enabled:=true;
-  CheckBox23.Enabled:=true;
-  CheckBox24.Enabled:=true;
-  CheckBox25.Enabled:=true;
-  CheckBox26.Enabled:=true;
-  CheckBox27.Enabled:=true;
-  CheckBox28.Enabled:=true;
-  CheckBox29.Enabled:=true;
-  CheckBox30.Enabled:=true;
+  Panel9.Enabled:=true;
+  Panel11.Enabled:=true;
   CheckBox32.Enabled:=true;
   Button8.Enabled:=true;
   Button9.Enabled:=true;
+  Button10.Enabled:=true;
   Button11.Enabled:=true;
   BitBtn8.Enabled:=true;
   BitBtn9.Enabled:=true;
   BitBtn12.Enabled:=true;
   Button18.Enabled:=false;
-  Button20.Enabled:=true;
   Button23.Enabled:=false;
   Edit21.Visible:=true;
   Label26.Visible:=true;
@@ -2243,12 +2095,15 @@ begin
   if start=true then
   begin
     Form1.TimerHAusTimer(Sender);
-    Form1.TimerRAusTimer(Sender);
+    if TimerKEin.Enabled=true then begin PauseLogTimerKEin:=true; TimerKEin.Enabled:=false; end;
+    if TimerKAus.Enabled=true then begin PauseLogTimerKAus:=true; TimerKAus.Enabled:=false; end;
+    if TimerKSet.Enabled=true then begin PauseLogTimerKSet:=true; TimerKSet.Enabled:=false; end;
     if TimerHEin.Enabled=true then begin PauseLogTimerHEin:=true; TimerHEin.Enabled:=false; end;
     if TimerHAus.Enabled=true then begin PauseLogTimerHAus:=true; TimerHAus.Enabled:=false; end;
     if TimerHSet.Enabled=true then begin PauseLogTimerHSet:=true; TimerHSet.Enabled:=false; end;
-    if TimerREin.Enabled=true then begin PauseLogTimerREin:=true; TimerREin.Enabled:=false; end;
-    if TimerRAus.Enabled=true then begin PauseLogTimerRAus:=true; TimerRAus.Enabled:=false; end;
+    if TimerREin.Enabled=true then begin PauseLogTimerREin:=true; Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
+    if TimerRAus.Enabled=true then begin PauseLogTimerRAus:=true; Form1.TimerRAusTimer(Sender); TimerRAus.Enabled:=false; end;
+    if Relais4='Kühlung' then Form1.TimerKAusTimer(Sender);
     zeitpause:=GetTickCount;
     Timer2.Enabled:=false;
     stop:=false;
@@ -2895,7 +2750,6 @@ begin
   setupgeaendert;
 end;
 
-procedure TForm1.ComboBox1Change(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.ComboBox7Change(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.ComboBox16Change(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.ComboBox3Change(Sender: TObject); begin setupgeaendert; end;
@@ -2928,9 +2782,36 @@ procedure TForm1.ComboBox22Change(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.ComboBox24Change(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.ComboBox23Change(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.ComboBox25Change(Sender: TObject); begin setupgeaendert; end;
-procedure TForm1.ComboBox26Change(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.CheckBox35Click(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.ComboBox27Change(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.ComboBox30Change(Sender: TObject); begin setupgeaendert; end;
+
+procedure TForm1.ComboBox26Change(Sender: TObject); begin setupgeaendert; Hysterese:=strtofloat(Form1.ComboBox26.Text); end;
+procedure TForm1.ComboBox29Change(Sender: TObject); begin setupgeaendert; Hysterese2:=strtofloat(Form1.ComboBox29.Text); end;
+
+procedure TForm1.ComboBox1Change(Sender: TObject);
+begin
+  if ComboBox1.Text='USB' then
+  begin
+    GroupBox1.Visible:=false;
+    GroupBox2.Visible:=true;
+    GroupBox3.Visible:=false;
+  end
+  else if ComboBox1.Text='LPT' then
+  begin
+    GroupBox1.Visible:=false;
+    GroupBox2.Visible:=false;
+    GroupBox3.Visible:=true;
+  end
+  else
+  begin
+    GroupBox1.Visible:=true;
+    GroupBox2.Visible:=false;
+    GroupBox3.Visible:=false;
+  end;
+  setupgeaendert;
+end;
+
 
 procedure TForm1.Button26Click(Sender: TObject);
 begin
@@ -2987,76 +2868,16 @@ procedure TForm1.Button29Click(Sender: TObject);
 begin
    Button29.Visible:=false;
    Button30.Visible:=true;
-   Edit63.Visible:=true;
-   Edit64.Visible:=true;
-   Edit65.Visible:=true;
-   Edit66.Visible:=true;
-   Edit67.Visible:=true;
-   Edit68.Visible:=true;
-   Edit69.Visible:=true;
-   Edit70.Visible:=true;
-   Edit71.Visible:=true;
-   Edit72.Visible:=true;
-   Edit73.Visible:=true;
-   Edit74.Visible:=true;
-   Edit75.Visible:=true;
-   Edit76.Visible:=true;
-   Edit77.Visible:=true;
-   Edit78.Visible:=true;
-   Edit79.Visible:=true;
-   Edit80.Visible:=true;
-   Edit81.Visible:=true;
-   Edit82.Visible:=true;
-   Label1.Visible:=false;
-   Label3.Visible:=false;
-   Label23.Visible:=false;
-   Label24.Visible:=false;
-   Label25.Visible:=false;
-   Label36.Visible:=false;
-   Label115.Visible:=true;
+   Panel8.Visible:=true;
+   Panel10.Visible:=true;
 end;
 
 procedure TForm1.Button30Click(Sender: TObject);
 begin
-   CheckBox1.Caption:=Edit73.Text;
-   CheckBox2.Caption:=Edit74.Text;
-   CheckBox3.Caption:=Edit75.Text;
-   CheckBox4.Caption:=Edit76.Text;
-   CheckBox5.Caption:=Edit77.Text;
-   CheckBox6.Caption:=Edit78.Text;
-   CheckBox7.Caption:=Edit79.Text;
-   CheckBox8.Caption:=Edit80.Text;
-   CheckBox9.Caption:=Edit81.Text;
-   CheckBox10.Caption:=Edit82.Text;
    Button29.Visible:=true;
    Button30.Visible:=false;
-   Edit63.Visible:=false;
-   Edit64.Visible:=false;
-   Edit65.Visible:=false;
-   Edit66.Visible:=false;
-   Edit67.Visible:=false;
-   Edit68.Visible:=false;
-   Edit69.Visible:=false;
-   Edit70.Visible:=false;
-   Edit71.Visible:=false;
-   Edit72.Visible:=false;
-   Edit73.Visible:=false;
-   Edit74.Visible:=false;
-   Edit75.Visible:=false;
-   Edit76.Visible:=false;
-   Edit77.Visible:=false;
-   Edit78.Visible:=false;
-   Edit79.Visible:=false;
-   Edit80.Visible:=false;
-   Edit81.Visible:=false;
-   Edit82.Visible:=false;
-   Label1.Visible:=true;
-   Label3.Visible:=true;
-   Label23.Visible:=true;
-   Label24.Visible:=true;
-   Label25.Visible:=true;
-   Label36.Visible:=true;
-   Label115.Visible:=false;
+   Panel8.Visible:=false;
+   Panel10.Visible:=false;
 end;
 
 procedure TForm1.CheckBox38Click(Sender: TObject);
@@ -3099,7 +2920,8 @@ end;
 
 procedure TForm1.Button31Click(Sender: TObject);
 begin
-  if Button31.Caption='Gesamtrast' then Button31.Caption:='Gesamtheizzeit'
+  if (Button31.Caption='Gesamtrast') and (Temperaturrast=true) then Button31.Caption:='Gesamtheizzeit'
+  else if (Button31.Caption='Gesamtrast') and (Temperaturrast=false) then Button31.Caption:='ETA'
   else if Button31.Caption='Gesamtheizzeit' then Button31.Caption:='Gesamtprozeß'
   else if Button31.Caption='Gesamtprozeß' then Button31.Caption:='ETA'
   else if Button31.Caption='ETA' then Button31.Caption:='Gesamtrast';
@@ -3151,7 +2973,7 @@ begin
     end
     else if Button31.Caption='ETA' then
     begin
-      eta:=now+restprozesszeit/24/60;
+      if Temperaturrast=true then eta:=now+restprozesszeit/24/60 else eta:=now+restrastzeit/24/60;
       Panel5.Caption:=FormatDateTime('dd.mm.yyyy hh:nn', eta);
     end;
   end;
@@ -3242,6 +3064,103 @@ begin
     TimerAEin.Interval:=4000;
     TimerAAus.Interval:=1000;
   end;
+end;
+
+procedure TForm1.ComboBox28Change(Sender: TObject);
+var s2: TAreaSeries;
+begin
+  s2 := Form1.series5;
+  if ComboBox28.Text='Heizung, Rührwerk, Kühlung, Alarm' then
+  begin
+    Relais4:='Kühlung';
+    s2.Title:='Kühlung     ';
+  end
+  else
+  begin
+    Relais4:='Pumpe';
+    s2.Title:='Pumpe       ';
+  end;
+  if Pumpe=0 then
+  begin
+    Image4.Picture.LoadFromFile(pfad + 'Graphics\'+Relais4+'-Aus.bmp');
+    Button10.Caption:=Relais4+' Ein';
+  end
+  else
+  begin
+    Image4.Picture.LoadFromFile(pfad + 'Graphics\'+Relais4+'-Ein.bmp');
+    Button10.Caption:=Relais4+' Aus';
+  end;
+  Label69.Caption:=Relais4+' Ein:';
+  Label70.Caption:=Relais4+' Aus:';
+  Label78.Caption:=Relais4+' Relais:';
+  Label83.Caption:=Relais4+' Relais:';
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox31Change(Sender: TObject);
+begin
+  if ComboBox31.Text='Bei Rasttemperaturüberschreitung' then
+  begin
+    Temperaturrast:=true;
+  end
+  else
+  begin
+    Temperaturrast:=false;
+  end;
+  setupgeaendert;
+end;
+
+procedure TForm1.TimerKSetTimer(Sender: TObject);
+begin
+  Deltatemp2:=Tempfloat-Solltemp;
+  if (TimerKEin.Interval=999) and (CheckBox37.Checked=true) then Deltatemp2:=Deltatemp2-Hysterese2;
+  if Deltatemp2<=0 then
+  begin
+    if TimerKEin.Interval<>999 then
+    begin
+    TimerKEin.Interval:=999;
+    TimerKAus.Interval:=999;
+    Form1.TimerKAusTimer(Sender);
+    TimerKEin.Enabled:=false;
+    end;
+  end
+  else if Deltatemp2<TWert then
+  begin
+    if TimerKEin.Interval<>900 then
+    begin
+      TimerKEin.Interval:=900;
+      TimerKAus.Interval:=1500000;
+      Form1.TimerKEinTimer(Sender);
+    end;
+  end
+  else
+  begin
+    if TimerKEin.Interval<>900 then
+    begin
+      TimerKEin.Interval:=900;
+      TimerKAus.Interval:=1500000;
+      Form1.TimerKEinTimer(Sender);
+    end;
+  end;
+end;
+
+procedure TForm1.TimerKEinTimer(Sender: TObject);
+begin
+  Pumpe:=PWert;
+  Image4.Picture.LoadFromFile(pfad + 'Graphics\Kühlung-ein.bmp');
+  Schalten(Form1);
+  TimerKEin.Enabled:=false;
+  TimerKAus.Enabled:=true;
+end;
+
+procedure TForm1.TimerKAusTimer(Sender: TObject);
+begin
+  Pumpe:=0;
+  Image4.Picture.LoadFromFile(pfad + 'Graphics\Kühlung-aus.bmp');
+  LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
+  Schalten(Form1);
+  TimerKAus.Enabled:=false;
+  TimerKEin.Enabled:=true;
 end;
 
 end.

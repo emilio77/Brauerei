@@ -91,9 +91,9 @@ Rast 10
 Alarm pulsen
 TRUE
 FALSE
-TRUE
-TRUE
 FALSE
+FALSE
+TRUE
 Gesamtprozeﬂ
 FALSE
 FALSE

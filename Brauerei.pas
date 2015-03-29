@@ -403,6 +403,8 @@ type
     ComboBox30: TComboBox;
     ComboBox31: TComboBox;
     Label103: TLabel;
+    ComboBox32: TComboBox;
+    Label105: TLabel;
     procedure Button8Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
@@ -554,6 +556,7 @@ type
     procedure ComboBox29Change(Sender: TObject);
     procedure ComboBox31Change(Sender: TObject);
     procedure ComboBox30Change(Sender: TObject);
+    procedure ComboBox32Change(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -1549,7 +1552,7 @@ begin
   self.DoubleBuffered:=true;
   PageControl1.ActivePage:=TabSheet1;
   Application.HintHidePause := 3000;
-  if FileExists(pfad+'Setup\settings.txt') then
+  if FileExists(pfad+'Setup\settings.txt') { *Converted from FileExists* } then
   begin
     laden(Form1, pfad+'Setup\settings.txt');
     settings_laden(Form1, pfad+'Setup\settings.txt');
@@ -1563,7 +1566,7 @@ begin
   DecimalSeparator:='.';
   setup_laden(Form1);
   Form1.ComboBox2Change(Sender);
-  if DeleteFile(pfad+'Temperatur\' + tempdateiname) then
+  if DeleteFile(pfad+'Temperatur\' + tempdateiname) { *Converted from DeleteFile* } then
   begin
     AssignFile(myFile, pfad+'Temperatur\' + tempdateiname);
     ReWrite(myFile);
@@ -1589,6 +1592,8 @@ begin
   StartTimer.Enabled:=true;
   Form1.ComboBox28Change(Sender);
   Form1.ComboBox1Change(Sender);
+  Form1.ComboBox30Change(Sender);
+  Form1.ComboBox32Change(Sender);
 end;
 
 procedure TForm1.BitBtn9Click(Sender: TObject);
@@ -1744,9 +1749,12 @@ begin
   if (restrastzeit=0) and (Rastnullges=false) then Form1.BitBtn3Click(Sender);
 end;
 
+
 procedure TForm1.Timer2Timer(Sender: TObject);
-var i:integer;
+var i,zeitfaktor,ruehrzeitfaktor:integer;
 begin
+  if Combobox30.Text='Minuten' then zeitfaktor:=1 else zeitfaktor:=60;
+  if Combobox32.Text='Sekunden' then ruehrzeitfaktor:=1 else if Combobox32.Text='Minuten' then ruehrzeitfaktor:=60 else ruehrzeitfaktor:=3600;
   DecimalSeparator:='.';
   if AlarmEin=true then
   else if (Edit21.Text<>'0') or (Rastnull1=true) then
@@ -1754,15 +1762,15 @@ begin
     if Rasttemp1=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit41.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit31.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit41.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit31.Text)*1000*ruehrzeitfaktor;
       if CheckBox21.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit1.Text);
       if Temperaturrast=false then Rasttemp1:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit1.Text)) or (Rasttemp1=true) then Rasttemp1:=true else Timer2.Enabled:=false;
-    zeit2:=strtoint(Edit2.Text)*60000;
-    if (start=true) and (Rasttemp1=true) then Edit21.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000));
+    zeit2:=strtoint(Edit2.Text)*60000*zeitfaktor;
+    if (start=true) and (Rasttemp1=true) then Edit21.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000/zeitfaktor));
     if Rastnull1=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge1.Progress:=fortschritt;
     rast:=1;
@@ -1775,15 +1783,15 @@ begin
     if Rasttemp2=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit42.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit32.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit42.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit32.Text)*1000*ruehrzeitfaktor;
       if CheckBox22.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit3.Text);
       if Temperaturrast=false then Rasttemp2:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit3.Text)) or (Rasttemp2=true) then Rasttemp2:=true else Timer2.Enabled:=false;
-    zeit2:=strtoint(Edit4.Text)*60000;
-    if (start=true) and (Rasttemp2=true) then Edit22.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000));
+    zeit2:=strtoint(Edit4.Text)*60000*zeitfaktor;
+    if (start=true) and (Rasttemp2=true) then Edit22.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000/zeitfaktor));
     if Rastnull2=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge2.Progress:=fortschritt;
     rast:=2;
@@ -1796,15 +1804,15 @@ begin
     if Rasttemp3=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit43.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit33.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit43.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit33.Text)*1000*ruehrzeitfaktor;
       if CheckBox23.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit5.Text);
       if Temperaturrast=false then Rasttemp3:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit5.Text)) or (Rasttemp3=true) then Rasttemp3:=true else Timer2.Enabled:=false;
-    zeit2:=strtoint(Edit6.Text)*60000;
-    if (start=true) and (Rasttemp3=true) then Edit23.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000));
+    zeit2:=strtoint(Edit6.Text)*60000*zeitfaktor;
+    if (start=true) and (Rasttemp3=true) then Edit23.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000/zeitfaktor));
     if Rastnull3=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge3.Progress:=fortschritt;
     rast:=3;
@@ -1817,15 +1825,15 @@ begin
     if Rasttemp4=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit44.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit34.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit44.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit34.Text)*1000*ruehrzeitfaktor;
       if CheckBox24.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit7.Text);
       if Temperaturrast=false then Rasttemp4:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit7.Text)) or (Rasttemp4=true) then Rasttemp4:=true else Timer2.Enabled:=false;
-    zeit2:=strtoint(Edit8.Text)*60000;
-    if (start=true) and (Rasttemp4=true) then Edit24.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000));
+    zeit2:=strtoint(Edit8.Text)*60000*zeitfaktor;
+    if (start=true) and (Rasttemp4=true) then Edit24.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000/zeitfaktor));
     if Rastnull4=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge4.Progress:=fortschritt;
     rast:=4;
@@ -1838,15 +1846,15 @@ begin
     if Rasttemp5=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit45.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit35.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit45.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit35.Text)*1000*ruehrzeitfaktor;
       if CheckBox25.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit9.Text);
       if Temperaturrast=false then Rasttemp5:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit9.Text)) or (Rasttemp5=true) then Rasttemp5:=true else Timer2.Enabled:=false;
-    zeit2:=strtoint(Edit10.Text)*60000;
-    if (start=true) and (Rasttemp5=true) then Edit25.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000));
+    zeit2:=strtoint(Edit10.Text)*60000*zeitfaktor;
+    if (start=true) and (Rasttemp5=true) then Edit25.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000/zeitfaktor));
     if Rastnull5=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge5.Progress:=fortschritt;
     rast:=5;
@@ -1859,15 +1867,15 @@ begin
     if Rasttemp6=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit46.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit36.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit46.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit36.Text)*1000*ruehrzeitfaktor;
       if CheckBox26.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit11.Text);
       if Temperaturrast=false then Rasttemp6:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit11.Text)) or (Rasttemp6=true) then Rasttemp6:=true else Timer2.Enabled:=false;
-    zeit2:=strtoint(Edit12.Text)*60000;
-    if (start=true) and (Rasttemp6=true) then Edit26.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000));
+    zeit2:=strtoint(Edit12.Text)*60000*zeitfaktor;
+    if (start=true) and (Rasttemp6=true) then Edit26.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000/zeitfaktor));
     if Rastnull6=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge6.Progress:=fortschritt;
     rast:=6;
@@ -1880,15 +1888,15 @@ begin
     if Rasttemp7=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit47.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit37.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit47.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit37.Text)*1000*ruehrzeitfaktor;
       if CheckBox27.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit13.Text);
       if Temperaturrast=false then Rasttemp7:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit13.Text)) or (Rasttemp7=true) then Rasttemp7:=true else Timer2.Enabled:=false;
-    zeit2:=strtoint(Edit14.Text)*60000;
-    if (start=true) and (Rasttemp7=true) then Edit27.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000));
+    zeit2:=strtoint(Edit14.Text)*60000*zeitfaktor;
+    if (start=true) and (Rasttemp7=true) then Edit27.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000/zeitfaktor));
     if Rastnull7=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge7.Progress:=fortschritt;
     rast:=7;
@@ -1901,15 +1909,15 @@ begin
     if Rasttemp8=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit48.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit38.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit48.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit38.Text)*1000*ruehrzeitfaktor;
       if CheckBox28.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit15.Text);
       if Temperaturrast=false then Rasttemp8:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit15.Text)) or (Rasttemp8=true) then Rasttemp8:=true else Timer2.Enabled:=false;
-    zeit2:=strtoint(Edit16.Text)*60000;
-    if (start=true) and (Rasttemp8=true) then Edit28.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000));
+    zeit2:=strtoint(Edit16.Text)*60000*zeitfaktor;
+    if (start=true) and (Rasttemp8=true) then Edit28.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000/zeitfaktor));
     if Rastnull8=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge8.Progress:=fortschritt;
     rast:=8;
@@ -1922,15 +1930,15 @@ begin
     if Rasttemp9=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit49.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit39.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit49.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit39.Text)*1000*ruehrzeitfaktor;
       if CheckBox29.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit17.Text);
       if Temperaturrast=false then Rasttemp9:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit17.Text)) or (Rasttemp9=true) then Rasttemp9:=true else Timer2.Enabled:=false;
-    zeit2:=strtoint(Edit18.Text)*60000;
-    if (start=true) and (Rasttemp9=true) then Edit29.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000));
+    zeit2:=strtoint(Edit18.Text)*60000*zeitfaktor;
+    if (start=true) and (Rasttemp9=true) then Edit29.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000/zeitfaktor));
     if Rastnull9=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge9.Progress:=fortschritt;
     rast:=9;
@@ -1943,15 +1951,15 @@ begin
     if Rasttemp10=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit50.Text)*1000; TimerRAus.Interval:=100+strtoint(Edit40.Text)*1000;
+      TimerREin.Interval:=100+strtoint(Edit50.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit40.Text)*1000*ruehrzeitfaktor;
       if CheckBox30.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit19.Text);
       if Temperaturrast=false then Rasttemp10:=true;
     end;
     restrastzeit:=GetTickCount-zeit3;
     if (TempFloat>=strtoint(Edit19.Text)) or (Rasttemp10=true) then Rasttemp10:=true else Timer2.Enabled:=false;
-    zeit2:=strtoint(Edit20.Text)*60000;
-    if (start=true) and (Rasttemp10=true) then Edit30.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000));
+    zeit2:=strtoint(Edit20.Text)*60000*zeitfaktor;
+    if (start=true) and (Rasttemp10=true) then Edit30.Text:=inttostr(round((zeit2-restrastzeit+29999)/60000/zeitfaktor));
     if Rastnull10=false then fortschritt:=round(restrastzeit/zeit2*100) else fortschritt:=0;
     Gauge10.Progress:=fortschritt;
     rast:=10;
@@ -2784,10 +2792,45 @@ procedure TForm1.ComboBox23Change(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.ComboBox25Change(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.CheckBox35Click(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.ComboBox27Change(Sender: TObject); begin setupgeaendert; end;
-procedure TForm1.ComboBox30Change(Sender: TObject); begin setupgeaendert; end;
 
 procedure TForm1.ComboBox26Change(Sender: TObject); begin setupgeaendert; Hysterese:=strtofloat(Form1.ComboBox26.Text); end;
 procedure TForm1.ComboBox29Change(Sender: TObject); begin setupgeaendert; Hysterese2:=strtofloat(Form1.ComboBox29.Text); end;
+
+procedure TForm1.ComboBox30Change(Sender: TObject);
+var i:integer;
+    labelstr:string;
+begin
+  if ComboBox30.Text='Stunden' then
+  begin
+    for i:= 4 to 60 do
+    begin
+      if (FindComponent('Label' + IntToStr(i)) as TLabel).Caption = 'min.' then
+      (FindComponent('Label' + IntToStr(i)) as TLabel).Caption := 'std.';
+    end;
+  end
+  else
+  begin
+    for i:= 4 to 60 do
+    begin
+      if (FindComponent('Label' + IntToStr(i)) as TLabel).Caption = 'std.' then
+      (FindComponent('Label' + IntToStr(i)) as TLabel).Caption := 'min.';
+    end;
+  end;
+  setupgeaendert;
+end;
+
+procedure TForm1.ComboBox32Change(Sender: TObject);
+var i:integer;
+    labelstr:string;
+begin
+  if ComboBox32.Text='Stunden' then
+    for i:= 37 to 46 do (FindComponent('Label' + IntToStr(i)) as TLabel).Caption := 'std.'
+  else if ComboBox32.Text='Minuten' then
+    for i:= 37 to 46 do (FindComponent('Label' + IntToStr(i)) as TLabel).Caption := 'min.'
+  else
+    for i:= 37 to 46 do (FindComponent('Label' + IntToStr(i)) as TLabel).Caption := 'sek.';
+  setupgeaendert;
+end;
 
 procedure TForm1.ComboBox1Change(Sender: TObject);
 begin
@@ -3162,6 +3205,8 @@ begin
   TimerKAus.Enabled:=false;
   TimerKEin.Enabled:=true;
 end;
+
+
 
 end.
 

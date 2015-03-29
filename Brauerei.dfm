@@ -14556,30 +14556,37 @@ object Form1: TForm1
         Caption = 'Steuerungsparameter'
         TabOrder = 14
         object Label99: TLabel
-          Left = 16
+          Left = 8
           Top = 28
           Width = 109
           Height = 13
           Caption = 'Relaisverwendung:'
         end
         object Label101: TLabel
-          Left = 32
+          Left = 24
           Top = 92
           Width = 94
           Height = 13
           Caption = 'Rastzeit-Einheit:'
         end
         object Label103: TLabel
-          Left = 40
+          Left = 32
           Top = 60
           Width = 82
           Height = 13
           Caption = 'Rastzeit-Start:'
         end
+        object Label105: TLabel
+          Left = 232
+          Top = 92
+          Width = 95
+          Height = 13
+          Caption = 'R'#252'hrzeit-Einheit:'
+        end
         object ComboBox28: TComboBox
-          Left = 136
+          Left = 128
           Top = 25
-          Width = 281
+          Width = 289
           Height = 21
           ItemHeight = 13
           TabOrder = 0
@@ -14590,9 +14597,9 @@ object Form1: TForm1
             'Heizung, R'#252'hrwerk, Pumpe, Alarm')
         end
         object ComboBox30: TComboBox
-          Left = 136
+          Left = 128
           Top = 89
-          Width = 281
+          Width = 81
           Height = 21
           ItemHeight = 13
           TabOrder = 1
@@ -14603,9 +14610,9 @@ object Form1: TForm1
             'Stunden')
         end
         object ComboBox31: TComboBox
-          Left = 136
+          Left = 128
           Top = 57
-          Width = 281
+          Width = 289
           Height = 21
           ItemHeight = 13
           TabOrder = 2
@@ -14614,6 +14621,20 @@ object Form1: TForm1
           Items.Strings = (
             'Bei Rasttemperatur'#252'berschreitung'
             'Temperaturunabh'#228'ngig')
+        end
+        object ComboBox32: TComboBox
+          Left = 336
+          Top = 89
+          Width = 81
+          Height = 21
+          ItemHeight = 13
+          TabOrder = 3
+          Text = 'Sekunden'
+          OnChange = ComboBox32Change
+          Items.Strings = (
+            'Sekunden'
+            'Minuten'
+            'Stunden')
         end
       end
     end

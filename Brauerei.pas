@@ -1061,6 +1061,7 @@ begin
   WriteLn(mySetup,'Schalthysterese Kühlung;'+Form.ComboBox29.Text);
   if Temperaturrast=true then WriteLn(mySetup,'Rastbegin temperaturabhängig;1') else WriteLn(mySetup,'Rastbegin temperaturabhängig;0');
   WriteLn(mySetup,'Rastzeiteinheit;'+Form.ComboBox30.Text);
+  WriteLn(mySetup,'Rührzeiteinheit;'+Form.ComboBox32.Text);
   CloseFile(mySetup);
   Steuerung:=Form.ComboBox1.Text;
   LPTPort:=strtoint(Form.ComboBox8.Text);
@@ -1205,6 +1206,8 @@ begin
       begin Form.ComboBox31.Text:='Bei Rasttemperaturüberschreitung'; Temperaturrast:=true; end; end;
       sl2.DelimitedText:=sl[44];
       try Form.ComboBox30.Text:=sl2[sl2.Count-1]; except Form.ComboBox30.Text:='Minuten'; end;
+      sl2.DelimitedText:=sl[45];
+      try Form.ComboBox32.Text:=sl2[sl2.Count-1]; except Form.ComboBox32.Text:='Sekunden'; end;
       AusIst:=Aus60;
       EinIst:=Ein60;
       If Steuerung='USB' then Form1.USB_Update_Tmr.Enabled:=true;
@@ -1552,7 +1555,7 @@ begin
   self.DoubleBuffered:=true;
   PageControl1.ActivePage:=TabSheet1;
   Application.HintHidePause := 3000;
-  if FileExists(pfad+'Setup\settings.txt') { *Converted from FileExists* } then
+  if FileExists(pfad+'Setup\settings.txt') then
   begin
     laden(Form1, pfad+'Setup\settings.txt');
     settings_laden(Form1, pfad+'Setup\settings.txt');
@@ -1566,7 +1569,7 @@ begin
   DecimalSeparator:='.';
   setup_laden(Form1);
   Form1.ComboBox2Change(Sender);
-  if DeleteFile(pfad+'Temperatur\' + tempdateiname) { *Converted from DeleteFile* } then
+  if DeleteFile(pfad+'Temperatur\' + tempdateiname) then
   begin
     AssignFile(myFile, pfad+'Temperatur\' + tempdateiname);
     ReWrite(myFile);

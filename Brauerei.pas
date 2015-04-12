@@ -7,7 +7,7 @@ uses
   Dialogs, Gauges, StdCtrls, Menus, ExtCtrls, jpeg, TeeProcs, TeEngine,
   Chart, DbChart, ComCtrls, Grids, Series, OleCtrls, SHDocVw, ShellApi,
   Printers,synaser, Buttons, Timer;
-                                    
+
 type
   FT_Result = Integer;
   TForm1 = class(TForm)
@@ -399,12 +399,16 @@ type
     GroupBox8: TGroupBox;
     ComboBox28: TComboBox;
     Label99: TLabel;
+    Panel14: TPanel;
     Label101: TLabel;
-    ComboBox30: TComboBox;
-    ComboBox31: TComboBox;
     Label103: TLabel;
+    ComboBox31: TComboBox;
+    ComboBox30: TComboBox;
     ComboBox32: TComboBox;
     Label105: TLabel;
+    ComboBox33: TComboBox;
+    Label106: TLabel;
+    CheckBox31: TCheckBox;
     procedure Button8Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
@@ -557,18 +561,23 @@ type
     procedure ComboBox31Change(Sender: TObject);
     procedure ComboBox30Change(Sender: TObject);
     procedure ComboBox32Change(Sender: TObject);
+    procedure ComboBox33Change(Sender: TObject);
+    procedure CheckBox31Click(Sender: TObject);
   private
     { Private-Deklarationen }
   public
     { Public-Deklarationen }
   end;
 
+const
+  Version = 'V01.50 - Trial';
+
 var
   Form1: TForm1;
   sl,sl2: TStringList;
   Temperatur,xwert,Graphic,LogName,Steuerung,BHEin,BHAus,BREin,BRAus,BPEin,BPAus,
   BAEin,BAAus,TimeTempStr,TimeTempStore,USBPort,USBTyp,pfad, tempdateiname,
-  sensorverzoegerung, Relais4: String;
+  sensorverzoegerung,Relais4,Rezeptname: String;
   Tempfloat,Solltemp,Deltatemp,Deltatemp2,SimTemp,TWert,Gradient, GradientWert,
   GradientUebergabe, Hysterese, Hysterese2, Aufheizrate: Extended;
   Ruehrwerk,Heizung,Alarm,Pumpe,HWert,RWert,PWert,AWert,RStore,PStore,HStore,
@@ -577,7 +586,7 @@ var
   Aus70,Ein80,Aus80,Ein90,Aus90,Ein100,Aus100,EinIst,AusIst,USBHIntWert,
   USBRIntWert,USBPIntWert,USBAIntWert,DeviceIndex,sensorreset,
   StartTemp,maxsolltemp,gesheizzeit,restheizzeit,gesprozesszeit,restprozesszeit,
-  restheizgauge,restprozessgauge, Timerstartbatstatus: integer;
+  restheizgauge,restprozessgauge,Timerstartbatstatus,spanne: integer;
   LPTPort: word;
   myFile,myLogFile,SimFile,mySetup,myDisplay: TextFile;
   pause,start,stop,AlarmEin,Rasttemp1,Rasttemp2,Rasttemp3,Rasttemp4,Rasttemp5,
@@ -1062,6 +1071,7 @@ begin
   if Temperaturrast=true then WriteLn(mySetup,'Rastbegin temperaturabhängig;1') else WriteLn(mySetup,'Rastbegin temperaturabhängig;0');
   WriteLn(mySetup,'Rastzeiteinheit;'+Form.ComboBox30.Text);
   WriteLn(mySetup,'Rührzeiteinheit;'+Form.ComboBox32.Text);
+  WriteLn(mySetup,'Logging-Takt;'+stringreplace(Form.ComboBox33.Text,' ','€€€',[rfReplaceAll]));
   CloseFile(mySetup);
   Steuerung:=Form.ComboBox1.Text;
   LPTPort:=strtoint(Form.ComboBox8.Text);
@@ -1208,6 +1218,8 @@ begin
       try Form.ComboBox30.Text:=sl2[sl2.Count-1]; except Form.ComboBox30.Text:='Minuten'; end;
       sl2.DelimitedText:=sl[45];
       try Form.ComboBox32.Text:=sl2[sl2.Count-1]; except Form.ComboBox32.Text:='Sekunden'; end;
+      sl2.DelimitedText:=sl[46];
+      try Form.ComboBox33.Text:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ComboBox33.Text:='5 Sekunden'; end;
       AusIst:=Aus60;
       EinIst:=Ein60;
       If Steuerung='USB' then Form1.USB_Update_Tmr.Enabled:=true;
@@ -1526,9 +1538,10 @@ begin
   sl3.Delimiter:=';';
   sl3.DelimitedText:=TimeTempStr;
   tfs:=sl3[sl3.Count-1];
-  Temperatur:=tfs+' °C';
   Tempfloat:=strtofloat(tfs);
   tf:=strtofloat(tfs);
+  tfs:=FloatToStrF(tf, ffFixed, 3, 1);
+  Temperatur:=tfs+' °C';
   tfs:=floattostr(round(tf));
   if tf<0 then tfs:='0';
   if tf>100 then tfs:='100';
@@ -1543,6 +1556,7 @@ procedure TForm1.FormCreate(Sender: TObject);
 var
   i: integer;
 begin
+  Rezeptname:='noname';
   Relais4:='Kühlung';
   rast:=0;
   Form1.Top:=20;
@@ -1597,6 +1611,8 @@ begin
   Form1.ComboBox1Change(Sender);
   Form1.ComboBox30Change(Sender);
   Form1.ComboBox32Change(Sender);
+  Form1.ComboBox33Change(Sender);
+  form1.Caption:='Brauerei '+ Version
 end;
 
 procedure TForm1.BitBtn9Click(Sender: TObject);
@@ -1605,6 +1621,8 @@ begin
   begin
     if DeleteFile(SaveDialog1.FileName) then MessageDlgPos('Rezept wurde überschrieben !', mtInformation, [mbOK], 0, Form1.Left+350, Form1.Top+250);
     speichern(Form1, SaveDialog1.FileName);
+  	Rezeptname:= changefileext(ExtractFileName(SaveDialog1.FileName),'');   //hinzu
+    form1.Caption:='Brauerei '+ Version + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
     CloseFile(myFile);
   end;
 end;
@@ -1615,6 +1633,8 @@ begin
   if OpenDialog1.Execute then
   begin;
     laden(Form1, OpenDialog1.FileName);
+  	Rezeptname:= changefileext(ExtractFileName(OpenDialog1.FileName),'');   //hinzu
+    form1.Caption:='Brauerei '+ Version + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
     CloseFile(myFile);
   end;
 end;
@@ -1650,7 +1670,7 @@ begin
       Schalten(Form1);
       if checkbox32.Checked=true then
       begin
-        LogName:=FormatDateTime('ddmmyyyyhhnnss', now);
+        LogName:=Rezeptname+'_'+FormatDateTime('ddmmyyyyhhnnss', now);
         LogTimer.Enabled:=true;
         LogName:=pfad + 'log\log_'+LogName+'.log';
         AssignFile(myLogFile, LogName);
@@ -2139,25 +2159,25 @@ procedure TForm1.BitBtn5Click(Sender: TObject);
 begin
   if (start=true) then
   begin
-    if rasttemp1=false then rasttemp1:=true
+    if rasttemp1=false then begin rasttemp1:=true; zeit3:=GetTickCount; end
     else if (Edit21.Text<>'0') or (Rastnull1=true) then begin Edit21.Text:='0'; Gauge1.Progress:=100; Rasttemp1:=true; Rastnull1:=false; end
-    else if rasttemp2=false then rasttemp2:=true
+    else if rasttemp2=false then begin rasttemp2:=true; zeit3:=GetTickCount; end
     else if (Edit22.Text<>'0') or (Rastnull2=true) then begin Edit22.Text:='0'; Gauge2.Progress:=100; Rasttemp2:=true; Rastnull2:=false; end
-    else if rasttemp3=false then rasttemp3:=true
+    else if rasttemp3=false then begin rasttemp3:=true; zeit3:=GetTickCount; end
     else if (Edit23.Text<>'0') or (Rastnull3=true) then begin Edit23.Text:='0'; Gauge3.Progress:=100; Rasttemp3:=true; Rastnull3:=false; end
-    else if rasttemp4=false then rasttemp4:=true
+    else if rasttemp4=false then begin rasttemp4:=true; zeit3:=GetTickCount; end
     else if (Edit24.Text<>'0') or (Rastnull4=true) then begin Edit24.Text:='0'; Gauge4.Progress:=100; Rasttemp4:=true; Rastnull4:=false; end
-    else if rasttemp5=false then rasttemp5:=true
+    else if rasttemp5=false then begin rasttemp5:=true; zeit3:=GetTickCount; end
     else if (Edit25.Text<>'0') or (Rastnull5=true) then begin Edit25.Text:='0'; Gauge5.Progress:=100; Rasttemp5:=true; Rastnull5:=false; end
-    else if rasttemp6=false then rasttemp6:=true
+    else if rasttemp6=false then begin rasttemp6:=true; zeit3:=GetTickCount; end
     else if (Edit26.Text<>'0') or (Rastnull6=true) then begin Edit26.Text:='0'; Gauge6.Progress:=100; Rasttemp6:=true; Rastnull6:=false; end
-    else if rasttemp7=false then rasttemp7:=true
+    else if rasttemp7=false then begin rasttemp7:=true; zeit3:=GetTickCount; end
     else if (Edit27.Text<>'0') or (Rastnull7=true) then begin Edit27.Text:='0'; Gauge7.Progress:=100; Rasttemp7:=true; Rastnull7:=false; end
-    else if rasttemp8=false then rasttemp8:=true
+    else if rasttemp8=false then begin rasttemp8:=true; zeit3:=GetTickCount; end
     else if (Edit28.Text<>'0') or (Rastnull8=true) then begin Edit28.Text:='0'; Gauge8.Progress:=100; Rasttemp8:=true; Rastnull8:=false; end
-    else if rasttemp9=false then rasttemp9:=true
+    else if rasttemp9=false then begin rasttemp9:=true; zeit3:=GetTickCount; end
     else if (Edit29.Text<>'0') or (Rastnull9=true) then begin Edit29.Text:='0'; Gauge9.Progress:=100; Rasttemp9:=true; Rastnull9:=false; end
-    else if rasttemp10=false then rasttemp10:=true
+    else if rasttemp10=false then begin rasttemp10:=true; zeit3:=GetTickCount; end
     else if (Edit30.Text<>'0') or (Rastnull10=true) then begin Edit30.Text:='0'; Gauge10.Progress:=100; Rasttemp10:=true; Rastnull10:=false; end;
     restrastzeit:=strtoint(Edit21.Text)+strtoint(Edit22.Text)+strtoint(Edit23.Text)+strtoint(Edit24.Text)+strtoint(Edit25.Text)+strtoint(Edit26.Text)+strtoint(Edit27.Text)+strtoint(Edit28.Text)+strtoint(Edit29.Text)+strtoint(Edit30.Text);
     if restrastzeit=0 then Form1.BitBtn3Click(Sender);
@@ -2312,7 +2332,7 @@ end;
 procedure TForm1.MessageTimerTimer(Sender: TObject);
 var
   buttonSelected, position:integer;
-  rasttext:string;
+  rasttext, alarmspeicher:string;
 begin
   if rast=1 then rasttext:=Edit63.Text
   else if rast=2 then rasttext:=Edit64.Text
@@ -2326,6 +2346,7 @@ begin
   else if rast=10 then rasttext:=Edit72.Text;
   if AlarmEin=true then
   begin
+    Alarmspeicher:=button1.Caption;
     repeat
     begin
       Form1.TimerAEinTimer(Sender);
@@ -2338,6 +2359,7 @@ begin
       if buttonSelected = mrAbort then Form1.Button1Click(Sender);
     end;
     until buttonSelected = mrOK;
+    repeat Form1.Button1Click(Sender) until button1.Caption=Alarmspeicher;
     AlarmEin:=false;
     MessageTimer.Enabled:=true;
     Form1.TimerAAusTimer(Sender);
@@ -2370,8 +2392,8 @@ procedure TForm1.BitBtn12Click(Sender: TObject);
 begin
   BitBtn15.Enabled:=false;
   BitBtn14.Enabled:=false;
-  Button19.Caption:='1h Zoom';
-  Button24.Caption:='30min Zoom';
+  Button19.Caption:='Zoom out';
+  Button24.Caption:='Zoom in';
   OpenDialog1.FileName:='';
   OpenDialog1.Filter:='Log-Datei|*.log|Alle Dateien|*.*';
   OpenDialog1.InitialDir:=pfad + 'log';
@@ -2386,10 +2408,9 @@ end;
 procedure TForm1.PageControl1Change(Sender: TObject);
 begin
   DecimalSeparator:='.';
+  Button19.Enabled:=false;
   BitBtn15.Enabled:=false;
   BitBtn14.Enabled:=false;
-  Button19.Caption:='1h Zoom';
-  Button24.Caption:='30min Zoom';
   try
     if (start=true) and (CheckBox32.Checked=true) then
     begin
@@ -2437,11 +2458,11 @@ begin
       Progressbar10.Visible:=false;
       Label61.Visible:=false;
     end;
-    if StringGrid1.RowCount>=720 then Button19.Enabled:=true else Button19.Enabled:=false;
-    if StringGrid1.RowCount>=360 then Button24.Enabled:=true else Button24.Enabled:=false;
+    if StringGrid1.RowCount>=21 then Button24.Enabled:=true else Button24.Enabled:=false;
     webbrowser1.Navigate(pfad + 'Help\Help.html');
   except
   end;
+  Form1.ComboBox1Change(Sender);
 end;
 
 procedure TForm1.Edit55KeyPress(Sender: TObject; var Key: Char);
@@ -2467,40 +2488,25 @@ begin
   Form1.PageControl1Change(Sender);
 end;
 
-procedure TForm1.Button19Click(Sender: TObject);
-begin
-  if Button19.Caption='1h Zoom' then
-  begin
-    Button24.Caption:='30min Zoom';
-    BitBtn15.Enabled:=true;
-    BitBtn14.Enabled:=true;
-    Button19.Caption:='Zoom out';
-    startpunkt:=1;
-    endpunkt:=720;
-    writechart(Form1);
-  end
-  else
-  begin
-    BitBtn15.Enabled:=false;
-    BitBtn14.Enabled:=false;
-    Button19.Caption:='1h Zoom';
-    Form1.PageControl1Change(Sender);
-  end;
-end;
-
 procedure TForm1.BitBtn14Click(Sender: TObject);
 begin
-  startpunkt:=startpunkt+120;
-  endpunkt:=endpunkt+120;
-  if StringGrid1.RowCount-1<endpunkt then begin endpunkt:=StringGrid1.RowCount-1; if button24.caption='Zoom out' then startpunkt:=endpunkt-359 else startpunkt:=endpunkt-719; end;
+  spanne:=endpunkt-startpunkt;
+  startpunkt:=startpunkt+round(spanne/2);
+  endpunkt:=endpunkt+round(spanne/2);
+  if StringGrid1.RowCount-1<endpunkt then begin startpunkt:=StringGrid1.RowCount-1-spanne; endpunkt:=StringGrid1.RowCount-1; end;
+  if StringGrid1.RowCount-1=endpunkt then BitBtn14.Enabled:=false;
+  if startpunkt>1 then BitBtn15.Enabled:=true else BitBtn15.Enabled:=false;
   writechart(Form1);
 end;
 
 procedure TForm1.BitBtn15Click(Sender: TObject);
 begin
-  startpunkt:=startpunkt-120;
-  endpunkt:=endpunkt-120;
-  if startpunkt<1 then begin if button24.caption='Zoom out' then endpunkt:=360 else endpunkt:=720; startpunkt:=1; end;
+  spanne:=endpunkt-startpunkt;
+  startpunkt:=startpunkt-round(spanne/2);
+  endpunkt:=endpunkt-round(spanne/2);
+  if startpunkt<=1 then begin endpunkt:=spanne+1; startpunkt:=1; end;
+  if startpunkt<=1 then BitBtn15.Enabled:=false;
+  if endpunkt<StringGrid1.RowCount-1 then BitBtn14.Enabled:=true else BitBtn14.Enabled:=false;
   writechart(Form1);
 end;
 
@@ -2608,24 +2614,36 @@ begin
   Form1.PageControl1Change(Sender);
 end;
 
+procedure TForm1.Button19Click(Sender: TObject);
+begin
+  spanne:=endpunkt-startpunkt;
+  if (startpunkt>1) or (endpunkt<StringGrid1.RowCount-1) then
+  begin
+    startpunkt:=startpunkt-(round(spanne/2));
+    endpunkt:=endpunkt+(round(spanne/2));
+    if startpunkt<1 then begin endpunkt:=endpunkt-startpunkt; startpunkt:=1; end;
+    if endpunkt>StringGrid1.RowCount-1 then begin startpunkt:=startpunkt-endpunkt+StringGrid1.RowCount-1; endpunkt:=StringGrid1.RowCount-1; end;
+    if startpunkt<1 then startpunkt:=1;
+    if endpunkt-startpunkt>20 then Button24.Enabled:=true;
+    if (startpunkt=1) and (endpunkt=StringGrid1.RowCount-1) then begin Button19.Enabled:=false; BitBtn15.Enabled:=false; BitBtn14.Enabled:=false; end;
+    writechart(Form1);
+    if endpunkt<StringGrid1.RowCount-1 then BitBtn14.Enabled:=true else BitBtn14.Enabled:=false;
+    if startpunkt>1 then BitBtn15.Enabled:=true else BitBtn15.Enabled:=false;
+  end;
+end;
+
 procedure TForm1.Button24Click(Sender: TObject);
 begin
-  if Button24.Caption='30min Zoom' then
+  spanne:=endpunkt-startpunkt;
+  if spanne>20 then
   begin
-    Button19.Caption:='1h Zoom';
     BitBtn15.Enabled:=true;
     BitBtn14.Enabled:=true;
-    Button24.Caption:='Zoom out';
-    startpunkt:=1;
-    endpunkt:=360;
+    startpunkt:=startpunkt+(round(spanne/4));
+    endpunkt:=endpunkt-(round((spanne)/4));
+    Button19.Enabled:=true;
     writechart(Form1);
-  end
-  else
-  begin
-    BitBtn15.Enabled:=false;
-    BitBtn14.Enabled:=false;
-    Button24.Caption:='30min Zoom';
-    Form1.PageControl1Change(Sender);
+    if endpunkt-startpunkt<20 then Button24.Enabled:=false;
   end;
 end;
 
@@ -2819,6 +2837,8 @@ begin
       (FindComponent('Label' + IntToStr(i)) as TLabel).Caption := 'min.';
     end;
   end;
+  Button31.Caption:='ETA';
+  Form1.Button31Click(Sender);
   setupgeaendert;
 end;
 
@@ -2920,6 +2940,16 @@ end;
 
 procedure TForm1.Button30Click(Sender: TObject);
 begin
+   CheckBox1.Caption:=Edit73.Text;
+   CheckBox2.Caption:=Edit74.Text;
+   CheckBox3.Caption:=Edit75.Text;
+   CheckBox4.Caption:=Edit76.Text;
+   CheckBox5.Caption:=Edit77.Text;
+   CheckBox6.Caption:=Edit78.Text;
+   CheckBox7.Caption:=Edit79.Text;
+   CheckBox8.Caption:=Edit80.Text;
+   CheckBox9.Caption:=Edit81.Text;
+   CheckBox10.Caption:=Edit82.Text;
    Button29.Visible:=true;
    Button30.Visible:=false;
    Panel8.Visible:=false;
@@ -2966,8 +2996,9 @@ end;
 
 procedure TForm1.Button31Click(Sender: TObject);
 begin
-  if (Button31.Caption='Gesamtrast') and (Temperaturrast=true) then Button31.Caption:='Gesamtheizzeit'
+  if (Button31.Caption='Gesamtrast') and (ComboBox30.Text='Stunden') then Button31.Caption:='ETA'
   else if (Button31.Caption='Gesamtrast') and (Temperaturrast=false) then Button31.Caption:='ETA'
+  else if (Button31.Caption='Gesamtrast') then Button31.Caption:='Gesamtheizzeit'
   else if Button31.Caption='Gesamtheizzeit' then Button31.Caption:='Gesamtprozeß'
   else if Button31.Caption='Gesamtprozeß' then Button31.Caption:='ETA'
   else if Button31.Caption='ETA' then Button31.Caption:='Gesamtrast';
@@ -2977,7 +3008,9 @@ end;
 
 procedure TForm1.GesUpdateTimerTimer(Sender: TObject);
 var eta:extended;
+    zeitfaktor:integer;
 begin
+  if Combobox30.Text='Minuten' then zeitfaktor:=1 else zeitfaktor:=60;
   restrastzeit:=strtoint(Edit21.Text)+strtoint(Edit22.Text)+strtoint(Edit23.Text)+strtoint(Edit24.Text)+strtoint(Edit25.Text)+strtoint(Edit26.Text)+strtoint(Edit27.Text)+strtoint(Edit28.Text)+strtoint(Edit29.Text)+strtoint(Edit30.Text);
   gesrastzeit:=0;
   restrastgauge:=0;
@@ -3019,7 +3052,7 @@ begin
     end
     else if Button31.Caption='ETA' then
     begin
-      if Temperaturrast=true then eta:=now+restprozesszeit/24/60 else eta:=now+restrastzeit/24/60;
+      if Temperaturrast=true then eta:=now+restprozesszeit/24/60*zeitfaktor else eta:=now+restrastzeit/24/60*zeitfaktor;
       Panel5.Caption:=FormatDateTime('dd.mm.yyyy hh:nn', eta);
     end;
   end;
@@ -3153,6 +3186,8 @@ begin
   begin
     Temperaturrast:=false;
   end;
+  Button31.Caption:='ETA';
+  Form1.Button31Click(Sender);
   setupgeaendert;
 end;
 
@@ -3210,6 +3245,38 @@ begin
 end;
 
 
+
+procedure TForm1.ComboBox33Change(Sender: TObject);
+begin
+  if ComboBox33.Text='30 Sekunden' then
+  begin
+    LogTimer.Interval:=30000;
+  end
+  else if ComboBox33.Text='1 Minute' then
+  begin
+    LogTimer.Interval:=60000;
+  end
+  else if ComboBox33.Text='5 Minuten' then
+  begin
+    LogTimer.Interval:=500000;
+  end
+  else
+  begin
+    LogTimer.Interval:=5000;
+  end;
+  setupgeaendert;
+end;
+
+procedure TForm1.CheckBox31Click(Sender: TObject);
+begin
+  if CheckBox31.Checked=true then
+  begin
+    Panel14.Visible:=true;
+    ShowMessagePos('    Im normalen Maischeprozeß sind hier keine Änderungen erforderlich !!!    ', Form1.Left+30, Form1.Top+450);
+  end
+  else
+  Panel14.Visible:=false;
+end;
 
 end.
 

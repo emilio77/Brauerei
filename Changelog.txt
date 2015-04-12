@@ -1,0 +1,80 @@
+Change-Log:
+
+V 1.50
+
+Auswahl Kühlung oder Pumpe zugefügt
+Kühlung mit Hysterese zugefügt
+Schalthardware-Auswahl umgestaltet und Layout Einstellungen überarbeitet
+Erweiterte Einstellungen zum Ausblenden von irrelvante Einstellungen für den Maischeprozess
+  Auswahl ob Raststarts temperaturabhängig oder nicht sind zugefügt
+  Auswahl Rasteinheit Stunden oder Minuten zugefügt
+  Auswahl Rührwerkseinheit Sekunden, Minuten oder Stunden zugefügt
+  Logging Takt auswählbar gemacht
+Simulation der Temeratur während des Brauprozessens zu bzw. abschaltbar
+Zoomfunktion im Logging-Chart verbessert
+Geladenes Rezept im Header hinzugefügt ( danke an Hopfenfreund )
+Rezeptnamen im Log-File-Namen ( danke an Hopfenfreund )
+Rundung der Temperatur auf eine Nachkommastelle  ( danke an Hopfenfreund )
+Bug Rast läuft bereits im Hintergrund und wird bei Raststprung übernommen entfernt ( danke an Hopfenfreund )
+Bug zweiter Alarm bleibt still entfernt
+Tab-Stops korrigiert
+
+V 1.40
+Buttons durch Grafik-Buttons ersetzt
+Timer für Braubeginn zugefügt
+Autostart Sensorsoftware für Timerstart zugefügt
+Umschaltung zwischen stummen, gepulsten und Dauer-Alarm verbessert
+Hilfetexte hinter allen relevanten Elementen hinterlegt
+Gesamtprozesszeit und Gesamtheizzeit zugefügt
+ETA (Expected Time of Abmaischen) zugefügt
+Eingabe von erwarteter Aufheizrate zugefügt
+Alle Rasten auf 0 Minuten für Tests ermöglicht
+Timer für Simulation durch Schieberegler ersetzt
+Schriftart angepasst (Fehler bei der Anzeige des Grad-Symbols)
+JPG Grafiken durch BMPs mit besser passender Auflösung ersetzt
+Springen zwischen den Rasten startet zuerst die nächste Rast und beendet sie mit dem nächsten Click
+Digitemp-Ordner wieder vervollständigt um Stabilität zu verbessern
+DigitempControl hinzugefügt um bei Bedarf Systemlast bei Bedarf zu verringern
+Und noch mehr Kleinkram den ich vergessen habe
+
+V 1.31
+Individuelle Rastnamen zugefügt
+Brauerruf Texte für die Rasten zugefügt
+Größe, Farbe und Schrift der Digitalanzeigen angepasst
+Position des Programms auf Displaygröße angepasst
+Position für die Meldungen und Dialoge auf Fenstermitte eingestellt
+Autostart für Sensorhardware zugefügt
+Startordner für Datei-Dialoge korrigiert
+Server-Programm für Arduino an LAN und USB aufgenommen
+Unnötige Komponenten von Installer entfernt
+
+V 1.30
+Schalthysterese für Heizung ergänzt
+Hysterese, Gradient und Pulsen der Heizung frei wählbar
+Installationsordner wegen Berechtigungen angepasst
+Maximale Taktintervalle auf 9999 Sekunden erhöht
+Anzeigefehler in den Einstellungen bei KMTronic Hardware behoben
+Dateiname für Temperatur-Textdatei wählbar
+
+V 1.21
+Batchsteuerung verbessert und ausgiebig geprüft
+Bug bei der Chart-Darstellung bei 0:00 Uhr verbessert
+Batchdateien und sisprnctl für Gembird Steckdosenleiste integriert und getestet
+
+V 1.20
+USB Hardware von Denkovi zugefügt.
+Einstellungen können jetzt direkt im Programm vorgenommen werden ( keine Textdatei )
+Digitemp oder Temperaturmesssoftware kann jetzt direkt aus dem Programm gestartet werden
+
+V 1.10
+Stabile Release
+Diverse Bug-Fixes
+USB-Hardware von KMTronic zugefügt
+Druckfunktiom zugefügt
+Programmpfad kann jetzt beliebig gewählt werden
+Installer zugefügt
+USB Hardware von Denkovi vorbereitet
+Digitemp inkl. Batchdateien für DS18B20 Tempfühler zu Installer zugefügt
+
+V 1.00:
+Initial Beta Release

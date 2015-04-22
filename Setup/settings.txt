@@ -88,13 +88,23 @@ Rast 7
 Rast 8
 Rast 9
 Rast 10
+Bei Rasttemperaturüberschreitung
+Bei Rasttemperaturüberschreitung
+Bei Rasttemperaturüberschreitung
+Bei Rasttemperaturüberschreitung
+Bei Rasttemperaturüberschreitung
+Bei Rasttemperaturüberschreitung
+Bei Rasttemperaturüberschreitung
+Bei Rasttemperaturüberschreitung
+Bei Rasttemperaturüberschreitung
+Bei Rasttemperaturüberschreitung
 Alarm pulsen
 TRUE
 FALSE
 FALSE
 FALSE
 TRUE
-Gesamtprozeß
+Gesamtrast
 FALSE
 FALSE
 FALSE

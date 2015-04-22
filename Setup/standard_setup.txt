@@ -41,7 +41,7 @@ Autostart Externe_Sensorsoftware.bat;0
 Aufheizrate pro Minute;1.0
 Relais4;Kühlung
 Schalthysterese Kühlung;1.0
-Rastbegin temperaturabhängig;3
+Rastbegin temperaturabhängig;1
 Rastzeiteinheit;Minuten
 Rührzeiteinheit;Sekunden
 Logging-Takt;5€€€Sekunden

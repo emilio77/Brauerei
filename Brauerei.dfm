@@ -722,7 +722,7 @@ object Form1: TForm1
     Top = 8
     Width = 777
     Height = 617
-    ActivePage = TabSheet4
+    ActivePage = TabSheet1
     ParentShowHint = False
     ShowHint = False
     TabOrder = 0
@@ -8766,7 +8766,15 @@ object Form1: TForm1
           Top = 26
           Width = 137
           Height = 17
+          Color = clBtnFace
           ForeColor = clMoneyGreen
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
           Progress = 0
         end
         object Gauge2: TGauge
@@ -9026,6 +9034,241 @@ object Form1: TForm1
           ReadOnly = True
           TabOrder = 9
           Text = '60'
+        end
+      end
+      object Panel15: TPanel
+        Left = 528
+        Top = 180
+        Width = 233
+        Height = 345
+        TabOrder = 10
+        Visible = False
+        object Label108: TLabel
+          Left = 7
+          Top = 8
+          Width = 82
+          Height = 13
+          Caption = 'Rastzeit-Start:'
+        end
+        object ComboBox34: TComboBox
+          Left = 5
+          Top = 24
+          Width = 224
+          Height = 21
+          Hint = 
+            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
+            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
+            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
+            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
+            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
+            'ner/gleich der Rasttemperatur ist.'
+          ItemHeight = 13
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+          Text = 'Bei Rasttemperatur'#252'berschreitung'
+          Items.Strings = (
+            'Bei Rasttemperatur'#252'berschreitung'
+            'Temperaturunabh'#228'ngig'
+            'Bei Rasttemperaturunterschreitung')
+        end
+        object ComboBox35: TComboBox
+          Left = 5
+          Top = 56
+          Width = 224
+          Height = 21
+          Hint = 
+            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
+            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
+            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
+            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
+            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
+            'ner/gleich der Rasttemperatur ist.'
+          ItemHeight = 13
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 1
+          Text = 'Bei Rasttemperatur'#252'berschreitung'
+          Items.Strings = (
+            'Bei Rasttemperatur'#252'berschreitung'
+            'Temperaturunabh'#228'ngig'
+            'Bei Rasttemperaturunterschreitung')
+        end
+        object ComboBox36: TComboBox
+          Left = 5
+          Top = 88
+          Width = 224
+          Height = 21
+          Hint = 
+            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
+            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
+            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
+            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
+            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
+            'ner/gleich der Rasttemperatur ist.'
+          ItemHeight = 13
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 2
+          Text = 'Bei Rasttemperatur'#252'berschreitung'
+          Items.Strings = (
+            'Bei Rasttemperatur'#252'berschreitung'
+            'Temperaturunabh'#228'ngig'
+            'Bei Rasttemperaturunterschreitung')
+        end
+        object ComboBox37: TComboBox
+          Left = 5
+          Top = 120
+          Width = 224
+          Height = 21
+          Hint = 
+            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
+            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
+            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
+            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
+            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
+            'ner/gleich der Rasttemperatur ist.'
+          ItemHeight = 13
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 3
+          Text = 'Bei Rasttemperatur'#252'berschreitung'
+          Items.Strings = (
+            'Bei Rasttemperatur'#252'berschreitung'
+            'Temperaturunabh'#228'ngig'
+            'Bei Rasttemperaturunterschreitung')
+        end
+        object ComboBox38: TComboBox
+          Left = 5
+          Top = 152
+          Width = 224
+          Height = 21
+          Hint = 
+            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
+            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
+            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
+            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
+            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
+            'ner/gleich der Rasttemperatur ist.'
+          ItemHeight = 13
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 4
+          Text = 'Bei Rasttemperatur'#252'berschreitung'
+          Items.Strings = (
+            'Bei Rasttemperatur'#252'berschreitung'
+            'Temperaturunabh'#228'ngig'
+            'Bei Rasttemperaturunterschreitung')
+        end
+        object ComboBox39: TComboBox
+          Left = 5
+          Top = 184
+          Width = 224
+          Height = 21
+          Hint = 
+            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
+            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
+            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
+            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
+            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
+            'ner/gleich der Rasttemperatur ist.'
+          ItemHeight = 13
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 5
+          Text = 'Bei Rasttemperatur'#252'berschreitung'
+          Items.Strings = (
+            'Bei Rasttemperatur'#252'berschreitung'
+            'Temperaturunabh'#228'ngig'
+            'Bei Rasttemperaturunterschreitung')
+        end
+        object ComboBox40: TComboBox
+          Left = 5
+          Top = 216
+          Width = 224
+          Height = 21
+          Hint = 
+            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
+            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
+            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
+            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
+            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
+            'ner/gleich der Rasttemperatur ist.'
+          ItemHeight = 13
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 6
+          Text = 'Bei Rasttemperatur'#252'berschreitung'
+          Items.Strings = (
+            'Bei Rasttemperatur'#252'berschreitung'
+            'Temperaturunabh'#228'ngig'
+            'Bei Rasttemperaturunterschreitung')
+        end
+        object ComboBox41: TComboBox
+          Left = 5
+          Top = 248
+          Width = 224
+          Height = 21
+          Hint = 
+            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
+            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
+            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
+            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
+            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
+            'ner/gleich der Rasttemperatur ist.'
+          ItemHeight = 13
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 7
+          Text = 'Bei Rasttemperatur'#252'berschreitung'
+          Items.Strings = (
+            'Bei Rasttemperatur'#252'berschreitung'
+            'Temperaturunabh'#228'ngig'
+            'Bei Rasttemperaturunterschreitung')
+        end
+        object ComboBox42: TComboBox
+          Left = 5
+          Top = 280
+          Width = 224
+          Height = 21
+          Hint = 
+            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
+            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
+            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
+            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
+            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
+            'ner/gleich der Rasttemperatur ist.'
+          ItemHeight = 13
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 8
+          Text = 'Bei Rasttemperatur'#252'berschreitung'
+          Items.Strings = (
+            'Bei Rasttemperatur'#252'berschreitung'
+            'Temperaturunabh'#228'ngig'
+            'Bei Rasttemperaturunterschreitung')
+        end
+        object ComboBox43: TComboBox
+          Left = 5
+          Top = 312
+          Width = 224
+          Height = 21
+          Hint = 
+            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
+            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
+            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
+            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
+            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
+            'ner/gleich der Rasttemperatur ist.'
+          ItemHeight = 13
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 9
+          Text = 'Bei Rasttemperatur'#252'berschreitung'
+          Items.Strings = (
+            'Bei Rasttemperatur'#252'berschreitung'
+            'Temperaturunabh'#228'ngig'
+            'Bei Rasttemperaturunterschreitung')
         end
       end
       object Panel10: TPanel
@@ -14580,6 +14823,7 @@ object Form1: TForm1
           Top = 25
           Width = 289
           Height = 21
+          Hint = 'Auswahl m'#246'glicher Hardwarekomponenten'
           ItemHeight = 13
           TabOrder = 0
           Text = 'Heizung, R'#252'hrwerk, K'#252'hlung, Alarm'
@@ -14628,19 +14872,31 @@ object Form1: TForm1
             Top = 9
             Width = 289
             Height = 21
+            Hint = 
+              'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
+              'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
+              't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
+              'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
+              #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
+              'ner/gleich der Rasttemperatur ist.'#13#10'Rastspezifisch:'#13#10'Das Verhalt' +
+              'en wird f'#252'r jede Rast individuell im '#13#10'Reiter Brauprozess einges' +
+              'tellt.'
             ItemHeight = 13
             TabOrder = 0
             Text = 'Bei Rasttemperatur'#252'berschreitung'
             OnChange = ComboBox31Change
             Items.Strings = (
               'Bei Rasttemperatur'#252'berschreitung'
-              'Temperaturunabh'#228'ngig')
+              'Temperaturunabh'#228'ngig'
+              'Bei Rasttemperaturunterschreitung'
+              'Rastspezifisch')
           end
           object ComboBox30: TComboBox
             Left = 120
             Top = 41
             Width = 81
             Height = 21
+            Hint = 'Einstellung f'#252'r die Einheit der Rastzeit '
             ItemHeight = 13
             TabOrder = 1
             Text = 'Minuten'
@@ -14654,6 +14910,7 @@ object Form1: TForm1
             Top = 41
             Width = 89
             Height = 21
+            Hint = 'Einstellung f'#252'r die Einheit des'#13#10'R'#252'hrwerk-Takts. '
             ItemHeight = 13
             TabOrder = 2
             Text = 'Sekunden'
@@ -14668,6 +14925,7 @@ object Form1: TForm1
             Top = 73
             Width = 105
             Height = 21
+            Hint = 'Takt in dem der Prozessstatus im Log-File '#13#10'geloggt wird.'
             ItemHeight = 13
             TabOrder = 3
             Text = '5 Sekunden'
@@ -14681,13 +14939,24 @@ object Form1: TForm1
         end
       end
       object CheckBox31: TCheckBox
-        Left = 584
-        Top = 17
-        Width = 169
+        Left = 160
+        Top = 289
+        Width = 137
         Height = 20
-        Caption = 'Erweiterte Einstellungen'
+        Hint = 'Erweiterte Einstellungen zur Rast- und Logging-Steuerung'
+        Caption = 'Erweiterte Parameter'
         TabOrder = 15
         OnClick = CheckBox31Click
+      end
+      object Button2: TButton
+        Left = 640
+        Top = 8
+        Width = 105
+        Height = 33
+        Hint = 'Alle Einstellungen auf Auslieferzustand '#13#10'zur'#252'cksetzen.'
+        Caption = 'Zur'#252'cksetzen'
+        TabOrder = 16
+        OnClick = Button2Click
       end
     end
     object TabSheet3: TTabSheet
@@ -14982,5 +15251,9 @@ object Form1: TForm1
     OnTimer = TimerKAusTimer
     Left = 256
     Top = 96
+  end
+  object ApplicationEvents1: TApplicationEvents
+    OnShowHint = ApplicationEvents1ShowHint
+    Left = 656
   end
 end

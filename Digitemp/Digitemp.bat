@@ -6,5 +6,5 @@ set PFAD2=%cd%
 cd %PFAD1%
 @echo on
 
-Digitemp.exe -s7 -t0 -i -l"%PFAD2%\log.txt" -o"%%d.%%m.%%y %%H:%%M:%%S;%%.1C" -n5000 -d5
+Digitemp.exe -s7 -t0 -i -l"%PFAD2%\log.txt" -o"%%d.%%m.%%y %%H:%%M:%%S;%%.1C" -n500000 -d5
 

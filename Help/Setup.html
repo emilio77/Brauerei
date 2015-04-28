@@ -7,7 +7,11 @@
 	<META NAME="AUTHOR" CONTENT="Andreas Wehrle">
 	<META NAME="CREATED" CONTENT="20140414;21331864">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
-	<META NAME="CHANGED" CONTENT="20150309;21021767">
+	<META NAME="CHANGED" CONTENT="20150426;19114759">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
 	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
@@ -39,13 +43,16 @@
 	</STYLE>
 </HEAD>
 <BODY LANG="de-DE" DIR="LTR">
-<P STYLE="margin-bottom: 0cm">Hilfe Datei zu Brauerei V 1.40 &ndash;
+<P STYLE="margin-bottom: 0cm">Hilfe Datei zu Brauerei V 1.51 &ndash;
 by Emilio &ndash; <A HREF="Help.html">HOME</A></P>
 <P STYLE="margin-bottom: 0cm"><U><B>Programmeinstellungen:</B></U></P>
 <P STYLE="margin-bottom: 0cm; font-weight: normal; text-decoration: none">
 <FONT COLOR="#000000">Der Einstellungen-Reiter ist nur bei inaktivem
-Brauprozess verf&uuml;gbar.</FONT></P>
-<P STYLE="margin-bottom: 0cm"><IMG SRC="Setup_html_4bccca89.jpg" NAME="Grafik1" ALIGN=LEFT WIDTH=643 HEIGHT=434 BORDER=0><BR CLEAR=LEFT><BR>
+Brauprozess verf&uuml;gbar.<BR>Mit der Version 1.51 wurde die
+Darstellung der Einstellungen komplett &uuml;berarbeitet</FONT></P>
+<P STYLE="margin-bottom: 0cm; font-weight: normal; text-decoration: none">
+<FONT COLOR="#000000"><U>USB-Steuerung:</U></FONT></P>
+<P STYLE="margin-bottom: 0cm"><IMG SRC="Setup_html_m534e3810.jpg" NAME="Grafik1" ALIGN=LEFT WIDTH=643 HEIGHT=433 BORDER=0><BR CLEAR=LEFT><BR>
 </P>
 <OL>
 	<LI><P STYLE="margin-bottom: 0cm">Steuerung der Schalthardware &uuml;ber
@@ -63,6 +70,16 @@ Brauprozess verf&uuml;gbar.</FONT></P>
 	</P>
 	<LI><P STYLE="margin-bottom: 0cm">USB-Alarm: Relais f&uuml;r den
 	Alarm</P>
+</OL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><U>LPT-Steuerung:</U></P>
+<P STYLE="margin-bottom: 0cm"><IMG SRC="Setup_html_73230d3b.jpg" NAME="Grafik2" ALIGN=LEFT WIDTH=643 HEIGHT=433 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<OL>
+	<LI VALUE=1><P STYLE="margin-bottom: 0cm">Steuerung der
+	Schalthardware &uuml;ber Batch-Dateien oder den USB- oder
+	Parallelport</P>
 	<LI><P STYLE="margin-bottom: 0cm">Port: Adresse des LPT-Ports</P>
 	<LI><P STYLE="margin-bottom: 0cm">LPT-Heizung: Dezimalwert des
 	Port-Bits f&uuml;r die Heizung ( Tabelle siehe unten )</P>
@@ -71,13 +88,200 @@ Brauprozess verf&uuml;gbar.</FONT></P>
 	<LI><P STYLE="margin-bottom: 0cm">LPT-Pumpe: Dezimalwert des
 	Port-Bits f&uuml;r die Pumpe ( Tabelle siehe unten )</P>
 	<LI><P STYLE="margin-bottom: 0cm">LPT-Alarm: Dezimalwert des
-	Port-Bits f&uuml;r den Alarm ( Tabelle siehe unten )</P>
+	Port-Bits f&uuml;r den Alarm ( Tabelle siehe unten
+	)<BR><BR>LPT-Digitalwerte:</P>
+</OL>
+<DL>
+	<DD>
+	<TABLE WIDTH=345 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
+		<COL WIDTH=61>
+		<COL WIDTH=78>
+		<COL WIDTH=81>
+		<COL WIDTH=76>
+		<TR VALIGN=TOP>
+			<TD WIDTH=61>
+				<P>Bit 
+				</P>
+			</TD>
+			<TD WIDTH=78>
+				<P>Pin/Relais</P>
+			</TD>
+			<TD WIDTH=81>
+				<P>Bin&auml;rwert</P>
+			</TD>
+			<TD WIDTH=76>
+				<P>Dezimalzahl</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=61 SDVAL="0" SDNUM="1031;">
+				<P>0</P>
+			</TD>
+			<TD WIDTH=78 SDVAL="1" SDNUM="1031;">
+				<P>1</P>
+			</TD>
+			<TD WIDTH=81>
+				<P>&bdquo;00000001&ldquo;</P>
+			</TD>
+			<TD WIDTH=76 SDVAL="1" SDNUM="1031;">
+				<P>1</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=61 SDVAL="1" SDNUM="1031;">
+				<P>1</P>
+			</TD>
+			<TD WIDTH=78 SDVAL="2" SDNUM="1031;">
+				<P>2</P>
+			</TD>
+			<TD WIDTH=81>
+				<P>&bdquo;00000010&ldquo;</P>
+			</TD>
+			<TD WIDTH=76 SDVAL="2" SDNUM="1031;">
+				<P>2</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=61 SDVAL="2" SDNUM="1031;">
+				<P>2</P>
+			</TD>
+			<TD WIDTH=78 SDVAL="3" SDNUM="1031;">
+				<P>3</P>
+			</TD>
+			<TD WIDTH=81>
+				<P>&bdquo;00000100&ldquo;</P>
+			</TD>
+			<TD WIDTH=76 SDVAL="4" SDNUM="1031;">
+				<P>4</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=61 SDVAL="3" SDNUM="1031;">
+				<P>3</P>
+			</TD>
+			<TD WIDTH=78 SDVAL="4" SDNUM="1031;">
+				<P>4</P>
+			</TD>
+			<TD WIDTH=81>
+				<P>&bdquo;00001000&ldquo;</P>
+			</TD>
+			<TD WIDTH=76 SDVAL="8" SDNUM="1031;">
+				<P>8</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=61 SDVAL="4" SDNUM="1031;">
+				<P>4</P>
+			</TD>
+			<TD WIDTH=78 SDVAL="5" SDNUM="1031;">
+				<P>5</P>
+			</TD>
+			<TD WIDTH=81>
+				<P>&bdquo;00010000&ldquo;</P>
+			</TD>
+			<TD WIDTH=76 SDVAL="16" SDNUM="1031;">
+				<P>16</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=61 SDVAL="5" SDNUM="1031;">
+				<P>5</P>
+			</TD>
+			<TD WIDTH=78 SDVAL="6" SDNUM="1031;">
+				<P>6</P>
+			</TD>
+			<TD WIDTH=81>
+				<P>&bdquo;00100000&ldquo;</P>
+			</TD>
+			<TD WIDTH=76 SDVAL="32" SDNUM="1031;">
+				<P>32</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=61 SDVAL="6" SDNUM="1031;">
+				<P>6</P>
+			</TD>
+			<TD WIDTH=78 SDVAL="7" SDNUM="1031;">
+				<P>7</P>
+			</TD>
+			<TD WIDTH=81>
+				<P>&bdquo;01000000&ldquo;</P>
+			</TD>
+			<TD WIDTH=76 SDVAL="64" SDNUM="1031;">
+				<P>64</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=61 SDVAL="7" SDNUM="1031;">
+				<P>7</P>
+			</TD>
+			<TD WIDTH=78 SDVAL="8" SDNUM="1031;">
+				<P>8</P>
+			</TD>
+			<TD WIDTH=81>
+				<P>&bdquo;10000000&ldquo;</P>
+			</TD>
+			<TD WIDTH=76 SDVAL="128" SDNUM="1031;">
+				<P>128</P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><U>Batchdatei-Steuerung:</U></P>
+<OL START=6>
+	<P><IMG SRC="Setup_html_m7c83e744.jpg" NAME="Grafik3" ALIGN=LEFT WIDTH=614 HEIGHT=415 BORDER=0><BR CLEAR=LEFT></P>
+</OL>
+<OL>
+	<LI VALUE=1><P STYLE="margin-bottom: 0cm">Steuerung der
+	Schalthardware &uuml;ber Batch-Dateien oder den USB- oder
+	Parallelport</P>
 	<LI><P STYLE="margin-bottom: 0cm">Batchdateien f&uuml;r die
 	Hardwaresteuerung</P>
 	<LI><P STYLE="margin-bottom: 0cm">Hier kann gew&auml;hlt werden ob
 	die Batchbefehle zyklisch wiederholt werden sollen.</P>
-	<LI><P STYLE="margin-bottom: 0cm">Taktungstemperatur: Ist die
-	Temperaturdifferenz kleiner dieser Eingabe wird getaktet</P>
+</OL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><U>Steuerungsparamter:</U></P>
+<P STYLE="margin-bottom: 0cm"><IMG SRC="Setup_html_30ae146c.jpg" NAME="Grafik4" ALIGN=LEFT WIDTH=643 HEIGHT=433 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<OL>
+	<LI VALUE=1><P STYLE="margin-bottom: 0cm">Aktivierung der
+	erweiterten Einstellungen</P>
+	<LI><P STYLE="margin-bottom: 0cm">Auswahlfunktion der Relaisnutzung</P>
+	<LI><P STYLE="margin-bottom: 0cm">Auswahlfunktion f&uuml;r Raststart</P>
+</OL>
+<UL>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0cm">Bei
+		Rasttemperatur&uuml;berschreitung<BR>Die Rastzeit beginnt sobald
+		die Temperatur zum ersten mal &uuml;berschritten wird.</P>
+		<LI><P STYLE="margin-bottom: 0cm">Bei
+		Rasttemperaturunterschreitung<BR>Die Rastzeit beginnt sobald die
+		Temperatur zum ersten mal unterschritten wird.</P>
+		<LI><P STYLE="margin-bottom: 0cm">Temperaturunabh&auml;ngig<BR>Die
+		Rastzeit beginnt unmittelbar, temperaturunabh&auml;ngig</P>
+		<LI><P STYLE="margin-bottom: 0cm">Rastspezifisch<BR>Die o.A.
+		Funktionen k&ouml;nnen beim Brauprozess individuell f&uuml;r jede
+		Rast eingestellt werden.</P>
+	</UL>
+</UL>
+<OL START=4>
+	<LI><P STYLE="margin-bottom: 0cm">Auswahl der Rastzeit-Einheit</P>
+	<LI><P STYLE="margin-bottom: 0cm">Auswahl der R&uuml;hrzeit-Einheit</P>
+	<LI><P STYLE="margin-bottom: 0cm">Eingabe der Zeit zwischen zwei
+	Logging-Eintr&auml;ge</P>
+</OL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><U>Allgemeine Einstellungen:</U></P>
+<P STYLE="margin-bottom: 0cm"><IMG SRC="Setup_html_m64f9ae9f.jpg" NAME="Grafik5" ALIGN=LEFT WIDTH=643 HEIGHT=433 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<OL>
+	<LI VALUE=1><P STYLE="margin-bottom: 0cm">Zur&uuml;cksetzen der
+	Einstellungen auf Auslieferzustand</P>
 	<LI><P STYLE="margin-bottom: 0cm">Verh&auml;ltnis des Einschalt- zum
 	Ausschalt-Impuls w&auml;hrend der Taktung</P>
 	<LI><P STYLE="margin-bottom: 0cm">Gradientgrenze: Ist der
@@ -85,11 +289,18 @@ Brauprozess verf&uuml;gbar.</FONT></P>
 	die hier fesgelegte Zahl werden die Einschaltpulse der Heizung so
 	lange ausgesetzt bis der Gradient unterschritten oder die
 	Zieltemperatur erreicht wird</P>
-	<LI><P STYLE="margin-bottom: 0cm">Hyteresewert: Nach dem erreichen
-	der Zieltemperatur wird die Heizung erst wieder nach unterschreiten
-	der Zieltemperatur minus des Hysteresewerts wieder eingeschaltet.</P>
+	<LI><P STYLE="margin-bottom: 0cm">Taktungstemperatur: Ist die
+	Temperaturdifferenz kleiner dieser Eingabe wird getaktet</P>
 	<LI><P STYLE="margin-bottom: 0cm">Aufheizrate zur Berechnung der
 	Heizzeit und ETA</P>
+	<LI><P STYLE="margin-bottom: 0cm">Hyteresewert f&uuml;r die Heizung:
+	Nach dem Erreichen der Zieltemperatur wird die Heizung erst wieder
+	nach unterschreiten der Zieltemperatur minus des Hysteresewerts
+	wieder eingeschaltet.</P>
+	<LI><P STYLE="margin-bottom: 0cm">Hyteresewert f&uuml;r die K&uuml;hlung:
+	Nach dem Erreichen der Zieltemperatur wird die K&uuml;hlung erst
+	wieder nach &uuml;berschreiten der Zieltemperatur plus des
+	Hysteresewerts wieder eingeschaltet.</P>
 	<LI><P STYLE="margin-bottom: 0cm">Dateiname des
 	Temperatur-Textfiles.</P>
 	<LI><P STYLE="margin-bottom: 0cm">Start-Button f&uuml;r
@@ -119,143 +330,5 @@ Brauprozess verf&uuml;gbar.</FONT></P>
 	Programmstart&ldquo; gesetzt, wird die Aktion beim Start der
 	Brauerei ausgef&uuml;hrt.</P>
 </OL>
-<P STYLE="margin-bottom: 0cm">LPT-Digitalwerte:</P>
-<TABLE WIDTH=320 BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-inside: avoid">
-	<COL WIDTH=29>
-	<COL WIDTH=72>
-	<COL WIDTH=83>
-	<COL WIDTH=87>
-	<TR VALIGN=TOP>
-		<TD WIDTH=29>
-			<P>Bit 
-			</P>
-		</TD>
-		<TD WIDTH=72>
-			<P>Pin/Relais</P>
-		</TD>
-		<TD WIDTH=83>
-			<P>Bin&auml;rwert</P>
-		</TD>
-		<TD WIDTH=87>
-			<P>Dezimalzahl</P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=29 SDVAL="0" SDNUM="1031;">
-			<P>0</P>
-		</TD>
-		<TD WIDTH=72 SDVAL="1" SDNUM="1031;">
-			<P>1</P>
-		</TD>
-		<TD WIDTH=83>
-			<P>&bdquo;00000001&ldquo;</P>
-		</TD>
-		<TD WIDTH=87 SDVAL="1" SDNUM="1031;">
-			<P>1</P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=29 SDVAL="1" SDNUM="1031;">
-			<P>1</P>
-		</TD>
-		<TD WIDTH=72 SDVAL="2" SDNUM="1031;">
-			<P>2</P>
-		</TD>
-		<TD WIDTH=83>
-			<P>&bdquo;00000010&ldquo;</P>
-		</TD>
-		<TD WIDTH=87 SDVAL="2" SDNUM="1031;">
-			<P>2</P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=29 SDVAL="2" SDNUM="1031;">
-			<P>2</P>
-		</TD>
-		<TD WIDTH=72 SDVAL="3" SDNUM="1031;">
-			<P>3</P>
-		</TD>
-		<TD WIDTH=83>
-			<P>&bdquo;00000100&ldquo;</P>
-		</TD>
-		<TD WIDTH=87 SDVAL="4" SDNUM="1031;">
-			<P>4</P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=29 SDVAL="3" SDNUM="1031;">
-			<P>3</P>
-		</TD>
-		<TD WIDTH=72 SDVAL="4" SDNUM="1031;">
-			<P>4</P>
-		</TD>
-		<TD WIDTH=83>
-			<P>&bdquo;00001000&ldquo;</P>
-		</TD>
-		<TD WIDTH=87 SDVAL="8" SDNUM="1031;">
-			<P>8</P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=29 SDVAL="4" SDNUM="1031;">
-			<P>4</P>
-		</TD>
-		<TD WIDTH=72 SDVAL="5" SDNUM="1031;">
-			<P>5</P>
-		</TD>
-		<TD WIDTH=83>
-			<P>&bdquo;00010000&ldquo;</P>
-		</TD>
-		<TD WIDTH=87 SDVAL="16" SDNUM="1031;">
-			<P>16</P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=29 SDVAL="5" SDNUM="1031;">
-			<P>5</P>
-		</TD>
-		<TD WIDTH=72 SDVAL="6" SDNUM="1031;">
-			<P>6</P>
-		</TD>
-		<TD WIDTH=83>
-			<P>&bdquo;00100000&ldquo;</P>
-		</TD>
-		<TD WIDTH=87 SDVAL="32" SDNUM="1031;">
-			<P>32</P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=29 SDVAL="6" SDNUM="1031;">
-			<P>6</P>
-		</TD>
-		<TD WIDTH=72 SDVAL="7" SDNUM="1031;">
-			<P>7</P>
-		</TD>
-		<TD WIDTH=83>
-			<P>&bdquo;01000000&ldquo;</P>
-		</TD>
-		<TD WIDTH=87 SDVAL="64" SDNUM="1031;">
-			<P>64</P>
-		</TD>
-	</TR>
-	<TR VALIGN=TOP>
-		<TD WIDTH=29 SDVAL="7" SDNUM="1031;">
-			<P>7</P>
-		</TD>
-		<TD WIDTH=72 SDVAL="8" SDNUM="1031;">
-			<P>8</P>
-		</TD>
-		<TD WIDTH=83>
-			<P>&bdquo;10000000&ldquo;</P>
-		</TD>
-		<TD WIDTH=87 SDVAL="128" SDNUM="1031;">
-			<P>128</P>
-		</TD>
-	</TR>
-</TABLE>
-<P STYLE="margin-bottom: 0cm"><BR>
-</P>
-<P STYLE="margin-bottom: 0cm"><BR>
-</P>
 </BODY>
 </HTML>

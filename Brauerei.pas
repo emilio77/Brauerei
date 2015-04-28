@@ -587,7 +587,7 @@ type
   end;
 
 const
-  Version = 'V01.51 - Trial';
+  Version = 'V01.51';
 
 var
   Form1: TForm1;

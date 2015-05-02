@@ -587,7 +587,7 @@ type
   end;
 
 const
-  Version = 'V01.51';
+  Version = 'V01.52';
 
 var
   Form1: TForm1;
@@ -1852,11 +1852,14 @@ begin
     if (Combobox31.Text='Rastspezifisch') and (Combobox34.Text='Bei Rasttemperaturüberschreitung') then Temperaturrast:=1;
     if (Combobox31.Text='Rastspezifisch') and (Combobox34.Text='Temperaturunabhängig') then Temperaturrast:=0;
     if (Combobox31.Text='Rastspezifisch') and (Combobox34.Text='Bei Rasttemperaturunterschreitung') then Temperaturrast:=2;
+    if rast<>1 then
+    begin
+      TimerREin.Interval:=100+strtoint(Edit41.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit31.Text)*1000*ruehrzeitfaktor;
+      if CheckBox21.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
+    end;
     if Rasttemp1=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit41.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit31.Text)*1000*ruehrzeitfaktor;
-      if CheckBox21.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit1.Text);
       if Temperaturrast=0 then Rasttemp1:=true;
     end;
@@ -1877,11 +1880,14 @@ begin
     if (Combobox31.Text='Rastspezifisch') and (Combobox35.Text='Bei Rasttemperaturüberschreitung') then Temperaturrast:=1;
     if (Combobox31.Text='Rastspezifisch') and (Combobox35.Text='Temperaturunabhängig') then Temperaturrast:=0;
     if (Combobox31.Text='Rastspezifisch') and (Combobox35.Text='Bei Rasttemperaturunterschreitung') then Temperaturrast:=2;
+    if rast<>2 then
+    begin
+      TimerREin.Interval:=100+strtoint(Edit42.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit32.Text)*1000*ruehrzeitfaktor;
+      if CheckBox22.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
+    end;
     if Rasttemp2=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit42.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit32.Text)*1000*ruehrzeitfaktor;
-      if CheckBox22.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit3.Text);
       if Temperaturrast=0 then Rasttemp2:=true;
     end;
@@ -1902,11 +1908,14 @@ begin
     if (Combobox31.Text='Rastspezifisch') and (Combobox36.Text='Bei Rasttemperaturüberschreitung') then Temperaturrast:=1;
     if (Combobox31.Text='Rastspezifisch') and (Combobox36.Text='Temperaturunabhängig') then Temperaturrast:=0;
     if (Combobox31.Text='Rastspezifisch') and (Combobox36.Text='Bei Rasttemperaturunterschreitung') then Temperaturrast:=2;
+    if rast<>3 then
+    begin
+      TimerREin.Interval:=100+strtoint(Edit43.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit33.Text)*1000*ruehrzeitfaktor;
+      if CheckBox23.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
+    end;
     if Rasttemp3=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit43.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit33.Text)*1000*ruehrzeitfaktor;
-      if CheckBox23.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit5.Text);
       if Temperaturrast=0 then Rasttemp3:=true;
     end;
@@ -1927,11 +1936,14 @@ begin
     if (Combobox31.Text='Rastspezifisch') and (Combobox37.Text='Bei Rasttemperaturüberschreitung') then Temperaturrast:=1;
     if (Combobox31.Text='Rastspezifisch') and (Combobox37.Text='Temperaturunabhängig') then Temperaturrast:=0;
     if (Combobox31.Text='Rastspezifisch') and (Combobox37.Text='Bei Rasttemperaturunterschreitung') then Temperaturrast:=2;
+    if rast<>4 then
+    begin
+      TimerREin.Interval:=100+strtoint(Edit44.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit34.Text)*1000*ruehrzeitfaktor;
+      if CheckBox24.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
+    end;
     if Rasttemp4=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit44.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit34.Text)*1000*ruehrzeitfaktor;
-      if CheckBox24.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit7.Text);
       if Temperaturrast=0 then Rasttemp4:=true;
     end;
@@ -1952,11 +1964,14 @@ begin
     if (Combobox31.Text='Rastspezifisch') and (Combobox38.Text='Bei Rasttemperaturüberschreitung') then Temperaturrast:=1;
     if (Combobox31.Text='Rastspezifisch') and (Combobox38.Text='Temperaturunabhängig') then Temperaturrast:=0;
     if (Combobox31.Text='Rastspezifisch') and (Combobox38.Text='Bei Rasttemperaturunterschreitung') then Temperaturrast:=2;
+    if rast<>5 then
+    begin
+      TimerREin.Interval:=100+strtoint(Edit45.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit35.Text)*1000*ruehrzeitfaktor;
+      if CheckBox25.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
+    end;
     if Rasttemp5=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit45.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit35.Text)*1000*ruehrzeitfaktor;
-      if CheckBox25.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit9.Text);
       if Temperaturrast=0 then Rasttemp5:=true;
     end;
@@ -1977,11 +1992,14 @@ begin
     if (Combobox31.Text='Rastspezifisch') and (Combobox39.Text='Bei Rasttemperaturüberschreitung') then Temperaturrast:=1;
     if (Combobox31.Text='Rastspezifisch') and (Combobox39.Text='Temperaturunabhängig') then Temperaturrast:=0;
     if (Combobox31.Text='Rastspezifisch') and (Combobox39.Text='Bei Rasttemperaturunterschreitung') then Temperaturrast:=2;
+    if rast<>6 then
+    begin
+      TimerREin.Interval:=100+strtoint(Edit46.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit36.Text)*1000*ruehrzeitfaktor;
+      if CheckBox26.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
+    end;
     if Rasttemp6=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit46.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit36.Text)*1000*ruehrzeitfaktor;
-      if CheckBox26.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit11.Text);
       if Temperaturrast=0 then Rasttemp6:=true;
     end;
@@ -2002,11 +2020,14 @@ begin
     if (Combobox31.Text='Rastspezifisch') and (Combobox40.Text='Bei Rasttemperaturüberschreitung') then Temperaturrast:=1;
     if (Combobox31.Text='Rastspezifisch') and (Combobox40.Text='Temperaturunabhängig') then Temperaturrast:=0;
     if (Combobox31.Text='Rastspezifisch') and (Combobox40.Text='Bei Rasttemperaturunterschreitung') then Temperaturrast:=2;
+    if rast<>7 then
+    begin
+      TimerREin.Interval:=100+strtoint(Edit47.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit37.Text)*1000*ruehrzeitfaktor;
+      if CheckBox27.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
+    end;
     if Rasttemp7=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit47.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit37.Text)*1000*ruehrzeitfaktor;
-      if CheckBox27.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit13.Text);
       if Temperaturrast=0 then Rasttemp7:=true;
     end;
@@ -2027,11 +2048,14 @@ begin
     if (Combobox31.Text='Rastspezifisch') and (Combobox41.Text='Bei Rasttemperaturüberschreitung') then Temperaturrast:=1;
     if (Combobox31.Text='Rastspezifisch') and (Combobox41.Text='Temperaturunabhängig') then Temperaturrast:=0;
     if (Combobox31.Text='Rastspezifisch') and (Combobox41.Text='Bei Rasttemperaturunterschreitung') then Temperaturrast:=2;
+    if rast<>8 then
+    begin
+      TimerREin.Interval:=100+strtoint(Edit48.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit38.Text)*1000*ruehrzeitfaktor;
+      if CheckBox28.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
+    end;
     if Rasttemp8=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit48.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit38.Text)*1000*ruehrzeitfaktor;
-      if CheckBox28.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit15.Text);
       if Temperaturrast=0 then Rasttemp8:=true;
     end;
@@ -2052,11 +2076,14 @@ begin
     if (Combobox31.Text='Rastspezifisch') and (Combobox42.Text='Bei Rasttemperaturüberschreitung') then Temperaturrast:=1;
     if (Combobox31.Text='Rastspezifisch') and (Combobox42.Text='Temperaturunabhängig') then Temperaturrast:=0;
     if (Combobox31.Text='Rastspezifisch') and (Combobox42.Text='Bei Rasttemperaturunterschreitung') then Temperaturrast:=2;
+    if rast<>9 then
+    begin
+      TimerREin.Interval:=100+strtoint(Edit49.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit39.Text)*1000*ruehrzeitfaktor;
+      if CheckBox29.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
+    end;
     if Rasttemp9=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit49.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit39.Text)*1000*ruehrzeitfaktor;
-      if CheckBox29.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit17.Text);
       if Temperaturrast=0 then Rasttemp9:=true;
     end;
@@ -2077,11 +2104,14 @@ begin
     if (Combobox31.Text='Rastspezifisch') and (Combobox43.Text='Bei Rasttemperaturüberschreitung') then Temperaturrast:=1;
     if (Combobox31.Text='Rastspezifisch') and (Combobox43.Text='Temperaturunabhängig') then Temperaturrast:=0;
     if (Combobox31.Text='Rastspezifisch') and (Combobox43.Text='Bei Rasttemperaturunterschreitung') then Temperaturrast:=2;
+    if rast<>10 then
+    begin
+      TimerREin.Interval:=100+strtoint(Edit50.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit40.Text)*1000*ruehrzeitfaktor;
+      if CheckBox30.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
+    end;
     if Rasttemp10=false then
     begin
       zeit3:=GetTickCount;
-      TimerREin.Interval:=100+strtoint(Edit50.Text)*1000*ruehrzeitfaktor; TimerRAus.Interval:=100+strtoint(Edit40.Text)*1000*ruehrzeitfaktor;
-      if CheckBox30.Checked=true then Form1.TimerREinTimer(Sender) else begin Form1.TimerRAusTimer(Sender); TimerREin.Enabled:=false; end;
       Solltemp:=strtoint(Edit19.Text);
       if Temperaturrast=0 then Rasttemp10:=true;
     end;
@@ -2131,6 +2161,7 @@ procedure TForm1.BitBtn3Click(Sender: TObject);
 var i:integer;
 begin
   if Relais4='Kühlung' then Form1.TimerKAusTimer(Sender);
+  Form1.PageControl1Change(Sender);
   Form1.TimerHAusTimer(Sender);
   Form1.TimerRAusTimer(Sender);
   BitBtn16.Enabled:=true;
@@ -2333,8 +2364,8 @@ begin
   begin
     if TimerHEin.Interval<>900 then
     begin
-      TimerHEin.Interval:=900;
-      TimerHAus.Interval:=1500000;
+      TimerHEin.Interval:=900;   
+      TimerHAus.Interval:=9999999;
       Form1.TimerHEinTimer(Sender);
     end;
   end
@@ -2346,8 +2377,8 @@ begin
       begin
         TimerHEin.Interval:=AusIst*1000;
         TimerHAus.Interval:=EinIst*1000;
-        if TimerHEin.Interval=0 then begin TimerHEin.Interval:=800; TimerHAus.Interval:=1500000; end;
-        if TimerHAus.Interval=0 then begin TimerHAus.Interval:=800; TimerHEin.Interval:=1500000; end;
+        if TimerHEin.Interval=0 then begin TimerHEin.Interval:=800; TimerHAus.Interval:=9999999; end;
+        if TimerHAus.Interval=0 then begin TimerHAus.Interval:=800; TimerHEin.Interval:=9999999; end;
         Form1.TimerHEinTimer(Sender);
       end;
     end
@@ -2356,16 +2387,16 @@ begin
       if TimerHEin.Interval<>900 then
       begin
         TimerHEin.Interval:=900;
-        TimerHAus.Interval:=1500000;
+        TimerHAus.Interval:=9999999;
         Form1.TimerHEinTimer(Sender);
       end;
     end;
   end
   else if (Deltatemp>0) and (Gradient>=GradientUebergabe) then
   begin
-      if TimerHEin.Interval<>1500000 then
+      if TimerHEin.Interval<>9999999 then
       begin
-        TimerHEin.Interval:=1500000;
+        TimerHEin.Interval:=9999999;
         TimerHAus.Interval:=900;
         Form1.TimerHAusTimer(Sender);
       end;
@@ -3294,7 +3325,7 @@ begin
     if TimerKEin.Interval<>900 then
     begin
       TimerKEin.Interval:=900;
-      TimerKAus.Interval:=1500000;
+      TimerKAus.Interval:=9999999;
       Form1.TimerKEinTimer(Sender);
     end;
   end
@@ -3303,7 +3334,7 @@ begin
     if TimerKEin.Interval<>900 then
     begin
       TimerKEin.Interval:=900;
-      TimerKAus.Interval:=1500000;
+      TimerKAus.Interval:=9999999;
       Form1.TimerKEinTimer(Sender);
     end;
   end;

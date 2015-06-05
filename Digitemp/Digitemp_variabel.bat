@@ -1,3 +1,4 @@
+title Digitemp_variabel
 @echo off
 set PFAD1=%cd%
 cd..

@@ -1,7 +1,63 @@
 Change-Log:
 
-V 1.50
+V 1.53
+Temperaturen für Pulsungsstufen wählbar
+Rührwerk taktet bei Pause weiter
+Gesamtkühlzeit zugefügt
+Abkühlrate zugefügt
+ETA jetzt auch bei Heizung und Kühlung verfügbar
+Hysterese erst nach erstmaligem Erreichen der Solltemperatur aktiv
+Eindeutig Fensternamen für Digitemp und Sensorsoftware
+Alle Zusatzprogramme werden bei Programmende geschlossen
+Rührwerk im Alarmdialog ein-/ausschaltbar
+Quellcode optimiert
 
+V 1.52
+
+Bug der Rührwerk-Steuerung entfernt
+
+Dauerpulslänge für Heizung verlängert
+
+Bei Brauprozessende wird die Log-Darstellung nochmals aktualisiert
+
+
+V 1.51
+
+Auswahl Kühlung oder Pumpe zugefügt
+
+Kühlung mit Hysterese zugefügt
+
+Schalthardware-Auswahl umgestaltet und Layout Einstellungen überarbeitet
+
+Erweiterte Einstellungen ausblendbar ausgeführt
+
+Auswahl ob Raststarts temperaturabhängig, beim unter- oder überschreiten der Temperatur oder für jede Rast individuell eingestellt werden soll zugefügt
+
+Auswahl Rasteinheit Stunden oder Minuten zugefügt
+
+Auswahl Rührwerkseinheit Sekunden, Minuten oder Stunden zugefügt
+
+Logging Takt auswählbar gemacht
+
+Simulation der Temeratur während des Brauprozessens zu bzw. abschaltbar
+
+Zoomfunktion im Logging-Chart verbessert
+
+Geladenes Rezept im Header hinzugefügt ( danke an Hopfenfreund )
+
+Rezeptnamen im Log-File-Namen ( danke an Hopfenfreund )
+
+Rundung der Temperatur auf eine Nachkommastelle ( danke an Hopfenfreund )
+
+Bug Rast läuft bereits im Hintergrund und wird bei Raststprung übernommen entfernt ( danke an Hopfenfreund )
+
+Bug zweiter Alarm bleibt still entfernt
+
+Tab-Stops korrigiert
+
+Anzeigedauer für Hints auf Hints-Textlänge angepasst
+
+V 1.50
 Auswahl Kühlung oder Pumpe zugefügt
 Kühlung mit Hysterese zugefügt
 Schalthardware-Auswahl umgestaltet und Layout Einstellungen überarbeitet

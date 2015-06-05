@@ -11016,131 +11016,131 @@ object Form1: TForm1
         Left = 472
         Top = 48
         Width = 273
-        Height = 233
+        Height = 221
         Caption = 'Puls / Gradient'
         TabOrder = 10
         object Label88: TLabel
           Left = 17
-          Top = 204
+          Top = 197
           Width = 137
           Height = 13
           Caption = 'Puls- / Gradientbereich:'
         end
         object Label90: TLabel
           Left = 233
-          Top = 204
+          Top = 197
           Width = 9
           Height = 13
           Caption = 'K'
         end
         object Label81: TLabel
           Left = 17
-          Top = 44
-          Width = 80
+          Top = 37
+          Width = 94
           Height = 13
-          Caption = 'Puls bis 60'#176'C:'
+          Caption = 'Puls bis        '#176'C:'
         end
         object Label86: TLabel
           Left = 233
-          Top = 44
+          Top = 37
           Width = 25
           Height = 13
           Caption = 'sek.'
         end
         object Label87: TLabel
           Left = 129
-          Top = 20
+          Top = 13
           Width = 19
           Height = 13
           Caption = 'Ein'
         end
         object Label89: TLabel
           Left = 185
-          Top = 20
+          Top = 13
           Width = 22
           Height = 13
           Caption = 'Aus'
         end
         object Label93: TLabel
           Left = 233
-          Top = 92
+          Top = 85
           Width = 25
           Height = 13
           Caption = 'sek.'
         end
         object Label94: TLabel
           Left = 233
-          Top = 68
+          Top = 61
           Width = 25
           Height = 13
           Caption = 'sek.'
         end
         object Label96: TLabel
           Left = 17
-          Top = 68
-          Width = 80
+          Top = 61
+          Width = 94
           Height = 13
-          Caption = 'Puls bis 70'#176'C:'
+          Caption = 'Puls bis        '#176'C:'
         end
         object Label97: TLabel
           Left = 233
-          Top = 140
+          Top = 133
           Width = 25
           Height = 13
           Caption = 'sek.'
         end
         object Label100: TLabel
           Left = 233
-          Top = 116
+          Top = 109
           Width = 25
           Height = 13
           Caption = 'sek.'
         end
         object Label102: TLabel
           Left = 17
-          Top = 116
-          Width = 80
+          Top = 109
+          Width = 94
           Height = 13
-          Caption = 'Puls bis 90'#176'C:'
+          Caption = 'Puls bis        '#176'C:'
         end
         object Label104: TLabel
           Left = 17
-          Top = 92
-          Width = 80
+          Top = 85
+          Width = 94
           Height = 13
-          Caption = 'Puls bis 80'#176'C:'
+          Caption = 'Puls bis        '#176'C:'
         end
         object Label107: TLabel
           Left = 17
-          Top = 140
-          Width = 87
+          Top = 133
+          Width = 94
           Height = 13
-          Caption = 'Puls bis 100'#176'C:'
+          Caption = 'Puls bis        '#176'C:'
         end
         object Label109: TLabel
           Left = 17
-          Top = 172
+          Top = 165
           Width = 115
           Height = 13
           Caption = 'Zul'#228'ssiger Gradient:'
         end
         object Label110: TLabel
           Left = 233
-          Top = 172
+          Top = 165
           Width = 9
           Height = 13
           Caption = 'K'
         end
         object ComboBox13: TComboBox
           Left = 176
-          Top = 200
+          Top = 193
           Width = 49
           Height = 21
           Hint = 
             'In dem hier definierten Bereich, vor erreichen der'#13#10'Zieltemperat' +
             'ur wirkt die Gradientbegrenzung und/oder '#13#10'das Takten'
           ItemHeight = 13
-          TabOrder = 11
+          TabOrder = 15
           Text = '2.0'
           OnChange = ComboBox13Change
           Items.Strings = (
@@ -11179,12 +11179,12 @@ object Form1: TForm1
         end
         object ComboBox14: TComboBox
           Left = 120
-          Top = 40
+          Top = 33
           Width = 49
           Height = 21
           Hint = 'Pulsweite im Temperaturbereich'
           ItemHeight = 13
-          TabOrder = 0
+          TabOrder = 1
           Text = '5'#9
           OnChange = ComboBox14Change
           Items.Strings = (
@@ -11492,12 +11492,12 @@ object Form1: TForm1
         end
         object ComboBox15: TComboBox
           Left = 176
-          Top = 40
+          Top = 33
           Width = 49
           Height = 21
-          Hint = 'Pulsweite im Temperaturbereich'
+          Hint = 'Pausenweite im Temperaturbereich'
           ItemHeight = 13
-          TabOrder = 1
+          TabOrder = 2
           Text = '5'#9
           OnChange = ComboBox15Change
           Items.Strings = (
@@ -11805,12 +11805,12 @@ object Form1: TForm1
         end
         object ComboBox17: TComboBox
           Left = 120
-          Top = 64
+          Top = 57
           Width = 49
           Height = 21
           Hint = 'Pulsweite im Temperaturbereich'
           ItemHeight = 13
-          TabOrder = 2
+          TabOrder = 4
           Text = '5'#9
           OnChange = ComboBox17Change
           Items.Strings = (
@@ -12118,12 +12118,12 @@ object Form1: TForm1
         end
         object ComboBox18: TComboBox
           Left = 176
-          Top = 64
+          Top = 57
           Width = 49
           Height = 21
-          Hint = 'Pulsweite im Temperaturbereich'
+          Hint = 'Pausenweite im Temperaturbereich'
           ItemHeight = 13
-          TabOrder = 3
+          TabOrder = 5
           Text = '5'#9
           OnChange = ComboBox18Change
           Items.Strings = (
@@ -12431,12 +12431,12 @@ object Form1: TForm1
         end
         object ComboBox19: TComboBox
           Left = 120
-          Top = 88
+          Top = 81
           Width = 49
           Height = 21
           Hint = 'Pulsweite im Temperaturbereich'
           ItemHeight = 13
-          TabOrder = 4
+          TabOrder = 7
           Text = '5'#9
           OnChange = ComboBox19Change
           Items.Strings = (
@@ -12744,12 +12744,12 @@ object Form1: TForm1
         end
         object ComboBox20: TComboBox
           Left = 176
-          Top = 88
+          Top = 81
           Width = 49
           Height = 21
-          Hint = 'Pulsweite im Temperaturbereich'
+          Hint = 'Pausenweite im Temperaturbereich'
           ItemHeight = 13
-          TabOrder = 5
+          TabOrder = 8
           Text = '5'#9
           OnChange = ComboBox20Change
           Items.Strings = (
@@ -13057,12 +13057,12 @@ object Form1: TForm1
         end
         object ComboBox21: TComboBox
           Left = 120
-          Top = 112
+          Top = 105
           Width = 49
           Height = 21
           Hint = 'Pulsweite im Temperaturbereich'
           ItemHeight = 13
-          TabOrder = 6
+          TabOrder = 10
           Text = '5'#9
           OnChange = ComboBox21Change
           Items.Strings = (
@@ -13370,12 +13370,12 @@ object Form1: TForm1
         end
         object ComboBox22: TComboBox
           Left = 176
-          Top = 112
+          Top = 105
           Width = 49
           Height = 21
-          Hint = 'Pulsweite im Temperaturbereich'
+          Hint = 'Pausenweite im Temperaturbereich'
           ItemHeight = 13
-          TabOrder = 7
+          TabOrder = 11
           Text = '5'#9
           OnChange = ComboBox22Change
           Items.Strings = (
@@ -13683,12 +13683,12 @@ object Form1: TForm1
         end
         object ComboBox23: TComboBox
           Left = 176
-          Top = 136
+          Top = 129
           Width = 49
           Height = 21
-          Hint = 'Pulsweite im Temperaturbereich'
+          Hint = 'Pausenweite im Temperaturbereich'
           ItemHeight = 13
-          TabOrder = 9
+          TabOrder = 13
           Text = '5'#9
           OnChange = ComboBox23Change
           Items.Strings = (
@@ -13996,12 +13996,12 @@ object Form1: TForm1
         end
         object ComboBox24: TComboBox
           Left = 120
-          Top = 136
+          Top = 129
           Width = 49
           Height = 21
           Hint = 'Pulsweite im Temperaturbereich'
           ItemHeight = 13
-          TabOrder = 8
+          TabOrder = 12
           Text = '5'#9
           OnChange = ComboBox24Change
           Items.Strings = (
@@ -14309,14 +14309,14 @@ object Form1: TForm1
         end
         object ComboBox25: TComboBox
           Left = 176
-          Top = 168
+          Top = 161
           Width = 49
           Height = 21
           Hint = 
             'Wird der Gradient '#252'berschritten, wird die Heizung'#13#10'bereits vor e' +
             'rreichen der Zieltemperatur audgeschaltet.'
           ItemHeight = 13
-          TabOrder = 10
+          TabOrder = 14
           Text = '2.0'
           OnChange = ComboBox25Change
           Items.Strings = (
@@ -14352,6 +14352,67 @@ object Form1: TForm1
             '2.9'
             '3.0'
             #9)
+        end
+        object Edit84: TEdit
+          Left = 68
+          Top = 57
+          Width = 25
+          Height = 21
+          Hint = 'Temperaturbereich f'#252'r Pulsstufe'
+          TabOrder = 3
+          Text = '70'
+          OnExit = Edit84Exit
+        end
+        object Edit85: TEdit
+          Left = 68
+          Top = 81
+          Width = 25
+          Height = 21
+          Hint = 'Temperaturbereich f'#252'r Pulsstufe'
+          TabOrder = 6
+          Text = '80'
+          OnExit = Edit85Exit
+        end
+        object Edit86: TEdit
+          Left = 68
+          Top = 105
+          Width = 25
+          Height = 21
+          Hint = 'Temperaturbereich f'#252'r Pulsstufe'
+          TabOrder = 9
+          Text = '90'
+          OnExit = Edit86Exit
+        end
+        object Edit87: TEdit
+          Left = 65
+          Top = 129
+          Width = 29
+          Height = 21
+          Hint = 'Temperaturbereich f'#252'r Pulsstufe'
+          TabStop = False
+          ReadOnly = True
+          TabOrder = 16
+          Text = '100'
+        end
+        object Edit88: TEdit
+          Left = 68
+          Top = 33
+          Width = 25
+          Height = 21
+          TabStop = False
+          TabOrder = 17
+          Text = '0'
+          Visible = False
+        end
+        object Edit83: TEdit
+          Left = 68
+          Top = 33
+          Width = 25
+          Height = 21
+          Hint = 'Temperaturbereich f'#252'r Pulsstufe'
+          TabOrder = 0
+          Text = '60'
+          OnExit = Edit83Exit
         end
       end
       object Button26: TButton
@@ -14434,31 +14495,45 @@ object Form1: TForm1
       end
       object GroupBox6: TGroupBox
         Left = 472
-        Top = 292
+        Top = 280
         Width = 273
-        Height = 57
+        Height = 76
         Hint = 
           'Eingabefeld f'#252'r die Aufheizrate die zur Berechnung '#13#10'der ETA ver' +
           'wendet wird.'
-        Caption = 'Heizkurven-Information'
+        Caption = 'Heiz- und K'#252'hlkurven-Information'
         TabOrder = 12
         object Label59: TLabel
           Left = 17
-          Top = 25
+          Top = 23
           Width = 133
           Height = 13
           Caption = 'Aufheizrate pro Minute:'
         end
         object Label116: TLabel
           Left = 233
-          Top = 26
+          Top = 24
+          Width = 9
+          Height = 13
+          Caption = 'K'
+        end
+        object Label114: TLabel
+          Left = 17
+          Top = 49
+          Width = 130
+          Height = 13
+          Caption = 'Abk'#252'hlrate pro Minute:'
+        end
+        object Label117: TLabel
+          Left = 233
+          Top = 50
           Width = 9
           Height = 13
           Caption = 'K'
         end
         object ComboBox27: TComboBox
           Left = 176
-          Top = 22
+          Top = 20
           Width = 49
           Height = 21
           ItemHeight = 13
@@ -14499,12 +14574,55 @@ object Form1: TForm1
             '3.0'
             #9)
         end
+        object ComboBox44: TComboBox
+          Left = 176
+          Top = 46
+          Width = 49
+          Height = 21
+          ItemHeight = 13
+          TabOrder = 1
+          Text = '2.0'
+          OnChange = ComboBox44Change
+          Items.Strings = (
+            '0.0'
+            '0.1'
+            '0.2'
+            '0.3'
+            '0.4'
+            '0.5'
+            '0.6'
+            '0.7'
+            '0.8'
+            '0.9'
+            '1.0'
+            '1.1'
+            '1.2'
+            '1.3'
+            '1.4'
+            '1.5'
+            '1.6'
+            '1.7'
+            '1.8'
+            '1.9'
+            '2.0'
+            '2.1'
+            '2.2'
+            '2.3'
+            '2.4'
+            '2.5'
+            '2.6'
+            '2.7'
+            '2.8'
+            '2.9'
+            '3.0'
+            #9)
+        end
       end
       object GroupBox7: TGroupBox
         Left = 472
-        Top = 360
+        Top = 365
         Width = 273
-        Height = 77
+        Height = 76
         Caption = 'Hysterese'
         TabOrder = 13
         object Label112: TLabel
@@ -14834,7 +14952,7 @@ object Form1: TForm1
         end
         object Panel14: TPanel
           Left = 8
-          Top = 104
+          Top = 96
           Width = 417
           Height = 105
           TabOrder = 1

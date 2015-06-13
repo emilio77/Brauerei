@@ -1,5 +1,5 @@
 Installationsverzeichnis;Standard
-Steuerung über "BATCH", "USB oder "LPT";USB
+Steuerung über "BATCH", "USB oder "LPT";LPT
 LPT-Port;888
 LPT-Heizung;1
 LPT-Ruehrwerk;2
@@ -38,9 +38,9 @@ Temperatur-Textdatei;log.txt
 Autostart Digitemp.bat;0
 Autostart Digitemp_variabel.bat;0
 Autostart Externe_Sensorsoftware.bat;0
-Aufheizrate pro Minute;2.0
+Aufheizrate pro Minute;1.0
 Relais4;Kühlung
-Schalthysterese Kühlung;0.5
+Schalthysterese Kühlung;1.0
 Rastbegin temperaturabhängig;1
 Rastzeiteinheit;Minuten
 Rührzeiteinheit;Sekunden
@@ -50,3 +50,6 @@ Pulstemperatur Stufe 2;70
 Pulstemperatur Stufe 3;80
 Pulstemperatur Stufe 4;90
 Abkühlrate pro Minute;2.0
+Log-Datei schreiben;1
+Rührwerk mit Heizung koppeln;0
+Rührwerk-Zeitabstand;5€€€Sekunden

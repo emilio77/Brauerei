@@ -10,6 +10,13 @@ Hysterese erst nach erstmaligem Erreichen der Solltemperatur aktiv
 Eindeutig Fensternamen für Digitemp und Sensorsoftware
 Alle Zusatzprogramme werden bei Programmende geschlossen
 Rührwerk im Alarmdialog ein-/ausschaltbar
+Heizung im Alarmdialog ein-/ausschaltbar
+Bug Kühlung pulst bei Pause entfernt
+Sensorüberwachung mit Alarm und pausiertem Brauprozess
+Heizungsüberwachung zugefügt
+Grüne Markierung für beendete Rasten
+Auswahl Logging schreiben in Einstellungen verschoben
+Rührwerk kann zeitverzögert an die Heizung gekoppelt werden
 Quellcode optimiert
 
 V 1.52

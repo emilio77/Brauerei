@@ -722,7 +722,7 @@ object Form1: TForm1
     Top = 8
     Width = 777
     Height = 617
-    ActivePage = TabSheet1
+    ActivePage = TabSheet4
     ParentShowHint = False
     ShowHint = False
     TabOrder = 0
@@ -3994,7 +3994,7 @@ object Form1: TForm1
         end
         object CheckBox33: TCheckBox
           Left = 456
-          Top = 77
+          Top = 60
           Width = 137
           Height = 17
           Hint = 
@@ -4011,7 +4011,7 @@ object Form1: TForm1
           ParentShowHint = False
           ShowHint = True
           State = cbChecked
-          TabOrder = 4
+          TabOrder = 3
         end
         object CheckBox36: TCheckBox
           Left = 456
@@ -4072,27 +4072,8 @@ object Form1: TForm1
           ParentFont = False
           ParentShowHint = False
           ShowHint = True
-          TabOrder = 5
+          TabOrder = 4
           OnClick = Button1Click
-        end
-        object CheckBox32: TCheckBox
-          Left = 456
-          Top = 60
-          Width = 137
-          Height = 17
-          Hint = 'W'#228'hrend des Brauprozesses wird ein Log-Datei geschrieben.'
-          Caption = 'Log schreiben'
-          Checked = True
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -11
-          Font.Name = 'MS Sans Serif'
-          Font.Style = [fsBold]
-          ParentFont = False
-          ParentShowHint = False
-          ShowHint = True
-          State = cbChecked
-          TabOrder = 3
         end
         object Button17: TButton
           Left = 616
@@ -4111,8 +4092,29 @@ object Form1: TForm1
           ParentFont = False
           ParentShowHint = False
           ShowHint = True
-          TabOrder = 6
+          TabOrder = 5
           OnClick = Button17Click
+        end
+        object CheckBox41: TCheckBox
+          Left = 456
+          Top = 77
+          Width = 145
+          Height = 17
+          Hint = 
+            'Sensor'#252'berwachung:'#13#10#196'ndert sich die Temperatur-Log-Datei zu lang' +
+            'e nicht'#13#10'wird ein Alarm ausgel'#246'st.'
+          Caption = 'Heizung '#252'berwachen'
+          Checked = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          State = cbChecked
+          TabOrder = 6
         end
       end
       object Panel6: TPanel
@@ -14951,10 +14953,10 @@ object Form1: TForm1
             'Heizung, R'#252'hrwerk, Pumpe, Alarm')
         end
         object Panel14: TPanel
-          Left = 8
-          Top = 96
+          Left = 7
+          Top = 72
           Width = 417
-          Height = 105
+          Height = 133
           TabOrder = 1
           Visible = False
           object Label101: TLabel
@@ -14965,7 +14967,7 @@ object Form1: TForm1
             Caption = 'Rastzeit-Einheit:'
           end
           object Label103: TLabel
-            Left = 26
+            Left = 15
             Top = 12
             Width = 82
             Height = 13
@@ -14979,7 +14981,7 @@ object Form1: TForm1
             Caption = 'R'#252'hrzeit-Einheit:'
           end
           object Label106: TLabel
-            Left = 28
+            Left = 217
             Top = 76
             Width = 80
             Height = 13
@@ -15039,7 +15041,7 @@ object Form1: TForm1
               'Stunden')
           end
           object ComboBox33: TComboBox
-            Left = 120
+            Left = 304
             Top = 73
             Width = 105
             Height = 21
@@ -15052,6 +15054,61 @@ object Form1: TForm1
               '5 Sekunden'
               '30 Sekunden'
               '1 Minute'
+              '5 Minuten')
+          end
+          object CheckBox32: TCheckBox
+            Left = 16
+            Top = 75
+            Width = 172
+            Height = 17
+            Hint = 'W'#228'hrend des Brauprozesses wird ein Log-Datei geschrieben.'
+            Caption = 'Brau-Log-Datei schreiben'
+            Checked = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = [fsBold]
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            State = cbChecked
+            TabOrder = 4
+            OnClick = CheckBox32Click
+          end
+          object CheckBox42: TCheckBox
+            Left = 16
+            Top = 107
+            Width = 281
+            Height = 17
+            Caption = 'R'#252'hrwerk an Heizung koppeln im Abstand von'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = [fsBold]
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 5
+            OnClick = CheckBox42Click
+          end
+          object ComboBox45: TComboBox
+            Left = 304
+            Top = 105
+            Width = 105
+            Height = 21
+            Hint = 'Takt in dem der Prozessstatus im Log-File '#13#10'geloggt wird.'
+            ItemHeight = 13
+            TabOrder = 6
+            Text = '5 Sekunden'
+            OnChange = ComboBox45Change
+            Items.Strings = (
+              '5 Sekunden'
+              '10 Sekunden'
+              '30 Sekunden'
+              '1 Minute'
+              '2 Minuten'
               '5 Minuten')
           end
         end
@@ -15373,5 +15430,11 @@ object Form1: TForm1
   object ApplicationEvents1: TApplicationEvents
     OnShowHint = ApplicationEvents1ShowHint
     Left = 656
+  end
+  object TimerRSet: TTimer
+    Enabled = False
+    OnTimer = TimerRSetTimer
+    Left = 120
+    Top = 48
   end
 end

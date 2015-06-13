@@ -49,3 +49,7 @@ Pulstemperatur Stufe 1;60
 Pulstemperatur Stufe 2;70
 Pulstemperatur Stufe 3;80
 Pulstemperatur Stufe 4;90
+Abkühlrate pro Minute;2.0
+Log-Datei schreiben;1
+Rührwerk mit Heizung koppeln;0
+Rührwerk-Zeitabstand;5€€€Sekunden

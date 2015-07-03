@@ -722,7 +722,7 @@ object Form1: TForm1
     Top = 8
     Width = 777
     Height = 617
-    ActivePage = TabSheet4
+    ActivePage = TabSheet1
     ParentShowHint = False
     ShowHint = False
     TabOrder = 0
@@ -10743,7 +10743,8 @@ object Form1: TForm1
           OnChange = ComboBox2Change
           Items.Strings = (
             'KMTronic'
-            'Denkovi')
+            'Denkovi'
+            'SainSmart')
         end
         object ComboBox3: TComboBox
           Left = 128
@@ -14954,14 +14955,14 @@ object Form1: TForm1
         end
         object Panel14: TPanel
           Left = 7
-          Top = 72
+          Top = 56
           Width = 417
-          Height = 133
+          Height = 149
           TabOrder = 1
           Visible = False
           object Label101: TLabel
             Left = 15
-            Top = 44
+            Top = 39
             Width = 94
             Height = 13
             Caption = 'Rastzeit-Einheit:'
@@ -14975,14 +14976,14 @@ object Form1: TForm1
           end
           object Label105: TLabel
             Left = 216
-            Top = 44
+            Top = 39
             Width = 95
             Height = 13
             Caption = 'R'#252'hrzeit-Einheit:'
           end
           object Label106: TLabel
             Left = 217
-            Top = 76
+            Top = 66
             Width = 80
             Height = 13
             Caption = 'Logging-Takt:'
@@ -15013,7 +15014,7 @@ object Form1: TForm1
           end
           object ComboBox30: TComboBox
             Left = 120
-            Top = 41
+            Top = 36
             Width = 81
             Height = 21
             Hint = 'Einstellung f'#252'r die Einheit der Rastzeit '
@@ -15027,7 +15028,7 @@ object Form1: TForm1
           end
           object ComboBox32: TComboBox
             Left = 320
-            Top = 41
+            Top = 36
             Width = 89
             Height = 21
             Hint = 'Einstellung f'#252'r die Einheit des'#13#10'R'#252'hrwerk-Takts. '
@@ -15042,7 +15043,7 @@ object Form1: TForm1
           end
           object ComboBox33: TComboBox
             Left = 304
-            Top = 73
+            Top = 63
             Width = 105
             Height = 21
             Hint = 'Takt in dem der Prozessstatus im Log-File '#13#10'geloggt wird.'
@@ -15058,7 +15059,7 @@ object Form1: TForm1
           end
           object CheckBox32: TCheckBox
             Left = 16
-            Top = 75
+            Top = 65
             Width = 172
             Height = 17
             Hint = 'W'#228'hrend des Brauprozesses wird ein Log-Datei geschrieben.'
@@ -15078,7 +15079,7 @@ object Form1: TForm1
           end
           object CheckBox42: TCheckBox
             Left = 16
-            Top = 107
+            Top = 96
             Width = 281
             Height = 17
             Caption = 'R'#252'hrwerk an Heizung koppeln im Abstand von'
@@ -15095,7 +15096,7 @@ object Form1: TForm1
           end
           object ComboBox45: TComboBox
             Left = 304
-            Top = 105
+            Top = 94
             Width = 105
             Height = 21
             Hint = 'Takt in dem der Prozessstatus im Log-File '#13#10'geloggt wird.'
@@ -15110,6 +15111,23 @@ object Form1: TForm1
               '1 Minute'
               '2 Minuten'
               '5 Minuten')
+          end
+          object CheckBox43: TCheckBox
+            Left = 16
+            Top = 120
+            Width = 281
+            Height = 17
+            Caption = 'R'#252'hrwerk durchgehend AN in Heizphasen'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = [fsBold]
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 7
+            OnClick = CheckBox43Click
           end
         end
       end
@@ -15132,6 +15150,125 @@ object Form1: TForm1
         Caption = 'Zur'#252'cksetzen'
         TabOrder = 16
         OnClick = Button2Click
+      end
+    end
+    object TabSheet5: TTabSheet
+      Caption = 'KBH Rezept Import'
+      ImageIndex = 4
+      object Label118: TLabel
+        Left = 272
+        Top = 88
+        Width = 77
+        Height = 13
+        Caption = 'Maische-Plan'
+      end
+      object Label119: TLabel
+        Left = 192
+        Top = 64
+        Width = 33
+        Height = 13
+        Caption = 'Name'
+      end
+      object Label120: TLabel
+        Left = 24
+        Top = 64
+        Width = 14
+        Height = 13
+        Caption = 'ID'
+      end
+      object Label121: TLabel
+        Left = 24
+        Top = 32
+        Width = 58
+        Height = 13
+        Caption = 'Datensatz'
+      end
+      object Label122: TLabel
+        Left = 192
+        Top = 32
+        Width = 63
+        Height = 13
+        Caption = 'Datenbank'
+      end
+      object btnOpen: TButton
+        Left = 24
+        Top = 104
+        Width = 217
+        Height = 30
+        Caption = 'KBH Datenbank laden'
+        TabOrder = 0
+        OnClick = btnOpenClick
+      end
+      object memMaisch: TMemo
+        Left = 264
+        Top = 104
+        Width = 473
+        Height = 177
+        Lines.Strings = (
+          '')
+        ReadOnly = True
+        ScrollBars = ssVertical
+        TabOrder = 1
+      end
+      object ebName: TEdit
+        Left = 264
+        Top = 60
+        Width = 473
+        Height = 21
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object ebID: TEdit
+        Left = 93
+        Top = 60
+        Width = 76
+        Height = 21
+        ReadOnly = True
+        TabOrder = 3
+      end
+      object Edit89: TEdit
+        Left = 93
+        Top = 28
+        Width = 76
+        Height = 21
+        ReadOnly = True
+        TabOrder = 4
+      end
+      object Edit90: TEdit
+        Left = 264
+        Top = 28
+        Width = 473
+        Height = 21
+        ReadOnly = True
+        TabOrder = 5
+      end
+      object Button3: TButton
+        Left = 24
+        Top = 248
+        Width = 217
+        Height = 30
+        Caption = 'Rezept in Brauerei importieren'
+        TabOrder = 6
+        OnClick = Button3Click
+      end
+      object ScrollBar1: TScrollBar
+        Left = 24
+        Top = 160
+        Width = 217
+        Height = 17
+        PageSize = 0
+        TabOrder = 7
+        TabStop = False
+        OnChange = ScrollBar1Change
+      end
+      object Button4: TButton
+        Left = 24
+        Top = 200
+        Width = 217
+        Height = 30
+        Caption = 'Rezept als Datei exportieren'
+        TabOrder = 8
+        OnClick = Button4Click
       end
     end
     object TabSheet3: TTabSheet
@@ -15436,5 +15573,15 @@ object Form1: TForm1
     OnTimer = TimerRSetTimer
     Left = 120
     Top = 48
+  end
+  object OpenDialog2: TOpenDialog
+    DefaultExt = 'SQLite'
+    Filter = '*.SQLite|*.SQLite'
+    Left = 592
+  end
+  object SaveDialog2: TSaveDialog
+    DefaultExt = '*.rzt'
+    Filter = '*.rzt|*.rzt'
+    Left = 560
   end
 end

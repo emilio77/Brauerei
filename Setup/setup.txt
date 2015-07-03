@@ -1,12 +1,12 @@
 Installationsverzeichnis;Standard
-Steuerung über "BATCH", "USB oder "LPT";LPT
+Steuerung über "BATCH", "USB oder "LPT";USB
 LPT-Port;888
 LPT-Heizung;1
 LPT-Ruehrwerk;2
 LPT-Pumpe;8
 LPT-Alarm;128
-USB-Karten-Typ "Denkovi" oder "KMTronic";Denkovi
-Denkovi-Device-Index;0
+USB-Karten-Typ "Denkovi", "KMTronic" oder "SainSmart";Denkovi
+Device-Index;0
 USB-Port;COM5
 USB-Heizung;1
 USB-Ruehrwerk;2
@@ -38,9 +38,9 @@ Temperatur-Textdatei;log.txt
 Autostart Digitemp.bat;0
 Autostart Digitemp_variabel.bat;0
 Autostart Externe_Sensorsoftware.bat;0
-Aufheizrate pro Minute;1.0
+Aufheizrate pro Minute;2.0
 Relais4;Kühlung
-Schalthysterese Kühlung;1.0
+Schalthysterese Kühlung;2.0
 Rastbegin temperaturabhängig;1
 Rastzeiteinheit;Minuten
 Rührzeiteinheit;Sekunden
@@ -52,4 +52,5 @@ Pulstemperatur Stufe 4;90
 Abkühlrate pro Minute;2.0
 Log-Datei schreiben;1
 Rührwerk mit Heizung koppeln;0
+Rührwerk bei Heizung durchgehend AN;1
 Rührwerk-Zeitabstand;5€€€Sekunden

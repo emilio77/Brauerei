@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Gauges, StdCtrls, Menus, ExtCtrls, jpeg, TeeProcs, TeEngine,
   Chart, DbChart, ComCtrls, Grids, Series, OleCtrls, SHDocVw, ShellApi,
-  Printers,synaser, Buttons, Timer, AppEvnts;
+  Printers,synaser, Buttons, Timer, AppEvnts, SQLiteTable3;
 
 type
   FT_Result = Integer;
@@ -436,6 +436,24 @@ type
     TimerRSet: TTimer;
     CheckBox42: TCheckBox;
     ComboBox45: TComboBox;
+    TabSheet5: TTabSheet;
+    Label118: TLabel;
+    Label119: TLabel;
+    Label120: TLabel;
+    Label121: TLabel;
+    Label122: TLabel;
+    btnOpen: TButton;
+    memMaisch: TMemo;
+    ebName: TEdit;
+    ebID: TEdit;
+    Edit89: TEdit;
+    Edit90: TEdit;
+    Button3: TButton;
+    ScrollBar1: TScrollBar;
+    OpenDialog2: TOpenDialog;
+    SaveDialog2: TSaveDialog;
+    Button4: TButton;
+    CheckBox43: TCheckBox;
     procedure Button8Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
@@ -602,6 +620,11 @@ type
     procedure TimerRSetTimer(Sender: TObject);
     procedure CheckBox42Click(Sender: TObject);
     procedure ComboBox45Change(Sender: TObject);
+    procedure btnOpenClick(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure ScrollBar1Change(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure CheckBox43Click(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -609,7 +632,7 @@ type
   end;
 
 const
-  Version = 'V01.53';
+  Version = 'V01.54';
 
 var
   Form1: TForm1;
@@ -617,7 +640,7 @@ var
   rasttemp, rastnull: Array of Boolean;
   Temperatur,xwert,Graphic,LogName,Steuerung,BHEin,BHAus,BREin,BRAus,BPEin,BPAus,
   BAEin,BAAus,TimeTempStr,TimeTempStore,USBPort,USBTyp,pfad, tempdateiname,
-  sensorverzoegerung,Relais4,Rezeptname: String;
+  sensorverzoegerung,Relais4,Rezeptname,pfad2,pfad3: String;
   Tempfloat,Solltemp,Deltatemp,Deltatemp2,SimTemp,TWert,Gradient, GradientWert,
   GradientUebergabe, Hysterese, Hysterese2, Aufheizrate, Abkuehlrate,
   alarmtemp: Extended;
@@ -628,9 +651,9 @@ var
   USBRIntWert,USBPIntWert,USBAIntWert,DeviceIndex,sensorreset,geskuehlzeit,
   StartTemp,maxsolltemp,gesheizzeit,restheizzeit,gesprozesszeit,restprozesszeit,
   restheizgauge,restprozessgauge,Timerstartbatstatus,spanne,Temperaturrast,
-  restkuehlzeit,restkuehlgauge, heizcounter,HEin,HAus: integer;
+  restkuehlzeit,restkuehlgauge, heizcounter,HEin,HAus,Datensatz,k: integer;
   LPTPort: word;
-  myFile,myLogFile,SimFile,mySetup,myDisplay: TextFile;
+  myFile,myLogFile,SimFile,mySetup,myDisplay,myImportFile: TextFile;
   pause,start,stop,AlarmEin,Rastende,PauseLogTimerHEin,PauseLogTimerHAus,
   PauseLogTimerHSet, PauseLogTimerREin,PauseLogTimerRAus,PauseLogTimerKEin,
   PauseLogTimerKAus,PauseLogTimerKSet,Rastnullges,Alarmheizstatus: boolean;
@@ -647,6 +670,131 @@ implementation
 
 {$R *.dfm}
 
+
+procedure ImportSettings;
+begin with Form1 do begin
+  AssignFile(myImportFile, pfad+'Import\file.txt');
+  ReWrite(myImportFile);
+  WriteLn(myImportFile,Edit90.Text);
+  WriteLn(myImportFile,pfad2);
+  CloseFile(myImportFile);
+end; end;
+
+procedure SQLBrowse;
+var slDBpath: string;
+    sldb: TSQLiteDatabase;
+    sltb: TSQLIteTable;
+    sSQL: String;
+    MemText: String;
+    ID,i,k,gk: integer;
+begin with Form1 do begin
+  Edit90.Text := OpenDialog2.FileName;
+  slDBPath := OpenDialog2.FileName;
+  sldb := TSQLiteDatabase.Create(slDBPath);
+  try
+    if sldb.TableExists('Sud') then
+    begin
+      //query the data
+      sltb := slDb.GetTable('SELECT * FROM Sud');
+      try
+        if sltb.Count > 0 then
+        begin
+          if Datensatz > sltb.Count-1 then Datensatz:=sltb.Count-1;
+          ScrollBar1.Max:=sltb.Count-1;
+          ScrollBar1.Position:=Datensatz;
+          if Datensatz < 0 then Datensatz:=0;
+          for i:=1 to Datensatz do sltb.Next;
+          Edit89.Text:=inttostr(Datensatz+1)+' / '+inttostr(sltb.Count);
+          k:=sltb.Count;
+          ebName.Text := UTF8ToAnsi(sltb.FieldAsString(sltb.FieldIndex['Sudname']));
+          ID := sltb.FieldAsInteger(sltb.FieldIndex['ID']);
+          ebID.Text := inttostr(ID);
+          memMaisch.Text := 'Einmaischen - '+floattostr(sltb.FieldAsDouble(sltb.FieldIndex['EinmaischenTemp']))+chr(176)+'C - 0 min.';
+        end;
+      except
+        MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+      end;
+      sltb := slDb.GetTable('SELECT * FROM Rasten WHERE SudID = '+inttostr(ID));
+      try
+        if sltb.Count > 0 then
+        begin
+          for i:=1 to sltb.Count do
+          begin
+            MemText:=UTF8ToAnsi(sltb.FieldAsString(sltb.FieldIndex['RastName']));
+            Delete(MemText, Pos(' ', MemText), 99);
+            MemText:=MemText+' - '+UTF8ToAnsi(sltb.FieldAsString(sltb.FieldIndex['RastTemp']))+chr(176)+'C - ';
+            MemText:=MemText+UTF8ToAnsi(sltb.FieldAsString(sltb.FieldIndex['RastDauer'])+' min.');
+            memMaisch.Lines.Add(MemText);
+            sltb.Next;
+          end;
+        end;
+      except
+        MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+      end;
+
+      {
+      *** Hopfengaben aus DB lesen ***
+      memMaisch.Lines.Add('');
+      memMaisch.Lines.Add('');
+      memMaisch.Lines.Add('============================================================');
+      memMaisch.Lines.Add('');
+      sltb := slDb.GetTable('SELECT * FROM Sud');
+      try
+        if sltb.Count > 0 then for i:=1 to Datensatz do sltb.Next;
+        memMaisch.Lines.Add('Gesamtkochdauer - '+floattostr(sltb.FieldAsDouble(sltb.FieldIndex['KochdauerNachBitterhopfung']))+' min.');
+        gk:=round(sltb.FieldAsDouble(sltb.FieldIndex['KochdauerNachBitterhopfung']));
+      except
+        MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+      end;
+      sltb := slDb.GetTable('SELECT * FROM Hopfengaben WHERE SudID = '+inttostr(ID));
+      try
+        memMaisch.Lines.Add('');
+        memMaisch.Lines.Add('Vorderwürzhopfen :');
+        if sltb.Count > 0 then
+        begin
+          for i:=1 to sltb.Count do
+          begin
+            if sltb.FieldAsString(sltb.FieldIndex['Vorderwuerze'])='1' then
+            begin
+              MemText:=UTF8ToAnsi(sltb.FieldAsString(sltb.FieldIndex['erg_Menge']))+ ' g';
+              MemText:=MemText+' - '+UTF8ToAnsi(sltb.FieldAsString(sltb.FieldIndex['erg_Hopfentext']));
+              memMaisch.Lines.Add(MemText);
+            end;
+            sltb.Next;
+          end;
+        end;
+      except
+        MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+      end;
+      sltb := slDb.GetTable('SELECT * FROM Hopfengaben ORDER BY Zeit DESC');
+      try
+        memMaisch.Lines.Add('');
+        memMaisch.Lines.Add('Hopfengabe nach :');
+        if sltb.Count > 0 then
+        begin
+          for i:=1 to sltb.Count do
+          begin
+            if (sltb.FieldAsString(sltb.FieldIndex['Vorderwuerze'])='0') and (sltb.FieldAsString(sltb.FieldIndex['SudID'])=inttostr(ID)) then
+            begin
+              k:=gk-round(sltb.FieldAsDouble(sltb.FieldIndex['Zeit']));
+              MemText:=inttostr(k)+' min. - ';
+              MemText:=MemText+UTF8ToAnsi(sltb.FieldAsString(sltb.FieldIndex['erg_Menge']))+ ' g';
+              MemText:=MemText+' - '+UTF8ToAnsi(sltb.FieldAsString(sltb.FieldIndex['erg_Hopfentext']));
+              memMaisch.Lines.Add(MemText);
+            end;
+            sltb.Next;
+          end;
+        end;
+      except
+        MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+      end;
+    }
+
+    end;
+  finally
+    sltb.Free;
+  end;
+end; end;
 
 function MyMessageDlgPos(const Msg: string; DlgType: TMsgDlgType; Buttons: TMsgDlgButtons; Captions: array of string; xPos: Integer; yPos: Integer ): Integer;
 var
@@ -733,14 +881,38 @@ end;
 procedure Out32(wAddr:word;bOut:byte);stdcall; external 'inpout32.dll'    // Parallelportausgabe
 function Inp32(wAddr:word):integer;stdcall; external 'inpout32.dll'       // Parallelporteingabe
 
-//Denkovi:
+//Denkovi+SainSmart:
 function FT_Open(Index:Integer; ftHandle:Pointer):FT_Result; stdcall; External 'FTD2XX.DLL' name 'FT_Open';
 Function FT_OpenEx(pArg1:Pointer; Flags:DWORD; ftHandle:Pointer):FT_Result; stdcall; External 'FTD2XX.DLL' name 'FT_OpenEx';
 function FT_Close(ftHandle:Dword):FT_Result; stdcall; External 'FTD2XX.DLL' name 'FT_Close';
 function FT_Write(ftHandle:Dword; FTOutBuf:Pointer; BufferSize:LongInt; ResultPtr:Pointer):FT_Result; stdcall; External 'FTD2XX.DLL' name 'FT_Write';
 function FT_SetBaudRate(ftHandle:Dword; BaudRate:DWord):FT_Result; stdcall; External 'FTD2XX.DLL' name 'FT_SetBaudRate';
 function FT_SetBitMode(ftHandle:Dword; Mask,Enable:Byte):FT_Result; stdcall; External 'FTD2XX.DLL' name 'FT_SetBitMode';
+
+//Denkovi:
 procedure USB2OUT;
+begin
+  FT_OUT_INT:=0;
+  if (Ruehrwerk<>0) then FT_OUT_INT:=FT_OUT_INT+USBRIntWert;
+  if (Heizung<>0) then FT_OUT_INT:=FT_OUT_INT+USBHIntWert;
+  if (Alarm<>0) then FT_OUT_INT:=FT_OUT_INT+USBAIntWert;
+  if (Pumpe<>0) then FT_OUT_INT:=FT_OUT_INT+USBPIntWert;
+  FT_OUT:=FT_OUT_INT;
+  RESULT:=FT_Close(FT_HANDLE);
+  RESULT:=FT_Open(DeviceIndex,@FT_Handle);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+  RESULT:=FT_SetBaudRate(FT_Handle,921600);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+  RESULT:=FT_SetBitMode(FT_Handle,255,4);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+  RESULT:=FT_Write(FT_Handle,@FT_OUT,1,@Write_Result);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+  RESULT:=FT_Close(FT_HANDLE);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+end;
+
+//SainSmart:
+procedure USB3OUT;
 begin
   FT_OUT_INT:=0;
   if (Ruehrwerk<>0) then FT_OUT_INT:=FT_OUT_INT+USBRIntWert;
@@ -825,10 +997,25 @@ end;
 procedure Schalten(Form:TForm1);
 begin
   LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;  //LPT-Code errechnen
+  if usbtyp='SainSmart' then               //USB-Code errechnen
+  begin
+    If USBHWert=char(1) then USBHIntWert:=1 else if USBHWert=char(2) then USBHIntWert:=2 else if USBHWert=char(3) then USBHIntWert:=4 else USBHIntWert:=8;
+    If USBRWert=char(1) then USBRIntWert:=1 else if USBRWert=char(2) then USBRIntWert:=2 else if USBRWert=char(3) then USBRIntWert:=4 else USBRIntWert:=8;
+    If USBAWert=char(1) then USBAIntWert:=1 else if USBAWert=char(2) then USBAIntWert:=2 else if USBAWert=char(3) then USBAIntWert:=4 else USBAIntWert:=8;
+    If USBPWert=char(1) then USBPIntWert:=1 else if USBPWert=char(2) then USBPIntWert:=2 else if USBPWert=char(3) then USBPIntWert:=4 else USBPIntWert:=8;
+  end
+  else
+  begin
+    If USBHWert=char(1) then USBHIntWert:=2 else if USBHWert=char(2) then USBHIntWert:=8 else if USBHWert=char(3) then USBHIntWert:=32 else USBHIntWert:=128;
+    If USBRWert=char(1) then USBRIntWert:=2 else if USBRWert=char(2) then USBRIntWert:=8 else if USBRWert=char(3) then USBRIntWert:=32 else USBRIntWert:=128;
+    If USBAWert=char(1) then USBAIntWert:=2 else if USBAWert=char(2) then USBAIntWert:=8 else if USBAWert=char(3) then USBAIntWert:=32 else USBAIntWert:=128;
+    If USBPWert=char(1) then USBPIntWert:=2 else if USBPWert=char(2) then USBPIntWert:=8 else if USBPWert=char(3) then USBPIntWert:=32 else USBPIntWert:=128;
+  end;
   if steuerung='LPT' then begin Form1.Edit52.Text:=inttostr(LPTCode);  Form1.Edit51.Text:=inttostr(LPTPort); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
   if steuerung='BATCH' then begin Form1.Edit52.Text:='off'; BatchOut;  Form1.Edit51.Text:=''; end; //LPT-Code als Batch ausgeben
-  if (steuerung='USB') and (usbtyp='KMTronic') then begin Form1.Edit52.Text:='USB'; Form1.Edit51.Text:=USBPort; USBOut; end; //LPT-Code an USB-Port ausgeben
-  if (steuerung='USB') and (usbtyp='Denkovi') then begin Form1.Edit52.Text:='USB'; Form1.Edit51.Text:=inttostr(DeviceIndex); USB2Out; end; //LPT-Code an USB-Port ausgeben
+  if (steuerung='USB') and (usbtyp='KMTronic') then begin Form1.Edit52.Text:='USB'; Form1.Edit51.Text:=USBPort; USBOut; end; //USB-Code an USB-Port ausgeben
+  if (steuerung='USB') and (usbtyp='Denkovi') then begin Form1.Edit52.Text:='USB'; Form1.Edit51.Text:=inttostr(DeviceIndex); USB2Out; end; //USB-Code an USB-Port ausgeben
+  if (steuerung='USB') and (usbtyp='SainSmart') then begin Form1.Edit52.Text:='USB'; Form1.Edit51.Text:=inttostr(DeviceIndex); USB3Out; end; //USB-Code an USB-Port ausgeben
 end;
 
 procedure speichern(Form:TForm1; filename:string);
@@ -900,8 +1087,8 @@ begin
   WriteLn(mySetup,'LPT-Ruehrwerk;'+Form.ComboBox10.Text);
   WriteLn(mySetup,'LPT-Pumpe;'+Form.ComboBox11.Text);
   WriteLn(mySetup,'LPT-Alarm;'+Form.ComboBox12.Text);
-  WriteLn(mySetup,'USB-Karten-Typ "Denkovi" oder "KMTronic";'+Form.ComboBox2.Text);
-  WriteLn(mySetup,'Denkovi-Device-Index;'+Form.ComboBox16.Text);
+  WriteLn(mySetup,'USB-Karten-Typ "Denkovi", "KMTronic" oder "SainSmart";'+Form.ComboBox2.Text);
+  WriteLn(mySetup,'Device-Index;'+Form.ComboBox16.Text);
   WriteLn(mySetup,'USB-Port;'+Form.ComboBox7.Text);
   WriteLn(mySetup,'USB-Heizung;'+Form.ComboBox3.Text);
   WriteLn(mySetup,'USB-Ruehrwerk;'+Form.ComboBox4.Text);
@@ -956,6 +1143,7 @@ begin
   WriteLn(mySetup,'Abkühlrate pro Minute;'+Form.ComboBox44.Text);
   if Form.CheckBox32.Checked=true then WriteLn(mySetup,'Log-Datei schreiben;1') else WriteLn(mySetup,'Log-Datei schreiben;0');
   if Form.CheckBox42.Checked=true then WriteLn(mySetup,'Rührwerk mit Heizung koppeln;1') else WriteLn(mySetup,'Rührwerk mit Heizung koppeln;0');
+  if Form.CheckBox43.Checked=true then WriteLn(mySetup,'Rührwerk bei Heizung durchgehend AN;1') else WriteLn(mySetup,'Rührwerk bei Heizung durchgehend AN;0');
   WriteLn(mySetup,'Rührwerk-Zeitabstand;'+stringreplace(Form.ComboBox45.Text,' ','€€€',[rfReplaceAll]));
   CloseFile(mySetup);
   Steuerung:=Form.ComboBox1.Text;
@@ -1124,15 +1312,13 @@ begin
       sl2.DelimitedText:=sl[53];
       try if sl2[sl2.Count-1]='1' then Form.CheckBox42.Checked:=true else Form.CheckBox42.Checked:=false; except Form.CheckBox42.Checked:=false end;
       sl2.DelimitedText:=sl[54];
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox43.Checked:=true else Form.CheckBox43.Checked:=false; except Form.CheckBox43.Checked:=false end;
+      sl2.DelimitedText:=sl[55];
       try Form.ComboBox45.Text:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ComboBox45.Text:='5 Sekunden'; end;
       AusIst:=Aus1;
       EinIst:=Ein1;
       If Steuerung='USB' then Form1.USB_Update_Tmr.Enabled:=true;
       If Steuerung='BATCH' then Form1.Batch_Update_Tmr.Enabled:=true;
-      If USBHWert=char(1) then USBHIntWert:=2 else if USBHWert=char(2) then USBHIntWert:=8 else if USBHWert=char(3) then USBHIntWert:=32 else USBHIntWert:=128;
-      If USBRWert=char(1) then USBRIntWert:=2 else if USBRWert=char(2) then USBRIntWert:=8 else if USBRWert=char(3) then USBRIntWert:=32 else USBRIntWert:=128;
-      If USBAWert=char(1) then USBAIntWert:=2 else if USBAWert=char(2) then USBAIntWert:=8 else if USBAWert=char(3) then USBAIntWert:=32 else USBAIntWert:=128;
-      If USBPWert=char(1) then USBPIntWert:=2 else if USBPWert=char(2) then USBPIntWert:=8 else if USBPWert=char(3) then USBPIntWert:=32 else USBPIntWert:=128;
     finally
       sl2.Free;
     end;
@@ -1520,7 +1706,8 @@ begin
   Form1.ComboBox30Change(Sender);
   Form1.ComboBox32Change(Sender);
   Form1.ComboBox33Change(Sender);
-  form1.Caption:='Brauerei '+ Version
+  form1.Caption:='Brauerei '+ Version;
+  if Screen.Width<1000 then scaleby(80,100);
 end;
 
 procedure TForm1.BitBtn9Click(Sender: TObject);
@@ -1662,6 +1849,7 @@ begin
       BitBtn9.Enabled:=false;
       BitBtn12.Enabled:=false;
       TabSheet4.TabVisible:=false;
+      TabSheet5.TabVisible:=false;
       if checkbox32.checked=true then Button18.Enabled:=true;
       if checkbox32.checked=true then Button23.Enabled:=true;
       Graphic:=pfad + 'Graphics\Automatik-aktiv.bmp';
@@ -2009,6 +2197,7 @@ begin
   for i:= 26 to 35 do (FindComponent('Label' + IntToStr(i)) as TLabel).Visible := true;
   for i:= 1 to 10 do (FindComponent('Gauge' + IntToStr(i)) as TGauge).Visible := true;
   TabSheet4.TabVisible:=true;
+  TabSheet5.TabVisible:=true;
   Graphic:=pfad + 'Graphics\Automatik-inaktiv.bmp';
   Image5.Picture.LoadFromFile(Graphic);
   BitBtn1.Enabled:=true;
@@ -2135,9 +2324,12 @@ end;
 
 procedure TForm1.TimerRAusTimer(Sender: TObject);
 begin
-  Ruehrwerk:=0;
-  Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-aus.bmp');
-  Schalten(Form1);
+  if (CheckBox43.Checked=false) or ((CheckBox43.Checked=true) and (Heizung=0)) then
+  begin
+    Ruehrwerk:=0;
+    Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-aus.bmp');
+    Schalten(Form1);
+  end;
   TimerRAus.Enabled:=false;
   TimerREin.Enabled:=true;
 end;
@@ -2327,6 +2519,7 @@ begin
 end;
 
 procedure TForm1.PageControl1Change(Sender: TObject);
+var tempstr:string;
 begin
   DecimalSeparator:='.';
   Button19.Enabled:=false;
@@ -2384,6 +2577,21 @@ begin
   except
   end;
   Form1.ComboBox1Change(Sender);
+  if PageControl1.ActivePage=TabSheet5 then
+  begin
+  Datensatz:=99999;
+  if FileExists(pfad+'import\file.txt') then
+  begin
+    AssignFile(myImportFile, pfad+'import\file.txt');
+    Reset(myImportFile);
+    ReadLn(myImportFile, tempstr);
+    ReadLn(myImportFile, pfad2);
+    OpenDialog2.FileName:=tempstr;
+    SaveDialog2.InitialDir:=pfad2;
+    CloseFile(myImportFile);
+    SQLBrowse;
+  end;
+  end;
 end;
 
 procedure TForm1.Edit55KeyPress(Sender: TObject; var Key: Char);
@@ -2695,7 +2903,7 @@ end;
 procedure TForm1.USB_Update_TmrTimer(Sender: TObject);
 begin
   if Steuerung<>'USB' then begin USB_Update_Tmr.Enabled:=false; exit; end;
-  if usbtyp='Denkovi' then USB2Out else USBOut;
+  if usbtyp='Denkovi' then USB2Out else if usbtyp='SainSmart' then USB3Out else USBOut;
 end;
 
 procedure TForm1.Batch_Update_TmrTimer(Sender: TObject);
@@ -2714,6 +2922,15 @@ procedure TForm1.ComboBox2Change(Sender: TObject);
 begin
   if ComboBox2.Text='Denkovi' then
   begin
+    usbtyp:='Denkovi';
+    ComboBox7.Visible:=false;
+    ComboBox16.Visible:=true;
+    Label76.Visible:=false;
+    Label111.Visible:=true;
+  end
+  else if ComboBox2.Text='SainSmart' then
+  begin
+    usbtyp:='SainSmart';
     ComboBox7.Visible:=false;
     ComboBox16.Visible:=true;
     Label76.Visible:=false;
@@ -2721,6 +2938,7 @@ begin
   end
   else
   begin
+    usbtyp:='KMTronic';
     ComboBox16.Visible:=false;
     ComboBox7.Visible:=true;
     Label111.Visible:=false;
@@ -2765,7 +2983,7 @@ procedure TForm1.CheckBox35Click(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.ComboBox27Change(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.ComboBox44Change(Sender: TObject); begin setupgeaendert; end;
 procedure TForm1.CheckBox32Click(Sender: TObject); begin setupgeaendert; end;
-procedure TForm1.CheckBox42Click(Sender: TObject); begin setupgeaendert; end;
+procedure TForm1.CheckBox42Click(Sender: TObject); begin If CheckBox42.Checked=true then CheckBox43.Checked:=false; setupgeaendert; end;
 procedure TForm1.ComboBox45Change(Sender: TObject); begin setupgeaendert; end;
 
 procedure TForm1.ComboBox26Change(Sender: TObject); begin setupgeaendert; Hysterese:=strtofloat(Form1.ComboBox26.Text); end;
@@ -3372,9 +3590,165 @@ begin
   end;
 end;
 
+procedure TForm1.btnOpenClick(Sender: TObject);
+begin
+  Datensatz:=99999;
+  if (OpenDialog2.Execute) then
+  begin
+    SQLBrowse;
+    ImportSettings;
+    ScrollBar1.Min:=0;
+  end;
+end;
+
+procedure exportieren(Form:TForm1; filename:string);
+var slDBpath: string;
+    sldb: TSQLiteDatabase;
+    sltb: TSQLIteTable;
+    sSQL: String;
+    Tempstr: String;
+    ID,i,j: integer;
+begin
+  AssignFile(myImportFile, filename);
+  ReWrite(myImportFile);
+  slDBPath := Form.OpenDialog2.FileName;
+  sldb := TSQLiteDatabase.Create(slDBPath);
+  try
+    if sldb.TableExists('Sud') then
+    begin
+      //query the data
+      sltb := slDb.GetTable('SELECT * FROM Sud');
+      try
+        if sltb.Count > 0 then
+        begin
+          if Datensatz > sltb.Count-1 then Datensatz:=sltb.Count-1;
+          if Datensatz < 0 then Datensatz:=0;
+          for i:=1 to Datensatz do sltb.Next;
+          Tempstr := floattostr(sltb.FieldAsDouble(sltb.FieldIndex['EinmaischenTemp']));
+          WriteLn(myImportFile, Tempstr);
+          WriteLn(myImportFile, '0');
+          ID := sltb.FieldAsInteger(sltb.FieldIndex['ID']);
+        end;
+      except
+        MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+      end;
+      sltb := slDb.GetTable('SELECT * FROM Rasten WHERE SudID = '+inttostr(ID));
+      j := sltb.Count+1;
+      try
+        if sltb.Count > 0 then
+        begin
+          for i:=1 to 9 do
+          begin
+            if i<=sltb.Count then
+            begin
+              Tempstr:=UTF8ToAnsi(sltb.FieldAsString(sltb.FieldIndex['RastTemp']));
+              WriteLn(myImportFile, Tempstr);
+              Tempstr:=UTF8ToAnsi(sltb.FieldAsString(sltb.FieldIndex['RastDauer']));
+              WriteLn(myImportFile, Tempstr);
+              sltb.Next;
+            end
+            else
+            begin
+              WriteLn(myImportFile, '20');
+              WriteLn(myImportFile, '60');
+            end;
+          end;
+        end;
+      except
+        MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+      end;
+    end;
+  finally
+    sltb.Free;
+  end;
+  if j>10 then j:=10;
+
+  for i := 1 to 10 do WriteLn(myImportFile, '9999');
+
+  for i := 1 to 10 do WriteLn(myImportFile, '0');
+
+  for i := 1 to j do WriteLn(myImportFile, 'TRUE');
+  for i := j to 9 do WriteLn(myImportFile, 'FALSE');
+
+  WriteLn(myImportFile, 'TRUE');
+  for i := 2 to j-1 do WriteLn(myImportFile, 'FALSE');
+  WriteLn(myImportFile, 'TRUE');
+  for i := j to 9 do WriteLn(myImportFile, 'FALSE');
+
+  for i := 1 to 10 do WriteLn(myImportFile, 'TRUE');
+
+  WriteLn(myImportFile, 'Malz einfüllen');
+  for i := 2 to j-1 do WriteLn(myImportFile, '');
+  WriteLn(myImportFile, 'Maischeprozess beendet - Abmaischen');
+  for i := j to 9 do WriteLn(myImportFile, '');
+
+  WriteLn(myImportFile, 'Einmaischen');
+  slDBPath := Form.OpenDialog2.FileName;
+  sldb := TSQLiteDatabase.Create(slDBPath);
+  try
+    sltb := slDb.GetTable('SELECT * FROM Rasten WHERE SudID = '+inttostr(ID));
+    try
+      if sltb.Count > 0 then
+      begin
+        for i:=1 to 9 do
+        begin
+          if i<=sltb.Count then
+          begin
+            Tempstr:=UTF8ToAnsi(sltb.FieldAsString(sltb.FieldIndex['RastName']));
+            Delete(Tempstr, Pos(' ', Tempstr), 99);
+            WriteLn(myImportFile, Tempstr);
+            sltb.Next;
+          end
+          else WriteLn(myImportFile, 'Rast '+inttostr(i+1));
+        end;
+      end;
+    except
+      MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+    end;
+  finally
+    sltb.Free;
+  end;
+
+  for i := 1 to 10 do WriteLn(myImportFile, 'Bei Rasttemperaturüberschreitung');
+
+  CloseFile(myImportFile);
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+  exportieren(Form1, pfad+'Import\temp.rzt');
+  laden(Form1, pfad+'Import\temp.rzt');
+  Rezeptname:= 'temp';
+  Form1.Caption:='Brauerei '+ Version + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
+  CloseFile(myFile);
+  Form1.Button30Click(Sender);
+end;
+
+procedure TForm1.ScrollBar1Change(Sender: TObject);
+begin
+  Datensatz:=ScrollBar1.Position;
+  SQLBrowse;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+  SaveDialog2.FileName := ebName.Text+'.rzt';
+  if SaveDialog2.Execute then
+  begin
+    if DeleteFile(SaveDialog2.FileName) then MessageDlgPos('Rezept wurde überschrieben !', mtInformation, [mbOK], 0, Form1.Left+50, Form1.Top+50);
+    exportieren(Form1, SaveDialog2.FileName);
+  end;
+  pfad2:= ExtractFileDir(SaveDialog2.FileName);
+  SaveDialog2.InitialDir:= pfad2;
+  ImportSettings;
+end;
+
+procedure TForm1.CheckBox43Click(Sender: TObject);
+begin
+  If CheckBox43.Checked=true then begin CheckBox42.Checked:=false; setupgeaendert; end;
+end;
+
 end.
-
-
 
 
 

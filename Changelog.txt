@@ -1,5 +1,11 @@
 Change-Log:
 
+V 1.54
+SainSmart USB-Relais ergänzt
+Rezept aus "kleinem Brauhelfer" importierbar
+Bei Auflösungen kleiner 1024x768 wird die Oerfläche skaliert
+Rührwerk kann in Heizphasen durchgehend und in Heizpausen gepuls angesteuert werden
+
 V 1.53
 Temperaturen für Pulsungsstufen wählbar
 Rührwerk taktet bei Pause weiter

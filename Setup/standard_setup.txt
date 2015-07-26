@@ -5,9 +5,9 @@ LPT-Heizung;1
 LPT-Ruehrwerk;2
 LPT-Pumpe;8
 LPT-Alarm;128
-USB-Karten-Typ "Denkovi" oder "KMTronic";Denkovi
-Denkovi-Device-Index;0
-USB-Port;COM5
+USB-Karten-Typ "Denkovi", "KMTronic" oder "SainSmart";Denkovi
+Device-Index;0
+USB-Port;
 USB-Heizung;1
 USB-Ruehrwerk;2
 USB-Pumpe;3
@@ -52,4 +52,8 @@ Pulstemperatur Stufe 4;90
 Abkühlrate pro Minute;2.0
 Log-Datei schreiben;1
 Rührwerk mit Heizung koppeln;0
-Rührwerk-Zeitabstand;5€€€Sekunden
+Rührwerk bei Heizung durchgehend AN;0
+Rührwerk-Zeitabstand;
+Kochtemperatur;99
+Temperaturkorrekturwert;0.0
+Temperaturkorrekturfaktor;1.0

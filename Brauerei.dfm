@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 211
-  Top = 161
+  Left = 260
+  Top = 137
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Brauerei'
@@ -13,11 +13,9 @@ object Form1: TForm1
   Font.Name = 'MS Sans Serif'
   Font.Style = [fsBold]
   OldCreateOrder = False
+  Scaled = False
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
-  DesignSize = (
-    977
-    632)
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
@@ -679,6 +677,7 @@ object Form1: TForm1
       CDC528D77E9520DF014C54685B4E7B8E906D55DAB6DFC04142D7687274EB6936
       55698381F17438680E7E06BF10541D81645ED4EE63FC7E435FFCFF00FFD9}
     ShowHint = True
+    Stretch = True
     OnDblClick = Image1DblClick
   end
   object Label58: TLabel
@@ -722,7 +721,7 @@ object Form1: TForm1
     Top = 8
     Width = 777
     Height = 617
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     ParentShowHint = False
     ShowHint = False
     TabOrder = 0
@@ -4162,6 +4161,7 @@ object Form1: TForm1
           ShowHint = True
           TabOrder = 0
           OnClick = BitBtn1Click
+          OnMouseUp = BitBtn1MouseUp
           Glyph.Data = {
             CE3A0000424DCE3A000000000000360000002800000064000000320000000100
             180000000000983A0000C40E0000C40E00000000000000000000FFFFFFFFFFFF
@@ -5130,6 +5130,7 @@ object Form1: TForm1
           ShowHint = True
           TabOrder = 2
           OnClick = BitBtn3Click
+          OnMouseUp = BitBtn3MouseUp
           Glyph.Data = {
             E61D0000424DE61D000000000000360000002800000032000000320000000100
             180000000000B01D0000C40E0000C40E00000000000000000000FFFFFFFFFFFF
@@ -7677,21 +7678,21 @@ object Form1: TForm1
         Height = 345
         TabOrder = 6
         object Label1: TLabel
-          Left = 126
+          Left = 134
           Top = 8
           Width = 65
           Height = 13
           Caption = 'Temperatur'
         end
         object Label2: TLabel
-          Left = 168
+          Left = 176
           Top = 27
           Width = 14
           Height = 13
           Caption = #176'C'
         end
         object Label3: TLabel
-          Left = 211
+          Left = 219
           Top = 8
           Width = 35
           Height = 13
@@ -7705,7 +7706,7 @@ object Form1: TForm1
           Caption = 'min.'
         end
         object Label5: TLabel
-          Left = 168
+          Left = 176
           Top = 59
           Width = 14
           Height = 13
@@ -7719,7 +7720,7 @@ object Form1: TForm1
           Caption = 'min.'
         end
         object Label7: TLabel
-          Left = 168
+          Left = 176
           Top = 91
           Width = 14
           Height = 13
@@ -7733,7 +7734,7 @@ object Form1: TForm1
           Caption = 'min.'
         end
         object Label9: TLabel
-          Left = 168
+          Left = 176
           Top = 123
           Width = 14
           Height = 13
@@ -7747,7 +7748,7 @@ object Form1: TForm1
           Caption = 'min.'
         end
         object Label11: TLabel
-          Left = 168
+          Left = 176
           Top = 155
           Width = 14
           Height = 13
@@ -7761,7 +7762,7 @@ object Form1: TForm1
           Caption = 'min.'
         end
         object Label13: TLabel
-          Left = 168
+          Left = 176
           Top = 187
           Width = 14
           Height = 13
@@ -7775,7 +7776,7 @@ object Form1: TForm1
           Caption = 'min.'
         end
         object Label15: TLabel
-          Left = 168
+          Left = 176
           Top = 219
           Width = 14
           Height = 13
@@ -7789,7 +7790,7 @@ object Form1: TForm1
           Caption = 'min.'
         end
         object Label17: TLabel
-          Left = 168
+          Left = 176
           Top = 251
           Width = 14
           Height = 13
@@ -7803,7 +7804,7 @@ object Form1: TForm1
           Caption = 'min.'
         end
         object Label19: TLabel
-          Left = 168
+          Left = 176
           Top = 283
           Width = 14
           Height = 13
@@ -7817,7 +7818,7 @@ object Form1: TForm1
           Caption = 'min.'
         end
         object Label21: TLabel
-          Left = 168
+          Left = 176
           Top = 315
           Width = 14
           Height = 13
@@ -7831,9 +7832,9 @@ object Form1: TForm1
           Caption = 'min.'
         end
         object Edit1: TEdit
-          Left = 128
+          Left = 144
           Top = 24
-          Width = 41
+          Width = 33
           Height = 21
           TabOrder = 1
           Text = '20'
@@ -7850,18 +7851,18 @@ object Form1: TForm1
           TabOrder = 0
         end
         object Edit2: TEdit
-          Left = 209
+          Left = 217
           Top = 24
-          Width = 41
+          Width = 32
           Height = 21
           TabOrder = 2
           Text = '60'
           OnExit = Edit2Exit
         end
         object Edit3: TEdit
-          Left = 128
+          Left = 144
           Top = 56
-          Width = 41
+          Width = 33
           Height = 21
           TabOrder = 4
           Text = '20'
@@ -7878,18 +7879,18 @@ object Form1: TForm1
           TabOrder = 3
         end
         object Edit4: TEdit
-          Left = 209
+          Left = 217
           Top = 56
-          Width = 41
+          Width = 32
           Height = 21
           TabOrder = 5
           Text = '60'
           OnExit = Edit4Exit
         end
         object Edit5: TEdit
-          Left = 128
+          Left = 144
           Top = 88
-          Width = 41
+          Width = 33
           Height = 21
           TabOrder = 7
           Text = '20'
@@ -7906,18 +7907,18 @@ object Form1: TForm1
           TabOrder = 6
         end
         object Edit6: TEdit
-          Left = 209
+          Left = 217
           Top = 88
-          Width = 41
+          Width = 32
           Height = 21
           TabOrder = 8
           Text = '60'
           OnExit = Edit6Exit
         end
         object Edit7: TEdit
-          Left = 128
+          Left = 144
           Top = 120
-          Width = 41
+          Width = 33
           Height = 21
           TabOrder = 10
           Text = '20'
@@ -7934,18 +7935,18 @@ object Form1: TForm1
           TabOrder = 9
         end
         object Edit8: TEdit
-          Left = 209
+          Left = 217
           Top = 120
-          Width = 41
+          Width = 32
           Height = 21
           TabOrder = 11
           Text = '60'
           OnExit = Edit8Exit
         end
         object Edit9: TEdit
-          Left = 128
+          Left = 144
           Top = 152
-          Width = 41
+          Width = 33
           Height = 21
           TabOrder = 13
           Text = '20'
@@ -7962,18 +7963,18 @@ object Form1: TForm1
           TabOrder = 12
         end
         object Edit10: TEdit
-          Left = 209
+          Left = 217
           Top = 152
-          Width = 41
+          Width = 32
           Height = 21
           TabOrder = 14
           Text = '60'
           OnExit = Edit10Exit
         end
         object Edit11: TEdit
-          Left = 128
+          Left = 144
           Top = 184
-          Width = 41
+          Width = 33
           Height = 21
           TabOrder = 16
           Text = '20'
@@ -7990,18 +7991,18 @@ object Form1: TForm1
           TabOrder = 15
         end
         object Edit12: TEdit
-          Left = 209
+          Left = 217
           Top = 184
-          Width = 41
+          Width = 32
           Height = 21
           TabOrder = 17
           Text = '60'
           OnExit = Edit12Exit
         end
         object Edit13: TEdit
-          Left = 128
+          Left = 144
           Top = 216
-          Width = 41
+          Width = 33
           Height = 21
           TabOrder = 19
           Text = '20'
@@ -8018,18 +8019,18 @@ object Form1: TForm1
           TabOrder = 18
         end
         object Edit14: TEdit
-          Left = 209
+          Left = 217
           Top = 216
-          Width = 41
+          Width = 32
           Height = 21
           TabOrder = 20
           Text = '60'
           OnExit = Edit14Exit
         end
         object Edit15: TEdit
-          Left = 128
+          Left = 144
           Top = 248
-          Width = 41
+          Width = 33
           Height = 21
           TabOrder = 22
           Text = '20'
@@ -8046,18 +8047,18 @@ object Form1: TForm1
           TabOrder = 21
         end
         object Edit16: TEdit
-          Left = 209
+          Left = 217
           Top = 248
-          Width = 41
+          Width = 32
           Height = 21
           TabOrder = 23
           Text = '60'
           OnExit = Edit16Exit
         end
         object Edit17: TEdit
-          Left = 128
+          Left = 144
           Top = 280
-          Width = 41
+          Width = 33
           Height = 21
           TabOrder = 25
           Text = '20'
@@ -8074,18 +8075,18 @@ object Form1: TForm1
           TabOrder = 24
         end
         object Edit18: TEdit
-          Left = 209
+          Left = 217
           Top = 280
-          Width = 41
+          Width = 32
           Height = 21
           TabOrder = 26
           Text = '60'
           OnExit = Edit18Exit
         end
         object Edit19: TEdit
-          Left = 128
+          Left = 144
           Top = 312
-          Width = 41
+          Width = 33
           Height = 21
           TabOrder = 28
           Text = '20'
@@ -8102,9 +8103,9 @@ object Form1: TForm1
           TabOrder = 27
         end
         object Edit20: TEdit
-          Left = 209
+          Left = 217
           Top = 312
-          Width = 41
+          Width = 32
           Height = 21
           TabOrder = 29
           Text = '60'
@@ -8114,14 +8115,14 @@ object Form1: TForm1
       object Panel8: TPanel
         Left = 32
         Top = 180
-        Width = 105
+        Width = 121
         Height = 345
         TabOrder = 4
         Visible = False
         object Edit82: TEdit
           Left = 4
           Top = 312
-          Width = 97
+          Width = 109
           Height = 21
           TabOrder = 9
           Text = 'Rast 10'
@@ -8129,7 +8130,7 @@ object Form1: TForm1
         object Edit81: TEdit
           Left = 4
           Top = 280
-          Width = 97
+          Width = 109
           Height = 21
           TabOrder = 8
           Text = 'Rast 9'
@@ -8137,7 +8138,7 @@ object Form1: TForm1
         object Edit80: TEdit
           Left = 4
           Top = 248
-          Width = 97
+          Width = 109
           Height = 21
           TabOrder = 7
           Text = 'Rast 8'
@@ -8145,7 +8146,7 @@ object Form1: TForm1
         object Edit79: TEdit
           Left = 4
           Top = 216
-          Width = 97
+          Width = 109
           Height = 21
           TabOrder = 6
           Text = 'Rast 7'
@@ -8153,7 +8154,7 @@ object Form1: TForm1
         object Edit78: TEdit
           Left = 4
           Top = 184
-          Width = 97
+          Width = 109
           Height = 21
           TabOrder = 5
           Text = 'Rast 6'
@@ -8161,7 +8162,7 @@ object Form1: TForm1
         object Edit77: TEdit
           Left = 4
           Top = 152
-          Width = 97
+          Width = 109
           Height = 21
           TabOrder = 4
           Text = 'Rast 5'
@@ -8169,7 +8170,7 @@ object Form1: TForm1
         object Edit76: TEdit
           Left = 4
           Top = 120
-          Width = 97
+          Width = 109
           Height = 21
           TabOrder = 3
           Text = 'Rast 4'
@@ -8177,7 +8178,7 @@ object Form1: TForm1
         object Edit75: TEdit
           Left = 4
           Top = 88
-          Width = 97
+          Width = 109
           Height = 21
           TabOrder = 2
           Text = 'Rast 3'
@@ -8185,7 +8186,7 @@ object Form1: TForm1
         object Edit74: TEdit
           Left = 4
           Top = 56
-          Width = 97
+          Width = 109
           Height = 21
           TabOrder = 1
           Text = 'Rast 2'
@@ -8193,7 +8194,7 @@ object Form1: TForm1
         object Edit73: TEdit
           Left = 4
           Top = 24
-          Width = 97
+          Width = 109
           Height = 21
           TabOrder = 0
           Text = 'Rast 1'
@@ -9039,244 +9040,716 @@ object Form1: TForm1
         end
       end
       object Panel15: TPanel
-        Left = 528
+        Left = 680
         Top = 180
-        Width = 233
+        Width = 81
         Height = 345
         TabOrder = 10
-        Visible = False
-        object Label108: TLabel
-          Left = 7
-          Top = 8
-          Width = 82
-          Height = 13
-          Caption = 'Rastzeit-Start:'
-        end
-        object ComboBox34: TComboBox
-          Left = 5
-          Top = 24
-          Width = 224
-          Height = 21
+        object BitBtn17: TBitBtn
+          Left = 25
+          Top = 18
+          Width = 30
+          Height = 30
           Hint = 
-            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
-            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
-            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
-            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
-            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
-            'ner/gleich der Rasttemperatur ist.'
-          ItemHeight = 13
+            'Feuer : Raststart bei Rasttemperatur'#252'berschreitung'#13#10'Uhr   : Rast' +
+            'start bei Temperaturunabh'#228'ngig'#13#10'Eis   : Raststart bei Rasttemper' +
+            'aturunterschreitung'
+          HelpType = htKeyword
+          HelpKeyword = 'Bei Rasttemperatur'#252'berschreitung'
           ParentShowHint = False
           ShowHint = True
           TabOrder = 0
-          Text = 'Bei Rasttemperatur'#252'berschreitung'
-          Items.Strings = (
-            'Bei Rasttemperatur'#252'berschreitung'
-            'Temperaturunabh'#228'ngig'
-            'Bei Rasttemperaturunterschreitung')
+          OnClick = BitBtn17Click
+          Glyph.Data = {
+            82060000424D8206000000000000420000002800000014000000140000000100
+            20000300000040060000C30E0000C30E00000000000000000000000000FF0000
+            FF0000FF000000FFFFFF00FFFFFF00FFFFFF00FFFFFF01FFFF00010000000100
+            00000C0080BF2E008BCD5600B8DB6C00D9E39400E9EC8100D7E557009ED90D00
+            62B10100FF0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000000A00
+            3399620039D8A70043E0CD0068E1E8008FE1D700B4E5A100DBEE6F00F8F86200
+            FFFF6200FFFF6200FFFC9500DEEEE90096E389005DDA140040BF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF19003DC2D20038E2FB004EE7FB0089E7E200C3E78800
+            EEF26300FCFC6200FFFC6200FFFF6200FFFF8A00EEEE6300FFFF6800FAFDF200
+            DDE6FA0099E7DF0057E1350030CF0100000000FFFFFF060055AABF0038DEFB00
+            4FE7FC008BE7FB00CEE68B00EEF26200FFFF6700FDFAA900E8EB8A00EEEE9200
+            EEEFEF00E1E46800FAFD9C00EBEDFC00E1E6FB00A7E7FB007DE9E30036E21200
+            39B800FFFFFF6F0039D6FD0038E7FB0080E8FC009CE6FD00E1E78700F0F27C00
+            F3F5DE00E1E6FE00E1E5B600E7EBE800E1E7FC00E1E6A900E8EBC800E4E8FA00
+            D0E7FE008DE7FB007FE8FE0038E8740039DA01000000DB0037E1FD0039E7FC00
+            86E9FD0094E7F800DFE5A600E9EDF300E0E6F900B6E5FA00D7E6F600E1E6FC00
+            E1E6F900B7E4FA00DDE7F300E1E7FB00A5E7FF008BE7FB006AE8FD0037E9A900
+            39DF0100FF00FD0037E6FE0037E8FB0069E8FC008BE6F900CEE6F900DDE5F900
+            A0E5FC008AE8FA00CFE6FC00E1E6FB00C7E7FE008CE5FA00C1E6FA00D4E6FE00
+            8DE7FC008AE8FC0046E7FE0038E8A30038DE0100FF00F00037E3FE0038E8FC00
+            41E7FD0088E7FB00B4E6FA00A3E6FB0056E7FB0081E8FA00C3E6FC00DEE7FC00
+            98E6FE008CE8FC0096E6FA00C2E7FE008CE8FB0070E7FD0036E9FD0036E85D00
+            3AD901000000AC003ADEFE0038E8FD0037E8FB006FE5FA0092E8FA0072E7FD00
+            38E7FB006EE7FB00B3E7FB00C4E5FE008CE7FA0078E8FC007DE7FB0096E8FD00
+            8BE7FB0050E8FE0037E9C30037E00500669900FFFFFF48003CD1FD0037E7FD00
+            36E9FC005CE8FC0085E9FC0040E7FD0038E8FB0056E8FB0099E5F900AEE6FB00
+            81E7FC003DE8FB0056E7FE008BE7FC0087E9FD003AE7FA0037E6310039CB00FF
+            FFFF00FFFFFF05006699DB0037E1FE0038E8FB0058E8FA0052E8FD0038E89100
+            3AD1FC0041E8FC008AE8FB0093E7FA005AE7FE0037E9FD0038E7FB007AE8FC00
+            7DE7FD0036E8B10038DF0100000000FFFFFF00FFFFFF0100FFFF8A0039DAFE00
+            38E8F90045E7FD0037E8B90039DF100050AFF40036E3FB0079E8FD008AE8FC00
+            40E7FE0037E9FC0037E9FB0047E8FB007EE6FD0037E865003DD700FFFFFF00FF
+            FFFF00FFFFFF01FFFF004D003CD1FD0037E8FD0036E9F50036E52C003ACB0200
+            8000B90039DFFB005DE7FB0085E9FD0037E7F90037E56B003CD2FA0036E7FB00
+            51E8FA0041E74E003ED10100000000FFFFFF00FFFFFF00FFFFFF2C003AC5FE00
+            38E8FD0037E87B0038D80100000001FFFF006C003BD7FB0042E7FB007FE8FE00
+            37E8B30038DE02008000830038DAFE0038E8FD0037E76F0039D80100000000FF
+            FFFF00FFFFFF00FFFFFF23003AC5FC0037E8BC0039DE040040BF00FFFFFF00FF
+            FFFF1A0045CEF90037E4F9006DE7FE0039E75B0038D200FFFFFF040040809100
+            37DCFD0037E8CC0038E00400408000FFFFFF00FFFFFF00FFFFFF33003CC8D600
+            37E2170043BC00FFFFFF00FFFFFF00FFFFFF02008080B30038E0F8004EE8F900
+            39E215003DB600FFFFFF00FFFFFF020000006E0038D8F30036E5760038D60100
+            000000FFFFFF0100FFFF360039BD200038BF0100FF0000FFFFFF00FFFFFF00FF
+            FFFF010000004A003BCFFC0039E7DB0039E20100000000FFFFFF00FFFFFF00FF
+            FFFF010000002C0040D1B40037DE640038D40100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF04004080CC0038E0C300
+            38E10100000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000003800
+            32CD36003DAF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF0100FF00400038CFC20037DF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000006600
+            39C50200808000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF}
         end
-        object ComboBox35: TComboBox
-          Left = 5
-          Top = 56
-          Width = 224
-          Height = 21
+        object BitBtn18: TBitBtn
+          Left = 25
+          Top = 50
+          Width = 30
+          Height = 30
           Hint = 
-            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
-            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
-            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
-            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
-            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
-            'ner/gleich der Rasttemperatur ist.'
-          ItemHeight = 13
+            'Feuer : Raststart bei Rasttemperatur'#252'berschreitung'#13#10'Uhr   : Rast' +
+            'start bei Temperaturunabh'#228'ngig'#13#10'Eis   : Raststart bei Rasttemper' +
+            'aturunterschreitung'
+          HelpType = htKeyword
+          HelpKeyword = 'Bei Rasttemperatur'#252'berschreitung'
           ParentShowHint = False
           ShowHint = True
           TabOrder = 1
-          Text = 'Bei Rasttemperatur'#252'berschreitung'
-          Items.Strings = (
-            'Bei Rasttemperatur'#252'berschreitung'
-            'Temperaturunabh'#228'ngig'
-            'Bei Rasttemperaturunterschreitung')
+          OnClick = BitBtn18Click
+          Glyph.Data = {
+            82060000424D8206000000000000420000002800000014000000140000000100
+            20000300000040060000C30E0000C30E00000000000000000000000000FF0000
+            FF0000FF000000FFFFFF00FFFFFF00FFFFFF00FFFFFF01FFFF00010000000100
+            00000C0080BF2E008BCD5600B8DB6C00D9E39400E9EC8100D7E557009ED90D00
+            62B10100FF0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000000A00
+            3399620039D8A70043E0CD0068E1E8008FE1D700B4E5A100DBEE6F00F8F86200
+            FFFF6200FFFF6200FFFC9500DEEEE90096E389005DDA140040BF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF19003DC2D20038E2FB004EE7FB0089E7E200C3E78800
+            EEF26300FCFC6200FFFC6200FFFF6200FFFF8A00EEEE6300FFFF6800FAFDF200
+            DDE6FA0099E7DF0057E1350030CF0100000000FFFFFF060055AABF0038DEFB00
+            4FE7FC008BE7FB00CEE68B00EEF26200FFFF6700FDFAA900E8EB8A00EEEE9200
+            EEEFEF00E1E46800FAFD9C00EBEDFC00E1E6FB00A7E7FB007DE9E30036E21200
+            39B800FFFFFF6F0039D6FD0038E7FB0080E8FC009CE6FD00E1E78700F0F27C00
+            F3F5DE00E1E6FE00E1E5B600E7EBE800E1E7FC00E1E6A900E8EBC800E4E8FA00
+            D0E7FE008DE7FB007FE8FE0038E8740039DA01000000DB0037E1FD0039E7FC00
+            86E9FD0094E7F800DFE5A600E9EDF300E0E6F900B6E5FA00D7E6F600E1E6FC00
+            E1E6F900B7E4FA00DDE7F300E1E7FB00A5E7FF008BE7FB006AE8FD0037E9A900
+            39DF0100FF00FD0037E6FE0037E8FB0069E8FC008BE6F900CEE6F900DDE5F900
+            A0E5FC008AE8FA00CFE6FC00E1E6FB00C7E7FE008CE5FA00C1E6FA00D4E6FE00
+            8DE7FC008AE8FC0046E7FE0038E8A30038DE0100FF00F00037E3FE0038E8FC00
+            41E7FD0088E7FB00B4E6FA00A3E6FB0056E7FB0081E8FA00C3E6FC00DEE7FC00
+            98E6FE008CE8FC0096E6FA00C2E7FE008CE8FB0070E7FD0036E9FD0036E85D00
+            3AD901000000AC003ADEFE0038E8FD0037E8FB006FE5FA0092E8FA0072E7FD00
+            38E7FB006EE7FB00B3E7FB00C4E5FE008CE7FA0078E8FC007DE7FB0096E8FD00
+            8BE7FB0050E8FE0037E9C30037E00500669900FFFFFF48003CD1FD0037E7FD00
+            36E9FC005CE8FC0085E9FC0040E7FD0038E8FB0056E8FB0099E5F900AEE6FB00
+            81E7FC003DE8FB0056E7FE008BE7FC0087E9FD003AE7FA0037E6310039CB00FF
+            FFFF00FFFFFF05006699DB0037E1FE0038E8FB0058E8FA0052E8FD0038E89100
+            3AD1FC0041E8FC008AE8FB0093E7FA005AE7FE0037E9FD0038E7FB007AE8FC00
+            7DE7FD0036E8B10038DF0100000000FFFFFF00FFFFFF0100FFFF8A0039DAFE00
+            38E8F90045E7FD0037E8B90039DF100050AFF40036E3FB0079E8FD008AE8FC00
+            40E7FE0037E9FC0037E9FB0047E8FB007EE6FD0037E865003DD700FFFFFF00FF
+            FFFF00FFFFFF01FFFF004D003CD1FD0037E8FD0036E9F50036E52C003ACB0200
+            8000B90039DFFB005DE7FB0085E9FD0037E7F90037E56B003CD2FA0036E7FB00
+            51E8FA0041E74E003ED10100000000FFFFFF00FFFFFF00FFFFFF2C003AC5FE00
+            38E8FD0037E87B0038D80100000001FFFF006C003BD7FB0042E7FB007FE8FE00
+            37E8B30038DE02008000830038DAFE0038E8FD0037E76F0039D80100000000FF
+            FFFF00FFFFFF00FFFFFF23003AC5FC0037E8BC0039DE040040BF00FFFFFF00FF
+            FFFF1A0045CEF90037E4F9006DE7FE0039E75B0038D200FFFFFF040040809100
+            37DCFD0037E8CC0038E00400408000FFFFFF00FFFFFF00FFFFFF33003CC8D600
+            37E2170043BC00FFFFFF00FFFFFF00FFFFFF02008080B30038E0F8004EE8F900
+            39E215003DB600FFFFFF00FFFFFF020000006E0038D8F30036E5760038D60100
+            000000FFFFFF0100FFFF360039BD200038BF0100FF0000FFFFFF00FFFFFF00FF
+            FFFF010000004A003BCFFC0039E7DB0039E20100000000FFFFFF00FFFFFF00FF
+            FFFF010000002C0040D1B40037DE640038D40100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF04004080CC0038E0C300
+            38E10100000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000003800
+            32CD36003DAF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF0100FF00400038CFC20037DF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000006600
+            39C50200808000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF}
         end
-        object ComboBox36: TComboBox
-          Left = 5
-          Top = 88
-          Width = 224
-          Height = 21
+        object BitBtn19: TBitBtn
+          Left = 25
+          Top = 82
+          Width = 30
+          Height = 30
           Hint = 
-            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
-            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
-            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
-            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
-            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
-            'ner/gleich der Rasttemperatur ist.'
-          ItemHeight = 13
+            'Feuer : Raststart bei Rasttemperatur'#252'berschreitung'#13#10'Uhr   : Rast' +
+            'start bei Temperaturunabh'#228'ngig'#13#10'Eis   : Raststart bei Rasttemper' +
+            'aturunterschreitung'
+          HelpType = htKeyword
+          HelpKeyword = 'Bei Rasttemperatur'#252'berschreitung'
           ParentShowHint = False
           ShowHint = True
           TabOrder = 2
-          Text = 'Bei Rasttemperatur'#252'berschreitung'
-          Items.Strings = (
-            'Bei Rasttemperatur'#252'berschreitung'
-            'Temperaturunabh'#228'ngig'
-            'Bei Rasttemperaturunterschreitung')
+          OnClick = BitBtn19Click
+          Glyph.Data = {
+            82060000424D8206000000000000420000002800000014000000140000000100
+            20000300000040060000C30E0000C30E00000000000000000000000000FF0000
+            FF0000FF000000FFFFFF00FFFFFF00FFFFFF00FFFFFF01FFFF00010000000100
+            00000C0080BF2E008BCD5600B8DB6C00D9E39400E9EC8100D7E557009ED90D00
+            62B10100FF0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000000A00
+            3399620039D8A70043E0CD0068E1E8008FE1D700B4E5A100DBEE6F00F8F86200
+            FFFF6200FFFF6200FFFC9500DEEEE90096E389005DDA140040BF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF19003DC2D20038E2FB004EE7FB0089E7E200C3E78800
+            EEF26300FCFC6200FFFC6200FFFF6200FFFF8A00EEEE6300FFFF6800FAFDF200
+            DDE6FA0099E7DF0057E1350030CF0100000000FFFFFF060055AABF0038DEFB00
+            4FE7FC008BE7FB00CEE68B00EEF26200FFFF6700FDFAA900E8EB8A00EEEE9200
+            EEEFEF00E1E46800FAFD9C00EBEDFC00E1E6FB00A7E7FB007DE9E30036E21200
+            39B800FFFFFF6F0039D6FD0038E7FB0080E8FC009CE6FD00E1E78700F0F27C00
+            F3F5DE00E1E6FE00E1E5B600E7EBE800E1E7FC00E1E6A900E8EBC800E4E8FA00
+            D0E7FE008DE7FB007FE8FE0038E8740039DA01000000DB0037E1FD0039E7FC00
+            86E9FD0094E7F800DFE5A600E9EDF300E0E6F900B6E5FA00D7E6F600E1E6FC00
+            E1E6F900B7E4FA00DDE7F300E1E7FB00A5E7FF008BE7FB006AE8FD0037E9A900
+            39DF0100FF00FD0037E6FE0037E8FB0069E8FC008BE6F900CEE6F900DDE5F900
+            A0E5FC008AE8FA00CFE6FC00E1E6FB00C7E7FE008CE5FA00C1E6FA00D4E6FE00
+            8DE7FC008AE8FC0046E7FE0038E8A30038DE0100FF00F00037E3FE0038E8FC00
+            41E7FD0088E7FB00B4E6FA00A3E6FB0056E7FB0081E8FA00C3E6FC00DEE7FC00
+            98E6FE008CE8FC0096E6FA00C2E7FE008CE8FB0070E7FD0036E9FD0036E85D00
+            3AD901000000AC003ADEFE0038E8FD0037E8FB006FE5FA0092E8FA0072E7FD00
+            38E7FB006EE7FB00B3E7FB00C4E5FE008CE7FA0078E8FC007DE7FB0096E8FD00
+            8BE7FB0050E8FE0037E9C30037E00500669900FFFFFF48003CD1FD0037E7FD00
+            36E9FC005CE8FC0085E9FC0040E7FD0038E8FB0056E8FB0099E5F900AEE6FB00
+            81E7FC003DE8FB0056E7FE008BE7FC0087E9FD003AE7FA0037E6310039CB00FF
+            FFFF00FFFFFF05006699DB0037E1FE0038E8FB0058E8FA0052E8FD0038E89100
+            3AD1FC0041E8FC008AE8FB0093E7FA005AE7FE0037E9FD0038E7FB007AE8FC00
+            7DE7FD0036E8B10038DF0100000000FFFFFF00FFFFFF0100FFFF8A0039DAFE00
+            38E8F90045E7FD0037E8B90039DF100050AFF40036E3FB0079E8FD008AE8FC00
+            40E7FE0037E9FC0037E9FB0047E8FB007EE6FD0037E865003DD700FFFFFF00FF
+            FFFF00FFFFFF01FFFF004D003CD1FD0037E8FD0036E9F50036E52C003ACB0200
+            8000B90039DFFB005DE7FB0085E9FD0037E7F90037E56B003CD2FA0036E7FB00
+            51E8FA0041E74E003ED10100000000FFFFFF00FFFFFF00FFFFFF2C003AC5FE00
+            38E8FD0037E87B0038D80100000001FFFF006C003BD7FB0042E7FB007FE8FE00
+            37E8B30038DE02008000830038DAFE0038E8FD0037E76F0039D80100000000FF
+            FFFF00FFFFFF00FFFFFF23003AC5FC0037E8BC0039DE040040BF00FFFFFF00FF
+            FFFF1A0045CEF90037E4F9006DE7FE0039E75B0038D200FFFFFF040040809100
+            37DCFD0037E8CC0038E00400408000FFFFFF00FFFFFF00FFFFFF33003CC8D600
+            37E2170043BC00FFFFFF00FFFFFF00FFFFFF02008080B30038E0F8004EE8F900
+            39E215003DB600FFFFFF00FFFFFF020000006E0038D8F30036E5760038D60100
+            000000FFFFFF0100FFFF360039BD200038BF0100FF0000FFFFFF00FFFFFF00FF
+            FFFF010000004A003BCFFC0039E7DB0039E20100000000FFFFFF00FFFFFF00FF
+            FFFF010000002C0040D1B40037DE640038D40100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF04004080CC0038E0C300
+            38E10100000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000003800
+            32CD36003DAF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF0100FF00400038CFC20037DF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000006600
+            39C50200808000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF}
         end
-        object ComboBox37: TComboBox
-          Left = 5
-          Top = 120
-          Width = 224
-          Height = 21
+        object BitBtn20: TBitBtn
+          Left = 25
+          Top = 114
+          Width = 30
+          Height = 30
           Hint = 
-            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
-            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
-            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
-            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
-            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
-            'ner/gleich der Rasttemperatur ist.'
-          ItemHeight = 13
+            'Feuer : Raststart bei Rasttemperatur'#252'berschreitung'#13#10'Uhr   : Rast' +
+            'start bei Temperaturunabh'#228'ngig'#13#10'Eis   : Raststart bei Rasttemper' +
+            'aturunterschreitung'
+          HelpType = htKeyword
+          HelpKeyword = 'Bei Rasttemperatur'#252'berschreitung'
           ParentShowHint = False
           ShowHint = True
           TabOrder = 3
-          Text = 'Bei Rasttemperatur'#252'berschreitung'
-          Items.Strings = (
-            'Bei Rasttemperatur'#252'berschreitung'
-            'Temperaturunabh'#228'ngig'
-            'Bei Rasttemperaturunterschreitung')
+          OnClick = BitBtn20Click
+          Glyph.Data = {
+            82060000424D8206000000000000420000002800000014000000140000000100
+            20000300000040060000C30E0000C30E00000000000000000000000000FF0000
+            FF0000FF000000FFFFFF00FFFFFF00FFFFFF00FFFFFF01FFFF00010000000100
+            00000C0080BF2E008BCD5600B8DB6C00D9E39400E9EC8100D7E557009ED90D00
+            62B10100FF0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000000A00
+            3399620039D8A70043E0CD0068E1E8008FE1D700B4E5A100DBEE6F00F8F86200
+            FFFF6200FFFF6200FFFC9500DEEEE90096E389005DDA140040BF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF19003DC2D20038E2FB004EE7FB0089E7E200C3E78800
+            EEF26300FCFC6200FFFC6200FFFF6200FFFF8A00EEEE6300FFFF6800FAFDF200
+            DDE6FA0099E7DF0057E1350030CF0100000000FFFFFF060055AABF0038DEFB00
+            4FE7FC008BE7FB00CEE68B00EEF26200FFFF6700FDFAA900E8EB8A00EEEE9200
+            EEEFEF00E1E46800FAFD9C00EBEDFC00E1E6FB00A7E7FB007DE9E30036E21200
+            39B800FFFFFF6F0039D6FD0038E7FB0080E8FC009CE6FD00E1E78700F0F27C00
+            F3F5DE00E1E6FE00E1E5B600E7EBE800E1E7FC00E1E6A900E8EBC800E4E8FA00
+            D0E7FE008DE7FB007FE8FE0038E8740039DA01000000DB0037E1FD0039E7FC00
+            86E9FD0094E7F800DFE5A600E9EDF300E0E6F900B6E5FA00D7E6F600E1E6FC00
+            E1E6F900B7E4FA00DDE7F300E1E7FB00A5E7FF008BE7FB006AE8FD0037E9A900
+            39DF0100FF00FD0037E6FE0037E8FB0069E8FC008BE6F900CEE6F900DDE5F900
+            A0E5FC008AE8FA00CFE6FC00E1E6FB00C7E7FE008CE5FA00C1E6FA00D4E6FE00
+            8DE7FC008AE8FC0046E7FE0038E8A30038DE0100FF00F00037E3FE0038E8FC00
+            41E7FD0088E7FB00B4E6FA00A3E6FB0056E7FB0081E8FA00C3E6FC00DEE7FC00
+            98E6FE008CE8FC0096E6FA00C2E7FE008CE8FB0070E7FD0036E9FD0036E85D00
+            3AD901000000AC003ADEFE0038E8FD0037E8FB006FE5FA0092E8FA0072E7FD00
+            38E7FB006EE7FB00B3E7FB00C4E5FE008CE7FA0078E8FC007DE7FB0096E8FD00
+            8BE7FB0050E8FE0037E9C30037E00500669900FFFFFF48003CD1FD0037E7FD00
+            36E9FC005CE8FC0085E9FC0040E7FD0038E8FB0056E8FB0099E5F900AEE6FB00
+            81E7FC003DE8FB0056E7FE008BE7FC0087E9FD003AE7FA0037E6310039CB00FF
+            FFFF00FFFFFF05006699DB0037E1FE0038E8FB0058E8FA0052E8FD0038E89100
+            3AD1FC0041E8FC008AE8FB0093E7FA005AE7FE0037E9FD0038E7FB007AE8FC00
+            7DE7FD0036E8B10038DF0100000000FFFFFF00FFFFFF0100FFFF8A0039DAFE00
+            38E8F90045E7FD0037E8B90039DF100050AFF40036E3FB0079E8FD008AE8FC00
+            40E7FE0037E9FC0037E9FB0047E8FB007EE6FD0037E865003DD700FFFFFF00FF
+            FFFF00FFFFFF01FFFF004D003CD1FD0037E8FD0036E9F50036E52C003ACB0200
+            8000B90039DFFB005DE7FB0085E9FD0037E7F90037E56B003CD2FA0036E7FB00
+            51E8FA0041E74E003ED10100000000FFFFFF00FFFFFF00FFFFFF2C003AC5FE00
+            38E8FD0037E87B0038D80100000001FFFF006C003BD7FB0042E7FB007FE8FE00
+            37E8B30038DE02008000830038DAFE0038E8FD0037E76F0039D80100000000FF
+            FFFF00FFFFFF00FFFFFF23003AC5FC0037E8BC0039DE040040BF00FFFFFF00FF
+            FFFF1A0045CEF90037E4F9006DE7FE0039E75B0038D200FFFFFF040040809100
+            37DCFD0037E8CC0038E00400408000FFFFFF00FFFFFF00FFFFFF33003CC8D600
+            37E2170043BC00FFFFFF00FFFFFF00FFFFFF02008080B30038E0F8004EE8F900
+            39E215003DB600FFFFFF00FFFFFF020000006E0038D8F30036E5760038D60100
+            000000FFFFFF0100FFFF360039BD200038BF0100FF0000FFFFFF00FFFFFF00FF
+            FFFF010000004A003BCFFC0039E7DB0039E20100000000FFFFFF00FFFFFF00FF
+            FFFF010000002C0040D1B40037DE640038D40100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF04004080CC0038E0C300
+            38E10100000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000003800
+            32CD36003DAF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF0100FF00400038CFC20037DF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000006600
+            39C50200808000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF}
         end
-        object ComboBox38: TComboBox
-          Left = 5
-          Top = 152
-          Width = 224
-          Height = 21
+        object BitBtn21: TBitBtn
+          Left = 25
+          Top = 146
+          Width = 30
+          Height = 30
           Hint = 
-            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
-            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
-            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
-            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
-            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
-            'ner/gleich der Rasttemperatur ist.'
-          ItemHeight = 13
+            'Feuer : Raststart bei Rasttemperatur'#252'berschreitung'#13#10'Uhr   : Rast' +
+            'start bei Temperaturunabh'#228'ngig'#13#10'Eis   : Raststart bei Rasttemper' +
+            'aturunterschreitung'
+          HelpType = htKeyword
+          HelpKeyword = 'Bei Rasttemperatur'#252'berschreitung'
           ParentShowHint = False
           ShowHint = True
           TabOrder = 4
-          Text = 'Bei Rasttemperatur'#252'berschreitung'
-          Items.Strings = (
-            'Bei Rasttemperatur'#252'berschreitung'
-            'Temperaturunabh'#228'ngig'
-            'Bei Rasttemperaturunterschreitung')
+          OnClick = BitBtn21Click
+          Glyph.Data = {
+            82060000424D8206000000000000420000002800000014000000140000000100
+            20000300000040060000C30E0000C30E00000000000000000000000000FF0000
+            FF0000FF000000FFFFFF00FFFFFF00FFFFFF00FFFFFF01FFFF00010000000100
+            00000C0080BF2E008BCD5600B8DB6C00D9E39400E9EC8100D7E557009ED90D00
+            62B10100FF0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000000A00
+            3399620039D8A70043E0CD0068E1E8008FE1D700B4E5A100DBEE6F00F8F86200
+            FFFF6200FFFF6200FFFC9500DEEEE90096E389005DDA140040BF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF19003DC2D20038E2FB004EE7FB0089E7E200C3E78800
+            EEF26300FCFC6200FFFC6200FFFF6200FFFF8A00EEEE6300FFFF6800FAFDF200
+            DDE6FA0099E7DF0057E1350030CF0100000000FFFFFF060055AABF0038DEFB00
+            4FE7FC008BE7FB00CEE68B00EEF26200FFFF6700FDFAA900E8EB8A00EEEE9200
+            EEEFEF00E1E46800FAFD9C00EBEDFC00E1E6FB00A7E7FB007DE9E30036E21200
+            39B800FFFFFF6F0039D6FD0038E7FB0080E8FC009CE6FD00E1E78700F0F27C00
+            F3F5DE00E1E6FE00E1E5B600E7EBE800E1E7FC00E1E6A900E8EBC800E4E8FA00
+            D0E7FE008DE7FB007FE8FE0038E8740039DA01000000DB0037E1FD0039E7FC00
+            86E9FD0094E7F800DFE5A600E9EDF300E0E6F900B6E5FA00D7E6F600E1E6FC00
+            E1E6F900B7E4FA00DDE7F300E1E7FB00A5E7FF008BE7FB006AE8FD0037E9A900
+            39DF0100FF00FD0037E6FE0037E8FB0069E8FC008BE6F900CEE6F900DDE5F900
+            A0E5FC008AE8FA00CFE6FC00E1E6FB00C7E7FE008CE5FA00C1E6FA00D4E6FE00
+            8DE7FC008AE8FC0046E7FE0038E8A30038DE0100FF00F00037E3FE0038E8FC00
+            41E7FD0088E7FB00B4E6FA00A3E6FB0056E7FB0081E8FA00C3E6FC00DEE7FC00
+            98E6FE008CE8FC0096E6FA00C2E7FE008CE8FB0070E7FD0036E9FD0036E85D00
+            3AD901000000AC003ADEFE0038E8FD0037E8FB006FE5FA0092E8FA0072E7FD00
+            38E7FB006EE7FB00B3E7FB00C4E5FE008CE7FA0078E8FC007DE7FB0096E8FD00
+            8BE7FB0050E8FE0037E9C30037E00500669900FFFFFF48003CD1FD0037E7FD00
+            36E9FC005CE8FC0085E9FC0040E7FD0038E8FB0056E8FB0099E5F900AEE6FB00
+            81E7FC003DE8FB0056E7FE008BE7FC0087E9FD003AE7FA0037E6310039CB00FF
+            FFFF00FFFFFF05006699DB0037E1FE0038E8FB0058E8FA0052E8FD0038E89100
+            3AD1FC0041E8FC008AE8FB0093E7FA005AE7FE0037E9FD0038E7FB007AE8FC00
+            7DE7FD0036E8B10038DF0100000000FFFFFF00FFFFFF0100FFFF8A0039DAFE00
+            38E8F90045E7FD0037E8B90039DF100050AFF40036E3FB0079E8FD008AE8FC00
+            40E7FE0037E9FC0037E9FB0047E8FB007EE6FD0037E865003DD700FFFFFF00FF
+            FFFF00FFFFFF01FFFF004D003CD1FD0037E8FD0036E9F50036E52C003ACB0200
+            8000B90039DFFB005DE7FB0085E9FD0037E7F90037E56B003CD2FA0036E7FB00
+            51E8FA0041E74E003ED10100000000FFFFFF00FFFFFF00FFFFFF2C003AC5FE00
+            38E8FD0037E87B0038D80100000001FFFF006C003BD7FB0042E7FB007FE8FE00
+            37E8B30038DE02008000830038DAFE0038E8FD0037E76F0039D80100000000FF
+            FFFF00FFFFFF00FFFFFF23003AC5FC0037E8BC0039DE040040BF00FFFFFF00FF
+            FFFF1A0045CEF90037E4F9006DE7FE0039E75B0038D200FFFFFF040040809100
+            37DCFD0037E8CC0038E00400408000FFFFFF00FFFFFF00FFFFFF33003CC8D600
+            37E2170043BC00FFFFFF00FFFFFF00FFFFFF02008080B30038E0F8004EE8F900
+            39E215003DB600FFFFFF00FFFFFF020000006E0038D8F30036E5760038D60100
+            000000FFFFFF0100FFFF360039BD200038BF0100FF0000FFFFFF00FFFFFF00FF
+            FFFF010000004A003BCFFC0039E7DB0039E20100000000FFFFFF00FFFFFF00FF
+            FFFF010000002C0040D1B40037DE640038D40100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF04004080CC0038E0C300
+            38E10100000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000003800
+            32CD36003DAF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF0100FF00400038CFC20037DF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000006600
+            39C50200808000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF}
         end
-        object ComboBox39: TComboBox
-          Left = 5
-          Top = 184
-          Width = 224
-          Height = 21
+        object BitBtn22: TBitBtn
+          Left = 25
+          Top = 178
+          Width = 30
+          Height = 30
           Hint = 
-            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
-            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
-            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
-            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
-            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
-            'ner/gleich der Rasttemperatur ist.'
-          ItemHeight = 13
+            'Feuer : Raststart bei Rasttemperatur'#252'berschreitung'#13#10'Uhr   : Rast' +
+            'start bei Temperaturunabh'#228'ngig'#13#10'Eis   : Raststart bei Rasttemper' +
+            'aturunterschreitung'
+          HelpType = htKeyword
+          HelpKeyword = 'Bei Rasttemperatur'#252'berschreitung'
           ParentShowHint = False
           ShowHint = True
           TabOrder = 5
-          Text = 'Bei Rasttemperatur'#252'berschreitung'
-          Items.Strings = (
-            'Bei Rasttemperatur'#252'berschreitung'
-            'Temperaturunabh'#228'ngig'
-            'Bei Rasttemperaturunterschreitung')
+          OnClick = BitBtn22Click
+          Glyph.Data = {
+            82060000424D8206000000000000420000002800000014000000140000000100
+            20000300000040060000C30E0000C30E00000000000000000000000000FF0000
+            FF0000FF000000FFFFFF00FFFFFF00FFFFFF00FFFFFF01FFFF00010000000100
+            00000C0080BF2E008BCD5600B8DB6C00D9E39400E9EC8100D7E557009ED90D00
+            62B10100FF0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000000A00
+            3399620039D8A70043E0CD0068E1E8008FE1D700B4E5A100DBEE6F00F8F86200
+            FFFF6200FFFF6200FFFC9500DEEEE90096E389005DDA140040BF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF19003DC2D20038E2FB004EE7FB0089E7E200C3E78800
+            EEF26300FCFC6200FFFC6200FFFF6200FFFF8A00EEEE6300FFFF6800FAFDF200
+            DDE6FA0099E7DF0057E1350030CF0100000000FFFFFF060055AABF0038DEFB00
+            4FE7FC008BE7FB00CEE68B00EEF26200FFFF6700FDFAA900E8EB8A00EEEE9200
+            EEEFEF00E1E46800FAFD9C00EBEDFC00E1E6FB00A7E7FB007DE9E30036E21200
+            39B800FFFFFF6F0039D6FD0038E7FB0080E8FC009CE6FD00E1E78700F0F27C00
+            F3F5DE00E1E6FE00E1E5B600E7EBE800E1E7FC00E1E6A900E8EBC800E4E8FA00
+            D0E7FE008DE7FB007FE8FE0038E8740039DA01000000DB0037E1FD0039E7FC00
+            86E9FD0094E7F800DFE5A600E9EDF300E0E6F900B6E5FA00D7E6F600E1E6FC00
+            E1E6F900B7E4FA00DDE7F300E1E7FB00A5E7FF008BE7FB006AE8FD0037E9A900
+            39DF0100FF00FD0037E6FE0037E8FB0069E8FC008BE6F900CEE6F900DDE5F900
+            A0E5FC008AE8FA00CFE6FC00E1E6FB00C7E7FE008CE5FA00C1E6FA00D4E6FE00
+            8DE7FC008AE8FC0046E7FE0038E8A30038DE0100FF00F00037E3FE0038E8FC00
+            41E7FD0088E7FB00B4E6FA00A3E6FB0056E7FB0081E8FA00C3E6FC00DEE7FC00
+            98E6FE008CE8FC0096E6FA00C2E7FE008CE8FB0070E7FD0036E9FD0036E85D00
+            3AD901000000AC003ADEFE0038E8FD0037E8FB006FE5FA0092E8FA0072E7FD00
+            38E7FB006EE7FB00B3E7FB00C4E5FE008CE7FA0078E8FC007DE7FB0096E8FD00
+            8BE7FB0050E8FE0037E9C30037E00500669900FFFFFF48003CD1FD0037E7FD00
+            36E9FC005CE8FC0085E9FC0040E7FD0038E8FB0056E8FB0099E5F900AEE6FB00
+            81E7FC003DE8FB0056E7FE008BE7FC0087E9FD003AE7FA0037E6310039CB00FF
+            FFFF00FFFFFF05006699DB0037E1FE0038E8FB0058E8FA0052E8FD0038E89100
+            3AD1FC0041E8FC008AE8FB0093E7FA005AE7FE0037E9FD0038E7FB007AE8FC00
+            7DE7FD0036E8B10038DF0100000000FFFFFF00FFFFFF0100FFFF8A0039DAFE00
+            38E8F90045E7FD0037E8B90039DF100050AFF40036E3FB0079E8FD008AE8FC00
+            40E7FE0037E9FC0037E9FB0047E8FB007EE6FD0037E865003DD700FFFFFF00FF
+            FFFF00FFFFFF01FFFF004D003CD1FD0037E8FD0036E9F50036E52C003ACB0200
+            8000B90039DFFB005DE7FB0085E9FD0037E7F90037E56B003CD2FA0036E7FB00
+            51E8FA0041E74E003ED10100000000FFFFFF00FFFFFF00FFFFFF2C003AC5FE00
+            38E8FD0037E87B0038D80100000001FFFF006C003BD7FB0042E7FB007FE8FE00
+            37E8B30038DE02008000830038DAFE0038E8FD0037E76F0039D80100000000FF
+            FFFF00FFFFFF00FFFFFF23003AC5FC0037E8BC0039DE040040BF00FFFFFF00FF
+            FFFF1A0045CEF90037E4F9006DE7FE0039E75B0038D200FFFFFF040040809100
+            37DCFD0037E8CC0038E00400408000FFFFFF00FFFFFF00FFFFFF33003CC8D600
+            37E2170043BC00FFFFFF00FFFFFF00FFFFFF02008080B30038E0F8004EE8F900
+            39E215003DB600FFFFFF00FFFFFF020000006E0038D8F30036E5760038D60100
+            000000FFFFFF0100FFFF360039BD200038BF0100FF0000FFFFFF00FFFFFF00FF
+            FFFF010000004A003BCFFC0039E7DB0039E20100000000FFFFFF00FFFFFF00FF
+            FFFF010000002C0040D1B40037DE640038D40100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF04004080CC0038E0C300
+            38E10100000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000003800
+            32CD36003DAF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF0100FF00400038CFC20037DF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000006600
+            39C50200808000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF}
         end
-        object ComboBox40: TComboBox
-          Left = 5
-          Top = 216
-          Width = 224
-          Height = 21
+        object BitBtn23: TBitBtn
+          Left = 25
+          Top = 210
+          Width = 30
+          Height = 30
           Hint = 
-            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
-            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
-            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
-            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
-            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
-            'ner/gleich der Rasttemperatur ist.'
-          ItemHeight = 13
+            'Feuer : Raststart bei Rasttemperatur'#252'berschreitung'#13#10'Uhr   : Rast' +
+            'start bei Temperaturunabh'#228'ngig'#13#10'Eis   : Raststart bei Rasttemper' +
+            'aturunterschreitung'
+          HelpType = htKeyword
+          HelpKeyword = 'Bei Rasttemperatur'#252'berschreitung'
           ParentShowHint = False
           ShowHint = True
           TabOrder = 6
-          Text = 'Bei Rasttemperatur'#252'berschreitung'
-          Items.Strings = (
-            'Bei Rasttemperatur'#252'berschreitung'
-            'Temperaturunabh'#228'ngig'
-            'Bei Rasttemperaturunterschreitung')
+          OnClick = BitBtn23Click
+          Glyph.Data = {
+            82060000424D8206000000000000420000002800000014000000140000000100
+            20000300000040060000C30E0000C30E00000000000000000000000000FF0000
+            FF0000FF000000FFFFFF00FFFFFF00FFFFFF00FFFFFF01FFFF00010000000100
+            00000C0080BF2E008BCD5600B8DB6C00D9E39400E9EC8100D7E557009ED90D00
+            62B10100FF0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000000A00
+            3399620039D8A70043E0CD0068E1E8008FE1D700B4E5A100DBEE6F00F8F86200
+            FFFF6200FFFF6200FFFC9500DEEEE90096E389005DDA140040BF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF19003DC2D20038E2FB004EE7FB0089E7E200C3E78800
+            EEF26300FCFC6200FFFC6200FFFF6200FFFF8A00EEEE6300FFFF6800FAFDF200
+            DDE6FA0099E7DF0057E1350030CF0100000000FFFFFF060055AABF0038DEFB00
+            4FE7FC008BE7FB00CEE68B00EEF26200FFFF6700FDFAA900E8EB8A00EEEE9200
+            EEEFEF00E1E46800FAFD9C00EBEDFC00E1E6FB00A7E7FB007DE9E30036E21200
+            39B800FFFFFF6F0039D6FD0038E7FB0080E8FC009CE6FD00E1E78700F0F27C00
+            F3F5DE00E1E6FE00E1E5B600E7EBE800E1E7FC00E1E6A900E8EBC800E4E8FA00
+            D0E7FE008DE7FB007FE8FE0038E8740039DA01000000DB0037E1FD0039E7FC00
+            86E9FD0094E7F800DFE5A600E9EDF300E0E6F900B6E5FA00D7E6F600E1E6FC00
+            E1E6F900B7E4FA00DDE7F300E1E7FB00A5E7FF008BE7FB006AE8FD0037E9A900
+            39DF0100FF00FD0037E6FE0037E8FB0069E8FC008BE6F900CEE6F900DDE5F900
+            A0E5FC008AE8FA00CFE6FC00E1E6FB00C7E7FE008CE5FA00C1E6FA00D4E6FE00
+            8DE7FC008AE8FC0046E7FE0038E8A30038DE0100FF00F00037E3FE0038E8FC00
+            41E7FD0088E7FB00B4E6FA00A3E6FB0056E7FB0081E8FA00C3E6FC00DEE7FC00
+            98E6FE008CE8FC0096E6FA00C2E7FE008CE8FB0070E7FD0036E9FD0036E85D00
+            3AD901000000AC003ADEFE0038E8FD0037E8FB006FE5FA0092E8FA0072E7FD00
+            38E7FB006EE7FB00B3E7FB00C4E5FE008CE7FA0078E8FC007DE7FB0096E8FD00
+            8BE7FB0050E8FE0037E9C30037E00500669900FFFFFF48003CD1FD0037E7FD00
+            36E9FC005CE8FC0085E9FC0040E7FD0038E8FB0056E8FB0099E5F900AEE6FB00
+            81E7FC003DE8FB0056E7FE008BE7FC0087E9FD003AE7FA0037E6310039CB00FF
+            FFFF00FFFFFF05006699DB0037E1FE0038E8FB0058E8FA0052E8FD0038E89100
+            3AD1FC0041E8FC008AE8FB0093E7FA005AE7FE0037E9FD0038E7FB007AE8FC00
+            7DE7FD0036E8B10038DF0100000000FFFFFF00FFFFFF0100FFFF8A0039DAFE00
+            38E8F90045E7FD0037E8B90039DF100050AFF40036E3FB0079E8FD008AE8FC00
+            40E7FE0037E9FC0037E9FB0047E8FB007EE6FD0037E865003DD700FFFFFF00FF
+            FFFF00FFFFFF01FFFF004D003CD1FD0037E8FD0036E9F50036E52C003ACB0200
+            8000B90039DFFB005DE7FB0085E9FD0037E7F90037E56B003CD2FA0036E7FB00
+            51E8FA0041E74E003ED10100000000FFFFFF00FFFFFF00FFFFFF2C003AC5FE00
+            38E8FD0037E87B0038D80100000001FFFF006C003BD7FB0042E7FB007FE8FE00
+            37E8B30038DE02008000830038DAFE0038E8FD0037E76F0039D80100000000FF
+            FFFF00FFFFFF00FFFFFF23003AC5FC0037E8BC0039DE040040BF00FFFFFF00FF
+            FFFF1A0045CEF90037E4F9006DE7FE0039E75B0038D200FFFFFF040040809100
+            37DCFD0037E8CC0038E00400408000FFFFFF00FFFFFF00FFFFFF33003CC8D600
+            37E2170043BC00FFFFFF00FFFFFF00FFFFFF02008080B30038E0F8004EE8F900
+            39E215003DB600FFFFFF00FFFFFF020000006E0038D8F30036E5760038D60100
+            000000FFFFFF0100FFFF360039BD200038BF0100FF0000FFFFFF00FFFFFF00FF
+            FFFF010000004A003BCFFC0039E7DB0039E20100000000FFFFFF00FFFFFF00FF
+            FFFF010000002C0040D1B40037DE640038D40100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF04004080CC0038E0C300
+            38E10100000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000003800
+            32CD36003DAF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF0100FF00400038CFC20037DF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000006600
+            39C50200808000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF}
         end
-        object ComboBox41: TComboBox
-          Left = 5
-          Top = 248
-          Width = 224
-          Height = 21
+        object BitBtn24: TBitBtn
+          Left = 25
+          Top = 242
+          Width = 30
+          Height = 30
           Hint = 
-            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
-            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
-            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
-            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
-            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
-            'ner/gleich der Rasttemperatur ist.'
-          ItemHeight = 13
+            'Feuer : Raststart bei Rasttemperatur'#252'berschreitung'#13#10'Uhr   : Rast' +
+            'start bei Temperaturunabh'#228'ngig'#13#10'Eis   : Raststart bei Rasttemper' +
+            'aturunterschreitung'
+          HelpType = htKeyword
+          HelpKeyword = 'Bei Rasttemperatur'#252'berschreitung'
           ParentShowHint = False
           ShowHint = True
           TabOrder = 7
-          Text = 'Bei Rasttemperatur'#252'berschreitung'
-          Items.Strings = (
-            'Bei Rasttemperatur'#252'berschreitung'
-            'Temperaturunabh'#228'ngig'
-            'Bei Rasttemperaturunterschreitung')
+          OnClick = BitBtn24Click
+          Glyph.Data = {
+            82060000424D8206000000000000420000002800000014000000140000000100
+            20000300000040060000C30E0000C30E00000000000000000000000000FF0000
+            FF0000FF000000FFFFFF00FFFFFF00FFFFFF00FFFFFF01FFFF00010000000100
+            00000C0080BF2E008BCD5600B8DB6C00D9E39400E9EC8100D7E557009ED90D00
+            62B10100FF0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000000A00
+            3399620039D8A70043E0CD0068E1E8008FE1D700B4E5A100DBEE6F00F8F86200
+            FFFF6200FFFF6200FFFC9500DEEEE90096E389005DDA140040BF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF19003DC2D20038E2FB004EE7FB0089E7E200C3E78800
+            EEF26300FCFC6200FFFC6200FFFF6200FFFF8A00EEEE6300FFFF6800FAFDF200
+            DDE6FA0099E7DF0057E1350030CF0100000000FFFFFF060055AABF0038DEFB00
+            4FE7FC008BE7FB00CEE68B00EEF26200FFFF6700FDFAA900E8EB8A00EEEE9200
+            EEEFEF00E1E46800FAFD9C00EBEDFC00E1E6FB00A7E7FB007DE9E30036E21200
+            39B800FFFFFF6F0039D6FD0038E7FB0080E8FC009CE6FD00E1E78700F0F27C00
+            F3F5DE00E1E6FE00E1E5B600E7EBE800E1E7FC00E1E6A900E8EBC800E4E8FA00
+            D0E7FE008DE7FB007FE8FE0038E8740039DA01000000DB0037E1FD0039E7FC00
+            86E9FD0094E7F800DFE5A600E9EDF300E0E6F900B6E5FA00D7E6F600E1E6FC00
+            E1E6F900B7E4FA00DDE7F300E1E7FB00A5E7FF008BE7FB006AE8FD0037E9A900
+            39DF0100FF00FD0037E6FE0037E8FB0069E8FC008BE6F900CEE6F900DDE5F900
+            A0E5FC008AE8FA00CFE6FC00E1E6FB00C7E7FE008CE5FA00C1E6FA00D4E6FE00
+            8DE7FC008AE8FC0046E7FE0038E8A30038DE0100FF00F00037E3FE0038E8FC00
+            41E7FD0088E7FB00B4E6FA00A3E6FB0056E7FB0081E8FA00C3E6FC00DEE7FC00
+            98E6FE008CE8FC0096E6FA00C2E7FE008CE8FB0070E7FD0036E9FD0036E85D00
+            3AD901000000AC003ADEFE0038E8FD0037E8FB006FE5FA0092E8FA0072E7FD00
+            38E7FB006EE7FB00B3E7FB00C4E5FE008CE7FA0078E8FC007DE7FB0096E8FD00
+            8BE7FB0050E8FE0037E9C30037E00500669900FFFFFF48003CD1FD0037E7FD00
+            36E9FC005CE8FC0085E9FC0040E7FD0038E8FB0056E8FB0099E5F900AEE6FB00
+            81E7FC003DE8FB0056E7FE008BE7FC0087E9FD003AE7FA0037E6310039CB00FF
+            FFFF00FFFFFF05006699DB0037E1FE0038E8FB0058E8FA0052E8FD0038E89100
+            3AD1FC0041E8FC008AE8FB0093E7FA005AE7FE0037E9FD0038E7FB007AE8FC00
+            7DE7FD0036E8B10038DF0100000000FFFFFF00FFFFFF0100FFFF8A0039DAFE00
+            38E8F90045E7FD0037E8B90039DF100050AFF40036E3FB0079E8FD008AE8FC00
+            40E7FE0037E9FC0037E9FB0047E8FB007EE6FD0037E865003DD700FFFFFF00FF
+            FFFF00FFFFFF01FFFF004D003CD1FD0037E8FD0036E9F50036E52C003ACB0200
+            8000B90039DFFB005DE7FB0085E9FD0037E7F90037E56B003CD2FA0036E7FB00
+            51E8FA0041E74E003ED10100000000FFFFFF00FFFFFF00FFFFFF2C003AC5FE00
+            38E8FD0037E87B0038D80100000001FFFF006C003BD7FB0042E7FB007FE8FE00
+            37E8B30038DE02008000830038DAFE0038E8FD0037E76F0039D80100000000FF
+            FFFF00FFFFFF00FFFFFF23003AC5FC0037E8BC0039DE040040BF00FFFFFF00FF
+            FFFF1A0045CEF90037E4F9006DE7FE0039E75B0038D200FFFFFF040040809100
+            37DCFD0037E8CC0038E00400408000FFFFFF00FFFFFF00FFFFFF33003CC8D600
+            37E2170043BC00FFFFFF00FFFFFF00FFFFFF02008080B30038E0F8004EE8F900
+            39E215003DB600FFFFFF00FFFFFF020000006E0038D8F30036E5760038D60100
+            000000FFFFFF0100FFFF360039BD200038BF0100FF0000FFFFFF00FFFFFF00FF
+            FFFF010000004A003BCFFC0039E7DB0039E20100000000FFFFFF00FFFFFF00FF
+            FFFF010000002C0040D1B40037DE640038D40100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF04004080CC0038E0C300
+            38E10100000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000003800
+            32CD36003DAF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF0100FF00400038CFC20037DF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000006600
+            39C50200808000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF}
         end
-        object ComboBox42: TComboBox
-          Left = 5
-          Top = 280
-          Width = 224
-          Height = 21
+        object BitBtn25: TBitBtn
+          Left = 25
+          Top = 274
+          Width = 30
+          Height = 30
           Hint = 
-            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
-            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
-            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
-            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
-            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
-            'ner/gleich der Rasttemperatur ist.'
-          ItemHeight = 13
+            'Feuer : Raststart bei Rasttemperatur'#252'berschreitung'#13#10'Uhr   : Rast' +
+            'start bei Temperaturunabh'#228'ngig'#13#10'Eis   : Raststart bei Rasttemper' +
+            'aturunterschreitung'
+          HelpType = htKeyword
+          HelpKeyword = 'Bei Rasttemperatur'#252'berschreitung'
           ParentShowHint = False
           ShowHint = True
           TabOrder = 8
-          Text = 'Bei Rasttemperatur'#252'berschreitung'
-          Items.Strings = (
-            'Bei Rasttemperatur'#252'berschreitung'
-            'Temperaturunabh'#228'ngig'
-            'Bei Rasttemperaturunterschreitung')
+          OnClick = BitBtn25Click
+          Glyph.Data = {
+            82060000424D8206000000000000420000002800000014000000140000000100
+            20000300000040060000C30E0000C30E00000000000000000000000000FF0000
+            FF0000FF000000FFFFFF00FFFFFF00FFFFFF00FFFFFF01FFFF00010000000100
+            00000C0080BF2E008BCD5600B8DB6C00D9E39400E9EC8100D7E557009ED90D00
+            62B10100FF0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000000A00
+            3399620039D8A70043E0CD0068E1E8008FE1D700B4E5A100DBEE6F00F8F86200
+            FFFF6200FFFF6200FFFC9500DEEEE90096E389005DDA140040BF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF19003DC2D20038E2FB004EE7FB0089E7E200C3E78800
+            EEF26300FCFC6200FFFC6200FFFF6200FFFF8A00EEEE6300FFFF6800FAFDF200
+            DDE6FA0099E7DF0057E1350030CF0100000000FFFFFF060055AABF0038DEFB00
+            4FE7FC008BE7FB00CEE68B00EEF26200FFFF6700FDFAA900E8EB8A00EEEE9200
+            EEEFEF00E1E46800FAFD9C00EBEDFC00E1E6FB00A7E7FB007DE9E30036E21200
+            39B800FFFFFF6F0039D6FD0038E7FB0080E8FC009CE6FD00E1E78700F0F27C00
+            F3F5DE00E1E6FE00E1E5B600E7EBE800E1E7FC00E1E6A900E8EBC800E4E8FA00
+            D0E7FE008DE7FB007FE8FE0038E8740039DA01000000DB0037E1FD0039E7FC00
+            86E9FD0094E7F800DFE5A600E9EDF300E0E6F900B6E5FA00D7E6F600E1E6FC00
+            E1E6F900B7E4FA00DDE7F300E1E7FB00A5E7FF008BE7FB006AE8FD0037E9A900
+            39DF0100FF00FD0037E6FE0037E8FB0069E8FC008BE6F900CEE6F900DDE5F900
+            A0E5FC008AE8FA00CFE6FC00E1E6FB00C7E7FE008CE5FA00C1E6FA00D4E6FE00
+            8DE7FC008AE8FC0046E7FE0038E8A30038DE0100FF00F00037E3FE0038E8FC00
+            41E7FD0088E7FB00B4E6FA00A3E6FB0056E7FB0081E8FA00C3E6FC00DEE7FC00
+            98E6FE008CE8FC0096E6FA00C2E7FE008CE8FB0070E7FD0036E9FD0036E85D00
+            3AD901000000AC003ADEFE0038E8FD0037E8FB006FE5FA0092E8FA0072E7FD00
+            38E7FB006EE7FB00B3E7FB00C4E5FE008CE7FA0078E8FC007DE7FB0096E8FD00
+            8BE7FB0050E8FE0037E9C30037E00500669900FFFFFF48003CD1FD0037E7FD00
+            36E9FC005CE8FC0085E9FC0040E7FD0038E8FB0056E8FB0099E5F900AEE6FB00
+            81E7FC003DE8FB0056E7FE008BE7FC0087E9FD003AE7FA0037E6310039CB00FF
+            FFFF00FFFFFF05006699DB0037E1FE0038E8FB0058E8FA0052E8FD0038E89100
+            3AD1FC0041E8FC008AE8FB0093E7FA005AE7FE0037E9FD0038E7FB007AE8FC00
+            7DE7FD0036E8B10038DF0100000000FFFFFF00FFFFFF0100FFFF8A0039DAFE00
+            38E8F90045E7FD0037E8B90039DF100050AFF40036E3FB0079E8FD008AE8FC00
+            40E7FE0037E9FC0037E9FB0047E8FB007EE6FD0037E865003DD700FFFFFF00FF
+            FFFF00FFFFFF01FFFF004D003CD1FD0037E8FD0036E9F50036E52C003ACB0200
+            8000B90039DFFB005DE7FB0085E9FD0037E7F90037E56B003CD2FA0036E7FB00
+            51E8FA0041E74E003ED10100000000FFFFFF00FFFFFF00FFFFFF2C003AC5FE00
+            38E8FD0037E87B0038D80100000001FFFF006C003BD7FB0042E7FB007FE8FE00
+            37E8B30038DE02008000830038DAFE0038E8FD0037E76F0039D80100000000FF
+            FFFF00FFFFFF00FFFFFF23003AC5FC0037E8BC0039DE040040BF00FFFFFF00FF
+            FFFF1A0045CEF90037E4F9006DE7FE0039E75B0038D200FFFFFF040040809100
+            37DCFD0037E8CC0038E00400408000FFFFFF00FFFFFF00FFFFFF33003CC8D600
+            37E2170043BC00FFFFFF00FFFFFF00FFFFFF02008080B30038E0F8004EE8F900
+            39E215003DB600FFFFFF00FFFFFF020000006E0038D8F30036E5760038D60100
+            000000FFFFFF0100FFFF360039BD200038BF0100FF0000FFFFFF00FFFFFF00FF
+            FFFF010000004A003BCFFC0039E7DB0039E20100000000FFFFFF00FFFFFF00FF
+            FFFF010000002C0040D1B40037DE640038D40100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF04004080CC0038E0C300
+            38E10100000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000003800
+            32CD36003DAF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF0100FF00400038CFC20037DF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000006600
+            39C50200808000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF}
         end
-        object ComboBox43: TComboBox
-          Left = 5
-          Top = 312
-          Width = 224
-          Height = 21
+        object BitBtn26: TBitBtn
+          Left = 25
+          Top = 306
+          Width = 30
+          Height = 30
           Hint = 
-            'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
-            'e Temperatur zum'#13#10'ersten mal gr'#246#223'er/gleich der Rasttemperatur is' +
-            't.'#13#10'Temperaturunabh'#228'ngig:'#13#10'Die Rastzeit startet unmittelbar, una' +
-            'bh'#228'ngig von'#13#10'der Temperatur.'#13#10'Bei Rasttemperaturunterschreitung:' +
-            #13#10'Die Rastzeit startet, wenn die Temperatur zum'#13#10'ersten mal klei' +
-            'ner/gleich der Rasttemperatur ist.'
-          ItemHeight = 13
+            'Feuer : Raststart bei Rasttemperatur'#252'berschreitung'#13#10'Uhr   : Rast' +
+            'start bei Temperaturunabh'#228'ngig'#13#10'Eis   : Raststart bei Rasttemper' +
+            'aturunterschreitung'
+          HelpType = htKeyword
+          HelpKeyword = 'Bei Rasttemperatur'#252'berschreitung'
           ParentShowHint = False
           ShowHint = True
           TabOrder = 9
-          Text = 'Bei Rasttemperatur'#252'berschreitung'
-          Items.Strings = (
-            'Bei Rasttemperatur'#252'berschreitung'
-            'Temperaturunabh'#228'ngig'
-            'Bei Rasttemperaturunterschreitung')
+          OnClick = BitBtn26Click
+          Glyph.Data = {
+            82060000424D8206000000000000420000002800000014000000140000000100
+            20000300000040060000C30E0000C30E00000000000000000000000000FF0000
+            FF0000FF000000FFFFFF00FFFFFF00FFFFFF00FFFFFF01FFFF00010000000100
+            00000C0080BF2E008BCD5600B8DB6C00D9E39400E9EC8100D7E557009ED90D00
+            62B10100FF0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000000A00
+            3399620039D8A70043E0CD0068E1E8008FE1D700B4E5A100DBEE6F00F8F86200
+            FFFF6200FFFF6200FFFC9500DEEEE90096E389005DDA140040BF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF19003DC2D20038E2FB004EE7FB0089E7E200C3E78800
+            EEF26300FCFC6200FFFC6200FFFF6200FFFF8A00EEEE6300FFFF6800FAFDF200
+            DDE6FA0099E7DF0057E1350030CF0100000000FFFFFF060055AABF0038DEFB00
+            4FE7FC008BE7FB00CEE68B00EEF26200FFFF6700FDFAA900E8EB8A00EEEE9200
+            EEEFEF00E1E46800FAFD9C00EBEDFC00E1E6FB00A7E7FB007DE9E30036E21200
+            39B800FFFFFF6F0039D6FD0038E7FB0080E8FC009CE6FD00E1E78700F0F27C00
+            F3F5DE00E1E6FE00E1E5B600E7EBE800E1E7FC00E1E6A900E8EBC800E4E8FA00
+            D0E7FE008DE7FB007FE8FE0038E8740039DA01000000DB0037E1FD0039E7FC00
+            86E9FD0094E7F800DFE5A600E9EDF300E0E6F900B6E5FA00D7E6F600E1E6FC00
+            E1E6F900B7E4FA00DDE7F300E1E7FB00A5E7FF008BE7FB006AE8FD0037E9A900
+            39DF0100FF00FD0037E6FE0037E8FB0069E8FC008BE6F900CEE6F900DDE5F900
+            A0E5FC008AE8FA00CFE6FC00E1E6FB00C7E7FE008CE5FA00C1E6FA00D4E6FE00
+            8DE7FC008AE8FC0046E7FE0038E8A30038DE0100FF00F00037E3FE0038E8FC00
+            41E7FD0088E7FB00B4E6FA00A3E6FB0056E7FB0081E8FA00C3E6FC00DEE7FC00
+            98E6FE008CE8FC0096E6FA00C2E7FE008CE8FB0070E7FD0036E9FD0036E85D00
+            3AD901000000AC003ADEFE0038E8FD0037E8FB006FE5FA0092E8FA0072E7FD00
+            38E7FB006EE7FB00B3E7FB00C4E5FE008CE7FA0078E8FC007DE7FB0096E8FD00
+            8BE7FB0050E8FE0037E9C30037E00500669900FFFFFF48003CD1FD0037E7FD00
+            36E9FC005CE8FC0085E9FC0040E7FD0038E8FB0056E8FB0099E5F900AEE6FB00
+            81E7FC003DE8FB0056E7FE008BE7FC0087E9FD003AE7FA0037E6310039CB00FF
+            FFFF00FFFFFF05006699DB0037E1FE0038E8FB0058E8FA0052E8FD0038E89100
+            3AD1FC0041E8FC008AE8FB0093E7FA005AE7FE0037E9FD0038E7FB007AE8FC00
+            7DE7FD0036E8B10038DF0100000000FFFFFF00FFFFFF0100FFFF8A0039DAFE00
+            38E8F90045E7FD0037E8B90039DF100050AFF40036E3FB0079E8FD008AE8FC00
+            40E7FE0037E9FC0037E9FB0047E8FB007EE6FD0037E865003DD700FFFFFF00FF
+            FFFF00FFFFFF01FFFF004D003CD1FD0037E8FD0036E9F50036E52C003ACB0200
+            8000B90039DFFB005DE7FB0085E9FD0037E7F90037E56B003CD2FA0036E7FB00
+            51E8FA0041E74E003ED10100000000FFFFFF00FFFFFF00FFFFFF2C003AC5FE00
+            38E8FD0037E87B0038D80100000001FFFF006C003BD7FB0042E7FB007FE8FE00
+            37E8B30038DE02008000830038DAFE0038E8FD0037E76F0039D80100000000FF
+            FFFF00FFFFFF00FFFFFF23003AC5FC0037E8BC0039DE040040BF00FFFFFF00FF
+            FFFF1A0045CEF90037E4F9006DE7FE0039E75B0038D200FFFFFF040040809100
+            37DCFD0037E8CC0038E00400408000FFFFFF00FFFFFF00FFFFFF33003CC8D600
+            37E2170043BC00FFFFFF00FFFFFF00FFFFFF02008080B30038E0F8004EE8F900
+            39E215003DB600FFFFFF00FFFFFF020000006E0038D8F30036E5760038D60100
+            000000FFFFFF0100FFFF360039BD200038BF0100FF0000FFFFFF00FFFFFF00FF
+            FFFF010000004A003BCFFC0039E7DB0039E20100000000FFFFFF00FFFFFF00FF
+            FFFF010000002C0040D1B40037DE640038D40100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF04004080CC0038E0C300
+            38E10100000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000003800
+            32CD36003DAF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF0100FF00400038CFC20037DF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0100000000FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF010000006600
+            39C50200808000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FF
+            FFFF00FFFFFF}
         end
       end
       object Panel10: TPanel
-        Left = 136
+        Left = 152
         Top = 180
-        Width = 625
+        Width = 609
         Height = 345
         TabOrder = 5
         Visible = False
@@ -9290,70 +9763,70 @@ object Form1: TForm1
         object Edit63: TEdit
           Left = 3
           Top = 24
-          Width = 614
+          Width = 598
           Height = 21
           TabOrder = 0
         end
         object Edit70: TEdit
           Left = 3
           Top = 248
-          Width = 614
+          Width = 598
           Height = 21
           TabOrder = 7
         end
         object Edit65: TEdit
           Left = 3
           Top = 88
-          Width = 614
+          Width = 598
           Height = 21
           TabOrder = 2
         end
         object Edit66: TEdit
           Left = 3
           Top = 120
-          Width = 614
+          Width = 598
           Height = 21
           TabOrder = 3
         end
         object Edit67: TEdit
           Left = 3
           Top = 152
-          Width = 614
+          Width = 598
           Height = 21
           TabOrder = 4
         end
         object Edit68: TEdit
           Left = 3
           Top = 184
-          Width = 614
+          Width = 598
           Height = 21
           TabOrder = 5
         end
         object Edit69: TEdit
           Left = 3
           Top = 216
-          Width = 614
+          Width = 598
           Height = 21
           TabOrder = 6
         end
         object Edit64: TEdit
           Left = 3
           Top = 56
-          Width = 614
+          Width = 598
           Height = 21
           TabOrder = 1
         end
         object Edit71: TEdit
           Left = 3
           Top = 280
-          Width = 614
+          Width = 598
           Height = 21
           TabOrder = 8
         end
         object Edit72: TEdit
           Left = 3
           Top = 312
-          Width = 614
+          Width = 598
           Height = 21
           TabOrder = 9
         end
@@ -9395,6 +9868,103 @@ object Form1: TForm1
           Width = 71
           Height = 13
           Caption = 'Status Rast:'
+        end
+        object SpeedButton1: TSpeedButton
+          Left = 34
+          Top = 12
+          Width = 37
+          Height = 39
+          Glyph.Data = {
+            FE0A0000424DFE0A00000000000036000000280000001E0000001E0000000100
+            180000000000C80A0000C40E0000C40E00000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFB
+            FBFBF0E8E2E7DCD4E6DDD5E5DCD5E4DBD5E3DAD5E3DAD5E3DAD5E4DBD5E5DCD5
+            E5DCD5E6DDD5E6DDD5E7DED5E7DFD5E8DFD5E9E0D5E9E0D5EAE1D5EBE1D5EDE4
+            D8F1EEEBFCFDFCFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFEFEF0E7D8D3BDA8C568
+            19D26200C25E00BD5A00B85300B04B00AE4900AF4900B75200BA5600C05B00C3
+            5F00C86500C96600CE6E00D77400DA7800DD7C00E38100F08400E48108BD8F56
+            DCDCD1F8F8FBFFFFFFFFFFFFF7FFFFFFFFF8F3EFC18D5BD16D02F28201F68301
+            F68301F68301F68301F68301F68401F68401F68401F68301F68401F68301F683
+            01F68401F68301F58301F58301F68401F68401F68301F58401F58D01D49F4CE0
+            D6CFFBFBFBFFFFFF01FFFEFFFFE8CFB5D97C1DEA7D00EE7F00EF8000EF8000EF
+            8000EF8000EF8000EF8000EF8000EF7F00ED7E00EF7E02EF7E02ED7E00ED7F00
+            EF8000EF8000EF8000EF8000EF8000EF8000EF8000ED7F00EC8500CCA37BF4F2
+            F1FFFFFF00FFFEFEFEE3B596DA6C00E67B00E67B00E67B00E67B00E67B00E67B
+            00E67B00E67B00E67B00E57500CC6B00C06400BF6400C86700E17701E67A00E6
+            7B00E67B00E67B00E67B00E67B00E67B00E67B00E67B00CE720FF0E7DEFFFFFF
+            01FFFDFDFDDEB191D46600E07400E07400E07400E07400E07400E07400E07400
+            E07400E07300D88225F6FCFFF6FBFFF6FBFFF0EDDFB66805DD7400E07400E074
+            00E07400E07400E07400E07400E07400E07300CF6B00EEE5DBFFFFFF00FFFEFE
+            FDDDAF8FCD5F00DB6F00DB6F00DB6F00DB6F00DB6F00DB6F00DB6F00DB6F00DA
+            6E00CF8226FEFEFEFFFFFFFFFFFFEBEFE3B76605DA7002DB6F00DB6F00DB6F00
+            DB6F00DB6F00DB6F00DB6F00DB6E00D36B00EFE5DBFFFFFF00FFFEFEFDDAAE91
+            C55A00D36C00D36C00D36C00D36C00D36C00D36C00D36C00D36C00D26C00C47E
+            23F5F7F7F9FAFAFBFBFBEDEEE5B16205D06A00D36C00D36C00D36C00D36C00D3
+            6C00D36C00D36C00D36B00CA6900EEE5DBFFFFFF00FFFEFEFDD9A992BF5102CD
+            6501CD6501CD6501CD6501CD6501CD6501CD6501CD6501CC6500BD7622E4E9E8
+            ECEFEFF0F2F2F2ECE3B05B05CA6400CD6501CD6501CD6501CD6501CD6501CD65
+            01CD6501CD6401C76500EEE5DBFFFFFF00FFFEFEFED9AA93BD5001C86001C860
+            01C86001C86001C86001C86001C86001C86001C76000B76F22D6DBDADDE1E0E0
+            E5E4EFE7DFAD5705C55F00C86001C86001C86001C86001C86001C86001C86001
+            C85F01C25E00EDE4DBFFFFFF00FFFEFEFEDCAC95BA5200C05C00C05B00C05B00
+            C05B00C05B00C05B00C05B00C05B00C05B00B06822CCD1CFCFD4D2D3D8D6E9E2
+            D9A95305BF5900C05B00C05B00C05B00C05B00C05B00C05B00C05B00C05B00BE
+            5B00EDE4DBFFFFFFC9FFFEFDFEDDAE92B95100BA5600BA5600BA5600BA5600BA
+            5600BA5600BA5600BA5600B95600A8621CC1C3C3C4C6C6C6CAC9E8E3D1A94B05
+            B75300BA5600BA5600BA5600BA5600BA5600BA5600BA5600BA5500B85400ECE3
+            DBFFFFFF01FFFEFEFEDFB094B94F00B85300B85300B85300B85300B85300B853
+            00B85300B85300B75300A55E1AB6B8B8B9BBBBBBBFBEE4DFCEA54805B45000B8
+            5300B85300B85300B85300B85300B85300B85300B85200B65300ECE3DBFFFFFF
+            FFFFFEFEFEE1B393B74E00B24D00B24D00B24D00B24D00B24D00B24D00B24D00
+            B24D00B14D00A15A19ABADADAFB1B1B1B3B3E0DACA9E4505B04B00B24D00B24D
+            00B24D00B24D00B24D00B24D00B24D00B24D00B45000ECE3DBFFFFFF00FFFEFE
+            FEE5B695B84E00AE4800AE4800AE4800AE4800AE4800AE4800AE4800AE4800AE
+            4800A75618A9ABABABADADACAEAEDED8C99C4106AB4700AE4800AE4800AE4800
+            AE4800AE4800AE4800AE4800AE4800B24D00ECE2DBFFFFFFBBFFFEFEFFE8BA96
+            B84D01AB4201AB4201AB4201AB4201AB4201AB4201AB4201AB4201AB4101A351
+            18A9AAAAACADADABADADDED9CB973B05A54100AB4201AB4201AB4201AB4201AB
+            4201AB4201AB4201AB4200AE4900ECE2DBFFFFFF02FFFEFEFEECBA98B74B02A3
+            3D00A33D00A33D00A33D00A33D00A33D00A33D00A33D00A33C009F4E18AAAAAA
+            ACACACACACACD3D9CA8E3905A13C00A33D00A33D00A33D00A33D00A33D00A33D
+            00A33D00A33D00A94400EBE2DBFFFFFFDBFFFEFDFEEBBB95B348029D37009D38
+            009D38009D38009D38009D38009D38009D38009C3700A14E1DB7C3BBB2BFBBB1
+            BEBAEAD8CA8E3E059B37009D38009D38009D38009D38009D38009D38009D3800
+            9D3700A64100EBE1DBFFFFFF00FFFEFEFEEEBD98B347029B33019B34029B3402
+            9B34029B34029B34029B34029B34029A33019B35029036098B3B138531088933
+            039834009A33019B34029B34029B34029B34029B34029B34029B34029B3401A4
+            3E00EBE1DBFFFFFF1EFFFEFEFEF2C195B849009D31009E31009E31009E31009E
+            31009E31009E31009E31009D3100973306A67764CCCCC79573697D3619952E02
+            9E31009E31009E31009E31009E31009E31009E31009E31009F3000A23902EAE1
+            DBFFFFFF3EFFFEFDFEF3C396C65E1BAA411CA52E04A42D00A22E00A22D00A22E
+            00A22E00A52D00A52D00A9451ED3D2D2CECFCECDCDCDAF948A922906A42C00A6
+            2D00A62E00A62D00A62D00A62D00A62D00A32E02A83A14A63E06EBE1DBFFFFFF
+            6DFFFEFEFEF7C997DD884BCD7F67C0664BC36747C46346C46346C46345C36344
+            BF6343BF6343C3775AE7E6E7E4E4E4E1E1E1E9DED7AA5B40BD5E3EC05C3EC05C
+            3EBF5D3CBE5C3ABE5C3ABE5B3ABA593ABD684DAE4213EBE0DBFFFFFF85FFFEFE
+            FEF8CB95E59256DC9885D99683DB9783DB9582DA9481DA9380D9927FD7927FD7
+            927FD79380E5C5BEF4F1F5F9F9F7DBA296D18B78D68A76D58975D58875D48773
+            D38672D28570D28470D2836ED2836DB04317EBE0DBFFFFFF8FFFFEFDFFF2CA9C
+            E79B62E0A294E4A395E2A193E2A191E1A090E0A091E19E8FE09C8FE09C8FDE9A
+            8DDF998CDC988BDB978ADD9786DD9785DD9785DD9584DF9583DE9483DC9281DC
+            917FDD917FDB907FDC8E7DA04420EBE2DEFFFFFF9AFFFFFEFEFAD29DEDAB69EC
+            B5A9E7B0A6E7AEA5E7AEA3E7ADA2E6ADA1E6ABA0E5AA9EE5AA9EE5A99DE7A99C
+            E7A89BE6A79AE7A69AE7A69AE5A597E5A396E5A295E6A396E5A295E49F92E49E
+            92E6A195E3988BC18F7FF5F1EFFFFFFFB2FFFEFFFEF3EAE0ECAD85EEB393F2C9
+            BDF3CAC2F5C6C0F3C6BFF5C6BFF6C7BDF3C4BAF3C5BBF3C4BAF4C3B9F5C4B9F4
+            C3B8F5C3B8F5C3B8F2BFB5F3BEB5F4BEB4F4BEB6F2BDB6EFBCB5EFB9B2E1A294
+            B76A49D3CABCFBFCFCFFFFFFE0FFFFFFFFFEFEFEE9C0A5F2B786EBAD7BF1B07B
+            F1A876EFA574EEA372ECA46FE7A16DE7A26EE79E6DE39A6BE1986AE1996BE096
+            6BE0966ADC916CDA8C6BDA896BDA876AD28769CE8469D08269C07E66CFBDAEF7
+            F9F8FFFFFFFFFFFF72FFFFFFFFFFFFFFFEFEFEF9F2F0F1CCA2ECCC94F3C896F2
+            C896F2C796EFC495EAC296EBC397E9C097E8BD96E6BC96E6BC97E4B897E3B897
+            E1B696DFB495DCB293DDB293DBB196D8AE95D7AD95DDC6C0F8F8F8FEFEFEFFFF
+            FFFFFFFF97FFFFFFFFFFFFFFFFFFFFFEFFFFFFFEFFFDFFFEFFFEFFFFFEFFFFFE
+            FFFFFEFEFFFFFFFFFFFFFFFEFFFFFEFFFFFFFFFFFFFFFFFEFFFFFEFFFFFEFFFF
+            FFFEFFFFFEFFFFFEFFFFFFFFFFFEFFFFFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFF}
+          OnClick = SpeedButton1Click
         end
         object ProgressBar1: TProgressBar
           Left = 680
@@ -10660,7 +11230,9 @@ object Form1: TForm1
         Width = 89
         Height = 21
         Hint = 'Schalt-Hardware angesteuert '#252'ber...'
+        Style = csDropDownList
         ItemHeight = 13
+        ItemIndex = 0
         ParentShowHint = False
         ShowHint = True
         TabOrder = 0
@@ -10735,7 +11307,9 @@ object Form1: TForm1
           Width = 81
           Height = 21
           Hint = 'USB-Schalthardware-Typ'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 1
           ParentShowHint = False
           ShowHint = True
           TabOrder = 0
@@ -10752,7 +11326,9 @@ object Form1: TForm1
           Width = 57
           Height = 21
           Hint = 'Verwendete Nummers Relais'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 0
           ParentShowHint = False
           ShowHint = True
           TabOrder = 3
@@ -10770,11 +11346,13 @@ object Form1: TForm1
           Width = 57
           Height = 21
           Hint = 'Verwendete Nummers Relais'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 1
           ParentShowHint = False
           ShowHint = True
           TabOrder = 4
-          Text = '1'
+          Text = '2'
           OnChange = ComboBox4Change
           Items.Strings = (
             '1'
@@ -10788,11 +11366,13 @@ object Form1: TForm1
           Width = 57
           Height = 21
           Hint = 'Verwendete Nummers Relais'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 2
           ParentShowHint = False
           ShowHint = True
           TabOrder = 5
-          Text = '1'
+          Text = '3'
           OnChange = ComboBox5Change
           Items.Strings = (
             '1'
@@ -10806,11 +11386,13 @@ object Form1: TForm1
           Width = 57
           Height = 21
           Hint = 'Verwendete Nummers Relais'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 3
           ParentShowHint = False
           ShowHint = True
           TabOrder = 6
-          Text = '1'
+          Text = '4'
           OnChange = ComboBox6Change
           Items.Strings = (
             '1'
@@ -10824,7 +11406,9 @@ object Form1: TForm1
           Width = 81
           Height = 21
           Hint = 'COM-Port der USB-Hardware'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 0
           ParentShowHint = False
           ShowHint = True
           TabOrder = 2
@@ -10852,10 +11436,13 @@ object Form1: TForm1
             'Der Device-Index muss ggf. angepasst werden, wenn '#13#10'Temperatur- ' +
             'oder andere Hardware benutzt wird die'#13#10'den gleichen Chip benutzt' +
             ' wie die Denkovi-Relais-'#13#10'Karte.'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 0
           ParentShowHint = False
           ShowHint = True
           TabOrder = 1
+          Text = '0'
           OnChange = ComboBox16Change
           Items.Strings = (
             '0'
@@ -10916,6 +11503,7 @@ object Form1: TForm1
           Height = 21
           Hint = 'Nummer des LPT-Ports (dezimal)'
           ItemHeight = 13
+          ItemIndex = 0
           ParentShowHint = False
           ShowHint = True
           TabOrder = 0
@@ -10932,7 +11520,9 @@ object Form1: TForm1
           Width = 57
           Height = 21
           Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 0
           ParentShowHint = False
           ShowHint = True
           TabOrder = 1
@@ -10954,7 +11544,9 @@ object Form1: TForm1
           Width = 57
           Height = 21
           Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 1
           ParentShowHint = False
           ShowHint = True
           TabOrder = 2
@@ -10976,11 +11568,13 @@ object Form1: TForm1
           Width = 57
           Height = 21
           Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 2
           ParentShowHint = False
           ShowHint = True
           TabOrder = 3
-          Text = '8'
+          Text = '4'
           OnChange = ComboBox11Change
           Items.Strings = (
             '1'
@@ -10998,7 +11592,9 @@ object Form1: TForm1
           Width = 57
           Height = 21
           Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 7
           ParentShowHint = False
           ShowHint = True
           TabOrder = 4
@@ -11019,130 +11615,132 @@ object Form1: TForm1
         Left = 472
         Top = 48
         Width = 273
-        Height = 221
+        Height = 209
         Caption = 'Puls / Gradient'
         TabOrder = 10
         object Label88: TLabel
           Left = 17
-          Top = 197
+          Top = 181
           Width = 137
           Height = 13
           Caption = 'Puls- / Gradientbereich:'
         end
         object Label90: TLabel
           Left = 233
-          Top = 197
+          Top = 181
           Width = 9
           Height = 13
           Caption = 'K'
         end
         object Label81: TLabel
           Left = 17
-          Top = 37
+          Top = 29
           Width = 94
           Height = 13
           Caption = 'Puls bis        '#176'C:'
         end
         object Label86: TLabel
           Left = 233
-          Top = 37
+          Top = 29
           Width = 25
           Height = 13
           Caption = 'sek.'
         end
         object Label87: TLabel
           Left = 129
-          Top = 13
+          Top = 9
           Width = 19
           Height = 13
           Caption = 'Ein'
         end
         object Label89: TLabel
           Left = 185
-          Top = 13
+          Top = 9
           Width = 22
           Height = 13
           Caption = 'Aus'
         end
         object Label93: TLabel
           Left = 233
-          Top = 85
+          Top = 77
           Width = 25
           Height = 13
           Caption = 'sek.'
         end
         object Label94: TLabel
           Left = 233
-          Top = 61
+          Top = 53
           Width = 25
           Height = 13
           Caption = 'sek.'
         end
         object Label96: TLabel
           Left = 17
-          Top = 61
+          Top = 53
           Width = 94
           Height = 13
           Caption = 'Puls bis        '#176'C:'
         end
         object Label97: TLabel
           Left = 233
-          Top = 133
+          Top = 125
           Width = 25
           Height = 13
           Caption = 'sek.'
         end
         object Label100: TLabel
           Left = 233
-          Top = 109
+          Top = 101
           Width = 25
           Height = 13
           Caption = 'sek.'
         end
         object Label102: TLabel
           Left = 17
-          Top = 109
+          Top = 101
           Width = 94
           Height = 13
           Caption = 'Puls bis        '#176'C:'
         end
         object Label104: TLabel
           Left = 17
-          Top = 85
+          Top = 77
           Width = 94
           Height = 13
           Caption = 'Puls bis        '#176'C:'
         end
         object Label107: TLabel
           Left = 17
-          Top = 133
+          Top = 125
           Width = 94
           Height = 13
           Caption = 'Puls bis        '#176'C:'
         end
         object Label109: TLabel
           Left = 17
-          Top = 165
+          Top = 153
           Width = 115
           Height = 13
           Caption = 'Zul'#228'ssiger Gradient:'
         end
         object Label110: TLabel
           Left = 233
-          Top = 165
+          Top = 153
           Width = 9
           Height = 13
           Caption = 'K'
         end
         object ComboBox13: TComboBox
           Left = 176
-          Top = 193
+          Top = 177
           Width = 49
           Height = 21
           Hint = 
             'In dem hier definierten Bereich, vor erreichen der'#13#10'Zieltemperat' +
             'ur wirkt die Gradientbegrenzung und/oder '#13#10'das Takten'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 20
           TabOrder = 15
           Text = '2.0'
           OnChange = ComboBox13Change
@@ -11182,15 +11780,18 @@ object Form1: TForm1
         end
         object ComboBox14: TComboBox
           Left = 120
-          Top = 33
+          Top = 25
           Width = 49
           Height = 21
           Hint = 'Pulsweite im Temperaturbereich'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 5
           TabOrder = 1
-          Text = '5'#9
+          Text = '5'
           OnChange = ComboBox14Change
           Items.Strings = (
+            '0'
             '1'
             '2'
             '3'
@@ -11291,219 +11892,22 @@ object Form1: TForm1
             '98'
             '99'
             '100'
-            '101'
-            '102'
-            '103'
-            '104'
-            '105'
-            '106'
-            '107'
-            '108'
-            '109'
-            '110'
-            '111'
-            '112'
-            '113'
-            '114'
-            '115'
-            '116'
-            '117'
-            '118'
-            '119'
-            '120'
-            '121'
-            '122'
-            '123'
-            '124'
-            '125'
-            '126'
-            '127'
-            '128'
-            '129'
-            '130'
-            '131'
-            '132'
-            '133'
-            '134'
-            '135'
-            '136'
-            '137'
-            '138'
-            '139'
-            '140'
-            '141'
-            '142'
-            '143'
-            '144'
-            '145'
-            '146'
-            '147'
-            '148'
-            '149'
-            '150'
-            '151'
-            '152'
-            '153'
-            '154'
-            '155'
-            '156'
-            '157'
-            '158'
-            '159'
-            '160'
-            '161'
-            '162'
-            '163'
-            '164'
-            '165'
-            '166'
-            '167'
-            '168'
-            '169'
-            '170'
-            '171'
-            '172'
-            '173'
-            '174'
-            '175'
-            '176'
-            '177'
-            '178'
-            '179'
-            '180'
-            '181'
-            '182'
-            '183'
-            '184'
-            '185'
-            '186'
-            '187'
-            '188'
-            '189'
-            '190'
-            '191'
-            '192'
-            '193'
-            '194'
-            '195'
-            '196'
-            '197'
-            '198'
-            '199'
-            '200'
-            '201'
-            '202'
-            '203'
-            '204'
-            '205'
-            '206'
-            '207'
-            '208'
-            '209'
-            '210'
-            '211'
-            '212'
-            '213'
-            '214'
-            '215'
-            '216'
-            '217'
-            '218'
-            '219'
-            '220'
-            '221'
-            '222'
-            '223'
-            '224'
-            '225'
-            '226'
-            '227'
-            '228'
-            '229'
-            '230'
-            '231'
-            '232'
-            '233'
-            '234'
-            '235'
-            '236'
-            '237'
-            '238'
-            '239'
-            '240'
-            '241'
-            '242'
-            '243'
-            '244'
-            '245'
-            '246'
-            '247'
-            '248'
-            '249'
-            '250'
-            '251'
-            '252'
-            '253'
-            '254'
-            '255'
-            '256'
-            '257'
-            '258'
-            '259'
-            '260'
-            '261'
-            '262'
-            '263'
-            '264'
-            '265'
-            '266'
-            '267'
-            '268'
-            '269'
-            '270'
-            '271'
-            '272'
-            '273'
-            '274'
-            '275'
-            '276'
-            '277'
-            '278'
-            '279'
-            '280'
-            '281'
-            '282'
-            '283'
-            '284'
-            '285'
-            '286'
-            '287'
-            '288'
-            '289'
-            '290'
-            '291'
-            '292'
-            '293'
-            '294'
-            '295'
-            '296'
-            '297'
-            '298'
-            '299'
-            '300'
-            #9)
+            '')
         end
         object ComboBox15: TComboBox
           Left = 176
-          Top = 33
+          Top = 25
           Width = 49
           Height = 21
           Hint = 'Pausenweite im Temperaturbereich'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 5
           TabOrder = 2
-          Text = '5'#9
+          Text = '5'
           OnChange = ComboBox15Change
           Items.Strings = (
+            '0'
             '1'
             '2'
             '3'
@@ -11604,219 +12008,22 @@ object Form1: TForm1
             '98'
             '99'
             '100'
-            '101'
-            '102'
-            '103'
-            '104'
-            '105'
-            '106'
-            '107'
-            '108'
-            '109'
-            '110'
-            '111'
-            '112'
-            '113'
-            '114'
-            '115'
-            '116'
-            '117'
-            '118'
-            '119'
-            '120'
-            '121'
-            '122'
-            '123'
-            '124'
-            '125'
-            '126'
-            '127'
-            '128'
-            '129'
-            '130'
-            '131'
-            '132'
-            '133'
-            '134'
-            '135'
-            '136'
-            '137'
-            '138'
-            '139'
-            '140'
-            '141'
-            '142'
-            '143'
-            '144'
-            '145'
-            '146'
-            '147'
-            '148'
-            '149'
-            '150'
-            '151'
-            '152'
-            '153'
-            '154'
-            '155'
-            '156'
-            '157'
-            '158'
-            '159'
-            '160'
-            '161'
-            '162'
-            '163'
-            '164'
-            '165'
-            '166'
-            '167'
-            '168'
-            '169'
-            '170'
-            '171'
-            '172'
-            '173'
-            '174'
-            '175'
-            '176'
-            '177'
-            '178'
-            '179'
-            '180'
-            '181'
-            '182'
-            '183'
-            '184'
-            '185'
-            '186'
-            '187'
-            '188'
-            '189'
-            '190'
-            '191'
-            '192'
-            '193'
-            '194'
-            '195'
-            '196'
-            '197'
-            '198'
-            '199'
-            '200'
-            '201'
-            '202'
-            '203'
-            '204'
-            '205'
-            '206'
-            '207'
-            '208'
-            '209'
-            '210'
-            '211'
-            '212'
-            '213'
-            '214'
-            '215'
-            '216'
-            '217'
-            '218'
-            '219'
-            '220'
-            '221'
-            '222'
-            '223'
-            '224'
-            '225'
-            '226'
-            '227'
-            '228'
-            '229'
-            '230'
-            '231'
-            '232'
-            '233'
-            '234'
-            '235'
-            '236'
-            '237'
-            '238'
-            '239'
-            '240'
-            '241'
-            '242'
-            '243'
-            '244'
-            '245'
-            '246'
-            '247'
-            '248'
-            '249'
-            '250'
-            '251'
-            '252'
-            '253'
-            '254'
-            '255'
-            '256'
-            '257'
-            '258'
-            '259'
-            '260'
-            '261'
-            '262'
-            '263'
-            '264'
-            '265'
-            '266'
-            '267'
-            '268'
-            '269'
-            '270'
-            '271'
-            '272'
-            '273'
-            '274'
-            '275'
-            '276'
-            '277'
-            '278'
-            '279'
-            '280'
-            '281'
-            '282'
-            '283'
-            '284'
-            '285'
-            '286'
-            '287'
-            '288'
-            '289'
-            '290'
-            '291'
-            '292'
-            '293'
-            '294'
-            '295'
-            '296'
-            '297'
-            '298'
-            '299'
-            '300'
-            #9)
+            '')
         end
         object ComboBox17: TComboBox
           Left = 120
-          Top = 57
+          Top = 49
           Width = 49
           Height = 21
           Hint = 'Pulsweite im Temperaturbereich'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 5
           TabOrder = 4
-          Text = '5'#9
+          Text = '5'
           OnChange = ComboBox17Change
           Items.Strings = (
+            '0'
             '1'
             '2'
             '3'
@@ -11917,219 +12124,22 @@ object Form1: TForm1
             '98'
             '99'
             '100'
-            '101'
-            '102'
-            '103'
-            '104'
-            '105'
-            '106'
-            '107'
-            '108'
-            '109'
-            '110'
-            '111'
-            '112'
-            '113'
-            '114'
-            '115'
-            '116'
-            '117'
-            '118'
-            '119'
-            '120'
-            '121'
-            '122'
-            '123'
-            '124'
-            '125'
-            '126'
-            '127'
-            '128'
-            '129'
-            '130'
-            '131'
-            '132'
-            '133'
-            '134'
-            '135'
-            '136'
-            '137'
-            '138'
-            '139'
-            '140'
-            '141'
-            '142'
-            '143'
-            '144'
-            '145'
-            '146'
-            '147'
-            '148'
-            '149'
-            '150'
-            '151'
-            '152'
-            '153'
-            '154'
-            '155'
-            '156'
-            '157'
-            '158'
-            '159'
-            '160'
-            '161'
-            '162'
-            '163'
-            '164'
-            '165'
-            '166'
-            '167'
-            '168'
-            '169'
-            '170'
-            '171'
-            '172'
-            '173'
-            '174'
-            '175'
-            '176'
-            '177'
-            '178'
-            '179'
-            '180'
-            '181'
-            '182'
-            '183'
-            '184'
-            '185'
-            '186'
-            '187'
-            '188'
-            '189'
-            '190'
-            '191'
-            '192'
-            '193'
-            '194'
-            '195'
-            '196'
-            '197'
-            '198'
-            '199'
-            '200'
-            '201'
-            '202'
-            '203'
-            '204'
-            '205'
-            '206'
-            '207'
-            '208'
-            '209'
-            '210'
-            '211'
-            '212'
-            '213'
-            '214'
-            '215'
-            '216'
-            '217'
-            '218'
-            '219'
-            '220'
-            '221'
-            '222'
-            '223'
-            '224'
-            '225'
-            '226'
-            '227'
-            '228'
-            '229'
-            '230'
-            '231'
-            '232'
-            '233'
-            '234'
-            '235'
-            '236'
-            '237'
-            '238'
-            '239'
-            '240'
-            '241'
-            '242'
-            '243'
-            '244'
-            '245'
-            '246'
-            '247'
-            '248'
-            '249'
-            '250'
-            '251'
-            '252'
-            '253'
-            '254'
-            '255'
-            '256'
-            '257'
-            '258'
-            '259'
-            '260'
-            '261'
-            '262'
-            '263'
-            '264'
-            '265'
-            '266'
-            '267'
-            '268'
-            '269'
-            '270'
-            '271'
-            '272'
-            '273'
-            '274'
-            '275'
-            '276'
-            '277'
-            '278'
-            '279'
-            '280'
-            '281'
-            '282'
-            '283'
-            '284'
-            '285'
-            '286'
-            '287'
-            '288'
-            '289'
-            '290'
-            '291'
-            '292'
-            '293'
-            '294'
-            '295'
-            '296'
-            '297'
-            '298'
-            '299'
-            '300'
-            #9)
+            '')
         end
         object ComboBox18: TComboBox
           Left = 176
-          Top = 57
+          Top = 49
           Width = 49
           Height = 21
           Hint = 'Pausenweite im Temperaturbereich'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 5
           TabOrder = 5
-          Text = '5'#9
+          Text = '5'
           OnChange = ComboBox18Change
           Items.Strings = (
+            '0'
             '1'
             '2'
             '3'
@@ -12230,219 +12240,22 @@ object Form1: TForm1
             '98'
             '99'
             '100'
-            '101'
-            '102'
-            '103'
-            '104'
-            '105'
-            '106'
-            '107'
-            '108'
-            '109'
-            '110'
-            '111'
-            '112'
-            '113'
-            '114'
-            '115'
-            '116'
-            '117'
-            '118'
-            '119'
-            '120'
-            '121'
-            '122'
-            '123'
-            '124'
-            '125'
-            '126'
-            '127'
-            '128'
-            '129'
-            '130'
-            '131'
-            '132'
-            '133'
-            '134'
-            '135'
-            '136'
-            '137'
-            '138'
-            '139'
-            '140'
-            '141'
-            '142'
-            '143'
-            '144'
-            '145'
-            '146'
-            '147'
-            '148'
-            '149'
-            '150'
-            '151'
-            '152'
-            '153'
-            '154'
-            '155'
-            '156'
-            '157'
-            '158'
-            '159'
-            '160'
-            '161'
-            '162'
-            '163'
-            '164'
-            '165'
-            '166'
-            '167'
-            '168'
-            '169'
-            '170'
-            '171'
-            '172'
-            '173'
-            '174'
-            '175'
-            '176'
-            '177'
-            '178'
-            '179'
-            '180'
-            '181'
-            '182'
-            '183'
-            '184'
-            '185'
-            '186'
-            '187'
-            '188'
-            '189'
-            '190'
-            '191'
-            '192'
-            '193'
-            '194'
-            '195'
-            '196'
-            '197'
-            '198'
-            '199'
-            '200'
-            '201'
-            '202'
-            '203'
-            '204'
-            '205'
-            '206'
-            '207'
-            '208'
-            '209'
-            '210'
-            '211'
-            '212'
-            '213'
-            '214'
-            '215'
-            '216'
-            '217'
-            '218'
-            '219'
-            '220'
-            '221'
-            '222'
-            '223'
-            '224'
-            '225'
-            '226'
-            '227'
-            '228'
-            '229'
-            '230'
-            '231'
-            '232'
-            '233'
-            '234'
-            '235'
-            '236'
-            '237'
-            '238'
-            '239'
-            '240'
-            '241'
-            '242'
-            '243'
-            '244'
-            '245'
-            '246'
-            '247'
-            '248'
-            '249'
-            '250'
-            '251'
-            '252'
-            '253'
-            '254'
-            '255'
-            '256'
-            '257'
-            '258'
-            '259'
-            '260'
-            '261'
-            '262'
-            '263'
-            '264'
-            '265'
-            '266'
-            '267'
-            '268'
-            '269'
-            '270'
-            '271'
-            '272'
-            '273'
-            '274'
-            '275'
-            '276'
-            '277'
-            '278'
-            '279'
-            '280'
-            '281'
-            '282'
-            '283'
-            '284'
-            '285'
-            '286'
-            '287'
-            '288'
-            '289'
-            '290'
-            '291'
-            '292'
-            '293'
-            '294'
-            '295'
-            '296'
-            '297'
-            '298'
-            '299'
-            '300'
-            #9)
+            '')
         end
         object ComboBox19: TComboBox
           Left = 120
-          Top = 81
+          Top = 73
           Width = 49
           Height = 21
           Hint = 'Pulsweite im Temperaturbereich'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 5
           TabOrder = 7
-          Text = '5'#9
+          Text = '5'
           OnChange = ComboBox19Change
           Items.Strings = (
+            '0'
             '1'
             '2'
             '3'
@@ -12543,219 +12356,22 @@ object Form1: TForm1
             '98'
             '99'
             '100'
-            '101'
-            '102'
-            '103'
-            '104'
-            '105'
-            '106'
-            '107'
-            '108'
-            '109'
-            '110'
-            '111'
-            '112'
-            '113'
-            '114'
-            '115'
-            '116'
-            '117'
-            '118'
-            '119'
-            '120'
-            '121'
-            '122'
-            '123'
-            '124'
-            '125'
-            '126'
-            '127'
-            '128'
-            '129'
-            '130'
-            '131'
-            '132'
-            '133'
-            '134'
-            '135'
-            '136'
-            '137'
-            '138'
-            '139'
-            '140'
-            '141'
-            '142'
-            '143'
-            '144'
-            '145'
-            '146'
-            '147'
-            '148'
-            '149'
-            '150'
-            '151'
-            '152'
-            '153'
-            '154'
-            '155'
-            '156'
-            '157'
-            '158'
-            '159'
-            '160'
-            '161'
-            '162'
-            '163'
-            '164'
-            '165'
-            '166'
-            '167'
-            '168'
-            '169'
-            '170'
-            '171'
-            '172'
-            '173'
-            '174'
-            '175'
-            '176'
-            '177'
-            '178'
-            '179'
-            '180'
-            '181'
-            '182'
-            '183'
-            '184'
-            '185'
-            '186'
-            '187'
-            '188'
-            '189'
-            '190'
-            '191'
-            '192'
-            '193'
-            '194'
-            '195'
-            '196'
-            '197'
-            '198'
-            '199'
-            '200'
-            '201'
-            '202'
-            '203'
-            '204'
-            '205'
-            '206'
-            '207'
-            '208'
-            '209'
-            '210'
-            '211'
-            '212'
-            '213'
-            '214'
-            '215'
-            '216'
-            '217'
-            '218'
-            '219'
-            '220'
-            '221'
-            '222'
-            '223'
-            '224'
-            '225'
-            '226'
-            '227'
-            '228'
-            '229'
-            '230'
-            '231'
-            '232'
-            '233'
-            '234'
-            '235'
-            '236'
-            '237'
-            '238'
-            '239'
-            '240'
-            '241'
-            '242'
-            '243'
-            '244'
-            '245'
-            '246'
-            '247'
-            '248'
-            '249'
-            '250'
-            '251'
-            '252'
-            '253'
-            '254'
-            '255'
-            '256'
-            '257'
-            '258'
-            '259'
-            '260'
-            '261'
-            '262'
-            '263'
-            '264'
-            '265'
-            '266'
-            '267'
-            '268'
-            '269'
-            '270'
-            '271'
-            '272'
-            '273'
-            '274'
-            '275'
-            '276'
-            '277'
-            '278'
-            '279'
-            '280'
-            '281'
-            '282'
-            '283'
-            '284'
-            '285'
-            '286'
-            '287'
-            '288'
-            '289'
-            '290'
-            '291'
-            '292'
-            '293'
-            '294'
-            '295'
-            '296'
-            '297'
-            '298'
-            '299'
-            '300'
-            #9)
+            '')
         end
         object ComboBox20: TComboBox
           Left = 176
-          Top = 81
+          Top = 73
           Width = 49
           Height = 21
           Hint = 'Pausenweite im Temperaturbereich'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 5
           TabOrder = 8
-          Text = '5'#9
+          Text = '5'
           OnChange = ComboBox20Change
           Items.Strings = (
+            '0'
             '1'
             '2'
             '3'
@@ -12856,219 +12472,22 @@ object Form1: TForm1
             '98'
             '99'
             '100'
-            '101'
-            '102'
-            '103'
-            '104'
-            '105'
-            '106'
-            '107'
-            '108'
-            '109'
-            '110'
-            '111'
-            '112'
-            '113'
-            '114'
-            '115'
-            '116'
-            '117'
-            '118'
-            '119'
-            '120'
-            '121'
-            '122'
-            '123'
-            '124'
-            '125'
-            '126'
-            '127'
-            '128'
-            '129'
-            '130'
-            '131'
-            '132'
-            '133'
-            '134'
-            '135'
-            '136'
-            '137'
-            '138'
-            '139'
-            '140'
-            '141'
-            '142'
-            '143'
-            '144'
-            '145'
-            '146'
-            '147'
-            '148'
-            '149'
-            '150'
-            '151'
-            '152'
-            '153'
-            '154'
-            '155'
-            '156'
-            '157'
-            '158'
-            '159'
-            '160'
-            '161'
-            '162'
-            '163'
-            '164'
-            '165'
-            '166'
-            '167'
-            '168'
-            '169'
-            '170'
-            '171'
-            '172'
-            '173'
-            '174'
-            '175'
-            '176'
-            '177'
-            '178'
-            '179'
-            '180'
-            '181'
-            '182'
-            '183'
-            '184'
-            '185'
-            '186'
-            '187'
-            '188'
-            '189'
-            '190'
-            '191'
-            '192'
-            '193'
-            '194'
-            '195'
-            '196'
-            '197'
-            '198'
-            '199'
-            '200'
-            '201'
-            '202'
-            '203'
-            '204'
-            '205'
-            '206'
-            '207'
-            '208'
-            '209'
-            '210'
-            '211'
-            '212'
-            '213'
-            '214'
-            '215'
-            '216'
-            '217'
-            '218'
-            '219'
-            '220'
-            '221'
-            '222'
-            '223'
-            '224'
-            '225'
-            '226'
-            '227'
-            '228'
-            '229'
-            '230'
-            '231'
-            '232'
-            '233'
-            '234'
-            '235'
-            '236'
-            '237'
-            '238'
-            '239'
-            '240'
-            '241'
-            '242'
-            '243'
-            '244'
-            '245'
-            '246'
-            '247'
-            '248'
-            '249'
-            '250'
-            '251'
-            '252'
-            '253'
-            '254'
-            '255'
-            '256'
-            '257'
-            '258'
-            '259'
-            '260'
-            '261'
-            '262'
-            '263'
-            '264'
-            '265'
-            '266'
-            '267'
-            '268'
-            '269'
-            '270'
-            '271'
-            '272'
-            '273'
-            '274'
-            '275'
-            '276'
-            '277'
-            '278'
-            '279'
-            '280'
-            '281'
-            '282'
-            '283'
-            '284'
-            '285'
-            '286'
-            '287'
-            '288'
-            '289'
-            '290'
-            '291'
-            '292'
-            '293'
-            '294'
-            '295'
-            '296'
-            '297'
-            '298'
-            '299'
-            '300'
-            #9)
+            '')
         end
         object ComboBox21: TComboBox
           Left = 120
-          Top = 105
+          Top = 97
           Width = 49
           Height = 21
           Hint = 'Pulsweite im Temperaturbereich'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 5
           TabOrder = 10
-          Text = '5'#9
+          Text = '5'
           OnChange = ComboBox21Change
           Items.Strings = (
+            '0'
             '1'
             '2'
             '3'
@@ -13169,219 +12588,22 @@ object Form1: TForm1
             '98'
             '99'
             '100'
-            '101'
-            '102'
-            '103'
-            '104'
-            '105'
-            '106'
-            '107'
-            '108'
-            '109'
-            '110'
-            '111'
-            '112'
-            '113'
-            '114'
-            '115'
-            '116'
-            '117'
-            '118'
-            '119'
-            '120'
-            '121'
-            '122'
-            '123'
-            '124'
-            '125'
-            '126'
-            '127'
-            '128'
-            '129'
-            '130'
-            '131'
-            '132'
-            '133'
-            '134'
-            '135'
-            '136'
-            '137'
-            '138'
-            '139'
-            '140'
-            '141'
-            '142'
-            '143'
-            '144'
-            '145'
-            '146'
-            '147'
-            '148'
-            '149'
-            '150'
-            '151'
-            '152'
-            '153'
-            '154'
-            '155'
-            '156'
-            '157'
-            '158'
-            '159'
-            '160'
-            '161'
-            '162'
-            '163'
-            '164'
-            '165'
-            '166'
-            '167'
-            '168'
-            '169'
-            '170'
-            '171'
-            '172'
-            '173'
-            '174'
-            '175'
-            '176'
-            '177'
-            '178'
-            '179'
-            '180'
-            '181'
-            '182'
-            '183'
-            '184'
-            '185'
-            '186'
-            '187'
-            '188'
-            '189'
-            '190'
-            '191'
-            '192'
-            '193'
-            '194'
-            '195'
-            '196'
-            '197'
-            '198'
-            '199'
-            '200'
-            '201'
-            '202'
-            '203'
-            '204'
-            '205'
-            '206'
-            '207'
-            '208'
-            '209'
-            '210'
-            '211'
-            '212'
-            '213'
-            '214'
-            '215'
-            '216'
-            '217'
-            '218'
-            '219'
-            '220'
-            '221'
-            '222'
-            '223'
-            '224'
-            '225'
-            '226'
-            '227'
-            '228'
-            '229'
-            '230'
-            '231'
-            '232'
-            '233'
-            '234'
-            '235'
-            '236'
-            '237'
-            '238'
-            '239'
-            '240'
-            '241'
-            '242'
-            '243'
-            '244'
-            '245'
-            '246'
-            '247'
-            '248'
-            '249'
-            '250'
-            '251'
-            '252'
-            '253'
-            '254'
-            '255'
-            '256'
-            '257'
-            '258'
-            '259'
-            '260'
-            '261'
-            '262'
-            '263'
-            '264'
-            '265'
-            '266'
-            '267'
-            '268'
-            '269'
-            '270'
-            '271'
-            '272'
-            '273'
-            '274'
-            '275'
-            '276'
-            '277'
-            '278'
-            '279'
-            '280'
-            '281'
-            '282'
-            '283'
-            '284'
-            '285'
-            '286'
-            '287'
-            '288'
-            '289'
-            '290'
-            '291'
-            '292'
-            '293'
-            '294'
-            '295'
-            '296'
-            '297'
-            '298'
-            '299'
-            '300'
-            #9)
+            '')
         end
         object ComboBox22: TComboBox
           Left = 176
-          Top = 105
+          Top = 97
           Width = 49
           Height = 21
           Hint = 'Pausenweite im Temperaturbereich'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 5
           TabOrder = 11
-          Text = '5'#9
+          Text = '5'
           OnChange = ComboBox22Change
           Items.Strings = (
+            '0'
             '1'
             '2'
             '3'
@@ -13482,219 +12704,22 @@ object Form1: TForm1
             '98'
             '99'
             '100'
-            '101'
-            '102'
-            '103'
-            '104'
-            '105'
-            '106'
-            '107'
-            '108'
-            '109'
-            '110'
-            '111'
-            '112'
-            '113'
-            '114'
-            '115'
-            '116'
-            '117'
-            '118'
-            '119'
-            '120'
-            '121'
-            '122'
-            '123'
-            '124'
-            '125'
-            '126'
-            '127'
-            '128'
-            '129'
-            '130'
-            '131'
-            '132'
-            '133'
-            '134'
-            '135'
-            '136'
-            '137'
-            '138'
-            '139'
-            '140'
-            '141'
-            '142'
-            '143'
-            '144'
-            '145'
-            '146'
-            '147'
-            '148'
-            '149'
-            '150'
-            '151'
-            '152'
-            '153'
-            '154'
-            '155'
-            '156'
-            '157'
-            '158'
-            '159'
-            '160'
-            '161'
-            '162'
-            '163'
-            '164'
-            '165'
-            '166'
-            '167'
-            '168'
-            '169'
-            '170'
-            '171'
-            '172'
-            '173'
-            '174'
-            '175'
-            '176'
-            '177'
-            '178'
-            '179'
-            '180'
-            '181'
-            '182'
-            '183'
-            '184'
-            '185'
-            '186'
-            '187'
-            '188'
-            '189'
-            '190'
-            '191'
-            '192'
-            '193'
-            '194'
-            '195'
-            '196'
-            '197'
-            '198'
-            '199'
-            '200'
-            '201'
-            '202'
-            '203'
-            '204'
-            '205'
-            '206'
-            '207'
-            '208'
-            '209'
-            '210'
-            '211'
-            '212'
-            '213'
-            '214'
-            '215'
-            '216'
-            '217'
-            '218'
-            '219'
-            '220'
-            '221'
-            '222'
-            '223'
-            '224'
-            '225'
-            '226'
-            '227'
-            '228'
-            '229'
-            '230'
-            '231'
-            '232'
-            '233'
-            '234'
-            '235'
-            '236'
-            '237'
-            '238'
-            '239'
-            '240'
-            '241'
-            '242'
-            '243'
-            '244'
-            '245'
-            '246'
-            '247'
-            '248'
-            '249'
-            '250'
-            '251'
-            '252'
-            '253'
-            '254'
-            '255'
-            '256'
-            '257'
-            '258'
-            '259'
-            '260'
-            '261'
-            '262'
-            '263'
-            '264'
-            '265'
-            '266'
-            '267'
-            '268'
-            '269'
-            '270'
-            '271'
-            '272'
-            '273'
-            '274'
-            '275'
-            '276'
-            '277'
-            '278'
-            '279'
-            '280'
-            '281'
-            '282'
-            '283'
-            '284'
-            '285'
-            '286'
-            '287'
-            '288'
-            '289'
-            '290'
-            '291'
-            '292'
-            '293'
-            '294'
-            '295'
-            '296'
-            '297'
-            '298'
-            '299'
-            '300'
-            #9)
+            '')
         end
         object ComboBox23: TComboBox
           Left = 176
-          Top = 129
+          Top = 121
           Width = 49
           Height = 21
           Hint = 'Pausenweite im Temperaturbereich'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 5
           TabOrder = 13
-          Text = '5'#9
+          Text = '5'
           OnChange = ComboBox23Change
           Items.Strings = (
+            '0'
             '1'
             '2'
             '3'
@@ -13795,219 +12820,22 @@ object Form1: TForm1
             '98'
             '99'
             '100'
-            '101'
-            '102'
-            '103'
-            '104'
-            '105'
-            '106'
-            '107'
-            '108'
-            '109'
-            '110'
-            '111'
-            '112'
-            '113'
-            '114'
-            '115'
-            '116'
-            '117'
-            '118'
-            '119'
-            '120'
-            '121'
-            '122'
-            '123'
-            '124'
-            '125'
-            '126'
-            '127'
-            '128'
-            '129'
-            '130'
-            '131'
-            '132'
-            '133'
-            '134'
-            '135'
-            '136'
-            '137'
-            '138'
-            '139'
-            '140'
-            '141'
-            '142'
-            '143'
-            '144'
-            '145'
-            '146'
-            '147'
-            '148'
-            '149'
-            '150'
-            '151'
-            '152'
-            '153'
-            '154'
-            '155'
-            '156'
-            '157'
-            '158'
-            '159'
-            '160'
-            '161'
-            '162'
-            '163'
-            '164'
-            '165'
-            '166'
-            '167'
-            '168'
-            '169'
-            '170'
-            '171'
-            '172'
-            '173'
-            '174'
-            '175'
-            '176'
-            '177'
-            '178'
-            '179'
-            '180'
-            '181'
-            '182'
-            '183'
-            '184'
-            '185'
-            '186'
-            '187'
-            '188'
-            '189'
-            '190'
-            '191'
-            '192'
-            '193'
-            '194'
-            '195'
-            '196'
-            '197'
-            '198'
-            '199'
-            '200'
-            '201'
-            '202'
-            '203'
-            '204'
-            '205'
-            '206'
-            '207'
-            '208'
-            '209'
-            '210'
-            '211'
-            '212'
-            '213'
-            '214'
-            '215'
-            '216'
-            '217'
-            '218'
-            '219'
-            '220'
-            '221'
-            '222'
-            '223'
-            '224'
-            '225'
-            '226'
-            '227'
-            '228'
-            '229'
-            '230'
-            '231'
-            '232'
-            '233'
-            '234'
-            '235'
-            '236'
-            '237'
-            '238'
-            '239'
-            '240'
-            '241'
-            '242'
-            '243'
-            '244'
-            '245'
-            '246'
-            '247'
-            '248'
-            '249'
-            '250'
-            '251'
-            '252'
-            '253'
-            '254'
-            '255'
-            '256'
-            '257'
-            '258'
-            '259'
-            '260'
-            '261'
-            '262'
-            '263'
-            '264'
-            '265'
-            '266'
-            '267'
-            '268'
-            '269'
-            '270'
-            '271'
-            '272'
-            '273'
-            '274'
-            '275'
-            '276'
-            '277'
-            '278'
-            '279'
-            '280'
-            '281'
-            '282'
-            '283'
-            '284'
-            '285'
-            '286'
-            '287'
-            '288'
-            '289'
-            '290'
-            '291'
-            '292'
-            '293'
-            '294'
-            '295'
-            '296'
-            '297'
-            '298'
-            '299'
-            '300'
-            #9)
+            '')
         end
         object ComboBox24: TComboBox
           Left = 120
-          Top = 129
+          Top = 121
           Width = 49
           Height = 21
           Hint = 'Pulsweite im Temperaturbereich'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 5
           TabOrder = 12
-          Text = '5'#9
+          Text = '5'
           OnChange = ComboBox24Change
           Items.Strings = (
+            '0'
             '1'
             '2'
             '3'
@@ -14108,219 +12936,21 @@ object Form1: TForm1
             '98'
             '99'
             '100'
-            '101'
-            '102'
-            '103'
-            '104'
-            '105'
-            '106'
-            '107'
-            '108'
-            '109'
-            '110'
-            '111'
-            '112'
-            '113'
-            '114'
-            '115'
-            '116'
-            '117'
-            '118'
-            '119'
-            '120'
-            '121'
-            '122'
-            '123'
-            '124'
-            '125'
-            '126'
-            '127'
-            '128'
-            '129'
-            '130'
-            '131'
-            '132'
-            '133'
-            '134'
-            '135'
-            '136'
-            '137'
-            '138'
-            '139'
-            '140'
-            '141'
-            '142'
-            '143'
-            '144'
-            '145'
-            '146'
-            '147'
-            '148'
-            '149'
-            '150'
-            '151'
-            '152'
-            '153'
-            '154'
-            '155'
-            '156'
-            '157'
-            '158'
-            '159'
-            '160'
-            '161'
-            '162'
-            '163'
-            '164'
-            '165'
-            '166'
-            '167'
-            '168'
-            '169'
-            '170'
-            '171'
-            '172'
-            '173'
-            '174'
-            '175'
-            '176'
-            '177'
-            '178'
-            '179'
-            '180'
-            '181'
-            '182'
-            '183'
-            '184'
-            '185'
-            '186'
-            '187'
-            '188'
-            '189'
-            '190'
-            '191'
-            '192'
-            '193'
-            '194'
-            '195'
-            '196'
-            '197'
-            '198'
-            '199'
-            '200'
-            '201'
-            '202'
-            '203'
-            '204'
-            '205'
-            '206'
-            '207'
-            '208'
-            '209'
-            '210'
-            '211'
-            '212'
-            '213'
-            '214'
-            '215'
-            '216'
-            '217'
-            '218'
-            '219'
-            '220'
-            '221'
-            '222'
-            '223'
-            '224'
-            '225'
-            '226'
-            '227'
-            '228'
-            '229'
-            '230'
-            '231'
-            '232'
-            '233'
-            '234'
-            '235'
-            '236'
-            '237'
-            '238'
-            '239'
-            '240'
-            '241'
-            '242'
-            '243'
-            '244'
-            '245'
-            '246'
-            '247'
-            '248'
-            '249'
-            '250'
-            '251'
-            '252'
-            '253'
-            '254'
-            '255'
-            '256'
-            '257'
-            '258'
-            '259'
-            '260'
-            '261'
-            '262'
-            '263'
-            '264'
-            '265'
-            '266'
-            '267'
-            '268'
-            '269'
-            '270'
-            '271'
-            '272'
-            '273'
-            '274'
-            '275'
-            '276'
-            '277'
-            '278'
-            '279'
-            '280'
-            '281'
-            '282'
-            '283'
-            '284'
-            '285'
-            '286'
-            '287'
-            '288'
-            '289'
-            '290'
-            '291'
-            '292'
-            '293'
-            '294'
-            '295'
-            '296'
-            '297'
-            '298'
-            '299'
-            '300'
-            #9)
+            '')
         end
         object ComboBox25: TComboBox
           Left = 176
-          Top = 161
+          Top = 149
           Width = 49
           Height = 21
           Hint = 
             'Wird der Gradient '#252'berschritten, wird die Heizung'#13#10'bereits vor e' +
             'rreichen der Zieltemperatur audgeschaltet.'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 10
           TabOrder = 14
-          Text = '2.0'
+          Text = '1.0'
           OnChange = ComboBox25Change
           Items.Strings = (
             '0.0'
@@ -14358,7 +12988,7 @@ object Form1: TForm1
         end
         object Edit84: TEdit
           Left = 68
-          Top = 57
+          Top = 49
           Width = 25
           Height = 21
           Hint = 'Temperaturbereich f'#252'r Pulsstufe'
@@ -14368,7 +12998,7 @@ object Form1: TForm1
         end
         object Edit85: TEdit
           Left = 68
-          Top = 81
+          Top = 73
           Width = 25
           Height = 21
           Hint = 'Temperaturbereich f'#252'r Pulsstufe'
@@ -14378,7 +13008,7 @@ object Form1: TForm1
         end
         object Edit86: TEdit
           Left = 68
-          Top = 105
+          Top = 97
           Width = 25
           Height = 21
           Hint = 'Temperaturbereich f'#252'r Pulsstufe'
@@ -14388,7 +13018,7 @@ object Form1: TForm1
         end
         object Edit87: TEdit
           Left = 65
-          Top = 129
+          Top = 121
           Width = 29
           Height = 21
           Hint = 'Temperaturbereich f'#252'r Pulsstufe'
@@ -14399,7 +13029,7 @@ object Form1: TForm1
         end
         object Edit88: TEdit
           Left = 68
-          Top = 33
+          Top = 25
           Width = 25
           Height = 21
           TabStop = False
@@ -14409,7 +13039,7 @@ object Form1: TForm1
         end
         object Edit83: TEdit
           Left = 68
-          Top = 33
+          Top = 25
           Width = 25
           Height = 21
           Hint = 'Temperaturbereich f'#252'r Pulsstufe'
@@ -14480,15 +13110,15 @@ object Form1: TForm1
       end
       object GroupBox5: TGroupBox
         Left = 472
-        Top = 448
+        Top = 456
         Width = 273
-        Height = 57
+        Height = 49
         Hint = 'Eingabefeld f'#252'r den Dateinamen der Temperatur-Datei.'
         Caption = 'Name der Temperatur-Textdatei'
-        TabOrder = 14
+        TabOrder = 13
         object Edit62: TEdit
           Left = 8
-          Top = 24
+          Top = 19
           Width = 257
           Height = 21
           TabOrder = 0
@@ -14498,14 +13128,14 @@ object Form1: TForm1
       end
       object GroupBox6: TGroupBox
         Left = 472
-        Top = 280
+        Top = 268
         Width = 273
-        Height = 76
+        Height = 100
         Hint = 
           'Eingabefeld f'#252'r die Aufheizrate die zur Berechnung '#13#10'der ETA ver' +
           'wendet wird.'
         Caption = 'Heiz- und K'#252'hlkurven-Information'
-        TabOrder = 12
+        TabOrder = 11
         object Label59: TLabel
           Left = 17
           Top = 23
@@ -14534,12 +13164,28 @@ object Form1: TForm1
           Height = 13
           Caption = 'K'
         end
+        object Label108: TLabel
+          Left = 230
+          Top = 76
+          Width = 14
+          Height = 13
+          Caption = #176'C'
+        end
+        object Label123: TLabel
+          Left = 17
+          Top = 75
+          Width = 94
+          Height = 13
+          Caption = 'Kochtemperatur:'
+        end
         object ComboBox27: TComboBox
           Left = 176
           Top = 20
           Width = 49
           Height = 21
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 20
           TabOrder = 0
           Text = '2.0'
           OnChange = ComboBox27Change
@@ -14582,7 +13228,9 @@ object Form1: TForm1
           Top = 46
           Width = 49
           Height = 21
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 20
           TabOrder = 1
           Text = '2.0'
           OnChange = ComboBox44Change
@@ -14620,52 +13268,75 @@ object Form1: TForm1
             '3.0'
             #9)
         end
+        object ComboBox34: TComboBox
+          Left = 176
+          Top = 72
+          Width = 49
+          Height = 21
+          Hint = 'Temperatur bei der Wasser als kochend '#13#10'erkannt werden soll.'
+          Style = csDropDownList
+          ItemHeight = 13
+          ItemIndex = 1
+          TabOrder = 2
+          Text = '99'
+          OnChange = ComboBox34Change
+          Items.Strings = (
+            '100'
+            '99'
+            '98'
+            '97'
+            '96'
+            '95'
+            '94')
+        end
       end
       object GroupBox7: TGroupBox
         Left = 472
-        Top = 365
+        Top = 377
         Width = 273
-        Height = 76
+        Height = 68
         Caption = 'Hysterese'
-        TabOrder = 13
+        TabOrder = 12
         object Label112: TLabel
           Left = 17
-          Top = 24
+          Top = 20
           Width = 111
           Height = 13
           Caption = 'Heizungshysterese:'
         end
         object Label113: TLabel
           Left = 232
-          Top = 24
+          Top = 20
           Width = 9
           Height = 13
           Caption = 'K'
         end
         object Label95: TLabel
           Left = 232
-          Top = 48
+          Top = 44
           Width = 9
           Height = 13
           Caption = 'K'
         end
         object Label98: TLabel
           Left = 18
-          Top = 48
+          Top = 44
           Width = 111
           Height = 13
           Caption = 'K'#252'hlungshysterese:'
         end
         object ComboBox26: TComboBox
           Left = 176
-          Top = 20
+          Top = 16
           Width = 49
           Height = 21
           Hint = 
             'Das Heizungsrelais wird beim erreichen der Zieltemperatur'#13#10'ausge' +
             'schaltet. Eingeschaltet wird erst wieder nach '#13#10'Unterschreitung ' +
             'der Ziel-Temperatur um den hier definierten '#13#10'Hysterese-Wert.'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 20
           TabOrder = 0
           Text = '2.0'
           OnChange = ComboBox26Change
@@ -14705,14 +13376,16 @@ object Form1: TForm1
         end
         object ComboBox29: TComboBox
           Left = 176
-          Top = 45
+          Top = 41
           Width = 49
           Height = 21
           Hint = 
             'Das Heizungsrelais wird beim erreichen der Zieltemperatur'#13#10'ausge' +
             'schaltet. Eingeschaltet wird erst wieder nach '#13#10'Unterschreitung ' +
             'der Ziel-Temperatur um den hier definierten '#13#10'Hysterese-Wert.'
+          Style = csDropDownList
           ItemHeight = 13
+          ItemIndex = 20
           TabOrder = 1
           Text = '2.0'
           OnChange = ComboBox29Change
@@ -14925,41 +13598,85 @@ object Form1: TForm1
           OnClick = CheckBox35Click
         end
       end
-      object GroupBox8: TGroupBox
+      object Button2: TButton
+        Left = 640
+        Top = 8
+        Width = 105
+        Height = 33
+        Hint = 'Alle Einstellungen auf Auslieferzustand '#13#10'zur'#252'cksetzen.'
+        Caption = 'Zur'#252'cksetzen'
+        TabOrder = 14
+        OnClick = Button2Click
+      end
+      object PageControl2: TPageControl
         Left = 16
-        Top = 292
+        Top = 288
         Width = 433
-        Height = 214
-        Caption = 'Steuerungsparameter'
-        TabOrder = 11
-        object Label99: TLabel
-          Left = 8
-          Top = 28
-          Width = 109
-          Height = 13
-          Caption = 'Relaisverwendung:'
+        Height = 217
+        ActivePage = TabSheet7
+        TabOrder = 15
+        OnChange = PageControl2Change
+        object TabSheet6: TTabSheet
+          Caption = 'Steuerungsparameter'
+          object Label99: TLabel
+            Left = 8
+            Top = 12
+            Width = 109
+            Height = 13
+            Caption = 'Relaisverwendung:'
+          end
+          object Label127: TLabel
+            Left = 8
+            Top = 52
+            Width = 144
+            Height = 13
+            Caption = 'Temperaturkorrekturwert:'
+          end
+          object Label128: TLabel
+            Left = 219
+            Top = 52
+            Width = 153
+            Height = 13
+            Caption = 'Temperaturkorrekturfaktor:'
+          end
+          object ComboBox28: TComboBox
+            Left = 136
+            Top = 9
+            Width = 281
+            Height = 21
+            Hint = 'Auswahl m'#246'glicher Hardwarekomponenten'
+            Style = csDropDownList
+            ItemHeight = 13
+            ItemIndex = 0
+            TabOrder = 0
+            Text = 'Heizung, R'#252'hrwerk, K'#252'hlung, Alarm'
+            OnChange = ComboBox28Change
+            Items.Strings = (
+              'Heizung, R'#252'hrwerk, K'#252'hlung, Alarm'
+              'Heizung, R'#252'hrwerk, Pumpe, Alarm')
+          end
+          object Edit93: TEdit
+            Left = 156
+            Top = 48
+            Width = 41
+            Height = 21
+            TabOrder = 1
+            Text = '0.0'
+            OnExit = Edit93Exit
+          end
+          object Edit94: TEdit
+            Left = 376
+            Top = 48
+            Width = 41
+            Height = 21
+            TabOrder = 2
+            Text = '1.0'
+            OnExit = Edit94Exit
+          end
         end
-        object ComboBox28: TComboBox
-          Left = 128
-          Top = 25
-          Width = 289
-          Height = 21
-          Hint = 'Auswahl m'#246'glicher Hardwarekomponenten'
-          ItemHeight = 13
-          TabOrder = 0
-          Text = 'Heizung, R'#252'hrwerk, K'#252'hlung, Alarm'
-          OnChange = ComboBox28Change
-          Items.Strings = (
-            'Heizung, R'#252'hrwerk, K'#252'hlung, Alarm'
-            'Heizung, R'#252'hrwerk, Pumpe, Alarm')
-        end
-        object Panel14: TPanel
-          Left = 7
-          Top = 56
-          Width = 417
-          Height = 149
-          TabOrder = 1
-          Visible = False
+        object TabSheet7: TTabSheet
+          Caption = 'Erweiterte Parameter'
+          ImageIndex = 1
           object Label101: TLabel
             Left = 15
             Top = 39
@@ -14970,9 +13687,9 @@ object Form1: TForm1
           object Label103: TLabel
             Left = 15
             Top = 12
-            Width = 82
+            Width = 111
             Height = 13
-            Caption = 'Rastzeit-Start:'
+            Caption = 'Raststart Standard:'
           end
           object Label105: TLabel
             Left = 216
@@ -14989,9 +13706,9 @@ object Form1: TForm1
             Caption = 'Logging-Takt:'
           end
           object ComboBox31: TComboBox
-            Left = 120
+            Left = 128
             Top = 9
-            Width = 289
+            Width = 281
             Height = 21
             Hint = 
               'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
@@ -15002,23 +13719,26 @@ object Form1: TForm1
               'ner/gleich der Rasttemperatur ist.'#13#10'Rastspezifisch:'#13#10'Das Verhalt' +
               'en wird f'#252'r jede Rast individuell im '#13#10'Reiter Brauprozess einges' +
               'tellt.'
+            Style = csDropDownList
             ItemHeight = 13
+            ItemIndex = 0
             TabOrder = 0
             Text = 'Bei Rasttemperatur'#252'berschreitung'
             OnChange = ComboBox31Change
             Items.Strings = (
               'Bei Rasttemperatur'#252'berschreitung'
               'Temperaturunabh'#228'ngig'
-              'Bei Rasttemperaturunterschreitung'
-              'Rastspezifisch')
+              'Bei Rasttemperaturunterschreitung')
           end
           object ComboBox30: TComboBox
-            Left = 120
+            Left = 128
             Top = 36
             Width = 81
             Height = 21
             Hint = 'Einstellung f'#252'r die Einheit der Rastzeit '
+            Style = csDropDownList
             ItemHeight = 13
+            ItemIndex = 0
             TabOrder = 1
             Text = 'Minuten'
             OnChange = ComboBox30Change
@@ -15032,7 +13752,9 @@ object Form1: TForm1
             Width = 89
             Height = 21
             Hint = 'Einstellung f'#252'r die Einheit des'#13#10'R'#252'hrwerk-Takts. '
+            Style = csDropDownList
             ItemHeight = 13
+            ItemIndex = 0
             TabOrder = 2
             Text = 'Sekunden'
             OnChange = ComboBox32Change
@@ -15047,7 +13769,9 @@ object Form1: TForm1
             Width = 105
             Height = 21
             Hint = 'Takt in dem der Prozessstatus im Log-File '#13#10'geloggt wird.'
+            Style = csDropDownList
             ItemHeight = 13
+            ItemIndex = 0
             TabOrder = 3
             Text = '5 Sekunden'
             OnChange = ComboBox33Change
@@ -15100,7 +13824,9 @@ object Form1: TForm1
             Width = 105
             Height = 21
             Hint = 'Takt in dem der Prozessstatus im Log-File '#13#10'geloggt wird.'
+            Style = csDropDownList
             ItemHeight = 13
+            ItemIndex = 0
             TabOrder = 6
             Text = '5 Sekunden'
             OnChange = ComboBox45Change
@@ -15130,26 +13856,6 @@ object Form1: TForm1
             OnClick = CheckBox43Click
           end
         end
-      end
-      object CheckBox31: TCheckBox
-        Left = 160
-        Top = 289
-        Width = 137
-        Height = 20
-        Hint = 'Erweiterte Einstellungen zur Rast- und Logging-Steuerung'
-        Caption = 'Erweiterte Parameter'
-        TabOrder = 15
-        OnClick = CheckBox31Click
-      end
-      object Button2: TButton
-        Left = 640
-        Top = 8
-        Width = 105
-        Height = 33
-        Hint = 'Alle Einstellungen auf Auslieferzustand '#13#10'zur'#252'cksetzen.'
-        Caption = 'Zur'#252'cksetzen'
-        TabOrder = 16
-        OnClick = Button2Click
       end
     end
     object TabSheet5: TTabSheet
@@ -15190,6 +13896,27 @@ object Form1: TForm1
         Height = 13
         Caption = 'Datenbank'
       end
+      object Label124: TLabel
+        Left = 43
+        Top = 529
+        Width = 53
+        Height = 13
+        Caption = 'EIN/AUS'
+      end
+      object Label125: TLabel
+        Left = 198
+        Top = 529
+        Width = 25
+        Height = 13
+        Caption = 'sek.'
+      end
+      object Label126: TLabel
+        Left = 143
+        Top = 529
+        Width = 7
+        Height = 13
+        Caption = '/'
+      end
       object btnOpen: TButton
         Left = 24
         Top = 104
@@ -15203,7 +13930,7 @@ object Form1: TForm1
         Left = 264
         Top = 104
         Width = 473
-        Height = 177
+        Height = 449
         Lines.Strings = (
           '')
         ReadOnly = True
@@ -15244,7 +13971,7 @@ object Form1: TForm1
       end
       object Button3: TButton
         Left = 24
-        Top = 248
+        Top = 224
         Width = 217
         Height = 30
         Caption = 'Rezept in Brauerei importieren'
@@ -15253,7 +13980,7 @@ object Form1: TForm1
       end
       object ScrollBar1: TScrollBar
         Left = 24
-        Top = 160
+        Top = 152
         Width = 217
         Height = 17
         PageSize = 0
@@ -15263,12 +13990,74 @@ object Form1: TForm1
       end
       object Button4: TButton
         Left = 24
-        Top = 200
+        Top = 184
         Width = 217
         Height = 30
         Caption = 'Rezept als Datei exportieren'
         TabOrder = 8
         OnClick = Button4Click
+      end
+      object Button5: TButton
+        Left = 24
+        Top = 280
+        Width = 217
+        Height = 30
+        Caption = 'Kochen als Datei exportieren'
+        TabOrder = 9
+        OnClick = Button5Click
+      end
+      object Button6: TButton
+        Left = 24
+        Top = 320
+        Width = 217
+        Height = 30
+        Caption = 'Kochen in Brauerei importieren'
+        TabOrder = 10
+        OnClick = Button6Click
+      end
+      object CheckBox44: TCheckBox
+        Left = 24
+        Top = 503
+        Width = 217
+        Height = 25
+        Caption = 'R'#252'hrwerk im Rezept nutzen'
+        TabOrder = 12
+      end
+      object Edit92: TEdit
+        Left = 155
+        Top = 526
+        Width = 41
+        Height = 21
+        TabOrder = 13
+        Text = '0'
+        OnExit = Edit92Exit
+      end
+      object Edit91: TEdit
+        Left = 99
+        Top = 526
+        Width = 41
+        Height = 21
+        TabOrder = 11
+        Text = '9999'
+        OnExit = Edit91Exit
+      end
+      object Button7: TButton
+        Left = 24
+        Top = 376
+        Width = 217
+        Height = 33
+        Caption = 'Gesamtrezept als Datei exportieren'
+        TabOrder = 14
+        OnClick = Button7Click
+      end
+      object Button12: TButton
+        Left = 24
+        Top = 416
+        Width = 217
+        Height = 30
+        Caption = 'Gesamtrezept in Brauerei importieren'
+        TabOrder = 15
+        OnClick = Button12Click
       end
     end
     object TabSheet3: TTabSheet
@@ -15298,7 +14087,7 @@ object Form1: TForm1
     Height = 45
     Hint = 'Digitale Ist-Temperatur-Anzeige'
     Alignment = taRightJustify
-    BorderWidth = 5
+    BorderWidth = 1
     Caption = '21.0 '#176'C'
     Font.Charset = ANSI_CHARSET
     Font.Color = clGreen
@@ -15310,8 +14099,8 @@ object Form1: TForm1
     ShowHint = True
     TabOrder = 1
     object Label63: TLabel
-      Left = 3
-      Top = 3
+      Left = 2
+      Top = 2
       Width = 21
       Height = 13
       Caption = 'IST'
@@ -15329,7 +14118,6 @@ object Form1: TForm1
     Width = 48
     Height = 21
     TabStop = False
-    Anchors = [akRight, akBottom]
     BiDiMode = bdLeftToRight
     ParentBiDiMode = False
     ReadOnly = True
@@ -15355,8 +14143,8 @@ object Form1: TForm1
     Height = 45
     Hint = 'Digitale Soll-Temperatur-Anzeige'
     Alignment = taRightJustify
-    BorderWidth = 5
-    Caption = '78.0 '#176'C'
+    BorderWidth = 1
+    Caption = '72.0 '#176'C'
     Font.Charset = ANSI_CHARSET
     Font.Color = clRed
     Font.Height = -48
@@ -15367,8 +14155,8 @@ object Form1: TForm1
     ShowHint = True
     TabOrder = 4
     object Label64: TLabel
-      Left = 2
-      Top = 3
+      Left = 1
+      Top = 2
       Width = 32
       Height = 13
       Caption = 'SOLL'

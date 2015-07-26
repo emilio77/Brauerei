@@ -1,10 +1,25 @@
 Change-Log:
 
+V 1.55
+Voreinstellung für Rührwerk bei Rezeptimport möglich
+Import maischen und kochen auf einmal
+Bug Skalierung behoben
+Multistart - Mehrere Rezepte automatisch in Folge starten
+E/A Fehler bei nicht richtig geladener KBH-Datenbank entfernt
+Rührwerk im Alarmdialog schaltbar ein/aus/auto
+Heizung im Alarmdialog schaltbar ein/aus/auto
+Korrektur der Temperatur mittels Faktor und/oder Wert
+Infobutton zur Anzeige der Einschaltdauer von Heizung/Kühlung/Pumpe/Rührwerk/Alarm
+
 V 1.54
 SainSmart USB-Relais ergänzt
-Rezept aus "kleinem Brauhelfer" importierbar
-Bei Auflösungen kleiner 1024x768 wird die Oerfläche skaliert
+Rezept und Kochen aus "kleinem Brauhelfer" importierbar
+Bei Auflösungen kleiner 1024x768 wird die Oberfläche skaliert
 Rührwerk kann in Heizphasen durchgehend und in Heizpausen gepuls angesteuert werden
+Rastspezifische Auswahl der Raststartbedingung als Standard definiert
+BitButtons für Raststartauswahl 
+Soundausgabe am Braurechner bei Alarm
+ComboBoxen gegen manuelles editieren gesperrt
 
 V 1.53
 Temperaturen für Pulsungsstufen wählbar

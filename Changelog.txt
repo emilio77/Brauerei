@@ -1,5 +1,16 @@
 Change-Log:
 
+V 1.56
+Fensterskalierung eimstellbear
+Alle Dialoge (Abgesehen von Windows eigene Open, Save und Printdialoge) werden Skaliert
+Temperatur bei 85°C Fehler (DS18B20) ignoriert - Warnung wird ausgegeben
+Nachisomerisierung beim Kochen hinzugefügt
+Einzelne Relais auch im Automatikbetrieb manuell schaltbar
+Beenden von Eingaben mit Enter ermöglicht
+Bug Speicherung KMTronic COM-Port behoben
+Bug bei Alarmtext für mehrere Hofengaben entfernt
+Einfügen, löschen und verschieben von Rasten
+
 V 1.55
 Voreinstellung für Rührwerk bei Rezeptimport möglich
 Import maischen und kochen auf einmal

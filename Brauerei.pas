@@ -455,10 +455,8 @@ type
     ComboBox28: TComboBox;
     Label99: TLabel;
     Label101: TLabel;
-    Label103: TLabel;
     Label105: TLabel;
     Label106: TLabel;
-    ComboBox31: TComboBox;
     ComboBox30: TComboBox;
     ComboBox32: TComboBox;
     ComboBox33: TComboBox;
@@ -471,6 +469,58 @@ type
     Label128: TLabel;
     Edit94: TEdit;
     SpeedButton1: TSpeedButton;
+    Image7: TImage;
+    ComboBox31: TComboBox;
+    Label103: TLabel;
+    Edit95: TEdit;
+    Label129: TLabel;
+    Button13: TButton;
+    Button14: TButton;
+    Button15: TButton;
+    Button16: TButton;
+    Label130: TLabel;
+    Label131: TLabel;
+    Label132: TLabel;
+    Label133: TLabel;
+    Label134: TLabel;
+    BitBtn27: TBitBtn;
+    BitBtn28: TBitBtn;
+    BitBtn29: TBitBtn;
+    BitBtn30: TBitBtn;
+    BitBtn31: TBitBtn;
+    BitBtn32: TBitBtn;
+    BitBtn33: TBitBtn;
+    BitBtn34: TBitBtn;
+    BitBtn35: TBitBtn;
+    BitBtn36: TBitBtn;
+    BitBtn37: TBitBtn;
+    BitBtn38: TBitBtn;
+    BitBtn39: TBitBtn;
+    BitBtn40: TBitBtn;
+    BitBtn41: TBitBtn;
+    BitBtn42: TBitBtn;
+    BitBtn43: TBitBtn;
+    BitBtn44: TBitBtn;
+    BitBtn45: TBitBtn;
+    BitBtn46: TBitBtn;
+    BitBtn47: TBitBtn;
+    BitBtn48: TBitBtn;
+    BitBtn49: TBitBtn;
+    BitBtn50: TBitBtn;
+    BitBtn51: TBitBtn;
+    BitBtn52: TBitBtn;
+    BitBtn53: TBitBtn;
+    BitBtn54: TBitBtn;
+    BitBtn55: TBitBtn;
+    BitBtn56: TBitBtn;
+    BitBtn57: TBitBtn;
+    BitBtn58: TBitBtn;
+    BitBtn59: TBitBtn;
+    BitBtn60: TBitBtn;
+    BitBtn61: TBitBtn;
+    BitBtn62: TBitBtn;
+    BitBtn63: TBitBtn;
+    BitBtn64: TBitBtn;
     procedure Button8Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
@@ -504,8 +554,6 @@ type
     procedure MessageTimerTimer(Sender: TObject);
     procedure LogTimerTimer(Sender: TObject);
     procedure PageControl1Change(Sender: TObject);
-    procedure Edit55KeyPress(Sender: TObject; var Key: Char);
-    procedure Edit54KeyPress(Sender: TObject; var Key: Char);
     procedure Button17Click(Sender: TObject);
     procedure Button18Click(Sender: TObject);
     procedure Button19Click(Sender: TObject);
@@ -584,8 +632,6 @@ type
     procedure Edit62Exit(Sender: TObject);
     procedure OpenDialog1Show(Sender: TObject);
     procedure TimerDlgMoveTimer(Sender: TObject);
-    procedure PrintDialog1Show(Sender: TObject);
-    procedure SaveDialog1Show(Sender: TObject);
     procedure Button29Click(Sender: TObject);
     procedure Button30Click(Sender: TObject);
     procedure CheckBox38Click(Sender: TObject);
@@ -666,6 +712,50 @@ type
     procedure Edit94Exit(Sender: TObject);
     procedure PageControl2Change(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
+    procedure Edit95Exit(Sender: TObject);
+    procedure Button14Click(Sender: TObject);
+    procedure Button13Click(Sender: TObject);
+    procedure Button15Click(Sender: TObject);
+    procedure Button16Click(Sender: TObject);
+    procedure Edit1KeyPress(Sender: TObject; var Key: Char);
+    procedure BitBtn27Click(Sender: TObject);
+    procedure BitBtn29Click(Sender: TObject);
+    procedure BitBtn31Click(Sender: TObject);
+    procedure BitBtn33Click(Sender: TObject);
+    procedure BitBtn35Click(Sender: TObject);
+    procedure BitBtn37Click(Sender: TObject);
+    procedure BitBtn39Click(Sender: TObject);
+    procedure BitBtn41Click(Sender: TObject);
+    procedure BitBtn45Click(Sender: TObject);
+    procedure BitBtn43Click(Sender: TObject);
+    procedure BitBtn28Click(Sender: TObject);
+    procedure BitBtn30Click(Sender: TObject);
+    procedure BitBtn32Click(Sender: TObject);
+    procedure BitBtn34Click(Sender: TObject);
+    procedure BitBtn36Click(Sender: TObject);
+    procedure BitBtn38Click(Sender: TObject);
+    procedure BitBtn40Click(Sender: TObject);
+    procedure BitBtn42Click(Sender: TObject);
+    procedure BitBtn44Click(Sender: TObject);
+    procedure BitBtn46Click(Sender: TObject);
+    procedure BitBtn47Click(Sender: TObject);
+    procedure BitBtn50Click(Sender: TObject);
+    procedure BitBtn52Click(Sender: TObject);
+    procedure BitBtn54Click(Sender: TObject);
+    procedure BitBtn56Click(Sender: TObject);
+    procedure BitBtn58Click(Sender: TObject);
+    procedure BitBtn60Click(Sender: TObject);
+    procedure BitBtn62Click(Sender: TObject);
+    procedure BitBtn64Click(Sender: TObject);
+    procedure BitBtn48Click(Sender: TObject);
+    procedure BitBtn49Click(Sender: TObject);
+    procedure BitBtn51Click(Sender: TObject);
+    procedure BitBtn53Click(Sender: TObject);
+    procedure BitBtn55Click(Sender: TObject);
+    procedure BitBtn57Click(Sender: TObject);
+    procedure BitBtn59Click(Sender: TObject);
+    procedure BitBtn61Click(Sender: TObject);
+    procedure BitBtn63Click(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -673,7 +763,7 @@ type
   end;
 
 const
-  Version = 'V01.55';
+  Version = 'V01.56_Trial';
 
 var
   Form1: TForm1;
@@ -684,7 +774,7 @@ var
   sensorverzoegerung,Relais4,Rezeptname,pfad2,pfad3: String;
   Tempfloat,Solltemp,Deltatemp,Deltatemp2,SimTemp,TWert,Gradient, GradientWert,
   GradientUebergabe, Hysterese, Hysterese2, Aufheizrate, Abkuehlrate,
-  alarmtemp,kwert,kfaktor,htime,rtime,ptime,atime,gtime: Extended;
+  alarmtemp,kwert,kfaktor,htime,rtime,ptime,atime,gtime,Tempfloatold: Extended;
   Ruehrwerk,Heizung,Alarm,Pumpe,HWert,RWert,PWert,AWert,RStore,PStore,HStore,
   AStore,LPTCode,restrastzeit,zeit2,zeit3,zeitpause,fortschritt,rast,Intdummy,
   CountLines,restrastgauge,gesrastzeit, startpunkt,endpunkt,Ein1,Aus1,Ein2,
@@ -693,7 +783,7 @@ var
   StartTemp,maxsolltemp,gesheizzeit,restheizzeit,gesprozesszeit,restprozesszeit,
   restheizgauge,restprozessgauge,Timerstartbatstatus,spanne,Temperaturrast,
   restkuehlzeit,restkuehlgauge, heizcounter,HEin,HAus,Datensatz,k,
-  Multistart,Alarmheizstatus: integer;
+  Multistart,Alarmheizstatus, warnungaus: integer;
   LPTPort: word;
   myFile,myLogFile,SimFile,mySetup,myDisplay,myImportFile: TextFile;
   pause,start,stop,AlarmEin,Rastende,PauseLogTimerHEin,PauseLogTimerHAus,
@@ -715,6 +805,80 @@ uses Multi;
 {$R *.dfm}
 
 
+function RastendeMessageDlgPos(const Msg: string; DlgType: TMsgDlgType; Buttons: TMsgDlgButtons; Captions: array of string; xPos: Integer; yPos: Integer ): Integer;
+var
+  aMsgDlg: TForm;
+  i: Integer;
+  dlgButton: TButton;
+  CaptionIndex,bc: Integer;
+  wfaktor:extended;
+begin
+  bc := 0;
+  wfaktor:=strtofloat(Form1.Edit95.Text);
+  aMsgDlg := CreateMessageDialog(Msg, DlgType, Buttons);
+  aMsgDlg.Font.Name:='Arial';
+  aMsgDlg.Font.Size:=9;
+  if length(MSG)<89 then aMsgDlg.Width:=417 else aMsgDlg.Width:=817;
+  if aMsgDlg.Width=417 then aMsgDlg.Left := xPos+240 else aMsgDlg.Left := xPos+100;
+  aMsgDlg.Top := yPos+250;
+  captionIndex := 0;
+  for i := 0 to aMsgDlg.ComponentCount - 1 do
+  begin
+    if (aMsgDlg.Components[i] is TButton) then
+    begin
+      bc := bc + 1;
+      dlgButton := TButton(aMsgDlg.Components[i]);
+      if CaptionIndex > High(Captions) then Break;
+      dlgButton.Caption := Captions[CaptionIndex];
+      Inc(CaptionIndex);
+      if aMsgDlg.Width=417 then
+      begin
+        dlgButton.Width:=90;
+        dlgButton.Left:=bc*10+(bc-1)*90;
+      end
+      else
+      begin
+        dlgButton.Width:=190;
+        dlgButton.Left:=bc*10+(bc-1)*190;
+      end;
+    end;
+  end;
+  aMsgDlg.scaleby(round(wfaktor*100),100);
+  Result := aMsgDlg.ShowModal;
+end;
+
+function MyMessageDlgPos(const Msg: string; DlgType: TMsgDlgType; Buttons: TMsgDlgButtons; Captions: array of string; xPosForm, xPosMessage, yPosForm, yPosMessage: Integer ): Integer;
+var
+  aMsgDlg: TForm;
+  dlgButton: TButton;
+  wfaktor:extended;
+begin
+  wfaktor:=strtofloat(Form1.Edit95.Text);
+  aMsgDlg := CreateMessageDialog(Msg, DlgType, Buttons);
+  aMsgDlg.Font.Name:='Arial';
+  aMsgDlg.Font.Size:=9;
+  aMsgDlg.Left := xPosForm + round(xPosMessage*wfaktor);
+  aMsgDlg.Top := yPosForm + round(yPosMessage*wfaktor);
+  aMsgDlg.scaleby(round(wfaktor*100),100);
+  Result := aMsgDlg.ShowModal;
+end;
+
+function MyShowMessagePos(const Msg: string; xPosForm, xPosMessage, yPosForm, yPosMessage: Integer ): Integer;
+var
+  aMsgDlg: TForm;
+  dlgButton: TButton;
+  wfaktor:extended;
+begin
+  wfaktor:=strtofloat(Form1.Edit95.Text);
+  aMsgDlg := CreateMessageDialog(Msg, mtInformation, [mbOK]);
+  aMsgDlg.Font.Name:='Arial';
+  aMsgDlg.Font.Size:=9;
+  aMsgDlg.Left := xPosForm + round(xPosMessage*wfaktor);
+  aMsgDlg.Top := yPosForm + round(yPosMessage*wfaktor);
+  aMsgDlg.scaleby(round(wfaktor*100),100);
+  Result := aMsgDlg.ShowModal;
+end;
+
 procedure ButtonChanged(Sender: TBitBtn);
 begin
   if Sender.HelpKeyword='Bei Rasttemperaturüberschreitung' then
@@ -734,6 +898,148 @@ begin
   else
     Sender.HelpKeyword:='Bei Rasttemperaturüberschreitung';
   ButtonChanged(Sender);
+end;
+
+procedure ButtonPlus(Rastnummer: Integer);
+var i:integer;
+begin
+  for i := 9 downto Rastnummer do
+  begin
+    (Form1.FindComponent('Edit' + IntToStr(73+i)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(72+i)) as TEdit).Text;
+    (Form1.FindComponent('Edit' + IntToStr(63+i)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(62+i)) as TEdit).Text;
+    (Form1.FindComponent('CheckBox' + IntToStr(1+i)) as TCheckBox).Checked := (Form1.FindComponent('CheckBox' + IntToStr(i)) as TCheckBox).Checked;
+    (Form1.FindComponent('CheckBox' + IntToStr(1+i)) as TCheckBox).Caption := (Form1.FindComponent('CheckBox' + IntToStr(i)) as TCheckBox).Caption;
+    (Form1.FindComponent('Edit' + IntToStr(2*i+1)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(2*i-1)) as TEdit).Text;
+    (Form1.FindComponent('Edit' + IntToStr(2*i+2)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(2*i)) as TEdit).Text;
+    (Form1.FindComponent('CheckBox' + IntToStr(11+i)) as TCheckBox).Checked := (Form1.FindComponent('CheckBox' + IntToStr(10+i)) as TCheckBox).Checked;
+    (Form1.FindComponent('CheckBox' + IntToStr(21+i)) as TCheckBox).Checked := (Form1.FindComponent('CheckBox' + IntToStr(20+i)) as TCheckBox).Checked;
+    (Form1.FindComponent('Edit' + IntToStr(31+i)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(30+i)) as TEdit).Text;
+    (Form1.FindComponent('Edit' + IntToStr(41+i)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(40+i)) as TEdit).Text;
+    Repeat ButtonPressed((Form1.FindComponent('BitBtn' + IntToStr(17+i)) as TBitBtn)) until (Form1.FindComponent('BitBtn' + IntToStr(17+i)) as TBitBtn).HelpKeyword = (Form1.FindComponent('BitBtn' + IntToStr(16+i)) as TBitBtn).HelpKeyword;
+  end;
+  (Form1.FindComponent('Edit' + IntToStr(72+Rastnummer)) as TEdit).Text := 'neue Rast';
+  (Form1.FindComponent('Edit' + IntToStr(62+Rastnummer)) as TEdit).Text := '';
+  (Form1.FindComponent('CheckBox' + IntToStr(Rastnummer)) as TCheckBox).Checked := true;
+  (Form1.FindComponent('CheckBox' + IntToStr(Rastnummer)) as TCheckBox).Caption := 'neue Rast';
+  (Form1.FindComponent('Edit' + IntToStr(2*Rastnummer-1)) as TEdit).Text := '20';
+  (Form1.FindComponent('Edit' + IntToStr(2*Rastnummer)) as TEdit).Text := '60';
+  (Form1.FindComponent('CheckBox' + IntToStr(10+Rastnummer)) as TCheckBox).Checked := false;
+  (Form1.FindComponent('CheckBox' + IntToStr(20+Rastnummer)) as TCheckBox).Checked := Form1.CheckBox44.Checked;
+  (Form1.FindComponent('Edit' + IntToStr(30+Rastnummer)) as TEdit).Text := Form1.Edit91.Text;
+  (Form1.FindComponent('Edit' + IntToStr(40+Rastnummer)) as TEdit).Text := Form1.Edit92.Text;
+  Repeat ButtonPressed((Form1.FindComponent('BitBtn' + IntToStr(16+Rastnummer)) as TBitBtn)) until (Form1.FindComponent('BitBtn' + IntToStr(16+Rastnummer)) as TBitBtn).HelpKeyword = 'Bei Rasttemperaturüberschreitung';
+end;
+
+procedure ButtonMinus(Rastnummer: Integer);
+var i,buttonSelected:integer;
+begin
+  buttonSelected:=MyMessageDlgPos('Rast wirklich löschen?', mtWarning, [mbOK, mbAbort], ['Ok', 'Abbruch'], Form1.Left, 350, Form1.Top, 250);
+  if buttonSelected = mrOK then
+  begin
+    for i := Rastnummer to 9 do
+    begin
+      (Form1.FindComponent('Edit' + IntToStr(72+i)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(73+i)) as TEdit).Text;
+      (Form1.FindComponent('Edit' + IntToStr(62+i)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(63+i)) as TEdit).Text;
+      (Form1.FindComponent('CheckBox' + IntToStr(i)) as TCheckBox).Checked := (Form1.FindComponent('CheckBox' + IntToStr(i+1)) as TCheckBox).Checked;
+      (Form1.FindComponent('CheckBox' + IntToStr(i)) as TCheckBox).Caption := (Form1.FindComponent('CheckBox' + IntToStr(i+1)) as TCheckBox).Caption;
+      (Form1.FindComponent('Edit' + IntToStr(2*i-1)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(2*i+1)) as TEdit).Text;
+      (Form1.FindComponent('Edit' + IntToStr(2*i)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(2*i+2)) as TEdit).Text;
+      (Form1.FindComponent('CheckBox' + IntToStr(10+i)) as TCheckBox).Checked := (Form1.FindComponent('CheckBox' + IntToStr(11+i)) as TCheckBox).Checked;
+      (Form1.FindComponent('CheckBox' + IntToStr(20+i)) as TCheckBox).Checked := (Form1.FindComponent('CheckBox' + IntToStr(21+i)) as TCheckBox).Checked;
+      (Form1.FindComponent('Edit' + IntToStr(30+i)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(31+i)) as TEdit).Text;
+      (Form1.FindComponent('Edit' + IntToStr(40+i)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(41+i)) as TEdit).Text;
+      Repeat ButtonPressed((Form1.FindComponent('BitBtn' + IntToStr(16+i)) as TBitBtn)) until (Form1.FindComponent('BitBtn' + IntToStr(16+i)) as TBitBtn).HelpKeyword = (Form1.FindComponent('BitBtn' + IntToStr(17+i)) as TBitBtn).HelpKeyword;
+    end;
+    Form1.Edit82.Text := 'neue Rast';
+    Form1.Edit72.Text := '';
+    Form1.CheckBox10.Checked := true;
+    Form1.CheckBox10.Caption := 'neue Rast';
+    Form1.Edit19.Text := '20';
+    Form1.Edit20.Text := '60';
+    Form1.CheckBox20.Checked := false;
+    Form1.CheckBox30.Checked := Form1.CheckBox44.Checked;
+    Form1.Edit40.Text := Form1.Edit91.Text;
+    Form1.Edit50.Text := Form1.Edit92.Text;
+    Repeat ButtonPressed(Form1.BitBtn26) until Form1.BitBtn26.HelpKeyword = 'Bei Rasttemperaturüberschreitung';
+  end;
+end;
+
+procedure RastPlus(Rastnummer: Integer);
+var x:string;
+    y:boolean;
+begin
+  x := (Form1.FindComponent('Edit' + IntToStr(73+Rastnummer)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(73+Rastnummer)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(72+Rastnummer)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(72+Rastnummer)) as TEdit).Text := x;
+  x := (Form1.FindComponent('Edit' + IntToStr(63+Rastnummer)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(63+Rastnummer)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(62+Rastnummer)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(62+Rastnummer)) as TEdit).Text := x;
+  y := (Form1.FindComponent('CheckBox' + IntToStr(Rastnummer+1)) as TCheckBox).Checked;
+  (Form1.FindComponent('CheckBox' + IntToStr(Rastnummer+1)) as TCheckBox).Checked := (Form1.FindComponent('CheckBox' + IntToStr(Rastnummer)) as TCheckBox).Checked;
+  (Form1.FindComponent('CheckBox' + IntToStr(Rastnummer)) as TCheckBox).Checked := y;
+  x := (Form1.FindComponent('CheckBox' + IntToStr(Rastnummer)) as TCheckBox).Caption;
+  (Form1.FindComponent('CheckBox' + IntToStr(Rastnummer)) as TCheckBox).Caption := (Form1.FindComponent('CheckBox' + IntToStr(Rastnummer+1)) as TCheckBox).Caption;
+  (Form1.FindComponent('CheckBox' + IntToStr(Rastnummer+1)) as TCheckBox).Caption := x;
+  x := (Form1.FindComponent('Edit' + IntToStr(2*Rastnummer-1)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(2*Rastnummer-1)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(2*Rastnummer+1)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(2*Rastnummer+1)) as TEdit).Text := x;
+  x := (Form1.FindComponent('Edit' + IntToStr(2*Rastnummer)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(2*Rastnummer)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(2*Rastnummer+2)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(2*Rastnummer+2)) as TEdit).Text := x;
+  y := (Form1.FindComponent('CheckBox' + IntToStr(10+Rastnummer)) as TCheckBox).Checked;
+  (Form1.FindComponent('CheckBox' + IntToStr(10+Rastnummer)) as TCheckBox).Checked := (Form1.FindComponent('CheckBox' + IntToStr(11+Rastnummer)) as TCheckBox).Checked;
+  (Form1.FindComponent('CheckBox' + IntToStr(11+Rastnummer)) as TCheckBox).Checked := y;
+  y := (Form1.FindComponent('CheckBox' + IntToStr(20+Rastnummer)) as TCheckBox).Checked;
+  (Form1.FindComponent('CheckBox' + IntToStr(20+Rastnummer)) as TCheckBox).Checked := (Form1.FindComponent('CheckBox' + IntToStr(21+Rastnummer)) as TCheckBox).Checked;
+  (Form1.FindComponent('CheckBox' + IntToStr(21+Rastnummer)) as TCheckBox).Checked := y;
+  x := (Form1.FindComponent('Edit' + IntToStr(30+Rastnummer)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(30+Rastnummer)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(31+Rastnummer)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(31+Rastnummer)) as TEdit).Text := x;
+  x := (Form1.FindComponent('Edit' + IntToStr(40+Rastnummer)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(40+Rastnummer)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(41+Rastnummer)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(41+Rastnummer)) as TEdit).Text := x;
+  x := (Form1.FindComponent('BitBtn' + IntToStr(16+Rastnummer)) as TBitBtn).HelpKeyword;
+  Repeat ButtonPressed((Form1.FindComponent('BitBtn' + IntToStr(16+Rastnummer)) as TBitBtn)) until (Form1.FindComponent('BitBtn' + IntToStr(16+Rastnummer)) as TBitBtn).HelpKeyword = (Form1.FindComponent('BitBtn' + IntToStr(17+Rastnummer)) as TBitBtn).HelpKeyword;
+  Repeat ButtonPressed((Form1.FindComponent('BitBtn' + IntToStr(17+Rastnummer)) as TBitBtn)) until (Form1.FindComponent('BitBtn' + IntToStr(17+Rastnummer)) as TBitBtn).HelpKeyword = x;
+end;
+
+procedure RastMinus(Rastnummer: Integer);
+var x:string;
+    y:boolean;
+begin
+  x := (Form1.FindComponent('Edit' + IntToStr(72+Rastnummer)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(72+Rastnummer)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(73+Rastnummer)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(73+Rastnummer)) as TEdit).Text := x;
+  x := (Form1.FindComponent('Edit' + IntToStr(62+Rastnummer)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(62+Rastnummer)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(63+Rastnummer)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(63+Rastnummer)) as TEdit).Text := x;
+  y := (Form1.FindComponent('CheckBox' + IntToStr(Rastnummer)) as TCheckBox).Checked;
+  (Form1.FindComponent('CheckBox' + IntToStr(Rastnummer)) as TCheckBox).Checked := (Form1.FindComponent('CheckBox' + IntToStr(Rastnummer+1)) as TCheckBox).Checked;
+  (Form1.FindComponent('CheckBox' + IntToStr(Rastnummer+1)) as TCheckBox).Checked := y;
+  x := (Form1.FindComponent('CheckBox' + IntToStr(Rastnummer+1)) as TCheckBox).Caption;
+  (Form1.FindComponent('CheckBox' + IntToStr(Rastnummer+1)) as TCheckBox).Caption := (Form1.FindComponent('CheckBox' + IntToStr(Rastnummer)) as TCheckBox).Caption;
+  (Form1.FindComponent('CheckBox' + IntToStr(Rastnummer)) as TCheckBox).Caption := x;
+  x := (Form1.FindComponent('Edit' + IntToStr(2*Rastnummer+1)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(2*Rastnummer+1)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(2*Rastnummer-1)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(2*Rastnummer-1)) as TEdit).Text := x;
+  x := (Form1.FindComponent('Edit' + IntToStr(2*Rastnummer+2)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(2*Rastnummer+2)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(2*Rastnummer)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(2*Rastnummer)) as TEdit).Text := x;
+  y := (Form1.FindComponent('CheckBox' + IntToStr(11+Rastnummer)) as TCheckBox).Checked;
+  (Form1.FindComponent('CheckBox' + IntToStr(11+Rastnummer)) as TCheckBox).Checked := (Form1.FindComponent('CheckBox' + IntToStr(10+Rastnummer)) as TCheckBox).Checked;
+  (Form1.FindComponent('CheckBox' + IntToStr(10+Rastnummer)) as TCheckBox).Checked := y;
+  y := (Form1.FindComponent('CheckBox' + IntToStr(21+Rastnummer)) as TCheckBox).Checked;
+  (Form1.FindComponent('CheckBox' + IntToStr(21+Rastnummer)) as TCheckBox).Checked := (Form1.FindComponent('CheckBox' + IntToStr(20+Rastnummer)) as TCheckBox).Checked;
+  (Form1.FindComponent('CheckBox' + IntToStr(20+Rastnummer)) as TCheckBox).Checked := y;
+  x := (Form1.FindComponent('Edit' + IntToStr(31+Rastnummer)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(31+Rastnummer)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(30+Rastnummer)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(30+Rastnummer)) as TEdit).Text := x;
+  x := (Form1.FindComponent('Edit' + IntToStr(41+Rastnummer)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(41+Rastnummer)) as TEdit).Text := (Form1.FindComponent('Edit' + IntToStr(40+Rastnummer)) as TEdit).Text;
+  (Form1.FindComponent('Edit' + IntToStr(40+Rastnummer)) as TEdit).Text := x;
+  x := (Form1.FindComponent('BitBtn' + IntToStr(17+Rastnummer)) as TBitBtn).HelpKeyword;
+  Repeat ButtonPressed((Form1.FindComponent('BitBtn' + IntToStr(17+Rastnummer)) as TBitBtn)) until (Form1.FindComponent('BitBtn' + IntToStr(17+Rastnummer)) as TBitBtn).HelpKeyword = (Form1.FindComponent('BitBtn' + IntToStr(16+Rastnummer)) as TBitBtn).HelpKeyword;
+  Repeat ButtonPressed((Form1.FindComponent('BitBtn' + IntToStr(16+Rastnummer)) as TBitBtn)) until (Form1.FindComponent('BitBtn' + IntToStr(16+Rastnummer)) as TBitBtn).HelpKeyword = x;
 end;
 
 procedure ImportSettings;
@@ -780,7 +1086,7 @@ begin with Form1 do begin
           memMaisch.Text := 'Einmaischen - '+floattostr(sltb.FieldAsDouble(sltb.FieldIndex['EinmaischenTemp']))+chr(176)+'C - 0 min.';
         end;
       except
-        MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+        MyMessageDlgPos('Kein Eintrag in DB vorhanden.', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
       end;
       sltb := slDb.GetTable('SELECT * FROM Rasten WHERE SudID = '+inttostr(ID));
       try
@@ -797,13 +1103,13 @@ begin with Form1 do begin
           end;
         end;
       except
-        MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+        MyMessageDlgPos('Kein Eintrag in DB vorhanden.', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
       end;
 
       // *** Hopfengaben aus DB lesen ***
       memMaisch.Lines.Add('');
       memMaisch.Lines.Add('');
-      memMaisch.Lines.Add('============================================================');
+      memMaisch.Lines.Add('==========================================================');
       memMaisch.Lines.Add('');
       sltb := slDb.GetTable('SELECT * FROM Sud');
       try
@@ -811,7 +1117,7 @@ begin with Form1 do begin
         memMaisch.Lines.Add('Gesamtkochdauer - '+floattostr(sltb.FieldAsDouble(sltb.FieldIndex['KochdauerNachBitterhopfung']))+' min.');
         gk:=round(sltb.FieldAsDouble(sltb.FieldIndex['KochdauerNachBitterhopfung']));
       except
-        MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+        MyMessageDlgPos('Kein Eintrag in DB vorhanden.', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
       end;
       sltb := slDb.GetTable('SELECT * FROM Hopfengaben WHERE SudID = '+inttostr(ID));
       try
@@ -831,7 +1137,7 @@ begin with Form1 do begin
           end;
         end;
       except
-        MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+        MyMessageDlgPos('Kein Eintrag in DB vorhanden.', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
       end;
       sltb := slDb.GetTable('SELECT * FROM Hopfengaben ORDER BY Zeit DESC');
       try
@@ -853,52 +1159,23 @@ begin with Form1 do begin
           end;
         end;
       except
-        MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+        MyMessageDlgPos('Kein Eintrag in DB vorhanden.', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
       end;
     // *** Ende Hopfengaben aus DB lesen ***
-
+      memMaisch.Lines.Add('');
+      sltb := slDb.GetTable('SELECT * FROM Sud');
+      try
+        if sltb.Count > 0 then for i:=1 to Datensatz do sltb.Next;
+        if sltb.FieldAsDouble(sltb.FieldIndex['Nachisomerisierungszeit']) <> 0 then
+        memMaisch.Lines.Add('Nachisomerisierungszeit - '+floattostr(sltb.FieldAsDouble(sltb.FieldIndex['Nachisomerisierungszeit']))+' min.');
+      except
+        MyMessageDlgPos('Kein Eintrag in DB vorhanden.', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
+      end;
     end;
   finally
     sltb.Free;
   end;
 end; end;
-
-function MyMessageDlgPos(const Msg: string; DlgType: TMsgDlgType; Buttons: TMsgDlgButtons; Captions: array of string; xPos: Integer; yPos: Integer ): Integer;
-var
-  aMsgDlg: TForm;
-  i: Integer;
-  dlgButton: TButton;
-  CaptionIndex,bc: Integer;
-begin
-  bc := 0;
-  aMsgDlg := CreateMessageDialog(Msg, DlgType, Buttons);
-  if length(MSG)<89 then aMsgDlg.Width:=417 else aMsgDlg.Width:=817;
-  if aMsgDlg.Width=417 then aMsgDlg.Left := xPos+240 else aMsgDlg.Left := xPos+100;
-  aMsgDlg.Top := yPos+250;
-  captionIndex := 0;
-  for i := 0 to aMsgDlg.ComponentCount - 1 do
-  begin
-    if (aMsgDlg.Components[i] is TButton) then
-    begin
-      bc := bc + 1;
-      dlgButton := TButton(aMsgDlg.Components[i]);
-      if CaptionIndex > High(Captions) then Break;
-      dlgButton.Caption := Captions[CaptionIndex];
-      Inc(CaptionIndex);
-      if aMsgDlg.Width=417 then
-      begin
-        dlgButton.Width:=90;
-        dlgButton.Left:=bc*10+(bc-1)*90;
-      end
-      else
-      begin
-        dlgButton.Width:=190;
-        dlgButton.Left:=bc*10+(bc-1)*190;
-      end;
-    end;
-  end;
-  Result := aMsgDlg.ShowModal;
-end;
 
 procedure gesamtanzeigegeaendert;
 begin
@@ -928,20 +1205,45 @@ begin
    Panel15.Visible:=false;
    BitBtn10.Visible:=false;
    BitBtn11.Visible:=true;
+   if stop=false then
+   begin
+     Button13.Enabled:=true;
+     Button14.Enabled:=true;
+     Button15.Enabled:=true;
+     Button16.Enabled:=true;
+   end
+   else
+   begin
+     Button13.Enabled:=false;
+     Button14.Enabled:=false;
+     Button15.Enabled:=false;
+     Button16.Enabled:=false;
+   end;
 end;
 
 procedure TForm1.BitBtn11Click(Sender: TObject);
 begin
-   Panel6.Visible:=true;
-   Panel8.Visible:=false;
-   Panel10.Visible:=false;
-   Panel12.Visible:=false;
-   Panel13.Visible:=true;
-   Button29.Visible:=true;
-   Button30.Visible:=false;
-   BitBtn10.Visible:=true;
-   BitBtn11.Visible:=false;
-   if start=false then Panel15.Visible:=true;
+  Panel6.Visible:=true;
+  Panel8.Visible:=false;
+  Panel10.Visible:=false;
+  Panel12.Visible:=false;
+  Panel13.Visible:=true;
+  Button29.Visible:=true;
+  Button30.Visible:=false;
+  BitBtn10.Visible:=true;
+  BitBtn11.Visible:=false;
+  if (stop=true) and (Panel12.Visible=false) then Panel15.Visible:=true;
+  if start=true then
+  begin
+    Button13.Caption:='Auto';
+    Form1.Button13Click(Form1);
+    Button14.Caption:='Auto';
+    Form1.Button14Click(Form1);
+    Button15.Caption:='Auto';
+    Form1.Button15Click(Form1);
+    Button16.Caption:='Auto';
+    Form1.Button16Click(Form1);
+  end;
 end;
 
 //LPT:
@@ -1029,35 +1331,35 @@ procedure BatchOut;
 begin
   if (Ruehrwerk<>0) and (Ruehrwerk<>RStore) then
     if ShellExecute(Application.Handle,'open',PChar(BREin),nil, nil, SW_HIDE) <= 32 then
-    ShowMessagePos('Es ist ein Fehler beim ausführen von '+BREin+' aufgetreten', Form1.Left+350, Form1.Top+250) else
+    MyShowMessagePos('Es ist ein Fehler beim ausführen von '+BREin+' aufgetreten', Form1.Left, 350, Form1.Top, 250) else
     RStore:=Ruehrwerk;
   if (Ruehrwerk=0) and (Ruehrwerk<>RStore) then
     if ShellExecute(Application.Handle,'open',PChar(BRAus),nil, nil, SW_HIDE) <= 32 then
-    ShowMessagePos('Es ist ein Fehler beim ausführen von '+BRAus+' aufgetreten', Form1.Left+350, Form1.Top+250) else
+    MyShowMessagePos('Es ist ein Fehler beim ausführen von '+BRAus+' aufgetreten', Form1.Left, 350, Form1.Top, 250) else
     RStore:=Ruehrwerk;
   if (Heizung<>0) and (Heizung<>HStore) then
     if ShellExecute(Application.Handle,'open',PChar(BHEin),nil, nil, SW_HIDE) <= 32 then
-    ShowMessagePos('Es ist ein Fehler beim ausführen von '+BHEin+' aufgetreten', Form1.Left+350, Form1.Top+250) else
+    MyShowMessagePos('Es ist ein Fehler beim ausführen von '+BHEin+' aufgetreten', Form1.Left, 350, Form1.Top, 250) else
     HStore:=Heizung;
   if (Heizung=0) and (Heizung<>HStore) then
     if ShellExecute(Application.Handle,'open',PChar(BHAus),nil, nil, SW_HIDE) <= 32 then
-    ShowMessagePos('Es ist ein Fehler beim ausführen von '+BHAus+' aufgetreten', Form1.Left+350, Form1.Top+250) else
+    MyShowMessagePos('Es ist ein Fehler beim ausführen von '+BHAus+' aufgetreten', Form1.Left, 350, Form1.Top, 250) else
     HStore:=Heizung;
   if (Alarm<>0) and (Alarm<>AStore) then
     if ShellExecute(Application.Handle,'open',PChar(BAEin),nil, nil, SW_HIDE) <= 32 then
-    ShowMessagePos('Es ist ein Fehler beim ausführen von '+BAEin+' aufgetreten', Form1.Left+350, Form1.Top+250) else
+    MyShowMessagePos('Es ist ein Fehler beim ausführen von '+BAEin+' aufgetreten', Form1.Left, 350, Form1.Top, 250) else
     AStore:=Alarm;
   if (Alarm=0) and (Alarm<>AStore) then
     if ShellExecute(Application.Handle,'open',PChar(BAAus),nil, nil, SW_HIDE) <= 32 then
-    ShowMessagePos('Es ist ein Fehler beim ausführen von '+BAAus+' aufgetreten', Form1.Left+350, Form1.Top+250) else
+    MyShowMessagePos('Es ist ein Fehler beim ausführen von '+BAAus+' aufgetreten', Form1.Left, 350, Form1.Top, 250) else
     AStore:=Alarm;
   if (Pumpe<>0) and (Pumpe<>PStore) then
     if ShellExecute(Application.Handle,'open',PChar(BPEin),nil, nil, SW_HIDE) <= 32 then
-    ShowMessagePos('Es ist ein Fehler beim ausführen von '+BPEin+' aufgetreten', Form1.Left+350, Form1.Top+250) else
+    MyShowMessagePos('Es ist ein Fehler beim ausführen von '+BPEin+' aufgetreten', Form1.Left, 350, Form1.Top, 250) else
     PStore:=Pumpe;
   if (Pumpe=0) and (Pumpe<>PStore) then
     if ShellExecute(Application.Handle,'open',PChar(BPAus),nil, nil, SW_HIDE) <= 32 then
-    ShowMessagePos('Es ist ein Fehler beim ausführen von '+BPAus+' aufgetreten', Form1.Left+350, Form1.Top+250) else
+    MyShowMessagePos('Es ist ein Fehler beim ausführen von '+BPAus+' aufgetreten', Form1.Left, 350, Form1.Top, 250) else
     PStore:=Pumpe;
 end;
 
@@ -1122,7 +1424,7 @@ begin
   for i:= 1 to 30 do begin ReadLn(myFile, xwert); (Form.FindComponent('CheckBox' + IntToStr(i)) as TCheckBox).Checked:=strtobool(xwert); end;
   for i:= 63 to 72 do begin try ReadLn(myFile, xwert); except xwert:=''; end; (Form.FindComponent('Edit' + IntToStr(i)) as TEdit).Text:=xwert; end;
   for i:= 73 to 82 do begin try ReadLn(myFile, xwert); except xwert:='Rast '+inttostr(i-72); end; (Form.FindComponent('Edit' + IntToStr(i)) as TEdit).Text:=xwert; end;
-  for i:= 17 to 26 do begin try ReadLn(myFile, xwert); except xwert:='Bei Rasttemperaturüberschreitung'; end; if xwert='' then xwert:='Bei Rasttemperaturüberschreitung'; (Form.FindComponent('BitBtn' + IntToStr(i)) as TBitBtn).HelpKeyword:=xwert; ButtonChanged((Form.FindComponent('BitBtn' + IntToStr(i)) as TBitBtn)) end;
+  for i:= 17 to 26 do begin try ReadLn(myFile, xwert); except xwert:='Bei Rasttemperaturüberschreitung'; end; if xwert='' then xwert:='Bei Rasttemperaturüberschreitung'; (Form.FindComponent('BitBtn' + IntToStr(i)) as TBitBtn).HelpKeyword := xwert; ButtonChanged((Form.FindComponent('BitBtn' + IntToStr(i)) as TBitBtn)); end;
 end;
 
 procedure settings_laden(Form:TForm1; filename:string);
@@ -1215,6 +1517,7 @@ begin
   WriteLn(mySetup,'Kochtemperatur;'+Form.ComboBox34.Text);
   WriteLn(mySetup,'Temperaturkorrekturwert;'+Form.Edit93.Text);
   WriteLn(mySetup,'Temperaturkorrekturfaktor;'+Form.Edit94.Text);
+  WriteLn(mySetup,'Fensterskalierungsfaktor;'+Form.Edit95.Text);
   CloseFile(mySetup);
   Steuerung:=Form.ComboBox1.Text;
   LPTPort:=strtoint(Form.ComboBox8.Text);
@@ -1361,11 +1664,11 @@ begin
       except Form.Combobox31.ItemIndex := 0; end;
       Form1.ComboBox31Change(Form1);
       sl2.DelimitedText:=sl[44];
-      try Form.Combobox30.ItemIndex := Form.Combobox30.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox7.ItemIndex := 0; end;
+      try Form.Combobox30.ItemIndex := Form.Combobox30.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox30.ItemIndex := 0; end;
       sl2.DelimitedText:=sl[45];
       try Form.Combobox32.ItemIndex := Form.Combobox32.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox32.ItemIndex := 0; end;
       sl2.DelimitedText:=sl[46];
-      try Form.Combobox7.ItemIndex := Form.Combobox7.Items.IndexOf(stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll])); except Form.Combobox7.ItemIndex := 0; end;
+      try Form.Combobox33.ItemIndex := Form.Combobox33.Items.IndexOf(stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll])); except Form.Combobox33.ItemIndex := 0; end;
       sl2.DelimitedText:=sl[47];
       try Form.Edit83.Text:=sl2[sl2.Count-1]; except Form.Edit83.Text:='60'; end;
       sl2.DelimitedText:=sl[48];
@@ -1392,6 +1695,9 @@ begin
       sl2.DelimitedText:=sl[58];
       try Form.Edit94.Text := sl2[sl2.Count-1]; except Form.Edit94.Text := '1.0'; end;
       Form1.Edit94Exit(Form1);
+      sl2.DelimitedText:=sl[59];
+      try Form.Edit95.Text := sl2[sl2.Count-1]; except Form.Edit95.Text := '1.0'; end;
+      Form1.Edit95Exit(Form1);
       AusIst:=Aus1;
       EinIst:=Ein1;
       If Steuerung='USB' then Form1.USB_Update_Tmr.Enabled:=true;
@@ -1714,7 +2020,22 @@ begin
   sl3:=TStringList.Create;
   sl3.Delimiter:=';';
   sl3.DelimitedText:=TimeTempStr;
+  if ((sl3[sl3.Count-1]='85.0') or (sl3[sl3.Count-1]='85.00'))and ((Tempfloatold<84.0) or (Tempfloatold>86.0)) then
+  begin
+    warnungaus:=0;
+    image7.Visible:=true;
+    exit;
+  end
+  else if warnungaus<60 then
+  begin
+    warnungaus:=warnungaus+1;
+  end
+  else
+  begin
+    image7.Visible:=false;
+  end;
   tfs:=sl3[sl3.Count-1];
+  Tempfloatold:=strtofloat(tfs);
   Tempfloat:=strtofloat(tfs)*kfaktor+kwert;
   tf:=strtofloat(tfs)*kfaktor+kwert;
   tfs:=FloatToStrF(tf, ffFixed, 3, 1);
@@ -1752,12 +2073,6 @@ begin
   PageControl1.ActivePage:=TabSheet1;
   PageControl2.ActivePage:=TabSheet6;
   Application.HintHidePause := 5000;
-  if FileExists(pfad+'Setup\settings.txt') then
-  begin
-    laden(Form1, pfad+'Setup\settings.txt');
-    settings_laden(Form1, pfad+'Setup\settings.txt');
-    CloseFile(myFile);
-  end;
   Form1.Button30Click(Sender);
   AlarmEin:=false;
   pause:=false;
@@ -1796,15 +2111,19 @@ begin
   Form1.ComboBox32Change(Sender);
   Form1.ComboBox33Change(Sender);
   form1.Caption:='Brauerei '+ Version;
-  if Screen.Width<1000 then begin scaleby(80,100); Form1.Width := 788; Form1.Height := 535; end;
-  if Screen.Height<700 then begin scaleby(80,100); Form1.Width := 788; Form1.Height := 535; end;
+  if FileExists(pfad+'Setup\settings.txt') then
+  begin
+    laden(Form1, pfad+'Setup\settings.txt');
+    settings_laden(Form1, pfad+'Setup\settings.txt');
+    CloseFile(myFile);
+  end;
 end;
 
 procedure TForm1.BitBtn9Click(Sender: TObject);
 begin
   if SaveDialog1.Execute then
   begin
-    if DeleteFile(SaveDialog1.FileName) then MessageDlgPos('Rezept wurde überschrieben !', mtInformation, [mbOK], 0, Form1.Left+350, Form1.Top+250);
+    if DeleteFile(SaveDialog1.FileName) then MyMessageDlgPos('Rezept wurde überschrieben!', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
     speichern(Form1, SaveDialog1.FileName);
   	Rezeptname:= changefileext(ExtractFileName(SaveDialog1.FileName),'');   //hinzu
     form1.Caption:='Brauerei '+ Version + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
@@ -2014,7 +2333,7 @@ begin
       begin
         Form1.BitBtn2Click(Sender);
         Form1.TimerAEinTimer(Sender);
-        buttonSelected:=MessageDlgPos('Heizung scheint ausgefallen zu sein!', mtWarning, [mbOK,mbAbort], 0, Form1.Left+320, Form1.Top+250);
+        buttonSelected:=MyMessageDlgPos('Heizung scheint ausgefallen zu sein!', mtWarning, [mbOK,mbAbort], ['Ok', 'Abbruch'], Form1.Left, 320, Form1.Top, 250);
         heizcounter:=0;
         Form1.BitBtn1Click(Sender);
         Form1.TimerAAusTimer(Sender);
@@ -2347,7 +2666,7 @@ begin
     LogUpdateTimer.Enabled:=false;
     Button23.Caption:='AutoUpdate Ein';
     if checkbox32.Checked=true then CloseFile(myLogFile);
-    MessageDlgPos('Brauvorgang wurde beendet ' + #13 + '- mit OK fortsetzen!', mtInformation, [mbOK], 0, Form1.Left+350, Form1.Top+250);
+    MyMessageDlgPos('Brauvorgang wurde beendet ' + #13 + '- mit OK fortsetzen!', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
   end;
   for i:= 1 to 10 do (FindComponent('CheckBox' + IntToStr(i)) as TCheckBox).Color := clBtnFace;
   for i:= 1 to 10 do (FindComponent('Gauge' + IntToStr(i)) as TGauge).BackColor := clWhite;
@@ -2356,6 +2675,7 @@ begin
   pause:=false;
   start:=false;
   rast:=0;
+  Form1.BitBtn11Click(Form1);
   if (Form3.BitBtn1.HelpKeyword='true') and (Multistart<5) then
   begin
     Multistart:=Multistart+1;
@@ -2368,7 +2688,7 @@ begin
     LogUpdateTimer.Enabled:=false;
     Button23.Caption:='AutoUpdate Ein';
     if checkbox32.Checked=true then CloseFile(myLogFile);
-    MessageDlgPos('Brauvorgang wurde beendet ' + #13 + '- mit OK fortsetzen!', mtInformation, [mbOK], 0, Form1.Left+350, Form1.Top+250);
+    MyMessageDlgPos('Brauvorgang wurde beendet ' + #13 + '- mit OK fortsetzen!', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
     Form3.Edit1.Text:='';
     Form3.Edit2.Text:='';
     Form3.Edit3.Text:='';
@@ -2469,9 +2789,12 @@ end;
 
 procedure TForm1.TimerREinTimer(Sender: TObject);
 begin
-  Ruehrwerk:=RWert;
-  Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-ein.bmp');
-  Schalten(Form1);
+  if Button14.Caption='Manuell' then
+  begin
+    Ruehrwerk:=RWert;
+    Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-ein.bmp');
+    Schalten(Form1);
+  end;
   TimerREin.Enabled:=false;
   TimerRAus.Enabled:=true;
 end;
@@ -2480,9 +2803,12 @@ procedure TForm1.TimerRAusTimer(Sender: TObject);
 begin
   if (CheckBox43.Checked=false) or ((CheckBox43.Checked=true) and (Heizung=0)) then
   begin
-    Ruehrwerk:=0;
-    Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-aus.bmp');
-    Schalten(Form1);
+    if Button14.Caption='Manuell' then
+    begin
+      Ruehrwerk:=0;
+      Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-aus.bmp');
+      Schalten(Form1);
+    end;
   end;
   TimerRAus.Enabled:=false;
   TimerREin.Enabled:=true;
@@ -2490,19 +2816,25 @@ end;
 
 procedure TForm1.TimerHEinTimer(Sender: TObject);
 begin
-  Heizung:=HWert;
-  Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-ein.bmp');
-  Schalten(Form1);
+  if Button13.Caption='Manuell' then
+  begin
+    Heizung:=HWert;
+    Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-ein.bmp');
+    Schalten(Form1);
+  end;
   TimerHEin.Enabled:=false;
   TimerHAus.Enabled:=true;
 end;
 
 procedure TForm1.TimerHAusTimer(Sender: TObject);
 begin
-  Heizung:=0;
-  Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-aus.bmp');
-  LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  Schalten(Form1);
+  if Button13.Caption='Manuell' then
+  begin
+    Heizung:=0;
+    Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-aus.bmp');
+    LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
+    Schalten(Form1);
+  end;  
   TimerHAus.Enabled:=false;
   TimerHEin.Enabled:=true;
 end;
@@ -2579,20 +2911,26 @@ end;
 
 procedure TForm1.TimerAAusTimer(Sender: TObject);
 begin
-  Alarm:=0;
-  Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-aus.bmp');
-  Schalten(Form1);
-  sndPlaySound(nil,0);
+  if Button16.Caption='Manuell' then
+  begin
+    Alarm:=0;
+    Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-aus.bmp');
+    Schalten(Form1);
+    sndPlaySound(nil,0);
+  end;
   TimerAAus.Enabled:=false;
   TimerAEin.Enabled:=true;
 end;
 
 procedure TForm1.TimerAEinTimer(Sender: TObject);
 begin
-  Alarm:=AWert;
-  Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-ein.bmp');
-  sndPlaySound(PChar(pfad+'Sound\alarm.wav'),SND_ASYNC + SND_LOOP);
-  Schalten(Form1);
+  if Button16.Caption='Manuell' then
+  begin
+    Alarm:=AWert;
+    Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-ein.bmp');
+    sndPlaySound(PChar(pfad+'Sound\alarm.wav'),SND_ASYNC + SND_LOOP);
+    Schalten(Form1);
+  end;
   TimerAEin.Enabled:=false;
   TimerAAus.Enabled:=true;
 end;
@@ -2616,9 +2954,9 @@ begin
     begin
       Form1.TimerAEinTimer(Sender);
       MessageTimer.Enabled:=false;
-      if button1.Caption='Alarm pulsen' then buttonSelected:=MyMessageDlgPos('Rast wurde beendet !' +#13 + rasttext + #13 + '- OK um Brauvorgang fortzusetzen.', mtInformation, [mbOK, mbAbort, mbYes, mbNo], ['OK', 'Alarm still', 'Rührwerk '+ Ruehrspeicher, 'Heizung '+ Heizspeicher], Form1.Left, Form1.Top);
-      if button1.Caption='Alarm still' then buttonSelected:=MyMessageDlgPos('Rast wurde beendet !' +#13 + rasttext + #13 + '- OK um Brauvorgang fortzusetzen.', mtInformation, [mbOK, mbAbort, mbYes, mbNo], ['OK', 'Alarm aktiv', 'Rührwerk '+ Ruehrspeicher, 'Heizung '+ Heizspeicher], Form1.Left, Form1.Top);
-      if button1.Caption='Alarm aktiv' then buttonSelected:=MyMessageDlgPos('Rast wurde beendet !' +#13 + rasttext +#13 + '- OK um Brauvorgang fortzusetzen.', mtInformation, [mbOK, mbAbort, mbYes, mbNo], ['OK', 'Alarm pulsen', 'Rührwerk '+ Ruehrspeicher, 'Heizung '+ Heizspeicher], Form1.Left, Form1.Top);
+      if button1.Caption='Alarm pulsen' then buttonSelected:=RastendeMessageDlgPos('Rast wurde beendet!' +#13 + rasttext + #13 + '- OK um Brauvorgang fortzusetzen.', mtInformation, [mbOK, mbAbort, mbYes, mbNo], ['OK', 'Alarm still', 'Rührwerk '+ Ruehrspeicher, 'Heizung '+ Heizspeicher], Form1.Left, Form1.Top);
+      if button1.Caption='Alarm still' then buttonSelected:=RastendeMessageDlgPos('Rast wurde beendet!' +#13 + rasttext + #13 + '- OK um Brauvorgang fortzusetzen.', mtInformation, [mbOK, mbAbort, mbYes, mbNo], ['OK', 'Alarm aktiv', 'Rührwerk '+ Ruehrspeicher, 'Heizung '+ Heizspeicher], Form1.Left, Form1.Top);
+      if button1.Caption='Alarm aktiv' then buttonSelected:=RastendeMessageDlgPos('Rast wurde beendet!' +#13 + rasttext +#13 + '- OK um Brauvorgang fortzusetzen.', mtInformation, [mbOK, mbAbort, mbYes, mbNo], ['OK', 'Alarm pulsen', 'Rührwerk '+ Ruehrspeicher, 'Heizung '+ Heizspeicher], Form1.Left, Form1.Top);
       if buttonSelected = mrNo then Form1.Button1Click(Sender);
       if (buttonSelected = mrOk) and (Ruehrspeicher='Aus') then begin Form1.TimerRAusTimer(Sender); TimerRSet.Enabled:=false; TimerREin.Enabled:=false; Ruehrspeicher:='Ein'; end
       else if (buttonSelected = mrOk) and (Ruehrspeicher='Ein') and (ruehrstart=true) then begin Form1.TimerREinTimer(Sender); TimerRSet.Enabled:=false; TimerRAus.Enabled:=false; Ruehrspeicher:='Auto';  end
@@ -2761,19 +3099,9 @@ begin
   end;
 end;
 
-procedure TForm1.Edit55KeyPress(Sender: TObject; var Key: Char);
-begin
-  if not (Key in ['0'..'9']) then Key := #0;
-end;
-
-procedure TForm1.Edit54KeyPress(Sender: TObject; var Key: Char);
-begin
-  if not (Key in ['0'..'9']) then Key := #0;
-end;
-
 procedure TForm1.Button17Click(Sender: TObject);
 begin
-  if DeleteFile(pfad + 'Setup\settings.txt') then MessageDlgPos('Settings wurden überschrieben !', mtInformation, [mbOK], 0, Form1.Left+350, Form1.Top+250);
+  if DeleteFile(pfad + 'Setup\settings.txt') then MyMessageDlgPos('Settings wurden überschrieben!', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
   speichern(Form1, pfad + 'Setup\settings.txt');
   settings_speichern(Form1, pfad + 'Setup\settings.txt');
   CloseFile(myFile);
@@ -2846,8 +3174,8 @@ end;
 
 procedure editcheck(changededit: TEdit; min:integer; max:integer; fail:string);
 begin
-  try Intdummy:=strtoint(changededit.Text) except begin changededit.Text:=fail; ShowMessagePos('Unerlaubte Eingabe!', Form1.Left+350, Form1.Top+250); end; end;
-  if (Intdummy>max) or (Intdummy<min) then begin changededit.Text:=fail; ShowMessagePos('Unerlaubte Eingabe!', Form1.Left+350, Form1.Top+250); end;
+  try Intdummy:=strtoint(changededit.Text) except begin changededit.Text:=fail; MyShowMessagePos('Unerlaubte Eingabe!', Form1.Left, 350, Form1.Top, 250); end; end;
+  if (Intdummy>max) or (Intdummy<min) then begin changededit.Text:=fail; MyShowMessagePos('Unerlaubte Eingabe!', Form1.Left, 350, Form1.Top, 250); end;
 end;
 
 procedure editcheck2(changededit: TEdit; changededit2: TEdit; changededit3: TEdit);
@@ -2856,8 +3184,8 @@ begin
   if changededit.Text='fail' then changededit.Text:= inttostr(intdummy)
   else
   begin
-    if (strtoint(changededit.Text)<strtoint(changededit2.Text)) then begin changededit.Text:=inttostr(intdummy); ShowMessagePos('Unerlaubte Eingabe!', Form1.Left+350, Form1.Top+250); end;
-    if (strtoint(changededit.Text)>strtoint(changededit3.Text)) then begin changededit.Text:=inttostr(intdummy); ShowMessagePos('Unerlaubte Eingabe!', Form1.Left+350, Form1.Top+250); end;
+    if (strtoint(changededit.Text)<strtoint(changededit2.Text)) then begin changededit.Text:=inttostr(intdummy); MyShowMessagePos('Unerlaubte Eingabe!', Form1.Left, 350, Form1.Top, 250); end;
+    if (strtoint(changededit.Text)>strtoint(changededit3.Text)) then begin changededit.Text:=inttostr(intdummy); MyShowMessagePos('Unerlaubte Eingabe!', Form1.Left, 350, Form1.Top, 250); end;
   end;
 end;
 
@@ -2958,7 +3286,7 @@ procedure TForm1.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 var buttonSelected:integer;
     hw:hwnd;
 begin
-  buttonSelected:=MessageDlgPos('Programm wirklich beenden?', mtWarning, [mbOK, mbAbort], 0, Form1.Left+350, Form1.Top+250);
+  buttonSelected:=MyMessageDlgPos('Programm wirklich beenden?', mtWarning, [mbOK, mbAbort], ['Ok', 'Abbruch'], Form1.Left, 350, Form1.Top, 250);
   if buttonSelected = mrOK then
   begin
     LPTCode:=0;
@@ -2991,7 +3319,7 @@ begin
       Form1.BitBtn2Click(Sender);
       Form1.TimerAEinTimer(Sender);
       MessageTimer.Enabled:=false;
-      buttonSelected:=MessageDlgPos('Seit min. 1 Minute kein neuer Temperaturmesswert!', mtWarning, [mbOK, mbAbort], 0, Form1.Left+320, Form1.Top+250);
+      buttonSelected:=MyMessageDlgPos('Seit min. 1 Minute kein neuer Temperaturmesswert!', mtWarning, [mbOK, mbAbort], ['Ok', 'Abbruch'], Form1.Left, 320, Form1.Top, 250);
       if buttonSelected = mrAbort then CheckBox33.Checked:=false;
       Form1.BitBtn1Click(Sender);
       MessageTimer.Enabled:=true;
@@ -3231,21 +3559,21 @@ end;
 procedure TForm1.Button26Click(Sender: TObject);
 begin
   if ShellExecute(Application.Handle,'open',PChar(pfad+'Digitemp\Digitemp.bat'),nil,PChar(pfad+'Digitemp\'), SW_MINIMIZE) <= 32 then
-  ShowMessagePos('Es ist ein Fehler beim ausführen von Digitemp aufgetreten', Form1.Left+350, Form1.Top+250) else ;
+  MyShowMessagePos('Es ist ein Fehler beim ausführen von Digitemp aufgetreten', Form1.Left, 350, Form1.Top, 250) else ;
   sensorreset:=1;
 end;
 
 procedure TForm1.Button27Click(Sender: TObject);
 begin
   if ShellExecute(Application.Handle,'open',PChar(pfad+'Digitemp\Digitemp_variabel.bat'),nil,PChar(pfad+'Digitemp\'), SW_SHOWNORMAL) <= 32 then
-  ShowMessagePos('Es ist ein Fehler beim ausführen von Digitemp aufgetreten', Form1.Left+350, Form1.Top+250) else ;
+  MyShowMessagePos('Es ist ein Fehler beim ausführen von Digitemp aufgetreten', Form1.Left, 350, Form1.Top, 250) else ;
   Sensorreset:=2;
 end;
 
 procedure TForm1.Button28Click(Sender: TObject);
 begin
   if ShellExecute(Application.Handle,'open',PChar(pfad+'Digitemp\Externe_Sensorsoftware.bat'),nil,PChar(pfad+'Digitemp\'), SW_MINIMIZE) <= 32 then
-  ShowMessagePos('Es ist ein Fehler beim ausführen von Digitemp aufgetreten', Form1.Left+350, Form1.Top+250) else ;
+  MyShowMessagePos('Es ist ein Fehler beim ausführen von Digitemp aufgetreten', Form1.Left, 350, Form1.Top, 250) else ;
   sensorreset:=3;
 end;
 
@@ -3261,20 +3589,12 @@ begin
   TimerDlgMove.Enabled:=true;
 end;
 
-procedure TForm1.SaveDialog1Show(Sender: TObject);
-begin
-  TimerDlgMove.Enabled:=true;
-end;
-
-procedure TForm1.PrintDialog1Show(Sender: TObject);
-begin
-  TimerDlgMove.Enabled:=true;
-end;
-
 procedure TForm1.TimerDlgMoveTimer(Sender: TObject);
 begin
   SetWindowPos(GetParent(OpenDialog1.Handle), 0, Form1.Left+200, Form1.Top+100, 0, 0, SWP_NOSIZE);
   SetWindowPos(GetParent(SaveDialog1.Handle), 0, Form1.Left+200, Form1.Top+100, 0, 0, SWP_NOSIZE);
+  SetWindowPos(GetParent(OpenDialog2.Handle), 0, Form1.Left+200, Form1.Top+100, 0, 0, SWP_NOSIZE);
+  SetWindowPos(GetParent(SaveDialog2.Handle), 0, Form1.Left+200, Form1.Top+100, 0, 0, SWP_NOSIZE);
   SetWindowPos(PrintDialog1.Handle, 0, Form1.Left+200, Form1.Top+100, 0, 0, SWP_NOSIZE);
   TimerDlgMove.Enabled:=false;
 end;
@@ -3668,19 +3988,25 @@ end;
 
 procedure TForm1.TimerKEinTimer(Sender: TObject);
 begin
-  Pumpe:=PWert;
-  Image4.Picture.LoadFromFile(pfad + 'Graphics\Kühlung-ein.bmp');
-  Schalten(Form1);
+  if Button15.Caption='Manuell' then
+  begin
+    Pumpe:=PWert;
+    Image4.Picture.LoadFromFile(pfad + 'Graphics\Kühlung-ein.bmp');
+    Schalten(Form1);
+  end;
   TimerKEin.Enabled:=false;
   TimerKAus.Enabled:=true;
 end;
 
 procedure TForm1.TimerKAusTimer(Sender: TObject);
 begin
-  Pumpe:=0;
-  Image4.Picture.LoadFromFile(pfad + 'Graphics\Kühlung-aus.bmp');
-  LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
-  Schalten(Form1);
+  if Button13.Caption='Manuell' then
+  begin
+    Pumpe:=0;
+    Image4.Picture.LoadFromFile(pfad + 'Graphics\Kühlung-aus.bmp');
+    LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
+    Schalten(Form1);
+  end;  
   TimerKAus.Enabled:=false;
   TimerKEin.Enabled:=true;
 end;
@@ -3710,7 +4036,7 @@ procedure TForm1.Button2Click(Sender: TObject);
 var
   buttonSelected, position:integer;
 begin
-  buttonSelected:=MessageDlgPos('Einstellungen auf Standardeinstellungen zurücksetzen?', mtWarning, [mbOK, mbAbort], 0, Form1.Left+350, Form1.Top+250);
+  buttonSelected:=MyMessageDlgPos('Einstellungen auf Standardeinstellungen zurücksetzen?', mtWarning, [mbOK, mbAbort], ['Ok', 'Abbruch'], Form1.Left, 350, Form1.Top, 250);
   if buttonSelected = mrOK then
   begin
     setup_laden(Form1, pfad+'Setup\Standard_Setup.txt');
@@ -3796,7 +4122,7 @@ begin
         ID := sltb.FieldAsInteger(sltb.FieldIndex['ID']);
       end;
     except
-      MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+      MyMessageDlgPos('Kein Eintrag in DB vorhanden.', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
     end;
     sltb := slDb.GetTable('SELECT * FROM Rasten WHERE SudID = '+inttostr(ID));
     j := sltb.Count+1;
@@ -3821,7 +4147,7 @@ begin
         end;
       end;
     except
-      MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+      MyMessageDlgPos('Kein Eintrag in DB vorhanden.', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
     end;
 
     if j>10 then j:=10;
@@ -3863,11 +4189,11 @@ begin
             WriteLn(myImportFile, Tempstr);
             sltb.Next;
           end
-          else WriteLn(myImportFile, 'Rast '+inttostr(i+1));
+          else WriteLn(myImportFile, 'ungenutzte Rast');
         end;
       end;
     except
-      MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+      MyMessageDlgPos('Kein Eintrag in DB vorhanden.', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
     end;
 
     for i := 1 to 10 do WriteLn(myImportFile, 'Bei Rasttemperaturüberschreitung');
@@ -3883,7 +4209,7 @@ var slDBpath: string;
     sldb: TSQLiteDatabase;
     sltb: TSQLIteTable;
     sSQL: String;
-    Tempstr: String;
+    Tempstr,Nachiso: String;
     i,gk,vw,k,c,ks: integer;
 begin
   AssignFile(myImportFile, filename);
@@ -3895,8 +4221,9 @@ begin
     try
       if sltb.Count > 0 then for i:=1 to Datensatz do sltb.Next;
       gk:=round(sltb.FieldAsDouble(sltb.FieldIndex['KochdauerNachBitterhopfung']));
+      Nachiso := floattostr(sltb.FieldAsDouble(sltb.FieldIndex['Nachisomerisierungszeit']));
     except
-      MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+      MyMessageDlgPos('Kein Eintrag in DB vorhanden.', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
     end;
     sltb := slDb.GetTable('SELECT * FROM Hopfengaben WHERE SudID = '+Form1.ebID.Text);
     try
@@ -3915,7 +4242,7 @@ begin
         end;
       end;
     except
-      MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+      MyMessageDlgPos('Kein Eintrag in DB vorhanden.', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
     end;
     k:=-1;
     sltb := slDb.GetTable('SELECT * FROM Hopfengaben ORDER BY Zeit DESC');
@@ -3943,10 +4270,16 @@ begin
           WriteLn(myImportFile, Form1.ComboBox34.Text);
           WriteLn(myImportFile, inttostr(gk-k));
         end;
+        if (c<9) and (Nachiso<>'0') then
+        begin
+          c:=c+1;
+          WriteLn(myImportFile, '78');
+          WriteLn(myImportFile, Nachiso);
+        end;
         for i:=c to 9 do begin WriteLn(myImportFile, '20'); WriteLn(myImportFile, '0'); end;
       end;
     except
-      MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+      MyMessageDlgPos('Kein Eintrag in DB vorhanden.', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
     end;
     for i:=1 to 10 do WriteLn(myImportFile, Form1.Edit91.Text);
     for i:=1 to 10 do WriteLn(myImportFile, Form1.Edit92.Text);
@@ -3975,7 +4308,7 @@ begin
         if c>0 then WriteLn(myImportFile, Tempstr);
       end;
     except
-      MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+      MyMessageDlgPos('Kein Eintrag in DB vorhanden.', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
     end;
     k:=-1;
     Tempstr:='';
@@ -3983,32 +4316,38 @@ begin
     try
       if sltb.Count > 0 then
       begin
+        Tempstr:='';
         for i:=1 to sltb.Count do
         begin
           if (sltb.FieldAsString(sltb.FieldIndex['Vorderwuerze'])='0') and (sltb.FieldAsString(sltb.FieldIndex['SudID'])=Form1.ebID.Text) then
           begin
-            if Tempstr>'' then Tempstr:=Tempstr+' - ';
-            Tempstr:=Tempstr+sltb.FieldAsString(sltb.FieldIndex['erg_Menge'])+' g ';
-            Tempstr:=Tempstr+sltb.FieldAsString(sltb.FieldIndex['Name']);
-            if (gk-round(sltb.FieldAsDouble(sltb.FieldIndex['Zeit']))<>k) and (c<10) then
+            if (gk-round(sltb.FieldAsDouble(sltb.FieldIndex['Zeit']))<>k) and (c<10) and (Tempstr<>'') then
             begin
-              k:=gk-round(sltb.FieldAsDouble(sltb.FieldIndex['Zeit']));
               c:=c+1;
               WriteLn(myImportFile, Tempstr);
               Tempstr:='';
             end;
+            if Tempstr>'' then Tempstr:=Tempstr+' - ';
+            Tempstr:=Tempstr+sltb.FieldAsString(sltb.FieldIndex['erg_Menge'])+' g ';
+            Tempstr:=Tempstr+sltb.FieldAsString(sltb.FieldIndex['Name']);
+            k:=gk-round(sltb.FieldAsDouble(sltb.FieldIndex['Zeit']));
           end;
           sltb.Next;
         end;
-        for i:=c to 9 do WriteLn(myImportFile, '');
+        WriteLn(myImportFile, Tempstr);
+        c:=c+1;
+        if k<gk then WriteLn(myImportFile, 'Restkochzeit abgeschlossen');
+        if Nachiso <> '0' then WriteLn(myImportFile, 'Nachisomerisierungszeit abgeschlossen') else WriteLn(myImportFile, '');
+        if k<gk then for i:=c to 7 do WriteLn(myImportFile, '') else for i:=c to 8 do WriteLn(myImportFile, '');
       end;
     except
-      MessageDLg('Kein Eintrag in DB vorhanden.',mtInformation,[mbOK],0);
+      MyMessageDlgPos('Kein Eintrag in DB vorhanden.', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
     end;
-    if vw=1 then WriteLn(myImportFile, 'Vorderwürzhopfen') else WriteLn(myImportFile, 'Hopfengabe');
+    if vw=1 then WriteLn(myImportFile, 'Vorderwürze') else WriteLn(myImportFile, 'Hopfengabe');
     for i:= 2 to c do WriteLn(myImportFile, 'Hopfengabe');
-    if k<gk then begin c:=c+1; WriteLn(myImportFile, 'Restkochzeit'); end;
-    for i:= c to 9 do WriteLn(myImportFile, 'Rast '+inttostr(i+1));
+    if k<gk then WriteLn(myImportFile, 'Restkochzeit');
+    if (c<9) and (Nachiso<>'0') then WriteLn(myImportFile, 'Isomerisierung');
+    for i:= c to 8 do WriteLn(myImportFile, 'ungenutzte Rast');
     if vw=1 then WriteLn(myImportFile, 'Temperaturunabhängig') else WriteLn(myImportFile, 'Bei Rasttemperaturüberschreitung');
     if vw=1 then WriteLn(myImportFile, 'Bei Rasttemperaturüberschreitung') else WriteLn(myImportFile, 'Temperaturunabhängig');
     for i:= 2 to 9 do WriteLn(myImportFile, 'Temperaturunabhängig');
@@ -4039,7 +4378,7 @@ begin
   SaveDialog2.FileName := ebName.Text+'.rzt';
   if SaveDialog2.Execute then
   begin
-    if DeleteFile(SaveDialog2.FileName) then MessageDlgPos('Rezept wurde überschrieben !', mtInformation, [mbOK], 0, Form1.Left+50, Form1.Top+50);
+    if DeleteFile(SaveDialog2.FileName) then MyMessageDlgPos('Rezept wurde überschrieben!', mtInformation, [mbOK], ['Ok'], Form1.Left, 50, Form1.Top, 50);
     exportieren(Form1, SaveDialog2.FileName);
   end;
   pfad2:= ExtractFileDir(SaveDialog2.FileName);
@@ -4069,7 +4408,7 @@ begin
   SaveDialog2.FileName := ebName.Text+'-Kochen.rzt';
   if SaveDialog2.Execute then
   begin
-    if DeleteFile(SaveDialog2.FileName) then MessageDlgPos('Rezept wurde überschrieben !', mtInformation, [mbOK], 0, Form1.Left+50, Form1.Top+50);
+    if DeleteFile(SaveDialog2.FileName) then MyMessageDlgPos('Rezept wurde überschrieben!', mtInformation, [mbOK], ['Ok'], Form1.Left, 50, Form1.Top, 50);
     exportieren2(Form1, SaveDialog2.FileName);
   end;
   pfad2:= ExtractFileDir(SaveDialog2.FileName);
@@ -4129,7 +4468,7 @@ begin
   SaveDialog2.FileName := ebName.Text+'-Gesamt.rzt';
   if SaveDialog2.Execute then
   begin
-    if DeleteFile(SaveDialog2.FileName) then MessageDlgPos('Rezept wurde überschrieben !', mtInformation, [mbOK], 0, Form1.Left+50, Form1.Top+50);
+    if DeleteFile(SaveDialog2.FileName) then MyMessageDlgPos('Rezept wurde überschrieben!', mtInformation, [mbOK], ['Ok'], Form1.Left, 50, Form1.Top, 50);
     exportieren3(Form1, SaveDialog2.FileName);
   end;
   pfad2:= ExtractFileDir(SaveDialog2.FileName);
@@ -4170,32 +4509,167 @@ end;
 
 procedure TForm1.Edit93Exit(Sender: TObject);
 begin
-  try kwert:=strtofloat(Edit93.Text) except begin Edit93.Text:='0.0'; kwert:=0; ShowMessagePos('Unerlaubte Eingabe!', Form1.Left+350, Form1.Top+250); end; end;
-  if (kwert>5) or (kwert<-5) then begin Edit93.Text:='0.0'; kwert:=0; ShowMessagePos('Unerlaubte Eingabe!', Form1.Left+350, Form1.Top+250); end;
+  try kwert:=strtofloat(Edit93.Text) except begin Edit93.Text:='0.0'; kwert:=0; MyShowMessagePos('Unerlaubte Eingabe!', Form1.Left, 350, Form1.Top, 250); end; end;
+  if (kwert>5) or (kwert<-5) then begin Edit93.Text:='0.0'; kwert:=0; MyShowMessagePos('Unerlaubte Eingabe!', Form1.Left, 350, Form1.Top, 250); end;
   setupgeaendert;
 end;
 
 procedure TForm1.Edit94Exit(Sender: TObject);
 begin
-  try kfaktor:=strtofloat(Edit94.Text) except begin Edit94.Text:='1.0'; kfaktor:=1; ShowMessagePos('Unerlaubte Eingabe!', Form1.Left+350, Form1.Top+250); end; end;
-  if (kfaktor>2) or (kfaktor<0.5) then begin Edit94.Text:='1.0'; kfaktor:=1; ShowMessagePos('Unerlaubte Eingabe!', Form1.Left+350, Form1.Top+250); end;
+  try kfaktor:=strtofloat(Edit94.Text) except begin Edit94.Text:='1.0'; kfaktor:=1; MyShowMessagePos('Unerlaubte Eingabe!', Form1.Left, 350, Form1.Top, 250); end; end;
+  if (kfaktor>2) or (kfaktor<0.5) then begin Edit94.Text:='1.0'; kfaktor:=1; MyShowMessagePos('Unerlaubte Eingabe!', Form1.Left, 350, Form1.Top, 250); end;
   setupgeaendert;
 end;
 
 procedure TForm1.PageControl2Change(Sender: TObject);
 begin
-  if PageControl2.ActivePage=TabSheet7 then ShowMessagePos('    Im normalen Maischeprozeß sind hier keine Änderungen erforderlich !!!    ', Form1.Left+30, Form1.Top+380);
+  if PageControl2.ActivePage=TabSheet7 then MyShowMessagePos('    Im normalen Maischeprozeß sind hier keine Änderungen erforderlich!!!    ', Form1.Left, 30, Form1.Top, 380);
 end;
 
 procedure TForm1.SpeedButton1Click(Sender: TObject);
 begin
-  ShowMessagePos('Einschaltzeiten (hh:mm:ss):' + #13 + #13 +
+  MyShowMessagePos('Einschaltzeiten (hh:mm:ss):' + #13 + #13 +
   'Heizung: ' + Chr(9) + Chr(9) + FormatDateTime('hh:nn:ss', htime) + #13 +
   'Rührwerk: ' + Chr(9) + Chr(9) + FormatDateTime('hh:nn:ss', rtime) + #13 +
   Relais4 + ':    ' + Chr(9) + Chr(9) + FormatDateTime('hh:nn:ss', ptime) + #13 +
   'Alarm:      ' + Chr(9) + Chr(9) + FormatDateTime('hh:nn:ss', atime) + #13 + #13 +
-  'Gesamt:     ' + Chr(9) + Chr(9) + FormatDateTime('hh:nn:ss', gtime) ,Form1.Left+300, Form1.Top+180);
+  'Gesamt:     ' + Chr(9) + Chr(9) + FormatDateTime('hh:nn:ss', gtime) ,Form1.Left, 300, Form1.Top, 180);
 end;
+
+procedure TForm1.Edit95Exit(Sender: TObject);
+var wfaktor: extended;
+begin
+  try wfaktor:=strtofloat(Edit95.Text) except begin Edit95.Text:='1.0'; wfaktor:=1; MyShowMessagePos('Unerlaubte Eingabe!', Form1.Left, 350, Form1.Top, 250); end; end;
+  if (wfaktor>1.6) or (wfaktor<0.6) then begin Edit95.Text:='1.0'; wfaktor:=1; MyShowMessagePos('Unerlaubte Eingabe!', Form1.Left, 350, Form1.Top, 250); end;
+  scaleby(round(wfaktor*100 * (985 / Form1.Width)),100);
+  Form1.Width := round(985 * wfaktor);
+  Form1.Height := round(663 * wfaktor);
+  setupgeaendert;
+  if wfaktor=1 then Form1.Refresh;
+end;
+
+procedure TForm1.Button14Click(Sender: TObject);
+begin
+  if Button14.Caption='Manuell' then
+  begin
+    Button14.Caption:='Auto';
+    Button8.Enabled:=true;
+    Button8.Caption:='Rührwerk Aus';
+    Form1.Button8Click(Form1);
+  end
+  else
+  begin
+    Button14.Caption:='Manuell';
+    Button8.Enabled:=false;
+    Button8.Caption:='Rührwerk Aus';
+    Form1.Button8Click(Form1);
+    TimerRAus.Enabled:=false;
+    TimerREin.Enabled:=false;
+    Form1.TimerRSetTimer(Sender);
+  end;
+end;
+
+procedure TForm1.Button13Click(Sender: TObject);
+begin
+  if Button13.Caption='Manuell' then
+  begin
+    Button13.Caption:='Auto';
+    Button9.Enabled:=true;
+    Button9.Caption:='Heizung Aus';
+    Form1.Button9Click(Form1);
+  end
+  else
+  begin
+    Button13.Caption:='Manuell';
+    Button9.Enabled:=false;
+    Button9.Caption:='Heizung Aus';
+    Form1.Button9Click(Form1);
+    TimerHEin.Interval:=0;
+    Form1.TimerHSetTimer(Sender);
+  end;
+end;
+
+procedure TForm1.Button15Click(Sender: TObject);
+begin
+  if Button15.Caption='Manuell' then
+  begin
+    Button15.Caption:='Auto';
+    Button10.Enabled:=true;
+    Button10.Caption:=Relais4+' Aus';
+    Form1.Button10Click(Form1);
+  end
+  else
+  begin
+    Button15.Caption:='Manuell';
+    Button10.Enabled:=false;
+    Button10.Caption:=Relais4+' Aus';
+    Form1.Button10Click(Form1);
+    TimerKEin.Interval:=0;
+    Form1.TimerKSetTimer(Sender);
+  end;
+end;
+
+procedure TForm1.Button16Click(Sender: TObject);
+begin
+  if Button16.Caption='Manuell' then
+  begin
+    Button16.Caption:='Auto';
+    Button11.Enabled:=true;
+    Button11.Caption:='Alarm Aus';
+    Form1.Button11Click(Form1);
+  end
+  else
+  begin
+    Button16.Caption:='Manuell';
+    Button11.Enabled:=false;
+    Button11.Caption:='Alarm Aus';
+    Form1.Button11Click(Form1);
+  end;
+end;
+
+procedure TForm1.Edit1KeyPress(Sender: TObject; var Key: Char); begin If Key=#13 then begin Key:=#0; SendMessage(Handle, WM_NEXTDLGCTL, 0, 0); end; end;
+
+procedure TForm1.BitBtn27Click(Sender: TObject); begin ButtonPlus(1); end;
+procedure TForm1.BitBtn29Click(Sender: TObject); begin ButtonPlus(2); end;
+procedure TForm1.BitBtn31Click(Sender: TObject); begin ButtonPlus(3); end;
+procedure TForm1.BitBtn33Click(Sender: TObject); begin ButtonPlus(4); end;
+procedure TForm1.BitBtn35Click(Sender: TObject); begin ButtonPlus(5); end;
+procedure TForm1.BitBtn37Click(Sender: TObject); begin ButtonPlus(6); end;
+procedure TForm1.BitBtn39Click(Sender: TObject); begin ButtonPlus(7); end;
+procedure TForm1.BitBtn41Click(Sender: TObject); begin ButtonPlus(8); end;
+procedure TForm1.BitBtn43Click(Sender: TObject); begin ButtonPlus(9); end;
+procedure TForm1.BitBtn45Click(Sender: TObject); begin ButtonPlus(10); end;
+
+procedure TForm1.BitBtn28Click(Sender: TObject); begin ButtonMinus(1); end;
+procedure TForm1.BitBtn30Click(Sender: TObject); begin ButtonMinus(2); end;
+procedure TForm1.BitBtn32Click(Sender: TObject); begin ButtonMinus(3); end;
+procedure TForm1.BitBtn34Click(Sender: TObject); begin ButtonMinus(4); end;
+procedure TForm1.BitBtn36Click(Sender: TObject); begin ButtonMinus(5); end;
+procedure TForm1.BitBtn38Click(Sender: TObject); begin ButtonMinus(6); end;
+procedure TForm1.BitBtn40Click(Sender: TObject); begin ButtonMinus(7); end;
+procedure TForm1.BitBtn42Click(Sender: TObject); begin ButtonMinus(8); end;
+procedure TForm1.BitBtn44Click(Sender: TObject); begin ButtonMinus(9); end;
+procedure TForm1.BitBtn46Click(Sender: TObject); begin ButtonMinus(10); end;
+
+procedure TForm1.BitBtn47Click(Sender: TObject); begin RastPlus(1); end;
+procedure TForm1.BitBtn50Click(Sender: TObject); begin RastPlus(2); end;
+procedure TForm1.BitBtn52Click(Sender: TObject); begin RastPlus(3); end;
+procedure TForm1.BitBtn54Click(Sender: TObject); begin RastPlus(4); end;
+procedure TForm1.BitBtn56Click(Sender: TObject); begin RastPlus(5); end;
+procedure TForm1.BitBtn58Click(Sender: TObject); begin RastPlus(6); end;
+procedure TForm1.BitBtn60Click(Sender: TObject); begin RastPlus(7); end;
+procedure TForm1.BitBtn62Click(Sender: TObject); begin RastPlus(8); end;
+procedure TForm1.BitBtn64Click(Sender: TObject); begin RastPlus(9); end;
+
+procedure TForm1.BitBtn48Click(Sender: TObject); begin RastMinus(1); end;
+procedure TForm1.BitBtn49Click(Sender: TObject); begin RastMinus(2); end;
+procedure TForm1.BitBtn51Click(Sender: TObject); begin RastMinus(3); end;
+procedure TForm1.BitBtn53Click(Sender: TObject); begin RastMinus(4); end;
+procedure TForm1.BitBtn55Click(Sender: TObject); begin RastMinus(5); end;
+procedure TForm1.BitBtn57Click(Sender: TObject); begin RastMinus(6); end;
+procedure TForm1.BitBtn59Click(Sender: TObject); begin RastMinus(7); end;
+procedure TForm1.BitBtn61Click(Sender: TObject); begin RastMinus(8); end;
+procedure TForm1.BitBtn63Click(Sender: TObject); begin RastMinus(9); end;
 
 end.
 

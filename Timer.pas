@@ -27,6 +27,7 @@ type
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure Edit2Exit(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -37,6 +38,8 @@ var
   Form2: TForm2;
 
 implementation
+
+uses Brauerei;
 
 {$R *.dfm}
 
@@ -89,5 +92,14 @@ begin
 end;
 
 
+
+procedure TForm2.FormShow(Sender: TObject);
+var wfaktor:extended;
+begin
+  wfaktor:=strtofloat(form1.Edit95.Text);
+  scaleby(round(wfaktor*100 * (296 / Form2.Width)),100);
+  Form2.Width := round(296 * wfaktor);
+  Form2.Height := round(246 * wfaktor);
+end;
 
 end.

@@ -1,6 +1,6 @@
 object Form3: TForm3
   Left = 455
-  Top = 226
+  Top = 227
   Width = 582
   Height = 265
   HelpType = htKeyword
@@ -8,12 +8,13 @@ object Form3: TForm3
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'MS Sans Serif'
+  Font.Height = -12
+  Font.Name = 'Arial'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 15
   object BitBtn2: TBitBtn
     Left = 296
     Top = 184
@@ -40,7 +41,7 @@ object Form3: TForm3
     Left = 16
     Top = 16
     Width = 393
-    Height = 21
+    Height = 23
     ReadOnly = True
     TabOrder = 2
   end
@@ -48,7 +49,7 @@ object Form3: TForm3
     Left = 16
     Top = 48
     Width = 393
-    Height = 21
+    Height = 23
     ReadOnly = True
     TabOrder = 3
   end
@@ -56,7 +57,7 @@ object Form3: TForm3
     Left = 16
     Top = 80
     Width = 393
-    Height = 21
+    Height = 23
     ReadOnly = True
     TabOrder = 4
   end
@@ -64,7 +65,7 @@ object Form3: TForm3
     Left = 16
     Top = 112
     Width = 393
-    Height = 21
+    Height = 23
     ReadOnly = True
     TabOrder = 5
   end
@@ -72,14 +73,14 @@ object Form3: TForm3
     Left = 16
     Top = 144
     Width = 393
-    Height = 21
+    Height = 23
     ReadOnly = True
     TabOrder = 6
   end
   object Button1: TButton
     Left = 424
     Top = 13
-    Width = 65
+    Width = 73
     Height = 25
     Caption = 'Hinzuf'#252'gen'
     TabOrder = 7
@@ -106,7 +107,7 @@ object Form3: TForm3
   object Button4: TButton
     Left = 424
     Top = 45
-    Width = 65
+    Width = 73
     Height = 25
     Caption = 'Hinzuf'#252'gen'
     TabOrder = 10
@@ -115,7 +116,7 @@ object Form3: TForm3
   object Button5: TButton
     Left = 424
     Top = 77
-    Width = 65
+    Width = 73
     Height = 25
     Caption = 'Hinzuf'#252'gen'
     TabOrder = 11
@@ -142,7 +143,7 @@ object Form3: TForm3
   object Button8: TButton
     Left = 424
     Top = 109
-    Width = 65
+    Width = 73
     Height = 25
     Caption = 'Hinzuf'#252'gen'
     TabOrder = 14
@@ -160,7 +161,7 @@ object Form3: TForm3
   object Button10: TButton
     Left = 424
     Top = 141
-    Width = 65
+    Width = 73
     Height = 25
     Caption = 'Hinzuf'#252'gen'
     TabOrder = 16

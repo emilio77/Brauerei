@@ -1,2 +1,5 @@
-C:\Users\Andreas Wehrle\.kleiner-brauhelfer\kb_daten.sqlite
+C:\Users\Andreas Wehrle\Documents\Bier\kleiner Brauhelfer\kb_daten.sqlite
 
+FALSE
+9999
+0

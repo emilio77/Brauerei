@@ -37,6 +37,7 @@ type
     procedure Button5Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -119,6 +120,15 @@ procedure TForm3.Button10Click(Sender: TObject);
 begin
   Form1.OpenDialog1.FileName:='';
   if Form1.OpenDialog1.Execute then Edit5.Text:=Form1.OpenDialog1.FileName;
+end;
+
+procedure TForm3.FormShow(Sender: TObject);
+var wfaktor:extended;
+begin
+  wfaktor:=strtofloat(form1.Edit95.Text);
+  scaleby(round(wfaktor*100 * (582 / Form3.Width)),100);
+  Form3.Width := round(582 * wfaktor);
+  Form3.Height := round(265 * wfaktor);
 end;
 
 end.

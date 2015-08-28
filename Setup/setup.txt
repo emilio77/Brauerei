@@ -1,9 +1,9 @@
 Installationsverzeichnis;Standard
-Steuerung über "BATCH", "USB oder "LPT";USB
+Steuerung über "BATCH", "USB oder "LPT";LPT
 LPT-Port;888
 LPT-Heizung;1
 LPT-Ruehrwerk;2
-LPT-Pumpe;8
+LPT-Pumpe;4
 LPT-Alarm;128
 USB-Karten-Typ "Denkovi", "KMTronic" oder "SainSmart";Denkovi
 Device-Index;0
@@ -12,35 +12,35 @@ USB-Heizung;1
 USB-Ruehrwerk;2
 USB-Pumpe;3
 USB-Alarm;4
-Batch-Heizung-Ein;C:\Brauerei\Batch\Heizung-Ein-gembird-sispmctl.bat
-Batch-Heizung-Aus;C:\Brauerei\Batch\Heizung-Aus-gembird-sispmctl.bat
-Batch-Ruehrwerk-Ein;C:\Brauerei\Batch\Ruehrwerk-Ein-gembird-sispmctl.bat
-Batch-Ruehrwerk-Aus;C:\Brauerei\Batch\Ruehrwerk-Aus-gembird-sispmctl.bat
-Batch-Pumpe-Ein;C:\Brauerei\Batch\Pumpe-Ein-gembird-sispmctl.bat
-Batch-Pumpe-Aus;C:\Brauerei\Batch\Pumpe-Aus-gembird-sispmctl.bat
-Batch-Alarm-Ein;C:\Brauerei\Batch\Alarm-Ein-gembird-sispmctl.bat
-Batch-Alarm-Aus;C:\Brauerei\Batch\Alarm-Aus-gembird-sispmctl.bat
+Batch-Heizung-Ein;C:\Brauerei\Batch\Heizung-Ein.bat
+Batch-Heizung-Aus;C:\Brauerei\Batch\Heizung-Aus.bat
+Batch-Ruehrwerk-Ein;C:\Brauerei\Batch\Ruehrwerk-Ein.bat
+Batch-Ruehrwerk-Aus;C:\Brauerei\Batch\Ruehrwerk-Aus.bat
+Batch-Pumpe-Ein;C:\Brauerei\Batch\Pumpe-Ein.bat
+Batch-Pumpe-Aus;C:\Brauerei\Batch\Pumpe-Aus.bat
+Batch-Alarm-Ein;C:\Brauerei\Batch\Alarm-Ein.bat
+Batch-Alarm-Aus;C:\Brauerei\Batch\Alarm-Aus.bat
 Taktungstemperatur;2.0
 Einschaltpuls Stufe 1;5
-Ausschaltpuls Stufe 1;10
-Einschaltpuls Stufe 2;8
-Ausschaltpuls Stufe 2;10
-Einschaltpuls Stufe 3;10
-Ausschaltpuls Stufe 3;10
-Einschaltpuls Stufe 4;10
+Ausschaltpuls Stufe 1;5
+Einschaltpuls Stufe 2;5
+Ausschaltpuls Stufe 2;5
+Einschaltpuls Stufe 3;5
+Ausschaltpuls Stufe 3;5
+Einschaltpuls Stufe 4;5
 Ausschaltpuls Stufe 4;5
-Einschaltpuls bis 100°C;10
-Ausschaltpuls bis 100°C;0
+Einschaltpuls bis 100°C;5
+Ausschaltpuls bis 100°C;5
 Überschwingungsdämpfung;1.0
-Schalthysterese Heizung;0.5
-Batchwiederholung;1
+Schalthysterese Heizung;2.0
+Batchwiederholung;0
 Temperatur-Textdatei;log.txt
 Autostart Digitemp.bat;0
 Autostart Digitemp_variabel.bat;0
 Autostart Externe_Sensorsoftware.bat;0
-Aufheizrate pro Minute;1.0
+Aufheizrate pro Minute;2.0
 Relais4;Kühlung
-Schalthysterese Kühlung;1.0
+Schalthysterese Kühlung;2.0
 Rastbegin temperaturabhängig;1
 Rastzeiteinheit;Minuten
 Rührzeiteinheit;Sekunden
@@ -53,7 +53,8 @@ Abkühlrate pro Minute;2.0
 Log-Datei schreiben;1
 Rührwerk mit Heizung koppeln;0
 Rührwerk bei Heizung durchgehend AN;0
-Rührwerk-Zeitabstand;
+Rührwerk-Zeitabstand;5€€€Sekunden
 Kochtemperatur;99
 Temperaturkorrekturwert;0.0
 Temperaturkorrekturfaktor;1.0
+Fensterskalierungsfaktor;1.4

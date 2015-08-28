@@ -87,7 +87,7 @@ Rast 6
 Rast 7
 Rast 8
 Rast 9
-Rast 10
+Rast
 Bei Rasttemperaturüberschreitung
 Bei Rasttemperaturüberschreitung
 Bei Rasttemperaturüberschreitung

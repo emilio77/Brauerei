@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 290
-  Top = 148
+  Left = 348
+  Top = 199
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Brauerei'
@@ -8519,9 +8519,12 @@ object Form1: TForm1
           Top = 22
           Width = 113
           Height = 25
+          Hint = 'Rast 1'
           Caption = 'Rast 1'
           Color = clBtnFace
           ParentColor = False
+          ParentShowHint = False
+          ShowHint = True
           TabOrder = 0
         end
         object Edit2: TEdit
@@ -8549,9 +8552,12 @@ object Form1: TForm1
           Top = 54
           Width = 113
           Height = 25
+          Hint = 'Rast 2'
           Caption = 'Rast 2'
           Color = clBtnFace
           ParentColor = False
+          ParentShowHint = False
+          ShowHint = True
           TabOrder = 3
         end
         object Edit4: TEdit
@@ -8579,9 +8585,12 @@ object Form1: TForm1
           Top = 86
           Width = 113
           Height = 25
+          Hint = 'Rast 3'
           Caption = 'Rast 3'
           Color = clBtnFace
           ParentColor = False
+          ParentShowHint = False
+          ShowHint = True
           TabOrder = 6
         end
         object Edit6: TEdit
@@ -8609,9 +8618,12 @@ object Form1: TForm1
           Top = 118
           Width = 113
           Height = 25
+          Hint = 'Rast 4'
           Caption = 'Rast 4'
           Color = clBtnFace
           ParentColor = False
+          ParentShowHint = False
+          ShowHint = True
           TabOrder = 9
         end
         object Edit8: TEdit
@@ -8639,9 +8651,12 @@ object Form1: TForm1
           Top = 150
           Width = 113
           Height = 25
+          Hint = 'Rast 5'
           Caption = 'Rast 5'
           Color = clBtnFace
           ParentColor = False
+          ParentShowHint = False
+          ShowHint = True
           TabOrder = 12
         end
         object Edit10: TEdit
@@ -8669,9 +8684,12 @@ object Form1: TForm1
           Top = 182
           Width = 113
           Height = 25
+          Hint = 'Rast 6'
           Caption = 'Rast 6'
           Color = clBtnFace
           ParentColor = False
+          ParentShowHint = False
+          ShowHint = True
           TabOrder = 15
         end
         object Edit12: TEdit
@@ -8699,9 +8717,12 @@ object Form1: TForm1
           Top = 214
           Width = 113
           Height = 25
+          Hint = 'Rast 7'
           Caption = 'Rast 7'
           Color = clBtnFace
           ParentColor = False
+          ParentShowHint = False
+          ShowHint = True
           TabOrder = 18
         end
         object Edit14: TEdit
@@ -8729,9 +8750,12 @@ object Form1: TForm1
           Top = 246
           Width = 113
           Height = 25
+          Hint = 'Rast 8'
           Caption = 'Rast 8'
           Color = clBtnFace
           ParentColor = False
+          ParentShowHint = False
+          ShowHint = True
           TabOrder = 21
         end
         object Edit16: TEdit
@@ -8759,9 +8783,12 @@ object Form1: TForm1
           Top = 278
           Width = 113
           Height = 25
+          Hint = 'Rast 9'
           Caption = 'Rast 9'
           Color = clBtnFace
           ParentColor = False
+          ParentShowHint = False
+          ShowHint = True
           TabOrder = 24
         end
         object Edit18: TEdit
@@ -8789,9 +8816,12 @@ object Form1: TForm1
           Top = 310
           Width = 113
           Height = 25
+          Hint = 'Rast 10'
           Caption = 'Rast 10'
           Color = clBtnFace
           ParentColor = False
+          ParentShowHint = False
+          ShowHint = True
           TabOrder = 27
         end
         object Edit20: TEdit
@@ -10405,6 +10435,7 @@ object Form1: TForm1
           Top = 21
           Width = 30
           Height = 30
+          Hint = 'Rast einf'#252'gen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -10480,6 +10511,7 @@ object Form1: TForm1
           Top = 21
           Width = 30
           Height = 30
+          Hint = 'Rast l'#246'schen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -10541,6 +10573,7 @@ object Form1: TForm1
           Top = 53
           Width = 30
           Height = 30
+          Hint = 'Rast einf'#252'gen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -10616,6 +10649,7 @@ object Form1: TForm1
           Top = 53
           Width = 30
           Height = 30
+          Hint = 'Rast l'#246'schen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -10677,6 +10711,7 @@ object Form1: TForm1
           Top = 85
           Width = 30
           Height = 30
+          Hint = 'Rast einf'#252'gen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -10752,6 +10787,7 @@ object Form1: TForm1
           Top = 85
           Width = 30
           Height = 30
+          Hint = 'Rast l'#246'schen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -10813,6 +10849,7 @@ object Form1: TForm1
           Top = 117
           Width = 30
           Height = 30
+          Hint = 'Rast einf'#252'gen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -10888,6 +10925,7 @@ object Form1: TForm1
           Top = 117
           Width = 30
           Height = 30
+          Hint = 'Rast l'#246'schen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -10949,6 +10987,7 @@ object Form1: TForm1
           Top = 149
           Width = 30
           Height = 30
+          Hint = 'Rast einf'#252'gen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -11024,6 +11063,7 @@ object Form1: TForm1
           Top = 149
           Width = 30
           Height = 30
+          Hint = 'Rast l'#246'schen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -11085,6 +11125,7 @@ object Form1: TForm1
           Top = 181
           Width = 30
           Height = 30
+          Hint = 'Rast einf'#252'gen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -11160,6 +11201,7 @@ object Form1: TForm1
           Top = 181
           Width = 30
           Height = 30
+          Hint = 'Rast l'#246'schen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -11221,6 +11263,7 @@ object Form1: TForm1
           Top = 213
           Width = 30
           Height = 30
+          Hint = 'Rast einf'#252'gen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -11296,6 +11339,7 @@ object Form1: TForm1
           Top = 213
           Width = 30
           Height = 30
+          Hint = 'Rast l'#246'schen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -11357,6 +11401,7 @@ object Form1: TForm1
           Top = 245
           Width = 30
           Height = 30
+          Hint = 'Rast einf'#252'gen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -11432,6 +11477,7 @@ object Form1: TForm1
           Top = 245
           Width = 30
           Height = 30
+          Hint = 'Rast l'#246'schen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -11493,6 +11539,7 @@ object Form1: TForm1
           Top = 277
           Width = 30
           Height = 30
+          Hint = 'Rast einf'#252'gen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -11568,6 +11615,7 @@ object Form1: TForm1
           Top = 277
           Width = 30
           Height = 30
+          Hint = 'Rast l'#246'schen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -11629,6 +11677,7 @@ object Form1: TForm1
           Top = 309
           Width = 30
           Height = 30
+          Hint = 'Rast einf'#252'gen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -11704,6 +11753,7 @@ object Form1: TForm1
           Top = 309
           Width = 30
           Height = 30
+          Hint = 'Rast l'#246'schen'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -11765,6 +11815,7 @@ object Form1: TForm1
           Top = 21
           Width = 30
           Height = 30
+          Hint = 'Rast nach unten schieben'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -11817,6 +11868,7 @@ object Form1: TForm1
           Top = 53
           Width = 30
           Height = 30
+          Hint = 'Rast nach oben schieben'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -11882,6 +11934,7 @@ object Form1: TForm1
           Top = 85
           Width = 30
           Height = 30
+          Hint = 'Rast nach oben schieben'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -11947,6 +12000,7 @@ object Form1: TForm1
           Top = 53
           Width = 30
           Height = 30
+          Hint = 'Rast nach unten schieben'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -11999,6 +12053,7 @@ object Form1: TForm1
           Top = 117
           Width = 30
           Height = 30
+          Hint = 'Rast nach oben schieben'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -12064,6 +12119,7 @@ object Form1: TForm1
           Top = 85
           Width = 30
           Height = 30
+          Hint = 'Rast nach unten schieben'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -12116,6 +12172,7 @@ object Form1: TForm1
           Top = 149
           Width = 30
           Height = 30
+          Hint = 'Rast nach oben schieben'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -12181,6 +12238,7 @@ object Form1: TForm1
           Top = 117
           Width = 30
           Height = 30
+          Hint = 'Rast nach unten schieben'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -12233,6 +12291,7 @@ object Form1: TForm1
           Top = 181
           Width = 30
           Height = 30
+          Hint = 'Rast nach oben schieben'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -12298,6 +12357,7 @@ object Form1: TForm1
           Top = 149
           Width = 30
           Height = 30
+          Hint = 'Rast nach unten schieben'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -12350,6 +12410,7 @@ object Form1: TForm1
           Top = 213
           Width = 30
           Height = 30
+          Hint = 'Rast nach oben schieben'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -12415,6 +12476,7 @@ object Form1: TForm1
           Top = 181
           Width = 30
           Height = 30
+          Hint = 'Rast nach unten schieben'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -12467,6 +12529,7 @@ object Form1: TForm1
           Top = 245
           Width = 30
           Height = 30
+          Hint = 'Rast nach oben schieben'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -12532,6 +12595,7 @@ object Form1: TForm1
           Top = 213
           Width = 30
           Height = 30
+          Hint = 'Rast nach unten schieben'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -12584,6 +12648,7 @@ object Form1: TForm1
           Top = 277
           Width = 30
           Height = 30
+          Hint = 'Rast nach oben schieben'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -12649,6 +12714,7 @@ object Form1: TForm1
           Top = 245
           Width = 30
           Height = 30
+          Hint = 'Rast nach unten schieben'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -12701,6 +12767,7 @@ object Form1: TForm1
           Top = 309
           Width = 30
           Height = 30
+          Hint = 'Rast nach oben schieben'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -12766,6 +12833,7 @@ object Form1: TForm1
           Top = 277
           Width = 30
           Height = 30
+          Hint = 'Rast nach unten schieben'
           HelpType = htKeyword
           ParentShowHint = False
           ShowHint = True
@@ -12811,6 +12879,59 @@ object Form1: TForm1
             FF2FD3A533F1BA6AF2C66AF0C462EFC259EEBD53EDB84AEBB42CEFB229E8B1D4
             F0E9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFB1E4D8
             37D1A52FD4A52AD1A121CD9D19CA9A18CC9A20D2A12ED2A582D5BEFEFFFEFFFF
+            FFFFFFFFFFFFFFFFFFFF}
+        end
+        object BitBtn65: TBitBtn
+          Left = 199
+          Top = 3
+          Width = 30
+          Height = 30
+          Hint = 'Arduino-Zusatzfunktionen '#246'ffnen'
+          HelpType = htKeyword
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 48
+          OnClick = BitBtn65Click
+          Glyph.Data = {
+            E6040000424DE604000000000000360000002800000014000000140000000100
+            180000000000B0040000130B0000130B00000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFCFDFCFEFDFFF3F7FCEFEEF1EFF0F0F5F7FCFEFD
+            FFFBFCFAFEFEFEFEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFEFEFDF9F9FFBEBEA0938F3D837B117F7900817800847C13949041C3C2A8
+            FBFBFFFEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFCFDFBFDFFDBD6
+            CC86811C8F85009792039E96019D95019D96029E96029A93028B8400878420DC
+            DAD1FBFDFCFCFCFAFFFFFFFFFFFFFFFFFFFFFFFFFCFDFFCBCAAC807C009A9304
+            9E98009E98029F98019F98019F98019F9802A098009B97019C9206847C00CED1
+            B6FCFBFFFFFFFFFFFFFFFFFFFFFEFEFEDEDECD827E009C9400A09901A19A03A2
+            9D01A49D00A49D00A59E01A39C00A39B02A29A009F99019C9400807B00E5E3D5
+            FDFDFDFEFEFEFEFEFEFFFFFF8583199B9405A09A01A29C00A29D01A4A100A8A2
+            00A7A200A8A301A7A100A59E00A39D00A19C00A19A019B93088C8820FFFFFFFF
+            FFFFFAFDFBC5C398928A009E9800A29D08969000A29B159D9800AAA501ACA504
+            B1A606ABA3019E9700A29B129B90009E9D059E9701908700CBCAA4F9FBF8FFFF
+            FF9594379896019E9700B7AF58F6F9F9FFFFFFFFFFFFCECB8AABA503A7A401CD
+            CD89FFFFFFFFFFFFF8FAF7B6AF599D95009794019C963EFFFFFFFFFFFF7D7800
+            A29407AAAA3FFFFFFFBCB95BAAA30CBCB936F5F2E8D8D5A9D9D6ABF6F4E8BBB3
+            3A9F9C00BCB85CFFFFFFA8AA41A09605817B02FFFFFFF2F2EA827B009C9700D5
+            D6AFCEC98DABA310B1AE31B8AD26B0AD15FAFAF4F9F8F2B0AC14A5A823E0DEB9
+            ACA40BCFCA8BD9D7B19E9600807900FBFBF4EAEDE5837F009D9800DFDDBCC2C3
+            75B2AE30D1D582C9C460ACA500EFECDAEBEBD6ACA100C3C257EFEFE2AFAC2BC5
+            C579DEDBBE9B9800837B00F6F5EFFDFFFA7D7700A29605BBBF68F5F2EF9E9A12
+            A89E00A79F00DEDFB4EDECD9E9EAD9DDDDB0A59B00AAA613A29C14F5F1EDBABD
+            67A29604797600FFFFFFFFFFFF8B88219C97009C9400D5D8A8FFFFFFE2E7D6FE
+            FFFFEEEDD2B1AC14B4AE16EDEED5FFFFFFE3E6DAFFFFFFD6D9A79D9400999800
+            8E8926FFFFFFFBFEFFB5B179998E019D9702A09900A8A72CC5BD64B6B441A6A0
+            00AEA704AFA705A8A302B7B240C6BE61A9A82D9F99009D9602958F01BBB682FA
+            FDFEFBFDFFF8F8ED7E79009E95049F9801A09B00A6A000A7A002A7A201A9A402
+            A9A301A8A301A6A002A6A000A19C009E97009C9405837B04F6FAF7FDFDFCFAFC
+            FCFAFDFFC5C59D8783009E96039E9801A29A01A49B02A49D00A69E02A59E01A5
+            9E01A39B02A29A009F99019E9501878200CDCBA6FEFEFEFDFDFCFFFFFFFFFFFF
+            FEFEFFB4B0778986009D96019E9A009E9801A29C02A19C02A29C02A29C02A299
+            01A099009F9702878300B8B77DFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8FDFEFF
+            FFFFC3C296827E009C90049D96009F98029E98029F98029F98029A9601988F02
+            7F7A00C9C89FFFFFFFFCFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFE
+            FFF3F1E7ACAA64828309817D008C86008E8800827E0084840DAEAC69F6F3EBFC
+            FCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEF9FDFFFC
+            FDFDFFFFFFFFEEEEDDDCDAC1DEDAC2EFEFDEFFFFFFFEFFFFFCFCFEFEFEFFFFFF
             FFFFFFFFFFFFFFFFFFFF}
         end
       end
@@ -12907,6 +13028,872 @@ object Form1: TForm1
           Height = 23
           TabOrder = 9
           OnKeyPress = Edit1KeyPress
+        end
+      end
+      object Panel14: TPanel
+        Left = 296
+        Top = 180
+        Width = 465
+        Height = 345
+        TabOrder = 11
+        Visible = False
+        object Label135: TLabel
+          Left = 9
+          Top = 8
+          Width = 382
+          Height = 15
+          Caption = 
+            'Start Heiz-/K'#252'hlphase        Start Rastphase                   E' +
+            'nde Rastphase'
+        end
+        object ComboBox46: TComboBox
+          Left = 8
+          Top = 25
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 0
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox47: TComboBox
+          Left = 8
+          Top = 57
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 1
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox48: TComboBox
+          Left = 8
+          Top = 89
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 2
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox49: TComboBox
+          Left = 8
+          Top = 121
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 3
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox50: TComboBox
+          Left = 8
+          Top = 153
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 4
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox51: TComboBox
+          Left = 8
+          Top = 185
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 5
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox52: TComboBox
+          Left = 8
+          Top = 217
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 6
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox53: TComboBox
+          Left = 8
+          Top = 249
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 7
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox54: TComboBox
+          Left = 8
+          Top = 281
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 8
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox55: TComboBox
+          Left = 8
+          Top = 313
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 9
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox56: TComboBox
+          Left = 152
+          Top = 25
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 10
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox57: TComboBox
+          Left = 152
+          Top = 57
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 11
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox58: TComboBox
+          Left = 152
+          Top = 89
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 12
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox59: TComboBox
+          Left = 152
+          Top = 121
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 13
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox60: TComboBox
+          Left = 152
+          Top = 153
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 14
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox61: TComboBox
+          Left = 152
+          Top = 185
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 15
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox62: TComboBox
+          Left = 152
+          Top = 217
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 16
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox63: TComboBox
+          Left = 152
+          Top = 249
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 17
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox64: TComboBox
+          Left = 152
+          Top = 281
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 18
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox65: TComboBox
+          Left = 152
+          Top = 313
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 19
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox66: TComboBox
+          Left = 296
+          Top = 25
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 20
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox67: TComboBox
+          Left = 296
+          Top = 57
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 21
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox68: TComboBox
+          Left = 296
+          Top = 89
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 22
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox69: TComboBox
+          Left = 296
+          Top = 121
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 23
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox70: TComboBox
+          Left = 296
+          Top = 153
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 24
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox71: TComboBox
+          Left = 296
+          Top = 185
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 25
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox72: TComboBox
+          Left = 296
+          Top = 217
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 26
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox73: TComboBox
+          Left = 296
+          Top = 249
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 27
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox74: TComboBox
+          Left = 296
+          Top = 281
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 28
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object ComboBox75: TComboBox
+          Left = 296
+          Top = 313
+          Width = 129
+          Height = 23
+          Hint = 'Startbedingung f'#252'r Arduinofunktion'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          TabOrder = 29
+          Text = 'keine Funktion'
+          Items.Strings = (
+            'keine Funktion'
+            'Funktion 1'
+            'Funktion 2'
+            'Funktion 3'
+            'Funktion 4'
+            'Funktion 5'
+            'Funktion 6'
+            'Funktion 7'
+            'Funktion 8'
+            'Funktion 9'
+            'Funktion 10')
+        end
+        object BitBtn66: TBitBtn
+          Left = 431
+          Top = 3
+          Width = 30
+          Height = 30
+          Hint = 'Arduino-Zusatzfunktionen schlie'#223'en'
+          HelpType = htKeyword
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 30
+          OnClick = BitBtn66Click
+          Glyph.Data = {
+            E6040000424DE604000000000000360000002800000014000000140000000100
+            180000000000B0040000130B0000130B00000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFF0000FF0000FF0000FF0000FF0000FF0000FF0000
+            FF0000FFFEFEFEFEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF
+            0000FF0000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFCFD0000FF0000
+            FF0000FF0000FF0000FF9E96019D95019D96029E96020000FF0000FF0000FF00
+            00FF0000FFFCFCFAFFFFFFFFFFFFFFFFFFFFFFFF0000FF0000FF0000FF0000FF
+            9E98009E98029F98019F98019F98019F9802A098009B97010000FF0000FF0000
+            FF0000FFFFFFFFFFFFFFFFFFFF0000FF0000FF0000FF0000FF0000FF0000FFA2
+            9D01A49D00A49D00A59E01A39C00A39B02A29A009F99010000FF0000FF0000FF
+            0000FFFEFEFEFEFEFE0000FF0000FF0000FF0000FF0000FF0000FF0000FFA8A2
+            00A7A200A8A301A7A100A59E00A39D00A19C00A19A010000FF0000FF0000FFFF
+            FFFF0000FF0000FF0000FF9E98000000FF0000FF0000FF0000FF0000FFACA504
+            B1A606ABA3019E9700A29B129B90009E9D059E97010000FF0000FF0000FF0000
+            FF0000FF0000FF9E9700B7AF58F6F9F90000FF0000FF0000FF0000FFA7A401CD
+            CD89FFFFFFFFFFFFF8FAF7B6AF599D95000000FF0000FF0000FF0000FF0000FF
+            A29407AAAA3FFFFFFFBCB95BAAA30C0000FF0000FF0000FF0000FF0000FFBBB3
+            3A9F9C00BCB85CFFFFFFA8AA41A096050000FF0000FF0000FF0000FF9C9700D5
+            D6AFCEC98DABA310B1AE31B8AD260000FF0000FF0000FF0000FF0000FFE0DEB9
+            ACA40BCFCA8BD9D7B19E96000000FF0000FF0000FF0000FF9D9800DFDDBCC2C3
+            75B2AE30D1D582C9C460ACA5000000FF0000FF0000FF0000FF0000FFAFAC2BC5
+            C579DEDBBE9B98000000FF0000FF0000FF0000FFA29605BBBF68F5F2EF9E9A12
+            A89E00A79F00DEDFB4EDECD90000FF0000FF0000FF0000FF0000FFF5F1EDBABD
+            67A296040000FF0000FF0000FF0000FF0000FF9C9400D5D8A8FFFFFFE2E7D6FE
+            FFFFEEEDD2B1AC14B4AE160000FF0000FF0000FF0000FF0000FF9D94000000FF
+            0000FF0000FF0000FF0000FF0000FF9D9702A09900A8A72CC5BD64B6B441A6A0
+            00AEA704AFA705A8A302B7B2400000FF0000FF0000FF9D96020000FF0000FF00
+            00FFFBFDFF0000FF0000FF0000FF9F9801A09B00A6A000A7A002A7A201A9A402
+            A9A301A8A301A6A0020000FF0000FF0000FF0000FF0000FF0000FFFDFDFCFAFC
+            FC0000FF0000FF0000FF0000FF9E9801A29A01A49B02A49D00A69E02A59E01A5
+            9E01A39B02A29A000000FF0000FF0000FF0000FF0000FFFDFDFCFFFFFFFFFFFF
+            0000FF0000FF0000FF0000FF9E9A009E9801A29C02A19C02A29C02A29C02A299
+            01A099000000FF0000FF0000FF0000FFFFFFFFFFFFFFFFFFFFFFFFFFF8FDFE00
+            00FF0000FF0000FF0000FF0000FF9F98029E98029F98029F98020000FF0000FF
+            0000FF0000FF0000FFFCFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000
+            FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
+            00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEF9FDFFFC
+            0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FFFCFCFEFEFEFFFFFF
+            FFFFFFFFFFFFFFFFFFFF}
+        end
+        object BitBtn67: TBitBtn
+          Left = 431
+          Top = 43
+          Width = 30
+          Height = 30
+          Hint = 'Arduino-Zusatzfunktionen schlie'#223'en'
+          HelpType = htKeyword
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 31
+          OnClick = BitBtn67Click
+          Glyph.Data = {
+            D2070000424DD207000000000000420000002800000016000000160000000100
+            200003000000900700005D3700005D3700000000000000000000000000FF0000
+            FF0000FF0000FFFDFCFAFFD1C693FFBFB169FFBFB169FFBFB16AFFBFB16AFFBF
+            B16AFFBFB16AFFC1B26AFFAA9F63FFA49A61FFA49A61FFA49A61FFA49A61FFA4
+            9A61FFA49A61FFA49A61FFA49A61FFA59A61FFA69C64FFD5CFB4FFFFFFFFFFDC
+            D3AAFFC0B26AFFBFB068FFBFB068FFBFB068FFBFB068FFBFB068FFC0B168FFA8
+            9C60FFA3995EFFA3985EFFA3985EFFA3985EFFA3985EFFA3985EFFA3985EFFA3
+            985EFFA3985EFFA3985EFFA3985EFFA19559FFFAF9F6FFD0C691FFC0B068FFBF
+            B068FFBFB068FFBFB068FFBFB068FFC1B268FFA99D61FFA3985EFFA3985EFFA3
+            985EFFA3985EFFA3985EFFA3985EFFA3985EFFA3985EFFA3985EFFA3985EFFA3
+            985EFFA3985EFFA1965BFFDBD5BEFFD1C691FFBFB068FFBFB068FFBFB068FFBF
+            B068FFC2B369FFA99E60FFA3985EFFA3985FFFA3985FFFA3985FFFA3985FFFA3
+            985FFFA3985FFFA3985FFFA3985FFFA3985FFFA3985EFFA3985EFFA3985EFFA1
+            965BFFDBD6C0FFD1C691FFBFB068FFBFB068FFBFB068FFBBAB5EFFC3BB8EFF9E
+            9255FFA79D66FFCEC8A9FFCEC7A7FFCEC7A7FFCEC7A7FFCEC7A7FFCEC7A7FFCE
+            C7A7FFCEC7A7FFCEC8A9FFA69C65FFA3985EFFA3985EFFA1965BFFDBD6C0FFD1
+            C691FFBFB068FFBFB068FFBFB068FFCFC48DFFC6BD8DFFD6D1B7FFADA46FFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFABA16CFFA3985EFFA3985EFFA1965BFFDBD6C0FFD1C691FFBFB068FFBF
+            B068FFBFB068FFC4B774FFC7C2A2FFC1B88EFFBAAE74FFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFABA16CFFA3
+            985EFFA3985EFFA1965BFFDBD6C0FFD1C691FFBFB068FFBFB068FFBFB068FFBB
+            AA5DFFDAD2A6FFAC9F5EFFA99F68FFDCD8C2FFDBD6BFFFDBD6BFFFDBD6BFFFDB
+            D6BFFFDBD6BFFFDBD6BFFFDBD6BFFFDBD8C1FFA89D67FFA3985EFFA3985EFFA1
+            965BFFDBD6C0FFD1C691FFBFB068FFBFB068FFBFB068FFBFB068FFAC9F62FFA3
+            995FFFA3985EFFA59A5FFFA59A5FFFA59A5FFFA59A5FFFA59A5FFFA59A5FFFA5
+            9A5FFFA59A5FFFA59A5FFFA3985EFFA3985EFFA3985EFFA1965BFFDBD6C0FFD1
+            C691FFBFB068FFBFB068FFBFB068FFD4CA9AFFE4E1D1FFC8C29FFFABA16CFFF2
+            F0E8FFF0EFE5FFF0EFE4FFF0EFE5FFF0EFE5FFF0EFE5FFF0EFE5FFF0EFE5FFF2
+            F0E8FFAAA069FFA3985EFFA3985EFFA1965BFFDBD6C0FFD1C691FFBFB068FFBF
+            B068FFBFB068FFBAAB5CFFC5BE9AFFAEA472FFB6AA71FFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFABA16CFFA3
+            985EFFA3985EFFA1965BFFDBD6C0FFD1C691FFBFB068FFBFB068FFBFB068FFCA
+            BE82FFCBC5A5FFD8D0A8FFC6B978FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFABA26DFFA3985EFFA3985EFFA1
+            965BFFDBD6C0FFD1C691FFBFB068FFBFB068FFBFB068FFC0B16BFFB7A654FFBB
+            AC65FFA0965DFFA69B63FFA79B63FFA79B63FFA79B63FFA79B63FFA79B63FFA7
+            9B63FFA79B63FFA69B63FFA39860FFA3985EFFA3985EFFA1965BFFDDD8BFFFD1
+            C691FFBFB068FFBFB068FFBFB068FFBFB068FFBAAC62FFA0965DFFA2985DFF9F
+            9356FFA09456FFA09456FFA09456FFA09456FFA09456FFA09456FFA09456FF9F
+            9456FFA3975DFFA3985EFFA3975EFFAFA361FFE6E0C3FFD1C691FFBFB068FFBF
+            B068FFBFB068FFC0B069FFECE8D1FF9E9355FFABA16DFFFEFFFEFFFCFDFAFFFC
+            FDFAFFFCFDFAFFFCFDFAFFFCFDFAFFFCFDFAFFFCFDFAFFFEFEFEFFABA16CFFA2
+            975EFFB3A564FFBDAE65FFE6E0C3FFD1C691FFBFB068FFBFB068FFBFB068FFC2
+            B46CFFF2F0E7FF9E9155FFC4B776FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA9A06BFFB3A664FFC0B168FFBE
+            AE65FFE6E0C3FFD1C691FFBFB068FFBFB068FFBFB068FFBFB067FFDBD3A9FFB8
+            A962FFC4B675FFFAF8F2FFF8F6EFFFF8F6EFFFF8F6EFFFF8F6EFFFF8F6EFFFF8
+            F6EFFFF8F6EFFFFAF8F1FFBAAE71FFC1B169FFBFB068FFBEAE65FFE6E0C3FFD1
+            C691FFBFB068FFBFB068FFBFB068FFBFB068FFBFB069FFBFB068FFBEAF66FFB8
+            A859FFB9A859FFB9A859FFB9A859FFB9A859FFB9A859FFB9A859FFB9A859FFB8
+            A858FFBEAF67FFBFB068FFBFB068FFBEAE65FFE6E0C3FFD0C691FFC0B068FFBF
+            B068FFBFB068FFBFB068FFBFB068FFBFB068FFBFB068FFBFB068FFBFB068FFBF
+            B068FFBFB068FFBFB068FFBFB068FFBFB068FFBFB068FFBFB068FFBFB068FFBF
+            B068FFBFB068FFBDAE65FFE5E0C3FFD3C795FFBFB069FFBFB068FFBFB068FFBF
+            B068FFBFB068FFBFB068FFBFB068FFBFB068FFBFB068FFBFB068FFBFB068FFBF
+            B068FFBFB068FFBFB068FFBFB068FFBFB068FFBFB068FFBFB068FFBFB068FFBD
+            AE64FFEBE8D1FFF0EDDCFFB7A655FFC0B169FFC0B169FFC0B169FFC0B169FFC0
+            B169FFC0B169FFC0B169FFC0B169FFC0B169FFC0B169FFC0B169FFC0B169FFC0
+            B169FFC0B169FFC0B169FFC0B169FFC0B169FFBFB16AFFBEAE64FFFFFFFFFFFF
+            FFFFFFF5F3E8FFE6E1C5FFE6E0C5FFE6E1C5FFE6E1C5FFE6E1C5FFE6E1C5FFE6
+            E1C5FFE6E1C5FFE6E1C5FFE6E1C5FFE6E1C5FFE6E1C5FFE6E1C5FFE6E1C5FFE6
+            E1C5FFE6E1C5FFE6E1C5FFE7E2C7FFFDFDFBFFFFFFFF}
         end
       end
     end
@@ -16748,7 +17735,7 @@ object Form1: TForm1
         Top = 288
         Width = 433
         Height = 217
-        ActivePage = TabSheet6
+        ActivePage = TabSheet7
         TabOrder = 15
         OnChange = PageControl2Change
         object TabSheet6: TTabSheet
@@ -17008,6 +17995,23 @@ object Form1: TForm1
             ShowHint = True
             TabOrder = 6
             OnClick = CheckBox43Click
+          end
+          object CheckBox31: TCheckBox
+            Left = 16
+            Top = 128
+            Width = 281
+            Height = 17
+            Caption = 'Arduino Zusatzsteuerung '
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Arial'
+            Font.Style = []
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 7
+            OnClick = CheckBox31Click
           end
         end
       end
@@ -17421,18 +18425,12 @@ object Form1: TForm1
     OnTimer = LogTimerTimer
     Left = 784
   end
-  object SimulationTimer: TTimer
-    Enabled = False
-    OnTimer = SimulationTimerTimer
-    Left = 756
-    Top = 472
-  end
   object LogUpdateTimer: TTimer
     Enabled = False
     Interval = 30000
     OnTimer = LogUpdateTimerTimer
     Left = 756
-    Top = 432
+    Top = 480
   end
   object Ueberwachungstimer: TTimer
     Interval = 60000
@@ -17458,10 +18456,10 @@ object Form1: TForm1
   end
   object TimerDlgMove: TTimer
     Enabled = False
-    Interval = 100
+    Interval = 50
     OnTimer = TimerDlgMoveTimer
     Left = 756
-    Top = 393
+    Top = 449
   end
   object StartTimer: TTimer
     Enabled = False
@@ -17473,27 +18471,20 @@ object Form1: TForm1
     Enabled = False
     OnTimer = GesUpdateTimerTimer
     Left = 756
-    Top = 352
-  end
-  object TimerDialogTimer: TTimer
-    Enabled = False
-    Interval = 200
-    OnTimer = TimerDialogTimerTimer
-    Left = 756
-    Top = 312
+    Top = 416
   end
   object TimerTimer: TTimer
     Enabled = False
     OnTimer = TimerTimerTimer
     Left = 756
-    Top = 272
+    Top = 384
   end
   object Timer3: TTimer
     Enabled = False
     Interval = 10000
     OnTimer = Timer3Timer
     Left = 756
-    Top = 232
+    Top = 352
   end
   object TimerKSet: TTimer
     Enabled = False

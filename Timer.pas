@@ -74,6 +74,7 @@ procedure TForm2.BitBtn2Click(Sender: TObject);
 begin
   Label5.Caption:='false';
   Form2.Visible:=false;
+  Form1.Enabled:=true;
 end;
 
 procedure TForm2.BitBtn1Click(Sender: TObject);
@@ -82,6 +83,7 @@ begin
   Label5.Caption:='true';
   DateTimePicker1.Time:=DateTimePicker2.Time;
   DateTimePicker2.Date:=DateTimePicker1.Date;
+  Brauerei.TimerDialogClose;
 end;
 
 procedure TForm2.Edit2Exit(Sender: TObject);

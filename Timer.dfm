@@ -30,46 +30,46 @@ object Form2: TForm2
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Arial'
-    Font.Style = [fsBold]
+    Font.Style = []
     ParentFont = False
   end
   object Label2: TLabel
     Left = 160
     Top = 24
-    Width = 24
+    Width = 23
     Height = 15
     Caption = 'Zeit:'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Arial'
-    Font.Style = [fsBold]
+    Font.Style = []
     ParentFont = False
   end
   object Label4: TLabel
     Left = 243
     Top = 56
-    Width = 24
+    Width = 23
     Height = 15
     Caption = 'sek.'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Arial'
-    Font.Style = [fsBold]
+    Font.Style = []
     ParentFont = False
   end
   object Label3: TLabel
     Left = 16
     Top = 56
-    Width = 153
+    Width = 142
     Height = 15
     Caption = 'Vorlaufzeit f'#252'r Sensorstart:'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Arial'
-    Font.Style = [fsBold]
+    Font.Style = []
     ParentFont = False
   end
   object Label5: TLabel
@@ -127,7 +127,7 @@ object Form2: TForm2
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Arial'
-    Font.Style = [fsBold]
+    Font.Style = []
     ParentFont = False
     TabOrder = 4
     OnClick = CheckBox1Click
@@ -142,7 +142,7 @@ object Form2: TForm2
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Arial'
-    Font.Style = [fsBold]
+    Font.Style = []
     ParentFont = False
     TabOrder = 5
     OnClick = CheckBox2Click
@@ -157,7 +157,7 @@ object Form2: TForm2
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Arial'
-    Font.Style = [fsBold]
+    Font.Style = []
     ParentFont = False
     TabOrder = 6
     OnClick = CheckBox3Click

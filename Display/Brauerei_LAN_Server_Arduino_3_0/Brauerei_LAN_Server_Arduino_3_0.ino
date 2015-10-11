@@ -21,15 +21,17 @@
 // D13 : Ethernet SCK
 
 // Arduino lauscht auf Port 5000 nach UDP Strings
-// Beschreibung des UDP Strings:
-// UDP String ist immer 19stellig
-// Beispiel: CHRpayTDK50.0k43.3c
-// C=Stringstart / c=Stringende
-// H=Heizung an / h=Heizung aus / R=Rührwerk an / r=Rührwer aus / P=Pumpe an / p=Pumpe aus / A=Alarm an / a=Alarm aus
-// x=inaktiv / y=aktiv / z=pausiert
-// T= Zu lange keine Änderung im Logfile
-// D=DS18B20 / N=NTC10k / d=Display
-// K50.0=Solltemperatur / k41.3=Isttemperatur
+// Beschreibung des seriellen Strings:
+// Serieller String ist immer 19stellig
+// Beispiel: C$%"dp/1----------c
+// 1.    Zeichen: "C" Startzeichen
+// 2.    Zeichen: Relaisstatus
+// 3.    Zeichen: Programmstatus und Sensortyp
+// 4.    Zeichen: Solltemperatur
+// 5.+6. Zeichen: Isttemperatur
+// 7.+8. Zeichen: Status der Zusatzfunktionen
+// 9.-18.Zeichen: Frei für weitere Funktionen
+// 19.   Zeichen: "c" Stopzeichen
 
 #include <Wire.h>               // Kommt von Arduino IDE
 #include <LiquidCrystal_I2C.h>  // Kommt von http://arduino-info.wikispaces.com/LCD-Blue-I2C
@@ -38,6 +40,7 @@
 #include <SPI.h>                // needed for Arduino versions later than 0018
 #include <Ethernet.h>           // Kommt von Arduino IDE
 #include <EthernetUdp.h>        // UDP library from: bjoern@cs.stanford.edu 12/30/2008
+#include <avr/wdt.h>            // Kommt von Arduino IDE
 
 OneWire ds(2);                  // OneWireSensor an Pin 2
 
@@ -117,6 +120,8 @@ unsigned int localPort = 5000;               // UDP Port auf dem gelauscht wird
 
 unsigned int answerPort = 5001;              // UDP Port für die Antwort
 
+unsigned long time;                          // Uptime
+
 char packetBuffer[UDP_TX_PACKET_MAX_SIZE];   // buffer to hold incoming packet,
 char  ReplyBuffer[] = "";                    // a string to send back
 
@@ -151,29 +156,84 @@ void loop() {
   lcd.setCursor(0, 1);          
   lcd.print(" Arduino LAN Server ");
   lcd.setCursor(0, 2);
-  lcd.print("       V01.00       ");
+  lcd.print("        V3.0        ");
   lcd.setCursor(0, 3);
   lcd.print("     by emilio      ");
   delay(3000);
   temperatur = temp2();               // Erste Temperaturerfassung
+  wdt_enable(WDTO_8S);
   Braudisplay();                      // Hauptprogramm starten
 }
 
-void Braudisplay()
+void Funktion1()           // Individuelle Funktion
 {
-  int offlinecounter = 0;
-  int incomingByte = 0;
-  char sensor = 'D';                 // Als Startsensor ist der DS18B20 gesetzt ( 'd'=Display, 'N'=NTC10k )
-  char received[24] = "";
+
+}
+
+void Funktion2()           // Individuelle Funktion
+{
+
+}
+
+void Funktion3()           // Individuelle Funktion
+{
+
+}
+
+void Funktion4()           // Individuelle Funktion
+{
+
+}
+
+void Funktion5()           // Individuelle Funktion
+{
+
+}
+
+void Funktion6()           // Individuelle Funktion
+{
+
+}
+
+void Funktion7()           // Individuelle Funktion
+{
+
+}
+
+void Funktion8()           // Individuelle Funktion
+{
+
+}
+
+void Funktion9()           // Individuelle Funktion
+{
+
+}
+
+void Funktion10()           // Individuelle Funktion
+{
+
+}
+
+void noFunktion()
+{
+
+}
+
+void Braudisplay()
+{  
+  char charVal[3];
+  int temp, temp2, offlinecounter2, incomingByte = 0;
+  int offlinecounter = 30;
+  float tempsolltemp, tempisttemp = 0;
+  char sensor= 'D';                  // Als Startsensor ist der DS18B20 gesetzt ( 'd'=Display, 'N'=NTC10k )
+  char temprec[24] = "";
+  char relais[5] = "";
+  char state[3] = "";
   char tempchar[4];
-  char sollchar[4] = "";
-  char statechar = 'o';
-  sollchar[1] = '-';
-  sollchar[2] = '-';
-  sollchar[3] = '.';
-  sollchar[4] = '-';
+  boolean Funktionslog[10];
   lcd.clear();
-BStart:
+  BStart:
   lcd.setCursor(0, 1);               // Basisdisplay-Beschriftung
   lcd.print("Brauerei:   ");
   lcd.setCursor(0, 2);
@@ -197,13 +257,9 @@ BStart:
   {
     temperaturmessungNTC();
     lcd.setCursor(13, 3);
-    if (temperatur > -10 & temperatur < 0) {
-      lcd.print(" ");
-    } else if (temperatur >= 0 & temperatur < 10) {
-      lcd.print("  ");
-    } else if (temperatur >= 10 & temperatur < 100) {
-      lcd.print(" ");
-    }
+    if (temperatur > -10 & temperatur < 0) { lcd.print(" "); } 
+    else if (temperatur >= 0 & temperatur < 10) { lcd.print("  "); } 
+    else if (temperatur >= 10 & temperatur < 100) { lcd.print(" "); }
     lcd.print(temperatur, 1);
     Udp.beginPacket(answerIP, answerPort);
     Udp.write('T' + temperatur + 't');
@@ -214,225 +270,161 @@ BStart:
   {
     temperaturmessungDS18B20();
     lcd.setCursor(13, 3);
-    if (temperatur > -10 & temperatur < 0) {
-      lcd.print(" ");
-    } else if (temperatur >= 0 & temperatur < 10) {
-      lcd.print("  ");
-    } else if (temperatur >= 10 & temperatur < 100) {
-      lcd.print(" ");
-    }
+    if (temperatur > -10 & temperatur < 0) { lcd.print(" "); } 
+    else if (temperatur >= 0 & temperatur < 10) { lcd.print("  "); } 
+    else if (temperatur >= 10 & temperatur < 100) { lcd.print(" "); }
     lcd.print(temperatur, 1);
     dtostrf(temperatur, 3, 1, tempchar);
     Udp.beginPacket(answerIP, answerPort);
     Udp.write('T');
-    for (int i = 0; i < sizeof(tempchar); i++) {
-      Udp.write(tempchar[i]);
-    }
+    for (int i = 0; i < sizeof(tempchar); i++) { Udp.write(tempchar[i]); }
     Udp.write('t');
     Udp.endPacket();
   }
-  delay(200);
+  delay(500);
 
   for (int schleife2 = 0; schleife2 <= 9; schleife2++)  // Schleife für UDP Kommunikation
   {
     delay(210);
     lcd.setCursor(0, 1);
-
-    for (int schleife = 0; schleife < 23; schleife++) {
-      received[schleife] = ' ';
-    }
+    for (int schleife = 0; schleife < 23; schleife++) { temprec[schleife] = ' '; }
     int packetSize = Udp.parsePacket();
     if (packetSize)
     {
       // read the packet into packetBufffer
       Udp.read(packetBuffer, UDP_TX_PACKET_MAX_SIZE);
-      for (int schleife = 0; schleife < 23; schleife++) {
-        received[schleife] = packetBuffer[schleife];
-      }
-      offlinecounter = 0;
+      for (int schleife = 0; schleife < 23; schleife++) { temprec[schleife] = packetBuffer[schleife]; }
     }
+    
+    if ((temprec[0]=='C') && (temprec[18]=='c'))             // Begin der Decodierung des seriellen Strings  
+    { 
+      offlinecounter=0;
+      temp=(int)temprec[1];
+      if ( temp < 0 ) { temp = 256 + temp; }
+      if ( temp > 7) {relais[4]='A';temp=temp-8;} else {relais[4]='a';} 
+      if ( temp > 3) {relais[3]='P';temp=temp-4;} else {relais[3]='p';} 
+      if ( temp > 1) {relais[2]='R';temp=temp-2;} else {relais[2]='r';}
+      if ( temp > 0) {relais[1]='H';temp=temp-1;} else {relais[1]='h';}   
+      temp=(int)temprec[2];
+      if ( temp < 0 ) { temp = 256 + temp; }
+      if ( temp > 127) {sensor='N';temp=temp-128;}  
+      if ( temp > 63) {sensor='D';temp=temp-64;}
+      if ( temp > 31) {sensor='d';temp=temp-32;}    
+      if ( temp > 15) {state[2]='t';temp=temp-16;}  
+      if ( temp > 7) {state[2]='T';temp=temp-8;}  
+      if ( temp > 3) {state[1]='x';temp=temp-4;} 
+      else if ( temp > 1) {state[1]='z';temp=temp-2;}  
+      else if ( temp > 0) {state[1]='y';temp=temp-1;}    
+      temp=(int)temprec[3];
+      if ( temp < 0 ) { temp = 256 + temp; }
+      tempsolltemp=temp;
+      temp=(int)temprec[5];
+      if ( temp < 0 ) { temp = 256 + temp; }
+      temp2=temp;
+      temp=(int)temprec[4];
+      if ( temp < 0 ) { temp = 256 + temp; }
+      temp=temp*256;
+      temp2=temp2+temp;
+      tempisttemp=temp2;
+      tempisttemp=tempisttemp/10;
+      temp=(int)temprec[6];
+      if ( temp < 0 ) { temp = 256 + temp; }
+      temp2=(int)temprec[7];
+      if ( temp2 < 0 ) { temp2 = 256 + temp2; }
+      for (int i=1; i<=10; i++) {Funktionslog[i]=false;}
+      if ( (temp == 0) & (temp2 == 0) ) {noFunktion();} 
+      if ( temp > 127) {Funktion1();Funktionslog[1]=true;temp=temp-128;} 
+      if ( temp > 63) {Funktion2();Funktionslog[2]=true;temp=temp-64;} 
+      if ( temp > 31) {Funktion3();Funktionslog[3]=true;temp=temp-32;} 
+      if ( temp > 15) {Funktion4();Funktionslog[4]=true;temp=temp-16;}    
+      if ( temp > 7) {Funktion5();Funktionslog[5]=true;temp=temp-8;}  
+      if ( temp > 3) {Funktion6();Funktionslog[6]=true;temp=temp-4;} 
+      if ( temp > 1) {Funktion7();Funktionslog[7]=true;temp=temp-2;}  
+      if ( temp > 0) {Funktion8();Funktionslog[8]=true;temp=temp-1;}  
+      if ( temp2 > 1) {Funktion9();Funktionslog[9]=true;temp2=temp2-2;}    
+      if ( temp2 > 0) {Funktion10();Funktionslog[10]=true;temp2=temp2-1;}  
+    }    
 
-    if ( offlinecounter != 10 ) {
-      offlinecounter++;
-    }
+  time = millis();
+  if (time < 100000000) {wdt_reset();}             // WatchDog Reset  
 
+    if ( offlinecounter < 30 ) { offlinecounter++; }
     if (digitalRead(Autoschalter) == LOW)                                                  // wenn Automatikschalter geschlossen dann...
     {
-      if ( offlinecounter == 10 )                                                          // Wenn keinee serielle Verbindung besteht...
+      if ( offlinecounter == 30 )                                                          // Wenn keinee serielle Verbindung besteht...
       {
-        received[1] = 'h'; received[2] = 'r'; received[3] = 'p'; received[4] = 'a';
+        relais[1]='h'; relais[2]='r'; relais[3]='p'; relais[4]='a';
         lcd.setCursor(12, 1);
         lcd.print(" offline");
         lcd.setCursor(2, 3);
         lcd.print(" --.-");
-        sollchar[1] = '-';
-        sollchar[2] = '-';
-        sollchar[3] = '.';
-        sollchar[4] = '-';
-        statechar='o';
+        if (state[1] != 'o') {  offlinecounter2 = 0; }
+        state[1]='o';
+        tempsolltemp=0;
+        for (int i=1; i<=10; i++) {Funktionslog[i]=false;}
       }
-
-      if ((received[0] == 'C') && (received[18] == 'c'))                                   // Wenn serieller String vollständig...
+      if (state[1] == 'o') { offlinecounter2++; }
+      if (offlinecounter2 == 30) { Ethernet.maintain(); }  
+      if (offlinecounter2 == 1000) { offlinecounter2 = 0; }  
+      
+      if ((temprec[0]=='C') && (temprec[18]=='c'))                                   // Wenn serieller String vollständig...
       {
-        if (( received[8] == 'K' ) && ( received[6] != 'T' ))                              // Wenn Zeichen K dann 4 Zeichen ausgeben ( Solltemperatur )
+        if ( state[2] != 'T' )                                                             // Wenn Zeichen K dann 4 Zeichen ausgeben ( Solltemperatur )
         {
-          lcd.setCursor(2, 3); lcd.print(" ");
-          for (int schleife1 = 9; schleife1 < 13; schleife1++)
-          {
-            lcd.write(received[schleife1]);
-            sollchar[schleife1 - 8] = (received[schleife1]);
-          }
+          lcd.setCursor(2, 3); lcd.print(" "); 
+          dtostrf(tempsolltemp, 3, 1, charVal);
+          lcd.print(charVal);          
         }
-        if ( received[13] == 'k' )                                                         // Wenn Zeichen k dann 4 Zeichen ausgeben ( Isttemperatur )
+        if ( sensor == 'd' )                                                                // Wenn Zeichen k dann 4 Zeichen ausgeben ( Isttemperatur )  
         {
-          lcd.setCursor(13, 3); lcd.print(" ");
-          for (int schleife1 = 14; schleife1 < 18; schleife1++)
-          {
-            lcd.write(received[schleife1]);
-          }
-        }
-
-        if ( received[5] == 'x' ) {
-          lcd.setCursor(12, 1);  // Brauerei Status ausgeben
-          lcd.print(" inaktiv");
-          statechar='i';
-        }
-        else if ( received[5] == 'y' ) {
-          lcd.setCursor(12, 1);
-          lcd.print("   aktiv");
-          statechar='a';
-        }
-        else if ( received[5] == 'z' ) {
-          lcd.setCursor(12, 1);
-          lcd.print("pausiert");
-          statechar='p';
-        }
-
-        if ( received[6] == 'T' )
+          lcd.setCursor(13, 3); lcd.print(" "); 
+          dtostrf(tempisttemp, 3, 1, charVal);
+          lcd.print(charVal);
+        } 
+        if ( state[1] == 'x' ) {lcd.setCursor(12, 1); lcd.print(" inaktiv");}                // Brauerei Status ausgeben
+        else if ( state[1] == 'y' ) {lcd.setCursor(12, 1); lcd.print("   aktiv");}
+        else if ( state[1] == 'z' ) {lcd.setCursor(12, 1); lcd.print("pausiert");}  
+        if ( state[2] == 'T' )                                                           
         {
-          received[1] = 'h'; received[2] = 'r'; received[3] = 'p'; received[4] = 'a';
-          lcd.setCursor(12, 1);
-          lcd.print("     aus");
+          relais[1]='h'; relais[2]='r'; relais[3]='p'; relais[4]='a';
+          lcd.setCursor(12, 1); 
+          lcd.print("     aus");  
           lcd.setCursor(2, 3);
-          lcd.print(" --.-");
-          sollchar[1] = '-';
-          sollchar[2] = '-';
-          sollchar[3] = '.';
-          sollchar[4] = '-';
-          statechar='A';
+          lcd.print(" --.-");   
+          tempsolltemp = 0;
+          for (int i=1; i<=10; i++) {Funktionslog[i]=false;}
         }
       }
 
-      if (((received[0] == 'C') && (received[18] == 'c')) || ( offlinecounter == 10 ))
-      {
-        if (received[1] == 'H') {
-          lcd.setCursor(13, 2);  // Relais entsprechend der seriellen Daten schalten und auf Display ausgeben
-          lcd.write(1);
-          lcd.print(" ");
-          digitalWrite(Heizung, an);
-        }
-        else {
-          lcd.setCursor(13, 2);
-          lcd.print("  ");
-          digitalWrite(Heizung, aus);
-        }
-        if (received[2] == 'R') {
-          lcd.setCursor(15, 2);
-          lcd.write(2);
-          lcd.print(" ");
-          digitalWrite(Ruehrwerk, an);
-        }
-        else {
-          lcd.setCursor(15, 2);
-          lcd.print("  ");
-          digitalWrite(Ruehrwerk, aus);
-        }
-        if (received[3] == 'P') {
-          lcd.setCursor(17, 2);
-          lcd.write(4);
-          lcd.print(" ");
-          digitalWrite(Pumpe, an);
-        }
-        else {
-          lcd.setCursor(17, 2);
-          lcd.print("  ");
-          digitalWrite(Pumpe, aus);
-        }
-        if (received[4] == 'A') {
-          lcd.setCursor(19, 2);
-          lcd.write(3);
-          digitalWrite(Summer, an);
-        }
-        else {
-          lcd.setCursor(19, 2);
-          lcd.print(" ");
-          digitalWrite(Summer, aus);
-        }
-      }
-    }
-
-    else if (digitalRead(Autoschalter) == HIGH)                                                                        // wenn Automatikschalter offen dann...
-    {
-      lcd.setCursor(12, 1);
-      lcd.print(" manuell");
-      statechar='m';
-      lcd.setCursor(2, 3);
-      lcd.print(" --.-");
-      if (digitalRead(Heizschalter) == HIGH) {
-        lcd.setCursor(13, 2);  // Relais entsprechend der Schalterstellungen schalten und auf Display ausgeben
-        lcd.print("  ");
-        digitalWrite(Heizung, aus);
-      }
-      else {
-        lcd.setCursor(13, 2);
-        lcd.write(1);
-        lcd.print(" ");
-        digitalWrite(Heizung, an);
-      }
-      if (digitalRead(Ruehrschalter) == HIGH) {
-        lcd.setCursor(15, 2);
-        lcd.print("  ");
-        digitalWrite(Ruehrwerk, aus);
-      }
-      else {
-        lcd.setCursor(15, 2);
-        lcd.write(2);
-        lcd.print(" ");
-        digitalWrite(Ruehrwerk, an);
-      }
-      if (digitalRead(Pumpschalter) == HIGH) {
-        lcd.setCursor(17, 2);
-        lcd.print("  ");
-        digitalWrite(Pumpe, aus);
-      }
-      else {
-        lcd.setCursor(17, 2);
-        lcd.write(4);
-        lcd.print(" ");
-        digitalWrite(Pumpe, an);
-      }
-      if (digitalRead(Alarmschalter) == HIGH) {
-        lcd.setCursor(19, 2);
-        lcd.print(" ");
-        digitalWrite(Summer, aus);
-      }
-      else {
-        lcd.setCursor(19, 2);
-        lcd.write(3);
-        digitalWrite(Summer, an);
-      }
-    }
-  
-    if (((received[0] == 'C') && (received[18] == 'c')) && (received[7] == 'D' )) {
-      sensor = 'D'; // Sensor Typ einstellen
-    }
-    else if (((received[0] == 'C') && (received[18] == 'c')) && (received[7] == 'd' )) {
-      sensor = 'd';
-    }
-    else if (((received[0] == 'C') && (received[18] == 'c')) && (received[7] == 'N' )) {
-      sensor = 'N';
-    }
-    
+      if (((temprec[0]=='C') && (temprec[18]=='c')) || ( state[1]!='o'))
+      {      
+        if (relais[1] == 'H') {lcd.setCursor(13, 2); lcd.write(1); lcd.print(" "); digitalWrite(Heizung,an);}        // Relais entsprechend der seriellen Daten schalten und auf Display ausgeben
+        else {lcd.setCursor(13, 2); lcd.print("  "); digitalWrite(Heizung,aus);}
+        if (relais[2] == 'R') {lcd.setCursor(15, 2); lcd.write(2); lcd.print(" "); digitalWrite(Ruehrwerk,an);}
+        else {lcd.setCursor(15, 2); lcd.print("  "); digitalWrite(Ruehrwerk,aus);}
+        if (relais[3] == 'P') {lcd.setCursor(17, 2); lcd.write(4); lcd.print(" "); digitalWrite(Pumpe,an);}
+        else {lcd.setCursor(17, 2); lcd.print("  "); digitalWrite(Pumpe,aus);}
+        if (relais[4] == 'A') {lcd.setCursor(19, 2); lcd.write(3); digitalWrite(Summer,an);}
+        else {lcd.setCursor(19, 2); lcd.print(" "); digitalWrite(Summer,aus);}
+      }        
+    }   
+    else if (digitalRead(Autoschalter)==HIGH)                                                                          // wenn Automatikschalter offen dann...
+    {  
+      offlinecounter = 30;
+      state[1] = 'o';
+      lcd.setCursor(12, 1); 
+      lcd.print(" manuell"); 
+      lcd.setCursor(2, 3); 
+      lcd.print(" --.-"); 
+      if (digitalRead(Heizschalter)==HIGH) {lcd.setCursor(13, 2); lcd.print("  "); digitalWrite(Heizung,aus);}         // Relais entsprechend der Schalterstellungen schalten und auf Display ausgeben
+      else {lcd.setCursor(13, 2); lcd.write(1); lcd.print(" "); digitalWrite(Heizung,an);}
+      if (digitalRead(Ruehrschalter)==HIGH) {lcd.setCursor(15, 2); lcd.print("  "); digitalWrite(Ruehrwerk,aus);}
+      else {lcd.setCursor(15, 2); lcd.write(2); lcd.print(" "); digitalWrite(Ruehrwerk,an);}
+      if (digitalRead(Pumpschalter)==HIGH) {lcd.setCursor(17, 2); lcd.print("  "); digitalWrite(Pumpe,aus);}
+      else {lcd.setCursor(17, 2); lcd.write(4); lcd.print(" "); digitalWrite(Pumpe,an);}
+      if (digitalRead(Alarmschalter)==HIGH) {lcd.setCursor(19, 2); lcd.print(" "); digitalWrite(Summer,aus);}
+      else {lcd.setCursor(19, 2); lcd.write(3); digitalWrite(Summer,an);}
+    }      
   }
 
   EthernetClient client = server.available();        // WEB-Server für Brauerei
@@ -459,12 +451,12 @@ BStart:
           client.print("<table cellpadding=10 border=3 frame=void>");
           client.print("<tr>");
           client.print("<td><h2>Brauereistatus:</h2></td>");
-          if (statechar=='o') {client.print("<td><h2>OFFLINE</h2></td>");}        
-          if (statechar=='A') {client.print("<td><h2>AUS</h2></td>");}
-          if (statechar=='i') {client.print("<td><h2>INAKTIV</h2></td>");}
-          if (statechar=='a') {client.print("<td><h2>AKTIV</h2></td>");}
-          if (statechar=='p') {client.print("<td><h2>PAUSIERT</h2></td>");}
-          if (statechar=='m') {client.print("<td><h2>MANUELL</h2></td>");}
+          if (state[1]=='o') {client.print("<td><h2>OFFLINE</h2></td>");}        
+          if (state[2]=='T') {client.print("<td><h2>AUS</h2></td>");}
+          if (state[1]=='x') {client.print("<td><h2>INAKTIV</h2></td>");}
+          if (state[1]=='y') {client.print("<td><h2>AKTIV</h2></td>");}
+          if (state[1]=='z') {client.print("<td><h2>PAUSIERT</h2></td>");}
+          if (digitalRead(Autoschalter)==HIGH) {client.print("<td><h2>MANUELL</h2></td>");}
           client.println("</tr>");
           client.print("<tr>");
           client.print("<td><h2>Ist-Temperatur:</h2></td>");
@@ -472,7 +464,7 @@ BStart:
           client.println("</tr>");
           client.print("<tr>");
           client.print("<td>"); client.print(temperatur, 1); client.print(" "); client.print("&#186;"); client.print("C</td>");
-          client.print("<td>"); client.print(sollchar[1]); client.print(sollchar[2]); client.print(sollchar[3]); client.print(sollchar[4]); client.print(" "); client.print("&#186;"); client.print("C</td>");
+          client.print("<td>"); if (tempsolltemp !=0) {client.print(tempsolltemp, 1);} else {client.print("--.-");} client.print(" "); client.print("&#186;"); client.print("C</td>");
           client.println("</tr>");
           client.print("<tr>");
           client.print("<td>&#160;</td>");
@@ -533,7 +525,28 @@ BStart:
           if (sensor == 'N') {
             client.print("<td><h2>NTC10k</h2></td>");
           }
+          client.println("</tr>");          
+
+          client.print("<tr>");
+          client.print("<td>&#160;</td>");
+          client.print("<td>&#160;</td>");
           client.println("</tr>");
+  
+
+          for (int i=1; i<=10; i++) {
+            client.print("<tr>");
+            client.print("<td>Zusatzfunktion ");
+            client.print(i);
+            client.print("</td>");
+            if (Funktionslog[i] == true) {
+              client.print("<td><b><font color=#00B200>AN</font></b></td>");
+            }
+            else {
+              client.print("<td><b><font color=#FF0000>AUS</font></b></td>");
+            }
+            client.println("</tr>");
+          }         
+
           client.println("</table>");
           client.println("</body>");
           client.println("</html>");
@@ -552,15 +565,18 @@ BStart:
   }
   goto BStart;                        // zurück zum Anfang des Hauptprogramms
 
-BEnde:
+  BEnde:
   delay(1);
 }
+
+
 
 void temperaturmessungNTC()           // Glättungsroutine für NTC-Messung
 {
   int c = 1;
   temperaturneu = 0;
-  for (int c = 1; c <= 10; c++) {
+  for (int c = 1; c <= 10; c++) 
+  {
     delay(20);
     temperaturneu = temperaturneu + temp(analogRead(0));
   }
@@ -613,9 +629,7 @@ float temp2()
   byte present = 0;
   byte data[12];
   byte addr[8];
-  if ( !ds.search(addr))  {
-    ds.search(addr); // Wenn keine weitere Adresse vorhanden, von vorne anfangen
-  }
+  if ( !ds.search(addr))  { ds.search(addr); } // Wenn keine weitere Adresse vorhanden, von vorne anfangen
   ds.reset();
   ds.select(addr);
   ds.write(0x44, 1);        // start Konvertierung, mit power-on am Ende
@@ -623,9 +637,7 @@ float temp2()
   present = ds.reset();
   ds.select(addr);
   ds.write(0xBE);           // Wert lesen
-  for ( i = 0; i < 9; i++) {
-    data[i] = ds.read();
-  }
+  for ( i = 0; i < 9; i++) { data[i] = ds.read(); }
   LowByte = data[0];
   HighByte = data[1];
   TReading = (HighByte << 8) + LowByte;

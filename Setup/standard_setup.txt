@@ -38,9 +38,9 @@ Temperatur-Textdatei;log.txt
 Autostart Digitemp.bat;0
 Autostart Digitemp_variabel.bat;0
 Autostart Externe_Sensorsoftware.bat;0
-Aufheizrate pro Minute;1.0
+Aufheizrate pro Minute;2.0
 Relais4;Kühlung
-Schalthysterese Kühlung;1.0
+Schalthysterese Kühlung;2.0
 Rastbegin temperaturabhängig;1
 Rastzeiteinheit;Minuten
 Rührzeiteinheit;Sekunden
@@ -53,7 +53,19 @@ Abkühlrate pro Minute;2.0
 Log-Datei schreiben;1
 Rührwerk mit Heizung koppeln;0
 Rührwerk bei Heizung durchgehend AN;0
-Rührwerk-Zeitabstand;
+Rührwerk-Zeitabstand;5€€€Sekunden
 Kochtemperatur;99
 Temperaturkorrekturwert;0.0
 Temperaturkorrekturfaktor;1.0
+Fensterskalierungsfaktor;1.0
+Arduino-Zusatzfunktionen;1
+Funktionsbeschreibung 1;Hopfungsfunktion€€€1
+Funktionsbeschreibung 2;Malz€€€einwerfen
+Funktionsbeschreibung 3;Funktion€€€3
+Funktionsbeschreibung 4;Funktion€€€4
+Funktionsbeschreibung 5;Funktion€€€5
+Funktionsbeschreibung 6;Funktion€€€6
+Funktionsbeschreibung 7;Funktion€€€7
+Funktionsbeschreibung 8;Funktion€€€8
+Funktionsbeschreibung 9;Funktion€€€9
+Funktionsbeschreibung 10;Funktion€€€10

@@ -18,26 +18,26 @@
 60
 20
 60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
+9999
+9999
+9999
+9999
+9999
+9999
+9999
+9999
+9999
+9999
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
 FALSE
 FALSE
 FALSE
@@ -78,15 +78,15 @@ FALSE
 
 
 
-Rast 1
-Rast 2
-Rast 3
-Rast 4
-Rast 5
-Rast 6
-Rast 7
-Rast 8
-Rast 9
+Rast
+Rast
+Rast
+Rast
+Rast
+Rast
+Rast
+Rast
+Rast
 Rast
 Bei Rasttemperaturüberschreitung
 Bei Rasttemperaturüberschreitung
@@ -98,6 +98,36 @@ Bei Rasttemperaturüberschreitung
 Bei Rasttemperaturüberschreitung
 Bei Rasttemperaturüberschreitung
 Bei Rasttemperaturüberschreitung
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
 Alarm pulsen
 TRUE
 TRUE

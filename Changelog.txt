@@ -1,5 +1,14 @@
 Change-Log:
 
+V 1.57
+Kleinere Bugfixes im Arduino USB- und LAN-Server
+Temperatursimulation verbessert
+Bug Brauruf wird bei Rastsprüngen nicht angezeigt beseitigt
+Bug Zeilenumbruch in Brauruftext beseitigt
+Bug bei Rasttypen beim Import von Kochrezepten entfernt
+Bug bei Rastende und Sprüngen, wenn alle 10 Rasten oder Lücken zwischen den Rasten sind entfernt
+Individuelle Arduinofunktionen zugefügt
+
 V 1.56
 Fensterskalierung eimstellbear
 Alle Dialoge (Abgesehen von Windows eigene Open, Save und Printdialoge) werden Skaliert

@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 348
-  Top = 199
+  Left = 352
+  Top = 216
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Brauerei'
@@ -20,7 +20,7 @@ object Form1: TForm1
   TextHeight = 15
   object Image1: TImage
     Left = 792
-    Top = 28
+    Top = 27
     Width = 177
     Height = 470
     Hint = 
@@ -695,7 +695,7 @@ object Form1: TForm1
     Caption = 'Port:'
   end
   object Label66: TLabel
-    Left = 792
+    Left = 789
     Top = 8
     Width = 167
     Height = 15
@@ -1275,7 +1275,7 @@ object Form1: TForm1
     Top = 8
     Width = 777
     Height = 617
-    ActivePage = TabSheet1
+    ActivePage = TabSheet5
     ParentShowHint = False
     ShowHint = False
     TabOrder = 0
@@ -4642,6 +4642,23 @@ object Form1: TForm1
             050003060103090203070203050203050101252524FF}
           ShowHint = True
           Stretch = True
+        end
+        object Label136: TLabel
+          Left = 272
+          Top = 70
+          Width = 81
+          Height = 16
+          Alignment = taCenter
+          AutoSize = False
+          Caption = 'Label136'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          ParentFont = False
+          Transparent = True
+          Visible = False
         end
         object CheckBox34: TCheckBox
           Left = 456
@@ -15282,414 +15299,13 @@ object Form1: TForm1
       ImageIndex = 3
       ParentShowHint = False
       ShowHint = True
-      object Label73: TLabel
-        Left = 16
-        Top = 20
-        Width = 113
-        Height = 15
-        Caption = 'Hardwaresteuerung:'
-      end
-      object ComboBox1: TComboBox
-        Left = 144
-        Top = 16
-        Width = 89
-        Height = 23
-        Hint = 'Schalt-Hardware angesteuert '#252'ber...'
-        Style = csDropDownList
-        ItemHeight = 15
-        ItemIndex = 0
-        ParentShowHint = False
-        ShowHint = True
-        TabOrder = 0
-        Text = 'USB'
-        OnChange = ComboBox1Change
-        Items.Strings = (
-          'USB'
-          'LPT'
-          'BATCH')
-      end
-      object GroupBox2: TGroupBox
-        Left = 16
-        Top = 48
-        Width = 433
-        Height = 233
-        Caption = 'USB-Steuerung'
-        TabOrder = 8
-        object Label74: TLabel
-          Left = 25
-          Top = 92
-          Width = 87
-          Height = 15
-          Caption = 'Heizung Relais:'
-        end
-        object Label76: TLabel
-          Left = 26
-          Top = 60
-          Width = 85
-          Height = 15
-          Caption = 'USB-COM-Port:'
-          Visible = False
-        end
-        object Label77: TLabel
-          Left = 17
-          Top = 124
-          Width = 95
-          Height = 15
-          Caption = 'R'#252'hrwerk Relais:'
-        end
-        object Label78: TLabel
-          Left = 32
-          Top = 156
-          Width = 82
-          Height = 15
-          Alignment = taRightJustify
-          Caption = 'Pumpe Relais:'
-        end
-        object Label79: TLabel
-          Left = 23
-          Top = 28
-          Width = 86
-          Height = 15
-          Caption = 'USB-Katen-Typ:'
-        end
-        object Label80: TLabel
-          Left = 40
-          Top = 188
-          Width = 74
-          Height = 15
-          Caption = 'Alarm Relais:'
-        end
-        object Label111: TLabel
-          Left = 37
-          Top = 60
-          Width = 73
-          Height = 15
-          Caption = 'Device-Index:'
-        end
-        object ComboBox2: TComboBox
-          Left = 128
-          Top = 24
-          Width = 105
-          Height = 23
-          Hint = 'USB-Schalthardware-Typ'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 1
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 0
-          Text = 'Denkovi'
-          OnChange = ComboBox2Change
-          Items.Strings = (
-            'KMTronic'
-            'Denkovi'
-            'SainSmart')
-        end
-        object ComboBox3: TComboBox
-          Left = 128
-          Top = 88
-          Width = 57
-          Height = 23
-          Hint = 'Verwendete Nummers Relais'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 0
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 3
-          Text = '1'
-          OnChange = ComboBox3Change
-          Items.Strings = (
-            '1'
-            '2'
-            '3'
-            '4')
-        end
-        object ComboBox4: TComboBox
-          Left = 128
-          Top = 120
-          Width = 57
-          Height = 23
-          Hint = 'Verwendete Nummers Relais'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 1
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 4
-          Text = '2'
-          OnChange = ComboBox4Change
-          Items.Strings = (
-            '1'
-            '2'
-            '3'
-            '4')
-        end
-        object ComboBox5: TComboBox
-          Left = 128
-          Top = 152
-          Width = 57
-          Height = 23
-          Hint = 'Verwendete Nummers Relais'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 2
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 5
-          Text = '3'
-          OnChange = ComboBox5Change
-          Items.Strings = (
-            '1'
-            '2'
-            '3'
-            '4')
-        end
-        object ComboBox6: TComboBox
-          Left = 128
-          Top = 184
-          Width = 57
-          Height = 23
-          Hint = 'Verwendete Nummers Relais'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 3
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 6
-          Text = '4'
-          OnChange = ComboBox6Change
-          Items.Strings = (
-            '1'
-            '2'
-            '3'
-            '4')
-        end
-        object ComboBox7: TComboBox
-          Left = 128
-          Top = 56
-          Width = 81
-          Height = 23
-          Hint = 'COM-Port der USB-Hardware'
-          Style = csDropDownList
-          ItemHeight = 15
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 2
-          Visible = False
-          OnChange = ComboBox7Change
-          Items.Strings = (
-            'COM1'
-            'COM2'
-            'COM3'
-            'COM4'
-            'COM5'
-            'COM6'
-            'COM7'
-            'COM8'
-            'COM9'
-            'COM10')
-        end
-        object ComboBox16: TComboBox
-          Left = 128
-          Top = 56
-          Width = 57
-          Height = 23
-          Hint = 
-            'Der Device-Index muss ggf. angepasst werden, wenn '#13#10'Temperatur- ' +
-            'oder andere Hardware benutzt wird die'#13#10'den gleichen Chip benutzt' +
-            ' wie die Denkovi-Relais-'#13#10'Karte.'
-          Style = csDropDownList
-          ItemHeight = 15
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 1
-          OnChange = ComboBox16Change
-          Items.Strings = (
-            '0'
-            '1'
-            '2'
-            '3'
-            '4'
-            '5')
-        end
-      end
-      object GroupBox3: TGroupBox
-        Left = 16
-        Top = 48
-        Width = 433
-        Height = 233
-        Caption = 'LPT-Steuerung'
-        TabOrder = 9
-        object Label75: TLabel
-          Left = 26
-          Top = 68
-          Width = 87
-          Height = 15
-          Caption = 'Heizung Relais:'
-        end
-        object Label82: TLabel
-          Left = 18
-          Top = 100
-          Width = 95
-          Height = 15
-          Caption = 'R'#252'hrwerk Relais:'
-        end
-        object Label83: TLabel
-          Left = 32
-          Top = 132
-          Width = 82
-          Height = 15
-          Alignment = taRightJustify
-          Caption = 'Pumpe Relais:'
-        end
-        object Label84: TLabel
-          Left = 61
-          Top = 36
-          Width = 50
-          Height = 15
-          Caption = 'LPT Port:'
-        end
-        object Label85: TLabel
-          Left = 40
-          Top = 164
-          Width = 74
-          Height = 15
-          Caption = 'Alarm Relais:'
-        end
-        object ComboBox8: TComboBox
-          Left = 128
-          Top = 32
-          Width = 57
-          Height = 23
-          Hint = 'Nummer des LPT-Ports (dezimal)'
-          ItemHeight = 15
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 0
-          Text = '888'
-          OnChange = ComboBox8Change
-          Items.Strings = (
-            '888'
-            '632'
-            '956'
-            '36856'
-            '36857'
-            '36858'
-            '36859'
-            '36860'
-            '36861'
-            '36862'
-            '36863'
-            '36852'
-            '36853'
-            '36854'
-            '36855')
-        end
-        object ComboBox9: TComboBox
-          Left = 128
-          Top = 64
-          Width = 57
-          Height = 23
-          Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 0
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 1
-          Text = '1'
-          OnChange = ComboBox9Change
-          Items.Strings = (
-            '1'
-            '2'
-            '4'
-            '8'
-            '16'
-            '32'
-            '64'
-            '128')
-        end
-        object ComboBox10: TComboBox
-          Left = 128
-          Top = 96
-          Width = 57
-          Height = 23
-          Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 1
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 2
-          Text = '2'
-          OnChange = ComboBox10Change
-          Items.Strings = (
-            '1'
-            '2'
-            '4'
-            '8'
-            '16'
-            '32'
-            '64'
-            '128')
-        end
-        object ComboBox11: TComboBox
-          Left = 128
-          Top = 128
-          Width = 57
-          Height = 23
-          Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 2
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 3
-          Text = '4'
-          OnChange = ComboBox11Change
-          Items.Strings = (
-            '1'
-            '2'
-            '4'
-            '8'
-            '16'
-            '32'
-            '64'
-            '128')
-        end
-        object ComboBox12: TComboBox
-          Left = 128
-          Top = 160
-          Width = 57
-          Height = 23
-          Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 7
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 4
-          Text = '128'
-          OnChange = ComboBox12Change
-          Items.Strings = (
-            '1'
-            '2'
-            '4'
-            '8'
-            '16'
-            '32'
-            '64'
-            '128')
-        end
-      end
       object GroupBox4: TGroupBox
         Left = 472
-        Top = 48
-        Width = 273
+        Top = 68
+        Width = 289
         Height = 209
         Caption = 'Puls / Gradient'
-        TabOrder = 10
+        TabOrder = 3
         object Label88: TLabel
           Left = 17
           Top = 181
@@ -15850,7 +15466,6 @@ object Form1: TForm1
           ItemIndex = 20
           TabOrder = 15
           Text = '2.0'
-          OnChange = ComboBox13Change
           Items.Strings = (
             '0.0'
             '0.1'
@@ -15896,7 +15511,6 @@ object Form1: TForm1
           ItemIndex = 5
           TabOrder = 1
           Text = '5'
-          OnChange = ComboBox14Change
           Items.Strings = (
             '0'
             '1'
@@ -16012,7 +15626,6 @@ object Form1: TForm1
           ItemIndex = 5
           TabOrder = 2
           Text = '5'
-          OnChange = ComboBox15Change
           Items.Strings = (
             '0'
             '1'
@@ -16128,7 +15741,6 @@ object Form1: TForm1
           ItemIndex = 5
           TabOrder = 4
           Text = '5'
-          OnChange = ComboBox17Change
           Items.Strings = (
             '0'
             '1'
@@ -16244,7 +15856,6 @@ object Form1: TForm1
           ItemIndex = 5
           TabOrder = 5
           Text = '5'
-          OnChange = ComboBox18Change
           Items.Strings = (
             '0'
             '1'
@@ -16360,7 +15971,6 @@ object Form1: TForm1
           ItemIndex = 5
           TabOrder = 7
           Text = '5'
-          OnChange = ComboBox19Change
           Items.Strings = (
             '0'
             '1'
@@ -16476,7 +16086,6 @@ object Form1: TForm1
           ItemIndex = 5
           TabOrder = 8
           Text = '5'
-          OnChange = ComboBox20Change
           Items.Strings = (
             '0'
             '1'
@@ -16592,7 +16201,6 @@ object Form1: TForm1
           ItemIndex = 5
           TabOrder = 10
           Text = '5'
-          OnChange = ComboBox21Change
           Items.Strings = (
             '0'
             '1'
@@ -16708,7 +16316,6 @@ object Form1: TForm1
           ItemIndex = 5
           TabOrder = 11
           Text = '5'
-          OnChange = ComboBox22Change
           Items.Strings = (
             '0'
             '1'
@@ -16824,7 +16431,6 @@ object Form1: TForm1
           ItemIndex = 5
           TabOrder = 13
           Text = '5'
-          OnChange = ComboBox23Change
           Items.Strings = (
             '0'
             '1'
@@ -16940,7 +16546,6 @@ object Form1: TForm1
           ItemIndex = 5
           TabOrder = 12
           Text = '5'
-          OnChange = ComboBox24Change
           Items.Strings = (
             '0'
             '1'
@@ -17058,7 +16663,6 @@ object Form1: TForm1
           ItemIndex = 10
           TabOrder = 14
           Text = '1.0'
-          OnChange = ComboBox25Change
           Items.Strings = (
             '0.0'
             '0.1'
@@ -17161,95 +16765,16 @@ object Form1: TForm1
           OnKeyPress = Edit1KeyPress
         end
       end
-      object Button26: TButton
-        Left = 16
-        Top = 520
-        Width = 193
-        Height = 41
-        Hint = 'Startet die zugeordnete Batch-Datei.'
-        Caption = 'Digitemp.bat starten'
-        TabOrder = 1
-        OnClick = Button26Click
-      end
-      object Button27: TButton
-        Left = 232
-        Top = 520
-        Width = 217
-        Height = 41
-        Hint = 'Startet die zugeordnete Batch-Datei.'
-        Caption = 'Digitemp_variabel.bat starten'
-        TabOrder = 3
-        OnClick = Button27Click
-      end
-      object Button28: TButton
-        Left = 472
-        Top = 520
-        Width = 273
-        Height = 41
-        Hint = 'Startet die zugeordnete Batch-Datei.'
-        Caption = 'Externe_Sensorsoftware.bat starten'
-        TabOrder = 5
-        OnClick = Button28Click
-      end
-      object CheckBox38: TCheckBox
-        Left = 24
-        Top = 564
-        Width = 193
-        Height = 17
-        Hint = 'Startet die zugeordnete Batch-Datei beim Start.'
-        Caption = 'Autostart bei Programmstart'
-        TabOrder = 2
-        OnClick = CheckBox38Click
-      end
-      object CheckBox39: TCheckBox
-        Left = 240
-        Top = 564
-        Width = 193
-        Height = 17
-        Hint = 'Startet die zugeordnete Batch-Datei beim Start.'
-        Caption = 'Autostart bei Programmstart'
-        TabOrder = 4
-        OnClick = CheckBox39Click
-      end
-      object CheckBox40: TCheckBox
-        Left = 480
-        Top = 564
-        Width = 193
-        Height = 17
-        Hint = 'Startet die zugeordnete Batch-Datei beim Start.'
-        Caption = 'Autostart bei Programmstart'
-        TabOrder = 6
-        OnClick = CheckBox40Click
-      end
-      object GroupBox5: TGroupBox
-        Left = 472
-        Top = 456
-        Width = 273
-        Height = 49
-        Hint = 'Eingabefeld f'#252'r den Dateinamen der Temperatur-Datei.'
-        Caption = 'Name der Temperatur-Textdatei'
-        TabOrder = 13
-        object Edit62: TEdit
-          Left = 8
-          Top = 19
-          Width = 257
-          Height = 23
-          TabOrder = 0
-          Text = 'log.txt'
-          OnExit = Edit62Exit
-          OnKeyPress = Edit1KeyPress
-        end
-      end
       object GroupBox6: TGroupBox
         Left = 472
-        Top = 268
-        Width = 273
+        Top = 279
+        Width = 289
         Height = 100
         Hint = 
           'Eingabefeld f'#252'r die Aufheizrate die zur Berechnung '#13#10'der ETA ver' +
           'wendet wird.'
         Caption = 'Heiz- und K'#252'hlkurven-Information'
-        TabOrder = 11
+        TabOrder = 4
         object Label59: TLabel
           Left = 17
           Top = 23
@@ -17302,7 +16827,6 @@ object Form1: TForm1
           ItemIndex = 20
           TabOrder = 0
           Text = '2.0'
-          OnChange = ComboBox27Change
           Items.Strings = (
             '0.0'
             '0.1'
@@ -17347,7 +16871,6 @@ object Form1: TForm1
           ItemIndex = 20
           TabOrder = 1
           Text = '2.0'
-          OnChange = ComboBox44Change
           Items.Strings = (
             '0.0'
             '0.1'
@@ -17393,7 +16916,6 @@ object Form1: TForm1
           ItemIndex = 1
           TabOrder = 2
           Text = '99'
-          OnChange = ComboBox34Change
           Items.Strings = (
             '100'
             '99'
@@ -17406,11 +16928,11 @@ object Form1: TForm1
       end
       object GroupBox7: TGroupBox
         Left = 472
-        Top = 377
-        Width = 273
+        Top = 381
+        Width = 289
         Height = 68
         Caption = 'Hysterese'
-        TabOrder = 12
+        TabOrder = 5
         object Label112: TLabel
           Left = 17
           Top = 20
@@ -17539,29 +17061,29 @@ object Form1: TForm1
         end
       end
       object GroupBox1: TGroupBox
-        Left = 16
-        Top = 48
-        Width = 433
-        Height = 233
+        Left = 8
+        Top = 209
+        Width = 449
+        Height = 240
         Caption = 'Batch-Datei-Steuerung'
-        TabOrder = 7
+        TabOrder = 0
         object Label62: TLabel
           Left = 19
-          Top = 28
+          Top = 26
           Width = 69
           Height = 15
           Caption = 'Heizung Ein:'
         end
         object Label65: TLabel
           Left = 18
-          Top = 50
+          Top = 49
           Width = 71
           Height = 15
           Caption = 'Heizung Aus:'
         end
         object Label67: TLabel
           Left = 10
-          Top = 94
+          Top = 95
           Width = 79
           Height = 15
           Caption = 'R'#252'hrwerk Aus:'
@@ -17575,7 +17097,7 @@ object Form1: TForm1
         end
         object Label69: TLabel
           Left = 25
-          Top = 116
+          Top = 118
           Width = 64
           Height = 15
           Alignment = taRightJustify
@@ -17583,7 +17105,7 @@ object Form1: TForm1
         end
         object Label70: TLabel
           Left = 23
-          Top = 138
+          Top = 141
           Width = 66
           Height = 15
           Alignment = taRightJustify
@@ -17591,125 +17113,117 @@ object Form1: TForm1
         end
         object Label71: TLabel
           Left = 32
-          Top = 160
+          Top = 164
           Width = 56
           Height = 15
           Caption = 'Alarm Ein:'
         end
         object Label72: TLabel
           Left = 32
-          Top = 182
+          Top = 186
           Width = 58
           Height = 15
           Caption = 'Alarm Aus:'
         end
         object Edit54: TEdit
           Left = 96
-          Top = 24
-          Width = 321
+          Top = 22
+          Width = 337
           Height = 23
           Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
           ParentShowHint = False
           ShowHint = True
           TabOrder = 0
           Text = 'C:\Brauerei\Batch\Heizung-Ein.bat'
-          OnExit = Edit54Exit
           OnKeyPress = Edit1KeyPress
         end
         object Edit55: TEdit
           Left = 96
-          Top = 46
-          Width = 321
+          Top = 45
+          Width = 337
           Height = 23
           Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
           ParentShowHint = False
           ShowHint = True
           TabOrder = 1
           Text = 'C:\Brauerei\Batch\Heizung-Aus.bat'
-          OnExit = Edit55Exit
           OnKeyPress = Edit1KeyPress
         end
         object Edit56: TEdit
           Left = 96
           Top = 68
-          Width = 321
+          Width = 337
           Height = 23
           Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
           ParentShowHint = False
           ShowHint = True
           TabOrder = 2
           Text = 'C:\Brauerei\Batch\Ruehrwerk-Ein.bat'
-          OnExit = Edit56Exit
           OnKeyPress = Edit1KeyPress
         end
         object Edit57: TEdit
           Left = 96
-          Top = 90
-          Width = 321
+          Top = 91
+          Width = 337
           Height = 23
           Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
           ParentShowHint = False
           ShowHint = True
           TabOrder = 3
           Text = 'C:\Brauerei\Batch\Ruehrwerk-Aus.bat'
-          OnExit = Edit57Exit
           OnKeyPress = Edit1KeyPress
         end
         object Edit58: TEdit
           Left = 96
-          Top = 112
-          Width = 321
+          Top = 114
+          Width = 337
           Height = 23
           Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
           ParentShowHint = False
           ShowHint = True
           TabOrder = 4
           Text = 'C:\Brauerei\Batch\Pumpe-Ein.bat'
-          OnExit = Edit58Exit
           OnKeyPress = Edit1KeyPress
         end
         object Edit59: TEdit
           Left = 96
-          Top = 134
-          Width = 321
+          Top = 137
+          Width = 337
           Height = 23
           Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
           ParentShowHint = False
           ShowHint = True
           TabOrder = 5
           Text = 'C:\Brauerei\Batch\Pumpe-Aus.bat'
-          OnExit = Edit59Exit
           OnKeyPress = Edit1KeyPress
         end
         object Edit60: TEdit
           Left = 96
-          Top = 156
-          Width = 321
+          Top = 160
+          Width = 337
           Height = 23
           Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
           ParentShowHint = False
           ShowHint = True
           TabOrder = 6
           Text = 'C:\Brauerei\Batch\Alarm-Ein.bat'
-          OnExit = Edit60Exit
           OnKeyPress = Edit1KeyPress
         end
         object Edit61: TEdit
           Left = 96
-          Top = 178
-          Width = 321
+          Top = 182
+          Width = 337
           Height = 23
           Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
           ParentShowHint = False
           ShowHint = True
           TabOrder = 7
           Text = 'C:\Brauerei\Batch\Alarm-Aus.bat'
-          OnExit = Edit61Exit
           OnKeyPress = Edit1KeyPress
         end
         object CheckBox35: TCheckBox
           Left = 96
-          Top = 206
+          Top = 213
           Width = 321
           Height = 17
           Hint = 'Zyklisches wiederholen der Batch-Dateien '
@@ -17717,26 +17231,25 @@ object Form1: TForm1
           ParentShowHint = False
           ShowHint = True
           TabOrder = 8
-          OnClick = CheckBox35Click
         end
       end
       object Button2: TButton
-        Left = 640
-        Top = 8
-        Width = 105
-        Height = 33
+        Left = 472
+        Top = 27
+        Width = 289
+        Height = 37
         Hint = 'Alle Einstellungen auf Auslieferzustand '#13#10'zur'#252'cksetzen.'
         Caption = 'Zur'#252'cksetzen'
-        TabOrder = 14
+        TabOrder = 7
         OnClick = Button2Click
       end
       object PageControl2: TPageControl
-        Left = 16
-        Top = 288
-        Width = 433
-        Height = 217
-        ActivePage = TabSheet7
-        TabOrder = 15
+        Left = 8
+        Top = 5
+        Width = 449
+        Height = 196
+        ActivePage = TabSheet6
+        TabOrder = 8
         OnChange = PageControl2Change
         object TabSheet6: TTabSheet
           Caption = 'Basisparameter'
@@ -17749,14 +17262,14 @@ object Form1: TForm1
           end
           object Label127: TLabel
             Left = 8
-            Top = 76
+            Top = 108
             Width = 137
             Height = 15
             Caption = 'Temperaturkorrekturwert:'
           end
           object Label128: TLabel
             Left = 8
-            Top = 106
+            Top = 138
             Width = 144
             Height = 15
             Caption = 'Temperaturkorrekturfaktor:'
@@ -17769,16 +17282,30 @@ object Form1: TForm1
             Caption = 'Raststart Standard:'
           end
           object Label129: TLabel
-            Left = 8
-            Top = 162
-            Width = 140
+            Left = 243
+            Top = 106
+            Width = 103
             Height = 15
-            Caption = 'Fensterskalierungsfaktor:'
+            Caption = 'Fensterskalierung:'
+          end
+          object Label73: TLabel
+            Left = 244
+            Top = 76
+            Width = 95
+            Height = 15
+            Caption = 'Relaissteuerung:'
+          end
+          object Label140: TLabel
+            Left = 9
+            Top = 76
+            Width = 119
+            Height = 15
+            Caption = 'Temperaturmessung:'
           end
           object ComboBox28: TComboBox
             Left = 136
             Top = 9
-            Width = 281
+            Width = 297
             Height = 23
             Hint = 'Auswahl m'#246'glicher Hardwarekomponenten'
             Style = csDropDownList
@@ -17792,8 +17319,8 @@ object Form1: TForm1
               'Heizung, R'#252'hrwerk, Pumpe, Alarm')
           end
           object Edit93: TEdit
-            Left = 172
-            Top = 72
+            Left = 182
+            Top = 104
             Width = 41
             Height = 23
             TabOrder = 1
@@ -17802,8 +17329,8 @@ object Form1: TForm1
             OnKeyPress = Edit1KeyPress
           end
           object Edit94: TEdit
-            Left = 172
-            Top = 102
+            Left = 182
+            Top = 134
             Width = 41
             Height = 23
             TabOrder = 2
@@ -17814,7 +17341,7 @@ object Form1: TForm1
           object ComboBox31: TComboBox
             Left = 136
             Top = 41
-            Width = 281
+            Width = 297
             Height = 23
             Hint = 
               'Bei Rasttemperatur'#252'berschreitung:'#13#10'Die Rastzeit startet, wenn di' +
@@ -17837,14 +17364,54 @@ object Form1: TForm1
               'Bei Rasttemperaturunterschreitung')
           end
           object Edit95: TEdit
-            Left = 172
-            Top = 157
+            Left = 390
+            Top = 101
             Width = 41
             Height = 23
             TabOrder = 4
             Text = '1.0'
             OnExit = Edit95Exit
             OnKeyPress = Edit1KeyPress
+          end
+          object ComboBox1: TComboBox
+            Left = 344
+            Top = 72
+            Width = 89
+            Height = 23
+            Hint = 'Schalt-Hardware angesteuert '#252'ber...'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 0
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 5
+            Text = 'USB'
+            OnChange = ComboBox1Change
+            Items.Strings = (
+              'USB'
+              'LPT'
+              'WLAN'
+              'ARDUINO'
+              'BATCH')
+          end
+          object ComboBox39: TComboBox
+            Left = 136
+            Top = 72
+            Width = 89
+            Height = 23
+            Hint = 'Schalt-Hardware angesteuert '#252'ber...'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 0
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 6
+            Text = 'Textdatei'
+            OnChange = ComboBox39Change
+            Items.Strings = (
+              'Textdatei'
+              'DIGITEMP'
+              'ARDUINO')
           end
         end
         object TabSheet7: TTabSheet
@@ -17940,7 +17507,6 @@ object Form1: TForm1
             ShowHint = True
             State = cbChecked
             TabOrder = 3
-            OnClick = CheckBox32Click
           end
           object CheckBox42: TCheckBox
             Left = 16
@@ -17970,7 +17536,6 @@ object Form1: TForm1
             ItemIndex = 0
             TabOrder = 5
             Text = '5 Sekunden'
-            OnChange = ComboBox45Change
             Items.Strings = (
               '5 Sekunden'
               '10 Sekunden'
@@ -17997,9 +17562,9 @@ object Form1: TForm1
             OnClick = CheckBox43Click
           end
           object CheckBox31: TCheckBox
-            Left = 16
-            Top = 128
-            Width = 281
+            Left = 248
+            Top = 144
+            Width = 201
             Height = 17
             Caption = 'Arduino Zusatzsteuerung '
             Font.Charset = DEFAULT_CHARSET
@@ -18013,7 +17578,865 @@ object Form1: TForm1
             TabOrder = 7
             OnClick = CheckBox31Click
           end
+          object CheckBox45: TCheckBox
+            Left = 16
+            Top = 144
+            Width = 185
+            Height = 17
+            Caption = 'Arduino Parallelbetrieb '
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Arial'
+            Font.Style = []
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 8
+            OnClick = CheckBox45Click
+          end
         end
+      end
+      object GroupBox3: TGroupBox
+        Left = 8
+        Top = 209
+        Width = 449
+        Height = 240
+        Caption = 'LPT-Steuerung'
+        TabOrder = 2
+        object Label75: TLabel
+          Left = 26
+          Top = 68
+          Width = 87
+          Height = 15
+          Caption = 'Heizung Relais:'
+        end
+        object Label82: TLabel
+          Left = 18
+          Top = 100
+          Width = 95
+          Height = 15
+          Caption = 'R'#252'hrwerk Relais:'
+        end
+        object Label83: TLabel
+          Left = 32
+          Top = 132
+          Width = 82
+          Height = 15
+          Alignment = taRightJustify
+          Caption = 'Pumpe Relais:'
+        end
+        object Label84: TLabel
+          Left = 61
+          Top = 36
+          Width = 50
+          Height = 15
+          Caption = 'LPT Port:'
+        end
+        object Label85: TLabel
+          Left = 40
+          Top = 164
+          Width = 74
+          Height = 15
+          Caption = 'Alarm Relais:'
+        end
+        object ComboBox8: TComboBox
+          Left = 128
+          Top = 32
+          Width = 57
+          Height = 23
+          Hint = 'Nummer des LPT-Ports (dezimal)'
+          ItemHeight = 15
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+          Text = '888'
+          Items.Strings = (
+            '888'
+            '632'
+            '956'
+            '36856'
+            '36857'
+            '36858'
+            '36859'
+            '36860'
+            '36861'
+            '36862'
+            '36863'
+            '36852'
+            '36853'
+            '36854'
+            '36855')
+        end
+        object ComboBox9: TComboBox
+          Left = 128
+          Top = 64
+          Width = 57
+          Height = 23
+          Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 1
+          Text = '1'
+          Items.Strings = (
+            '1'
+            '2'
+            '4'
+            '8'
+            '16'
+            '32'
+            '64'
+            '128')
+        end
+        object ComboBox10: TComboBox
+          Left = 128
+          Top = 96
+          Width = 57
+          Height = 23
+          Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 1
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 2
+          Text = '2'
+          Items.Strings = (
+            '1'
+            '2'
+            '4'
+            '8'
+            '16'
+            '32'
+            '64'
+            '128')
+        end
+        object ComboBox11: TComboBox
+          Left = 128
+          Top = 128
+          Width = 57
+          Height = 23
+          Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 2
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 3
+          Text = '4'
+          Items.Strings = (
+            '1'
+            '2'
+            '4'
+            '8'
+            '16'
+            '32'
+            '64'
+            '128')
+        end
+        object ComboBox12: TComboBox
+          Left = 128
+          Top = 160
+          Width = 57
+          Height = 23
+          Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 7
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 4
+          Text = '128'
+          Items.Strings = (
+            '1'
+            '2'
+            '4'
+            '8'
+            '16'
+            '32'
+            '64'
+            '128')
+        end
+      end
+      object GroupBox2: TGroupBox
+        Left = 8
+        Top = 209
+        Width = 449
+        Height = 240
+        Caption = 'USB-Steuerung'
+        TabOrder = 1
+        object Label74: TLabel
+          Left = 25
+          Top = 92
+          Width = 87
+          Height = 15
+          Caption = 'Heizung Relais:'
+        end
+        object Label76: TLabel
+          Left = 26
+          Top = 60
+          Width = 85
+          Height = 15
+          Caption = 'USB-COM-Port:'
+          Visible = False
+        end
+        object Label77: TLabel
+          Left = 17
+          Top = 124
+          Width = 95
+          Height = 15
+          Caption = 'R'#252'hrwerk Relais:'
+        end
+        object Label78: TLabel
+          Left = 32
+          Top = 156
+          Width = 82
+          Height = 15
+          Alignment = taRightJustify
+          Caption = 'Pumpe Relais:'
+        end
+        object Label79: TLabel
+          Left = 23
+          Top = 28
+          Width = 86
+          Height = 15
+          Caption = 'USB-Katen-Typ:'
+        end
+        object Label80: TLabel
+          Left = 40
+          Top = 188
+          Width = 74
+          Height = 15
+          Caption = 'Alarm Relais:'
+        end
+        object Label111: TLabel
+          Left = 37
+          Top = 60
+          Width = 73
+          Height = 15
+          Caption = 'Device-Index:'
+        end
+        object ComboBox2: TComboBox
+          Left = 128
+          Top = 24
+          Width = 105
+          Height = 23
+          Hint = 'USB-Schalthardware-Typ'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 1
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+          Text = 'Denkovi'
+          OnChange = ComboBox2Change
+          Items.Strings = (
+            'KMTronic'
+            'Denkovi'
+            'SainSmart')
+        end
+        object ComboBox3: TComboBox
+          Left = 128
+          Top = 88
+          Width = 57
+          Height = 23
+          Hint = 'Verwendete Nummers Relais'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 3
+          Text = '1'
+          Items.Strings = (
+            '1'
+            '2'
+            '3'
+            '4')
+        end
+        object ComboBox4: TComboBox
+          Left = 128
+          Top = 120
+          Width = 57
+          Height = 23
+          Hint = 'Verwendete Nummers Relais'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 1
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 4
+          Text = '2'
+          Items.Strings = (
+            '1'
+            '2'
+            '3'
+            '4')
+        end
+        object ComboBox5: TComboBox
+          Left = 128
+          Top = 152
+          Width = 57
+          Height = 23
+          Hint = 'Verwendete Nummers Relais'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 2
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 5
+          Text = '3'
+          Items.Strings = (
+            '1'
+            '2'
+            '3'
+            '4')
+        end
+        object ComboBox6: TComboBox
+          Left = 128
+          Top = 184
+          Width = 57
+          Height = 23
+          Hint = 'Verwendete Nummers Relais'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 3
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 6
+          Text = '4'
+          Items.Strings = (
+            '1'
+            '2'
+            '3'
+            '4')
+        end
+        object ComboBox7: TComboBox
+          Left = 128
+          Top = 56
+          Width = 81
+          Height = 23
+          Hint = 'COM-Port der USB-Hardware'
+          Style = csDropDownList
+          ItemHeight = 15
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 2
+          Visible = False
+          Items.Strings = (
+            'COM1'
+            'COM2'
+            'COM3'
+            'COM4'
+            'COM5'
+            'COM6'
+            'COM7'
+            'COM8'
+            'COM9'
+            'COM10')
+        end
+        object ComboBox16: TComboBox
+          Left = 128
+          Top = 56
+          Width = 57
+          Height = 23
+          Hint = 
+            'Der Device-Index muss ggf. angepasst werden, wenn '#13#10'Temperatur- ' +
+            'oder andere Hardware benutzt wird die'#13#10'den gleichen Chip benutzt' +
+            ' wie die Denkovi-Relais-'#13#10'Karte.'
+          Style = csDropDownList
+          ItemHeight = 15
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 1
+          Items.Strings = (
+            '0'
+            '1'
+            '2'
+            '3'
+            '4'
+            '5')
+        end
+      end
+      object GroupBox8: TGroupBox
+        Left = 8
+        Top = 208
+        Width = 449
+        Height = 241
+        Caption = 'WLAN-Steuerung'
+        TabOrder = 9
+        object Label142: TLabel
+          Left = 112
+          Top = 24
+          Width = 280
+          Height = 15
+          Caption = 'IP-Adresse:                   User-Name:            Passwort:'
+        end
+        object CheckBox46: TCheckBox
+          Left = 16
+          Top = 52
+          Width = 97
+          Height = 17
+          Caption = 'Heizung'
+          TabOrder = 0
+        end
+        object CheckBox47: TCheckBox
+          Left = 16
+          Top = 84
+          Width = 97
+          Height = 17
+          Caption = 'R'#252'hrwerk'
+          TabOrder = 1
+        end
+        object CheckBox48: TCheckBox
+          Left = 16
+          Top = 116
+          Width = 97
+          Height = 17
+          Caption = 'Pumpe'
+          TabOrder = 2
+        end
+        object CheckBox49: TCheckBox
+          Left = 16
+          Top = 148
+          Width = 97
+          Height = 17
+          Caption = 'Alarm'
+          TabOrder = 3
+        end
+        object Edit97: TEdit
+          Left = 112
+          Top = 48
+          Width = 105
+          Height = 23
+          TabOrder = 4
+          Text = '192.168.178.56'
+        end
+        object Edit98: TEdit
+          Left = 112
+          Top = 80
+          Width = 105
+          Height = 23
+          TabOrder = 5
+          Text = '192.168.178.56'
+        end
+        object Edit99: TEdit
+          Left = 112
+          Top = 112
+          Width = 105
+          Height = 23
+          TabOrder = 6
+          Text = '192.168.178.56'
+        end
+        object Edit100: TEdit
+          Left = 112
+          Top = 144
+          Width = 105
+          Height = 23
+          TabOrder = 7
+          Text = '192.168.178.56'
+        end
+        object Edit101: TEdit
+          Left = 232
+          Top = 48
+          Width = 89
+          Height = 23
+          TabOrder = 8
+          Text = 'admin'
+        end
+        object Edit102: TEdit
+          Left = 232
+          Top = 80
+          Width = 89
+          Height = 23
+          TabOrder = 9
+          Text = 'admin'
+        end
+        object Edit103: TEdit
+          Left = 232
+          Top = 112
+          Width = 89
+          Height = 23
+          TabOrder = 10
+          Text = 'admin'
+        end
+        object Edit104: TEdit
+          Left = 232
+          Top = 144
+          Width = 89
+          Height = 23
+          TabOrder = 11
+          Text = 'admin'
+        end
+        object Edit105: TEdit
+          Left = 336
+          Top = 48
+          Width = 89
+          Height = 23
+          TabOrder = 12
+          Text = '1234'
+        end
+        object Edit106: TEdit
+          Left = 336
+          Top = 80
+          Width = 89
+          Height = 23
+          TabOrder = 13
+          Text = '1234'
+        end
+        object Edit107: TEdit
+          Left = 336
+          Top = 112
+          Width = 89
+          Height = 23
+          TabOrder = 14
+          Text = '1234'
+        end
+        object Edit108: TEdit
+          Left = 336
+          Top = 144
+          Width = 89
+          Height = 23
+          TabOrder = 15
+          Text = '1234'
+        end
+      end
+      object GroupBox5: TGroupBox
+        Left = 8
+        Top = 456
+        Width = 753
+        Height = 121
+        Hint = 'Eingabefeld f'#252'r den Dateinamen der Temperatur-Datei.'
+        Caption = 'Temperaturmessung '#252'ber Textdatei'
+        TabOrder = 6
+        object Label143: TLabel
+          Left = 16
+          Top = 28
+          Width = 176
+          Height = 15
+          Caption = 'Name der Temperatur-Textdatei:'
+        end
+        object Edit62: TEdit
+          Left = 208
+          Top = 23
+          Width = 529
+          Height = 23
+          TabOrder = 0
+          Text = 'log.txt'
+          OnKeyPress = Edit1KeyPress
+        end
+        object Button27: TButton
+          Left = 260
+          Top = 56
+          Width = 233
+          Height = 33
+          Hint = 'Startet die zugeordnete Batch-Datei.'
+          Caption = 'Digitemp_variabel.bat starten'
+          TabOrder = 1
+          OnClick = Button27Click
+        end
+        object Button26: TButton
+          Left = 16
+          Top = 56
+          Width = 233
+          Height = 33
+          Hint = 'Startet die zugeordnete Batch-Datei.'
+          Caption = 'Digitemp.bat starten'
+          TabOrder = 2
+          OnClick = Button26Click
+        end
+        object Button28: TButton
+          Left = 504
+          Top = 56
+          Width = 233
+          Height = 33
+          Hint = 'Startet die zugeordnete Batch-Datei.'
+          Caption = 'Externe_Sensorsoftware.bat starten'
+          TabOrder = 3
+          OnClick = Button28Click
+        end
+        object CheckBox39: TCheckBox
+          Left = 260
+          Top = 96
+          Width = 193
+          Height = 17
+          Hint = 'Startet die zugeordnete Batch-Datei beim Start.'
+          Caption = 'Autostart bei Programmstart'
+          TabOrder = 4
+          OnClick = CheckBox39Click
+        end
+        object CheckBox38: TCheckBox
+          Left = 16
+          Top = 96
+          Width = 193
+          Height = 17
+          Hint = 'Startet die zugeordnete Batch-Datei beim Start.'
+          Caption = 'Autostart bei Programmstart'
+          TabOrder = 5
+          OnClick = CheckBox38Click
+        end
+        object CheckBox40: TCheckBox
+          Left = 505
+          Top = 96
+          Width = 193
+          Height = 17
+          Hint = 'Startet die zugeordnete Batch-Datei beim Start.'
+          Caption = 'Autostart bei Programmstart'
+          TabOrder = 6
+          OnClick = CheckBox40Click
+        end
+      end
+      object GroupBox9: TGroupBox
+        Left = 8
+        Top = 456
+        Width = 753
+        Height = 121
+        Caption = 'Digitemp Steuerung'
+        TabOrder = 10
+        object Label144: TLabel
+          Left = 10
+          Top = 26
+          Width = 365
+          Height = 15
+          Caption = 
+            'COM-Port:                      Me'#223'-Takt:                        ' +
+            '                        Sensor: '
+        end
+        object ComboBox41: TComboBox
+          Left = 128
+          Top = 48
+          Width = 153
+          Height = 23
+          Hint = 'Schalt-Hardware angesteuert '#252'ber...'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+          Text = '5 Sekunde Takt'
+          OnChange = ComboBox41Change
+          Items.Strings = (
+            '5 Sekunde Takt'
+            '10 Sekunde Takt'
+            '30 Sekunde Takt'
+            '60 Sekunde Takt'
+            '5 Minuten Takt'
+            '10 Minuten Takt'
+            '30 Minuten Takt'
+            '60 Minuten Takt')
+        end
+        object ComboBox76: TComboBox
+          Left = 328
+          Top = 48
+          Width = 97
+          Height = 23
+          Hint = 'Schalt-Hardware angesteuert '#252'ber...'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 1
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 1
+          Text = 'Sensor 1'
+          OnChange = ComboBox76Change
+          Items.Strings = (
+            'ungenutzt'
+            'Sensor 1'
+            'Sensor 2'
+            'Sensor 3'
+            'Sensor 4'
+            'Sensor 5'
+            'Sensor 6'
+            'Sensor 7'
+            'Sensor 8'
+            'Sensor 9')
+        end
+        object ComboBox42: TComboBox
+          Left = 8
+          Top = 48
+          Width = 81
+          Height = 23
+          Hint = 'COM-Port der USB-Hardware'
+          Style = csDropDownList
+          ItemHeight = 15
+          ItemIndex = 0
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 2
+          Text = 'COM1'
+          OnChange = ComboBox42Change
+          Items.Strings = (
+            'COM1'
+            'COM2'
+            'COM3'
+            'COM4'
+            'COM5'
+            'COM6'
+            'COM7'
+            'COM8'
+            'COM9'
+            'COM10')
+        end
+      end
+    end
+    object TabSheet8: TTabSheet
+      Caption = 'Arduino'
+      ImageIndex = 5
+      object Label137: TLabel
+        Left = 288
+        Top = 16
+        Width = 58
+        Height = 15
+        Caption = 'Sensortyp:'
+      end
+      object Label138: TLabel
+        Left = 288
+        Top = 72
+        Width = 220
+        Height = 15
+        Caption = 'IP-OUT:                         Port-OUT:    Port-IN'
+      end
+      object Label139: TLabel
+        Left = 432
+        Top = 16
+        Width = 71
+        Height = 15
+        Caption = 'Arduino-Port:'
+      end
+      object Label141: TLabel
+        Left = 288
+        Top = 72
+        Width = 25
+        Height = 15
+        Caption = 'Port:'
+        Visible = False
+      end
+      object Memo1: TMemo
+        Left = 8
+        Top = 16
+        Width = 265
+        Height = 561
+        ReadOnly = True
+        ScrollBars = ssVertical
+        TabOrder = 0
+      end
+      object ComboBox35: TComboBox
+        Left = 288
+        Top = 32
+        Width = 129
+        Height = 23
+        ItemHeight = 15
+        TabOrder = 1
+        Text = 'NTC10000'
+        Items.Strings = (
+          'NTC10000'
+          'DS18B20'
+          'Display')
+      end
+      object ComboBox36: TComboBox
+        Left = 400
+        Top = 88
+        Width = 65
+        Height = 23
+        ItemHeight = 15
+        TabOrder = 2
+        Text = '5000'
+        OnChange = ComboBox36Change
+        Items.Strings = (
+          '5000'
+          '5001'
+          '5002'
+          '5003'
+          '5004'
+          '5005'
+          '5006'
+          '5007'
+          '5008'
+          '5009')
+      end
+      object ComboBox37: TComboBox
+        Left = 472
+        Top = 88
+        Width = 65
+        Height = 23
+        ItemHeight = 15
+        TabOrder = 3
+        Text = '5001'
+        OnChange = ComboBox37Change
+        Items.Strings = (
+          '5000'
+          '5001'
+          '5002'
+          '5003'
+          '5004'
+          '5005'
+          '5006'
+          '5007'
+          '5008'
+          '5009')
+      end
+      object Edit96: TEdit
+        Left = 288
+        Top = 88
+        Width = 105
+        Height = 23
+        TabOrder = 4
+        Text = '192.168.178.255'
+        OnExit = Edit96Exit
+      end
+      object ComboBox38: TComboBox
+        Left = 432
+        Top = 32
+        Width = 105
+        Height = 23
+        Hint = 'Schalt-Hardware angesteuert '#252'ber...'
+        Style = csDropDownList
+        ItemHeight = 15
+        ItemIndex = 0
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 5
+        Text = 'LAN'
+        OnChange = ComboBox38Change
+        Items.Strings = (
+          'LAN'
+          'USB')
+      end
+      object ComboBox40: TComboBox
+        Left = 288
+        Top = 88
+        Width = 105
+        Height = 23
+        ItemHeight = 15
+        TabOrder = 6
+        Text = 'COM4'
+        Visible = False
+        OnChange = ComboBox40Change
+        Items.Strings = (
+          'COM1'
+          'COM2'
+          'COM3'
+          'COM4'
+          'COM5'
+          'COM6'
+          'COM7'
+          'COM8'
+          'COM9'
+          'COM10'
+          'COM11'
+          'COM12'
+          'COM13'
+          'COM14'
+          'COM15'
+          'COM16'
+          'COM17'
+          'COM18'
+          'COM19'
+          'COM20')
       end
     end
     object TabSheet5: TTabSheet
@@ -18273,6 +18696,18 @@ object Form1: TForm1
       Font.Style = [fsBold]
       ParentFont = False
     end
+    object UpDown1: TUpDown
+      Left = 3
+      Top = 18
+      Width = 17
+      Height = 25
+      Min = 1
+      Max = 9
+      Position = 1
+      TabOrder = 0
+      Visible = False
+      OnClick = UpDown1Click
+    end
   end
   object Edit51: TEdit
     Left = 833
@@ -18348,6 +18783,7 @@ object Form1: TForm1
     Enabled = False
     OnTimer = Timer1Timer
     Left = 848
+    Top = 184
   end
   object SaveDialog1: TSaveDialog
     OnShow = OpenDialog1Show
@@ -18355,7 +18791,7 @@ object Form1: TForm1
     Filter = 'Rezept-Datei|*.rzt|Alle Dateien|*.*'
     InitialDir = 'C:\Brauerei\Rezepte'
     Options = [ofHideReadOnly]
-    Left = 720
+    Left = 848
   end
   object OpenDialog1: TOpenDialog
     OnShow = OpenDialog1Show
@@ -18363,170 +18799,208 @@ object Form1: TForm1
     Filter = 'Rezept-Datei|*.rzt|Alle Dateien|*.*'
     InitialDir = 'C:\Brauerei\Rezepte'
     Options = [ofHideReadOnly]
-    Left = 688
+    Left = 816
   end
   object TimerHAus: TTimer
     Enabled = False
     OnTimer = TimerHAusTimer
-    Left = 80
-    Top = 96
+    Left = 944
+    Top = 39
   end
   object TimerREin: TTimer
     Enabled = False
     OnTimer = TimerREinTimer
-    Left = 120
-    Top = 96
+    Left = 912
+    Top = 71
   end
   object TimerRAus: TTimer
     Enabled = False
     OnTimer = TimerRAusTimer
-    Left = 168
-    Top = 96
+    Left = 944
+    Top = 71
   end
   object TimerHEin: TTimer
     Enabled = False
     Interval = 100
     OnTimer = TimerHEinTimer
-    Left = 32
-    Top = 96
+    Left = 912
+    Top = 39
   end
   object TimerAAus: TTimer
     Enabled = False
     OnTimer = TimerAAusTimer
-    Left = 432
-    Top = 96
+    Left = 944
+    Top = 135
   end
   object TimerAEin: TTimer
     Enabled = False
     Interval = 4000
     OnTimer = TimerAEinTimer
-    Left = 384
-    Top = 96
+    Left = 912
+    Top = 135
   end
   object MessageTimer: TTimer
     OnTimer = MessageTimerTimer
-    Left = 384
-    Top = 48
+    Left = 816
+    Top = 135
   end
   object TimerHSet: TTimer
     Enabled = False
     OnTimer = TimerHSetTimer
-    Left = 32
-    Top = 48
+    Left = 816
+    Top = 39
   end
   object Timer2: TTimer
     Enabled = False
     OnTimer = Timer2Timer
-    Left = 816
+    Left = 880
+    Top = 184
   end
   object LogTimer: TTimer
     Enabled = False
     Interval = 5000
     OnTimer = LogTimerTimer
-    Left = 784
+    Left = 816
+    Top = 184
   end
   object LogUpdateTimer: TTimer
     Enabled = False
     Interval = 30000
     OnTimer = LogUpdateTimerTimer
-    Left = 756
-    Top = 480
+    Left = 880
+    Top = 216
   end
   object Ueberwachungstimer: TTimer
     Interval = 60000
     OnTimer = UeberwachungstimerTimer
-    Left = 756
-    Top = 512
+    Left = 848
+    Top = 216
   end
   object PrintDialog1: TPrintDialog
     OnShow = OpenDialog1Show
-    Left = 752
+    Left = 880
   end
   object USB_Update_Tmr: TTimer
     Enabled = False
     Interval = 5000
     OnTimer = USB_Update_TmrTimer
-    Left = 880
+    Left = 912
+    Top = 184
   end
   object Batch_Update_Tmr: TTimer
     Enabled = False
     Interval = 5000
     OnTimer = Batch_Update_TmrTimer
-    Left = 912
+    Left = 944
+    Top = 184
   end
   object TimerDlgMove: TTimer
     Enabled = False
     Interval = 50
     OnTimer = TimerDlgMoveTimer
-    Left = 756
-    Top = 449
+    Left = 912
+    Top = 217
   end
   object StartTimer: TTimer
     Enabled = False
     Interval = 500
     OnTimer = StartTimerTimer
-    Left = 944
+    Left = 816
+    Top = 216
   end
   object GesUpdateTimer: TTimer
     Enabled = False
     OnTimer = GesUpdateTimerTimer
-    Left = 756
-    Top = 416
+    Left = 944
+    Top = 216
   end
   object TimerTimer: TTimer
     Enabled = False
     OnTimer = TimerTimerTimer
-    Left = 756
-    Top = 384
+    Left = 816
+    Top = 248
   end
   object Timer3: TTimer
     Enabled = False
     Interval = 10000
     OnTimer = Timer3Timer
-    Left = 756
-    Top = 352
+    Left = 848
+    Top = 248
   end
   object TimerKSet: TTimer
     Enabled = False
     OnTimer = TimerKSetTimer
-    Left = 208
-    Top = 48
+    Left = 816
+    Top = 103
   end
   object TimerKEin: TTimer
     Enabled = False
     Interval = 100
     OnTimer = TimerKEinTimer
-    Left = 208
-    Top = 96
+    Left = 912
+    Top = 103
   end
   object TimerKAus: TTimer
     Enabled = False
     OnTimer = TimerKAusTimer
-    Left = 256
-    Top = 96
+    Left = 944
+    Top = 103
   end
   object ApplicationEvents1: TApplicationEvents
     OnShowHint = ApplicationEvents1ShowHint
-    Left = 656
+    Left = 784
   end
   object TimerRSet: TTimer
     Enabled = False
     OnTimer = TimerRSetTimer
-    Left = 120
-    Top = 48
+    Left = 816
+    Top = 71
   end
   object OpenDialog2: TOpenDialog
     OnShow = OpenDialog1Show
     DefaultExt = 'SQLite'
     Filter = '*.SQLite|*.SQLite'
     Options = [ofHideReadOnly]
-    Left = 592
+    Left = 752
   end
   object SaveDialog2: TSaveDialog
     OnShow = OpenDialog1Show
     DefaultExt = '*.rzt'
     Filter = '*.rzt|*.rzt'
     Options = [ofHideReadOnly]
-    Left = 560
+    Left = 720
+  end
+  object IdUDPClient1: TIdUDPClient
+    Active = True
+    BroadcastEnabled = True
+    Host = '192.168.178.255'
+    Port = 5001
+    ReceiveTimeout = -1000
+    Left = 911
+  end
+  object Tmr_Rcv: TTimer
+    OnTimer = Tmr_RcvTimer
+    Left = 880
+    Top = 248
+  end
+  object IdUDPServer1: TIdUDPServer
+    Active = True
+    BroadcastEnabled = True
+    Bindings = <>
+    DefaultPort = 5000
+    OnUDPRead = IdUDPServer1UDPRead
+    Left = 943
+  end
+  object ArduinoTimer: TTimer
+    Interval = 500
+    OnTimer = ArduinoTimerTimer
+    Left = 912
+    Top = 248
+  end
+  object DigitempTimer: TTimer
+    Interval = 5000
+    OnTimer = DigitempTimerTimer
+    Left = 944
+    Top = 248
   end
 end

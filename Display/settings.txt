@@ -1,6 +1,0 @@
-5000
-DS18B20
-5001
-192.168.178.255
-C:\Brauerei\Temperatur\log.txt
-C:\Brauerei\Display\display.txt

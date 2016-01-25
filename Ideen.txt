@@ -1,1 +1,7 @@
-
+Mischen von Schalthardware
+Sainsmart auf 8 erweitern
+Mehrere Relais parallel schalten
+Immer 8 Relais zulassen
+Temperaturen bis 110 Grad zulassen
+20 Rasten
+Rasteingabe und Brauprozess aufteilen

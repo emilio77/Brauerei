@@ -5,7 +5,8 @@ uses
   Brauerei in 'Brauerei.pas' {Form1},
   Timer in 'Timer.pas' {Form2},
   Multi in 'Multi.pas' {Form3},
-  Funktionsbezeichnungen in 'Funktionsbezeichnungen.pas' {Form4};
+  Funktionsbezeichnungen in 'Funktionsbezeichnungen.pas' {Form4},
+  iowkit in 'iowkit.pas';
 
 {$E .exe}
 

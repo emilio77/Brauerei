@@ -1,7 +1,11 @@
-70
+50
 0
-67
-80
+56
+10
+64
+40
+72
+35
 78
 0
 20
@@ -14,30 +18,28 @@
 60
 20
 60
-20
+9999
+9999
+9999
+9999
+9999
+9999
+9999
+9999
+9999
+9999
 60
-20
 60
-9999
-9999
-9999
-9999
-9999
-9999
-9999
-9999
-9999
-9999
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
+60
+60
+60
+60
+60
+60
+60
+60
+TRUE
+TRUE
 TRUE
 TRUE
 TRUE
@@ -46,23 +48,21 @@ FALSE
 FALSE
 FALSE
 FALSE
-FALSE
-FALSE
-TRUE
-FALSE
 TRUE
 FALSE
 FALSE
 FALSE
+TRUE
 FALSE
 FALSE
 FALSE
 FALSE
 FALSE
-FALSE
-FALSE
-FALSE
-FALSE
+TRUE
+TRUE
+TRUE
+TRUE
+TRUE
 FALSE
 FALSE
 FALSE
@@ -70,24 +70,24 @@ FALSE
 FALSE
 Malz einfüllen
 
+
+
 Maischeprozess beendet - Abmaischen
 
 
 
 
 
-
-
 Einmaischen
-Kombirast
+Eiweißrast
+Maltoserast
+Verzuckerung
 Abmaischen
-ungenutzte Rast
-ungenutzte Rast
-ungenutzte Rast
-ungenutzte Rast
-ungenutzte Rast
-ungenutzte Rast
-ungenutzte Rast
+Rast 6
+Rast 7
+Rast 8
+Rast 9
+Rast 10
 Bei Rasttemperaturüberschreitung
 Bei Rasttemperaturüberschreitung
 Bei Rasttemperaturüberschreitung

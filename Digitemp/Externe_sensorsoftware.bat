@@ -1,3 +1,2 @@
 title Externe_Sensorsoftware
-start DigitempControl.exe
-
+start C:\LogTemp\LogTemp.exe

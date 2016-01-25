@@ -1,5 +1,14 @@
 Change-Log:
 
+V 1.61
+Kleinere Anpassungen KBH-Maischeplananzeige
+KBH-Filter alle/gebraute/ungebraute/verbrauchte/unverbrauchte
+Alte Version von Digitemp auswählbar gemacht
+Soll-Temperatur während Brauprozess korrigierbar
+Beim KBH-Import ist das Rührwerk für Maischen und Kochen jetzt getrennt anwählbar
+IO-Warrior USB-Relais-Karte ergänzt
+Code optimiert
+
 V 1.57
 Kleinere Bugfixes im Arduino USB- und LAN-Server
 Temperatursimulation verbessert

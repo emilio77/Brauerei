@@ -129,7 +129,7 @@ Bei Rasttemperaturüberschreitung
 0
 0
 Alarm pulsen
-TRUE
+FALSE
 TRUE
 TRUE
 FALSE
@@ -138,4 +138,4 @@ FALSE
 FALSE
 FALSE
 10
-TRUE
+FALSE

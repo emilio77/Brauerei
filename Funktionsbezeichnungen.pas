@@ -65,7 +65,7 @@ procedure TForm4.FormShow(Sender: TObject);
 var wfaktor:extended;
     i:integer;
 begin
-  for i:= 1 to 10 do (FindComponent('Edit' + IntToStr(i)) as TEdit).Text:=Brauerei.Form1.ComboBox46.Items.Strings[i];
+  for i:= 1 to 10 do (FindComponent('Edit' + IntToStr(i)) as TEdit).Text:=Brauerei.Form1.ZF_HA1.Items.Strings[i];
   wfaktor:=strtofloat(form1.Edit95.Text);
   scaleby(round(wfaktor*100 * (500 / Form4.Width)),100);
   Form4.Width := round(500 * wfaktor);

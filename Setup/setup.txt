@@ -1,11 +1,11 @@
 Installationsverzeichnis;Standard
-Steuerung über "BATCH", "USB", "LPT" oder "ARDUINO";ARDUINO
+Steuerung über "BATCH", "USB", "LPT" oder "ARDUINO";USB
 LPT-Port;888
 LPT-Heizung;1
 LPT-Ruehrwerk;2
 LPT-Pumpe;8
 LPT-Alarm;128
-USB-Karten-Typ "Denkovi", "KMTronic" oder "SainSmart";Denkovi
+USB-Karten-Typ "Denkovi", "KMTronic", "IOWarrior" oder "SainSmart";IO-Warrior-Basis
 Device-Index;0
 USB-Port;COM3
 USB-Heizung;1
@@ -52,13 +52,13 @@ Pulstemperatur Stufe 4;90
 Abkühlrate pro Minute;2.0
 Log-Datei schreiben;1
 Rührwerk mit Heizung koppeln;0
-Rührwerk bei Heizung durchgehend AN;1
+Rührwerk bei Heizung durchgehend AN;0
 Rührwerk-Zeitabstand;10€€€Sekunden
 Kochtemperatur;99
 Temperaturkorrekturwert;0.0
 Temperaturkorrekturfaktor;1.0
 Fensterskalierungsfaktor;1.0
-Arduino-Zusatzfunktionen;1
+Arduino-Zusatzfunktionen;0
 Funktionsbeschreibung 1;Funktion€€€1
 Funktionsbeschreibung 2;Funktion€€€2
 Funktionsbeschreibung 3;Funktion€€€3
@@ -69,7 +69,7 @@ Funktionsbeschreibung 7;Funktion€€€7
 Funktionsbeschreibung 8;Funktion€€€8
 Funktionsbeschreibung 9;Funktion€€€9
 Funktionsbeschreibung 10;Funktion€€€10
-Temperaturmessung;ARDUINO
+Temperaturmessung;DIGITEMP
 Arduino-Sensor-Typ;DS18B20
 Arduino-Port-Typ;LAN
 Arduino-USB-Port-Nummer;Minuten
@@ -77,8 +77,8 @@ Arduino-IP-Port-Nummer;192.168.178.255
 Arduino-UDP-Port-OUT;5000
 Arduino-UDP-Port-IN;5001
 Arduino Parallelbetrieb;0
-IP-Heizung;1
-IP-Ruehrwerk;1
+IP-Heizung;0
+IP-Ruehrwerk;0
 IP-Pumpe;0
 IP-Alarm;0
 IP-Heizung;192.168.178.56
@@ -93,6 +93,7 @@ Password-Heizung;1234
 Password-Ruehrwerk;1234
 Password-Pumpe;1234
 Password-Alarm;1234
-DIGITEMP-Port;COM6
+DIGITEMP-Port;COM5
 DIGITEMP-Takt;5€€€Sekunde€€€Takt
-DIGITEMP-Takt;Sensor€€€2
+DIGITEMP-Takt;Sensor€€€1
+alte DIGITEMP-Version;0

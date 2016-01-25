@@ -1,0 +1,78 @@
+!define BLANK ""
+d:\src\digitemp\windows\console-v1.7\comport.obj : d:\src\digitemp\windows\c&
+onsole-v1.7\comport.c .AUTODEPEND
+ @d:
+ cd d:\src\digitemp\windows\console-v1.7
+ *wcc386 comport.c -i=D:\WATCOM\h;D:\WATCOM\h\nt -w4 -e25 -zq -otexan -d1 -5&
+r -bt=nt -mf
+
+d:\src\digitemp\windows\console-v1.7\crcutil.obj : d:\src\digitemp\windows\c&
+onsole-v1.7\crcutil.c .AUTODEPEND
+ @d:
+ cd d:\src\digitemp\windows\console-v1.7
+ *wcc386 crcutil.c -i=D:\WATCOM\h;D:\WATCOM\h\nt -w4 -e25 -zq -otexan -d1 -5&
+r -bt=nt -mf
+
+d:\src\digitemp\windows\console-v1.7\device_name.obj : d:\src\digitemp\windo&
+ws\console-v1.7\device_name.c .AUTODEPEND
+ @d:
+ cd d:\src\digitemp\windows\console-v1.7
+ *wcc386 device_name.c -i=D:\WATCOM\h;D:\WATCOM\h\nt -w4 -e25 -zq -otexan -d&
+1 -5r -bt=nt -mf
+
+d:\src\digitemp\windows\console-v1.7\digitemp.obj : d:\src\digitemp\windows\&
+console-v1.7\digitemp.c .AUTODEPEND
+ @d:
+ cd d:\src\digitemp\windows\console-v1.7
+ *wcc386 digitemp.c -i=D:\WATCOM\h;D:\WATCOM\h\nt -w4 -e25 -zq -otexan -d1 -&
+5r -bt=nt -mf
+
+d:\src\digitemp\windows\console-v1.7\getopt.obj : d:\src\digitemp\windows\co&
+nsole-v1.7\getopt.c .AUTODEPEND
+ @d:
+ cd d:\src\digitemp\windows\console-v1.7
+ *wcc386 getopt.c -i=D:\WATCOM\h;D:\WATCOM\h\nt -w4 -e25 -zq -otexan -d1 -5r&
+ -bt=nt -mf
+
+d:\src\digitemp\windows\console-v1.7\onewire.obj : d:\src\digitemp\windows\c&
+onsole-v1.7\onewire.c .AUTODEPEND
+ @d:
+ cd d:\src\digitemp\windows\console-v1.7
+ *wcc386 onewire.c -i=D:\WATCOM\h;D:\WATCOM\h\nt -w4 -e25 -zq -otexan -d1 -5&
+r -bt=nt -mf
+
+d:\src\digitemp\windows\console-v1.7\ownetu.obj : d:\src\digitemp\windows\co&
+nsole-v1.7\ownetu.c .AUTODEPEND
+ @d:
+ cd d:\src\digitemp\windows\console-v1.7
+ *wcc386 ownetu.c -i=D:\WATCOM\h;D:\WATCOM\h\nt -w4 -e25 -zq -otexan -d1 -5r&
+ -bt=nt -mf
+
+d:\src\digitemp\windows\console-v1.7\swt1f.obj : d:\src\digitemp\windows\con&
+sole-v1.7\swt1f.c .AUTODEPEND
+ @d:
+ cd d:\src\digitemp\windows\console-v1.7
+ *wcc386 swt1f.c -i=D:\WATCOM\h;D:\WATCOM\h\nt -w4 -e25 -zq -otexan -d1 -5r &
+-bt=nt -mf
+
+d:\src\digitemp\windows\console-v1.7\digitemp.exe : d:\src\digitemp\windows\&
+console-v1.7\comport.obj d:\src\digitemp\windows\console-v1.7\crcutil.obj d:&
+\src\digitemp\windows\console-v1.7\device_name.obj d:\src\digitemp\windows\c&
+onsole-v1.7\digitemp.obj d:\src\digitemp\windows\console-v1.7\getopt.obj d:\&
+src\digitemp\windows\console-v1.7\onewire.obj d:\src\digitemp\windows\consol&
+e-v1.7\ownetu.obj d:\src\digitemp\windows\console-v1.7\swt1f.obj .AUTODEPEND
+ @d:
+ cd d:\src\digitemp\windows\console-v1.7
+ @%write digitemp.lk1 FIL comport.obj,crcutil.obj,device_name.obj,digitemp.o&
+bj,getopt.obj,onewire.obj,ownetu.obj,swt1f.obj
+ @%append digitemp.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b digitemp.imp 
+ @%append digitemp.lk1 LIBR digitemp.imp
+!endif
+!ifneq BLANK ""
+ @%append digitemp.lk1 op resource=
+!endif
+ *wlink name digitemp op inc SYS nt op m op maxe=25 op q op symf @digitemp.l&
+k1
+

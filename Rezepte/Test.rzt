@@ -1,15 +1,13 @@
 60
-1
-99
-1
-20
-1
-40
-1
-20
+0
+57
+10
+67
 60
-20
-60
+78
+10
+78
+0
 20
 60
 20
@@ -18,30 +16,39 @@
 60
 20
 60
+20
 60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
-60
+9999
+9999
+9999
+9999
+9999
+9999
+9999
+9999
+9999
+9999
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
 TRUE
 TRUE
 TRUE
 TRUE
+TRUE
+FALSE
+FALSE
+FALSE
+FALSE
+FALSE
+TRUE
 FALSE
 FALSE
 FALSE
@@ -51,23 +58,17 @@ FALSE
 FALSE
 FALSE
 FALSE
-FALSE
-FALSE
-FALSE
-FALSE
-FALSE
-FALSE
-FALSE
-FALSE
-FALSE
-FALSE
-FALSE
-FALSE
-FALSE
-FALSE
-FALSE
-FALSE
-FALSE
+TRUE
+TRUE
+TRUE
+TRUE
+TRUE
+TRUE
+TRUE
+TRUE
+TRUE
+TRUE
+Malz einfüllen
 
 
 
@@ -77,20 +78,19 @@ FALSE
 
 
 
-
-Rast 1
-Rast 2
-Rast 3
-Rast 4
-Rast 5
+Einmaischen
+Eiweißrast
+Kombirast
+Abmaischen
+Abmaischen
 Rast 6
 Rast 7
 Rast 8
 Rast 9
 Rast 10
 Bei Rasttemperaturüberschreitung
-Temperaturunabhängig
-Bei Rasttemperaturunterschreitung
+Bei Rasttemperaturüberschreitung
+Bei Rasttemperaturüberschreitung
 Bei Rasttemperaturüberschreitung
 Bei Rasttemperaturüberschreitung
 Bei Rasttemperaturüberschreitung

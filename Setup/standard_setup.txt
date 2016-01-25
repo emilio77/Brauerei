@@ -1,5 +1,5 @@
 Installationsverzeichnis;Standard
-Steuerung über "BATCH", "USB oder "LPT";USB
+Steuerung über "BATCH", "USB", "LPT" oder "ARDUINO";USB
 LPT-Port;888
 LPT-Heizung;1
 LPT-Ruehrwerk;2
@@ -7,7 +7,7 @@ LPT-Pumpe;8
 LPT-Alarm;128
 USB-Karten-Typ "Denkovi", "KMTronic" oder "SainSmart";Denkovi
 Device-Index;0
-USB-Port;
+USB-Port;COM3
 USB-Heizung;1
 USB-Ruehrwerk;2
 USB-Pumpe;3
@@ -53,14 +53,14 @@ Abkühlrate pro Minute;2.0
 Log-Datei schreiben;1
 Rührwerk mit Heizung koppeln;0
 Rührwerk bei Heizung durchgehend AN;0
-Rührwerk-Zeitabstand;5€€€Sekunden
+Rührwerk-Zeitabstand;10€€€Sekunden
 Kochtemperatur;99
 Temperaturkorrekturwert;0.0
 Temperaturkorrekturfaktor;1.0
 Fensterskalierungsfaktor;1.0
-Arduino-Zusatzfunktionen;1
-Funktionsbeschreibung 1;Hopfungsfunktion€€€1
-Funktionsbeschreibung 2;Malz€€€einwerfen
+Arduino-Zusatzfunktionen;0
+Funktionsbeschreibung 1;Funktion€€€1
+Funktionsbeschreibung 2;Funktion€€€2
 Funktionsbeschreibung 3;Funktion€€€3
 Funktionsbeschreibung 4;Funktion€€€4
 Funktionsbeschreibung 5;Funktion€€€5
@@ -69,3 +69,31 @@ Funktionsbeschreibung 7;Funktion€€€7
 Funktionsbeschreibung 8;Funktion€€€8
 Funktionsbeschreibung 9;Funktion€€€9
 Funktionsbeschreibung 10;Funktion€€€10
+Temperaturmessung;Textdatei
+Arduino-Sensor-Typ;DS18B20
+Arduino-Port-Typ;LAN
+Arduino-USB-Port-Nummer;Minuten
+Arduino-IP-Port-Nummer;192.168.178.255
+Arduino-UDP-Port-OUT;5000
+Arduino-UDP-Port-IN;5001
+Arduino Parallelbetrieb;0
+IP-Heizung;0
+IP-Ruehrwerk;0
+IP-Pumpe;0
+IP-Alarm;0
+IP-Heizung;192.168.178.56
+IP-Ruehrwerk;192.168.178.35
+IP-Pumpe;192.168.178.56
+IP-Alarm;192.168.178.56
+User-Name-Heizung;admin
+User-Name-Ruehrwerk;admin
+User-Name-Pumpe;admin
+User-Name-Alarm;admin
+Password-Heizung;1234
+Password-Ruehrwerk;1234
+Password-Pumpe;1234
+Password-Alarm;1234
+DIGITEMP-Port;COM5
+DIGITEMP-Takt;5€€€Sekunde€€€Takt
+DIGITEMP-Takt;Sensor€€€1
+alte DIGITEMP-Version;0

@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.1  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Andreas Wehrle">
+	<META NAME="CREATED" CONTENT="20140414;21331864">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGED" CONTENT="20151105;19135603">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<META NAME="CHANGEDBY" CONTENT="Andreas Wehrle">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 2cm }
+		P { margin-bottom: 0.21cm }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="de-DE" DIR="LTR">
+<P STYLE="margin-bottom: 0cm">Hilfe Datei zu Brauerei V 1.60 &ndash;
+by Emilio &ndash; <A HREF="Help.html">HOME</A></P>
+<P STYLE="margin-bottom: 0cm"><U><B>Steuerung von Zusatzfunktionen im
+Arduino:</B></U></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Wird in den Einstellungen die
+Arduino-Zusatzsteuerung gew&auml;hlt, dann k&ouml;nnen
+Zusatzfunktionen zu einem beliebigen Zeitpunkt im Brauprozess
+gestartet werden. Hiermit ist es m&ouml;glich beliebige
+Automatisierungsideen zu verwirklichen. Die Startpunkte werden beim
+Speichern eines Rezepts mit abgespeichert.<BR><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Wie funktioniert das?<BR><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">Es gibt im Arduino 10 unterschiedliche
+(leere) Funktionen. Diese Funktionen k&ouml;nnen beliebig am Start
+der Heizphase einer Rast, beim Ende der Heizphase einer Rast oder bei
+Rastende gestartet werden.<BR>Hierbei ist es wichtig zu wissen, dass
+die Funktion im Arduino nicht nur ein mal durchlaufen wird, sobald
+der Schaltzeitpunkt erreicht wurde, sondern ab dem Schaltzeitpunkt
+mit jedem Programmzyklus (ca. 0,5 Sekunden ). Das hat den Vorteil,
+dass sich auch zeitabh&auml;ngige Funktionen realisieren lassen (z.B.
+Schalte Relais f&uuml;r 30 Sekunden. Ein). 
+</P>
+<P STYLE="margin-bottom: 0cm"><IMG SRC="ZusatzArduino_html_m238927f7.jpg" NAME="Grafik1" ALIGN=LEFT WIDTH=643 HEIGHT=345 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<OL>
+	<LI><P STYLE="margin-bottom: 0cm">Auswahl der Funktion beim Start
+	der Heizphase f&uuml;r jede einzelne Rast</P>
+	<LI><P STYLE="margin-bottom: 0cm">Auswahl der Funktion beim Ende der
+	Heizphase f&uuml;r jede einzelne Rast</P>
+	<LI><P STYLE="margin-bottom: 0cm">Auswahl der Funktion beim Ende der
+	Rastphase f&uuml;r jede einzelne Rast</P>
+	<LI><P STYLE="margin-bottom: 0cm">Umschaltung zwischen normalen und
+	Zusatzsteuerungsansicht<BR>Dieser Button ist nur verf&uuml;gbar,
+	wenn in den Einstellungen die Arduino Zusatzfunktionen aktiviert
+	wurden.</P>
+	<LI><P STYLE="margin-bottom: 0cm">Mit diesem Button wird ein Fenster
+	ge&ouml;ffnet in dem den Funktionen klare Namen ( z:B. Hifengabe 1 )
+	zugewiesen werden k&ouml;nnen.</P>
+	<LI><P STYLE="margin-bottom: 0cm">Hier kann den einzelne Funktionen
+	der Name zugeordnet werden.</P>
+</OL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+</BODY>
+</HTML>

@@ -15305,7 +15305,7 @@ object Form1: TForm1
         Width = 289
         Height = 209
         Caption = 'Puls / Gradient'
-        TabOrder = 3
+        TabOrder = 0
         object Label88: TLabel
           Left = 17
           Top = 181
@@ -16774,7 +16774,7 @@ object Form1: TForm1
           'Eingabefeld f'#252'r die Aufheizrate die zur Berechnung '#13#10'der ETA ver' +
           'wendet wird.'
         Caption = 'Heiz- und K'#252'hlkurven-Information'
-        TabOrder = 4
+        TabOrder = 1
         object Label59: TLabel
           Left = 17
           Top = 23
@@ -16932,7 +16932,7 @@ object Form1: TForm1
         Width = 289
         Height = 68
         Caption = 'Hysterese'
-        TabOrder = 5
+        TabOrder = 2
         object Label112: TLabel
           Left = 17
           Top = 20
@@ -17060,179 +17060,6 @@ object Form1: TForm1
             #9)
         end
       end
-      object GroupBox1: TGroupBox
-        Left = 8
-        Top = 209
-        Width = 449
-        Height = 240
-        Caption = 'Batch-Datei-Steuerung'
-        TabOrder = 0
-        object Label62: TLabel
-          Left = 19
-          Top = 26
-          Width = 69
-          Height = 15
-          Caption = 'Heizung Ein:'
-        end
-        object Label65: TLabel
-          Left = 18
-          Top = 49
-          Width = 71
-          Height = 15
-          Caption = 'Heizung Aus:'
-        end
-        object Label67: TLabel
-          Left = 10
-          Top = 95
-          Width = 79
-          Height = 15
-          Caption = 'R'#252'hrwerk Aus:'
-        end
-        object Label68: TLabel
-          Left = 11
-          Top = 72
-          Width = 77
-          Height = 15
-          Caption = 'R'#252'hrwerk Ein:'
-        end
-        object Label69: TLabel
-          Left = 25
-          Top = 118
-          Width = 64
-          Height = 15
-          Alignment = taRightJustify
-          Caption = 'Pumpe Ein:'
-        end
-        object Label70: TLabel
-          Left = 23
-          Top = 141
-          Width = 66
-          Height = 15
-          Alignment = taRightJustify
-          Caption = 'Pumpe Aus:'
-        end
-        object Label71: TLabel
-          Left = 32
-          Top = 164
-          Width = 56
-          Height = 15
-          Caption = 'Alarm Ein:'
-        end
-        object Label72: TLabel
-          Left = 32
-          Top = 186
-          Width = 58
-          Height = 15
-          Caption = 'Alarm Aus:'
-        end
-        object Edit54: TEdit
-          Left = 96
-          Top = 22
-          Width = 337
-          Height = 23
-          Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 0
-          Text = 'C:\Brauerei\Batch\Heizung-Ein.bat'
-          OnKeyPress = Solltempwahl1KeyPress
-        end
-        object Edit55: TEdit
-          Left = 96
-          Top = 45
-          Width = 337
-          Height = 23
-          Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 1
-          Text = 'C:\Brauerei\Batch\Heizung-Aus.bat'
-          OnKeyPress = Solltempwahl1KeyPress
-        end
-        object Edit56: TEdit
-          Left = 96
-          Top = 68
-          Width = 337
-          Height = 23
-          Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 2
-          Text = 'C:\Brauerei\Batch\Ruehrwerk-Ein.bat'
-          OnKeyPress = Solltempwahl1KeyPress
-        end
-        object Edit57: TEdit
-          Left = 96
-          Top = 91
-          Width = 337
-          Height = 23
-          Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 3
-          Text = 'C:\Brauerei\Batch\Ruehrwerk-Aus.bat'
-          OnKeyPress = Solltempwahl1KeyPress
-        end
-        object Edit58: TEdit
-          Left = 96
-          Top = 114
-          Width = 337
-          Height = 23
-          Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 4
-          Text = 'C:\Brauerei\Batch\Pumpe-Ein.bat'
-          OnKeyPress = Solltempwahl1KeyPress
-        end
-        object Edit59: TEdit
-          Left = 96
-          Top = 137
-          Width = 337
-          Height = 23
-          Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 5
-          Text = 'C:\Brauerei\Batch\Pumpe-Aus.bat'
-          OnKeyPress = Solltempwahl1KeyPress
-        end
-        object Edit60: TEdit
-          Left = 96
-          Top = 160
-          Width = 337
-          Height = 23
-          Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 6
-          Text = 'C:\Brauerei\Batch\Alarm-Ein.bat'
-          OnKeyPress = Solltempwahl1KeyPress
-        end
-        object Edit61: TEdit
-          Left = 96
-          Top = 182
-          Width = 337
-          Height = 23
-          Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 7
-          Text = 'C:\Brauerei\Batch\Alarm-Aus.bat'
-          OnKeyPress = Solltempwahl1KeyPress
-        end
-        object CheckBox35: TCheckBox
-          Left = 96
-          Top = 213
-          Width = 321
-          Height = 17
-          Hint = 'Zyklisches wiederholen der Batch-Dateien '
-          Caption = 'Batchausgabe zyklisch wiederholen'
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 8
-        end
-      end
       object Button2: TButton
         Left = 472
         Top = 27
@@ -17240,16 +17067,16 @@ object Form1: TForm1
         Height = 37
         Hint = 'Alle Einstellungen auf Auslieferzustand '#13#10'zur'#252'cksetzen.'
         Caption = 'Zur'#252'cksetzen'
-        TabOrder = 7
+        TabOrder = 4
         OnClick = Button2Click
       end
       object PageControl2: TPageControl
         Left = 8
         Top = 5
         Width = 449
-        Height = 196
+        Height = 172
         ActivePage = TabSheet7
-        TabOrder = 8
+        TabOrder = 5
         OnChange = PageControl2Change
         object TabSheet6: TTabSheet
           Caption = 'Basisparameter'
@@ -17268,8 +17095,8 @@ object Form1: TForm1
             Caption = 'Temperaturkorrekturwert:'
           end
           object Label128: TLabel
-            Left = 8
-            Top = 138
+            Left = 240
+            Top = 106
             Width = 144
             Height = 15
             Caption = 'Temperaturkorrekturfaktor:'
@@ -17282,18 +17109,11 @@ object Form1: TForm1
             Caption = 'Raststart Standard:'
           end
           object Label129: TLabel
-            Left = 243
-            Top = 106
+            Left = 278
+            Top = 76
             Width = 103
             Height = 15
             Caption = 'Fensterskalierung:'
-          end
-          object Label73: TLabel
-            Left = 244
-            Top = 76
-            Width = 95
-            Height = 15
-            Caption = 'Relaissteuerung:'
           end
           object Label140: TLabel
             Left = 9
@@ -17329,8 +17149,8 @@ object Form1: TForm1
             OnKeyPress = Solltempwahl1KeyPress
           end
           object Edit94: TEdit
-            Left = 182
-            Top = 134
+            Left = 390
+            Top = 102
             Width = 41
             Height = 23
             TabOrder = 2
@@ -17365,34 +17185,13 @@ object Form1: TForm1
           end
           object Edit95: TEdit
             Left = 390
-            Top = 101
+            Top = 71
             Width = 41
             Height = 23
             TabOrder = 4
             Text = '1.0'
             OnExit = Edit95Exit
             OnKeyPress = Solltempwahl1KeyPress
-          end
-          object ComboBox1: TComboBox
-            Left = 344
-            Top = 72
-            Width = 89
-            Height = 23
-            Hint = 'Schalt-Hardware angesteuert '#252'ber...'
-            Style = csDropDownList
-            ItemHeight = 15
-            ItemIndex = 0
-            ParentShowHint = False
-            ShowHint = True
-            TabOrder = 5
-            Text = 'USB'
-            OnChange = ComboBox1Change
-            Items.Strings = (
-              'USB'
-              'LPT'
-              'WLAN'
-              'ARDUINO'
-              'BATCH')
           end
           object ComboBox39: TComboBox
             Left = 136
@@ -17405,7 +17204,7 @@ object Form1: TForm1
             ItemIndex = 0
             ParentShowHint = False
             ShowHint = True
-            TabOrder = 6
+            TabOrder = 5
             Text = 'Textdatei'
             OnChange = ComboBox39Change
             Items.Strings = (
@@ -17491,7 +17290,7 @@ object Form1: TForm1
           end
           object CheckBox32: TCheckBox
             Left = 16
-            Top = 41
+            Top = 44
             Width = 172
             Height = 17
             Hint = 'W'#228'hrend des Brauprozesses wird ein Log-Datei geschrieben.'
@@ -17510,7 +17309,7 @@ object Form1: TForm1
           end
           object CheckBox42: TCheckBox
             Left = 16
-            Top = 72
+            Top = 71
             Width = 281
             Height = 17
             Caption = 'R'#252'hrwerk an Heizung koppeln im Abstand von'
@@ -17527,7 +17326,7 @@ object Form1: TForm1
           end
           object ComboBox45: TComboBox
             Left = 304
-            Top = 70
+            Top = 67
             Width = 105
             Height = 23
             Hint = 'Takt in dem der Prozessstatus im Log-File '#13#10'geloggt wird.'
@@ -17563,7 +17362,7 @@ object Form1: TForm1
           end
           object CheckBox31: TCheckBox
             Left = 248
-            Top = 144
+            Top = 120
             Width = 201
             Height = 17
             Caption = 'Arduino Zusatzsteuerung '
@@ -17580,7 +17379,7 @@ object Form1: TForm1
           end
           object CheckBox45: TCheckBox
             Left = 16
-            Top = 144
+            Top = 120
             Width = 185
             Height = 17
             Caption = 'Arduino Parallelbetrieb '
@@ -17597,512 +17396,6 @@ object Form1: TForm1
           end
         end
       end
-      object GroupBox3: TGroupBox
-        Left = 8
-        Top = 209
-        Width = 449
-        Height = 240
-        Caption = 'LPT-Steuerung'
-        TabOrder = 2
-        object Label75: TLabel
-          Left = 26
-          Top = 68
-          Width = 87
-          Height = 15
-          Caption = 'Heizung Relais:'
-        end
-        object Label82: TLabel
-          Left = 18
-          Top = 100
-          Width = 95
-          Height = 15
-          Caption = 'R'#252'hrwerk Relais:'
-        end
-        object Label83: TLabel
-          Left = 32
-          Top = 132
-          Width = 82
-          Height = 15
-          Alignment = taRightJustify
-          Caption = 'Pumpe Relais:'
-        end
-        object Label84: TLabel
-          Left = 61
-          Top = 36
-          Width = 50
-          Height = 15
-          Caption = 'LPT Port:'
-        end
-        object Label85: TLabel
-          Left = 40
-          Top = 164
-          Width = 74
-          Height = 15
-          Caption = 'Alarm Relais:'
-        end
-        object ComboBox8: TComboBox
-          Left = 128
-          Top = 32
-          Width = 57
-          Height = 23
-          Hint = 'Nummer des LPT-Ports (dezimal)'
-          ItemHeight = 15
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 0
-          Text = '888'
-          Items.Strings = (
-            '888'
-            '632'
-            '956'
-            '36856'
-            '36857'
-            '36858'
-            '36859'
-            '36860'
-            '36861'
-            '36862'
-            '36863'
-            '36852'
-            '36853'
-            '36854'
-            '36855')
-        end
-        object ComboBox9: TComboBox
-          Left = 128
-          Top = 64
-          Width = 57
-          Height = 23
-          Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 0
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 1
-          Text = '1'
-          Items.Strings = (
-            '1'
-            '2'
-            '4'
-            '8'
-            '16'
-            '32'
-            '64'
-            '128')
-        end
-        object ComboBox10: TComboBox
-          Left = 128
-          Top = 96
-          Width = 57
-          Height = 23
-          Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 1
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 2
-          Text = '2'
-          Items.Strings = (
-            '1'
-            '2'
-            '4'
-            '8'
-            '16'
-            '32'
-            '64'
-            '128')
-        end
-        object ComboBox11: TComboBox
-          Left = 128
-          Top = 128
-          Width = 57
-          Height = 23
-          Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 2
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 3
-          Text = '4'
-          Items.Strings = (
-            '1'
-            '2'
-            '4'
-            '8'
-            '16'
-            '32'
-            '64'
-            '128')
-        end
-        object ComboBox12: TComboBox
-          Left = 128
-          Top = 160
-          Width = 57
-          Height = 23
-          Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 7
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 4
-          Text = '128'
-          Items.Strings = (
-            '1'
-            '2'
-            '4'
-            '8'
-            '16'
-            '32'
-            '64'
-            '128')
-        end
-      end
-      object GroupBox2: TGroupBox
-        Left = 8
-        Top = 209
-        Width = 449
-        Height = 240
-        Caption = 'USB-Steuerung'
-        TabOrder = 1
-        object Label74: TLabel
-          Left = 25
-          Top = 92
-          Width = 87
-          Height = 15
-          Caption = 'Heizung Relais:'
-        end
-        object Label76: TLabel
-          Left = 26
-          Top = 60
-          Width = 85
-          Height = 15
-          Caption = 'USB-COM-Port:'
-          Visible = False
-        end
-        object Label77: TLabel
-          Left = 17
-          Top = 124
-          Width = 95
-          Height = 15
-          Caption = 'R'#252'hrwerk Relais:'
-        end
-        object Label78: TLabel
-          Left = 32
-          Top = 156
-          Width = 82
-          Height = 15
-          Alignment = taRightJustify
-          Caption = 'Pumpe Relais:'
-        end
-        object Label79: TLabel
-          Left = 23
-          Top = 28
-          Width = 86
-          Height = 15
-          Caption = 'USB-Katen-Typ:'
-        end
-        object Label80: TLabel
-          Left = 40
-          Top = 188
-          Width = 74
-          Height = 15
-          Caption = 'Alarm Relais:'
-        end
-        object Label111: TLabel
-          Left = 37
-          Top = 60
-          Width = 73
-          Height = 15
-          Caption = 'Device-Index:'
-        end
-        object ComboBox2: TComboBox
-          Left = 128
-          Top = 24
-          Width = 137
-          Height = 23
-          Hint = 'USB-Schalthardware-Typ'
-          Style = csDropDownList
-          ItemHeight = 15
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 0
-          OnChange = ComboBox2Change
-          Items.Strings = (
-            'KMTronic'
-            'Denkovi'
-            'SainSmart'
-            'IO-Warrior-Basis')
-        end
-        object ComboBox3: TComboBox
-          Left = 128
-          Top = 88
-          Width = 57
-          Height = 23
-          Hint = 'Verwendete Nummers Relais'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 0
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 3
-          Text = '1'
-          Items.Strings = (
-            '1'
-            '2'
-            '3'
-            '4')
-        end
-        object ComboBox4: TComboBox
-          Left = 128
-          Top = 120
-          Width = 57
-          Height = 23
-          Hint = 'Verwendete Nummers Relais'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 1
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 4
-          Text = '2'
-          Items.Strings = (
-            '1'
-            '2'
-            '3'
-            '4')
-        end
-        object ComboBox5: TComboBox
-          Left = 128
-          Top = 152
-          Width = 57
-          Height = 23
-          Hint = 'Verwendete Nummers Relais'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 2
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 5
-          Text = '3'
-          Items.Strings = (
-            '1'
-            '2'
-            '3'
-            '4')
-        end
-        object ComboBox6: TComboBox
-          Left = 128
-          Top = 184
-          Width = 57
-          Height = 23
-          Hint = 'Verwendete Nummers Relais'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 3
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 6
-          Text = '4'
-          Items.Strings = (
-            '1'
-            '2'
-            '3'
-            '4')
-        end
-        object ComboBox7: TComboBox
-          Left = 128
-          Top = 56
-          Width = 81
-          Height = 23
-          Hint = 'COM-Port der USB-Hardware'
-          Style = csDropDownList
-          ItemHeight = 15
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 2
-          Visible = False
-          Items.Strings = (
-            'COM1'
-            'COM2'
-            'COM3'
-            'COM4'
-            'COM5'
-            'COM6'
-            'COM7'
-            'COM8'
-            'COM9'
-            'COM10')
-        end
-        object ComboBox16: TComboBox
-          Left = 128
-          Top = 56
-          Width = 57
-          Height = 23
-          Hint = 
-            'Der Device-Index muss ggf. angepasst werden, wenn '#13#10'Temperatur- ' +
-            'oder andere Hardware benutzt wird die'#13#10'den gleichen Chip benutzt' +
-            ' wie die Denkovi-Relais-'#13#10'Karte.'
-          Style = csDropDownList
-          ItemHeight = 15
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 1
-          Items.Strings = (
-            '0'
-            '1'
-            '2'
-            '3'
-            '4'
-            '5')
-        end
-      end
-      object GroupBox8: TGroupBox
-        Left = 8
-        Top = 208
-        Width = 449
-        Height = 241
-        Caption = 'WLAN-Steuerung'
-        TabOrder = 9
-        object Label142: TLabel
-          Left = 112
-          Top = 24
-          Width = 280
-          Height = 15
-          Caption = 'IP-Adresse:                   User-Name:            Passwort:'
-        end
-        object CheckBox46: TCheckBox
-          Left = 16
-          Top = 52
-          Width = 97
-          Height = 17
-          Caption = 'Heizung'
-          TabOrder = 0
-        end
-        object CheckBox47: TCheckBox
-          Left = 16
-          Top = 84
-          Width = 97
-          Height = 17
-          Caption = 'R'#252'hrwerk'
-          TabOrder = 1
-        end
-        object CheckBox48: TCheckBox
-          Left = 16
-          Top = 116
-          Width = 97
-          Height = 17
-          Caption = 'Pumpe'
-          TabOrder = 2
-        end
-        object CheckBox49: TCheckBox
-          Left = 16
-          Top = 148
-          Width = 97
-          Height = 17
-          Caption = 'Alarm'
-          TabOrder = 3
-        end
-        object Edit97: TEdit
-          Left = 112
-          Top = 48
-          Width = 105
-          Height = 23
-          TabOrder = 4
-          Text = '192.168.178.56'
-        end
-        object Edit98: TEdit
-          Left = 112
-          Top = 80
-          Width = 105
-          Height = 23
-          TabOrder = 5
-          Text = '192.168.178.56'
-        end
-        object Edit99: TEdit
-          Left = 112
-          Top = 112
-          Width = 105
-          Height = 23
-          TabOrder = 6
-          Text = '192.168.178.56'
-        end
-        object Edit100: TEdit
-          Left = 112
-          Top = 144
-          Width = 105
-          Height = 23
-          TabOrder = 7
-          Text = '192.168.178.56'
-        end
-        object Edit101: TEdit
-          Left = 232
-          Top = 48
-          Width = 89
-          Height = 23
-          TabOrder = 8
-          Text = 'admin'
-        end
-        object Edit102: TEdit
-          Left = 232
-          Top = 80
-          Width = 89
-          Height = 23
-          TabOrder = 9
-          Text = 'admin'
-        end
-        object Edit103: TEdit
-          Left = 232
-          Top = 112
-          Width = 89
-          Height = 23
-          TabOrder = 10
-          Text = 'admin'
-        end
-        object Edit104: TEdit
-          Left = 232
-          Top = 144
-          Width = 89
-          Height = 23
-          TabOrder = 11
-          Text = 'admin'
-        end
-        object Edit105: TEdit
-          Left = 336
-          Top = 48
-          Width = 89
-          Height = 23
-          TabOrder = 12
-          Text = '1234'
-        end
-        object Edit106: TEdit
-          Left = 336
-          Top = 80
-          Width = 89
-          Height = 23
-          TabOrder = 13
-          Text = '1234'
-        end
-        object Edit107: TEdit
-          Left = 336
-          Top = 112
-          Width = 89
-          Height = 23
-          TabOrder = 14
-          Text = '1234'
-        end
-        object Edit108: TEdit
-          Left = 336
-          Top = 144
-          Width = 89
-          Height = 23
-          TabOrder = 15
-          Text = '1234'
-        end
-      end
       object GroupBox5: TGroupBox
         Left = 8
         Top = 456
@@ -18110,7 +17403,7 @@ object Form1: TForm1
         Height = 121
         Hint = 'Eingabefeld f'#252'r den Dateinamen der Temperatur-Datei.'
         Caption = 'Temperaturmessung '#252'ber Textdatei'
-        TabOrder = 6
+        TabOrder = 3
         object Label143: TLabel
           Left = 16
           Top = 28
@@ -18128,9 +17421,9 @@ object Form1: TForm1
           OnKeyPress = Solltempwahl1KeyPress
         end
         object Button27: TButton
-          Left = 260
+          Left = 261
           Top = 56
-          Width = 233
+          Width = 232
           Height = 33
           Hint = 'Startet die zugeordnete Batch-Datei.'
           Caption = 'Digitemp_variabel.bat starten'
@@ -18158,7 +17451,7 @@ object Form1: TForm1
           OnClick = Button28Click
         end
         object CheckBox39: TCheckBox
-          Left = 260
+          Left = 264
           Top = 96
           Width = 193
           Height = 17
@@ -18194,7 +17487,7 @@ object Form1: TForm1
         Width = 753
         Height = 121
         Caption = 'Digitemp Steuerung'
-        TabOrder = 10
+        TabOrder = 6
         object Label144: TLabel
           Left = 10
           Top = 26
@@ -18289,6 +17582,2988 @@ object Form1: TForm1
             'Alte Digitemp-Version f'#252'r 9097E oder Lena Franken Schaltung verw' +
             'enden'
           TabOrder = 3
+        end
+      end
+      object PageControl3: TPageControl
+        Left = 8
+        Top = 184
+        Width = 449
+        Height = 265
+        ActivePage = TabSheet9
+        TabOrder = 7
+        OnChange = PageControl2Change
+        object TabSheet9: TTabSheet
+          Caption = 'USB-Relais'
+          object Label74: TLabel
+            Left = 9
+            Top = 108
+            Width = 87
+            Height = 15
+            Caption = 'Heizung Relais:'
+          end
+          object Label76: TLabel
+            Left = 10
+            Top = 76
+            Width = 85
+            Height = 15
+            Caption = 'USB-COM-Port:'
+            Visible = False
+          end
+          object Label77: TLabel
+            Left = 1
+            Top = 140
+            Width = 95
+            Height = 15
+            Caption = 'R'#252'hrwerk Relais:'
+          end
+          object Label78: TLabel
+            Left = 16
+            Top = 172
+            Width = 82
+            Height = 15
+            Alignment = taRightJustify
+            Caption = 'Pumpe Relais:'
+          end
+          object Label79: TLabel
+            Left = 7
+            Top = 44
+            Width = 86
+            Height = 15
+            Caption = 'USB-Katen-Typ:'
+          end
+          object Label80: TLabel
+            Left = 24
+            Top = 204
+            Width = 74
+            Height = 15
+            Caption = 'Alarm Relais:'
+          end
+          object Label111: TLabel
+            Left = 21
+            Top = 76
+            Width = 73
+            Height = 15
+            Caption = 'Device-Index:'
+          end
+          object Label62: TLabel
+            Left = 193
+            Top = 108
+            Width = 33
+            Height = 15
+            Caption = 'Code:'
+          end
+          object Label73: TLabel
+            Left = 193
+            Top = 140
+            Width = 33
+            Height = 15
+            Caption = 'Code:'
+          end
+          object Label147: TLabel
+            Left = 193
+            Top = 172
+            Width = 33
+            Height = 15
+            Caption = 'Code:'
+          end
+          object Label148: TLabel
+            Left = 193
+            Top = 204
+            Width = 33
+            Height = 15
+            Caption = 'Code:'
+          end
+          object ComboBox2: TComboBox
+            Left = 112
+            Top = 40
+            Width = 137
+            Height = 23
+            Hint = 'USB-Schalthardware-Typ'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 1
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 0
+            Text = 'Denkovi'
+            OnChange = ComboBox2Change
+            Items.Strings = (
+              'KMTronic'
+              'Denkovi'
+              'SainSmart'
+              'IO-Warrior-Basis')
+          end
+          object ComboBox3: TComboBox
+            Left = 112
+            Top = 104
+            Width = 57
+            Height = 23
+            Hint = 'Verwendete Nummers Relais'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 0
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 1
+            Text = '1'
+            Items.Strings = (
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              'Code')
+          end
+          object ComboBox4: TComboBox
+            Left = 112
+            Top = 136
+            Width = 57
+            Height = 23
+            Hint = 'Verwendete Nummers Relais'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 1
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 2
+            Text = '2'
+            Items.Strings = (
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              'Code')
+          end
+          object ComboBox5: TComboBox
+            Left = 112
+            Top = 168
+            Width = 57
+            Height = 23
+            Hint = 'Verwendete Nummers Relais'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 2
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 3
+            Text = '3'
+            Items.Strings = (
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              'Code')
+          end
+          object ComboBox6: TComboBox
+            Left = 112
+            Top = 200
+            Width = 57
+            Height = 23
+            Hint = 'Verwendete Nummers Relais'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 3
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 4
+            Text = '4'
+            Items.Strings = (
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              'Code')
+          end
+          object ComboBox7: TComboBox
+            Left = 112
+            Top = 72
+            Width = 81
+            Height = 23
+            Hint = 'COM-Port der USB-Hardware'
+            Style = csDropDownList
+            ItemHeight = 15
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 5
+            Visible = False
+            Items.Strings = (
+              'COM1'
+              'COM2'
+              'COM3'
+              'COM4'
+              'COM5'
+              'COM6'
+              'COM7'
+              'COM8'
+              'COM9'
+              'COM10')
+          end
+          object ComboBox16: TComboBox
+            Left = 112
+            Top = 72
+            Width = 57
+            Height = 23
+            Hint = 
+              'Der Device-Index muss ggf. angepasst werden, wenn '#13#10'Temperatur- ' +
+              'oder andere Hardware benutzt wird die'#13#10'den gleichen Chip benutzt' +
+              ' wie die Denkovi-Relais-'#13#10'Karte.'
+            Style = csDropDownList
+            ItemHeight = 15
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 6
+            Items.Strings = (
+              '0'
+              '1'
+              '2'
+              '3'
+              '4'
+              '5')
+          end
+          object USB: TCheckBox
+            Left = 3
+            Top = 3
+            Width = 321
+            Height = 17
+            Hint = 'Zyklisches wiederholen der Batch-Dateien '
+            Caption = 'USB-Relais-Steuerung verwenden'
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 7
+          end
+          object ComboBox46: TComboBox
+            Left = 240
+            Top = 104
+            Width = 65
+            Height = 23
+            Hint = 'Verwendete Nummers Relais'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 0
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 8
+            Text = '1'
+            Items.Strings = (
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              '9'
+              '10'
+              '11'
+              '12'
+              '13'
+              '14'
+              '15'
+              '16'
+              '17'
+              '18'
+              '19'
+              '20'
+              '21'
+              '22'
+              '23'
+              '24'
+              '25'
+              '26'
+              '27'
+              '28'
+              '29'
+              '30'
+              '31'
+              '32'
+              '33'
+              '34'
+              '35'
+              '36'
+              '37'
+              '38'
+              '39'
+              '40'
+              '41'
+              '42'
+              '43'
+              '44'
+              '45'
+              '46'
+              '47'
+              '48'
+              '49'
+              '50'
+              '51'
+              '52'
+              '53'
+              '54'
+              '55'
+              '56'
+              '57'
+              '58'
+              '59'
+              '60'
+              '61'
+              '62'
+              '63'
+              '64'
+              '65'
+              '66'
+              '67'
+              '68'
+              '69'
+              '70'
+              '71'
+              '72'
+              '73'
+              '74'
+              '75'
+              '76'
+              '77'
+              '78'
+              '79'
+              '80'
+              '81'
+              '82'
+              '83'
+              '84'
+              '85'
+              '86'
+              '87'
+              '88'
+              '89'
+              '90'
+              '91'
+              '92'
+              '93'
+              '94'
+              '95'
+              '96'
+              '97'
+              '98'
+              '99'
+              '100'
+              '101'
+              '102'
+              '103'
+              '104'
+              '105'
+              '106'
+              '107'
+              '108'
+              '109'
+              '110'
+              '111'
+              '112'
+              '113'
+              '114'
+              '115'
+              '116'
+              '117'
+              '118'
+              '119'
+              '120'
+              '121'
+              '122'
+              '123'
+              '124'
+              '125'
+              '126'
+              '127'
+              '128'
+              '129'
+              '130'
+              '131'
+              '132'
+              '133'
+              '134'
+              '135'
+              '136'
+              '137'
+              '138'
+              '139'
+              '140'
+              '141'
+              '142'
+              '143'
+              '144'
+              '145'
+              '146'
+              '147'
+              '148'
+              '149'
+              '150'
+              '151'
+              '152'
+              '153'
+              '154'
+              '155'
+              '156'
+              '157'
+              '158'
+              '159'
+              '160'
+              '161'
+              '162'
+              '163'
+              '164'
+              '165'
+              '166'
+              '167'
+              '168'
+              '169'
+              '170'
+              '171'
+              '172'
+              '173'
+              '174'
+              '175'
+              '176'
+              '177'
+              '178'
+              '179'
+              '180'
+              '181'
+              '182'
+              '183'
+              '184'
+              '185'
+              '186'
+              '187'
+              '188'
+              '189'
+              '190'
+              '191'
+              '192'
+              '193'
+              '194'
+              '195'
+              '196'
+              '197'
+              '198'
+              '199'
+              '200'
+              '201'
+              '202'
+              '203'
+              '204'
+              '205'
+              '206'
+              '207'
+              '208'
+              '209'
+              '210'
+              '211'
+              '212'
+              '213'
+              '214'
+              '215'
+              '216'
+              '217'
+              '218'
+              '219'
+              '220'
+              '221'
+              '222'
+              '223'
+              '224'
+              '225'
+              '226'
+              '227'
+              '228'
+              '229'
+              '230'
+              '231'
+              '232'
+              '233'
+              '234'
+              '235'
+              '236'
+              '237'
+              '238'
+              '239'
+              '240'
+              '241'
+              '242'
+              '243'
+              '244'
+              '245'
+              '246'
+              '247'
+              '248'
+              '249'
+              '250'
+              '251'
+              '252'
+              '253'
+              '254'
+              '255'
+              '256')
+          end
+          object ComboBox47: TComboBox
+            Left = 240
+            Top = 136
+            Width = 65
+            Height = 23
+            Hint = 'Verwendete Nummers Relais'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 0
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 9
+            Text = '1'
+            Items.Strings = (
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              '9'
+              '10'
+              '11'
+              '12'
+              '13'
+              '14'
+              '15'
+              '16'
+              '17'
+              '18'
+              '19'
+              '20'
+              '21'
+              '22'
+              '23'
+              '24'
+              '25'
+              '26'
+              '27'
+              '28'
+              '29'
+              '30'
+              '31'
+              '32'
+              '33'
+              '34'
+              '35'
+              '36'
+              '37'
+              '38'
+              '39'
+              '40'
+              '41'
+              '42'
+              '43'
+              '44'
+              '45'
+              '46'
+              '47'
+              '48'
+              '49'
+              '50'
+              '51'
+              '52'
+              '53'
+              '54'
+              '55'
+              '56'
+              '57'
+              '58'
+              '59'
+              '60'
+              '61'
+              '62'
+              '63'
+              '64'
+              '65'
+              '66'
+              '67'
+              '68'
+              '69'
+              '70'
+              '71'
+              '72'
+              '73'
+              '74'
+              '75'
+              '76'
+              '77'
+              '78'
+              '79'
+              '80'
+              '81'
+              '82'
+              '83'
+              '84'
+              '85'
+              '86'
+              '87'
+              '88'
+              '89'
+              '90'
+              '91'
+              '92'
+              '93'
+              '94'
+              '95'
+              '96'
+              '97'
+              '98'
+              '99'
+              '100'
+              '101'
+              '102'
+              '103'
+              '104'
+              '105'
+              '106'
+              '107'
+              '108'
+              '109'
+              '110'
+              '111'
+              '112'
+              '113'
+              '114'
+              '115'
+              '116'
+              '117'
+              '118'
+              '119'
+              '120'
+              '121'
+              '122'
+              '123'
+              '124'
+              '125'
+              '126'
+              '127'
+              '128'
+              '129'
+              '130'
+              '131'
+              '132'
+              '133'
+              '134'
+              '135'
+              '136'
+              '137'
+              '138'
+              '139'
+              '140'
+              '141'
+              '142'
+              '143'
+              '144'
+              '145'
+              '146'
+              '147'
+              '148'
+              '149'
+              '150'
+              '151'
+              '152'
+              '153'
+              '154'
+              '155'
+              '156'
+              '157'
+              '158'
+              '159'
+              '160'
+              '161'
+              '162'
+              '163'
+              '164'
+              '165'
+              '166'
+              '167'
+              '168'
+              '169'
+              '170'
+              '171'
+              '172'
+              '173'
+              '174'
+              '175'
+              '176'
+              '177'
+              '178'
+              '179'
+              '180'
+              '181'
+              '182'
+              '183'
+              '184'
+              '185'
+              '186'
+              '187'
+              '188'
+              '189'
+              '190'
+              '191'
+              '192'
+              '193'
+              '194'
+              '195'
+              '196'
+              '197'
+              '198'
+              '199'
+              '200'
+              '201'
+              '202'
+              '203'
+              '204'
+              '205'
+              '206'
+              '207'
+              '208'
+              '209'
+              '210'
+              '211'
+              '212'
+              '213'
+              '214'
+              '215'
+              '216'
+              '217'
+              '218'
+              '219'
+              '220'
+              '221'
+              '222'
+              '223'
+              '224'
+              '225'
+              '226'
+              '227'
+              '228'
+              '229'
+              '230'
+              '231'
+              '232'
+              '233'
+              '234'
+              '235'
+              '236'
+              '237'
+              '238'
+              '239'
+              '240'
+              '241'
+              '242'
+              '243'
+              '244'
+              '245'
+              '246'
+              '247'
+              '248'
+              '249'
+              '250'
+              '251'
+              '252'
+              '253'
+              '254'
+              '255'
+              '256')
+          end
+          object ComboBox48: TComboBox
+            Left = 240
+            Top = 168
+            Width = 65
+            Height = 23
+            Hint = 'Verwendete Nummers Relais'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 0
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 10
+            Text = '1'
+            Items.Strings = (
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              '9'
+              '10'
+              '11'
+              '12'
+              '13'
+              '14'
+              '15'
+              '16'
+              '17'
+              '18'
+              '19'
+              '20'
+              '21'
+              '22'
+              '23'
+              '24'
+              '25'
+              '26'
+              '27'
+              '28'
+              '29'
+              '30'
+              '31'
+              '32'
+              '33'
+              '34'
+              '35'
+              '36'
+              '37'
+              '38'
+              '39'
+              '40'
+              '41'
+              '42'
+              '43'
+              '44'
+              '45'
+              '46'
+              '47'
+              '48'
+              '49'
+              '50'
+              '51'
+              '52'
+              '53'
+              '54'
+              '55'
+              '56'
+              '57'
+              '58'
+              '59'
+              '60'
+              '61'
+              '62'
+              '63'
+              '64'
+              '65'
+              '66'
+              '67'
+              '68'
+              '69'
+              '70'
+              '71'
+              '72'
+              '73'
+              '74'
+              '75'
+              '76'
+              '77'
+              '78'
+              '79'
+              '80'
+              '81'
+              '82'
+              '83'
+              '84'
+              '85'
+              '86'
+              '87'
+              '88'
+              '89'
+              '90'
+              '91'
+              '92'
+              '93'
+              '94'
+              '95'
+              '96'
+              '97'
+              '98'
+              '99'
+              '100'
+              '101'
+              '102'
+              '103'
+              '104'
+              '105'
+              '106'
+              '107'
+              '108'
+              '109'
+              '110'
+              '111'
+              '112'
+              '113'
+              '114'
+              '115'
+              '116'
+              '117'
+              '118'
+              '119'
+              '120'
+              '121'
+              '122'
+              '123'
+              '124'
+              '125'
+              '126'
+              '127'
+              '128'
+              '129'
+              '130'
+              '131'
+              '132'
+              '133'
+              '134'
+              '135'
+              '136'
+              '137'
+              '138'
+              '139'
+              '140'
+              '141'
+              '142'
+              '143'
+              '144'
+              '145'
+              '146'
+              '147'
+              '148'
+              '149'
+              '150'
+              '151'
+              '152'
+              '153'
+              '154'
+              '155'
+              '156'
+              '157'
+              '158'
+              '159'
+              '160'
+              '161'
+              '162'
+              '163'
+              '164'
+              '165'
+              '166'
+              '167'
+              '168'
+              '169'
+              '170'
+              '171'
+              '172'
+              '173'
+              '174'
+              '175'
+              '176'
+              '177'
+              '178'
+              '179'
+              '180'
+              '181'
+              '182'
+              '183'
+              '184'
+              '185'
+              '186'
+              '187'
+              '188'
+              '189'
+              '190'
+              '191'
+              '192'
+              '193'
+              '194'
+              '195'
+              '196'
+              '197'
+              '198'
+              '199'
+              '200'
+              '201'
+              '202'
+              '203'
+              '204'
+              '205'
+              '206'
+              '207'
+              '208'
+              '209'
+              '210'
+              '211'
+              '212'
+              '213'
+              '214'
+              '215'
+              '216'
+              '217'
+              '218'
+              '219'
+              '220'
+              '221'
+              '222'
+              '223'
+              '224'
+              '225'
+              '226'
+              '227'
+              '228'
+              '229'
+              '230'
+              '231'
+              '232'
+              '233'
+              '234'
+              '235'
+              '236'
+              '237'
+              '238'
+              '239'
+              '240'
+              '241'
+              '242'
+              '243'
+              '244'
+              '245'
+              '246'
+              '247'
+              '248'
+              '249'
+              '250'
+              '251'
+              '252'
+              '253'
+              '254'
+              '255'
+              '256')
+          end
+          object ComboBox49: TComboBox
+            Left = 240
+            Top = 200
+            Width = 65
+            Height = 23
+            Hint = 'Verwendete Nummers Relais'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 1
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 11
+            Text = '2'
+            Items.Strings = (
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              '9'
+              '10'
+              '11'
+              '12'
+              '13'
+              '14'
+              '15'
+              '16'
+              '17'
+              '18'
+              '19'
+              '20'
+              '21'
+              '22'
+              '23'
+              '24'
+              '25'
+              '26'
+              '27'
+              '28'
+              '29'
+              '30'
+              '31'
+              '32'
+              '33'
+              '34'
+              '35'
+              '36'
+              '37'
+              '38'
+              '39'
+              '40'
+              '41'
+              '42'
+              '43'
+              '44'
+              '45'
+              '46'
+              '47'
+              '48'
+              '49'
+              '50'
+              '51'
+              '52'
+              '53'
+              '54'
+              '55'
+              '56'
+              '57'
+              '58'
+              '59'
+              '60'
+              '61'
+              '62'
+              '63'
+              '64'
+              '65'
+              '66'
+              '67'
+              '68'
+              '69'
+              '70'
+              '71'
+              '72'
+              '73'
+              '74'
+              '75'
+              '76'
+              '77'
+              '78'
+              '79'
+              '80'
+              '81'
+              '82'
+              '83'
+              '84'
+              '85'
+              '86'
+              '87'
+              '88'
+              '89'
+              '90'
+              '91'
+              '92'
+              '93'
+              '94'
+              '95'
+              '96'
+              '97'
+              '98'
+              '99'
+              '100'
+              '101'
+              '102'
+              '103'
+              '104'
+              '105'
+              '106'
+              '107'
+              '108'
+              '109'
+              '110'
+              '111'
+              '112'
+              '113'
+              '114'
+              '115'
+              '116'
+              '117'
+              '118'
+              '119'
+              '120'
+              '121'
+              '122'
+              '123'
+              '124'
+              '125'
+              '126'
+              '127'
+              '128'
+              '129'
+              '130'
+              '131'
+              '132'
+              '133'
+              '134'
+              '135'
+              '136'
+              '137'
+              '138'
+              '139'
+              '140'
+              '141'
+              '142'
+              '143'
+              '144'
+              '145'
+              '146'
+              '147'
+              '148'
+              '149'
+              '150'
+              '151'
+              '152'
+              '153'
+              '154'
+              '155'
+              '156'
+              '157'
+              '158'
+              '159'
+              '160'
+              '161'
+              '162'
+              '163'
+              '164'
+              '165'
+              '166'
+              '167'
+              '168'
+              '169'
+              '170'
+              '171'
+              '172'
+              '173'
+              '174'
+              '175'
+              '176'
+              '177'
+              '178'
+              '179'
+              '180'
+              '181'
+              '182'
+              '183'
+              '184'
+              '185'
+              '186'
+              '187'
+              '188'
+              '189'
+              '190'
+              '191'
+              '192'
+              '193'
+              '194'
+              '195'
+              '196'
+              '197'
+              '198'
+              '199'
+              '200'
+              '201'
+              '202'
+              '203'
+              '204'
+              '205'
+              '206'
+              '207'
+              '208'
+              '209'
+              '210'
+              '211'
+              '212'
+              '213'
+              '214'
+              '215'
+              '216'
+              '217'
+              '218'
+              '219'
+              '220'
+              '221'
+              '222'
+              '223'
+              '224'
+              '225'
+              '226'
+              '227'
+              '228'
+              '229'
+              '230'
+              '231'
+              '232'
+              '233'
+              '234'
+              '235'
+              '236'
+              '237'
+              '238'
+              '239'
+              '240'
+              '241'
+              '242'
+              '243'
+              '244'
+              '245'
+              '246'
+              '247'
+              '248'
+              '249'
+              '250'
+              '251'
+              '252'
+              '253'
+              '254'
+              '255'
+              '256')
+          end
+        end
+        object TabSheet10: TTabSheet
+          Caption = 'LPT-Relais'
+          ImageIndex = 1
+          object Label75: TLabel
+            Left = 10
+            Top = 76
+            Width = 87
+            Height = 15
+            Caption = 'Heizung Relais:'
+          end
+          object Label82: TLabel
+            Left = 2
+            Top = 108
+            Width = 95
+            Height = 15
+            Caption = 'R'#252'hrwerk Relais:'
+          end
+          object Label83: TLabel
+            Left = 16
+            Top = 140
+            Width = 82
+            Height = 15
+            Alignment = taRightJustify
+            Caption = 'Pumpe Relais:'
+          end
+          object Label84: TLabel
+            Left = 45
+            Top = 44
+            Width = 50
+            Height = 15
+            Caption = 'LPT Port:'
+          end
+          object Label85: TLabel
+            Left = 24
+            Top = 172
+            Width = 74
+            Height = 15
+            Caption = 'Alarm Relais:'
+          end
+          object Label149: TLabel
+            Left = 193
+            Top = 76
+            Width = 33
+            Height = 15
+            Caption = 'Code:'
+          end
+          object Label150: TLabel
+            Left = 193
+            Top = 108
+            Width = 33
+            Height = 15
+            Caption = 'Code:'
+          end
+          object Label151: TLabel
+            Left = 193
+            Top = 140
+            Width = 33
+            Height = 15
+            Caption = 'Code:'
+          end
+          object Label152: TLabel
+            Left = 193
+            Top = 172
+            Width = 33
+            Height = 15
+            Caption = 'Code:'
+          end
+          object ComboBox8: TComboBox
+            Left = 112
+            Top = 40
+            Width = 57
+            Height = 23
+            Hint = 'Nummer des LPT-Ports (dezimal)'
+            ItemHeight = 15
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 0
+            Text = '888'
+            Items.Strings = (
+              '888'
+              '632'
+              '956'
+              '36856'
+              '36857'
+              '36858'
+              '36859'
+              '36860'
+              '36861'
+              '36862'
+              '36863'
+              '36852'
+              '36853'
+              '36854'
+              '36855')
+          end
+          object ComboBox9: TComboBox
+            Left = 112
+            Top = 72
+            Width = 57
+            Height = 23
+            Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 0
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 1
+            Text = '1'
+            Items.Strings = (
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              'Code')
+          end
+          object ComboBox10: TComboBox
+            Left = 112
+            Top = 104
+            Width = 57
+            Height = 23
+            Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 1
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 2
+            Text = '2'
+            Items.Strings = (
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              'Code'
+              '')
+          end
+          object ComboBox11: TComboBox
+            Left = 112
+            Top = 136
+            Width = 57
+            Height = 23
+            Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 2
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 3
+            Text = '3'
+            Items.Strings = (
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              'Code')
+          end
+          object ComboBox12: TComboBox
+            Left = 112
+            Top = 168
+            Width = 57
+            Height = 23
+            Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 3
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 4
+            Text = '4'
+            Items.Strings = (
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              'Code')
+          end
+          object LPT: TCheckBox
+            Left = 3
+            Top = 3
+            Width = 321
+            Height = 17
+            Hint = 'Zyklisches wiederholen der Batch-Dateien '
+            Caption = 'LPT-Relais-Steuerung verwenden'
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 5
+          end
+          object ComboBox50: TComboBox
+            Left = 240
+            Top = 72
+            Width = 65
+            Height = 23
+            Hint = 'Verwendete Nummers Relais'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 0
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 6
+            Text = '1'
+            Items.Strings = (
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              '9'
+              '10'
+              '11'
+              '12'
+              '13'
+              '14'
+              '15'
+              '16'
+              '17'
+              '18'
+              '19'
+              '20'
+              '21'
+              '22'
+              '23'
+              '24'
+              '25'
+              '26'
+              '27'
+              '28'
+              '29'
+              '30'
+              '31'
+              '32'
+              '33'
+              '34'
+              '35'
+              '36'
+              '37'
+              '38'
+              '39'
+              '40'
+              '41'
+              '42'
+              '43'
+              '44'
+              '45'
+              '46'
+              '47'
+              '48'
+              '49'
+              '50'
+              '51'
+              '52'
+              '53'
+              '54'
+              '55'
+              '56'
+              '57'
+              '58'
+              '59'
+              '60'
+              '61'
+              '62'
+              '63'
+              '64'
+              '65'
+              '66'
+              '67'
+              '68'
+              '69'
+              '70'
+              '71'
+              '72'
+              '73'
+              '74'
+              '75'
+              '76'
+              '77'
+              '78'
+              '79'
+              '80'
+              '81'
+              '82'
+              '83'
+              '84'
+              '85'
+              '86'
+              '87'
+              '88'
+              '89'
+              '90'
+              '91'
+              '92'
+              '93'
+              '94'
+              '95'
+              '96'
+              '97'
+              '98'
+              '99'
+              '100'
+              '101'
+              '102'
+              '103'
+              '104'
+              '105'
+              '106'
+              '107'
+              '108'
+              '109'
+              '110'
+              '111'
+              '112'
+              '113'
+              '114'
+              '115'
+              '116'
+              '117'
+              '118'
+              '119'
+              '120'
+              '121'
+              '122'
+              '123'
+              '124'
+              '125'
+              '126'
+              '127'
+              '128'
+              '129'
+              '130'
+              '131'
+              '132'
+              '133'
+              '134'
+              '135'
+              '136'
+              '137'
+              '138'
+              '139'
+              '140'
+              '141'
+              '142'
+              '143'
+              '144'
+              '145'
+              '146'
+              '147'
+              '148'
+              '149'
+              '150'
+              '151'
+              '152'
+              '153'
+              '154'
+              '155'
+              '156'
+              '157'
+              '158'
+              '159'
+              '160'
+              '161'
+              '162'
+              '163'
+              '164'
+              '165'
+              '166'
+              '167'
+              '168'
+              '169'
+              '170'
+              '171'
+              '172'
+              '173'
+              '174'
+              '175'
+              '176'
+              '177'
+              '178'
+              '179'
+              '180'
+              '181'
+              '182'
+              '183'
+              '184'
+              '185'
+              '186'
+              '187'
+              '188'
+              '189'
+              '190'
+              '191'
+              '192'
+              '193'
+              '194'
+              '195'
+              '196'
+              '197'
+              '198'
+              '199'
+              '200'
+              '201'
+              '202'
+              '203'
+              '204'
+              '205'
+              '206'
+              '207'
+              '208'
+              '209'
+              '210'
+              '211'
+              '212'
+              '213'
+              '214'
+              '215'
+              '216'
+              '217'
+              '218'
+              '219'
+              '220'
+              '221'
+              '222'
+              '223'
+              '224'
+              '225'
+              '226'
+              '227'
+              '228'
+              '229'
+              '230'
+              '231'
+              '232'
+              '233'
+              '234'
+              '235'
+              '236'
+              '237'
+              '238'
+              '239'
+              '240'
+              '241'
+              '242'
+              '243'
+              '244'
+              '245'
+              '246'
+              '247'
+              '248'
+              '249'
+              '250'
+              '251'
+              '252'
+              '253'
+              '254'
+              '255'
+              '256')
+          end
+          object ComboBox51: TComboBox
+            Left = 240
+            Top = 104
+            Width = 65
+            Height = 23
+            Hint = 'Verwendete Nummers Relais'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 0
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 7
+            Text = '1'
+            Items.Strings = (
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              '9'
+              '10'
+              '11'
+              '12'
+              '13'
+              '14'
+              '15'
+              '16'
+              '17'
+              '18'
+              '19'
+              '20'
+              '21'
+              '22'
+              '23'
+              '24'
+              '25'
+              '26'
+              '27'
+              '28'
+              '29'
+              '30'
+              '31'
+              '32'
+              '33'
+              '34'
+              '35'
+              '36'
+              '37'
+              '38'
+              '39'
+              '40'
+              '41'
+              '42'
+              '43'
+              '44'
+              '45'
+              '46'
+              '47'
+              '48'
+              '49'
+              '50'
+              '51'
+              '52'
+              '53'
+              '54'
+              '55'
+              '56'
+              '57'
+              '58'
+              '59'
+              '60'
+              '61'
+              '62'
+              '63'
+              '64'
+              '65'
+              '66'
+              '67'
+              '68'
+              '69'
+              '70'
+              '71'
+              '72'
+              '73'
+              '74'
+              '75'
+              '76'
+              '77'
+              '78'
+              '79'
+              '80'
+              '81'
+              '82'
+              '83'
+              '84'
+              '85'
+              '86'
+              '87'
+              '88'
+              '89'
+              '90'
+              '91'
+              '92'
+              '93'
+              '94'
+              '95'
+              '96'
+              '97'
+              '98'
+              '99'
+              '100'
+              '101'
+              '102'
+              '103'
+              '104'
+              '105'
+              '106'
+              '107'
+              '108'
+              '109'
+              '110'
+              '111'
+              '112'
+              '113'
+              '114'
+              '115'
+              '116'
+              '117'
+              '118'
+              '119'
+              '120'
+              '121'
+              '122'
+              '123'
+              '124'
+              '125'
+              '126'
+              '127'
+              '128'
+              '129'
+              '130'
+              '131'
+              '132'
+              '133'
+              '134'
+              '135'
+              '136'
+              '137'
+              '138'
+              '139'
+              '140'
+              '141'
+              '142'
+              '143'
+              '144'
+              '145'
+              '146'
+              '147'
+              '148'
+              '149'
+              '150'
+              '151'
+              '152'
+              '153'
+              '154'
+              '155'
+              '156'
+              '157'
+              '158'
+              '159'
+              '160'
+              '161'
+              '162'
+              '163'
+              '164'
+              '165'
+              '166'
+              '167'
+              '168'
+              '169'
+              '170'
+              '171'
+              '172'
+              '173'
+              '174'
+              '175'
+              '176'
+              '177'
+              '178'
+              '179'
+              '180'
+              '181'
+              '182'
+              '183'
+              '184'
+              '185'
+              '186'
+              '187'
+              '188'
+              '189'
+              '190'
+              '191'
+              '192'
+              '193'
+              '194'
+              '195'
+              '196'
+              '197'
+              '198'
+              '199'
+              '200'
+              '201'
+              '202'
+              '203'
+              '204'
+              '205'
+              '206'
+              '207'
+              '208'
+              '209'
+              '210'
+              '211'
+              '212'
+              '213'
+              '214'
+              '215'
+              '216'
+              '217'
+              '218'
+              '219'
+              '220'
+              '221'
+              '222'
+              '223'
+              '224'
+              '225'
+              '226'
+              '227'
+              '228'
+              '229'
+              '230'
+              '231'
+              '232'
+              '233'
+              '234'
+              '235'
+              '236'
+              '237'
+              '238'
+              '239'
+              '240'
+              '241'
+              '242'
+              '243'
+              '244'
+              '245'
+              '246'
+              '247'
+              '248'
+              '249'
+              '250'
+              '251'
+              '252'
+              '253'
+              '254'
+              '255'
+              '256')
+          end
+          object ComboBox52: TComboBox
+            Left = 240
+            Top = 136
+            Width = 65
+            Height = 23
+            Hint = 'Verwendete Nummers Relais'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 0
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 8
+            Text = '1'
+            Items.Strings = (
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              '9'
+              '10'
+              '11'
+              '12'
+              '13'
+              '14'
+              '15'
+              '16'
+              '17'
+              '18'
+              '19'
+              '20'
+              '21'
+              '22'
+              '23'
+              '24'
+              '25'
+              '26'
+              '27'
+              '28'
+              '29'
+              '30'
+              '31'
+              '32'
+              '33'
+              '34'
+              '35'
+              '36'
+              '37'
+              '38'
+              '39'
+              '40'
+              '41'
+              '42'
+              '43'
+              '44'
+              '45'
+              '46'
+              '47'
+              '48'
+              '49'
+              '50'
+              '51'
+              '52'
+              '53'
+              '54'
+              '55'
+              '56'
+              '57'
+              '58'
+              '59'
+              '60'
+              '61'
+              '62'
+              '63'
+              '64'
+              '65'
+              '66'
+              '67'
+              '68'
+              '69'
+              '70'
+              '71'
+              '72'
+              '73'
+              '74'
+              '75'
+              '76'
+              '77'
+              '78'
+              '79'
+              '80'
+              '81'
+              '82'
+              '83'
+              '84'
+              '85'
+              '86'
+              '87'
+              '88'
+              '89'
+              '90'
+              '91'
+              '92'
+              '93'
+              '94'
+              '95'
+              '96'
+              '97'
+              '98'
+              '99'
+              '100'
+              '101'
+              '102'
+              '103'
+              '104'
+              '105'
+              '106'
+              '107'
+              '108'
+              '109'
+              '110'
+              '111'
+              '112'
+              '113'
+              '114'
+              '115'
+              '116'
+              '117'
+              '118'
+              '119'
+              '120'
+              '121'
+              '122'
+              '123'
+              '124'
+              '125'
+              '126'
+              '127'
+              '128'
+              '129'
+              '130'
+              '131'
+              '132'
+              '133'
+              '134'
+              '135'
+              '136'
+              '137'
+              '138'
+              '139'
+              '140'
+              '141'
+              '142'
+              '143'
+              '144'
+              '145'
+              '146'
+              '147'
+              '148'
+              '149'
+              '150'
+              '151'
+              '152'
+              '153'
+              '154'
+              '155'
+              '156'
+              '157'
+              '158'
+              '159'
+              '160'
+              '161'
+              '162'
+              '163'
+              '164'
+              '165'
+              '166'
+              '167'
+              '168'
+              '169'
+              '170'
+              '171'
+              '172'
+              '173'
+              '174'
+              '175'
+              '176'
+              '177'
+              '178'
+              '179'
+              '180'
+              '181'
+              '182'
+              '183'
+              '184'
+              '185'
+              '186'
+              '187'
+              '188'
+              '189'
+              '190'
+              '191'
+              '192'
+              '193'
+              '194'
+              '195'
+              '196'
+              '197'
+              '198'
+              '199'
+              '200'
+              '201'
+              '202'
+              '203'
+              '204'
+              '205'
+              '206'
+              '207'
+              '208'
+              '209'
+              '210'
+              '211'
+              '212'
+              '213'
+              '214'
+              '215'
+              '216'
+              '217'
+              '218'
+              '219'
+              '220'
+              '221'
+              '222'
+              '223'
+              '224'
+              '225'
+              '226'
+              '227'
+              '228'
+              '229'
+              '230'
+              '231'
+              '232'
+              '233'
+              '234'
+              '235'
+              '236'
+              '237'
+              '238'
+              '239'
+              '240'
+              '241'
+              '242'
+              '243'
+              '244'
+              '245'
+              '246'
+              '247'
+              '248'
+              '249'
+              '250'
+              '251'
+              '252'
+              '253'
+              '254'
+              '255'
+              '256')
+          end
+          object ComboBox53: TComboBox
+            Left = 240
+            Top = 168
+            Width = 65
+            Height = 23
+            Hint = 'Verwendete Nummers Relais'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 0
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 9
+            Text = '1'
+            Items.Strings = (
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              '9'
+              '10'
+              '11'
+              '12'
+              '13'
+              '14'
+              '15'
+              '16'
+              '17'
+              '18'
+              '19'
+              '20'
+              '21'
+              '22'
+              '23'
+              '24'
+              '25'
+              '26'
+              '27'
+              '28'
+              '29'
+              '30'
+              '31'
+              '32'
+              '33'
+              '34'
+              '35'
+              '36'
+              '37'
+              '38'
+              '39'
+              '40'
+              '41'
+              '42'
+              '43'
+              '44'
+              '45'
+              '46'
+              '47'
+              '48'
+              '49'
+              '50'
+              '51'
+              '52'
+              '53'
+              '54'
+              '55'
+              '56'
+              '57'
+              '58'
+              '59'
+              '60'
+              '61'
+              '62'
+              '63'
+              '64'
+              '65'
+              '66'
+              '67'
+              '68'
+              '69'
+              '70'
+              '71'
+              '72'
+              '73'
+              '74'
+              '75'
+              '76'
+              '77'
+              '78'
+              '79'
+              '80'
+              '81'
+              '82'
+              '83'
+              '84'
+              '85'
+              '86'
+              '87'
+              '88'
+              '89'
+              '90'
+              '91'
+              '92'
+              '93'
+              '94'
+              '95'
+              '96'
+              '97'
+              '98'
+              '99'
+              '100'
+              '101'
+              '102'
+              '103'
+              '104'
+              '105'
+              '106'
+              '107'
+              '108'
+              '109'
+              '110'
+              '111'
+              '112'
+              '113'
+              '114'
+              '115'
+              '116'
+              '117'
+              '118'
+              '119'
+              '120'
+              '121'
+              '122'
+              '123'
+              '124'
+              '125'
+              '126'
+              '127'
+              '128'
+              '129'
+              '130'
+              '131'
+              '132'
+              '133'
+              '134'
+              '135'
+              '136'
+              '137'
+              '138'
+              '139'
+              '140'
+              '141'
+              '142'
+              '143'
+              '144'
+              '145'
+              '146'
+              '147'
+              '148'
+              '149'
+              '150'
+              '151'
+              '152'
+              '153'
+              '154'
+              '155'
+              '156'
+              '157'
+              '158'
+              '159'
+              '160'
+              '161'
+              '162'
+              '163'
+              '164'
+              '165'
+              '166'
+              '167'
+              '168'
+              '169'
+              '170'
+              '171'
+              '172'
+              '173'
+              '174'
+              '175'
+              '176'
+              '177'
+              '178'
+              '179'
+              '180'
+              '181'
+              '182'
+              '183'
+              '184'
+              '185'
+              '186'
+              '187'
+              '188'
+              '189'
+              '190'
+              '191'
+              '192'
+              '193'
+              '194'
+              '195'
+              '196'
+              '197'
+              '198'
+              '199'
+              '200'
+              '201'
+              '202'
+              '203'
+              '204'
+              '205'
+              '206'
+              '207'
+              '208'
+              '209'
+              '210'
+              '211'
+              '212'
+              '213'
+              '214'
+              '215'
+              '216'
+              '217'
+              '218'
+              '219'
+              '220'
+              '221'
+              '222'
+              '223'
+              '224'
+              '225'
+              '226'
+              '227'
+              '228'
+              '229'
+              '230'
+              '231'
+              '232'
+              '233'
+              '234'
+              '235'
+              '236'
+              '237'
+              '238'
+              '239'
+              '240'
+              '241'
+              '242'
+              '243'
+              '244'
+              '245'
+              '246'
+              '247'
+              '248'
+              '249'
+              '250'
+              '251'
+              '252'
+              '253'
+              '254'
+              '255'
+              '256')
+          end
+        end
+        object TabSheet11: TTabSheet
+          Caption = 'WLAN-Relais'
+          ImageIndex = 2
+          object Label142: TLabel
+            Left = 104
+            Top = 40
+            Width = 280
+            Height = 15
+            Caption = 'IP-Adresse:                   User-Name:            Passwort:'
+          end
+          object CheckBox46: TCheckBox
+            Left = 8
+            Top = 68
+            Width = 97
+            Height = 17
+            Caption = 'Heizung'
+            TabOrder = 0
+          end
+          object CheckBox47: TCheckBox
+            Left = 8
+            Top = 100
+            Width = 97
+            Height = 17
+            Caption = 'R'#252'hrwerk'
+            TabOrder = 1
+          end
+          object CheckBox48: TCheckBox
+            Left = 8
+            Top = 132
+            Width = 97
+            Height = 17
+            Caption = 'Pumpe'
+            TabOrder = 2
+          end
+          object CheckBox49: TCheckBox
+            Left = 8
+            Top = 164
+            Width = 97
+            Height = 17
+            Caption = 'Alarm'
+            TabOrder = 3
+          end
+          object Edit97: TEdit
+            Left = 104
+            Top = 64
+            Width = 105
+            Height = 23
+            TabOrder = 4
+            Text = '192.168.178.56'
+          end
+          object Edit98: TEdit
+            Left = 104
+            Top = 96
+            Width = 105
+            Height = 23
+            TabOrder = 5
+            Text = '192.168.178.56'
+          end
+          object Edit99: TEdit
+            Left = 104
+            Top = 128
+            Width = 105
+            Height = 23
+            TabOrder = 6
+            Text = '192.168.178.56'
+          end
+          object Edit100: TEdit
+            Left = 104
+            Top = 160
+            Width = 105
+            Height = 23
+            TabOrder = 7
+            Text = '192.168.178.56'
+          end
+          object Edit101: TEdit
+            Left = 224
+            Top = 64
+            Width = 89
+            Height = 23
+            TabOrder = 8
+            Text = 'admin'
+          end
+          object Edit102: TEdit
+            Left = 224
+            Top = 96
+            Width = 89
+            Height = 23
+            TabOrder = 9
+            Text = 'admin'
+          end
+          object Edit103: TEdit
+            Left = 224
+            Top = 128
+            Width = 89
+            Height = 23
+            TabOrder = 10
+            Text = 'admin'
+          end
+          object Edit104: TEdit
+            Left = 224
+            Top = 160
+            Width = 89
+            Height = 23
+            TabOrder = 11
+            Text = 'admin'
+          end
+          object Edit105: TEdit
+            Left = 328
+            Top = 64
+            Width = 89
+            Height = 23
+            TabOrder = 12
+            Text = '1234'
+          end
+          object Edit106: TEdit
+            Left = 328
+            Top = 96
+            Width = 89
+            Height = 23
+            TabOrder = 13
+            Text = '1234'
+          end
+          object Edit107: TEdit
+            Left = 328
+            Top = 128
+            Width = 89
+            Height = 23
+            TabOrder = 14
+            Text = '1234'
+          end
+          object Edit108: TEdit
+            Left = 328
+            Top = 160
+            Width = 89
+            Height = 23
+            TabOrder = 15
+            Text = '1234'
+          end
+          object WLAN: TCheckBox
+            Left = 3
+            Top = 3
+            Width = 321
+            Height = 17
+            Hint = 'Zyklisches wiederholen der Batch-Dateien '
+            Caption = 'WLAN-Relais-Steuerung verwenden'
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 16
+          end
+        end
+        object TabSheet12: TTabSheet
+          Caption = 'Batch-Datei'
+          ImageIndex = 3
+          object Label65: TLabel
+            Left = 10
+            Top = 53
+            Width = 71
+            Height = 15
+            Caption = 'Heizung Aus:'
+          end
+          object Label67: TLabel
+            Left = 2
+            Top = 101
+            Width = 79
+            Height = 15
+            Caption = 'R'#252'hrwerk Aus:'
+          end
+          object Label68: TLabel
+            Left = 3
+            Top = 77
+            Width = 77
+            Height = 15
+            Caption = 'R'#252'hrwerk Ein:'
+          end
+          object Label69: TLabel
+            Left = 17
+            Top = 125
+            Width = 64
+            Height = 15
+            Alignment = taRightJustify
+            Caption = 'Pumpe Ein:'
+          end
+          object Label70: TLabel
+            Left = 15
+            Top = 149
+            Width = 66
+            Height = 15
+            Alignment = taRightJustify
+            Caption = 'Pumpe Aus:'
+          end
+          object Label71: TLabel
+            Left = 24
+            Top = 173
+            Width = 56
+            Height = 15
+            Caption = 'Alarm Ein:'
+          end
+          object Label72: TLabel
+            Left = 24
+            Top = 196
+            Width = 58
+            Height = 15
+            Caption = 'Alarm Aus:'
+          end
+          object Label146: TLabel
+            Left = 10
+            Top = 28
+            Width = 69
+            Height = 15
+            Caption = 'Heizung Ein:'
+          end
+          object Edit54: TEdit
+            Left = 88
+            Top = 25
+            Width = 337
+            Height = 23
+            Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 0
+            Text = 'C:\Brauerei\Batch\Heizung-Ein.bat'
+            OnKeyPress = Solltempwahl1KeyPress
+          end
+          object Edit55: TEdit
+            Left = 88
+            Top = 49
+            Width = 337
+            Height = 23
+            Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 1
+            Text = 'C:\Brauerei\Batch\Heizung-Aus.bat'
+            OnKeyPress = Solltempwahl1KeyPress
+          end
+          object Edit56: TEdit
+            Left = 88
+            Top = 73
+            Width = 337
+            Height = 23
+            Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 2
+            Text = 'C:\Brauerei\Batch\Ruehrwerk-Ein.bat'
+            OnKeyPress = Solltempwahl1KeyPress
+          end
+          object Edit57: TEdit
+            Left = 88
+            Top = 97
+            Width = 337
+            Height = 23
+            Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 3
+            Text = 'C:\Brauerei\Batch\Ruehrwerk-Aus.bat'
+            OnKeyPress = Solltempwahl1KeyPress
+          end
+          object Edit58: TEdit
+            Left = 88
+            Top = 121
+            Width = 337
+            Height = 23
+            Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 4
+            Text = 'C:\Brauerei\Batch\Pumpe-Ein.bat'
+            OnKeyPress = Solltempwahl1KeyPress
+          end
+          object Edit59: TEdit
+            Left = 88
+            Top = 145
+            Width = 337
+            Height = 23
+            Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 5
+            Text = 'C:\Brauerei\Batch\Pumpe-Aus.bat'
+            OnKeyPress = Solltempwahl1KeyPress
+          end
+          object Edit60: TEdit
+            Left = 88
+            Top = 169
+            Width = 337
+            Height = 23
+            Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 6
+            Text = 'C:\Brauerei\Batch\Alarm-Ein.bat'
+            OnKeyPress = Solltempwahl1KeyPress
+          end
+          object Edit61: TEdit
+            Left = 88
+            Top = 193
+            Width = 337
+            Height = 23
+            Hint = 'Pfad und Datei-Name der verwendeten Batch-Datei '
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 7
+            Text = 'C:\Brauerei\Batch\Alarm-Aus.bat'
+            OnKeyPress = Solltempwahl1KeyPress
+          end
+          object CheckBox35: TCheckBox
+            Left = 96
+            Top = 218
+            Width = 321
+            Height = 17
+            Hint = 'Zyklisches wiederholen der Batch-Dateien '
+            Caption = 'Batchausgabe zyklisch wiederholen'
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 8
+          end
+          object BATCH: TCheckBox
+            Left = 3
+            Top = 3
+            Width = 321
+            Height = 17
+            Hint = 'Zyklisches wiederholen der Batch-Dateien '
+            Caption = 'Batchdatei-Relais-Steuerung verwenden'
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 9
+          end
+        end
+        object TabSheet13: TTabSheet
+          Caption = 'Arduino'
+          ImageIndex = 4
+          object Arduino: TCheckBox
+            Left = 3
+            Top = 3
+            Width = 321
+            Height = 17
+            Hint = 'Zyklisches wiederholen der Batch-Dateien '
+            Caption = 'Arduino-Relais-Steuerung verwenden'
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 0
+            OnClick = ArduinoClick
+          end
         end
       end
     end

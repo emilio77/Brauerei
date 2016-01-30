@@ -73,47 +73,6 @@ type
     PrintDialog1: TPrintDialog;
     USB_Update_Tmr: TTimer;
     TabSheet4: TTabSheet;
-    GroupBox1: TGroupBox;
-    Label62: TLabel;
-    Label65: TLabel;
-    Label67: TLabel;
-    Label68: TLabel;
-    Label69: TLabel;
-    Label70: TLabel;
-    Label71: TLabel;
-    Label72: TLabel;
-    Edit54: TEdit;
-    Edit55: TEdit;
-    Edit56: TEdit;
-    Edit57: TEdit;
-    Edit58: TEdit;
-    Edit59: TEdit;
-    Edit60: TEdit;
-    Edit61: TEdit;
-    GroupBox2: TGroupBox;
-    Label74: TLabel;
-    Label76: TLabel;
-    Label77: TLabel;
-    Label78: TLabel;
-    Label79: TLabel;
-    Label80: TLabel;
-    ComboBox2: TComboBox;
-    ComboBox3: TComboBox;
-    ComboBox4: TComboBox;
-    ComboBox5: TComboBox;
-    ComboBox6: TComboBox;
-    ComboBox7: TComboBox;
-    GroupBox3: TGroupBox;
-    Label75: TLabel;
-    Label82: TLabel;
-    Label83: TLabel;
-    Label84: TLabel;
-    Label85: TLabel;
-    ComboBox8: TComboBox;
-    ComboBox9: TComboBox;
-    ComboBox10: TComboBox;
-    ComboBox11: TComboBox;
-    ComboBox12: TComboBox;
     GroupBox4: TGroupBox;
     Label88: TLabel;
     ComboBox13: TComboBox;
@@ -145,10 +104,7 @@ type
     ComboBox25: TComboBox;
     Label109: TLabel;
     Label110: TLabel;
-    ComboBox16: TComboBox;
-    Label111: TLabel;
     Batch_Update_Tmr: TTimer;
-    CheckBox35: TCheckBox;
     CheckBox36: TCheckBox;
     CheckBox37: TCheckBox;
     Edit62: TEdit;
@@ -312,8 +268,6 @@ type
     CheckBox31: TCheckBox;
     Label136: TLabel;
     TabSheet8: TTabSheet;
-    Label73: TLabel;
-    ComboBox1: TComboBox;
     Memo1: TMemo;
     IdUDPClient1: TIdUDPClient;
     Tmr_Rcv: TTimer;
@@ -332,24 +286,6 @@ type
     Label141: TLabel;
     CheckBox45: TCheckBox;
     ArduinoTimer: TTimer;
-    GroupBox8: TGroupBox;
-    CheckBox46: TCheckBox;
-    CheckBox47: TCheckBox;
-    CheckBox48: TCheckBox;
-    CheckBox49: TCheckBox;
-    Edit97: TEdit;
-    Edit98: TEdit;
-    Edit99: TEdit;
-    Edit100: TEdit;
-    Edit101: TEdit;
-    Edit102: TEdit;
-    Edit103: TEdit;
-    Edit104: TEdit;
-    Edit105: TEdit;
-    Edit106: TEdit;
-    Edit107: TEdit;
-    Edit108: TEdit;
-    Label142: TLabel;
     Button27: TButton;
     Button26: TButton;
     Button28: TButton;
@@ -609,6 +545,91 @@ type
     UpBtn10: TBitBtn;
     DwnBtn9: TBitBtn;
     BitBtn65: TBitBtn;
+    PageControl3: TPageControl;
+    TabSheet9: TTabSheet;
+    TabSheet10: TTabSheet;
+    TabSheet11: TTabSheet;
+    TabSheet12: TTabSheet;
+    TabSheet13: TTabSheet;
+    Label74: TLabel;
+    Label76: TLabel;
+    Label77: TLabel;
+    Label78: TLabel;
+    Label79: TLabel;
+    Label80: TLabel;
+    Label111: TLabel;
+    ComboBox2: TComboBox;
+    ComboBox3: TComboBox;
+    ComboBox4: TComboBox;
+    ComboBox5: TComboBox;
+    ComboBox6: TComboBox;
+    ComboBox7: TComboBox;
+    ComboBox16: TComboBox;
+    Label75: TLabel;
+    Label82: TLabel;
+    Label83: TLabel;
+    Label84: TLabel;
+    Label85: TLabel;
+    ComboBox8: TComboBox;
+    ComboBox9: TComboBox;
+    ComboBox10: TComboBox;
+    ComboBox11: TComboBox;
+    ComboBox12: TComboBox;
+    Label142: TLabel;
+    CheckBox46: TCheckBox;
+    CheckBox47: TCheckBox;
+    CheckBox48: TCheckBox;
+    CheckBox49: TCheckBox;
+    Edit97: TEdit;
+    Edit98: TEdit;
+    Edit99: TEdit;
+    Edit100: TEdit;
+    Edit101: TEdit;
+    Edit102: TEdit;
+    Edit103: TEdit;
+    Edit104: TEdit;
+    Edit105: TEdit;
+    Edit106: TEdit;
+    Edit107: TEdit;
+    Edit108: TEdit;
+    Label65: TLabel;
+    Label67: TLabel;
+    Label68: TLabel;
+    Label69: TLabel;
+    Label70: TLabel;
+    Label71: TLabel;
+    Label72: TLabel;
+    Edit54: TEdit;
+    Edit55: TEdit;
+    Edit56: TEdit;
+    Edit57: TEdit;
+    Edit58: TEdit;
+    Edit59: TEdit;
+    Edit60: TEdit;
+    Edit61: TEdit;
+    CheckBox35: TCheckBox;
+    Label146: TLabel;
+    WLAN: TCheckBox;
+    LPT: TCheckBox;
+    USB: TCheckBox;
+    BATCH: TCheckBox;
+    Arduino: TCheckBox;
+    ComboBox46: TComboBox;
+    ComboBox47: TComboBox;
+    ComboBox48: TComboBox;
+    ComboBox49: TComboBox;
+    Label62: TLabel;
+    Label73: TLabel;
+    Label147: TLabel;
+    Label148: TLabel;
+    ComboBox50: TComboBox;
+    ComboBox51: TComboBox;
+    ComboBox52: TComboBox;
+    ComboBox53: TComboBox;
+    Label149: TLabel;
+    Label150: TLabel;
+    Label151: TLabel;
+    Label152: TLabel;
     procedure Button8Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
@@ -677,7 +698,6 @@ type
     procedure UeberwachungstimerTimer(Sender: TObject);
     procedure USB_Update_TmrTimer(Sender: TObject);
     procedure ComboBox2Change(Sender: TObject);
-    procedure ComboBox1Change(Sender: TObject);
     procedure Button26Click(Sender: TObject);
     procedure Button27Click(Sender: TObject);
     procedure Button28Click(Sender: TObject);
@@ -828,6 +848,7 @@ type
     procedure CheckBox44Click(Sender: TObject);
     procedure CheckBox51Click(Sender: TObject);
     procedure ComboBox43Change(Sender: TObject);
+    procedure ArduinoClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -844,21 +865,21 @@ var
   Form1: TForm1;
   sl,sl2: TStringList;
   rasttemp, rastnull, funktionsinfo: Array of Boolean;
-  Temperatur,xwert,Graphic,LogName,Steuerung,BHEin,BHAus,BREin,BRAus,BPEin,BPAus,
+  Temperatur,xwert,Graphic,LogName,BHEin,BHAus,BREin,BRAus,BPEin,BPAus,
   BAEin,BAAus,TimeTempStr,TimeTempStore,USBPort,USBTyp,pfad,tempdateiname,
   sensorverzoegerung,Relais4,Rezeptname,pfad2,pfad3,RecText,arduinotfs: String;
   Tempfloat,Solltemp,Deltatemp,Deltatemp2,TWert,Gradient,GradientWert,
   GradientUebergabe,Hysterese,Hysterese2,Aufheizrate,Abkuehlrate,
   alarmtemp,kwert,kfaktor,htime,rtime,ptime,atime,gtime,Tempfloatold,
   arduinofloattempalt,arduinofloattemp,arduinotempdelta: Extended;
-  Ruehrwerk,Heizung,Alarm,Pumpe,HWert,RWert,PWert,AWert,RStore,PStore,HStore,
-  AStore,LPTCode,restrastzeit,zeit2,zeit3,zeitpause,fortschritt,rast,Intdummy,
-  CountLines,restrastgauge,gesrastzeit, startpunkt,endpunkt,Ein1,Aus1,Ein2,
-  Aus2,Ein3,Aus3,Ein4,Aus4,Ein100,Aus100,EinIst,AusIst,USBHIntWert,
-  USBRIntWert,USBPIntWert,USBAIntWert,DeviceIndex,sensorreset,geskuehlzeit,
-  StartTemp,maxsolltemp,gesheizzeit,restheizzeit,gesprozesszeit,restprozesszeit,
-  restheizgauge,restprozessgauge,Timerstartbatstatus,spanne,Temperaturrast,
-  restkuehlzeit,restkuehlgauge,heizcounter,HEin,HAus,Datensatz,k,
+  Ruehrwerk,Heizung,Alarm,Pumpe,LPTCode,restrastzeit,
+  zeit2,zeit3,zeitpause,fortschritt,rast,Intdummy,CountLines,restrastgauge,
+  gesrastzeit, startpunkt,endpunkt,Ein1,Aus1,Ein2,Aus2,Ein3,Aus3,Ein4,Aus4,
+  Ein100,Aus100,EinIst,AusIst,USBHIntWert,USBRIntWert,USBPIntWert,USBAIntWert,
+  LPTHIntWert,LPTRIntWert,LPTPIntWert,LPTAIntWert,DeviceIndex,sensorreset,
+  geskuehlzeit,StartTemp,maxsolltemp,gesheizzeit,restheizzeit,gesprozesszeit,
+  restprozesszeit,restheizgauge,restprozessgauge,Timerstartbatstatus,spanne,
+  Temperaturrast,restkuehlzeit,restkuehlgauge,heizcounter,HEin,HAus,Datensatz,k,
   Multistart,Alarmheizstatus,warnungaus: integer;
   LPTPort: word;
   myFile,myLogFile,SimFile,mySetup,myDisplay,myImportFile,
@@ -1332,32 +1353,6 @@ begin
    end;
 end;
 
-procedure TForm1.BitBtn11Click(Sender: TObject);
-begin
-  Panel6.Visible:=true;
-  Panel8.Visible:=false;
-  Panel10.Visible:=false;
-  Panel14.Visible:=false;
-  Panel12.Visible:=false;
-  Panel13.Visible:=true;
-  Button29.Visible:=true;
-  Button30.Visible:=false;
-  BitBtn10.Visible:=true;
-  BitBtn11.Visible:=false;
-  if (stop=true) and (Panel12.Visible=false) then Panel15.Visible:=true;
-  if start=true then
-  begin
-    Button13.Caption:='Auto';
-    Form1.Button13Click(Form1);
-    Button14.Caption:='Auto';
-    Form1.Button14Click(Form1);
-    Button15.Caption:='Auto';
-    Form1.Button15Click(Form1);
-    Button16.Caption:='Auto';
-    Form1.Button16Click(Form1);
-  end;
-end;
-
 //LPT:
 procedure Out32(wAddr:word;bOut:byte);stdcall; external 'inpout32.dll'    // Parallelportausgabe
 function Inp32(wAddr:word):integer;stdcall; external 'inpout32.dll'       // Parallelporteingabe
@@ -1370,6 +1365,15 @@ function FT_Write(ftHandle:Dword; FTOutBuf:Pointer; BufferSize:LongInt; ResultPt
 function FT_SetBaudRate(ftHandle:Dword; BaudRate:DWord):FT_Result; stdcall; External 'FTD2XX.DLL' name 'FT_SetBaudRate';
 function FT_SetBitMode(ftHandle:Dword; Mask,Enable:Byte):FT_Result; stdcall; External 'FTD2XX.DLL' name 'FT_SetBitMode';
 
+procedure LPTOUT;
+begin
+  LPTCode:=0;
+  if (Ruehrwerk<>0) then LPTCode:=LPTRIntWert;
+  if (Heizung<>0) then LPTCode:=LPTCode+LPTHIntWert;
+  if (Alarm<>0) then LPTCode:=LPTCode+LPTAIntWert;
+  if (Pumpe<>0) then LPTCode:=LPTCode+LPTPIntWert;
+end;
+
 //Denkovi:
 procedure USB2OUT;
 begin
@@ -1381,15 +1385,15 @@ begin
   FT_OUT:=FT_OUT_INT;
   RESULT:=FT_Close(FT_HANDLE);
   RESULT:=FT_Open(DeviceIndex,@FT_Handle);
-  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end;
   RESULT:=FT_SetBaudRate(FT_Handle,921600);
-  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end;
   RESULT:=FT_SetBitMode(FT_Handle,255,4);
-  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end;
   RESULT:=FT_Write(FT_Handle,@FT_OUT,1,@Write_Result);
-  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end;
   RESULT:=FT_Close(FT_HANDLE);
-  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end;
 end;
 
 //SainSmart:
@@ -1403,15 +1407,15 @@ begin
   FT_OUT:=FT_OUT_INT;
   RESULT:=FT_Close(FT_HANDLE);
   RESULT:=FT_Open(DeviceIndex,@FT_Handle);
-  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end;
   RESULT:=FT_SetBaudRate(FT_Handle,921600);
-  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end;
   RESULT:=FT_SetBitMode(FT_Handle,255,4);
-  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end;
   RESULT:=FT_Write(FT_Handle,@FT_OUT,1,@Write_Result);
-  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end;
   RESULT:=FT_Close(FT_HANDLE);
-  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end else Form1.Edit51.Text:=inttostr(DeviceIndex);
+  if RESULT <> 0  then begin Form1.Edit51.Text:='Err'; exit; end;
 end;
 
 
@@ -1475,9 +1479,9 @@ end;
 procedure USBOpenLine ;
 begin with Form1 do begin
   ser.Connect(USBPort);
-  if ser.LastError<>sOK then begin Edit51.Text:='Err' ; exit ; end else Form1.Edit51.Text:=USBPort;
+  if ser.LastError<>sOK then begin Edit51.Text:='Err' ; exit ; end;
   ser.Config({Baud}9600, {Bits}8, {Parity}'N', {StopBits}0, {Xon/Xoff}false, {DTR/CTS}false);
-  if ser.LastError<>sOK then begin Edit51.Text:='Err' ; exit ; end else Form1.Edit51.Text:=USBPort;
+  if ser.LastError<>sOK then begin Edit51.Text:='Err' ; exit ; end;
 end ; end ;
 
 procedure USBCloseLine ;
@@ -1486,50 +1490,60 @@ begin with Form1 do begin
 end ; end ;
 
 procedure USBOut ;
+var i:integer;
 begin
   USBOpenLine;
-  if (Ruehrwerk<>0) then ser.SendString(char($FF)+char(USBRWert)+char($01)) else ser.SendString(char($FF)+char(USBRWert)+char($00));
-  if (Heizung<>0) then ser.SendString(char($FF)+char(USBHWert)+char($01)) else ser.SendString(char($FF)+char(USBHWert)+char($00));
-  if (Alarm<>0) then ser.SendString(char($FF)+char(USBAWert)+char($01)) else ser.SendString(char($FF)+char(USBAWert)+char($00));
-  if (Pumpe<>0) then ser.SendString(char($FF)+char(USBPWert)+char($01)) else ser.SendString(char($FF)+char(USBPWert)+char($00));
+  i:=0;
+  if (Ruehrwerk<>0) then i:=USBRIntWert;
+  if (Heizung<>0) then i:=i+USBHIntWert;
+  if (Alarm<>0) then i:=i+USBAIntWert;
+  if (Pumpe<>0) then i:=i+USBPIntWert;
+  if i>127 then begin ser.SendString(char($FF)+char(8)+char($01)); i:=i-128; end else ser.SendString(char($FF)+char(8)+char($00));
+  if i>63 then begin ser.SendString(char($FF)+char(7)+char($01)); i:=i-64; end else ser.SendString(char($FF)+char(7)+char($00));
+  if i>31 then begin ser.SendString(char($FF)+char(6)+char($01)); i:=i-32; end else ser.SendString(char($FF)+char(6)+char($00));
+  if i>15 then begin ser.SendString(char($FF)+char(5)+char($01)); i:=i-16; end else ser.SendString(char($FF)+char(5)+char($00));
+  if i>7 then begin ser.SendString(char($FF)+char(4)+char($01)); i:=i-8; end else ser.SendString(char($FF)+char(4)+char($00));
+  if i>3 then begin ser.SendString(char($FF)+char(3)+char($01)); i:=i-4; end else ser.SendString(char($FF)+char(3)+char($00));
+  if i>1 then begin ser.SendString(char($FF)+char(2)+char($01)); i:=i-2; end else ser.SendString(char($FF)+char(2)+char($00));
+  if i>0 then begin ser.SendString(char($FF)+char(1)+char($01)); end else ser.SendString(char($FF)+char(1)+char($00));
   USBCloseLine;
 end;
 
 //Batch:
 procedure BatchOut;
 begin
-  if (Ruehrwerk<>0) and (Ruehrwerk<>RStore) then
+  if Ruehrwerk<>0 then
     if ShellExecute(Application.Handle,'open',PChar(BREin),nil, nil, SW_HIDE) <= 32 then
     MyShowMessagePos('Es ist ein Fehler beim ausführen von '+BREin+' aufgetreten', Form1.Left, 350, Form1.Top, 250) else
-    RStore:=Ruehrwerk;
-  if (Ruehrwerk=0) and (Ruehrwerk<>RStore) then
+    sleep(50)
+  else if Ruehrwerk=0 then
     if ShellExecute(Application.Handle,'open',PChar(BRAus),nil, nil, SW_HIDE) <= 32 then
     MyShowMessagePos('Es ist ein Fehler beim ausführen von '+BRAus+' aufgetreten', Form1.Left, 350, Form1.Top, 250) else
-    RStore:=Ruehrwerk;
-  if (Heizung<>0) and (Heizung<>HStore) then
+    sleep(50);
+  if Heizung<>0 then
     if ShellExecute(Application.Handle,'open',PChar(BHEin),nil, nil, SW_HIDE) <= 32 then
     MyShowMessagePos('Es ist ein Fehler beim ausführen von '+BHEin+' aufgetreten', Form1.Left, 350, Form1.Top, 250) else
-    HStore:=Heizung;
-  if (Heizung=0) and (Heizung<>HStore) then
+    sleep(50)
+  else if Heizung=0 then
     if ShellExecute(Application.Handle,'open',PChar(BHAus),nil, nil, SW_HIDE) <= 32 then
     MyShowMessagePos('Es ist ein Fehler beim ausführen von '+BHAus+' aufgetreten', Form1.Left, 350, Form1.Top, 250) else
-    HStore:=Heizung;
-  if (Alarm<>0) and (Alarm<>AStore) then
+    sleep(50);
+  if Alarm<>0 then
     if ShellExecute(Application.Handle,'open',PChar(BAEin),nil, nil, SW_HIDE) <= 32 then
     MyShowMessagePos('Es ist ein Fehler beim ausführen von '+BAEin+' aufgetreten', Form1.Left, 350, Form1.Top, 250) else
-    AStore:=Alarm;
-  if (Alarm=0) and (Alarm<>AStore) then
+    sleep(50)
+  else if Alarm=0 then
     if ShellExecute(Application.Handle,'open',PChar(BAAus),nil, nil, SW_HIDE) <= 32 then
     MyShowMessagePos('Es ist ein Fehler beim ausführen von '+BAAus+' aufgetreten', Form1.Left, 350, Form1.Top, 250) else
-    AStore:=Alarm;
-  if (Pumpe<>0) and (Pumpe<>PStore) then
+    sleep(50);
+  if Pumpe<>0 then
     if ShellExecute(Application.Handle,'open',PChar(BPEin),nil, nil, SW_HIDE) <= 32 then
     MyShowMessagePos('Es ist ein Fehler beim ausführen von '+BPEin+' aufgetreten', Form1.Left, 350, Form1.Top, 250) else
-    PStore:=Pumpe;
-  if (Pumpe=0) and (Pumpe<>PStore) then
+    sleep(50)
+  else if Pumpe=0 then
     if ShellExecute(Application.Handle,'open',PChar(BPAus),nil, nil, SW_HIDE) <= 32 then
     MyShowMessagePos('Es ist ein Fehler beim ausführen von '+BPAus+' aufgetreten', Form1.Left, 350, Form1.Top, 250) else
-    PStore:=Pumpe;
+    sleep(50);
 end;
 
 procedure WLANOut;
@@ -1556,36 +1570,33 @@ end;
 
 procedure Schalten(Form:TForm1);
 begin
-  LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;  //LPT-Code errechnen
-  if usbtyp='SainSmart' then               //USB-Code errechnen
+  If Form.Combobox9.ItemIndex+1=1 then LPTHIntWert:=1 else if Form.Combobox9.ItemIndex+1=2 then LPTHIntWert:=2 else if Form.Combobox9.ItemIndex+1=3 then LPTHIntWert:=4 else if Form.Combobox9.ItemIndex+1=4 then LPTHIntWert:=8 else if Form.Combobox9.ItemIndex+1=5 then LPTHIntWert:=16 else if Form.Combobox9.ItemIndex+1=6 then LPTHIntWert:=32 else if Form.Combobox9.ItemIndex+1=7 then LPTHIntWert:=64 else if Form.Combobox9.ItemIndex+1=8 then LPTHIntWert:=128 else LPTHIntWert:=Form1.ComboBox50.itemindex+1;
+  If Form.Combobox10.ItemIndex+1=1 then LPTRIntWert:=1 else if Form.Combobox10.ItemIndex+1=2 then LPTRIntWert:=2 else if Form.Combobox10.ItemIndex+1=3 then LPTRIntWert:=4 else if Form.Combobox10.ItemIndex+1=4 then LPTRIntWert:=8 else if Form.Combobox10.ItemIndex+1=5 then LPTRIntWert:=16 else if Form.Combobox10.ItemIndex+1=6 then LPTRIntWert:=32 else if Form.Combobox10.ItemIndex+1=7 then LPTRIntWert:=64 else if Form.Combobox10.ItemIndex+1=8 then LPTRIntWert:=128 else LPTRIntWert:=Form1.ComboBox51.itemindex+1;
+  If Form.Combobox12.ItemIndex+1=1 then LPTAIntWert:=1 else if Form.Combobox12.ItemIndex+1=2 then LPTAIntWert:=2 else if Form.Combobox12.ItemIndex+1=3 then LPTAIntWert:=4 else if Form.Combobox12.ItemIndex+1=4 then LPTAIntWert:=8 else if Form.Combobox12.ItemIndex+1=5 then LPTAIntWert:=16 else if Form.Combobox12.ItemIndex+1=6 then LPTAIntWert:=32 else if Form.Combobox12.ItemIndex+1=7 then LPTAIntWert:=64 else if Form.Combobox12.ItemIndex+1=8 then LPTAIntWert:=128 else LPTAIntWert:=Form1.ComboBox52.itemindex+1;
+  If Form.Combobox11.ItemIndex+1=1 then LPTPIntWert:=1 else if Form.Combobox11.ItemIndex+1=2 then LPTPIntWert:=2 else if Form.Combobox11.ItemIndex+1=3 then LPTPIntWert:=4 else if Form.Combobox11.ItemIndex+1=4 then LPTPIntWert:=8 else if Form.Combobox11.ItemIndex+1=5 then LPTPIntWert:=16 else if Form.Combobox11.ItemIndex+1=6 then LPTPIntWert:=32 else if Form.Combobox11.ItemIndex+1=7 then LPTPIntWert:=64 else if Form.Combobox11.ItemIndex+1=8 then LPTPIntWert:=118 else LPTPIntWert:=Form1.ComboBox53.itemindex+1;
+  if (usbtyp='IO-Warrior-Basis') or (usbtyp='SainSmart') or (usbtyp='KMTronic') then               //USB-Code errechnen
   begin
-    If USBHWert=char(1) then USBHIntWert:=1 else if USBHWert=char(2) then USBHIntWert:=2 else if USBHWert=char(3) then USBHIntWert:=4 else USBHIntWert:=8;
-    If USBRWert=char(1) then USBRIntWert:=1 else if USBRWert=char(2) then USBRIntWert:=2 else if USBRWert=char(3) then USBRIntWert:=4 else USBRIntWert:=8;
-    If USBAWert=char(1) then USBAIntWert:=1 else if USBAWert=char(2) then USBAIntWert:=2 else if USBAWert=char(3) then USBAIntWert:=4 else USBAIntWert:=8;
-    If USBPWert=char(1) then USBPIntWert:=1 else if USBPWert=char(2) then USBPIntWert:=2 else if USBPWert=char(3) then USBPIntWert:=4 else USBPIntWert:=8;
-  end
-  else if usbtyp='IO-Warrior-Basis' then               //USB-Code errechnen
-  begin
-    If USBHWert=char(1) then USBHIntWert:=1 else if USBHWert=char(2) then USBHIntWert:=2 else if USBHWert=char(3) then USBHIntWert:=4 else if USBHWert=char(4) then USBHIntWert:=8 else if USBHWert=char(5) then USBHIntWert:=16 else if USBHWert=char(6) then USBHIntWert:=32 else if USBHWert=char(7) then USBHIntWert:=64 else USBHIntWert:=128;
-    If USBRWert=char(1) then USBRIntWert:=1 else if USBRWert=char(2) then USBRIntWert:=2 else if USBRWert=char(3) then USBRIntWert:=4 else if USBRWert=char(4) then USBRIntWert:=8 else if USBRWert=char(5) then USBRIntWert:=16 else if USBRWert=char(6) then USBRIntWert:=32 else if USBRWert=char(7) then USBRIntWert:=64 else USBRIntWert:=128;
-    If USBAWert=char(1) then USBAIntWert:=1 else if USBAWert=char(2) then USBAIntWert:=2 else if USBAWert=char(3) then USBAIntWert:=4 else if USBAWert=char(4) then USBAIntWert:=8 else if USBAWert=char(5) then USBAIntWert:=16 else if USBAWert=char(6) then USBAIntWert:=32 else if USBAWert=char(7) then USBAIntWert:=64 else USBAIntWert:=128;
-    If USBPWert=char(1) then USBPIntWert:=1 else if USBPWert=char(2) then USBPIntWert:=2 else if USBPWert=char(3) then USBPIntWert:=4 else if USBPWert=char(4) then USBPIntWert:=8 else if USBPWert=char(5) then USBPIntWert:=16 else if USBPWert=char(6) then USBPIntWert:=32 else if USBPWert=char(7) then USBPIntWert:=64 else USBPIntWert:=128;
+    If USBHWert=char(1) then USBHIntWert:=1 else if USBHWert=char(2) then USBHIntWert:=2 else if USBHWert=char(3) then USBHIntWert:=4 else if USBHWert=char(4) then USBHIntWert:=8 else if USBHWert=char(5) then USBHIntWert:=16 else if USBHWert=char(6) then USBHIntWert:=32 else if USBHWert=char(7) then USBHIntWert:=64 else if USBHWert=char(8) then USBHIntWert:=128 else USBHIntWert:=Form1.ComboBox46.itemindex+1;
+    If USBRWert=char(1) then USBRIntWert:=1 else if USBRWert=char(2) then USBRIntWert:=2 else if USBRWert=char(3) then USBRIntWert:=4 else if USBRWert=char(4) then USBRIntWert:=8 else if USBRWert=char(5) then USBRIntWert:=16 else if USBRWert=char(6) then USBRIntWert:=32 else if USBRWert=char(7) then USBRIntWert:=64 else if USBRWert=char(8) then USBRIntWert:=128 else USBRIntWert:=Form1.ComboBox47.itemindex+1;
+    If USBAWert=char(1) then USBAIntWert:=1 else if USBAWert=char(2) then USBAIntWert:=2 else if USBAWert=char(3) then USBAIntWert:=4 else if USBAWert=char(4) then USBAIntWert:=8 else if USBAWert=char(5) then USBAIntWert:=16 else if USBAWert=char(6) then USBAIntWert:=32 else if USBAWert=char(7) then USBAIntWert:=64 else if USBAWert=char(8) then USBAIntWert:=128 else USBAIntWert:=Form1.ComboBox48.itemindex+1;
+    If USBPWert=char(1) then USBPIntWert:=1 else if USBPWert=char(2) then USBPIntWert:=2 else if USBPWert=char(3) then USBPIntWert:=4 else if USBPWert=char(4) then USBPIntWert:=8 else if USBPWert=char(5) then USBPIntWert:=16 else if USBPWert=char(6) then USBPIntWert:=32 else if USBPWert=char(7) then USBPIntWert:=64 else if USBPWert=char(8) then USBPIntWert:=128 else USBPIntWert:=Form1.ComboBox49.itemindex+1;
   end
   else
   begin
-    If USBHWert=char(1) then USBHIntWert:=2 else if USBHWert=char(2) then USBHIntWert:=8 else if USBHWert=char(3) then USBHIntWert:=32 else USBHIntWert:=128;
-    If USBRWert=char(1) then USBRIntWert:=2 else if USBRWert=char(2) then USBRIntWert:=8 else if USBRWert=char(3) then USBRIntWert:=32 else USBRIntWert:=128;
-    If USBAWert=char(1) then USBAIntWert:=2 else if USBAWert=char(2) then USBAIntWert:=8 else if USBAWert=char(3) then USBAIntWert:=32 else USBAIntWert:=128;
-    If USBPWert=char(1) then USBPIntWert:=2 else if USBPWert=char(2) then USBPIntWert:=8 else if USBPWert=char(3) then USBPIntWert:=32 else USBPIntWert:=128;
+    If USBHWert=char(1) then USBHIntWert:=2 else if USBHWert=char(2) then USBHIntWert:=8 else if USBHWert=char(3) then USBHIntWert:=32 else if USBHWert=char(4) then USBHIntWert:=128 else if USBHWert=char(5) then USBHIntWert:=1 else if USBHWert=char(6) then USBHIntWert:=4 else if USBHWert=char(7) then USBHIntWert:=16 else if USBHWert=char(8) then USBHIntWert:=64 else USBHIntWert:=Form1.ComboBox46.itemindex+1;
+    If USBRWert=char(1) then USBRIntWert:=2 else if USBRWert=char(2) then USBRIntWert:=8 else if USBRWert=char(3) then USBRIntWert:=32 else if USBRWert=char(4) then USBRIntWert:=128 else if USBRWert=char(5) then USBRIntWert:=1 else if USBRWert=char(6) then USBRIntWert:=4 else if USBRWert=char(7) then USBRIntWert:=16 else if USBRWert=char(8) then USBRIntWert:=64 else USBRIntWert:=Form1.ComboBox47.itemindex+1;
+    If USBAWert=char(1) then USBAIntWert:=2 else if USBAWert=char(2) then USBAIntWert:=8 else if USBAWert=char(3) then USBAIntWert:=32 else if USBAWert=char(4) then USBAIntWert:=128 else if USBAWert=char(5) then USBAIntWert:=1 else if USBAWert=char(6) then USBAIntWert:=4 else if USBAWert=char(7) then USBAIntWert:=16 else if USBAWert=char(8) then USBAIntWert:=64 else USBAIntWert:=Form1.ComboBox48.itemindex+1;
+    If USBPWert=char(1) then USBPIntWert:=2 else if USBPWert=char(2) then USBPIntWert:=8 else if USBPWert=char(3) then USBPIntWert:=32 else if USBPWert=char(4) then USBPIntWert:=128 else if USBPWert=char(5) then USBPIntWert:=1 else if USBPWert=char(6) then USBPIntWert:=4 else if USBPWert=char(7) then USBPIntWert:=16 else if USBPWert=char(8) then USBPIntWert:=64 else USBPIntWert:=Form1.ComboBox49.itemindex+1;
   end;
-  if steuerung='LPT' then begin Form1.Edit52.Text:=inttostr(LPTCode);  Form1.Edit51.Text:=inttostr(LPTPort); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
-  if steuerung='BATCH' then begin Form1.Edit52.Text:='off'; BatchOut;  Form1.Edit51.Text:=''; end; //LPT-Code als Batch ausgeben
-  if steuerung='WLAN' then begin Form1.Edit52.Text:='off'; WLANOut;  Form1.Edit51.Text:=''; end; //LPT-Code als Batch ausgeben
-  if steuerung='ARDUINO' then begin Form1.Edit52.Text:='off'; Form1.Edit51.Text:=''; end; //LPT-Code als Batch ausgeben
-  if (steuerung='USB') and (usbtyp='KMTronic') then begin Form1.Edit52.Text:='USB'; Form1.Edit51.Text:=USBPort; USBOut; end; //USB-Code an USB-Port ausgeben
-  if (steuerung='USB') and (usbtyp='Denkovi') then begin Form1.Edit52.Text:='USB'; Form1.Edit51.Text:=inttostr(DeviceIndex); USB2Out; end; //USB-Code an USB-Port ausgeben
-  if (steuerung='USB') and (usbtyp='SainSmart') then begin Form1.Edit52.Text:='USB'; Form1.Edit51.Text:=inttostr(DeviceIndex); USB3Out; end; //USB-Code an USB-Port ausgeben
-  if (steuerung='USB') and (usbtyp='IO-Warrior-Basis') then begin Form1.Edit52.Text:='USB'; Form1.Edit51.Text:=''; USB4Out; end; //USB-Code an USB-Port ausgeben
+  LPTOut;
+  Form1.Edit52.Text:=inttostr(LPTCode);
+  if Form1.LPT.checked=true then begin Form1.Edit51.Text:=inttostr(LPTPort); Out32(LPTPort,LPTCode); end; //LPT-Code an LPT-Port ausgeben
+  if Form1.BATCH.checked=true then BatchOut;  //LPT-Code als Batch ausgeben
+  if Form1.WLAN.checked=true then WLANOut;    //LPT-Code als Batch ausgeben
+  if (Form1.USB.checked=true) and (usbtyp='KMTronic') then begin if Form1.LPT.checked=false then Form1.Edit51.Text:=USBPort; USBOut; end; //USB-Code an USB-Port ausgeben
+  if (Form1.USB.checked=true) and (usbtyp='Denkovi') then begin if Form1.LPT.checked=false then Form1.Edit51.Text:=inttostr(DeviceIndex); USB2Out; end; //USB-Code an USB-Port ausgeben
+  if (Form1.USB.checked=true) and (usbtyp='SainSmart') then begin if Form1.LPT.checked=false then Form1.Edit51.Text:=inttostr(DeviceIndex); USB3Out; end; //USB-Code an USB-Port ausgeben
+  if (Form1.USB.checked=true) and (usbtyp='IO-Warrior-Basis') then USB4Out;  //USB-Code an USB-Port ausgeben
 end;
 
 procedure speichern(Form:TForm1; filename:string);
@@ -1666,7 +1677,11 @@ begin
   AssignFile(mySetup, filename);                // Setup speichern
   ReWrite(mySetup);
   WriteLn(mySetup,'Installationsverzeichnis;Standard');
-  WriteLn(mySetup,'Steuerung über "BATCH", "USB", "LPT" oder "ARDUINO";'+Form.ComboBox1.Text);
+  if Form.USB.Checked=true then WriteLn(mySetup,'Steuerung über "USB";1') else WriteLn(mySetup,'Steuerung über "USB";0');
+  if Form.LPT.Checked=true then WriteLn(mySetup,'Steuerung über "LPT";1') else WriteLn(mySetup,'Steuerung über "LPT";0');
+  if Form.WLAN.Checked=true then WriteLn(mySetup,'Steuerung über "WLAN";1') else WriteLn(mySetup,'Steuerung über "WLAN";0');
+  if Form.BATCH.Checked=true then WriteLn(mySetup,'Steuerung über "BATCH";1') else WriteLn(mySetup,'Steuerung über "BATCH";0');
+  if Form.Arduino.Checked=true then WriteLn(mySetup,'Steuerung über "Arduino";1') else WriteLn(mySetup,'Steuerung über "Arduino";0');
   WriteLn(mySetup,'LPT-Port;'+Form.ComboBox8.Text);
   WriteLn(mySetup,'LPT-Heizung;'+Form.ComboBox9.Text);
   WriteLn(mySetup,'LPT-Ruehrwerk;'+Form.ComboBox10.Text);
@@ -1785,13 +1800,16 @@ begin
   dummyfilename:=stringreplace(Form.ComboBox76.Text,' ','€€€',[rfReplaceAll]);
   WriteLn(mySetup,'DIGITEMP-Takt;'+dummyfilename);
   if Form.CheckBox50.Checked=true then WriteLn(mySetup,'alte DIGITEMP-Version;1') else WriteLn(mySetup,'alte DIGITEMP-Version;0');
+  WriteLn(mySetup,'USBCode1;'+Form.ComboBox46.Text);
+  WriteLn(mySetup,'USBCode2;'+Form.ComboBox47.Text);
+  WriteLn(mySetup,'USBCode3;'+Form.ComboBox48.Text);
+  WriteLn(mySetup,'USBCode4;'+Form.ComboBox49.Text);
+  WriteLn(mySetup,'LPTCode1;'+Form.ComboBox50.Text);
+  WriteLn(mySetup,'LPTCode2;'+Form.ComboBox51.Text);
+  WriteLn(mySetup,'LPTCode3;'+Form.ComboBox52.Text);
+  WriteLn(mySetup,'LPTCode4;'+Form.ComboBox53.Text);
   CloseFile(mySetup);
-  Steuerung:=Form.ComboBox1.Text;
   LPTPort:=strtoint(Form.ComboBox8.Text);
-  HWert:=strtoint(Form.ComboBox9.Text);
-  RWert:=strtoint(Form.ComboBox10.Text);
-  PWert:=strtoint(Form.ComboBox11.Text);
-  AWert:=strtoint(Form.ComboBox12.Text);
   USBTyp:=Form.ComboBox2.Text;
   DeviceIndex:=strtoint(Form.ComboBox16.Text);
   USBPort:=Form.ComboBox7.Text;
@@ -1824,12 +1842,13 @@ begin
   Hysterese2:=strtofloat(Form.ComboBox29.Text);
   Aufheizrate:=strtofloat(Form.ComboBox27.Text);
   Abkuehlrate:=strtofloat(Form.ComboBox44.Text);
-  If Steuerung='USB' then Form1.USB_Update_Tmr.Enabled:=true else Form1.USB_Update_Tmr.Enabled:=true;
-  If Steuerung='BATCH' then Form1.Batch_Update_Tmr.Enabled:=true else Form1.Batch_Update_Tmr.Enabled:=true;
+  If Form1.USB.checked=true then Form1.USB_Update_Tmr.Enabled:=true else Form1.USB_Update_Tmr.Enabled:=false;
+  If Form1.BATCH.checked=true then Form1.Batch_Update_Tmr.Enabled:=true else Form1.Batch_Update_Tmr.Enabled:=false;
 end;
 
 procedure setup_laden(Form:TForm1; filename:string);
 var i,j:integer;
+    ttext:string;
 begin
   try
     sl:=TStringList.Create; //Objekt erzeugen
@@ -1840,155 +1859,167 @@ begin
       sl2.DelimitedText:=sl[0];
       try if sl2[sl2.Count-1]<>'Standard' then pfad:=sl2[sl2.Count-1]; except ; end;
       sl2.DelimitedText:=sl[1];
-      try Steuerung:=sl2[sl2.Count-1]; Form.Combobox1.ItemIndex := Form.Combobox1.Items.IndexOf(sl2[sl2.Count-1]); except Steuerung:='LPT'; end;
-      Form1.ComboBox1Change(Form1);
+      try ttext:=sl2[sl2.Count-1];
+      if ttext='0' then Form.USB.Checked := false else Form.USB.Checked := true; except Form.USB.Checked := false; end;
       sl2.DelimitedText:=sl[2];
-      try LPTPort:=strtoint(sl2[sl2.Count-1]); Form.Combobox8.ItemIndex := Form.Combobox8.Items.IndexOf(sl2[sl2.Count-1]); except LPTPort:=888; end;
+      try ttext:=sl2[sl2.Count-1];
+      if ttext='0' then Form.LPT.Checked := false else Form.LPT.Checked := true; except Form.LPT.Checked := false; end;
       sl2.DelimitedText:=sl[3];
-      try HWert:=strtoint(sl2[sl2.Count-1]); Form.Combobox9.ItemIndex := Form.Combobox9.Items.IndexOf(sl2[sl2.Count-1]); except HWert:=1; end;
+      try ttext:=sl2[sl2.Count-1];
+      if ttext='0' then Form.WLAN.Checked := false else Form.WLAN.Checked := true; except Form.WLAN.Checked := false; end;
       sl2.DelimitedText:=sl[4];
-      try RWert:=strtoint(sl2[sl2.Count-1]); Form.Combobox10.ItemIndex := Form.Combobox10.Items.IndexOf(sl2[sl2.Count-1]); except RWert:=2; end;
+      try ttext:=sl2[sl2.Count-1];
+      if ttext='0' then Form.BATCH.Checked := false else Form.BATCH.Checked := true; except Form.BATCH.Checked := false; end;
       sl2.DelimitedText:=sl[5];
-      try PWert:=strtoint(sl2[sl2.Count-1]); Form.Combobox11.ItemIndex := Form.Combobox11.Items.IndexOf(sl2[sl2.Count-1]); except PWert:=8; end;
+      try ttext:=sl2[sl2.Count-1];
+      if ttext='0' then Form.Arduino.Checked := false else Form.Arduino.Checked := true; except Form.Arduino.Checked := false; end;
       sl2.DelimitedText:=sl[6];
-      try AWert:=strtoint(sl2[sl2.Count-1]); Form.Combobox12.ItemIndex := Form.Combobox12.Items.IndexOf(sl2[sl2.Count-1]); except AWert:=128; end;
+      try LPTPort:=strtoint(sl2[sl2.Count-1]); Form.Combobox8.ItemIndex := Form.Combobox8.Items.IndexOf(sl2[sl2.Count-1]); except LPTPort:=888; end;
       sl2.DelimitedText:=sl[7];
-      try USBTyp:=sl2[sl2.Count-1]; Form.Combobox2.ItemIndex := Form.Combobox2.Items.IndexOf(sl2[sl2.Count-1]); except USBTyp:='Denkovi'; end;
+      try Form.Combobox9.ItemIndex := Form.Combobox9.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox9.ItemIndex := 0 end;
       sl2.DelimitedText:=sl[8];
-      try DeviceIndex:=strtoint(sl2[sl2.Count-1]); Form.Combobox16.ItemIndex := Form.Combobox16.Items.IndexOf(sl2[sl2.Count-1]); except DeviceIndex:=0; end;
+      try Form.Combobox10.ItemIndex := Form.Combobox10.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox10.ItemIndex := 0 end;
       sl2.DelimitedText:=sl[9];
-      try USBPort:=sl2[sl2.Count-1]; Form.Combobox7.ItemIndex := Form.Combobox7.Items.IndexOf(sl2[sl2.Count-1]); except USBPort:='COM3'; end;
+      try Form.Combobox11.ItemIndex := Form.Combobox11.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox11.ItemIndex := 0 end;
       sl2.DelimitedText:=sl[10];
+      try Form.Combobox12.ItemIndex := Form.Combobox12.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox12.ItemIndex := 0 end;
+      sl2.DelimitedText:=sl[11];
+      try USBTyp:=sl2[sl2.Count-1]; Form.Combobox2.ItemIndex := Form.Combobox2.Items.IndexOf(sl2[sl2.Count-1]); except USBTyp:='Denkovi'; end;
+      sl2.DelimitedText:=sl[12];
+      try DeviceIndex:=strtoint(sl2[sl2.Count-1]); Form.Combobox16.ItemIndex := Form.Combobox16.Items.IndexOf(sl2[sl2.Count-1]); except DeviceIndex:=0; end;
+      sl2.DelimitedText:=sl[13];
+      try USBPort:=sl2[sl2.Count-1]; Form.Combobox7.ItemIndex := Form.Combobox7.Items.IndexOf(sl2[sl2.Count-1]); except USBPort:='COM3'; end;
+      sl2.DelimitedText:=sl[14];
       Form1.ComboBox2Change(NIL);
       try USBHWert:=sl2[sl2.Count-1][1]; Form.Combobox3.ItemIndex := Form.Combobox3.Items.IndexOf(sl2[sl2.Count-1]); dec(USBHWert, $30); except USBHWert:=char($01); end;
-      sl2.DelimitedText:=sl[11];
-      try USBRWert:=sl2[sl2.Count-1][1]; Form.Combobox4.ItemIndex := Form.Combobox4.Items.IndexOf(sl2[sl2.Count-1]); dec(USBRWert, $30); except USBRWert:=char($02); end;
-      sl2.DelimitedText:=sl[12];
-      try USBPWert:=sl2[sl2.Count-1][1]; Form.Combobox5.ItemIndex := Form.Combobox5.Items.IndexOf(sl2[sl2.Count-1]); dec(USBPWert, $30); except USBPWert:=char($03); end;
-      sl2.DelimitedText:=sl[13];
-      try USBAWert:=sl2[sl2.Count-1][1]; Form.Combobox6.ItemIndex := Form.Combobox6.Items.IndexOf(sl2[sl2.Count-1]); dec(USBAWert, $30); except USBAWert:=char($04); end;
-      sl2.DelimitedText:=sl[14];
-      try BHEin:=sl2[sl2.Count-1]; BHEin:=stringreplace(BHEin,'€€€',' ',[rfReplaceAll]); Form.Edit54.Text:=BHEin; except BHEin:='none'; end;
       sl2.DelimitedText:=sl[15];
-      try BHAus:=sl2[sl2.Count-1]; BHAus:=stringreplace(BHAus,'€€€',' ',[rfReplaceAll]); Form.Edit55.Text:=BHAus; except BHAus:='none'; end;
+      try USBRWert:=sl2[sl2.Count-1][1]; Form.Combobox4.ItemIndex := Form.Combobox4.Items.IndexOf(sl2[sl2.Count-1]); dec(USBRWert, $30); except USBRWert:=char($02); end;
       sl2.DelimitedText:=sl[16];
-      try BREin:=sl2[sl2.Count-1]; BREin:=stringreplace(BREin,'€€€',' ',[rfReplaceAll]); Form.Edit56.Text:=BREin; except BREin:='none'; end;
+      try USBPWert:=sl2[sl2.Count-1][1]; Form.Combobox5.ItemIndex := Form.Combobox5.Items.IndexOf(sl2[sl2.Count-1]); dec(USBPWert, $30); except USBPWert:=char($03); end;
       sl2.DelimitedText:=sl[17];
-      try BRAus:=sl2[sl2.Count-1]; BRAus:=stringreplace(BRAus,'€€€',' ',[rfReplaceAll]); Form.Edit57.Text:=BRAus; except BRAus:='none'; end;
+      try USBAWert:=sl2[sl2.Count-1][1]; Form.Combobox6.ItemIndex := Form.Combobox6.Items.IndexOf(sl2[sl2.Count-1]); dec(USBAWert, $30); except USBAWert:=char($04); end;
       sl2.DelimitedText:=sl[18];
-      try BPEin:=sl2[sl2.Count-1]; BPEin:=stringreplace(BPEin,'€€€',' ',[rfReplaceAll]); Form.Edit58.Text:=BPEin; except BPEin:='none'; end;
+      try BHEin:=sl2[sl2.Count-1]; BHEin:=stringreplace(BHEin,'€€€',' ',[rfReplaceAll]); Form.Edit54.Text:=BHEin; except BHEin:='none'; end;
       sl2.DelimitedText:=sl[19];
-      try BPAus:=sl2[sl2.Count-1]; BPAus:=stringreplace(BPAus,'€€€',' ',[rfReplaceAll]); Form.Edit59.Text:=BPAus; except BPAus:='none'; end;
+      try BHAus:=sl2[sl2.Count-1]; BHAus:=stringreplace(BHAus,'€€€',' ',[rfReplaceAll]); Form.Edit55.Text:=BHAus; except BHAus:='none'; end;
       sl2.DelimitedText:=sl[20];
-      try BAEin:=sl2[sl2.Count-1]; BAEin:=stringreplace(BAEin,'€€€',' ',[rfReplaceAll]); Form.Edit60.Text:=BAEin; except BAEin:='none'; end;
+      try BREin:=sl2[sl2.Count-1]; BREin:=stringreplace(BREin,'€€€',' ',[rfReplaceAll]); Form.Edit56.Text:=BREin; except BREin:='none'; end;
       sl2.DelimitedText:=sl[21];
-      try BAAus:=sl2[sl2.Count-1]; BAAus:=stringreplace(BAAus,'€€€',' ',[rfReplaceAll]); Form.Edit61.Text:=BAAus; except BAAus:='none'; end;
+      try BRAus:=sl2[sl2.Count-1]; BRAus:=stringreplace(BRAus,'€€€',' ',[rfReplaceAll]); Form.Edit57.Text:=BRAus; except BRAus:='none'; end;
       sl2.DelimitedText:=sl[22];
-      try TWert:=strtofloat(sl2[sl2.Count-1]); Form.Combobox13.ItemIndex := Form.Combobox13.Items.IndexOf(sl2[sl2.Count-1]); except TWert:=2.0; end;
+      try BPEin:=sl2[sl2.Count-1]; BPEin:=stringreplace(BPEin,'€€€',' ',[rfReplaceAll]); Form.Edit58.Text:=BPEin; except BPEin:='none'; end;
       sl2.DelimitedText:=sl[23];
-      try Ein1:=strtoint(sl2[sl2.Count-1]); Form.Combobox14.ItemIndex := Form.Combobox14.Items.IndexOf(sl2[sl2.Count-1]); except Ein1:=5; end;
+      try BPAus:=sl2[sl2.Count-1]; BPAus:=stringreplace(BPAus,'€€€',' ',[rfReplaceAll]); Form.Edit59.Text:=BPAus; except BPAus:='none'; end;
       sl2.DelimitedText:=sl[24];
-      try Aus1:=strtoint(sl2[sl2.Count-1]); Form.Combobox15.ItemIndex := Form.Combobox15.Items.IndexOf(sl2[sl2.Count-1]); except Aus1:=10; end;
+      try BAEin:=sl2[sl2.Count-1]; BAEin:=stringreplace(BAEin,'€€€',' ',[rfReplaceAll]); Form.Edit60.Text:=BAEin; except BAEin:='none'; end;
       sl2.DelimitedText:=sl[25];
-      try Ein2:=strtoint(sl2[sl2.Count-1]); Form.Combobox17.ItemIndex := Form.Combobox17.Items.IndexOf(sl2[sl2.Count-1]); except Ein2:=8; end;
+      try BAAus:=sl2[sl2.Count-1]; BAAus:=stringreplace(BAAus,'€€€',' ',[rfReplaceAll]); Form.Edit61.Text:=BAAus; except BAAus:='none'; end;
       sl2.DelimitedText:=sl[26];
-      try Aus2:=strtoint(sl2[sl2.Count-1]); Form.Combobox18.ItemIndex := Form.Combobox18.Items.IndexOf(sl2[sl2.Count-1]); except Aus2:=10; end;
+      try TWert:=strtofloat(sl2[sl2.Count-1]); Form.Combobox13.ItemIndex := Form.Combobox13.Items.IndexOf(sl2[sl2.Count-1]); except TWert:=2.0; end;
       sl2.DelimitedText:=sl[27];
-      try Ein3:=strtoint(sl2[sl2.Count-1]); Form.Combobox19.ItemIndex := Form.Combobox19.Items.IndexOf(sl2[sl2.Count-1]); except Ein3:=10; end;
+      try Ein1:=strtoint(sl2[sl2.Count-1]); Form.Combobox14.ItemIndex := Form.Combobox14.Items.IndexOf(sl2[sl2.Count-1]); except Ein1:=5; end;
       sl2.DelimitedText:=sl[28];
-      try Aus3:=strtoint(sl2[sl2.Count-1]); Form.Combobox20.ItemIndex := Form.Combobox20.Items.IndexOf(sl2[sl2.Count-1]); except Aus3:=10; end;
+      try Aus1:=strtoint(sl2[sl2.Count-1]); Form.Combobox15.ItemIndex := Form.Combobox15.Items.IndexOf(sl2[sl2.Count-1]); except Aus1:=10; end;
       sl2.DelimitedText:=sl[29];
-      try Ein4:=strtoint(sl2[sl2.Count-1]); Form.Combobox21.ItemIndex := Form.Combobox21.Items.IndexOf(sl2[sl2.Count-1]); except Ein4:=10; end;
+      try Ein2:=strtoint(sl2[sl2.Count-1]); Form.Combobox17.ItemIndex := Form.Combobox17.Items.IndexOf(sl2[sl2.Count-1]); except Ein2:=8; end;
       sl2.DelimitedText:=sl[30];
-      try Aus4:=strtoint(sl2[sl2.Count-1]); Form.Combobox22.ItemIndex := Form.Combobox22.Items.IndexOf(sl2[sl2.Count-1]); except Aus4:=5; end;
+      try Aus2:=strtoint(sl2[sl2.Count-1]); Form.Combobox18.ItemIndex := Form.Combobox18.Items.IndexOf(sl2[sl2.Count-1]); except Aus2:=10; end;
       sl2.DelimitedText:=sl[31];
-      try Ein100:=strtoint(sl2[sl2.Count-1]); Form.Combobox24.ItemIndex := Form.Combobox24.Items.IndexOf(sl2[sl2.Count-1]); except Ein100:=10; end;
+      try Ein3:=strtoint(sl2[sl2.Count-1]); Form.Combobox19.ItemIndex := Form.Combobox19.Items.IndexOf(sl2[sl2.Count-1]); except Ein3:=10; end;
       sl2.DelimitedText:=sl[32];
-      try Aus100:=strtoint(sl2[sl2.Count-1]); Form.Combobox23.ItemIndex := Form.Combobox23.Items.IndexOf(sl2[sl2.Count-1]); except Aus100:=0; end;
+      try Aus3:=strtoint(sl2[sl2.Count-1]); Form.Combobox20.ItemIndex := Form.Combobox20.Items.IndexOf(sl2[sl2.Count-1]); except Aus3:=10; end;
       sl2.DelimitedText:=sl[33];
-      try GradientWert:=strtofloat(sl2[sl2.Count-1]); Form.Combobox25.ItemIndex := Form.Combobox25.Items.IndexOf(sl2[sl2.Count-1]); except GradientWert:=0.5; end;
+      try Ein4:=strtoint(sl2[sl2.Count-1]); Form.Combobox21.ItemIndex := Form.Combobox21.Items.IndexOf(sl2[sl2.Count-1]); except Ein4:=10; end;
       sl2.DelimitedText:=sl[34];
-      try GradientWert:=strtofloat(sl2[sl2.Count-1]); Form.Combobox26.ItemIndex := Form.Combobox26.Items.IndexOf(sl2[sl2.Count-1]); except GradientWert:=0.5; end;
+      try Aus4:=strtoint(sl2[sl2.Count-1]); Form.Combobox22.ItemIndex := Form.Combobox22.Items.IndexOf(sl2[sl2.Count-1]); except Aus4:=5; end;
       sl2.DelimitedText:=sl[35];
-      try if sl2[sl2.Count-1]='1' then Form.CheckBox35.Checked:=true else Form.CheckBox35.Checked:=false; except Form.CheckBox35.Checked:=false end;
+      try Ein100:=strtoint(sl2[sl2.Count-1]); Form.Combobox24.ItemIndex := Form.Combobox24.Items.IndexOf(sl2[sl2.Count-1]); except Ein100:=10; end;
       sl2.DelimitedText:=sl[36];
-      try tempdateiname:=sl2[sl2.Count-1]; tempdateiname:=stringreplace(tempdateiname,'€€€',' ',[rfReplaceAll]); Form.Edit62.Text:=tempdateiname; except tempdateiname:='none'; end;
+      try Aus100:=strtoint(sl2[sl2.Count-1]); Form.Combobox23.ItemIndex := Form.Combobox23.Items.IndexOf(sl2[sl2.Count-1]); except Aus100:=0; end;
       sl2.DelimitedText:=sl[37];
-      try if sl2[sl2.Count-1]='1' then Form.CheckBox38.Checked:=true else Form.CheckBox38.Checked:=false; except Form.CheckBox38.Checked:=false end;
+      try GradientWert:=strtofloat(sl2[sl2.Count-1]); Form.Combobox25.ItemIndex := Form.Combobox25.Items.IndexOf(sl2[sl2.Count-1]); except GradientWert:=0.5; end;
       sl2.DelimitedText:=sl[38];
-      try if sl2[sl2.Count-1]='1' then Form.CheckBox39.Checked:=true else Form.CheckBox39.Checked:=false; except Form.CheckBox39.Checked:=false end;
+      try GradientWert:=strtofloat(sl2[sl2.Count-1]); Form.Combobox26.ItemIndex := Form.Combobox26.Items.IndexOf(sl2[sl2.Count-1]); except GradientWert:=0.5; end;
       sl2.DelimitedText:=sl[39];
-      try if sl2[sl2.Count-1]='1' then Form.CheckBox40.Checked:=true else Form.CheckBox40.Checked:=false; except Form.CheckBox40.Checked:=false end;
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox35.Checked:=true else Form.CheckBox35.Checked:=false; except Form.CheckBox35.Checked:=false end;
       sl2.DelimitedText:=sl[40];
-      try Aufheizrate:=strtofloat(sl2[sl2.Count-1]); Form.Combobox27.ItemIndex := Form.Combobox27.Items.IndexOf(sl2[sl2.Count-1]); except Aufheizrate:=1.0; end;
+      try tempdateiname:=sl2[sl2.Count-1]; tempdateiname:=stringreplace(tempdateiname,'€€€',' ',[rfReplaceAll]); Form.Edit62.Text:=tempdateiname; except tempdateiname:='none'; end;
       sl2.DelimitedText:=sl[41];
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox38.Checked:=true else Form.CheckBox38.Checked:=false; except Form.CheckBox38.Checked:=false end;
+      sl2.DelimitedText:=sl[42];
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox39.Checked:=true else Form.CheckBox39.Checked:=false; except Form.CheckBox39.Checked:=false end;
+      sl2.DelimitedText:=sl[43];
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox40.Checked:=true else Form.CheckBox40.Checked:=false; except Form.CheckBox40.Checked:=false end;
+      sl2.DelimitedText:=sl[44];
+      try Aufheizrate:=strtofloat(sl2[sl2.Count-1]); Form.Combobox27.ItemIndex := Form.Combobox27.Items.IndexOf(sl2[sl2.Count-1]); except Aufheizrate:=1.0; end;
+      sl2.DelimitedText:=sl[45];
       try Relais4:=sl2[sl2.Count-1]; except Relais4:='Kühlung'; end;
       Form.Combobox28.ItemIndex := Form.Combobox28.Items.IndexOf('Heizung, Rührwerk, '+Relais4+', Alarm');
-      sl2.DelimitedText:=sl[42];
+      sl2.DelimitedText:=sl[46];
       try Hysterese2:=strtofloat(sl2[sl2.Count-1]); Form.Combobox29.ItemIndex := Form.Combobox29.Items.IndexOf(sl2[sl2.Count-1]); except Hysterese2:=1.0; end;
-      sl2.DelimitedText:=sl[43];
+      sl2.DelimitedText:=sl[47];
       try Temperaturrast:=strtoint(sl2[sl2.Count-1]);
       if Temperaturrast=1 then Form.Combobox31.ItemIndex := 0
       else if Temperaturrast=2 then Form.Combobox31.ItemIndex := 2
       else Form.Combobox31.ItemIndex := 1;
       except Form.Combobox31.ItemIndex := 0; end;
       Form1.ComboBox31Change(Form1);
-      sl2.DelimitedText:=sl[44];
-      try Form.Combobox30.ItemIndex := Form.Combobox30.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox30.ItemIndex := 0; end;
-      sl2.DelimitedText:=sl[45];
-      try Form.Combobox32.ItemIndex := Form.Combobox32.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox32.ItemIndex := 0; end;
-      sl2.DelimitedText:=sl[46];
-      try Form.Combobox33.ItemIndex := Form.Combobox33.Items.IndexOf(stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll])); except Form.Combobox33.ItemIndex := 0; end;
-      sl2.DelimitedText:=sl[47];
-      try Form.Edit83.Text:=sl2[sl2.Count-1]; except Form.Edit83.Text:='60'; end;
       sl2.DelimitedText:=sl[48];
-      try Form.Edit84.Text:=sl2[sl2.Count-1]; except Form.Edit84.Text:='70'; end;
+      try Form.Combobox30.ItemIndex := Form.Combobox30.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox30.ItemIndex := 0; end;
       sl2.DelimitedText:=sl[49];
-      try Form.Edit85.Text:=sl2[sl2.Count-1]; except Form.Edit85.Text:='80'; end;
+      try Form.Combobox32.ItemIndex := Form.Combobox32.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox32.ItemIndex := 0; end;
       sl2.DelimitedText:=sl[50];
-      try Form.Edit86.Text:=sl2[sl2.Count-1]; except Form.Edit86.Text:='90'; end;
+      try Form.Combobox33.ItemIndex := Form.Combobox33.Items.IndexOf(stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll])); except Form.Combobox33.ItemIndex := 0; end;
       sl2.DelimitedText:=sl[51];
-      try Abkuehlrate:=strtofloat(sl2[sl2.Count-1]); Form.Combobox44.ItemIndex := Form.Combobox44.Items.IndexOf(sl2[sl2.Count-1]); except Abkuehlrate:=0.5; end;
+      try Form.Edit83.Text:=sl2[sl2.Count-1]; except Form.Edit83.Text:='60'; end;
       sl2.DelimitedText:=sl[52];
-      try if sl2[sl2.Count-1]='1' then Form.CheckBox32.Checked:=true else Form.CheckBox32.Checked:=false; except Form.CheckBox32.Checked:=false end;
+      try Form.Edit84.Text:=sl2[sl2.Count-1]; except Form.Edit84.Text:='70'; end;
       sl2.DelimitedText:=sl[53];
-      try if sl2[sl2.Count-1]='1' then Form.CheckBox42.Checked:=true else Form.CheckBox42.Checked:=false; except Form.CheckBox42.Checked:=false end;
+      try Form.Edit85.Text:=sl2[sl2.Count-1]; except Form.Edit85.Text:='80'; end;
       sl2.DelimitedText:=sl[54];
-      try if sl2[sl2.Count-1]='1' then Form.CheckBox43.Checked:=true else Form.CheckBox43.Checked:=false; except Form.CheckBox43.Checked:=false end;
+      try Form.Edit86.Text:=sl2[sl2.Count-1]; except Form.Edit86.Text:='90'; end;
       sl2.DelimitedText:=sl[55];
-      try Form.Combobox45.ItemIndex := Form.Combobox45.Items.IndexOf(stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll])); except Form.ComboBox45.Text:='5 Sekunden'; end;
+      try Abkuehlrate:=strtofloat(sl2[sl2.Count-1]); Form.Combobox44.ItemIndex := Form.Combobox44.Items.IndexOf(sl2[sl2.Count-1]); except Abkuehlrate:=0.5; end;
       sl2.DelimitedText:=sl[56];
-      try Form.Combobox34.ItemIndex := Form.Combobox34.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox7.ItemIndex := 1; end;
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox32.Checked:=true else Form.CheckBox32.Checked:=false; except Form.CheckBox32.Checked:=false end;
       sl2.DelimitedText:=sl[57];
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox42.Checked:=true else Form.CheckBox42.Checked:=false; except Form.CheckBox42.Checked:=false end;
+      sl2.DelimitedText:=sl[58];
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox43.Checked:=true else Form.CheckBox43.Checked:=false; except Form.CheckBox43.Checked:=false end;
+      sl2.DelimitedText:=sl[59];
+      try Form.Combobox45.ItemIndex := Form.Combobox45.Items.IndexOf(stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll])); except Form.ComboBox45.Text:='5 Sekunden'; end;
+      sl2.DelimitedText:=sl[60];
+      try Form.Combobox34.ItemIndex := Form.Combobox34.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox7.ItemIndex := 1; end;
+      sl2.DelimitedText:=sl[61];
       try Form.Edit93.Text := sl2[sl2.Count-1]; except Form.Edit93.Text := '0.0'; end;
       Form1.Edit93Exit(Form1);
-      sl2.DelimitedText:=sl[58];
+      sl2.DelimitedText:=sl[62];
       try Form.Edit94.Text := sl2[sl2.Count-1]; except Form.Edit94.Text := '1.0'; end;
       Form1.Edit94Exit(Form1);
-      sl2.DelimitedText:=sl[59];
+      sl2.DelimitedText:=sl[63];
       try Form.Edit95.Text := sl2[sl2.Count-1]; except Form.Edit95.Text := '1.0'; end;
       Form1.Edit95Exit(Form1);
-      sl2.DelimitedText:=sl[60];
-      try if sl2[sl2.Count-1]='1' then begin Form.BitBtn65.Visible:=true; Form.CheckBox31.Checked:=true end else begin Form.CheckBox31.Checked:=false; Form.BitBtn65.Visible:=false; end; except Form.CheckBox31.Checked:=false; Form.BitBtn65.Visible:=false; end;
-      sl2.DelimitedText:=sl[61];
-      try Form.ZF_HA1.Items.Strings[1]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[1]:='Funktion 1'; end;
-      sl2.DelimitedText:=sl[62];
-      try Form.ZF_HA1.Items.Strings[2]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[2]:='Funktion 2'; end;
-      sl2.DelimitedText:=sl[63];
-      try Form.ZF_HA1.Items.Strings[3]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[3]:='Funktion 3'; end;
       sl2.DelimitedText:=sl[64];
-      try Form.ZF_HA1.Items.Strings[4]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[4]:='Funktion 4'; end;
+      try if sl2[sl2.Count-1]='1' then begin Form.BitBtn65.Visible:=true; Form.CheckBox31.Checked:=true end else begin Form.CheckBox31.Checked:=false; Form.BitBtn65.Visible:=false; end; except Form.CheckBox31.Checked:=false; Form.BitBtn65.Visible:=false; end;
       sl2.DelimitedText:=sl[65];
-      try Form.ZF_HA1.Items.Strings[5]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[5]:='Funktion 5'; end;
+      try Form.ZF_HA1.Items.Strings[1]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[1]:='Funktion 1'; end;
       sl2.DelimitedText:=sl[66];
-      try Form.ZF_HA1.Items.Strings[6]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[6]:='Funktion 6'; end;
+      try Form.ZF_HA1.Items.Strings[2]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[2]:='Funktion 2'; end;
       sl2.DelimitedText:=sl[67];
-      try Form.ZF_HA1.Items.Strings[7]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[7]:='Funktion 7'; end;
+      try Form.ZF_HA1.Items.Strings[3]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[3]:='Funktion 3'; end;
       sl2.DelimitedText:=sl[68];
-      try Form.ZF_HA1.Items.Strings[8]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[8]:='Funktion 8'; end;
+      try Form.ZF_HA1.Items.Strings[4]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[4]:='Funktion 4'; end;
       sl2.DelimitedText:=sl[69];
-      try Form.ZF_HA1.Items.Strings[9]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[9]:='Funktion 9'; end;
+      try Form.ZF_HA1.Items.Strings[5]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[5]:='Funktion 5'; end;
       sl2.DelimitedText:=sl[70];
+      try Form.ZF_HA1.Items.Strings[6]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[6]:='Funktion 6'; end;
+      sl2.DelimitedText:=sl[71];
+      try Form.ZF_HA1.Items.Strings[7]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[7]:='Funktion 7'; end;
+      sl2.DelimitedText:=sl[72];
+      try Form.ZF_HA1.Items.Strings[8]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[8]:='Funktion 8'; end;
+      sl2.DelimitedText:=sl[73];
+      try Form.ZF_HA1.Items.Strings[9]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[9]:='Funktion 9'; end;
+      sl2.DelimitedText:=sl[74];
       try Form.ZF_HA1.Items.Strings[10]:=stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll]); except Form.ZF_HA1.Items.Strings[10]:='Funktion 10'; end;
       for i:=1 to 10 do
       begin
@@ -1999,67 +2030,88 @@ begin
           (Form1.FindComponent('ZF_RE' + inttostr(i)) as TComboBox).Items.Strings[j]:=Form.ZF_HA1.Items.Strings[j];
         end;
       end;
-      sl2.DelimitedText:=sl[71];
-      try Steuerung:=sl2[sl2.Count-1]; Form.Combobox39.ItemIndex := Form.Combobox39.Items.IndexOf(sl2[sl2.Count-1]); except Form.ComboBox39.ItemIndex:=0; end;
-      Form1.ComboBox39Change(Form1);
-      sl2.DelimitedText:=sl[72];
-      try Steuerung:=sl2[sl2.Count-1]; Form.Combobox35.ItemIndex := Form.Combobox35.Items.IndexOf(sl2[sl2.Count-1]); except Form.ComboBox35.ItemIndex:=0; end;
-      sl2.DelimitedText:=sl[73];
-      try Steuerung:=sl2[sl2.Count-1]; Form.Combobox38.ItemIndex := Form.Combobox38.Items.IndexOf(sl2[sl2.Count-1]); except Form.ComboBox38.ItemIndex:=0; end;
-      sl2.DelimitedText:=sl[74];
-      try Steuerung:=sl2[sl2.Count-1]; Form.Combobox30.ItemIndex := Form.Combobox30.Items.IndexOf(sl2[sl2.Count-1]); except Form.ComboBox30.ItemIndex:=0; end;
       sl2.DelimitedText:=sl[75];
-      try Form.Edit96.Text := sl2[sl2.Count-1]; except Form.Edit96.Text := '192.168.178.222'; end;
+      try ttext:=sl2[sl2.Count-1]; Form.Combobox39.ItemIndex := Form.Combobox39.Items.IndexOf(sl2[sl2.Count-1]); except Form.ComboBox39.ItemIndex:=0; end;
+      Form1.ComboBox39Change(Form1);
       sl2.DelimitedText:=sl[76];
-      try Steuerung:=sl2[sl2.Count-1]; Form.Combobox36.ItemIndex := Form.Combobox36.Items.IndexOf(sl2[sl2.Count-1]); except Form.ComboBox36.ItemIndex:=0; end;
+      try ttext:=sl2[sl2.Count-1]; Form.Combobox35.ItemIndex := Form.Combobox35.Items.IndexOf(sl2[sl2.Count-1]); except Form.ComboBox35.ItemIndex:=0; end;
       sl2.DelimitedText:=sl[77];
-      try Steuerung:=sl2[sl2.Count-1]; Form.Combobox37.ItemIndex := Form.Combobox37.Items.IndexOf(sl2[sl2.Count-1]); except Form.ComboBox37.ItemIndex:=0; end;
+      try ttext:=sl2[sl2.Count-1]; Form.Combobox38.ItemIndex := Form.Combobox38.Items.IndexOf(sl2[sl2.Count-1]); except Form.ComboBox38.ItemIndex:=0; end;
       sl2.DelimitedText:=sl[78];
-      try if sl2[sl2.Count-1]='1' then Form.CheckBox45.Checked:=true else Form.CheckBox45.Checked:=false; except Form.CheckBox45.Checked:=false end;
+      try ttext:=sl2[sl2.Count-1]; Form.Combobox30.ItemIndex := Form.Combobox30.Items.IndexOf(sl2[sl2.Count-1]); except Form.ComboBox30.ItemIndex:=0; end;
       sl2.DelimitedText:=sl[79];
-      try if sl2[sl2.Count-1]='1' then Form.CheckBox46.Checked:=true else Form.CheckBox46.Checked:=false; except Form.CheckBox46.Checked:=false end;
+      try Form.Edit96.Text := sl2[sl2.Count-1]; except Form.Edit96.Text := '192.168.178.222'; end;
       sl2.DelimitedText:=sl[80];
-      try if sl2[sl2.Count-1]='1' then Form.CheckBox47.Checked:=true else Form.CheckBox47.Checked:=false; except Form.CheckBox47.Checked:=false end;
+      try ttext:=sl2[sl2.Count-1]; Form.Combobox36.ItemIndex := Form.Combobox36.Items.IndexOf(sl2[sl2.Count-1]); except Form.ComboBox36.ItemIndex:=0; end;
       sl2.DelimitedText:=sl[81];
-      try if sl2[sl2.Count-1]='1' then Form.CheckBox48.Checked:=true else Form.CheckBox48.Checked:=false; except Form.CheckBox48.Checked:=false end;
+      try ttext:=sl2[sl2.Count-1]; Form.Combobox37.ItemIndex := Form.Combobox37.Items.IndexOf(sl2[sl2.Count-1]); except Form.ComboBox37.ItemIndex:=0; end;
       sl2.DelimitedText:=sl[82];
-      try if sl2[sl2.Count-1]='1' then Form.CheckBox49.Checked:=true else Form.CheckBox49.Checked:=false; except Form.CheckBox49.Checked:=false end;
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox45.Checked:=true else Form.CheckBox45.Checked:=false; except Form.CheckBox45.Checked:=false end;
       sl2.DelimitedText:=sl[83];
-      try Form.Edit97.Text := sl2[sl2.Count-1]; except Form.Edit97.Text := '192.168.178.56'; end;
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox46.Checked:=true else Form.CheckBox46.Checked:=false; except Form.CheckBox46.Checked:=false end;
       sl2.DelimitedText:=sl[84];
-      try Form.Edit98.Text := sl2[sl2.Count-1]; except Form.Edit98.Text := '192.168.178.56'; end;
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox47.Checked:=true else Form.CheckBox47.Checked:=false; except Form.CheckBox47.Checked:=false end;
       sl2.DelimitedText:=sl[85];
-      try Form.Edit99.Text := sl2[sl2.Count-1]; except Form.Edit99.Text := '192.168.178.56'; end;
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox48.Checked:=true else Form.CheckBox48.Checked:=false; except Form.CheckBox48.Checked:=false end;
       sl2.DelimitedText:=sl[86];
-      try Form.Edit100.Text := sl2[sl2.Count-1]; except Form.Edit100.Text := '192.168.178.56'; end;
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox49.Checked:=true else Form.CheckBox49.Checked:=false; except Form.CheckBox49.Checked:=false end;
       sl2.DelimitedText:=sl[87];
-      try Form.Edit101.Text := sl2[sl2.Count-1]; except Form.Edit101.Text := 'admin'; end;
+      try Form.Edit97.Text := sl2[sl2.Count-1]; except Form.Edit97.Text := '192.168.178.56'; end;
       sl2.DelimitedText:=sl[88];
-      try Form.Edit102.Text := sl2[sl2.Count-1]; except Form.Edit102.Text := 'admin'; end;
+      try Form.Edit98.Text := sl2[sl2.Count-1]; except Form.Edit98.Text := '192.168.178.56'; end;
       sl2.DelimitedText:=sl[89];
-      try Form.Edit103.Text := sl2[sl2.Count-1]; except Form.Edit103.Text := 'admin'; end;
+      try Form.Edit99.Text := sl2[sl2.Count-1]; except Form.Edit99.Text := '192.168.178.56'; end;
       sl2.DelimitedText:=sl[90];
-      try Form.Edit104.Text := sl2[sl2.Count-1]; except Form.Edit104.Text := 'admin'; end;
+      try Form.Edit100.Text := sl2[sl2.Count-1]; except Form.Edit100.Text := '192.168.178.56'; end;
       sl2.DelimitedText:=sl[91];
-      try Form.Edit105.Text := sl2[sl2.Count-1]; except Form.Edit105.Text := '1234'; end;
+      try Form.Edit101.Text := sl2[sl2.Count-1]; except Form.Edit101.Text := 'admin'; end;
       sl2.DelimitedText:=sl[92];
-      try Form.Edit106.Text := sl2[sl2.Count-1]; except Form.Edit106.Text := '1234'; end;
+      try Form.Edit102.Text := sl2[sl2.Count-1]; except Form.Edit102.Text := 'admin'; end;
       sl2.DelimitedText:=sl[93];
-      try Form.Edit107.Text := sl2[sl2.Count-1]; except Form.Edit107.Text := '1234'; end;
+      try Form.Edit103.Text := sl2[sl2.Count-1]; except Form.Edit103.Text := 'admin'; end;
       sl2.DelimitedText:=sl[94];
-      try Form.Edit108.Text := sl2[sl2.Count-1]; except Form.Edit108.Text := '1234'; end;
+      try Form.Edit104.Text := sl2[sl2.Count-1]; except Form.Edit104.Text := 'admin'; end;
       sl2.DelimitedText:=sl[95];
-      try Form.Combobox42.ItemIndex := Form.Combobox42.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox42.ItemIndex := 0; end;
+      try Form.Edit105.Text := sl2[sl2.Count-1]; except Form.Edit105.Text := '1234'; end;
       sl2.DelimitedText:=sl[96];
-      try Form.Combobox41.ItemIndex := Form.Combobox41.Items.IndexOf(stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll])); except Form.Combobox41.ItemIndex := 0; end;
+      try Form.Edit106.Text := sl2[sl2.Count-1]; except Form.Edit106.Text := '1234'; end;
       sl2.DelimitedText:=sl[97];
-      try Form.Combobox76.ItemIndex := Form.Combobox76.Items.IndexOf(stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll])); except Form.Combobox76.ItemIndex := 0; end;
+      try Form.Edit107.Text := sl2[sl2.Count-1]; except Form.Edit107.Text := '1234'; end;
       sl2.DelimitedText:=sl[98];
+      try Form.Edit108.Text := sl2[sl2.Count-1]; except Form.Edit108.Text := '1234'; end;
+      sl2.DelimitedText:=sl[99];
+      try Form.Combobox42.ItemIndex := Form.Combobox42.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox42.ItemIndex := 0; end;
+      sl2.DelimitedText:=sl[100];
+      try Form.Combobox41.ItemIndex := Form.Combobox41.Items.IndexOf(stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll])); except Form.Combobox41.ItemIndex := 0; end;
+      sl2.DelimitedText:=sl[101];
+      try Form.Combobox76.ItemIndex := Form.Combobox76.Items.IndexOf(stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll])); except Form.Combobox76.ItemIndex := 0; end;
+      sl2.DelimitedText:=sl[102];
       try if sl2[sl2.Count-1]='1' then Form.CheckBox50.Checked:=true else Form.CheckBox50.Checked:=false; except Form.CheckBox50.Checked:=false end;
+      sl2.DelimitedText:=sl[103];
+      try Form.Combobox46.ItemIndex := Form.Combobox46.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox46.ItemIndex := 0 end;
+      sl2.DelimitedText:=sl[104];
+      try Form.Combobox47.ItemIndex := Form.Combobox47.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox47.ItemIndex := 1 end;
+      sl2.DelimitedText:=sl[105];
+      try Form.Combobox48.ItemIndex := Form.Combobox48.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox48.ItemIndex := 3 end;
+      sl2.DelimitedText:=sl[106];
+      try Form.Combobox49.ItemIndex := Form.Combobox49.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox49.ItemIndex := 7 end;
+      sl2.DelimitedText:=sl[107];
+      try Form.Combobox50.ItemIndex := Form.Combobox50.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox50.ItemIndex := 0 end;
+      sl2.DelimitedText:=sl[108];
+      try Form.Combobox51.ItemIndex := Form.Combobox51.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox51.ItemIndex := 1 end;
+      sl2.DelimitedText:=sl[109];
+      try Form.Combobox52.ItemIndex := Form.Combobox52.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox52.ItemIndex := 3 end;
+      sl2.DelimitedText:=sl[110];
+      try Form.Combobox53.ItemIndex := Form.Combobox53.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox53.ItemIndex := 7 end;
+
+      sl2.DelimitedText:=sl[7];
+      try Form.Combobox9.ItemIndex := Form.Combobox9.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox9.ItemIndex := 0 end;
+
+
       AusIst:=Aus1;
       EinIst:=Ein1;
-      If Steuerung='USB' then Form1.USB_Update_Tmr.Enabled:=true;
-      If Steuerung='BATCH' then Form1.Batch_Update_Tmr.Enabled:=true;
+      If Form1.USB.checked=true then Form1.USB_Update_Tmr.Enabled:=true;
+      If Form1.BATCH.checked=true then Form1.Batch_Update_Tmr.Enabled:=true;
     finally
       sl2.Free;
     end;
@@ -2246,12 +2298,39 @@ begin
   Gradient:=Gradientgetter[60]-Gradientgetter[1];
 end;
 
+
+procedure TForm1.BitBtn11Click(Sender: TObject);
+begin
+  Panel6.Visible:=true;
+  Panel8.Visible:=false;
+  Panel10.Visible:=false;
+  Panel14.Visible:=false;
+  Panel12.Visible:=false;
+  Panel13.Visible:=true;
+  Button29.Visible:=true;
+  Button30.Visible:=false;
+  BitBtn10.Visible:=true;
+  BitBtn11.Visible:=false;
+  if (stop=true) and (Panel12.Visible=false) then Panel15.Visible:=true;
+  if start=true then
+  begin
+    Button13.Caption:='Auto';
+    Form1.Button13Click(Form1);
+    Button14.Caption:='Auto';
+    Form1.Button14Click(Form1);
+    Button15.Caption:='Auto';
+    Form1.Button15Click(Form1);
+    Button16.Caption:='Auto';
+    Form1.Button16Click(Form1);
+  end;
+end;
+
 procedure TForm1.Button8Click(Sender: TObject);
 begin
   if Button8.Caption='Rührwerk Ein' then
   begin
     Button8.Caption:='Rührwerk Aus';
-    Ruehrwerk:=RWert;
+    Ruehrwerk:=Form1.Combobox10.ItemIndex+1;
     Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-ein.bmp');
   end
   else
@@ -2268,7 +2347,7 @@ begin
   if Button9.Caption='Heizung Ein' then
   begin
     Button9.Caption:='Heizung Aus';
-    Heizung:=HWert;
+    Heizung:=Form1.Combobox9.ItemIndex+1;
     Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-ein.bmp');
   end
   else
@@ -2285,7 +2364,7 @@ begin
   if Button10.Caption=Relais4+' Ein' then
   begin
     Button10.Caption:=Relais4+' Aus';
-    Pumpe:=PWert;
+    Pumpe:=Form1.Combobox11.ItemIndex+1;
     Image4.Picture.LoadFromFile(pfad + 'Graphics\'+Relais4+'-ein.bmp');
   end
   else
@@ -2302,7 +2381,7 @@ begin
   if Button11.Caption='Alarm Ein' then
   begin
     Button11.Caption:='Alarm Aus';
-    Alarm:=AWert;
+    Alarm:=Form1.Combobox12.ItemIndex+1;
     Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-ein.bmp')
   end
   else
@@ -2348,7 +2427,6 @@ begin
       CloseFile(TempFile);
       if linecounter>100 then
       begin
-        linecounter:=0;
         DeleteFile(pfad+'Temperatur\' + tempdateiname);
         AssignFile(myFile, pfad+'Temperatur\' + tempdateiname);
         ReWrite(myFile);
@@ -2385,8 +2463,8 @@ begin
   Temperatur:=tfs+' °C';
   tfs:=floattostr(round(tf));
   if tf<0 then tfs:='0';
-  if tf>100 then tfs:='100';
-  Graphic:=pfad + 'Graphics\Thermo'+tfs+'.jpg';
+  if tf>110 then tfs:='110';
+  if tf>100 then Graphic:=pfad + 'Graphics\Thermo100.jpg' else Graphic:=pfad + 'Graphics\Thermo'+tfs+'.jpg';
   Image1.Picture.LoadFromFile(Graphic);
   panel1.Caption:=Temperatur;
   GetGradient(Sender);
@@ -2418,6 +2496,7 @@ begin
   self.DoubleBuffered:=true;
   PageControl1.ActivePage:=TabSheet1;
   PageControl2.ActivePage:=TabSheet6;
+  PageControl3.ActivePage:=TabSheet9;
   Application.HintHidePause := 5000;
   Form1.Button30Click(Sender);
   AlarmEin:=false;
@@ -2438,11 +2517,6 @@ begin
   Heizung:=0;
   Alarm:=0;
   Pumpe:=0;
-  LPTCode:=0;
-  RStore:=1;
-  HStore:=1;
-  AStore:=1;
-  PStore:=1;
   sensorreset:=0;
   Schalten(Form1);
   Form1.Timer1Timer(Sender);
@@ -2450,7 +2524,7 @@ begin
   Gradient:=0.0;
   StartTimer.Enabled:=true;
   Form1.ComboBox28Change(Sender);
-  Form1.ComboBox1Change(Sender);
+ // Form1.ComboBox1Change(Sender);
   Form1.ComboBox30Change(Sender);
   Form1.ComboBox32Change(Sender);
   Form1.ComboBox33Change(Sender);
@@ -2557,6 +2631,7 @@ begin
   begin
     if pause=false then
     begin
+      Alarm:=0;
       For i:=1 to 10 do Funktionsinfo[i]:=false;
       PauseLogTimerHEin:=false;
       PauseLogTimerHAus:=false;
@@ -2799,6 +2874,10 @@ begin
   Button18.Enabled:=false;
   Button23.Enabled:=false;
   UpDown2.Visible:=false;
+  Button8.Caption:='Rührwerk Ein';
+  Button9.Caption:='Heizung Ein';
+  Button10.Caption:=Relais4+' Ein';
+  Button11.Caption:='Alarm Ein';
   for i:= 21 to 30 do (FindComponent('Edit' + IntToStr(i)) as TEdit).Visible := true;
   for i:= 26 to 35 do (FindComponent('Label' + IntToStr(i)) as TLabel).Visible := true;
   for i:= 1 to 10 do (FindComponent('Gauge' + IntToStr(i)) as TGauge).Visible := true;
@@ -2946,7 +3025,7 @@ procedure TForm1.TimerREinTimer(Sender: TObject);
 begin
   if Button14.Caption='Manuell' then
   begin
-    Ruehrwerk:=RWert;
+    Ruehrwerk:=Form1.Combobox10.ItemIndex+1;
     Image3.Picture.LoadFromFile(pfad + 'Graphics\Ruehrwerk-ein.bmp');
     Schalten(Form1);
   end;
@@ -2973,7 +3052,7 @@ procedure TForm1.TimerHEinTimer(Sender: TObject);
 begin
   if Button13.Caption='Manuell' then
   begin
-    Heizung:=HWert;
+    Heizung:=Form1.Combobox9.ItemIndex+1;
     Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-ein.bmp');
     Schalten(Form1);
   end;
@@ -2987,7 +3066,6 @@ begin
   begin
     Heizung:=0;
     Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-aus.bmp');
-    LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
     Schalten(Form1);
   end;
   TimerHAus.Enabled:=false;
@@ -3081,7 +3159,7 @@ procedure TForm1.TimerAEinTimer(Sender: TObject);
 begin
   if Button16.Caption='Manuell' then
   begin
-    Alarm:=AWert;
+    Alarm:=Form1.Combobox12.ItemIndex+1;
     Image6.Picture.LoadFromFile(pfad + 'Graphics\Alarm-ein.bmp');
     sndPlaySound(PChar(pfad+'Sound\alarm.wav'),SND_ASYNC + SND_LOOP);
     Schalten(Form1);
@@ -3327,25 +3405,25 @@ begin
   end;
 end;
 
-procedure TForm1.Solltempwahl1Exit(Sender: TObject); begin editcheck(Solltempwahl1,0,100,'20'); end;
+procedure TForm1.Solltempwahl1Exit(Sender: TObject); begin editcheck(Solltempwahl1,0,110,'20'); end;
 procedure TForm1.Solldauerwahl1Exit(Sender: TObject); begin editcheck(Solldauerwahl1,0,9999,'60'); end;
-procedure TForm1.Solltempwahl2Exit(Sender: TObject); begin editcheck(Solltempwahl2,0,100,'20'); end;
+procedure TForm1.Solltempwahl2Exit(Sender: TObject); begin editcheck(Solltempwahl2,0,110,'20'); end;
 procedure TForm1.Solldauerwahl2Exit(Sender: TObject); begin editcheck(Solldauerwahl2,0,9999,'60'); end;
-procedure TForm1.Solltempwahl3Exit(Sender: TObject); begin editcheck(Solltempwahl3,0,100,'20'); end;
+procedure TForm1.Solltempwahl3Exit(Sender: TObject); begin editcheck(Solltempwahl3,0,110,'20'); end;
 procedure TForm1.Solldauerwahl3Exit(Sender: TObject); begin editcheck(Solldauerwahl3,0,9999,'60'); end;
-procedure TForm1.Solltempwahl4Exit(Sender: TObject); begin editcheck(Solltempwahl4,0,100,'20'); end;
+procedure TForm1.Solltempwahl4Exit(Sender: TObject); begin editcheck(Solltempwahl4,0,110,'20'); end;
 procedure TForm1.Solldauerwahl4Exit(Sender: TObject); begin editcheck(Solldauerwahl4,0,9999,'60'); end;
-procedure TForm1.Solltempwahl5Exit(Sender: TObject); begin editcheck(Solltempwahl5,0,100,'20'); end;
+procedure TForm1.Solltempwahl5Exit(Sender: TObject); begin editcheck(Solltempwahl5,0,110,'20'); end;
 procedure TForm1.Solldauerwahl5Exit(Sender: TObject); begin editcheck(Solldauerwahl5,0,9999,'60'); end;
-procedure TForm1.Solltempwahl6Exit(Sender: TObject); begin editcheck(Solltempwahl6,0,100,'20'); end;
+procedure TForm1.Solltempwahl6Exit(Sender: TObject); begin editcheck(Solltempwahl6,0,110,'20'); end;
 procedure TForm1.Solldauerwahl6Exit(Sender: TObject); begin editcheck(Solldauerwahl6,0,9999,'60'); end;
-procedure TForm1.Solltempwahl7Exit(Sender: TObject); begin editcheck(Solltempwahl7,0,100,'20'); end;
+procedure TForm1.Solltempwahl7Exit(Sender: TObject); begin editcheck(Solltempwahl7,0,110,'20'); end;
 procedure TForm1.Solldauerwahl7Exit(Sender: TObject); begin editcheck(Solldauerwahl7,0,9999,'60'); end;
-procedure TForm1.Solltempwahl8Exit(Sender: TObject); begin editcheck(Solltempwahl8,0,100,'20'); end;
+procedure TForm1.Solltempwahl8Exit(Sender: TObject); begin editcheck(Solltempwahl8,0,110,'20'); end;
 procedure TForm1.Solldauerwahl8Exit(Sender: TObject); begin editcheck(Solldauerwahl8,0,9999,'60'); end;
-procedure TForm1.Solltempwahl9Exit(Sender: TObject); begin editcheck(Solltempwahl9,0,100,'20'); end;
+procedure TForm1.Solltempwahl9Exit(Sender: TObject); begin editcheck(Solltempwahl9,0,110,'20'); end;
 procedure TForm1.Solldauerwahl9Exit(Sender: TObject); begin editcheck(Solldauerwahl9,0,9999,'60'); end;
-procedure TForm1.Solltempwahl10Exit(Sender: TObject); begin editcheck(Solltempwahl10,0,100,'20'); end;
+procedure TForm1.Solltempwahl10Exit(Sender: TObject); begin editcheck(Solltempwahl10,0,110,'20'); end;
 procedure TForm1.Solldauerwahl10Exit(Sender: TObject); begin editcheck(Solldauerwahl10,0,9999,'60'); end;
 procedure TForm1.RWEinWahl1Exit(Sender: TObject); begin editcheck(RWEinWahl1,0,9999,'60'); end;
 procedure TForm1.RWEinWahl2Exit(Sender: TObject); begin editcheck(RWEinWahl2,0,9999,'60'); end;
@@ -3427,7 +3505,6 @@ begin
   buttonSelected:=MyMessageDlgPos('Programm wirklich beenden?', mtWarning, [mbOK, mbAbort], ['Ok', 'Abbruch'], Form1.Left, 350, Form1.Top, 250);
   if buttonSelected = mrOK then
   begin
-    LPTCode:=0;
     Ruehrwerk:=0;
     Heizung:=0;
     Alarm:=0;
@@ -3442,7 +3519,7 @@ begin
     repeat hw:= FindWindow(nil, 'Auto-Starter'); SendMessage(hw, WM_CLOSE, 0, 0); until hw=0;
     repeat hw:= FindWindow(nil, 'Brauerei Arduino LAN Server'); SendMessage(hw, WM_CLOSE, 0, 0); until hw=0;
     repeat hw:= FindWindow(nil, 'Brauerei Arduino USB Server'); SendMessage(hw, WM_CLOSE, 0, 0); until hw=0;
-    if (steuerung='USB') and (usbtyp='IO-Warrior-Basis') then
+    if (Form1.USB.checked=true) and (usbtyp='IO-Warrior-Basis') then
     begin
       IowKitCloseDevice(IOWarrior);
       UnloadIowKitAPI;
@@ -3540,13 +3617,13 @@ end;
 
 procedure TForm1.USB_Update_TmrTimer(Sender: TObject);
 begin
-  if Steuerung<>'USB' then begin USB_Update_Tmr.Enabled:=false; exit; end;
+  if Form1.USB.checked=true then begin USB_Update_Tmr.Enabled:=false; exit; end;
   if usbtyp='Denkovi' then USB2Out else if usbtyp='SainSmart' then USB3Out else if usbtyp='IO-Warrior-Basis' then USB4Out else USBOut;
 end;
 
 procedure TForm1.Batch_Update_TmrTimer(Sender: TObject);
 begin
-  if Steuerung<>'Batch' then begin Batch_Update_Tmr.Enabled:=false; exit; end;
+  if Form1.BATCH.checked=true then begin Batch_Update_Tmr.Enabled:=false; exit; end;
   BatchOut;
 end;
 
@@ -3565,8 +3642,11 @@ begin
 end;
 
 procedure TForm1.ComboBox2Change(Sender: TObject);
-var x:integer;
 begin
+  ComboBox3.ItemIndex:=0;
+  ComboBox4.ItemIndex:=1;
+  ComboBox5.ItemIndex:=2;
+  ComboBox6.ItemIndex:=3;
   if Combobox2.Text = 'Denkovi' then
   begin
     usbtyp:='Denkovi';
@@ -3574,14 +3654,6 @@ begin
     ComboBox16.Visible:=true;
     Label76.Visible:=false;
     Label111.Visible:=true;
-    if ComboBox3.Items.Count>5 then for x:= 5 to 8 do ComboBox3.Items.Delete(ComboBox3.Items.Count-1);
-    if ComboBox4.Items.Count>5 then for x:= 5 to 8 do ComboBox3.Items.Delete(ComboBox4.Items.Count-1);
-    if ComboBox5.Items.Count>5 then for x:= 5 to 8 do ComboBox3.Items.Delete(ComboBox5.Items.Count-1);
-    if ComboBox6.Items.Count>5 then for x:= 5 to 8 do ComboBox3.Items.Delete(ComboBox6.Items.Count-1);
-    ComboBox3.ItemIndex:=0;
-    ComboBox4.ItemIndex:=1;
-    ComboBox5.ItemIndex:=2;
-    ComboBox6.ItemIndex:=3;
   end
   else if Combobox2.Text = 'SainSmart' then
   begin
@@ -3590,14 +3662,6 @@ begin
     ComboBox16.Visible:=true;
     Label76.Visible:=false;
     Label111.Visible:=true;
-    if ComboBox3.Items.Count>5 then for x:= 5 to 8 do ComboBox3.Items.Delete(ComboBox3.Items.Count-1);
-    if ComboBox4.Items.Count>5 then for x:= 5 to 8 do ComboBox3.Items.Delete(ComboBox4.Items.Count-1);
-    if ComboBox5.Items.Count>5 then for x:= 5 to 8 do ComboBox3.Items.Delete(ComboBox5.Items.Count-1);
-    if ComboBox6.Items.Count>5 then for x:= 5 to 8 do ComboBox3.Items.Delete(ComboBox6.Items.Count-1);
-    ComboBox3.ItemIndex:=0;
-    ComboBox4.ItemIndex:=1;
-    ComboBox5.ItemIndex:=2;
-    ComboBox6.ItemIndex:=3;
   end
   else if Combobox2.Text = 'KMTronic' then
   begin
@@ -3606,14 +3670,6 @@ begin
     ComboBox7.Visible:=true;
     Label111.Visible:=false;
     Label76.Visible:=true;
-    if ComboBox3.Items.Count>5 then for x:= 5 to 8 do ComboBox3.Items.Delete(ComboBox3.Items.Count-1);
-    if ComboBox4.Items.Count>5 then for x:= 5 to 8 do ComboBox3.Items.Delete(ComboBox4.Items.Count-1);
-    if ComboBox5.Items.Count>5 then for x:= 5 to 8 do ComboBox3.Items.Delete(ComboBox5.Items.Count-1);
-    if ComboBox6.Items.Count>5 then for x:= 5 to 8 do ComboBox3.Items.Delete(ComboBox6.Items.Count-1);
-    ComboBox3.ItemIndex:=0;
-    ComboBox4.ItemIndex:=1;
-    ComboBox5.ItemIndex:=2;
-    ComboBox6.ItemIndex:=3;
   end
   else
   begin
@@ -3622,14 +3678,6 @@ begin
     ComboBox16.Visible:=false;
     Label76.Visible:=false;
     Label111.Visible:=false;
-    if ComboBox3.Items.Count<5 then for x:= 5 to 8 do ComboBox3.Items.Add(inttostr(x));
-    if ComboBox4.Items.Count<5 then for x:= 5 to 8 do ComboBox4.Items.Add(inttostr(x));
-    if ComboBox5.Items.Count<5 then for x:= 5 to 8 do ComboBox5.Items.Add(inttostr(x));
-    if ComboBox6.Items.Count<5 then for x:= 5 to 8 do ComboBox6.Items.Add(inttostr(x));
-    ComboBox3.ItemIndex:=0;
-    ComboBox4.ItemIndex:=1;
-    ComboBox5.ItemIndex:=2;
-    ComboBox6.ItemIndex:=3;
   end;
 end;
 
@@ -3683,50 +3731,11 @@ begin
   end;
 end;
 
-procedure TForm1.ComboBox1Change(Sender: TObject);
+procedure TForm1.ArduinoClick(Sender: TObject);
 begin
-  if ComboBox1.Text='USB' then
-  begin
-    GroupBox1.Visible:=false;
-    GroupBox2.Visible:=true;
-    GroupBox3.Visible:=false;
-    GroupBox8.Visible:=false;
-    if (ComboBox39.Text<>'ARDUINO') and (CheckBox45.Checked=false) then TabSheet8.TabVisible:=false;
-  end
-  else if ComboBox1.Text='LPT' then
-  begin
-    GroupBox1.Visible:=false;
-    GroupBox2.Visible:=false;
-    GroupBox3.Visible:=true;
-    GroupBox8.Visible:=false;
-    if (ComboBox39.Text<>'ARDUINO') and (CheckBox45.Checked=false) then TabSheet8.TabVisible:=false;
-  end
-  else if ComboBox1.Text='BATCH' then
-  begin
-    GroupBox1.Visible:=true;
-    GroupBox2.Visible:=false;
-    GroupBox3.Visible:=false;
-    GroupBox8.Visible:=false;
-    if (ComboBox39.Text<>'ARDUINO') and (CheckBox45.Checked=false) then TabSheet8.TabVisible:=false;
-  end
-  else if ComboBox1.Text='WLAN' then
-  begin
-    GroupBox1.Visible:=false;
-    GroupBox2.Visible:=false;
-    GroupBox3.Visible:=false;
-    GroupBox8.Visible:=true;
-    if (ComboBox39.Text<>'ARDUINO') and (CheckBox45.Checked=false) then TabSheet8.TabVisible:=false;
-  end
-  else
-  begin
-    GroupBox1.Visible:=false;
-    GroupBox2.Visible:=false;
-    GroupBox3.Visible:=false;
-    GroupBox8.Visible:=false;
-    TabSheet8.TabVisible:=true;
-  end;
+  if (Arduino.Checked=false) and (ComboBox39.Text<>'ARDUINO') and (CheckBox45.Checked=false) then TabSheet8.TabVisible:=false
+  else TabSheet8.TabVisible:=true;
 end;
-
 
 procedure TForm1.Button26Click(Sender: TObject);
 begin
@@ -4165,7 +4174,7 @@ procedure TForm1.TimerKEinTimer(Sender: TObject);
 begin
   if Button15.Caption='Manuell' then
   begin
-    Pumpe:=PWert;
+    Pumpe:=Form1.Combobox11.ItemIndex+1;
     Image4.Picture.LoadFromFile(pfad + 'Graphics\Kühlung-ein.bmp');
     Schalten(Form1);
   end;
@@ -4179,7 +4188,6 @@ begin
   begin
     Pumpe:=0;
     Image4.Picture.LoadFromFile(pfad + 'Graphics\Kühlung-aus.bmp');
-    LPTCode:=Ruehrwerk+Heizung+Pumpe+Alarm;
     Schalten(Form1);
   end;
   TimerKAus.Enabled:=false;
@@ -4754,7 +4762,7 @@ begin
   begin
     Button13.Caption:='Manuell';
     Button9.Enabled:=false;
-    Button9.Caption:='Heizung Aus';
+    Button9.Caption:='Heizung AusF';
     Form1.Button9Click(Form1);
     TimerHEin.Interval:=0;
     Form1.TimerHSetTimer(Sender);
@@ -4898,7 +4906,7 @@ begin
   end
   else if ComboBox39.Text='DIGITEMP' then
   begin
-    if (ComboBox1.Text<>'ARDUINO') and (CheckBox45.Checked=false) then TabSheet8.TabVisible:=false;
+    if (Form1.Arduino.checked=false) and (CheckBox45.Checked=false) then TabSheet8.TabVisible:=false;
     GroupBox5.Visible:=false;
     GroupBox9.Visible:=true;
     UpDown1.Visible:=true;
@@ -4909,7 +4917,7 @@ begin
   end
   else
   begin
-    if (ComboBox1.Text<>'ARDUINO') and (CheckBox45.Checked=false) then TabSheet8.TabVisible:=false;
+    if (Form1.Arduino.checked=false) and (CheckBox45.Checked=false) then TabSheet8.TabVisible:=false;
     GroupBox5.Visible:=true;
     GroupBox9.Visible:=false;
     UpDown1.Visible:=false;
@@ -4930,7 +4938,7 @@ begin
     arduinofloattempalt:=arduinofloattemp;
     try arduinotfs:= copy(RecText, 2, 4); arduinofloattemp:=strtofloat(arduinotfs); except end;
     arduinotempdelta:=arduinofloattemp-arduinofloattempalt;
-    if (arduinofloattemp<0) or (arduinofloattemp>=100) or (arduinotempdelta<-5) or (arduinotempdelta>5) then
+    if (arduinofloattemp<0) or (arduinofloattemp>=110) or (arduinotempdelta<-5) or (arduinotempdelta>5) then
     begin
       Memo1.Lines.Strings[Memo1.Lines.Count-1]:='Temperaturwert unplausibel';
     end
@@ -4998,7 +5006,7 @@ begin
               arduinofloattempalt:=arduinofloattemp;
               try arduinotfs:=temp; arduinofloattemp:=strtofloat(temp); except end;
               arduinotempdelta:=arduinofloattemp-arduinofloattempalt;
-              if (arduinofloattemp<0) or (arduinofloattemp>=100) or (arduinotempdelta<-5) or (arduinotempdelta>5) then
+              if (arduinofloattemp<0) or (arduinofloattemp>=110) or (arduinotempdelta<-5) or (arduinotempdelta>5) then
               begin
                 Memo1.Lines.Append('');
                 Memo1.Lines.Strings[Memo1.Lines.Count-1]:='Temperaturwert unplausibel';
@@ -5066,12 +5074,12 @@ end;
 procedure TForm1.CheckBox45Click(Sender: TObject);
 begin
   if CheckBox45.Checked=true then TabSheet8.TabVisible:=true
-  else if (ComboBox1.Text<>'ARDUINO') and (ComboBox39.Text<>'ARDUINO') then TabSheet8.TabVisible:=false;
+  else if (Form1.Arduino.checked=false) and (ComboBox39.Text<>'ARDUINO') then TabSheet8.TabVisible:=false;
 end;
 
 procedure TForm1.ArduinoTimerTimer(Sender: TObject);
 begin
-  if (ComboBox39.Text='ARDUINO') or (ComboBox1.Text='ARDUINO') or (CheckBox45.Checked=true) then
+  if (ComboBox39.Text='ARDUINO') or (Form1.Arduino.checked=true) or (CheckBox45.Checked=true) then
   begin
     if (ComboBox38.Text='LAN') and (LANStarted=false) then
     begin

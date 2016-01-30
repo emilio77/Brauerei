@@ -1,12 +1,17 @@
 Change-Log:
 
 V 1.61
-Kleinere Anpassungen KBH-Maischeplananzeige
-KBH-Filter alle/gebraute/ungebraute/verbrauchte/unverbrauchte
+IO-Warrior basierende USB-Relais-Karte ergänzt
+8 Relais-Varianten bei USB-Relaiskarten zulässig
+Mehrere Schalthardware-Typen zur gleichen Zeit erlaubt (z.B. WLAN und USB)
+Mehrere Relais parallel (durch Binär-Code) schaltbar (Relais1-4 für Heizung)
+Solltemperatur während aktivem Brauprozess korrigierbar
+Solltemperaturen bis 110 Grad zulässig
 Alte Version von Digitemp auswählbar gemacht
-Soll-Temperatur während Brauprozess korrigierbar
 Beim KBH-Import ist das Rührwerk für Maischen und Kochen jetzt getrennt anwählbar
-IO-Warrior USB-Relais-Karte ergänzt
+KBH-Filter alle/gebraute/ungebraute/verbrauchte/unverbrauchte
+Kleinere Anpassungen KBH-Maischeplananzeige
+Bug beim Umschalten zwischen manueller und automatischer Steuerung mit Badgedatei-Steuerung entfernt
 Code optimiert
 
 V 1.57

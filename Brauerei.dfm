@@ -1275,7 +1275,7 @@ object Form1: TForm1
     Top = 8
     Width = 777
     Height = 617
-    ActivePage = TabSheet4
+    ActivePage = TabSheet1
     ParentShowHint = False
     ShowHint = False
     TabOrder = 0
@@ -17075,7 +17075,7 @@ object Form1: TForm1
         Top = 5
         Width = 449
         Height = 172
-        ActivePage = TabSheet7
+        ActivePage = TabSheet6
         TabOrder = 5
         OnChange = PageControl2Change
         object TabSheet6: TTabSheet
@@ -17589,9 +17589,8 @@ object Form1: TForm1
         Top = 184
         Width = 449
         Height = 265
-        ActivePage = TabSheet9
+        ActivePage = TabSheet10
         TabOrder = 7
-        OnChange = PageControl2Change
         object TabSheet9: TTabSheet
           Caption = 'USB-Relais'
           object Label74: TLabel
@@ -17700,6 +17699,7 @@ object Form1: TForm1
             Height = 23
             Hint = 'Verwendete Nummers Relais'
             Style = csDropDownList
+            DropDownCount = 9
             ItemHeight = 15
             ItemIndex = 0
             ParentShowHint = False
@@ -17724,6 +17724,7 @@ object Form1: TForm1
             Height = 23
             Hint = 'Verwendete Nummers Relais'
             Style = csDropDownList
+            DropDownCount = 9
             ItemHeight = 15
             ItemIndex = 1
             ParentShowHint = False
@@ -17772,6 +17773,7 @@ object Form1: TForm1
             Height = 23
             Hint = 'Verwendete Nummers Relais'
             Style = csDropDownList
+            DropDownCount = 9
             ItemHeight = 15
             ItemIndex = 3
             ParentShowHint = False
@@ -17853,6 +17855,7 @@ object Form1: TForm1
             Height = 23
             Hint = 'Verwendete Nummers Relais'
             Style = csDropDownList
+            DropDownCount = 9
             ItemHeight = 15
             ItemIndex = 0
             ParentShowHint = False
@@ -18124,6 +18127,7 @@ object Form1: TForm1
             Height = 23
             Hint = 'Verwendete Nummers Relais'
             Style = csDropDownList
+            DropDownCount = 9
             ItemHeight = 15
             ItemIndex = 0
             ParentShowHint = False
@@ -18395,6 +18399,7 @@ object Form1: TForm1
             Height = 23
             Hint = 'Verwendete Nummers Relais'
             Style = csDropDownList
+            DropDownCount = 9
             ItemHeight = 15
             ItemIndex = 0
             ParentShowHint = False
@@ -18666,6 +18671,7 @@ object Form1: TForm1
             Height = 23
             Hint = 'Verwendete Nummers Relais'
             Style = csDropDownList
+            DropDownCount = 9
             ItemHeight = 15
             ItemIndex = 1
             ParentShowHint = False
@@ -19033,6 +19039,7 @@ object Form1: TForm1
             Height = 23
             Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
             Style = csDropDownList
+            DropDownCount = 9
             ItemHeight = 15
             ItemIndex = 0
             ParentShowHint = False
@@ -19057,6 +19064,7 @@ object Form1: TForm1
             Height = 23
             Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
             Style = csDropDownList
+            DropDownCount = 9
             ItemHeight = 15
             ItemIndex = 1
             ParentShowHint = False
@@ -19082,6 +19090,7 @@ object Form1: TForm1
             Height = 23
             Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
             Style = csDropDownList
+            DropDownCount = 9
             ItemHeight = 15
             ItemIndex = 2
             ParentShowHint = False
@@ -19106,6 +19115,7 @@ object Form1: TForm1
             Height = 23
             Hint = 'Pin zum Schalten (dezimal, 1, 2, 4, 8, 16, 32, 64, 128)'
             Style = csDropDownList
+            DropDownCount = 9
             ItemHeight = 15
             ItemIndex = 3
             ParentShowHint = False
@@ -19141,6 +19151,7 @@ object Form1: TForm1
             Height = 23
             Hint = 'Verwendete Nummers Relais'
             Style = csDropDownList
+            DropDownCount = 9
             ItemHeight = 15
             ItemIndex = 0
             ParentShowHint = False
@@ -19412,6 +19423,7 @@ object Form1: TForm1
             Height = 23
             Hint = 'Verwendete Nummers Relais'
             Style = csDropDownList
+            DropDownCount = 9
             ItemHeight = 15
             ItemIndex = 0
             ParentShowHint = False
@@ -19683,6 +19695,7 @@ object Form1: TForm1
             Height = 23
             Hint = 'Verwendete Nummers Relais'
             Style = csDropDownList
+            DropDownCount = 9
             ItemHeight = 15
             ItemIndex = 0
             ParentShowHint = False
@@ -19954,6 +19967,7 @@ object Form1: TForm1
             Height = 23
             Hint = 'Verwendete Nummers Relais'
             Style = csDropDownList
+            DropDownCount = 9
             ItemHeight = 15
             ItemIndex = 0
             ParentShowHint = False

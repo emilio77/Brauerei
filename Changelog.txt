@@ -3,6 +3,7 @@ Change-Log:
 V 1.61
 IO-Warrior basierende USB-Relais-Karte ergänzt
 8 Relais-Varianten bei USB-Relaiskarten zulässig
+Einstellungsänderungen bei aktivem Brauprozess sind jetzt möglich
 Mehrere Schalthardware-Typen zur gleichen Zeit erlaubt (z.B. WLAN und USB)
 Mehrere Relais parallel (durch Binär-Code) schaltbar (Relais1-4 für Heizung)
 Solltemperatur während aktivem Brauprozess korrigierbar
@@ -10,9 +11,26 @@ Solltemperaturen bis 110 Grad zulässig
 Alte Version von Digitemp auswählbar gemacht
 Beim KBH-Import ist das Rührwerk für Maischen und Kochen jetzt getrennt anwählbar
 KBH-Filter alle/gebraute/ungebraute/verbrauchte/unverbrauchte
-Kleinere Anpassungen KBH-Maischeplananzeige
+Kleinere Anpassungen KBH-Maischeplan-Anzeige
+Fortschrittsanzeige in der Taskbar
 Bug beim Umschalten zwischen manueller und automatischer Steuerung mit Badgedatei-Steuerung entfernt
+Bug Nullsprünge bei Temperaturmessung USB-Arduino behoben
+Gelegentliche Meldung "" ist kein gültiger Gleitkommawert bei Temperaturmessung USB-Arduino behoben 
 Code optimiert
+
+V 1.60
+Arduino USB- und LAN-Server im Hauptprogramm integriert
+Edimax WLAN-Steckdosen im Programm integriert
+Digitemp-Steuerung im Programm integriert
+Sensorumschaltung bei USB-1-Wire-Adaptern integriert
+Individuelle Arduinofunktionen zugefügt
+Einstellungen neu sortiert
+Anzeige Restdauer bis zum Timerstart
+Temperatursimulation verbessert
+Bug Brauruf wird bei Rastsprüngen nicht angezeigt beseitigt
+Bug Zeilenumbruch in Brauruftext beseitigt
+Bug bei Rasttypen beim Import von Kochrezepten entfernt
+Diverse weitere kleinere Bugs entfernt
 
 V 1.57
 Kleinere Bugfixes im Arduino USB- und LAN-Server

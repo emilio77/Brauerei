@@ -1,2 +1,3 @@
 20 Rasten
 Rasteingabe und Brauprozess aufteilen
+Bei Rühren während geheizt wir; Verzögerungszeit nach ein- und ausschalten des Rührwerks aufgetrennt 

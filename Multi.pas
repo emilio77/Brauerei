@@ -57,8 +57,12 @@ procedure TForm3.BitBtn1Click(Sender: TObject);
 var Rezeptname:String;
 begin
   Form3.Visible:=false;
-  Form3.BitBtn1.HelpKeyWord:='true';
-  Form1.BitBtn1Click(Sender);
+  if (Edit1.Text<>'') or (Edit2.Text<>'') or (Edit3.Text<>'') or (Edit4.Text<>'') or (Edit5.Text<>'') then
+  begin
+    Form3.BitBtn1.HelpKeyWord:='true';
+    Form1.BitBtn1.glyph.LoadFromFile(pfad + 'Graphics\Multiplay.bmp');
+    Form1.BitBtn17.Enabled:=false;
+  end;
 end;
 
 procedure TForm3.BitBtn2Click(Sender: TObject);

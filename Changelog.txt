@@ -1,5 +1,25 @@
 Change-Log:
 
+V 1.62
+Zusatzprogramm zur Temeraturmessung mit 1wire-Tester von LEDgenial.de (HIDControl) zugefügt
+WEMOS-WLAN-Hardware und Sketch zugefügt 
+Multi-Start-Funktion mit extra Button ausgeführt
+Getrennter Start der Multi-Startfunktion
+Kombination aus Timer-Start und Multi-Start ermöglicht
+Rührwerk- und Brauerrufeinstellungen zur Laufzeit änderbar
+Rastdauer und Solltemperatur bei pausiertem Brauprozess änderbar
+Einstellbereich für Gradient- und Pulsbereich erweitert um Dupon-Maischeprozess zu ermöglichen
+Einstellungen weiter gegliedert
+Bei an Heizung gekoppeltem Rührwerk Zeit für Ein- und Ausschaltverzögerung getrennt  
+Unterschiedliche Fensterfarben eingefügt
+Bug beim KBH-Import bei Rezepten mit nur Vorderwürzhopfung entfernt
+Heizungsüberwachung um Temperaturüberschreitung bei "klemmenden" Relais erweitert
+Arduino-Parallebetrieb gelöscht
+Netzwerkzugriffe bei ausgeschalteter Netzwerkhardware entfernt
+Wählbare Netzwerkports für Arduino-Hardware erweitert
+Icon geändert
+Diverse kleinere Bugs behoben
+
 V 1.61
 IO-Warrior basierende USB-Relais-Karte ergänzt
 8 Relais-Varianten bei USB-Relaiskarten zulässig

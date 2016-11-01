@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 798
-  Top = 152
+  Left = 450
+  Top = 120
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Brauerei'
@@ -1275,7 +1275,7 @@ object Form1: TForm1
     Top = 8
     Width = 777
     Height = 617
-    ActivePage = TabSheet1
+    ActivePage = TabSheet4
     ParentShowHint = False
     ShowHint = False
     TabOrder = 0
@@ -4660,96 +4660,10 @@ object Form1: TForm1
           Transparent = True
           Visible = False
         end
-        object CheckBox34: TCheckBox
-          Left = 456
-          Top = 6
-          Width = 137
-          Height = 17
-          Hint = 
-            'Das Heizungsrelais wird gem. den Eingaben unter Einstellungen, '#13 +
-            #10'vor Erreichen der Zieltemperatur, gepulst.'
-          Caption = 'Heizung gepulst'
-          Checked = True
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = []
-          ParentFont = False
-          ParentShowHint = False
-          ShowHint = True
-          State = cbChecked
-          TabOrder = 0
-        end
-        object CheckBox33: TCheckBox
-          Left = 456
-          Top = 60
-          Width = 137
-          Height = 17
-          Hint = 
-            'Sensor'#252'berwachung:'#13#10#196'ndert sich die Temperatur-Log-Datei zu lang' +
-            'e nicht'#13#10'wird ein Alarm ausgel'#246'st.'
-          Caption = 'Sensor '#252'berwachen'
-          Checked = True
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = []
-          ParentFont = False
-          ParentShowHint = False
-          ShowHint = True
-          State = cbChecked
-          TabOrder = 3
-        end
-        object CheckBox36: TCheckBox
-          Left = 456
-          Top = 23
-          Width = 145
-          Height = 19
-          Hint = 
-            'Das Heizungsrelais wird gem. den Eingaben unter Einstellungen, '#13 +
-            #10'bei '#220'berschreitung des Gradienten vor Erreichen der Ziel-'#13#10'temp' +
-            'eratur, ausgeschaltet.'
-          Caption = 'Heizung Gradient'
-          Checked = True
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = []
-          ParentFont = False
-          ParentShowHint = False
-          ShowHint = True
-          State = cbChecked
-          TabOrder = 1
-        end
-        object CheckBox37: TCheckBox
-          Left = 456
-          Top = 42
-          Width = 153
-          Height = 17
-          Hint = 
-            'Das Heizungsrelais wird beim erreichen der Zieltemperatur'#13#10'ausge' +
-            'schaltet. Eingeschaltet wird erst wieder nach '#13#10'Unterschreitung ' +
-            'des unter Einstellungen definierten '#13#10'Hysterese-Werts.'
-          Caption = 'Temperatur Hysterese'
-          Checked = True
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = []
-          ParentFont = False
-          ParentShowHint = False
-          ShowHint = True
-          State = cbChecked
-          TabOrder = 2
-        end
         object Button1: TButton
-          Left = 616
-          Top = 5
-          Width = 129
+          Left = 448
+          Top = 10
+          Width = 145
           Height = 41
           Hint = 'Umschaltung zwischen '#13#10'Alarm still'#13#10'Alarm gepulst'#13#10'Alarm aktiv'
           Caption = 'Alarm pulsen'
@@ -4761,13 +4675,13 @@ object Form1: TForm1
           ParentFont = False
           ParentShowHint = False
           ShowHint = True
-          TabOrder = 4
+          TabOrder = 0
           OnClick = Button1Click
         end
         object Button17: TButton
-          Left = 616
-          Top = 50
-          Width = 129
+          Left = 600
+          Top = 10
+          Width = 145
           Height = 41
           Hint = 
             'Setting speichern:'#13#10'Aktuelle Rast- und Brauprozess-Einstellungen' +
@@ -4781,29 +4695,8 @@ object Form1: TForm1
           ParentFont = False
           ParentShowHint = False
           ShowHint = True
-          TabOrder = 5
+          TabOrder = 1
           OnClick = Button17Click
-        end
-        object CheckBox41: TCheckBox
-          Left = 456
-          Top = 77
-          Width = 145
-          Height = 17
-          Hint = 
-            'Sensor'#252'berwachung:'#13#10#196'ndert sich die Temperatur-Log-Datei zu lang' +
-            'e nicht'#13#10'wird ein Alarm ausgel'#246'st.'
-          Caption = 'Heizung '#252'berwachen'
-          Checked = True
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -12
-          Font.Name = 'Arial'
-          Font.Style = []
-          ParentFont = False
-          ParentShowHint = False
-          ShowHint = True
-          State = cbChecked
-          TabOrder = 6
         end
       end
       object Panel6: TPanel
@@ -7568,7 +7461,7 @@ object Form1: TForm1
           Top = 5
           Width = 57
           Height = 57
-          Hint = 'Timergesteuerter Start'
+          Hint = 'Serieller Start mehrerer Maischeprogramme'
           ParentShowHint = False
           ShowHint = True
           TabOrder = 10
@@ -9454,98 +9347,98 @@ object Form1: TForm1
         object Brauerrufwahl1: TCheckBox
           Left = 23
           Top = 24
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 0
         end
         object Brauerrufwahl2: TCheckBox
           Left = 23
           Top = 56
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 4
         end
         object Brauerrufwahl3: TCheckBox
           Left = 23
           Top = 88
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 8
         end
         object Brauerrufwahl4: TCheckBox
           Left = 23
           Top = 120
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 12
         end
         object Brauerrufwahl5: TCheckBox
           Left = 23
           Top = 152
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 16
         end
         object Brauerrufwahl6: TCheckBox
           Left = 23
           Top = 184
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 20
         end
         object Brauerrufwahl7: TCheckBox
           Left = 23
           Top = 216
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 24
         end
         object Ruehrwerkwahl1: TCheckBox
           Left = 72
           Top = 24
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 1
         end
         object Ruehrwerkwahl2: TCheckBox
           Left = 72
           Top = 56
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 5
         end
         object Ruehrwerkwahl3: TCheckBox
           Left = 72
           Top = 88
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 9
         end
         object Ruehrwerkwahl4: TCheckBox
           Left = 72
           Top = 120
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 13
         end
         object Ruehrwerkwahl5: TCheckBox
           Left = 72
           Top = 152
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 17
         end
         object Ruehrwerkwahl6: TCheckBox
           Left = 72
           Top = 184
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 21
         end
         object Ruehrwerkwahl7: TCheckBox
           Left = 72
           Top = 216
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 25
         end
@@ -9695,42 +9588,42 @@ object Form1: TForm1
         object Brauerrufwahl8: TCheckBox
           Left = 23
           Top = 248
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 28
         end
         object Brauerrufwahl9: TCheckBox
           Left = 23
           Top = 280
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 32
         end
         object Brauerrufwahl10: TCheckBox
           Left = 23
           Top = 308
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 36
         end
         object Ruehrwerkwahl8: TCheckBox
           Left = 72
           Top = 248
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 29
         end
         object Ruehrwerkwahl9: TCheckBox
           Left = 72
           Top = 280
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 33
         end
         object Ruehrwerkwahl10: TCheckBox
           Left = 72
           Top = 308
-          Width = 25
+          Width = 17
           Height = 25
           TabOrder = 37
         end
@@ -9972,6 +9865,96 @@ object Form1: TForm1
           Height = 15
           Caption = 'min.'
         end
+        object Rastname1: TLabel
+          Left = 25
+          Top = 22
+          Width = 116
+          Height = 25
+          AutoSize = False
+          Caption = 'Rast 1'
+          Layout = tlCenter
+        end
+        object Rastname2: TLabel
+          Left = 25
+          Top = 54
+          Width = 116
+          Height = 25
+          AutoSize = False
+          Caption = 'Rast 2'
+          Layout = tlCenter
+        end
+        object Rastname3: TLabel
+          Left = 25
+          Top = 86
+          Width = 116
+          Height = 25
+          AutoSize = False
+          Caption = 'Rast 3'
+          Layout = tlCenter
+        end
+        object Rastname4: TLabel
+          Left = 25
+          Top = 118
+          Width = 116
+          Height = 25
+          AutoSize = False
+          Caption = 'Rast 4'
+          Layout = tlCenter
+        end
+        object Rastname5: TLabel
+          Left = 25
+          Top = 150
+          Width = 116
+          Height = 25
+          AutoSize = False
+          Caption = 'Rast 5'
+          Layout = tlCenter
+        end
+        object Rastname6: TLabel
+          Left = 25
+          Top = 182
+          Width = 116
+          Height = 25
+          AutoSize = False
+          Caption = 'Rast 6'
+          Layout = tlCenter
+        end
+        object Rastname7: TLabel
+          Left = 25
+          Top = 214
+          Width = 116
+          Height = 25
+          AutoSize = False
+          Caption = 'Rast 7'
+          Layout = tlCenter
+        end
+        object Rastname8: TLabel
+          Left = 25
+          Top = 246
+          Width = 116
+          Height = 25
+          AutoSize = False
+          Caption = 'Rast 8'
+          Layout = tlCenter
+        end
+        object Rastname9: TLabel
+          Left = 25
+          Top = 278
+          Width = 116
+          Height = 25
+          AutoSize = False
+          Caption = 'Rast 9'
+          Layout = tlCenter
+        end
+        object Rastname10: TLabel
+          Left = 25
+          Top = 310
+          Width = 116
+          Height = 25
+          AutoSize = False
+          Caption = 'Rast 10'
+          Layout = tlCenter
+        end
         object Solltempwahl1: TEdit
           Left = 144
           Top = 24
@@ -9986,7 +9969,7 @@ object Form1: TForm1
         object Rastwahl1: TCheckBox
           Left = 8
           Top = 22
-          Width = 113
+          Width = 17
           Height = 25
           Hint = 'Rast 1'
           Caption = 'Rast 1'
@@ -10021,7 +10004,7 @@ object Form1: TForm1
         object Rastwahl2: TCheckBox
           Left = 8
           Top = 54
-          Width = 113
+          Width = 17
           Height = 25
           Hint = 'Rast 2'
           Caption = 'Rast 2'
@@ -10056,7 +10039,7 @@ object Form1: TForm1
         object Rastwahl3: TCheckBox
           Left = 8
           Top = 86
-          Width = 113
+          Width = 17
           Height = 25
           Hint = 'Rast 3'
           Caption = 'Rast 3'
@@ -10091,7 +10074,7 @@ object Form1: TForm1
         object Rastwahl4: TCheckBox
           Left = 8
           Top = 118
-          Width = 113
+          Width = 17
           Height = 25
           Hint = 'Rast 4'
           Caption = 'Rast 4'
@@ -10126,7 +10109,7 @@ object Form1: TForm1
         object Rastwahl5: TCheckBox
           Left = 8
           Top = 150
-          Width = 113
+          Width = 17
           Height = 25
           Hint = 'Rast 5'
           Caption = 'Rast 5'
@@ -10161,7 +10144,7 @@ object Form1: TForm1
         object Rastwahl6: TCheckBox
           Left = 8
           Top = 182
-          Width = 113
+          Width = 17
           Height = 25
           Hint = 'Rast 6'
           Caption = 'Rast 6'
@@ -10196,7 +10179,7 @@ object Form1: TForm1
         object Rastwahl7: TCheckBox
           Left = 8
           Top = 214
-          Width = 113
+          Width = 17
           Height = 25
           Hint = 'Rast 7'
           Caption = 'Rast 7'
@@ -10231,7 +10214,7 @@ object Form1: TForm1
         object Rastwahl8: TCheckBox
           Left = 8
           Top = 246
-          Width = 113
+          Width = 17
           Height = 25
           Hint = 'Rast 8'
           Caption = 'Rast 8'
@@ -10266,7 +10249,7 @@ object Form1: TForm1
         object Rastwahl9: TCheckBox
           Left = 8
           Top = 278
-          Width = 113
+          Width = 17
           Height = 25
           Hint = 'Rast 9'
           Caption = 'Rast 9'
@@ -10301,7 +10284,7 @@ object Form1: TForm1
         object Rastwahl10: TCheckBox
           Left = 8
           Top = 310
-          Width = 113
+          Width = 17
           Height = 25
           Hint = 'Rast 10'
           Caption = 'Rast 10'
@@ -10337,7 +10320,7 @@ object Form1: TForm1
           Height = 23
           TabOrder = 9
           Text = 'Rast'
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
         object RastNameWahl9: TEdit
           Left = 4
@@ -10346,7 +10329,7 @@ object Form1: TForm1
           Height = 23
           TabOrder = 8
           Text = 'Rast'
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
         object RastNameWahl8: TEdit
           Left = 4
@@ -10355,7 +10338,7 @@ object Form1: TForm1
           Height = 23
           TabOrder = 7
           Text = 'Rast'
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
         object RastNameWahl7: TEdit
           Left = 4
@@ -10364,7 +10347,7 @@ object Form1: TForm1
           Height = 23
           TabOrder = 6
           Text = 'Rast'
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
         object RastNameWahl6: TEdit
           Left = 4
@@ -10373,7 +10356,7 @@ object Form1: TForm1
           Height = 23
           TabOrder = 5
           Text = 'Rast'
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
         object RastNameWahl5: TEdit
           Left = 4
@@ -10382,7 +10365,7 @@ object Form1: TForm1
           Height = 23
           TabOrder = 4
           Text = 'Rast'
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
         object RastNameWahl4: TEdit
           Left = 4
@@ -10391,7 +10374,7 @@ object Form1: TForm1
           Height = 23
           TabOrder = 3
           Text = 'Rast'
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
         object RastNameWahl3: TEdit
           Left = 4
@@ -10400,7 +10383,7 @@ object Form1: TForm1
           Height = 23
           TabOrder = 2
           Text = 'Rast'
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
         object RastNameWahl2: TEdit
           Left = 4
@@ -10409,7 +10392,7 @@ object Form1: TForm1
           Height = 23
           TabOrder = 1
           Text = 'Rast'
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
         object RastNameWahl1: TEdit
           Left = 4
@@ -10418,7 +10401,7 @@ object Form1: TForm1
           Height = 23
           TabOrder = 0
           Text = 'Rast'
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
       end
       object Panel15: TPanel
@@ -13652,7 +13635,7 @@ object Form1: TForm1
           Width = 598
           Height = 23
           TabOrder = 0
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
         object RastMeldeWahl8: TEdit
           Left = 3
@@ -13660,7 +13643,7 @@ object Form1: TForm1
           Width = 598
           Height = 23
           TabOrder = 7
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
         object RastMeldeWahl3: TEdit
           Left = 3
@@ -13668,7 +13651,7 @@ object Form1: TForm1
           Width = 598
           Height = 23
           TabOrder = 2
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
         object RastMeldeWahl4: TEdit
           Left = 3
@@ -13676,7 +13659,7 @@ object Form1: TForm1
           Width = 598
           Height = 23
           TabOrder = 3
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
         object RastMeldeWahl5: TEdit
           Left = 3
@@ -13684,7 +13667,7 @@ object Form1: TForm1
           Width = 598
           Height = 23
           TabOrder = 4
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
         object RastMeldeWahl6: TEdit
           Left = 3
@@ -13692,7 +13675,7 @@ object Form1: TForm1
           Width = 598
           Height = 23
           TabOrder = 5
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
         object RastMeldeWahl7: TEdit
           Left = 3
@@ -13700,7 +13683,7 @@ object Form1: TForm1
           Width = 598
           Height = 23
           TabOrder = 6
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
         object RastMeldeWahl2: TEdit
           Left = 3
@@ -13708,7 +13691,7 @@ object Form1: TForm1
           Width = 598
           Height = 23
           TabOrder = 1
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
         object RastMeldeWahl9: TEdit
           Left = 3
@@ -13716,7 +13699,7 @@ object Form1: TForm1
           Width = 598
           Height = 23
           TabOrder = 8
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
         object RastMeldeWahl10: TEdit
           Left = 3
@@ -13724,7 +13707,7 @@ object Form1: TForm1
           Width = 598
           Height = 23
           TabOrder = 9
-          OnKeyPress = Solltempwahl1KeyPress
+          OnKeyPress = Edit93KeyPress
         end
       end
       object Panel14: TPanel
@@ -15979,2448 +15962,16 @@ object Form1: TForm1
       ImageIndex = 3
       ParentShowHint = False
       ShowHint = True
-      object GroupBox4: TGroupBox
-        Left = 472
-        Top = 68
-        Width = 289
-        Height = 209
-        Caption = 'Puls / Gradient'
-        TabOrder = 0
-        object Label88: TLabel
-          Left = 17
-          Top = 181
-          Width = 129
-          Height = 15
-          Caption = 'Puls- / Gradientbereich:'
-        end
-        object Label90: TLabel
-          Left = 233
-          Top = 181
-          Width = 8
-          Height = 15
-          Caption = 'K'
-        end
-        object Label81: TLabel
-          Left = 17
-          Top = 29
-          Width = 45
-          Height = 15
-          Caption = 'Puls bis'
-        end
-        object Label86: TLabel
-          Left = 233
-          Top = 29
-          Width = 23
-          Height = 15
-          Caption = 'sek.'
-        end
-        object Label87: TLabel
-          Left = 129
-          Top = 9
-          Width = 18
-          Height = 15
-          Caption = 'Ein'
-        end
-        object Label89: TLabel
-          Left = 185
-          Top = 9
-          Width = 21
-          Height = 15
-          Caption = 'Aus'
-        end
-        object Label93: TLabel
-          Left = 233
-          Top = 77
-          Width = 23
-          Height = 15
-          Caption = 'sek.'
-        end
-        object Label94: TLabel
-          Left = 233
-          Top = 53
-          Width = 23
-          Height = 15
-          Caption = 'sek.'
-        end
-        object Label96: TLabel
-          Left = 17
-          Top = 53
-          Width = 45
-          Height = 15
-          Caption = 'Puls bis'
-        end
-        object Label97: TLabel
-          Left = 233
-          Top = 125
-          Width = 23
-          Height = 15
-          Caption = 'sek.'
-        end
-        object Label100: TLabel
-          Left = 233
-          Top = 101
-          Width = 23
-          Height = 15
-          Caption = 'sek.'
-        end
-        object Label102: TLabel
-          Left = 17
-          Top = 101
-          Width = 45
-          Height = 15
-          Caption = 'Puls bis'
-        end
-        object Label104: TLabel
-          Left = 17
-          Top = 77
-          Width = 45
-          Height = 15
-          Caption = 'Puls bis'
-        end
-        object Label107: TLabel
-          Left = 17
-          Top = 125
-          Width = 45
-          Height = 15
-          Caption = 'Puls bis'
-        end
-        object Label109: TLabel
-          Left = 17
-          Top = 153
-          Width = 112
-          Height = 15
-          Caption = 'Zul'#228'ssiger Gradient:'
-        end
-        object Label110: TLabel
-          Left = 233
-          Top = 153
-          Width = 41
-          Height = 15
-          Caption = 'K / min.'
-        end
-        object Label130: TLabel
-          Left = 97
-          Top = 28
-          Width = 17
-          Height = 15
-          Caption = #176'C:'
-        end
-        object Label131: TLabel
-          Left = 97
-          Top = 52
-          Width = 17
-          Height = 15
-          Caption = #176'C:'
-        end
-        object Label132: TLabel
-          Left = 97
-          Top = 76
-          Width = 17
-          Height = 15
-          Caption = #176'C:'
-        end
-        object Label133: TLabel
-          Left = 97
-          Top = 100
-          Width = 17
-          Height = 15
-          Caption = #176'C:'
-        end
-        object Label134: TLabel
-          Left = 97
-          Top = 124
-          Width = 17
-          Height = 15
-          Caption = #176'C:'
-        end
-        object ComboBox13: TComboBox
-          Left = 176
-          Top = 177
-          Width = 49
-          Height = 23
-          Hint = 
-            'In dem hier definierten Bereich, vor erreichen der'#13#10'Zieltemperat' +
-            'ur wirkt die Gradientbegrenzung und/oder '#13#10'das Takten'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 20
-          TabOrder = 15
-          Text = '2.0'
-          Items.Strings = (
-            '0.0'
-            '0.1'
-            '0.2'
-            '0.3'
-            '0.4'
-            '0.5'
-            '0.6'
-            '0.7'
-            '0.8'
-            '0.9'
-            '1.0'
-            '1.1'
-            '1.2'
-            '1.3'
-            '1.4'
-            '1.5'
-            '1.6'
-            '1.7'
-            '1.8'
-            '1.9'
-            '2.0'
-            '2.1'
-            '2.2'
-            '2.3'
-            '2.4'
-            '2.5'
-            '2.6'
-            '2.7'
-            '2.8'
-            '2.9'
-            '3.0'
-            '3.1'
-            '3.2'
-            '3.3'
-            '3.4'
-            '3.5'
-            '3.6'
-            '3.7'
-            '3.8'
-            '3.9'
-            '4.0'
-            '4.1'
-            '4.2'
-            '4.3'
-            '4.4'
-            '4.5'
-            '4.6'
-            '4.7'
-            '4.8'
-            '4.9'
-            '5.0'
-            '5.1'
-            '5.2'
-            '5.3'
-            '5.4'
-            '5.5'
-            '5.6'
-            '5.7'
-            '5.8'
-            '5.9'
-            '6.0'
-            '6.1'
-            '6.2'
-            '6.3'
-            '6.4'
-            '6.5'
-            '6.6'
-            '6.7'
-            '6.8'
-            '6.9'
-            '7.0'
-            '7.1'
-            '7.2'
-            '7.3'
-            '7.4'
-            '7.5'
-            '7.6'
-            '7.7'
-            '7.8'
-            '7.9'
-            '8.0'
-            '8.1'
-            '8.2'
-            '8.3'
-            '8.4'
-            '8.5'
-            '8.6'
-            '8.7'
-            '8.8'
-            '8.9'
-            '9.0'
-            '9.1'
-            '9.2'
-            '9.3'
-            '9.4'
-            '9.5'
-            '9.6'
-            '9.7'
-            '9.8'
-            '9.9'
-            '10.0'
-            '10.1'
-            '10.2'
-            '10.3'
-            '10.4'
-            '10.5'
-            '10.6'
-            '10.7'
-            '10.8'
-            '10.9'
-            '11.0'
-            '11.1'
-            '11.2'
-            '11.3'
-            '11.4'
-            '11.5'
-            '11.6'
-            '11.7'
-            '11.8'
-            '11.9'
-            '12.0'
-            '12.1'
-            '12.2'
-            '12.3'
-            '12.4'
-            '12.5'
-            '12.6'
-            '12.7'
-            '12.8'
-            '12.9'
-            '13.0'
-            '13.1'
-            '13.2'
-            '13.3'
-            '13.4'
-            '13.5'
-            '13.6'
-            '13.7'
-            '13.8'
-            '13.9'
-            '14.0'
-            '14.1'
-            '14.2'
-            '14.3'
-            '14.4'
-            '14.5'
-            '14.6'
-            '14.7'
-            '14.8'
-            '14.9'
-            '15.0'
-            '15.1'
-            '15.2'
-            '15.3'
-            '15.4'
-            '15.5'
-            '15.6'
-            '15.7'
-            '15.8'
-            '15.9'
-            '16.0'
-            '16.1'
-            '16.2'
-            '16.3'
-            '16.4'
-            '16.5'
-            '16.6'
-            '16.7'
-            '16.8'
-            '16.9'
-            '17.0'
-            '17.1'
-            '17.2'
-            '17.3'
-            '17.4'
-            '17.5'
-            '17.6'
-            '17.7'
-            '17.8'
-            '17.9'
-            '18.0'
-            '18.1'
-            '18.2'
-            '18.3'
-            '18.4'
-            '18.5'
-            '18.6'
-            '18.7'
-            '18.8'
-            '18.9'
-            '19.0'
-            '19.1'
-            '19.2'
-            '19.3'
-            '19.4'
-            '19.5'
-            '19.6'
-            '19.7'
-            '19.8'
-            '19.9'
-            '20.0'
-            '20.1'
-            '20.2'
-            '20.3'
-            '20.4'
-            '20.5'
-            '20.6'
-            '20.7'
-            '20.8'
-            '20.9'
-            '21.0'
-            '21.1'
-            '21.2'
-            '21.3'
-            '21.4'
-            '21.5'
-            '21.6'
-            '21.7'
-            '21.8'
-            '21.9'
-            '22.0'
-            '22.1'
-            '22.2'
-            '22.3'
-            '22.4'
-            '22.5'
-            '22.6'
-            '22.7'
-            '22.8'
-            '22.9'
-            '23.0'
-            '23.1'
-            '23.2'
-            '23.3'
-            '23.4'
-            '23.5'
-            '23.6'
-            '23.7'
-            '23.8'
-            '23.9'
-            '24.0'
-            '24.1'
-            '24.2'
-            '24.3'
-            '24.4'
-            '24.5'
-            '24.6'
-            '24.7'
-            '24.8'
-            '24.9'
-            '25.0'
-            '25.1'
-            '25.2'
-            '25.3'
-            '25.4'
-            '25.5'
-            '25.6'
-            '25.7'
-            '25.8'
-            '25.9'
-            '26.0'
-            '26.1'
-            '26.2'
-            '26.3'
-            '26.4'
-            '26.5'
-            '26.6'
-            '26.7'
-            '26.8'
-            '26.9'
-            '27.0'
-            '27.1'
-            '27.2'
-            '27.3'
-            '27.4'
-            '27.5'
-            '27.6'
-            '27.7'
-            '27.8'
-            '27.9'
-            '28.0'
-            '28.1'
-            '28.2'
-            '28.3'
-            '28.4'
-            '28.5'
-            '28.6'
-            '28.7'
-            '28.8'
-            '28.9'
-            '29.0'
-            '29.1'
-            '29.2'
-            '29.3'
-            '29.4'
-            '29.5'
-            '29.6'
-            '29.7'
-            '29.8'
-            '29.9'
-            '30.0'
-            '30.1'
-            '30.2'
-            '30.3'
-            '30.4'
-            '30.5'
-            '30.6'
-            '30.7'
-            '30.8'
-            '30.9'
-            '31.0'
-            '31.1'
-            '31.2'
-            '31.3'
-            '31.4'
-            '31.5'
-            '31.6'
-            '31.7'
-            '31.8'
-            '31.9'
-            '32.0'
-            '32.1'
-            '32.2'
-            '32.3'
-            '32.4'
-            '32.5'
-            '32.6'
-            '32.7'
-            '32.8'
-            '32.9'
-            '33.0'
-            '33.1'
-            '33.2'
-            '33.3'
-            '33.4'
-            '33.5'
-            '33.6'
-            '33.7'
-            '33.8'
-            '33.9'
-            '34.0'
-            '34.1'
-            '34.2'
-            '34.3'
-            '34.4'
-            '34.5'
-            '34.6'
-            '34.7'
-            '34.8'
-            '34.9'
-            '35.0'
-            '35.1'
-            '35.2'
-            '35.3'
-            '35.4'
-            '35.5'
-            '35.6'
-            '35.7'
-            '35.8'
-            '35.9'
-            '36.0'
-            '36.1'
-            '36.2'
-            '36.3'
-            '36.4'
-            '36.5'
-            '36.6'
-            '36.7'
-            '36.8'
-            '36.9'
-            '37.0'
-            '37.1'
-            '37.2'
-            '37.3'
-            '37.4'
-            '37.5'
-            '37.6'
-            '37.7'
-            '37.8'
-            '37.9'
-            '38.0'
-            '38.1'
-            '38.2'
-            '38.3'
-            '38.4'
-            '38.5'
-            '38.6'
-            '38.7'
-            '38.8'
-            '38.9'
-            '39.0'
-            '39.1'
-            '39.2'
-            '39.3'
-            '39.4'
-            '39.5'
-            '39.6'
-            '39.7'
-            '39.8'
-            '39.9'
-            '40.0'
-            '40.1'
-            '40.2'
-            '40.3'
-            '40.4'
-            '40.5'
-            '40.6'
-            '40.7'
-            '40.8'
-            '40.9'
-            '41.0'
-            '41.1'
-            '41.2'
-            '41.3'
-            '41.4'
-            '41.5'
-            '41.6'
-            '41.7'
-            '41.8'
-            '41.9'
-            '42.0'
-            '42.1'
-            '42.2'
-            '42.3'
-            '42.4'
-            '42.5'
-            '42.6'
-            '42.7'
-            '42.8'
-            '42.9'
-            '43.0'
-            '43.1'
-            '43.2'
-            '43.3'
-            '43.4'
-            '43.5'
-            '43.6'
-            '43.7'
-            '43.8'
-            '43.9'
-            '44.0'
-            '44.1'
-            '44.2'
-            '44.3'
-            '44.4'
-            '44.5'
-            '44.6'
-            '44.7'
-            '44.8'
-            '44.9'
-            '45.0'
-            '45.1'
-            '45.2'
-            '45.3'
-            '45.4'
-            '45.5'
-            '45.6'
-            '45.7'
-            '45.8'
-            '45.9'
-            '46.0'
-            '46.1'
-            '46.2'
-            '46.3'
-            '46.4'
-            '46.5'
-            '46.6'
-            '46.7'
-            '46.8'
-            '46.9'
-            '47.0'
-            '47.1'
-            '47.2'
-            '47.3'
-            '47.4'
-            '47.5'
-            '47.6'
-            '47.7'
-            '47.8'
-            '47.9'
-            '48.0'
-            '48.1'
-            '48.2'
-            '48.3'
-            '48.4'
-            '48.5'
-            '48.6'
-            '48.7'
-            '48.8'
-            '48.9'
-            '49.0'
-            '49.1'
-            '49.2'
-            '49.3'
-            '49.4'
-            '49.5'
-            '49.6'
-            '49.7'
-            '49.8'
-            '49.9'
-            '50.0'
-            '50.1'
-            '50.2'
-            '50.3'
-            '50.4'
-            '50.5'
-            '50.6'
-            '50.7'
-            '50.8'
-            '50.9'
-            '51.0'
-            '51.1'
-            '51.2'
-            '51.3'
-            '51.4'
-            '51.5'
-            '51.6'
-            '51.7'
-            '51.8'
-            '51.9'
-            '52.0'
-            '52.1'
-            '52.2'
-            '52.3'
-            '52.4'
-            '52.5'
-            '52.6'
-            '52.7'
-            '52.8'
-            '52.9'
-            '53.0'
-            '53.1'
-            '53.2'
-            '53.3'
-            '53.4'
-            '53.5'
-            '53.6'
-            '53.7'
-            '53.8'
-            '53.9'
-            '54.0'
-            '54.1'
-            '54.2'
-            '54.3'
-            '54.4'
-            '54.5'
-            '54.6'
-            '54.7'
-            '54.8'
-            '54.9'
-            '55.0'
-            '55.1'
-            '55.2'
-            '55.3'
-            '55.4'
-            '55.5'
-            '55.6'
-            '55.7'
-            '55.8'
-            '55.9'
-            '56.0'
-            '56.1'
-            '56.2'
-            '56.3'
-            '56.4'
-            '56.5'
-            '56.6'
-            '56.7'
-            '56.8'
-            '56.9'
-            '57.0'
-            '57.1'
-            '57.2'
-            '57.3'
-            '57.4'
-            '57.5'
-            '57.6'
-            '57.7'
-            '57.8'
-            '57.9'
-            '58.0'
-            '58.1'
-            '58.2'
-            '58.3'
-            '58.4'
-            '58.5'
-            '58.6'
-            '58.7'
-            '58.8'
-            '58.9'
-            '59.0'
-            '59.1'
-            '59.2'
-            '59.3'
-            '59.4'
-            '59.5'
-            '59.6'
-            '59.7'
-            '59.8'
-            '59.9'
-            '60.0'
-            '60.1'
-            '60.2'
-            '60.3'
-            '60.4'
-            '60.5'
-            '60.6'
-            '60.7'
-            '60.8'
-            '60.9'
-            '61.0'
-            '61.1'
-            '61.2'
-            '61.3'
-            '61.4'
-            '61.5'
-            '61.6'
-            '61.7'
-            '61.8'
-            '61.9'
-            '62.0'
-            '62.1'
-            '62.2'
-            '62.3'
-            '62.4'
-            '62.5'
-            '62.6'
-            '62.7'
-            '62.8'
-            '62.9'
-            '63.0'
-            '63.1'
-            '63.2'
-            '63.3'
-            '63.4'
-            '63.5'
-            '63.6'
-            '63.7'
-            '63.8'
-            '63.9'
-            '64.0'
-            '64.1'
-            '64.2'
-            '64.3'
-            '64.4'
-            '64.5'
-            '64.6'
-            '64.7'
-            '64.8'
-            '64.9'
-            '65.0'
-            '65.1'
-            '65.2'
-            '65.3'
-            '65.4'
-            '65.5'
-            '65.6'
-            '65.7'
-            '65.8'
-            '65.9'
-            '66.0'
-            '66.1'
-            '66.2'
-            '66.3'
-            '66.4'
-            '66.5'
-            '66.6'
-            '66.7'
-            '66.8'
-            '66.9'
-            '67.0'
-            '67.1'
-            '67.2'
-            '67.3'
-            '67.4'
-            '67.5'
-            '67.6'
-            '67.7'
-            '67.8'
-            '67.9'
-            '68.0'
-            '68.1'
-            '68.2'
-            '68.3'
-            '68.4'
-            '68.5'
-            '68.6'
-            '68.7'
-            '68.8'
-            '68.9'
-            '69.0'
-            '69.1'
-            '69.2'
-            '69.3'
-            '69.4'
-            '69.5'
-            '69.6'
-            '69.7'
-            '69.8'
-            '69.9'
-            '70.0'
-            '70.1'
-            '70.2'
-            '70.3'
-            '70.4'
-            '70.5'
-            '70.6'
-            '70.7'
-            '70.8'
-            '70.9'
-            '71.0'
-            '71.1'
-            '71.2'
-            '71.3'
-            '71.4'
-            '71.5'
-            '71.6'
-            '71.7'
-            '71.8'
-            '71.9'
-            '72.0'
-            '72.1'
-            '72.2'
-            '72.3'
-            '72.4'
-            '72.5'
-            '72.6'
-            '72.7'
-            '72.8'
-            '72.9'
-            '73.0'
-            '73.1'
-            '73.2'
-            '73.3'
-            '73.4'
-            '73.5'
-            '73.6'
-            '73.7'
-            '73.8'
-            '73.9'
-            '74.0'
-            '74.1'
-            '74.2'
-            '74.3'
-            '74.4'
-            '74.5'
-            '74.6'
-            '74.7'
-            '74.8'
-            '74.9'
-            '75.0'
-            '75.1'
-            '75.2'
-            '75.3'
-            '75.4'
-            '75.5'
-            '75.6'
-            '75.7'
-            '75.8'
-            '75.9'
-            '76.0'
-            '76.1'
-            '76.2'
-            '76.3'
-            '76.4'
-            '76.5'
-            '76.6'
-            '76.7'
-            '76.8'
-            '76.9'
-            '77.0'
-            '77.1'
-            '77.2'
-            '77.3'
-            '77.4'
-            '77.5'
-            '77.6'
-            '77.7'
-            '77.8'
-            '77.9'
-            '78.0'
-            '78.1'
-            '78.2'
-            '78.3'
-            '78.4'
-            '78.5'
-            '78.6'
-            '78.7'
-            '78.8'
-            '78.9'
-            '79.0'
-            '79.1'
-            '79.2'
-            '79.3'
-            '79.4'
-            '79.5'
-            '79.6'
-            '79.7'
-            '79.8'
-            '79.9'
-            '80.0'
-            '80.1'
-            '80.2'
-            '80.3'
-            '80.4'
-            '80.5'
-            '80.6'
-            '80.7'
-            '80.8'
-            '80.9'
-            '81.0'
-            '81.1'
-            '81.2'
-            '81.3'
-            '81.4'
-            '81.5'
-            '81.6'
-            '81.7'
-            '81.8'
-            '81.9'
-            '82.0'
-            '82.1'
-            '82.2'
-            '82.3'
-            '82.4'
-            '82.5'
-            '82.6'
-            '82.7'
-            '82.8'
-            '82.9'
-            '83.0'
-            '83.1'
-            '83.2'
-            '83.3'
-            '83.4'
-            '83.5'
-            '83.6'
-            '83.7'
-            '83.8'
-            '83.9'
-            '84.0'
-            '84.1'
-            '84.2'
-            '84.3'
-            '84.4'
-            '84.5'
-            '84.6'
-            '84.7'
-            '84.8'
-            '84.9'
-            '85.0'
-            '85.1'
-            '85.2'
-            '85.3'
-            '85.4'
-            '85.5'
-            '85.6'
-            '85.7'
-            '85.8'
-            '85.9'
-            '86.0'
-            '86.1'
-            '86.2'
-            '86.3'
-            '86.4'
-            '86.5'
-            '86.6'
-            '86.7'
-            '86.8'
-            '86.9'
-            '87.0'
-            '87.1'
-            '87.2'
-            '87.3'
-            '87.4'
-            '87.5'
-            '87.6'
-            '87.7'
-            '87.8'
-            '87.9'
-            '88.0'
-            '88.1'
-            '88.2'
-            '88.3'
-            '88.4'
-            '88.5'
-            '88.6'
-            '88.7'
-            '88.8'
-            '88.9'
-            '89.0'
-            '89.1'
-            '89.2'
-            '89.3'
-            '89.4'
-            '89.5'
-            '89.6'
-            '89.7'
-            '89.8'
-            '89.9'
-            '90.0'
-            '90.1'
-            '90.2'
-            '90.3'
-            '90.4'
-            '90.5'
-            '90.6'
-            '90.7'
-            '90.8'
-            '90.9'
-            '91.0'
-            '91.1'
-            '91.2'
-            '91.3'
-            '91.4'
-            '91.5'
-            '91.6'
-            '91.7'
-            '91.8'
-            '91.9'
-            '92.0'
-            '92.1'
-            '92.2'
-            '92.3'
-            '92.4'
-            '92.5'
-            '92.6'
-            '92.7'
-            '92.8'
-            '92.9'
-            '93.0'
-            '93.1'
-            '93.2'
-            '93.3'
-            '93.4'
-            '93.5'
-            '93.6'
-            '93.7'
-            '93.8'
-            '93.9'
-            '94.0'
-            '94.1'
-            '94.2'
-            '94.3'
-            '94.4'
-            '94.5'
-            '94.6'
-            '94.7'
-            '94.8'
-            '94.9'
-            '95.0'
-            '95.1'
-            '95.2'
-            '95.3'
-            '95.4'
-            '95.5'
-            '95.6'
-            '95.7'
-            '95.8'
-            '95.9'
-            '96.0'
-            '96.1'
-            '96.2'
-            '96.3'
-            '96.4'
-            '96.5'
-            '96.6'
-            '96.7'
-            '96.8'
-            '96.9'
-            '97.0'
-            '97.1'
-            '97.2'
-            '97.3'
-            '97.4'
-            '97.5'
-            '97.6'
-            '97.7'
-            '97.8'
-            '97.9'
-            '98.0'
-            '98.1'
-            '98.2'
-            '98.3'
-            '98.4'
-            '98.5'
-            '98.6'
-            '98.7'
-            '98.8'
-            '98.9'
-            '99.0'
-            '99.1'
-            '99.2'
-            '99.3'
-            '99.4'
-            '99.5'
-            '99.6'
-            '99.7'
-            '99.8'
-            '99.9')
-        end
-        object ComboBox14: TComboBox
-          Left = 120
-          Top = 25
-          Width = 49
-          Height = 23
-          Hint = 'Pulsweite im Temperaturbereich'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 5
-          TabOrder = 1
-          Text = '5'
-          Items.Strings = (
-            '0'
-            '1'
-            '2'
-            '3'
-            '4'
-            '5'
-            '6'
-            '7'
-            '8'
-            '9'
-            '10'
-            '11'
-            '12'
-            '13'
-            '14'
-            '15'
-            '16'
-            '17'
-            '18'
-            '19'
-            '20'
-            '21'
-            '22'
-            '23'
-            '24'
-            '25'
-            '26'
-            '27'
-            '28'
-            '29'
-            '30'
-            '31'
-            '32'
-            '33'
-            '34'
-            '35'
-            '36'
-            '37'
-            '38'
-            '39'
-            '40'
-            '41'
-            '42'
-            '43'
-            '44'
-            '45'
-            '46'
-            '47'
-            '48'
-            '49'
-            '50'
-            '51'
-            '52'
-            '53'
-            '54'
-            '55'
-            '56'
-            '57'
-            '58'
-            '59'
-            '60'
-            '61'
-            '62'
-            '63'
-            '64'
-            '65'
-            '66'
-            '67'
-            '68'
-            '69'
-            '70'
-            '71'
-            '72'
-            '73'
-            '74'
-            '75'
-            '76'
-            '77'
-            '78'
-            '79'
-            '80'
-            '81'
-            '82'
-            '83'
-            '84'
-            '85'
-            '86'
-            '87'
-            '88'
-            '89'
-            '90'
-            '91'
-            '92'
-            '93'
-            '94'
-            '95'
-            '96'
-            '97'
-            '98'
-            '99'
-            '100'
-            '')
-        end
-        object ComboBox15: TComboBox
-          Left = 176
-          Top = 25
-          Width = 49
-          Height = 23
-          Hint = 'Pausenweite im Temperaturbereich'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 5
-          TabOrder = 2
-          Text = '5'
-          Items.Strings = (
-            '0'
-            '1'
-            '2'
-            '3'
-            '4'
-            '5'
-            '6'
-            '7'
-            '8'
-            '9'
-            '10'
-            '11'
-            '12'
-            '13'
-            '14'
-            '15'
-            '16'
-            '17'
-            '18'
-            '19'
-            '20'
-            '21'
-            '22'
-            '23'
-            '24'
-            '25'
-            '26'
-            '27'
-            '28'
-            '29'
-            '30'
-            '31'
-            '32'
-            '33'
-            '34'
-            '35'
-            '36'
-            '37'
-            '38'
-            '39'
-            '40'
-            '41'
-            '42'
-            '43'
-            '44'
-            '45'
-            '46'
-            '47'
-            '48'
-            '49'
-            '50'
-            '51'
-            '52'
-            '53'
-            '54'
-            '55'
-            '56'
-            '57'
-            '58'
-            '59'
-            '60'
-            '61'
-            '62'
-            '63'
-            '64'
-            '65'
-            '66'
-            '67'
-            '68'
-            '69'
-            '70'
-            '71'
-            '72'
-            '73'
-            '74'
-            '75'
-            '76'
-            '77'
-            '78'
-            '79'
-            '80'
-            '81'
-            '82'
-            '83'
-            '84'
-            '85'
-            '86'
-            '87'
-            '88'
-            '89'
-            '90'
-            '91'
-            '92'
-            '93'
-            '94'
-            '95'
-            '96'
-            '97'
-            '98'
-            '99'
-            '100'
-            '')
-        end
-        object ComboBox17: TComboBox
-          Left = 120
-          Top = 49
-          Width = 49
-          Height = 23
-          Hint = 'Pulsweite im Temperaturbereich'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 5
-          TabOrder = 4
-          Text = '5'
-          Items.Strings = (
-            '0'
-            '1'
-            '2'
-            '3'
-            '4'
-            '5'
-            '6'
-            '7'
-            '8'
-            '9'
-            '10'
-            '11'
-            '12'
-            '13'
-            '14'
-            '15'
-            '16'
-            '17'
-            '18'
-            '19'
-            '20'
-            '21'
-            '22'
-            '23'
-            '24'
-            '25'
-            '26'
-            '27'
-            '28'
-            '29'
-            '30'
-            '31'
-            '32'
-            '33'
-            '34'
-            '35'
-            '36'
-            '37'
-            '38'
-            '39'
-            '40'
-            '41'
-            '42'
-            '43'
-            '44'
-            '45'
-            '46'
-            '47'
-            '48'
-            '49'
-            '50'
-            '51'
-            '52'
-            '53'
-            '54'
-            '55'
-            '56'
-            '57'
-            '58'
-            '59'
-            '60'
-            '61'
-            '62'
-            '63'
-            '64'
-            '65'
-            '66'
-            '67'
-            '68'
-            '69'
-            '70'
-            '71'
-            '72'
-            '73'
-            '74'
-            '75'
-            '76'
-            '77'
-            '78'
-            '79'
-            '80'
-            '81'
-            '82'
-            '83'
-            '84'
-            '85'
-            '86'
-            '87'
-            '88'
-            '89'
-            '90'
-            '91'
-            '92'
-            '93'
-            '94'
-            '95'
-            '96'
-            '97'
-            '98'
-            '99'
-            '100'
-            '')
-        end
-        object ComboBox18: TComboBox
-          Left = 176
-          Top = 49
-          Width = 49
-          Height = 23
-          Hint = 'Pausenweite im Temperaturbereich'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 5
-          TabOrder = 5
-          Text = '5'
-          Items.Strings = (
-            '0'
-            '1'
-            '2'
-            '3'
-            '4'
-            '5'
-            '6'
-            '7'
-            '8'
-            '9'
-            '10'
-            '11'
-            '12'
-            '13'
-            '14'
-            '15'
-            '16'
-            '17'
-            '18'
-            '19'
-            '20'
-            '21'
-            '22'
-            '23'
-            '24'
-            '25'
-            '26'
-            '27'
-            '28'
-            '29'
-            '30'
-            '31'
-            '32'
-            '33'
-            '34'
-            '35'
-            '36'
-            '37'
-            '38'
-            '39'
-            '40'
-            '41'
-            '42'
-            '43'
-            '44'
-            '45'
-            '46'
-            '47'
-            '48'
-            '49'
-            '50'
-            '51'
-            '52'
-            '53'
-            '54'
-            '55'
-            '56'
-            '57'
-            '58'
-            '59'
-            '60'
-            '61'
-            '62'
-            '63'
-            '64'
-            '65'
-            '66'
-            '67'
-            '68'
-            '69'
-            '70'
-            '71'
-            '72'
-            '73'
-            '74'
-            '75'
-            '76'
-            '77'
-            '78'
-            '79'
-            '80'
-            '81'
-            '82'
-            '83'
-            '84'
-            '85'
-            '86'
-            '87'
-            '88'
-            '89'
-            '90'
-            '91'
-            '92'
-            '93'
-            '94'
-            '95'
-            '96'
-            '97'
-            '98'
-            '99'
-            '100'
-            '')
-        end
-        object ComboBox19: TComboBox
-          Left = 120
-          Top = 73
-          Width = 49
-          Height = 23
-          Hint = 'Pulsweite im Temperaturbereich'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 5
-          TabOrder = 7
-          Text = '5'
-          Items.Strings = (
-            '0'
-            '1'
-            '2'
-            '3'
-            '4'
-            '5'
-            '6'
-            '7'
-            '8'
-            '9'
-            '10'
-            '11'
-            '12'
-            '13'
-            '14'
-            '15'
-            '16'
-            '17'
-            '18'
-            '19'
-            '20'
-            '21'
-            '22'
-            '23'
-            '24'
-            '25'
-            '26'
-            '27'
-            '28'
-            '29'
-            '30'
-            '31'
-            '32'
-            '33'
-            '34'
-            '35'
-            '36'
-            '37'
-            '38'
-            '39'
-            '40'
-            '41'
-            '42'
-            '43'
-            '44'
-            '45'
-            '46'
-            '47'
-            '48'
-            '49'
-            '50'
-            '51'
-            '52'
-            '53'
-            '54'
-            '55'
-            '56'
-            '57'
-            '58'
-            '59'
-            '60'
-            '61'
-            '62'
-            '63'
-            '64'
-            '65'
-            '66'
-            '67'
-            '68'
-            '69'
-            '70'
-            '71'
-            '72'
-            '73'
-            '74'
-            '75'
-            '76'
-            '77'
-            '78'
-            '79'
-            '80'
-            '81'
-            '82'
-            '83'
-            '84'
-            '85'
-            '86'
-            '87'
-            '88'
-            '89'
-            '90'
-            '91'
-            '92'
-            '93'
-            '94'
-            '95'
-            '96'
-            '97'
-            '98'
-            '99'
-            '100'
-            '')
-        end
-        object ComboBox20: TComboBox
-          Left = 176
-          Top = 73
-          Width = 49
-          Height = 23
-          Hint = 'Pausenweite im Temperaturbereich'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 5
-          TabOrder = 8
-          Text = '5'
-          Items.Strings = (
-            '0'
-            '1'
-            '2'
-            '3'
-            '4'
-            '5'
-            '6'
-            '7'
-            '8'
-            '9'
-            '10'
-            '11'
-            '12'
-            '13'
-            '14'
-            '15'
-            '16'
-            '17'
-            '18'
-            '19'
-            '20'
-            '21'
-            '22'
-            '23'
-            '24'
-            '25'
-            '26'
-            '27'
-            '28'
-            '29'
-            '30'
-            '31'
-            '32'
-            '33'
-            '34'
-            '35'
-            '36'
-            '37'
-            '38'
-            '39'
-            '40'
-            '41'
-            '42'
-            '43'
-            '44'
-            '45'
-            '46'
-            '47'
-            '48'
-            '49'
-            '50'
-            '51'
-            '52'
-            '53'
-            '54'
-            '55'
-            '56'
-            '57'
-            '58'
-            '59'
-            '60'
-            '61'
-            '62'
-            '63'
-            '64'
-            '65'
-            '66'
-            '67'
-            '68'
-            '69'
-            '70'
-            '71'
-            '72'
-            '73'
-            '74'
-            '75'
-            '76'
-            '77'
-            '78'
-            '79'
-            '80'
-            '81'
-            '82'
-            '83'
-            '84'
-            '85'
-            '86'
-            '87'
-            '88'
-            '89'
-            '90'
-            '91'
-            '92'
-            '93'
-            '94'
-            '95'
-            '96'
-            '97'
-            '98'
-            '99'
-            '100'
-            '')
-        end
-        object ComboBox21: TComboBox
-          Left = 120
-          Top = 97
-          Width = 49
-          Height = 23
-          Hint = 'Pulsweite im Temperaturbereich'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 5
-          TabOrder = 10
-          Text = '5'
-          Items.Strings = (
-            '0'
-            '1'
-            '2'
-            '3'
-            '4'
-            '5'
-            '6'
-            '7'
-            '8'
-            '9'
-            '10'
-            '11'
-            '12'
-            '13'
-            '14'
-            '15'
-            '16'
-            '17'
-            '18'
-            '19'
-            '20'
-            '21'
-            '22'
-            '23'
-            '24'
-            '25'
-            '26'
-            '27'
-            '28'
-            '29'
-            '30'
-            '31'
-            '32'
-            '33'
-            '34'
-            '35'
-            '36'
-            '37'
-            '38'
-            '39'
-            '40'
-            '41'
-            '42'
-            '43'
-            '44'
-            '45'
-            '46'
-            '47'
-            '48'
-            '49'
-            '50'
-            '51'
-            '52'
-            '53'
-            '54'
-            '55'
-            '56'
-            '57'
-            '58'
-            '59'
-            '60'
-            '61'
-            '62'
-            '63'
-            '64'
-            '65'
-            '66'
-            '67'
-            '68'
-            '69'
-            '70'
-            '71'
-            '72'
-            '73'
-            '74'
-            '75'
-            '76'
-            '77'
-            '78'
-            '79'
-            '80'
-            '81'
-            '82'
-            '83'
-            '84'
-            '85'
-            '86'
-            '87'
-            '88'
-            '89'
-            '90'
-            '91'
-            '92'
-            '93'
-            '94'
-            '95'
-            '96'
-            '97'
-            '98'
-            '99'
-            '100'
-            '')
-        end
-        object ComboBox22: TComboBox
-          Left = 176
-          Top = 97
-          Width = 49
-          Height = 23
-          Hint = 'Pausenweite im Temperaturbereich'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 5
-          TabOrder = 11
-          Text = '5'
-          Items.Strings = (
-            '0'
-            '1'
-            '2'
-            '3'
-            '4'
-            '5'
-            '6'
-            '7'
-            '8'
-            '9'
-            '10'
-            '11'
-            '12'
-            '13'
-            '14'
-            '15'
-            '16'
-            '17'
-            '18'
-            '19'
-            '20'
-            '21'
-            '22'
-            '23'
-            '24'
-            '25'
-            '26'
-            '27'
-            '28'
-            '29'
-            '30'
-            '31'
-            '32'
-            '33'
-            '34'
-            '35'
-            '36'
-            '37'
-            '38'
-            '39'
-            '40'
-            '41'
-            '42'
-            '43'
-            '44'
-            '45'
-            '46'
-            '47'
-            '48'
-            '49'
-            '50'
-            '51'
-            '52'
-            '53'
-            '54'
-            '55'
-            '56'
-            '57'
-            '58'
-            '59'
-            '60'
-            '61'
-            '62'
-            '63'
-            '64'
-            '65'
-            '66'
-            '67'
-            '68'
-            '69'
-            '70'
-            '71'
-            '72'
-            '73'
-            '74'
-            '75'
-            '76'
-            '77'
-            '78'
-            '79'
-            '80'
-            '81'
-            '82'
-            '83'
-            '84'
-            '85'
-            '86'
-            '87'
-            '88'
-            '89'
-            '90'
-            '91'
-            '92'
-            '93'
-            '94'
-            '95'
-            '96'
-            '97'
-            '98'
-            '99'
-            '100'
-            '')
-        end
-        object ComboBox23: TComboBox
-          Left = 176
-          Top = 121
-          Width = 49
-          Height = 23
-          Hint = 'Pausenweite im Temperaturbereich'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 5
-          TabOrder = 13
-          Text = '5'
-          Items.Strings = (
-            '0'
-            '1'
-            '2'
-            '3'
-            '4'
-            '5'
-            '6'
-            '7'
-            '8'
-            '9'
-            '10'
-            '11'
-            '12'
-            '13'
-            '14'
-            '15'
-            '16'
-            '17'
-            '18'
-            '19'
-            '20'
-            '21'
-            '22'
-            '23'
-            '24'
-            '25'
-            '26'
-            '27'
-            '28'
-            '29'
-            '30'
-            '31'
-            '32'
-            '33'
-            '34'
-            '35'
-            '36'
-            '37'
-            '38'
-            '39'
-            '40'
-            '41'
-            '42'
-            '43'
-            '44'
-            '45'
-            '46'
-            '47'
-            '48'
-            '49'
-            '50'
-            '51'
-            '52'
-            '53'
-            '54'
-            '55'
-            '56'
-            '57'
-            '58'
-            '59'
-            '60'
-            '61'
-            '62'
-            '63'
-            '64'
-            '65'
-            '66'
-            '67'
-            '68'
-            '69'
-            '70'
-            '71'
-            '72'
-            '73'
-            '74'
-            '75'
-            '76'
-            '77'
-            '78'
-            '79'
-            '80'
-            '81'
-            '82'
-            '83'
-            '84'
-            '85'
-            '86'
-            '87'
-            '88'
-            '89'
-            '90'
-            '91'
-            '92'
-            '93'
-            '94'
-            '95'
-            '96'
-            '97'
-            '98'
-            '99'
-            '100'
-            '')
-        end
-        object ComboBox24: TComboBox
-          Left = 120
-          Top = 121
-          Width = 49
-          Height = 23
-          Hint = 'Pulsweite im Temperaturbereich'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 5
-          TabOrder = 12
-          Text = '5'
-          Items.Strings = (
-            '0'
-            '1'
-            '2'
-            '3'
-            '4'
-            '5'
-            '6'
-            '7'
-            '8'
-            '9'
-            '10'
-            '11'
-            '12'
-            '13'
-            '14'
-            '15'
-            '16'
-            '17'
-            '18'
-            '19'
-            '20'
-            '21'
-            '22'
-            '23'
-            '24'
-            '25'
-            '26'
-            '27'
-            '28'
-            '29'
-            '30'
-            '31'
-            '32'
-            '33'
-            '34'
-            '35'
-            '36'
-            '37'
-            '38'
-            '39'
-            '40'
-            '41'
-            '42'
-            '43'
-            '44'
-            '45'
-            '46'
-            '47'
-            '48'
-            '49'
-            '50'
-            '51'
-            '52'
-            '53'
-            '54'
-            '55'
-            '56'
-            '57'
-            '58'
-            '59'
-            '60'
-            '61'
-            '62'
-            '63'
-            '64'
-            '65'
-            '66'
-            '67'
-            '68'
-            '69'
-            '70'
-            '71'
-            '72'
-            '73'
-            '74'
-            '75'
-            '76'
-            '77'
-            '78'
-            '79'
-            '80'
-            '81'
-            '82'
-            '83'
-            '84'
-            '85'
-            '86'
-            '87'
-            '88'
-            '89'
-            '90'
-            '91'
-            '92'
-            '93'
-            '94'
-            '95'
-            '96'
-            '97'
-            '98'
-            '99'
-            '100'
-            '')
-        end
-        object ComboBox25: TComboBox
-          Left = 176
-          Top = 149
-          Width = 49
-          Height = 23
-          Hint = 
-            'Wird der Gradient '#252'berschritten, wird die Heizung'#13#10'bereits vor e' +
-            'rreichen der Zieltemperatur audgeschaltet.'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 9
-          TabOrder = 14
-          Text = '1.0'
-          Items.Strings = (
-            '0.1'
-            '0.2'
-            '0.3'
-            '0.4'
-            '0.5'
-            '0.6'
-            '0.7'
-            '0.8'
-            '0.9'
-            '1.0'
-            '1.1'
-            '1.2'
-            '1.3'
-            '1.4'
-            '1.5'
-            '1.6'
-            '1.7'
-            '1.8'
-            '1.9'
-            '2.0'
-            '2.1'
-            '2.2'
-            '2.3'
-            '2.4'
-            '2.5'
-            '2.6'
-            '2.7'
-            '2.8'
-            '2.9'
-            '3.0')
-        end
-        object Edit84: TEdit
-          Left = 69
-          Top = 49
-          Width = 25
-          Height = 23
-          Hint = 'Temperaturbereich f'#252'r Pulsstufe'
-          TabOrder = 3
-          Text = '70'
-          OnExit = Edit84Exit
-          OnKeyPress = Solltempwahl1KeyPress
-        end
-        object Edit85: TEdit
-          Left = 69
-          Top = 73
-          Width = 25
-          Height = 23
-          Hint = 'Temperaturbereich f'#252'r Pulsstufe'
-          TabOrder = 6
-          Text = '80'
-          OnExit = Edit85Exit
-          OnKeyPress = Solltempwahl1KeyPress
-        end
-        object Edit86: TEdit
-          Left = 69
-          Top = 97
-          Width = 25
-          Height = 23
-          Hint = 'Temperaturbereich f'#252'r Pulsstufe'
-          TabOrder = 9
-          Text = '90'
-          OnExit = Edit86Exit
-          OnKeyPress = Solltempwahl1KeyPress
-        end
-        object Edit87: TEdit
-          Left = 66
-          Top = 121
-          Width = 29
-          Height = 23
-          Hint = 'Temperaturbereich f'#252'r Pulsstufe'
-          TabStop = False
-          ReadOnly = True
-          TabOrder = 16
-          Text = '100'
-          OnKeyPress = Solltempwahl1KeyPress
-        end
-        object Edit88: TEdit
-          Left = 68
-          Top = 25
-          Width = 25
-          Height = 23
-          TabStop = False
-          TabOrder = 17
-          Text = '0'
-          Visible = False
-          OnKeyPress = Solltempwahl1KeyPress
-        end
-        object Edit83: TEdit
-          Left = 69
-          Top = 25
-          Width = 25
-          Height = 23
-          Hint = 'Temperaturbereich f'#252'r Pulsstufe'
-          TabOrder = 0
-          Text = '60'
-          OnExit = Edit83Exit
-          OnKeyPress = Solltempwahl1KeyPress
-        end
-      end
       object GroupBox6: TGroupBox
         Left = 472
-        Top = 279
+        Top = 303
         Width = 289
         Height = 100
         Hint = 
           'Eingabefeld f'#252'r die Aufheizrate die zur Berechnung '#13#10'der ETA ver' +
           'wendet wird.'
         Caption = 'Heiz- und K'#252'hlkurven-Information'
-        TabOrder = 1
+        TabOrder = 0
         object Label59: TLabel
           Left = 17
           Top = 23
@@ -18559,170 +16110,40 @@ object Form1: TForm1
           Hint = 'Temperatur bei der Wasser als kochend '#13#10'erkannt werden soll.'
           Style = csDropDownList
           ItemHeight = 15
-          ItemIndex = 1
+          ItemIndex = 11
           TabOrder = 2
           Text = '99'
           Items.Strings = (
+            '110'
+            '109'
+            '108'
+            '107'
+            '106'
+            '105'
+            '104'
+            '103'
+            '102'
+            '101'
             '100'
             '99'
             '98'
             '97'
             '96'
             '95'
-            '94')
+            '94'
+            '93'
+            '92'
+            '91'
+            '90')
         end
-      end
-      object GroupBox7: TGroupBox
-        Left = 472
-        Top = 381
-        Width = 289
-        Height = 68
-        Caption = 'Hysterese'
-        TabOrder = 2
-        object Label112: TLabel
-          Left = 17
-          Top = 20
-          Width = 109
-          Height = 15
-          Caption = 'Heizungshysterese:'
-        end
-        object Label113: TLabel
-          Left = 232
-          Top = 20
-          Width = 8
-          Height = 15
-          Caption = 'K'
-        end
-        object Label95: TLabel
-          Left = 232
-          Top = 44
-          Width = 8
-          Height = 15
-          Caption = 'K'
-        end
-        object Label98: TLabel
-          Left = 18
-          Top = 44
-          Width = 110
-          Height = 15
-          Caption = 'K'#252'hlungshysterese:'
-        end
-        object ComboBox26: TComboBox
-          Left = 176
-          Top = 16
-          Width = 49
-          Height = 23
-          Hint = 
-            'Das Heizungsrelais wird beim erreichen der Zieltemperatur'#13#10'ausge' +
-            'schaltet. Eingeschaltet wird erst wieder nach '#13#10'Unterschreitung ' +
-            'der Ziel-Temperatur um den hier definierten '#13#10'Hysterese-Wert.'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 20
-          TabOrder = 0
-          Text = '2.0'
-          OnChange = ComboBox26Change
-          Items.Strings = (
-            '0.0'
-            '0.1'
-            '0.2'
-            '0.3'
-            '0.4'
-            '0.5'
-            '0.6'
-            '0.7'
-            '0.8'
-            '0.9'
-            '1.0'
-            '1.1'
-            '1.2'
-            '1.3'
-            '1.4'
-            '1.5'
-            '1.6'
-            '1.7'
-            '1.8'
-            '1.9'
-            '2.0'
-            '2.1'
-            '2.2'
-            '2.3'
-            '2.4'
-            '2.5'
-            '2.6'
-            '2.7'
-            '2.8'
-            '2.9'
-            '3.0'
-            #9)
-        end
-        object ComboBox29: TComboBox
-          Left = 176
-          Top = 41
-          Width = 49
-          Height = 23
-          Hint = 
-            'Das Heizungsrelais wird beim erreichen der Zieltemperatur'#13#10'ausge' +
-            'schaltet. Eingeschaltet wird erst wieder nach '#13#10'Unterschreitung ' +
-            'der Ziel-Temperatur um den hier definierten '#13#10'Hysterese-Wert.'
-          Style = csDropDownList
-          ItemHeight = 15
-          ItemIndex = 20
-          TabOrder = 1
-          Text = '2.0'
-          OnChange = ComboBox29Change
-          Items.Strings = (
-            '0.0'
-            '0.1'
-            '0.2'
-            '0.3'
-            '0.4'
-            '0.5'
-            '0.6'
-            '0.7'
-            '0.8'
-            '0.9'
-            '1.0'
-            '1.1'
-            '1.2'
-            '1.3'
-            '1.4'
-            '1.5'
-            '1.6'
-            '1.7'
-            '1.8'
-            '1.9'
-            '2.0'
-            '2.1'
-            '2.2'
-            '2.3'
-            '2.4'
-            '2.5'
-            '2.6'
-            '2.7'
-            '2.8'
-            '2.9'
-            '3.0'
-            #9)
-        end
-      end
-      object Button2: TButton
-        Left = 472
-        Top = 27
-        Width = 289
-        Height = 37
-        Hint = 'Alle Einstellungen auf Auslieferzustand '#13#10'zur'#252'cksetzen.'
-        Caption = 'Zur'#252'cksetzen'
-        TabOrder = 4
-        OnClick = Button2Click
       end
       object PageControl2: TPageControl
         Left = 8
         Top = 5
         Width = 449
         Height = 172
-        ActivePage = Optik
-        TabOrder = 5
+        ActivePage = TabSheet6
+        TabOrder = 2
         OnChange = PageControl2Change
         object TabSheet6: TTabSheet
           Caption = 'Basisparameter'
@@ -18734,8 +16155,8 @@ object Form1: TForm1
             Caption = 'Temperaturkorrekturwert:'
           end
           object Label128: TLabel
-            Left = 8
-            Top = 76
+            Left = 224
+            Top = 44
             Width = 144
             Height = 15
             Caption = 'Temperaturkorrekturfaktor:'
@@ -18758,8 +16179,8 @@ object Form1: TForm1
             OnKeyPress = Edit93KeyPress
           end
           object Edit94: TEdit
-            Left = 158
-            Top = 73
+            Left = 374
+            Top = 41
             Width = 41
             Height = 23
             TabOrder = 1
@@ -18786,13 +16207,74 @@ object Form1: TForm1
               'DIGITEMP'
               'ARDUINO')
           end
+          object CheckBox1: TCheckBox
+            Left = 8
+            Top = 120
+            Width = 241
+            Height = 17
+            Caption = 'Versionspr'#252'fung beim Programmstart'
+            TabOrder = 3
+          end
+          object BitBtn18: TBitBtn
+            Left = 403
+            Top = 5
+            Width = 30
+            Height = 30
+            Hint = 'LINK zur Hardware'
+            HelpType = htKeyword
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 4
+            OnClick = BitBtn18Click
+            Glyph.Data = {
+              E6040000424DE604000000000000360000002800000014000000140000000100
+              180000000000B0040000C40E0000C40E00000000000000000000FFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8F8F8D7D7D7F8F8F8
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFEE2E2E28F7E6D967048D2C4B7FFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FCFCFCEAEAEAD3D3D3ACA9A6856340D5AE83F7D7B2CBB39AFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFDD5D5D58E81747F
+              614295724CAF865AE6C6A2FFE2C0E5C19AB9AA9CF8F8F8FFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7F7F7ADA69F926E48DCBA95FEE5C9FFE6
+              C9FFE5C7FFE5C6FFE4C5F1D3B0A17A50907F6EE6E6E6FFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFF5F5F59A8A79B0895FFDE7CDFFE9D0FFE9CFFFE8CEF0D1B6
+              A74B23DDAD8EFFE6C9FFE5C8DCB9938F7152E0E0E0FFFFFFFFFFFFFFFFFFFFFF
+              FFFEFEFEAF9E8CB38A5FFCEAD4FFECD7FFECD6FFEBD4FFEBD3E9C8AF9D30009C
+              3A12E4BB9FFFE8CDFFE7CCEDD0B09A7A59F1F1F1FFFFFFFFFFFFFFFFFFEAE8E7
+              A27648E5CDB3FFF0DEFFEFDDFFEEDBFFEEDAFFEDD9F9E4CF9E3405CB9476C081
+              62FFEBD3FFEAD2FFE9D1E2C4A3B19D89FEFEFEFFFFFFFFFFFFC9B5A0BF9971F2
+              E1CDFFF2E3FFF2E2FFF1E1FFF1E0FFF0DFFFF0DEBC6737D49973FFEEDAFFEDD9
+              FFEDD8FFECD7FFECD5B7926BF1F1F0FFFFFFFFFFFFBEA183C9A782F5E7D7FFF5
+              E9FFF4E8FFF4E7FFF3E6FFF3E5FFF2E4D6976CDD9C67FFF1E1FFF0DFFFF0DEFF
+              EFDDFFEFDCE6CDB1CFBEAEFFFFFFFFFFFFC0A384CCAB86F0E1D0FFF7EFFFF7EE
+              FFF7EDFFF6ECFFF6EBB46E4FC98E6DD58445FEF2E5FFF3E5FFF3E4FFF2E3FFF2
+              E2FEEFDFBFA387FFFFFFFFFFFFCEB8A1CAA680E5D0B8FFFAF4FFF9F3FFF9F2FF
+              F9F1FFF8F0E9D2C5A6471BBB591FEBD5C8FFF6EBFFF6EAFFF5E9FFF4E8FFF4E7
+              C3A78BFFFFFFFFFFFFF4F0ECB38759DCBD9BFCF5EEFFFCF7FFFBF7FFFBF6FFFB
+              F5FFFAF4ECD9CEBF7E62F0E0D6FFF9F1FFF8F0FFF8EFFFF7EEFCF3E8C5AA8FFF
+              FFFFFFFFFFFFFFFFC2A384D9B791EDD6BCFFFDFAFFFDFBFFFDFAFFFDFAFFFCF9
+              FFFCF8E5CDC3EEDDD4FFFBF6FFFBF5FFFAF5FFFAF4D9C3ACE5DACFFFFFFFFFFF
+              FFFFFFFFFAF8F7B48B61E8C9A5F6E3CCFFFEFDFFFFFEFFFEFDFFFEFDFFFEFCBD
+              7552D08B5EFFFDFBFFFDFAFFFCF9FBF6F1BD9D7BFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFF5F0EDB79066E9C9A3FBE5CAFFFAF4FFFFFFFFFFFFFFFFFFEBD9D2E1C3
+              B4FFFFFEFFFFFEF7F2EEBA9976F4F0ECFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFCFBFAC9AE92C59C6FEFD0ABFBE8D0FBF1E5FDF9F5FFFEFEFDFCFAE9DFD4
+              C6AB90C4A88AF8F5F3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFF8F5F3D2BCA6C5A585C3A07BC19E79C1A17FC7AC8FD9C7B6F8F5F3FF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFF}
+          end
         end
         object Optik: TTabSheet
           Caption = 'Optik'
           ImageIndex = 2
           object Label129: TLabel
-            Left = 8
-            Top = 108
+            Left = 256
+            Top = 76
             Width = 103
             Height = 15
             Caption = 'Fensterskalierung:'
@@ -18818,9 +16300,16 @@ object Form1: TForm1
             Height = 15
             Caption = 'Fensterfarbe:'
           end
+          object Label158: TLabel
+            Left = 8
+            Top = 108
+            Width = 77
+            Height = 15
+            Caption = 'Fenstername:'
+          end
           object Edit95: TEdit
-            Left = 128
-            Top = 105
+            Left = 384
+            Top = 73
             Width = 41
             Height = 23
             TabOrder = 0
@@ -18890,9 +16379,17 @@ object Form1: TForm1
               'blau'
               'rot')
           end
+          object Edit1: TEdit
+            Left = 128
+            Top = 104
+            Width = 297
+            Height = 23
+            TabOrder = 4
+            Text = 'Kessel 1'
+          end
         end
         object TabSheet14: TTabSheet
-          Caption = 'R'#252'hrwerkparameter'
+          Caption = 'R'#252'hrwerk'
           ImageIndex = 3
           object Label153: TLabel
             Left = 27
@@ -18981,6 +16478,203 @@ object Form1: TForm1
               '1 Minute'
               '2 Minuten'
               '5 Minuten')
+          end
+        end
+        object TabSheet17: TTabSheet
+          Caption = #220'berwachung'
+          ImageIndex = 4
+          object Label156: TLabel
+            Left = 8
+            Top = 36
+            Width = 188
+            Height = 15
+            Caption = 'Heizalarm bei '#220'berschwinger von:'
+          end
+          object Label157: TLabel
+            Left = 8
+            Top = 61
+            Width = 191
+            Height = 15
+            Caption = 'Heizalarm bei Unterschwinger von:'
+          end
+          object CheckBox33: TCheckBox
+            Left = 8
+            Top = 116
+            Width = 137
+            Height = 17
+            Hint = 
+              'Sensor'#252'berwachung:'#13#10#196'ndert sich die Temperatur-Log-Datei zu lang' +
+              'e nicht'#13#10'wird ein Alarm ausgel'#246'st.'
+            Caption = 'Sensor '#252'berwachen'
+            Checked = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Arial'
+            Font.Style = []
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            State = cbChecked
+            TabOrder = 0
+          end
+          object CheckBox41: TCheckBox
+            Left = 8
+            Top = 13
+            Width = 145
+            Height = 17
+            Hint = 
+              'Sensor'#252'berwachung:'#13#10#196'ndert sich die Temperatur-Log-Datei zu lang' +
+              'e nicht'#13#10'wird ein Alarm ausgel'#246'st.'
+            Caption = 'Heizung '#252'berwachen'
+            Checked = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Arial'
+            Font.Style = []
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            State = cbChecked
+            TabOrder = 1
+          end
+          object ComboBox55: TComboBox
+            Left = 208
+            Top = 33
+            Width = 49
+            Height = 23
+            Hint = 
+              'Das Heizungsrelais wird beim erreichen der Zieltemperatur'#13#10'ausge' +
+              'schaltet. Eingeschaltet wird erst wieder nach '#13#10'Unterschreitung ' +
+              'der Ziel-Temperatur um den hier definierten '#13#10'Hysterese-Wert.'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 30
+            TabOrder = 2
+            Text = '3.0'
+            OnChange = ComboBox26Change
+            Items.Strings = (
+              '0.0'
+              '0.1'
+              '0.2'
+              '0.3'
+              '0.4'
+              '0.5'
+              '0.6'
+              '0.7'
+              '0.8'
+              '0.9'
+              '1.0'
+              '1.1'
+              '1.2'
+              '1.3'
+              '1.4'
+              '1.5'
+              '1.6'
+              '1.7'
+              '1.8'
+              '1.9'
+              '2.0'
+              '2.1'
+              '2.2'
+              '2.3'
+              '2.4'
+              '2.5'
+              '2.6'
+              '2.7'
+              '2.8'
+              '2.9'
+              '3.0'
+              '3.1'
+              '3.2'
+              '3.3'
+              '3.4'
+              '3.5'
+              '3.6'
+              '3.7'
+              '3.8'
+              '3.9'
+              '4.0')
+          end
+          object ComboBox56: TComboBox
+            Left = 208
+            Top = 57
+            Width = 49
+            Height = 23
+            Hint = 
+              'Das Heizungsrelais wird beim erreichen der Zieltemperatur'#13#10'ausge' +
+              'schaltet. Eingeschaltet wird erst wieder nach '#13#10'Unterschreitung ' +
+              'der Ziel-Temperatur um den hier definierten '#13#10'Hysterese-Wert.'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 30
+            TabOrder = 3
+            Text = '3.0'
+            OnChange = ComboBox26Change
+            Items.Strings = (
+              '0.0'
+              '0.1'
+              '0.2'
+              '0.3'
+              '0.4'
+              '0.5'
+              '0.6'
+              '0.7'
+              '0.8'
+              '0.9'
+              '1.0'
+              '1.1'
+              '1.2'
+              '1.3'
+              '1.4'
+              '1.5'
+              '1.6'
+              '1.7'
+              '1.8'
+              '1.9'
+              '2.0'
+              '2.1'
+              '2.2'
+              '2.3'
+              '2.4'
+              '2.5'
+              '2.6'
+              '2.7'
+              '2.8'
+              '2.9'
+              '3.0'
+              '3.1'
+              '3.2'
+              '3.3'
+              '3.4'
+              '3.5'
+              '3.6'
+              '3.7'
+              '3.8'
+              '3.9'
+              '4.0')
+          end
+          object CheckBox3: TCheckBox
+            Left = 8
+            Top = 85
+            Width = 153
+            Height = 17
+            Hint = 
+              'Die Heizung wird nach 100 Minuten '#13#10'Dauerbetrieb f'#252'r 5 Sekunden ' +
+              'ausgeschaltet.'
+            Caption = 'Hendi 2h Unterbrecher'
+            Checked = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Arial'
+            Font.Style = []
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            State = cbChecked
+            TabOrder = 4
           end
         end
         object TabSheet7: TTabSheet
@@ -19094,6 +16788,23 @@ object Form1: TForm1
             TabOrder = 4
             OnClick = CheckBox31Click
           end
+          object CheckBox2: TCheckBox
+            Left = 16
+            Top = 78
+            Width = 361
+            Height = 17
+            Caption = 'Zum Erreichen und Halten der Kochtemperatur dauerheizen'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Arial'
+            Font.Style = []
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 5
+            OnClick = CheckBox31Click
+          end
         end
       end
       object GroupBox5: TGroupBox
@@ -19103,7 +16814,7 @@ object Form1: TForm1
         Height = 121
         Hint = 'Eingabefeld f'#252'r den Dateinamen der Temperatur-Datei.'
         Caption = 'Temperaturmessung '#252'ber Textdatei'
-        TabOrder = 3
+        TabOrder = 1
         object Label143: TLabel
           Left = 16
           Top = 28
@@ -19187,7 +16898,7 @@ object Form1: TForm1
         Width = 753
         Height = 121
         Caption = 'Digitemp Steuerung'
-        TabOrder = 6
+        TabOrder = 3
         object Label144: TLabel
           Left = 10
           Top = 26
@@ -19289,8 +17000,8 @@ object Form1: TForm1
         Top = 184
         Width = 449
         Height = 265
-        ActivePage = TabSheet10
-        TabOrder = 7
+        ActivePage = TabSheet9
+        TabOrder = 4
         object TabSheet9: TTabSheet
           Caption = 'USB-Relais'
           object Label74: TLabel
@@ -19390,7 +17101,8 @@ object Form1: TForm1
               'KMTronic'
               'Denkovi'
               'SainSmart'
-              'IO-Warrior-Basis')
+              'IO-Warrior-Basis'
+              'ICStation')
           end
           object ComboBox3: TComboBox
             Left = 112
@@ -20635,6 +18347,59 @@ object Form1: TForm1
               '254'
               '255'
               '256')
+          end
+          object BitBtn19: TBitBtn
+            Left = 403
+            Top = 5
+            Width = 30
+            Height = 30
+            Hint = 'LINK zur Hardware'
+            HelpType = htKeyword
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 12
+            OnClick = BitBtn19Click
+            Glyph.Data = {
+              E6040000424DE604000000000000360000002800000014000000140000000100
+              180000000000B0040000C40E0000C40E00000000000000000000FFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8F8F8D7D7D7F8F8F8
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFEE2E2E28F7E6D967048D2C4B7FFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FCFCFCEAEAEAD3D3D3ACA9A6856340D5AE83F7D7B2CBB39AFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFDD5D5D58E81747F
+              614295724CAF865AE6C6A2FFE2C0E5C19AB9AA9CF8F8F8FFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7F7F7ADA69F926E48DCBA95FEE5C9FFE6
+              C9FFE5C7FFE5C6FFE4C5F1D3B0A17A50907F6EE6E6E6FFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFF5F5F59A8A79B0895FFDE7CDFFE9D0FFE9CFFFE8CEF0D1B6
+              A74B23DDAD8EFFE6C9FFE5C8DCB9938F7152E0E0E0FFFFFFFFFFFFFFFFFFFFFF
+              FFFEFEFEAF9E8CB38A5FFCEAD4FFECD7FFECD6FFEBD4FFEBD3E9C8AF9D30009C
+              3A12E4BB9FFFE8CDFFE7CCEDD0B09A7A59F1F1F1FFFFFFFFFFFFFFFFFFEAE8E7
+              A27648E5CDB3FFF0DEFFEFDDFFEEDBFFEEDAFFEDD9F9E4CF9E3405CB9476C081
+              62FFEBD3FFEAD2FFE9D1E2C4A3B19D89FEFEFEFFFFFFFFFFFFC9B5A0BF9971F2
+              E1CDFFF2E3FFF2E2FFF1E1FFF1E0FFF0DFFFF0DEBC6737D49973FFEEDAFFEDD9
+              FFEDD8FFECD7FFECD5B7926BF1F1F0FFFFFFFFFFFFBEA183C9A782F5E7D7FFF5
+              E9FFF4E8FFF4E7FFF3E6FFF3E5FFF2E4D6976CDD9C67FFF1E1FFF0DFFFF0DEFF
+              EFDDFFEFDCE6CDB1CFBEAEFFFFFFFFFFFFC0A384CCAB86F0E1D0FFF7EFFFF7EE
+              FFF7EDFFF6ECFFF6EBB46E4FC98E6DD58445FEF2E5FFF3E5FFF3E4FFF2E3FFF2
+              E2FEEFDFBFA387FFFFFFFFFFFFCEB8A1CAA680E5D0B8FFFAF4FFF9F3FFF9F2FF
+              F9F1FFF8F0E9D2C5A6471BBB591FEBD5C8FFF6EBFFF6EAFFF5E9FFF4E8FFF4E7
+              C3A78BFFFFFFFFFFFFF4F0ECB38759DCBD9BFCF5EEFFFCF7FFFBF7FFFBF6FFFB
+              F5FFFAF4ECD9CEBF7E62F0E0D6FFF9F1FFF8F0FFF8EFFFF7EEFCF3E8C5AA8FFF
+              FFFFFFFFFFFFFFFFC2A384D9B791EDD6BCFFFDFAFFFDFBFFFDFAFFFDFAFFFCF9
+              FFFCF8E5CDC3EEDDD4FFFBF6FFFBF5FFFAF5FFFAF4D9C3ACE5DACFFFFFFFFFFF
+              FFFFFFFFFAF8F7B48B61E8C9A5F6E3CCFFFEFDFFFFFEFFFEFDFFFEFDFFFEFCBD
+              7552D08B5EFFFDFBFFFDFAFFFCF9FBF6F1BD9D7BFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFF5F0EDB79066E9C9A3FBE5CAFFFAF4FFFFFFFFFFFFFFFFFFEBD9D2E1C3
+              B4FFFFFEFFFFFEF7F2EEBA9976F4F0ECFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFCFBFAC9AE92C59C6FEFD0ABFBE8D0FBF1E5FDF9F5FFFEFEFDFCFAE9DFD4
+              C6AB90C4A88AF8F5F3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFF8F5F3D2BCA6C5A585C3A07BC19E79C1A17FC7AC8FD9C7B6F8F5F3FF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFF}
           end
         end
         object TabSheet10: TTabSheet
@@ -21932,6 +19697,59 @@ object Form1: TForm1
               '255'
               '256')
           end
+          object BitBtn21: TBitBtn
+            Left = 403
+            Top = 5
+            Width = 30
+            Height = 30
+            Hint = 'LINK zur Hardware'
+            HelpType = htKeyword
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 10
+            OnClick = BitBtn21Click
+            Glyph.Data = {
+              E6040000424DE604000000000000360000002800000014000000140000000100
+              180000000000B0040000C40E0000C40E00000000000000000000FFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8F8F8D7D7D7F8F8F8
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFEE2E2E28F7E6D967048D2C4B7FFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FCFCFCEAEAEAD3D3D3ACA9A6856340D5AE83F7D7B2CBB39AFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFDD5D5D58E81747F
+              614295724CAF865AE6C6A2FFE2C0E5C19AB9AA9CF8F8F8FFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7F7F7ADA69F926E48DCBA95FEE5C9FFE6
+              C9FFE5C7FFE5C6FFE4C5F1D3B0A17A50907F6EE6E6E6FFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFF5F5F59A8A79B0895FFDE7CDFFE9D0FFE9CFFFE8CEF0D1B6
+              A74B23DDAD8EFFE6C9FFE5C8DCB9938F7152E0E0E0FFFFFFFFFFFFFFFFFFFFFF
+              FFFEFEFEAF9E8CB38A5FFCEAD4FFECD7FFECD6FFEBD4FFEBD3E9C8AF9D30009C
+              3A12E4BB9FFFE8CDFFE7CCEDD0B09A7A59F1F1F1FFFFFFFFFFFFFFFFFFEAE8E7
+              A27648E5CDB3FFF0DEFFEFDDFFEEDBFFEEDAFFEDD9F9E4CF9E3405CB9476C081
+              62FFEBD3FFEAD2FFE9D1E2C4A3B19D89FEFEFEFFFFFFFFFFFFC9B5A0BF9971F2
+              E1CDFFF2E3FFF2E2FFF1E1FFF1E0FFF0DFFFF0DEBC6737D49973FFEEDAFFEDD9
+              FFEDD8FFECD7FFECD5B7926BF1F1F0FFFFFFFFFFFFBEA183C9A782F5E7D7FFF5
+              E9FFF4E8FFF4E7FFF3E6FFF3E5FFF2E4D6976CDD9C67FFF1E1FFF0DFFFF0DEFF
+              EFDDFFEFDCE6CDB1CFBEAEFFFFFFFFFFFFC0A384CCAB86F0E1D0FFF7EFFFF7EE
+              FFF7EDFFF6ECFFF6EBB46E4FC98E6DD58445FEF2E5FFF3E5FFF3E4FFF2E3FFF2
+              E2FEEFDFBFA387FFFFFFFFFFFFCEB8A1CAA680E5D0B8FFFAF4FFF9F3FFF9F2FF
+              F9F1FFF8F0E9D2C5A6471BBB591FEBD5C8FFF6EBFFF6EAFFF5E9FFF4E8FFF4E7
+              C3A78BFFFFFFFFFFFFF4F0ECB38759DCBD9BFCF5EEFFFCF7FFFBF7FFFBF6FFFB
+              F5FFFAF4ECD9CEBF7E62F0E0D6FFF9F1FFF8F0FFF8EFFFF7EEFCF3E8C5AA8FFF
+              FFFFFFFFFFFFFFFFC2A384D9B791EDD6BCFFFDFAFFFDFBFFFDFAFFFDFAFFFCF9
+              FFFCF8E5CDC3EEDDD4FFFBF6FFFBF5FFFAF5FFFAF4D9C3ACE5DACFFFFFFFFFFF
+              FFFFFFFFFAF8F7B48B61E8C9A5F6E3CCFFFEFDFFFFFEFFFEFDFFFEFDFFFEFCBD
+              7552D08B5EFFFDFBFFFDFAFFFCF9FBF6F1BD9D7BFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFF5F0EDB79066E9C9A3FBE5CAFFFAF4FFFFFFFFFFFFFFFFFFEBD9D2E1C3
+              B4FFFFFEFFFFFEF7F2EEBA9976F4F0ECFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFCFBFAC9AE92C59C6FEFD0ABFBE8D0FBF1E5FDF9F5FFFEFEFDFCFAE9DFD4
+              C6AB90C4A88AF8F5F3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFF8F5F3D2BCA6C5A585C3A07BC19E79C1A17FC7AC8FD9C7B6F8F5F3FF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFF}
+          end
         end
         object TabSheet11: TTabSheet
           Caption = 'WLAN-Relais'
@@ -22081,6 +19899,59 @@ object Form1: TForm1
             ParentShowHint = False
             ShowHint = True
             TabOrder = 16
+          end
+          object BitBtn20: TBitBtn
+            Left = 403
+            Top = 5
+            Width = 30
+            Height = 30
+            Hint = 'LINK zur Hardware'
+            HelpType = htKeyword
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 17
+            OnClick = BitBtn20Click
+            Glyph.Data = {
+              E6040000424DE604000000000000360000002800000014000000140000000100
+              180000000000B0040000C40E0000C40E00000000000000000000FFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8F8F8D7D7D7F8F8F8
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFEE2E2E28F7E6D967048D2C4B7FFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FCFCFCEAEAEAD3D3D3ACA9A6856340D5AE83F7D7B2CBB39AFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFDD5D5D58E81747F
+              614295724CAF865AE6C6A2FFE2C0E5C19AB9AA9CF8F8F8FFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7F7F7ADA69F926E48DCBA95FEE5C9FFE6
+              C9FFE5C7FFE5C6FFE4C5F1D3B0A17A50907F6EE6E6E6FFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFF5F5F59A8A79B0895FFDE7CDFFE9D0FFE9CFFFE8CEF0D1B6
+              A74B23DDAD8EFFE6C9FFE5C8DCB9938F7152E0E0E0FFFFFFFFFFFFFFFFFFFFFF
+              FFFEFEFEAF9E8CB38A5FFCEAD4FFECD7FFECD6FFEBD4FFEBD3E9C8AF9D30009C
+              3A12E4BB9FFFE8CDFFE7CCEDD0B09A7A59F1F1F1FFFFFFFFFFFFFFFFFFEAE8E7
+              A27648E5CDB3FFF0DEFFEFDDFFEEDBFFEEDAFFEDD9F9E4CF9E3405CB9476C081
+              62FFEBD3FFEAD2FFE9D1E2C4A3B19D89FEFEFEFFFFFFFFFFFFC9B5A0BF9971F2
+              E1CDFFF2E3FFF2E2FFF1E1FFF1E0FFF0DFFFF0DEBC6737D49973FFEEDAFFEDD9
+              FFEDD8FFECD7FFECD5B7926BF1F1F0FFFFFFFFFFFFBEA183C9A782F5E7D7FFF5
+              E9FFF4E8FFF4E7FFF3E6FFF3E5FFF2E4D6976CDD9C67FFF1E1FFF0DFFFF0DEFF
+              EFDDFFEFDCE6CDB1CFBEAEFFFFFFFFFFFFC0A384CCAB86F0E1D0FFF7EFFFF7EE
+              FFF7EDFFF6ECFFF6EBB46E4FC98E6DD58445FEF2E5FFF3E5FFF3E4FFF2E3FFF2
+              E2FEEFDFBFA387FFFFFFFFFFFFCEB8A1CAA680E5D0B8FFFAF4FFF9F3FFF9F2FF
+              F9F1FFF8F0E9D2C5A6471BBB591FEBD5C8FFF6EBFFF6EAFFF5E9FFF4E8FFF4E7
+              C3A78BFFFFFFFFFFFFF4F0ECB38759DCBD9BFCF5EEFFFCF7FFFBF7FFFBF6FFFB
+              F5FFFAF4ECD9CEBF7E62F0E0D6FFF9F1FFF8F0FFF8EFFFF7EEFCF3E8C5AA8FFF
+              FFFFFFFFFFFFFFFFC2A384D9B791EDD6BCFFFDFAFFFDFBFFFDFAFFFDFAFFFCF9
+              FFFCF8E5CDC3EEDDD4FFFBF6FFFBF5FFFAF5FFFAF4D9C3ACE5DACFFFFFFFFFFF
+              FFFFFFFFFAF8F7B48B61E8C9A5F6E3CCFFFEFDFFFFFEFFFEFDFFFEFDFFFEFCBD
+              7552D08B5EFFFDFBFFFDFAFFFCF9FBF6F1BD9D7BFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFF5F0EDB79066E9C9A3FBE5CAFFFAF4FFFFFFFFFFFFFFFFFFEBD9D2E1C3
+              B4FFFFFEFFFFFEF7F2EEBA9976F4F0ECFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFCFBFAC9AE92C59C6FEFD0ABFBE8D0FBF1E5FDF9F5FFFEFEFDFCFAE9DFD4
+              C6AB90C4A88AF8F5F3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFF8F5F3D2BCA6C5A585C3A07BC19E79C1A17FC7AC8FD9C7B6F8F5F3FF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFF}
           end
         end
         object TabSheet12: TTabSheet
@@ -22278,6 +20149,2699 @@ object Form1: TForm1
             TabOrder = 0
             OnClick = ArduinoClick
           end
+          object BitBtn22: TBitBtn
+            Left = 403
+            Top = 5
+            Width = 30
+            Height = 30
+            Hint = 'LINK zur Hardware'
+            HelpType = htKeyword
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 1
+            OnClick = BitBtn22Click
+            Glyph.Data = {
+              E6040000424DE604000000000000360000002800000014000000140000000100
+              180000000000B0040000C40E0000C40E00000000000000000000FFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8F8F8D7D7D7F8F8F8
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFEE2E2E28F7E6D967048D2C4B7FFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FCFCFCEAEAEAD3D3D3ACA9A6856340D5AE83F7D7B2CBB39AFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFDD5D5D58E81747F
+              614295724CAF865AE6C6A2FFE2C0E5C19AB9AA9CF8F8F8FFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7F7F7ADA69F926E48DCBA95FEE5C9FFE6
+              C9FFE5C7FFE5C6FFE4C5F1D3B0A17A50907F6EE6E6E6FFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFF5F5F59A8A79B0895FFDE7CDFFE9D0FFE9CFFFE8CEF0D1B6
+              A74B23DDAD8EFFE6C9FFE5C8DCB9938F7152E0E0E0FFFFFFFFFFFFFFFFFFFFFF
+              FFFEFEFEAF9E8CB38A5FFCEAD4FFECD7FFECD6FFEBD4FFEBD3E9C8AF9D30009C
+              3A12E4BB9FFFE8CDFFE7CCEDD0B09A7A59F1F1F1FFFFFFFFFFFFFFFFFFEAE8E7
+              A27648E5CDB3FFF0DEFFEFDDFFEEDBFFEEDAFFEDD9F9E4CF9E3405CB9476C081
+              62FFEBD3FFEAD2FFE9D1E2C4A3B19D89FEFEFEFFFFFFFFFFFFC9B5A0BF9971F2
+              E1CDFFF2E3FFF2E2FFF1E1FFF1E0FFF0DFFFF0DEBC6737D49973FFEEDAFFEDD9
+              FFEDD8FFECD7FFECD5B7926BF1F1F0FFFFFFFFFFFFBEA183C9A782F5E7D7FFF5
+              E9FFF4E8FFF4E7FFF3E6FFF3E5FFF2E4D6976CDD9C67FFF1E1FFF0DFFFF0DEFF
+              EFDDFFEFDCE6CDB1CFBEAEFFFFFFFFFFFFC0A384CCAB86F0E1D0FFF7EFFFF7EE
+              FFF7EDFFF6ECFFF6EBB46E4FC98E6DD58445FEF2E5FFF3E5FFF3E4FFF2E3FFF2
+              E2FEEFDFBFA387FFFFFFFFFFFFCEB8A1CAA680E5D0B8FFFAF4FFF9F3FFF9F2FF
+              F9F1FFF8F0E9D2C5A6471BBB591FEBD5C8FFF6EBFFF6EAFFF5E9FFF4E8FFF4E7
+              C3A78BFFFFFFFFFFFFF4F0ECB38759DCBD9BFCF5EEFFFCF7FFFBF7FFFBF6FFFB
+              F5FFFAF4ECD9CEBF7E62F0E0D6FFF9F1FFF8F0FFF8EFFFF7EEFCF3E8C5AA8FFF
+              FFFFFFFFFFFFFFFFC2A384D9B791EDD6BCFFFDFAFFFDFBFFFDFAFFFDFAFFFCF9
+              FFFCF8E5CDC3EEDDD4FFFBF6FFFBF5FFFAF5FFFAF4D9C3ACE5DACFFFFFFFFFFF
+              FFFFFFFFFAF8F7B48B61E8C9A5F6E3CCFFFEFDFFFFFEFFFEFDFFFEFDFFFEFCBD
+              7552D08B5EFFFDFBFFFDFAFFFCF9FBF6F1BD9D7BFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFF5F0EDB79066E9C9A3FBE5CAFFFAF4FFFFFFFFFFFFFFFFFFEBD9D2E1C3
+              B4FFFFFEFFFFFEF7F2EEBA9976F4F0ECFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFCFBFAC9AE92C59C6FEFD0ABFBE8D0FBF1E5FDF9F5FFFEFEFDFCFAE9DFD4
+              C6AB90C4A88AF8F5F3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFF8F5F3D2BCA6C5A585C3A07BC19E79C1A17FC7AC8FD9C7B6F8F5F3FF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFF}
+          end
+        end
+      end
+      object Button2: TButton
+        Left = 472
+        Top = 412
+        Width = 289
+        Height = 37
+        Hint = 'Alle Einstellungen auf Auslieferzustand '#13#10'zur'#252'cksetzen.'
+        Caption = 'Zur'#252'cksetzen'
+        TabOrder = 5
+        OnClick = Button2Click
+      end
+      object PageControl4: TPageControl
+        Left = 472
+        Top = 5
+        Width = 289
+        Height = 285
+        ActivePage = TabSheet15
+        TabOrder = 6
+        object TabSheet15: TTabSheet
+          Caption = 'Puls / Gradient'
+          object Label88: TLabel
+            Left = 17
+            Top = 229
+            Width = 129
+            Height = 15
+            Caption = 'Puls- / Gradientbereich:'
+          end
+          object Label90: TLabel
+            Left = 233
+            Top = 229
+            Width = 8
+            Height = 15
+            Caption = 'K'
+          end
+          object Label81: TLabel
+            Left = 17
+            Top = 77
+            Width = 45
+            Height = 15
+            Caption = 'Puls bis'
+          end
+          object Label86: TLabel
+            Left = 233
+            Top = 77
+            Width = 23
+            Height = 15
+            Caption = 'sek.'
+          end
+          object Label87: TLabel
+            Left = 129
+            Top = 57
+            Width = 18
+            Height = 15
+            Caption = 'Ein'
+          end
+          object Label89: TLabel
+            Left = 185
+            Top = 57
+            Width = 21
+            Height = 15
+            Caption = 'Aus'
+          end
+          object Label93: TLabel
+            Left = 233
+            Top = 125
+            Width = 23
+            Height = 15
+            Caption = 'sek.'
+          end
+          object Label94: TLabel
+            Left = 233
+            Top = 101
+            Width = 23
+            Height = 15
+            Caption = 'sek.'
+          end
+          object Label96: TLabel
+            Left = 17
+            Top = 101
+            Width = 45
+            Height = 15
+            Caption = 'Puls bis'
+          end
+          object Label97: TLabel
+            Left = 233
+            Top = 173
+            Width = 23
+            Height = 15
+            Caption = 'sek.'
+          end
+          object Label100: TLabel
+            Left = 233
+            Top = 149
+            Width = 23
+            Height = 15
+            Caption = 'sek.'
+          end
+          object Label102: TLabel
+            Left = 17
+            Top = 149
+            Width = 45
+            Height = 15
+            Caption = 'Puls bis'
+          end
+          object Label104: TLabel
+            Left = 17
+            Top = 125
+            Width = 45
+            Height = 15
+            Caption = 'Puls bis'
+          end
+          object Label107: TLabel
+            Left = 17
+            Top = 173
+            Width = 45
+            Height = 15
+            Caption = 'Puls bis'
+          end
+          object Label109: TLabel
+            Left = 17
+            Top = 201
+            Width = 112
+            Height = 15
+            Caption = 'Zul'#228'ssiger Gradient:'
+          end
+          object Label110: TLabel
+            Left = 233
+            Top = 201
+            Width = 41
+            Height = 15
+            Caption = 'K / min.'
+          end
+          object Label130: TLabel
+            Left = 97
+            Top = 76
+            Width = 17
+            Height = 15
+            Caption = #176'C:'
+          end
+          object Label131: TLabel
+            Left = 97
+            Top = 100
+            Width = 17
+            Height = 15
+            Caption = #176'C:'
+          end
+          object Label132: TLabel
+            Left = 97
+            Top = 124
+            Width = 17
+            Height = 15
+            Caption = #176'C:'
+          end
+          object Label133: TLabel
+            Left = 97
+            Top = 148
+            Width = 17
+            Height = 15
+            Caption = #176'C:'
+          end
+          object Label134: TLabel
+            Left = 97
+            Top = 172
+            Width = 17
+            Height = 15
+            Caption = #176'C:'
+          end
+          object ComboBox13: TComboBox
+            Left = 176
+            Top = 225
+            Width = 49
+            Height = 23
+            Hint = 
+              'In dem hier definierten Bereich, vor erreichen der'#13#10'Zieltemperat' +
+              'ur wirkt die Gradientbegrenzung und/oder '#13#10'das Takten'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 20
+            TabOrder = 0
+            Text = '2.0'
+            Items.Strings = (
+              '0.0'
+              '0.1'
+              '0.2'
+              '0.3'
+              '0.4'
+              '0.5'
+              '0.6'
+              '0.7'
+              '0.8'
+              '0.9'
+              '1.0'
+              '1.1'
+              '1.2'
+              '1.3'
+              '1.4'
+              '1.5'
+              '1.6'
+              '1.7'
+              '1.8'
+              '1.9'
+              '2.0'
+              '2.1'
+              '2.2'
+              '2.3'
+              '2.4'
+              '2.5'
+              '2.6'
+              '2.7'
+              '2.8'
+              '2.9'
+              '3.0'
+              '3.1'
+              '3.2'
+              '3.3'
+              '3.4'
+              '3.5'
+              '3.6'
+              '3.7'
+              '3.8'
+              '3.9'
+              '4.0'
+              '4.1'
+              '4.2'
+              '4.3'
+              '4.4'
+              '4.5'
+              '4.6'
+              '4.7'
+              '4.8'
+              '4.9'
+              '5.0'
+              '5.1'
+              '5.2'
+              '5.3'
+              '5.4'
+              '5.5'
+              '5.6'
+              '5.7'
+              '5.8'
+              '5.9'
+              '6.0'
+              '6.1'
+              '6.2'
+              '6.3'
+              '6.4'
+              '6.5'
+              '6.6'
+              '6.7'
+              '6.8'
+              '6.9'
+              '7.0'
+              '7.1'
+              '7.2'
+              '7.3'
+              '7.4'
+              '7.5'
+              '7.6'
+              '7.7'
+              '7.8'
+              '7.9'
+              '8.0'
+              '8.1'
+              '8.2'
+              '8.3'
+              '8.4'
+              '8.5'
+              '8.6'
+              '8.7'
+              '8.8'
+              '8.9'
+              '9.0'
+              '9.1'
+              '9.2'
+              '9.3'
+              '9.4'
+              '9.5'
+              '9.6'
+              '9.7'
+              '9.8'
+              '9.9'
+              '10.0'
+              '10.1'
+              '10.2'
+              '10.3'
+              '10.4'
+              '10.5'
+              '10.6'
+              '10.7'
+              '10.8'
+              '10.9'
+              '11.0'
+              '11.1'
+              '11.2'
+              '11.3'
+              '11.4'
+              '11.5'
+              '11.6'
+              '11.7'
+              '11.8'
+              '11.9'
+              '12.0'
+              '12.1'
+              '12.2'
+              '12.3'
+              '12.4'
+              '12.5'
+              '12.6'
+              '12.7'
+              '12.8'
+              '12.9'
+              '13.0'
+              '13.1'
+              '13.2'
+              '13.3'
+              '13.4'
+              '13.5'
+              '13.6'
+              '13.7'
+              '13.8'
+              '13.9'
+              '14.0'
+              '14.1'
+              '14.2'
+              '14.3'
+              '14.4'
+              '14.5'
+              '14.6'
+              '14.7'
+              '14.8'
+              '14.9'
+              '15.0'
+              '15.1'
+              '15.2'
+              '15.3'
+              '15.4'
+              '15.5'
+              '15.6'
+              '15.7'
+              '15.8'
+              '15.9'
+              '16.0'
+              '16.1'
+              '16.2'
+              '16.3'
+              '16.4'
+              '16.5'
+              '16.6'
+              '16.7'
+              '16.8'
+              '16.9'
+              '17.0'
+              '17.1'
+              '17.2'
+              '17.3'
+              '17.4'
+              '17.5'
+              '17.6'
+              '17.7'
+              '17.8'
+              '17.9'
+              '18.0'
+              '18.1'
+              '18.2'
+              '18.3'
+              '18.4'
+              '18.5'
+              '18.6'
+              '18.7'
+              '18.8'
+              '18.9'
+              '19.0'
+              '19.1'
+              '19.2'
+              '19.3'
+              '19.4'
+              '19.5'
+              '19.6'
+              '19.7'
+              '19.8'
+              '19.9'
+              '20.0'
+              '20.1'
+              '20.2'
+              '20.3'
+              '20.4'
+              '20.5'
+              '20.6'
+              '20.7'
+              '20.8'
+              '20.9'
+              '21.0'
+              '21.1'
+              '21.2'
+              '21.3'
+              '21.4'
+              '21.5'
+              '21.6'
+              '21.7'
+              '21.8'
+              '21.9'
+              '22.0'
+              '22.1'
+              '22.2'
+              '22.3'
+              '22.4'
+              '22.5'
+              '22.6'
+              '22.7'
+              '22.8'
+              '22.9'
+              '23.0'
+              '23.1'
+              '23.2'
+              '23.3'
+              '23.4'
+              '23.5'
+              '23.6'
+              '23.7'
+              '23.8'
+              '23.9'
+              '24.0'
+              '24.1'
+              '24.2'
+              '24.3'
+              '24.4'
+              '24.5'
+              '24.6'
+              '24.7'
+              '24.8'
+              '24.9'
+              '25.0'
+              '25.1'
+              '25.2'
+              '25.3'
+              '25.4'
+              '25.5'
+              '25.6'
+              '25.7'
+              '25.8'
+              '25.9'
+              '26.0'
+              '26.1'
+              '26.2'
+              '26.3'
+              '26.4'
+              '26.5'
+              '26.6'
+              '26.7'
+              '26.8'
+              '26.9'
+              '27.0'
+              '27.1'
+              '27.2'
+              '27.3'
+              '27.4'
+              '27.5'
+              '27.6'
+              '27.7'
+              '27.8'
+              '27.9'
+              '28.0'
+              '28.1'
+              '28.2'
+              '28.3'
+              '28.4'
+              '28.5'
+              '28.6'
+              '28.7'
+              '28.8'
+              '28.9'
+              '29.0'
+              '29.1'
+              '29.2'
+              '29.3'
+              '29.4'
+              '29.5'
+              '29.6'
+              '29.7'
+              '29.8'
+              '29.9'
+              '30.0'
+              '30.1'
+              '30.2'
+              '30.3'
+              '30.4'
+              '30.5'
+              '30.6'
+              '30.7'
+              '30.8'
+              '30.9'
+              '31.0'
+              '31.1'
+              '31.2'
+              '31.3'
+              '31.4'
+              '31.5'
+              '31.6'
+              '31.7'
+              '31.8'
+              '31.9'
+              '32.0'
+              '32.1'
+              '32.2'
+              '32.3'
+              '32.4'
+              '32.5'
+              '32.6'
+              '32.7'
+              '32.8'
+              '32.9'
+              '33.0'
+              '33.1'
+              '33.2'
+              '33.3'
+              '33.4'
+              '33.5'
+              '33.6'
+              '33.7'
+              '33.8'
+              '33.9'
+              '34.0'
+              '34.1'
+              '34.2'
+              '34.3'
+              '34.4'
+              '34.5'
+              '34.6'
+              '34.7'
+              '34.8'
+              '34.9'
+              '35.0'
+              '35.1'
+              '35.2'
+              '35.3'
+              '35.4'
+              '35.5'
+              '35.6'
+              '35.7'
+              '35.8'
+              '35.9'
+              '36.0'
+              '36.1'
+              '36.2'
+              '36.3'
+              '36.4'
+              '36.5'
+              '36.6'
+              '36.7'
+              '36.8'
+              '36.9'
+              '37.0'
+              '37.1'
+              '37.2'
+              '37.3'
+              '37.4'
+              '37.5'
+              '37.6'
+              '37.7'
+              '37.8'
+              '37.9'
+              '38.0'
+              '38.1'
+              '38.2'
+              '38.3'
+              '38.4'
+              '38.5'
+              '38.6'
+              '38.7'
+              '38.8'
+              '38.9'
+              '39.0'
+              '39.1'
+              '39.2'
+              '39.3'
+              '39.4'
+              '39.5'
+              '39.6'
+              '39.7'
+              '39.8'
+              '39.9'
+              '40.0'
+              '40.1'
+              '40.2'
+              '40.3'
+              '40.4'
+              '40.5'
+              '40.6'
+              '40.7'
+              '40.8'
+              '40.9'
+              '41.0'
+              '41.1'
+              '41.2'
+              '41.3'
+              '41.4'
+              '41.5'
+              '41.6'
+              '41.7'
+              '41.8'
+              '41.9'
+              '42.0'
+              '42.1'
+              '42.2'
+              '42.3'
+              '42.4'
+              '42.5'
+              '42.6'
+              '42.7'
+              '42.8'
+              '42.9'
+              '43.0'
+              '43.1'
+              '43.2'
+              '43.3'
+              '43.4'
+              '43.5'
+              '43.6'
+              '43.7'
+              '43.8'
+              '43.9'
+              '44.0'
+              '44.1'
+              '44.2'
+              '44.3'
+              '44.4'
+              '44.5'
+              '44.6'
+              '44.7'
+              '44.8'
+              '44.9'
+              '45.0'
+              '45.1'
+              '45.2'
+              '45.3'
+              '45.4'
+              '45.5'
+              '45.6'
+              '45.7'
+              '45.8'
+              '45.9'
+              '46.0'
+              '46.1'
+              '46.2'
+              '46.3'
+              '46.4'
+              '46.5'
+              '46.6'
+              '46.7'
+              '46.8'
+              '46.9'
+              '47.0'
+              '47.1'
+              '47.2'
+              '47.3'
+              '47.4'
+              '47.5'
+              '47.6'
+              '47.7'
+              '47.8'
+              '47.9'
+              '48.0'
+              '48.1'
+              '48.2'
+              '48.3'
+              '48.4'
+              '48.5'
+              '48.6'
+              '48.7'
+              '48.8'
+              '48.9'
+              '49.0'
+              '49.1'
+              '49.2'
+              '49.3'
+              '49.4'
+              '49.5'
+              '49.6'
+              '49.7'
+              '49.8'
+              '49.9'
+              '50.0'
+              '50.1'
+              '50.2'
+              '50.3'
+              '50.4'
+              '50.5'
+              '50.6'
+              '50.7'
+              '50.8'
+              '50.9'
+              '51.0'
+              '51.1'
+              '51.2'
+              '51.3'
+              '51.4'
+              '51.5'
+              '51.6'
+              '51.7'
+              '51.8'
+              '51.9'
+              '52.0'
+              '52.1'
+              '52.2'
+              '52.3'
+              '52.4'
+              '52.5'
+              '52.6'
+              '52.7'
+              '52.8'
+              '52.9'
+              '53.0'
+              '53.1'
+              '53.2'
+              '53.3'
+              '53.4'
+              '53.5'
+              '53.6'
+              '53.7'
+              '53.8'
+              '53.9'
+              '54.0'
+              '54.1'
+              '54.2'
+              '54.3'
+              '54.4'
+              '54.5'
+              '54.6'
+              '54.7'
+              '54.8'
+              '54.9'
+              '55.0'
+              '55.1'
+              '55.2'
+              '55.3'
+              '55.4'
+              '55.5'
+              '55.6'
+              '55.7'
+              '55.8'
+              '55.9'
+              '56.0'
+              '56.1'
+              '56.2'
+              '56.3'
+              '56.4'
+              '56.5'
+              '56.6'
+              '56.7'
+              '56.8'
+              '56.9'
+              '57.0'
+              '57.1'
+              '57.2'
+              '57.3'
+              '57.4'
+              '57.5'
+              '57.6'
+              '57.7'
+              '57.8'
+              '57.9'
+              '58.0'
+              '58.1'
+              '58.2'
+              '58.3'
+              '58.4'
+              '58.5'
+              '58.6'
+              '58.7'
+              '58.8'
+              '58.9'
+              '59.0'
+              '59.1'
+              '59.2'
+              '59.3'
+              '59.4'
+              '59.5'
+              '59.6'
+              '59.7'
+              '59.8'
+              '59.9'
+              '60.0'
+              '60.1'
+              '60.2'
+              '60.3'
+              '60.4'
+              '60.5'
+              '60.6'
+              '60.7'
+              '60.8'
+              '60.9'
+              '61.0'
+              '61.1'
+              '61.2'
+              '61.3'
+              '61.4'
+              '61.5'
+              '61.6'
+              '61.7'
+              '61.8'
+              '61.9'
+              '62.0'
+              '62.1'
+              '62.2'
+              '62.3'
+              '62.4'
+              '62.5'
+              '62.6'
+              '62.7'
+              '62.8'
+              '62.9'
+              '63.0'
+              '63.1'
+              '63.2'
+              '63.3'
+              '63.4'
+              '63.5'
+              '63.6'
+              '63.7'
+              '63.8'
+              '63.9'
+              '64.0'
+              '64.1'
+              '64.2'
+              '64.3'
+              '64.4'
+              '64.5'
+              '64.6'
+              '64.7'
+              '64.8'
+              '64.9'
+              '65.0'
+              '65.1'
+              '65.2'
+              '65.3'
+              '65.4'
+              '65.5'
+              '65.6'
+              '65.7'
+              '65.8'
+              '65.9'
+              '66.0'
+              '66.1'
+              '66.2'
+              '66.3'
+              '66.4'
+              '66.5'
+              '66.6'
+              '66.7'
+              '66.8'
+              '66.9'
+              '67.0'
+              '67.1'
+              '67.2'
+              '67.3'
+              '67.4'
+              '67.5'
+              '67.6'
+              '67.7'
+              '67.8'
+              '67.9'
+              '68.0'
+              '68.1'
+              '68.2'
+              '68.3'
+              '68.4'
+              '68.5'
+              '68.6'
+              '68.7'
+              '68.8'
+              '68.9'
+              '69.0'
+              '69.1'
+              '69.2'
+              '69.3'
+              '69.4'
+              '69.5'
+              '69.6'
+              '69.7'
+              '69.8'
+              '69.9'
+              '70.0'
+              '70.1'
+              '70.2'
+              '70.3'
+              '70.4'
+              '70.5'
+              '70.6'
+              '70.7'
+              '70.8'
+              '70.9'
+              '71.0'
+              '71.1'
+              '71.2'
+              '71.3'
+              '71.4'
+              '71.5'
+              '71.6'
+              '71.7'
+              '71.8'
+              '71.9'
+              '72.0'
+              '72.1'
+              '72.2'
+              '72.3'
+              '72.4'
+              '72.5'
+              '72.6'
+              '72.7'
+              '72.8'
+              '72.9'
+              '73.0'
+              '73.1'
+              '73.2'
+              '73.3'
+              '73.4'
+              '73.5'
+              '73.6'
+              '73.7'
+              '73.8'
+              '73.9'
+              '74.0'
+              '74.1'
+              '74.2'
+              '74.3'
+              '74.4'
+              '74.5'
+              '74.6'
+              '74.7'
+              '74.8'
+              '74.9'
+              '75.0'
+              '75.1'
+              '75.2'
+              '75.3'
+              '75.4'
+              '75.5'
+              '75.6'
+              '75.7'
+              '75.8'
+              '75.9'
+              '76.0'
+              '76.1'
+              '76.2'
+              '76.3'
+              '76.4'
+              '76.5'
+              '76.6'
+              '76.7'
+              '76.8'
+              '76.9'
+              '77.0'
+              '77.1'
+              '77.2'
+              '77.3'
+              '77.4'
+              '77.5'
+              '77.6'
+              '77.7'
+              '77.8'
+              '77.9'
+              '78.0'
+              '78.1'
+              '78.2'
+              '78.3'
+              '78.4'
+              '78.5'
+              '78.6'
+              '78.7'
+              '78.8'
+              '78.9'
+              '79.0'
+              '79.1'
+              '79.2'
+              '79.3'
+              '79.4'
+              '79.5'
+              '79.6'
+              '79.7'
+              '79.8'
+              '79.9'
+              '80.0'
+              '80.1'
+              '80.2'
+              '80.3'
+              '80.4'
+              '80.5'
+              '80.6'
+              '80.7'
+              '80.8'
+              '80.9'
+              '81.0'
+              '81.1'
+              '81.2'
+              '81.3'
+              '81.4'
+              '81.5'
+              '81.6'
+              '81.7'
+              '81.8'
+              '81.9'
+              '82.0'
+              '82.1'
+              '82.2'
+              '82.3'
+              '82.4'
+              '82.5'
+              '82.6'
+              '82.7'
+              '82.8'
+              '82.9'
+              '83.0'
+              '83.1'
+              '83.2'
+              '83.3'
+              '83.4'
+              '83.5'
+              '83.6'
+              '83.7'
+              '83.8'
+              '83.9'
+              '84.0'
+              '84.1'
+              '84.2'
+              '84.3'
+              '84.4'
+              '84.5'
+              '84.6'
+              '84.7'
+              '84.8'
+              '84.9'
+              '85.0'
+              '85.1'
+              '85.2'
+              '85.3'
+              '85.4'
+              '85.5'
+              '85.6'
+              '85.7'
+              '85.8'
+              '85.9'
+              '86.0'
+              '86.1'
+              '86.2'
+              '86.3'
+              '86.4'
+              '86.5'
+              '86.6'
+              '86.7'
+              '86.8'
+              '86.9'
+              '87.0'
+              '87.1'
+              '87.2'
+              '87.3'
+              '87.4'
+              '87.5'
+              '87.6'
+              '87.7'
+              '87.8'
+              '87.9'
+              '88.0'
+              '88.1'
+              '88.2'
+              '88.3'
+              '88.4'
+              '88.5'
+              '88.6'
+              '88.7'
+              '88.8'
+              '88.9'
+              '89.0'
+              '89.1'
+              '89.2'
+              '89.3'
+              '89.4'
+              '89.5'
+              '89.6'
+              '89.7'
+              '89.8'
+              '89.9'
+              '90.0'
+              '90.1'
+              '90.2'
+              '90.3'
+              '90.4'
+              '90.5'
+              '90.6'
+              '90.7'
+              '90.8'
+              '90.9'
+              '91.0'
+              '91.1'
+              '91.2'
+              '91.3'
+              '91.4'
+              '91.5'
+              '91.6'
+              '91.7'
+              '91.8'
+              '91.9'
+              '92.0'
+              '92.1'
+              '92.2'
+              '92.3'
+              '92.4'
+              '92.5'
+              '92.6'
+              '92.7'
+              '92.8'
+              '92.9'
+              '93.0'
+              '93.1'
+              '93.2'
+              '93.3'
+              '93.4'
+              '93.5'
+              '93.6'
+              '93.7'
+              '93.8'
+              '93.9'
+              '94.0'
+              '94.1'
+              '94.2'
+              '94.3'
+              '94.4'
+              '94.5'
+              '94.6'
+              '94.7'
+              '94.8'
+              '94.9'
+              '95.0'
+              '95.1'
+              '95.2'
+              '95.3'
+              '95.4'
+              '95.5'
+              '95.6'
+              '95.7'
+              '95.8'
+              '95.9'
+              '96.0'
+              '96.1'
+              '96.2'
+              '96.3'
+              '96.4'
+              '96.5'
+              '96.6'
+              '96.7'
+              '96.8'
+              '96.9'
+              '97.0'
+              '97.1'
+              '97.2'
+              '97.3'
+              '97.4'
+              '97.5'
+              '97.6'
+              '97.7'
+              '97.8'
+              '97.9'
+              '98.0'
+              '98.1'
+              '98.2'
+              '98.3'
+              '98.4'
+              '98.5'
+              '98.6'
+              '98.7'
+              '98.8'
+              '98.9'
+              '99.0'
+              '99.1'
+              '99.2'
+              '99.3'
+              '99.4'
+              '99.5'
+              '99.6'
+              '99.7'
+              '99.8'
+              '99.9')
+          end
+          object ComboBox14: TComboBox
+            Left = 120
+            Top = 73
+            Width = 49
+            Height = 23
+            Hint = 'Pulsweite im Temperaturbereich'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 5
+            TabOrder = 1
+            Text = '5'
+            Items.Strings = (
+              '0'
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              '9'
+              '10'
+              '11'
+              '12'
+              '13'
+              '14'
+              '15'
+              '16'
+              '17'
+              '18'
+              '19'
+              '20'
+              '21'
+              '22'
+              '23'
+              '24'
+              '25'
+              '26'
+              '27'
+              '28'
+              '29'
+              '30'
+              '31'
+              '32'
+              '33'
+              '34'
+              '35'
+              '36'
+              '37'
+              '38'
+              '39'
+              '40'
+              '41'
+              '42'
+              '43'
+              '44'
+              '45'
+              '46'
+              '47'
+              '48'
+              '49'
+              '50'
+              '51'
+              '52'
+              '53'
+              '54'
+              '55'
+              '56'
+              '57'
+              '58'
+              '59'
+              '60'
+              '61'
+              '62'
+              '63'
+              '64'
+              '65'
+              '66'
+              '67'
+              '68'
+              '69'
+              '70'
+              '71'
+              '72'
+              '73'
+              '74'
+              '75'
+              '76'
+              '77'
+              '78'
+              '79'
+              '80'
+              '81'
+              '82'
+              '83'
+              '84'
+              '85'
+              '86'
+              '87'
+              '88'
+              '89'
+              '90'
+              '91'
+              '92'
+              '93'
+              '94'
+              '95'
+              '96'
+              '97'
+              '98'
+              '99'
+              '100'
+              '')
+          end
+          object ComboBox15: TComboBox
+            Left = 176
+            Top = 73
+            Width = 49
+            Height = 23
+            Hint = 'Pausenweite im Temperaturbereich'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 5
+            TabOrder = 2
+            Text = '5'
+            Items.Strings = (
+              '0'
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              '9'
+              '10'
+              '11'
+              '12'
+              '13'
+              '14'
+              '15'
+              '16'
+              '17'
+              '18'
+              '19'
+              '20'
+              '21'
+              '22'
+              '23'
+              '24'
+              '25'
+              '26'
+              '27'
+              '28'
+              '29'
+              '30'
+              '31'
+              '32'
+              '33'
+              '34'
+              '35'
+              '36'
+              '37'
+              '38'
+              '39'
+              '40'
+              '41'
+              '42'
+              '43'
+              '44'
+              '45'
+              '46'
+              '47'
+              '48'
+              '49'
+              '50'
+              '51'
+              '52'
+              '53'
+              '54'
+              '55'
+              '56'
+              '57'
+              '58'
+              '59'
+              '60'
+              '61'
+              '62'
+              '63'
+              '64'
+              '65'
+              '66'
+              '67'
+              '68'
+              '69'
+              '70'
+              '71'
+              '72'
+              '73'
+              '74'
+              '75'
+              '76'
+              '77'
+              '78'
+              '79'
+              '80'
+              '81'
+              '82'
+              '83'
+              '84'
+              '85'
+              '86'
+              '87'
+              '88'
+              '89'
+              '90'
+              '91'
+              '92'
+              '93'
+              '94'
+              '95'
+              '96'
+              '97'
+              '98'
+              '99'
+              '100'
+              '')
+          end
+          object ComboBox17: TComboBox
+            Left = 120
+            Top = 97
+            Width = 49
+            Height = 23
+            Hint = 'Pulsweite im Temperaturbereich'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 5
+            TabOrder = 3
+            Text = '5'
+            Items.Strings = (
+              '0'
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              '9'
+              '10'
+              '11'
+              '12'
+              '13'
+              '14'
+              '15'
+              '16'
+              '17'
+              '18'
+              '19'
+              '20'
+              '21'
+              '22'
+              '23'
+              '24'
+              '25'
+              '26'
+              '27'
+              '28'
+              '29'
+              '30'
+              '31'
+              '32'
+              '33'
+              '34'
+              '35'
+              '36'
+              '37'
+              '38'
+              '39'
+              '40'
+              '41'
+              '42'
+              '43'
+              '44'
+              '45'
+              '46'
+              '47'
+              '48'
+              '49'
+              '50'
+              '51'
+              '52'
+              '53'
+              '54'
+              '55'
+              '56'
+              '57'
+              '58'
+              '59'
+              '60'
+              '61'
+              '62'
+              '63'
+              '64'
+              '65'
+              '66'
+              '67'
+              '68'
+              '69'
+              '70'
+              '71'
+              '72'
+              '73'
+              '74'
+              '75'
+              '76'
+              '77'
+              '78'
+              '79'
+              '80'
+              '81'
+              '82'
+              '83'
+              '84'
+              '85'
+              '86'
+              '87'
+              '88'
+              '89'
+              '90'
+              '91'
+              '92'
+              '93'
+              '94'
+              '95'
+              '96'
+              '97'
+              '98'
+              '99'
+              '100'
+              '')
+          end
+          object ComboBox18: TComboBox
+            Left = 176
+            Top = 97
+            Width = 49
+            Height = 23
+            Hint = 'Pausenweite im Temperaturbereich'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 5
+            TabOrder = 4
+            Text = '5'
+            Items.Strings = (
+              '0'
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              '9'
+              '10'
+              '11'
+              '12'
+              '13'
+              '14'
+              '15'
+              '16'
+              '17'
+              '18'
+              '19'
+              '20'
+              '21'
+              '22'
+              '23'
+              '24'
+              '25'
+              '26'
+              '27'
+              '28'
+              '29'
+              '30'
+              '31'
+              '32'
+              '33'
+              '34'
+              '35'
+              '36'
+              '37'
+              '38'
+              '39'
+              '40'
+              '41'
+              '42'
+              '43'
+              '44'
+              '45'
+              '46'
+              '47'
+              '48'
+              '49'
+              '50'
+              '51'
+              '52'
+              '53'
+              '54'
+              '55'
+              '56'
+              '57'
+              '58'
+              '59'
+              '60'
+              '61'
+              '62'
+              '63'
+              '64'
+              '65'
+              '66'
+              '67'
+              '68'
+              '69'
+              '70'
+              '71'
+              '72'
+              '73'
+              '74'
+              '75'
+              '76'
+              '77'
+              '78'
+              '79'
+              '80'
+              '81'
+              '82'
+              '83'
+              '84'
+              '85'
+              '86'
+              '87'
+              '88'
+              '89'
+              '90'
+              '91'
+              '92'
+              '93'
+              '94'
+              '95'
+              '96'
+              '97'
+              '98'
+              '99'
+              '100'
+              '')
+          end
+          object ComboBox19: TComboBox
+            Left = 120
+            Top = 121
+            Width = 49
+            Height = 23
+            Hint = 'Pulsweite im Temperaturbereich'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 5
+            TabOrder = 5
+            Text = '5'
+            Items.Strings = (
+              '0'
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              '9'
+              '10'
+              '11'
+              '12'
+              '13'
+              '14'
+              '15'
+              '16'
+              '17'
+              '18'
+              '19'
+              '20'
+              '21'
+              '22'
+              '23'
+              '24'
+              '25'
+              '26'
+              '27'
+              '28'
+              '29'
+              '30'
+              '31'
+              '32'
+              '33'
+              '34'
+              '35'
+              '36'
+              '37'
+              '38'
+              '39'
+              '40'
+              '41'
+              '42'
+              '43'
+              '44'
+              '45'
+              '46'
+              '47'
+              '48'
+              '49'
+              '50'
+              '51'
+              '52'
+              '53'
+              '54'
+              '55'
+              '56'
+              '57'
+              '58'
+              '59'
+              '60'
+              '61'
+              '62'
+              '63'
+              '64'
+              '65'
+              '66'
+              '67'
+              '68'
+              '69'
+              '70'
+              '71'
+              '72'
+              '73'
+              '74'
+              '75'
+              '76'
+              '77'
+              '78'
+              '79'
+              '80'
+              '81'
+              '82'
+              '83'
+              '84'
+              '85'
+              '86'
+              '87'
+              '88'
+              '89'
+              '90'
+              '91'
+              '92'
+              '93'
+              '94'
+              '95'
+              '96'
+              '97'
+              '98'
+              '99'
+              '100'
+              '')
+          end
+          object ComboBox20: TComboBox
+            Left = 176
+            Top = 121
+            Width = 49
+            Height = 23
+            Hint = 'Pausenweite im Temperaturbereich'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 5
+            TabOrder = 6
+            Text = '5'
+            Items.Strings = (
+              '0'
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              '9'
+              '10'
+              '11'
+              '12'
+              '13'
+              '14'
+              '15'
+              '16'
+              '17'
+              '18'
+              '19'
+              '20'
+              '21'
+              '22'
+              '23'
+              '24'
+              '25'
+              '26'
+              '27'
+              '28'
+              '29'
+              '30'
+              '31'
+              '32'
+              '33'
+              '34'
+              '35'
+              '36'
+              '37'
+              '38'
+              '39'
+              '40'
+              '41'
+              '42'
+              '43'
+              '44'
+              '45'
+              '46'
+              '47'
+              '48'
+              '49'
+              '50'
+              '51'
+              '52'
+              '53'
+              '54'
+              '55'
+              '56'
+              '57'
+              '58'
+              '59'
+              '60'
+              '61'
+              '62'
+              '63'
+              '64'
+              '65'
+              '66'
+              '67'
+              '68'
+              '69'
+              '70'
+              '71'
+              '72'
+              '73'
+              '74'
+              '75'
+              '76'
+              '77'
+              '78'
+              '79'
+              '80'
+              '81'
+              '82'
+              '83'
+              '84'
+              '85'
+              '86'
+              '87'
+              '88'
+              '89'
+              '90'
+              '91'
+              '92'
+              '93'
+              '94'
+              '95'
+              '96'
+              '97'
+              '98'
+              '99'
+              '100'
+              '')
+          end
+          object ComboBox21: TComboBox
+            Left = 120
+            Top = 145
+            Width = 49
+            Height = 23
+            Hint = 'Pulsweite im Temperaturbereich'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 5
+            TabOrder = 7
+            Text = '5'
+            Items.Strings = (
+              '0'
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              '9'
+              '10'
+              '11'
+              '12'
+              '13'
+              '14'
+              '15'
+              '16'
+              '17'
+              '18'
+              '19'
+              '20'
+              '21'
+              '22'
+              '23'
+              '24'
+              '25'
+              '26'
+              '27'
+              '28'
+              '29'
+              '30'
+              '31'
+              '32'
+              '33'
+              '34'
+              '35'
+              '36'
+              '37'
+              '38'
+              '39'
+              '40'
+              '41'
+              '42'
+              '43'
+              '44'
+              '45'
+              '46'
+              '47'
+              '48'
+              '49'
+              '50'
+              '51'
+              '52'
+              '53'
+              '54'
+              '55'
+              '56'
+              '57'
+              '58'
+              '59'
+              '60'
+              '61'
+              '62'
+              '63'
+              '64'
+              '65'
+              '66'
+              '67'
+              '68'
+              '69'
+              '70'
+              '71'
+              '72'
+              '73'
+              '74'
+              '75'
+              '76'
+              '77'
+              '78'
+              '79'
+              '80'
+              '81'
+              '82'
+              '83'
+              '84'
+              '85'
+              '86'
+              '87'
+              '88'
+              '89'
+              '90'
+              '91'
+              '92'
+              '93'
+              '94'
+              '95'
+              '96'
+              '97'
+              '98'
+              '99'
+              '100'
+              '')
+          end
+          object ComboBox22: TComboBox
+            Left = 176
+            Top = 145
+            Width = 49
+            Height = 23
+            Hint = 'Pausenweite im Temperaturbereich'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 5
+            TabOrder = 8
+            Text = '5'
+            Items.Strings = (
+              '0'
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              '9'
+              '10'
+              '11'
+              '12'
+              '13'
+              '14'
+              '15'
+              '16'
+              '17'
+              '18'
+              '19'
+              '20'
+              '21'
+              '22'
+              '23'
+              '24'
+              '25'
+              '26'
+              '27'
+              '28'
+              '29'
+              '30'
+              '31'
+              '32'
+              '33'
+              '34'
+              '35'
+              '36'
+              '37'
+              '38'
+              '39'
+              '40'
+              '41'
+              '42'
+              '43'
+              '44'
+              '45'
+              '46'
+              '47'
+              '48'
+              '49'
+              '50'
+              '51'
+              '52'
+              '53'
+              '54'
+              '55'
+              '56'
+              '57'
+              '58'
+              '59'
+              '60'
+              '61'
+              '62'
+              '63'
+              '64'
+              '65'
+              '66'
+              '67'
+              '68'
+              '69'
+              '70'
+              '71'
+              '72'
+              '73'
+              '74'
+              '75'
+              '76'
+              '77'
+              '78'
+              '79'
+              '80'
+              '81'
+              '82'
+              '83'
+              '84'
+              '85'
+              '86'
+              '87'
+              '88'
+              '89'
+              '90'
+              '91'
+              '92'
+              '93'
+              '94'
+              '95'
+              '96'
+              '97'
+              '98'
+              '99'
+              '100'
+              '')
+          end
+          object ComboBox23: TComboBox
+            Left = 176
+            Top = 169
+            Width = 49
+            Height = 23
+            Hint = 'Pausenweite im Temperaturbereich'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 5
+            TabOrder = 9
+            Text = '5'
+            Items.Strings = (
+              '0'
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              '9'
+              '10'
+              '11'
+              '12'
+              '13'
+              '14'
+              '15'
+              '16'
+              '17'
+              '18'
+              '19'
+              '20'
+              '21'
+              '22'
+              '23'
+              '24'
+              '25'
+              '26'
+              '27'
+              '28'
+              '29'
+              '30'
+              '31'
+              '32'
+              '33'
+              '34'
+              '35'
+              '36'
+              '37'
+              '38'
+              '39'
+              '40'
+              '41'
+              '42'
+              '43'
+              '44'
+              '45'
+              '46'
+              '47'
+              '48'
+              '49'
+              '50'
+              '51'
+              '52'
+              '53'
+              '54'
+              '55'
+              '56'
+              '57'
+              '58'
+              '59'
+              '60'
+              '61'
+              '62'
+              '63'
+              '64'
+              '65'
+              '66'
+              '67'
+              '68'
+              '69'
+              '70'
+              '71'
+              '72'
+              '73'
+              '74'
+              '75'
+              '76'
+              '77'
+              '78'
+              '79'
+              '80'
+              '81'
+              '82'
+              '83'
+              '84'
+              '85'
+              '86'
+              '87'
+              '88'
+              '89'
+              '90'
+              '91'
+              '92'
+              '93'
+              '94'
+              '95'
+              '96'
+              '97'
+              '98'
+              '99'
+              '100'
+              '')
+          end
+          object ComboBox24: TComboBox
+            Left = 120
+            Top = 169
+            Width = 49
+            Height = 23
+            Hint = 'Pulsweite im Temperaturbereich'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 5
+            TabOrder = 10
+            Text = '5'
+            Items.Strings = (
+              '0'
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+              '6'
+              '7'
+              '8'
+              '9'
+              '10'
+              '11'
+              '12'
+              '13'
+              '14'
+              '15'
+              '16'
+              '17'
+              '18'
+              '19'
+              '20'
+              '21'
+              '22'
+              '23'
+              '24'
+              '25'
+              '26'
+              '27'
+              '28'
+              '29'
+              '30'
+              '31'
+              '32'
+              '33'
+              '34'
+              '35'
+              '36'
+              '37'
+              '38'
+              '39'
+              '40'
+              '41'
+              '42'
+              '43'
+              '44'
+              '45'
+              '46'
+              '47'
+              '48'
+              '49'
+              '50'
+              '51'
+              '52'
+              '53'
+              '54'
+              '55'
+              '56'
+              '57'
+              '58'
+              '59'
+              '60'
+              '61'
+              '62'
+              '63'
+              '64'
+              '65'
+              '66'
+              '67'
+              '68'
+              '69'
+              '70'
+              '71'
+              '72'
+              '73'
+              '74'
+              '75'
+              '76'
+              '77'
+              '78'
+              '79'
+              '80'
+              '81'
+              '82'
+              '83'
+              '84'
+              '85'
+              '86'
+              '87'
+              '88'
+              '89'
+              '90'
+              '91'
+              '92'
+              '93'
+              '94'
+              '95'
+              '96'
+              '97'
+              '98'
+              '99'
+              '100'
+              '')
+          end
+          object ComboBox25: TComboBox
+            Left = 176
+            Top = 197
+            Width = 49
+            Height = 23
+            Hint = 
+              'Wird der Gradient '#252'berschritten, wird die Heizung'#13#10'bereits vor e' +
+              'rreichen der Zieltemperatur audgeschaltet.'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 9
+            TabOrder = 11
+            Text = '1.0'
+            Items.Strings = (
+              '0.1'
+              '0.2'
+              '0.3'
+              '0.4'
+              '0.5'
+              '0.6'
+              '0.7'
+              '0.8'
+              '0.9'
+              '1.0'
+              '1.1'
+              '1.2'
+              '1.3'
+              '1.4'
+              '1.5'
+              '1.6'
+              '1.7'
+              '1.8'
+              '1.9'
+              '2.0'
+              '2.1'
+              '2.2'
+              '2.3'
+              '2.4'
+              '2.5'
+              '2.6'
+              '2.7'
+              '2.8'
+              '2.9'
+              '3.0')
+          end
+          object Edit84: TEdit
+            Left = 69
+            Top = 97
+            Width = 25
+            Height = 23
+            Hint = 'Temperaturbereich f'#252'r Pulsstufe'
+            TabOrder = 12
+            Text = '70'
+            OnExit = Edit84Exit
+            OnKeyPress = Solltempwahl1KeyPress
+          end
+          object Edit85: TEdit
+            Left = 69
+            Top = 121
+            Width = 25
+            Height = 23
+            Hint = 'Temperaturbereich f'#252'r Pulsstufe'
+            TabOrder = 13
+            Text = '80'
+            OnExit = Edit85Exit
+            OnKeyPress = Solltempwahl1KeyPress
+          end
+          object Edit86: TEdit
+            Left = 69
+            Top = 145
+            Width = 25
+            Height = 23
+            Hint = 'Temperaturbereich f'#252'r Pulsstufe'
+            TabOrder = 14
+            Text = '90'
+            OnExit = Edit86Exit
+            OnKeyPress = Solltempwahl1KeyPress
+          end
+          object Edit87: TEdit
+            Left = 66
+            Top = 169
+            Width = 29
+            Height = 23
+            Hint = 'Temperaturbereich f'#252'r Pulsstufe'
+            TabStop = False
+            ReadOnly = True
+            TabOrder = 15
+            Text = '100'
+            OnKeyPress = Solltempwahl1KeyPress
+          end
+          object Edit88: TEdit
+            Left = 68
+            Top = 73
+            Width = 25
+            Height = 23
+            TabStop = False
+            TabOrder = 16
+            Text = '0'
+            Visible = False
+            OnKeyPress = Solltempwahl1KeyPress
+          end
+          object Edit83: TEdit
+            Left = 69
+            Top = 73
+            Width = 25
+            Height = 23
+            Hint = 'Temperaturbereich f'#252'r Pulsstufe'
+            TabOrder = 17
+            Text = '60'
+            OnExit = Edit83Exit
+            OnKeyPress = Solltempwahl1KeyPress
+          end
+          object CheckBox36: TCheckBox
+            Left = 16
+            Top = 33
+            Width = 265
+            Height = 19
+            Hint = 
+              'Das Heizungsrelais wird gem. den Eingaben unter Einstellungen, '#13 +
+              #10'bei '#220'berschreitung des Gradienten vor Erreichen der Ziel-'#13#10'temp' +
+              'eratur, ausgeschaltet.'
+            Caption = 'Gradientbegrenzte Heizung verwenden'
+            Checked = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Arial'
+            Font.Style = []
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            State = cbChecked
+            TabOrder = 18
+          end
+          object CheckBox34: TCheckBox
+            Left = 16
+            Top = 8
+            Width = 201
+            Height = 17
+            Hint = 
+              'Das Heizungsrelais wird gem. den Eingaben unter Einstellungen, '#13 +
+              #10'vor Erreichen der Zieltemperatur, gepulst.'
+            Caption = 'Gepulste Heizung verwenden'
+            Checked = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Arial'
+            Font.Style = []
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            State = cbChecked
+            TabOrder = 19
+          end
+        end
+        object TabSheet16: TTabSheet
+          Caption = 'Hysterese'
+          ImageIndex = 1
+          object Label112: TLabel
+            Left = 17
+            Top = 52
+            Width = 109
+            Height = 15
+            Caption = 'Heizungshysterese:'
+          end
+          object Label113: TLabel
+            Left = 232
+            Top = 52
+            Width = 8
+            Height = 15
+            Caption = 'K'
+          end
+          object Label95: TLabel
+            Left = 232
+            Top = 76
+            Width = 8
+            Height = 15
+            Caption = 'K'
+          end
+          object Label98: TLabel
+            Left = 18
+            Top = 76
+            Width = 110
+            Height = 15
+            Caption = 'K'#252'hlungshysterese:'
+          end
+          object ComboBox26: TComboBox
+            Left = 176
+            Top = 48
+            Width = 49
+            Height = 23
+            Hint = 
+              'Das Heizungsrelais wird beim erreichen der Zieltemperatur'#13#10'ausge' +
+              'schaltet. Eingeschaltet wird erst wieder nach '#13#10'Unterschreitung ' +
+              'der Ziel-Temperatur um den hier definierten '#13#10'Hysterese-Wert.'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 20
+            TabOrder = 0
+            Text = '2.0'
+            OnChange = ComboBox26Change
+            Items.Strings = (
+              '0.0'
+              '0.1'
+              '0.2'
+              '0.3'
+              '0.4'
+              '0.5'
+              '0.6'
+              '0.7'
+              '0.8'
+              '0.9'
+              '1.0'
+              '1.1'
+              '1.2'
+              '1.3'
+              '1.4'
+              '1.5'
+              '1.6'
+              '1.7'
+              '1.8'
+              '1.9'
+              '2.0'
+              '2.1'
+              '2.2'
+              '2.3'
+              '2.4'
+              '2.5'
+              '2.6'
+              '2.7'
+              '2.8'
+              '2.9'
+              '3.0'
+              #9)
+          end
+          object ComboBox29: TComboBox
+            Left = 176
+            Top = 73
+            Width = 49
+            Height = 23
+            Hint = 
+              'Das Heizungsrelais wird beim erreichen der Zieltemperatur'#13#10'ausge' +
+              'schaltet. Eingeschaltet wird erst wieder nach '#13#10'Unterschreitung ' +
+              'der Ziel-Temperatur um den hier definierten '#13#10'Hysterese-Wert.'
+            Style = csDropDownList
+            ItemHeight = 15
+            ItemIndex = 20
+            TabOrder = 1
+            Text = '2.0'
+            OnChange = ComboBox29Change
+            Items.Strings = (
+              '0.0'
+              '0.1'
+              '0.2'
+              '0.3'
+              '0.4'
+              '0.5'
+              '0.6'
+              '0.7'
+              '0.8'
+              '0.9'
+              '1.0'
+              '1.1'
+              '1.2'
+              '1.3'
+              '1.4'
+              '1.5'
+              '1.6'
+              '1.7'
+              '1.8'
+              '1.9'
+              '2.0'
+              '2.1'
+              '2.2'
+              '2.3'
+              '2.4'
+              '2.5'
+              '2.6'
+              '2.7'
+              '2.8'
+              '2.9'
+              '3.0'
+              #9)
+          end
+          object CheckBox37: TCheckBox
+            Left = 16
+            Top = 8
+            Width = 209
+            Height = 17
+            Hint = 
+              'Das Heizungsrelais wird beim erreichen der Zieltemperatur'#13#10'ausge' +
+              'schaltet. Eingeschaltet wird erst wieder nach '#13#10'Unterschreitung ' +
+              'des unter Einstellungen definierten '#13#10'Hysterese-Werts.'
+            Caption = 'Temperatur Hysterese verwenden'
+            Checked = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Arial'
+            Font.Style = []
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            State = cbChecked
+            TabOrder = 2
+          end
         end
       end
     end
@@ -22355,6 +22919,47 @@ object Form1: TForm1
           '1007'
           '1008'
           '1009'
+          '1010'
+          '1011'
+          '1012'
+          '1013'
+          '1014'
+          '1015'
+          '1016'
+          '1017'
+          '1018'
+          '1019'
+          '1020'
+          '1021'
+          '1022'
+          '1023'
+          '1024'
+          '1025'
+          '1026'
+          '1027'
+          '1028'
+          '1029'
+          '1030'
+          '1031'
+          '1032'
+          '1033'
+          '1034'
+          '1035'
+          '1036'
+          '1037'
+          '1038'
+          '1039'
+          '1040'
+          '1041'
+          '1042'
+          '1043'
+          '1044'
+          '1045'
+          '1046'
+          '1047'
+          '1048'
+          '1049'
+          '1050'
           '2000'
           '2001'
           '2002'
@@ -22365,6 +22970,47 @@ object Form1: TForm1
           '2007'
           '2008'
           '2009'
+          '2010'
+          '2011'
+          '2012'
+          '2013'
+          '2014'
+          '2015'
+          '2016'
+          '2017'
+          '2018'
+          '2019'
+          '2020'
+          '2021'
+          '2022'
+          '2023'
+          '2024'
+          '2025'
+          '2026'
+          '2027'
+          '2028'
+          '2029'
+          '2030'
+          '2031'
+          '2032'
+          '2033'
+          '2034'
+          '2035'
+          '2036'
+          '2037'
+          '2038'
+          '2039'
+          '2040'
+          '2041'
+          '2042'
+          '2043'
+          '2044'
+          '2045'
+          '2046'
+          '2047'
+          '2048'
+          '2049'
+          '2050'
           '3000'
           '3001'
           '3002'
@@ -22375,6 +23021,47 @@ object Form1: TForm1
           '3007'
           '3008'
           '3009'
+          '3010'
+          '3011'
+          '3012'
+          '3013'
+          '3014'
+          '3015'
+          '3016'
+          '3017'
+          '3018'
+          '3019'
+          '3020'
+          '3021'
+          '3022'
+          '3023'
+          '3024'
+          '3025'
+          '3026'
+          '3027'
+          '3028'
+          '3029'
+          '3030'
+          '3031'
+          '3032'
+          '3033'
+          '3034'
+          '3035'
+          '3036'
+          '3037'
+          '3038'
+          '3039'
+          '3040'
+          '3041'
+          '3042'
+          '3043'
+          '3044'
+          '3045'
+          '3046'
+          '3047'
+          '3048'
+          '3049'
+          '3050'
           '4000'
           '4001'
           '4002'
@@ -22385,6 +23072,47 @@ object Form1: TForm1
           '4007'
           '4008'
           '4009'
+          '4010'
+          '4011'
+          '4012'
+          '4013'
+          '4014'
+          '4015'
+          '4016'
+          '4017'
+          '4018'
+          '4019'
+          '4020'
+          '4021'
+          '4022'
+          '4023'
+          '4024'
+          '4025'
+          '4026'
+          '4027'
+          '4028'
+          '4029'
+          '4030'
+          '4031'
+          '4032'
+          '4033'
+          '4034'
+          '4035'
+          '4036'
+          '4037'
+          '4038'
+          '4039'
+          '4040'
+          '4041'
+          '4042'
+          '4043'
+          '4044'
+          '4045'
+          '4046'
+          '4047'
+          '4048'
+          '4049'
+          '4050'
           '5000'
           '5001'
           '5002'
@@ -22395,6 +23123,47 @@ object Form1: TForm1
           '5007'
           '5008'
           '5009'
+          '5010'
+          '5011'
+          '5012'
+          '5013'
+          '5014'
+          '5015'
+          '5016'
+          '5017'
+          '5018'
+          '5019'
+          '5020'
+          '5021'
+          '5022'
+          '5023'
+          '5024'
+          '5025'
+          '5026'
+          '5027'
+          '5028'
+          '5029'
+          '5030'
+          '5031'
+          '5032'
+          '5033'
+          '5034'
+          '5035'
+          '5036'
+          '5037'
+          '5038'
+          '5039'
+          '5040'
+          '5041'
+          '5042'
+          '5043'
+          '5044'
+          '5045'
+          '5046'
+          '5047'
+          '5048'
+          '5049'
+          '5050'
           '6000'
           '6001'
           '6002'
@@ -22405,6 +23174,47 @@ object Form1: TForm1
           '6007'
           '6008'
           '6009'
+          '6010'
+          '6011'
+          '6012'
+          '6013'
+          '6014'
+          '6015'
+          '6016'
+          '6017'
+          '6018'
+          '6019'
+          '6020'
+          '6021'
+          '6022'
+          '6023'
+          '6024'
+          '6025'
+          '6026'
+          '6027'
+          '6028'
+          '6029'
+          '6030'
+          '6031'
+          '6032'
+          '6033'
+          '6034'
+          '6035'
+          '6036'
+          '6037'
+          '6038'
+          '6039'
+          '6040'
+          '6041'
+          '6042'
+          '6043'
+          '6044'
+          '6045'
+          '6046'
+          '6047'
+          '6048'
+          '6049'
+          '6050'
           '7000'
           '7001'
           '7002'
@@ -22415,6 +23225,47 @@ object Form1: TForm1
           '7007'
           '7008'
           '7009'
+          '7010'
+          '7011'
+          '7012'
+          '7013'
+          '7014'
+          '7015'
+          '7016'
+          '7017'
+          '7018'
+          '7019'
+          '7020'
+          '7021'
+          '7022'
+          '7023'
+          '7024'
+          '7025'
+          '7026'
+          '7027'
+          '7028'
+          '7029'
+          '7030'
+          '7031'
+          '7032'
+          '7033'
+          '7034'
+          '7035'
+          '7036'
+          '7037'
+          '7038'
+          '7039'
+          '7040'
+          '7041'
+          '7042'
+          '7043'
+          '7044'
+          '7045'
+          '7046'
+          '7047'
+          '7048'
+          '7049'
+          '7050'
           '8000'
           '8001'
           '8002'
@@ -22425,6 +23276,47 @@ object Form1: TForm1
           '8007'
           '8008'
           '8009'
+          '8010'
+          '8011'
+          '8012'
+          '8013'
+          '8014'
+          '8015'
+          '8016'
+          '8017'
+          '8018'
+          '8019'
+          '8020'
+          '8021'
+          '8022'
+          '8023'
+          '8024'
+          '8025'
+          '8026'
+          '8027'
+          '8028'
+          '8029'
+          '8030'
+          '8031'
+          '8032'
+          '8033'
+          '8034'
+          '8035'
+          '8036'
+          '8037'
+          '8038'
+          '8039'
+          '8040'
+          '8041'
+          '8042'
+          '8043'
+          '8044'
+          '8045'
+          '8046'
+          '8047'
+          '8048'
+          '8049'
+          '8050'
           '9000'
           '9001'
           '9002'
@@ -22435,10 +23327,47 @@ object Form1: TForm1
           '9007'
           '9008'
           '9009'
-          ''
-          ''
-          ''
-          '')
+          '9010'
+          '9011'
+          '9012'
+          '9013'
+          '9014'
+          '9015'
+          '9016'
+          '9017'
+          '9018'
+          '9019'
+          '9020'
+          '9021'
+          '9022'
+          '9023'
+          '9024'
+          '9025'
+          '9026'
+          '9027'
+          '9028'
+          '9029'
+          '9030'
+          '9031'
+          '9032'
+          '9033'
+          '9034'
+          '9035'
+          '9036'
+          '9037'
+          '9038'
+          '9039'
+          '9040'
+          '9041'
+          '9042'
+          '9043'
+          '9044'
+          '9045'
+          '9046'
+          '9047'
+          '9048'
+          '9049'
+          '9050')
       end
       object ComboBox37: TComboBox
         Left = 472
@@ -22460,6 +23389,47 @@ object Form1: TForm1
           '1007'
           '1008'
           '1009'
+          '1010'
+          '1011'
+          '1012'
+          '1013'
+          '1014'
+          '1015'
+          '1016'
+          '1017'
+          '1018'
+          '1019'
+          '1020'
+          '1021'
+          '1022'
+          '1023'
+          '1024'
+          '1025'
+          '1026'
+          '1027'
+          '1028'
+          '1029'
+          '1030'
+          '1031'
+          '1032'
+          '1033'
+          '1034'
+          '1035'
+          '1036'
+          '1037'
+          '1038'
+          '1039'
+          '1040'
+          '1041'
+          '1042'
+          '1043'
+          '1044'
+          '1045'
+          '1046'
+          '1047'
+          '1048'
+          '1049'
+          '1050'
           '2000'
           '2001'
           '2002'
@@ -22470,6 +23440,47 @@ object Form1: TForm1
           '2007'
           '2008'
           '2009'
+          '2010'
+          '2011'
+          '2012'
+          '2013'
+          '2014'
+          '2015'
+          '2016'
+          '2017'
+          '2018'
+          '2019'
+          '2020'
+          '2021'
+          '2022'
+          '2023'
+          '2024'
+          '2025'
+          '2026'
+          '2027'
+          '2028'
+          '2029'
+          '2030'
+          '2031'
+          '2032'
+          '2033'
+          '2034'
+          '2035'
+          '2036'
+          '2037'
+          '2038'
+          '2039'
+          '2040'
+          '2041'
+          '2042'
+          '2043'
+          '2044'
+          '2045'
+          '2046'
+          '2047'
+          '2048'
+          '2049'
+          '2050'
           '3000'
           '3001'
           '3002'
@@ -22480,6 +23491,47 @@ object Form1: TForm1
           '3007'
           '3008'
           '3009'
+          '3010'
+          '3011'
+          '3012'
+          '3013'
+          '3014'
+          '3015'
+          '3016'
+          '3017'
+          '3018'
+          '3019'
+          '3020'
+          '3021'
+          '3022'
+          '3023'
+          '3024'
+          '3025'
+          '3026'
+          '3027'
+          '3028'
+          '3029'
+          '3030'
+          '3031'
+          '3032'
+          '3033'
+          '3034'
+          '3035'
+          '3036'
+          '3037'
+          '3038'
+          '3039'
+          '3040'
+          '3041'
+          '3042'
+          '3043'
+          '3044'
+          '3045'
+          '3046'
+          '3047'
+          '3048'
+          '3049'
+          '3050'
           '4000'
           '4001'
           '4002'
@@ -22490,6 +23542,47 @@ object Form1: TForm1
           '4007'
           '4008'
           '4009'
+          '4010'
+          '4011'
+          '4012'
+          '4013'
+          '4014'
+          '4015'
+          '4016'
+          '4017'
+          '4018'
+          '4019'
+          '4020'
+          '4021'
+          '4022'
+          '4023'
+          '4024'
+          '4025'
+          '4026'
+          '4027'
+          '4028'
+          '4029'
+          '4030'
+          '4031'
+          '4032'
+          '4033'
+          '4034'
+          '4035'
+          '4036'
+          '4037'
+          '4038'
+          '4039'
+          '4040'
+          '4041'
+          '4042'
+          '4043'
+          '4044'
+          '4045'
+          '4046'
+          '4047'
+          '4048'
+          '4049'
+          '4050'
           '5000'
           '5001'
           '5002'
@@ -22500,6 +23593,47 @@ object Form1: TForm1
           '5007'
           '5008'
           '5009'
+          '5010'
+          '5011'
+          '5012'
+          '5013'
+          '5014'
+          '5015'
+          '5016'
+          '5017'
+          '5018'
+          '5019'
+          '5020'
+          '5021'
+          '5022'
+          '5023'
+          '5024'
+          '5025'
+          '5026'
+          '5027'
+          '5028'
+          '5029'
+          '5030'
+          '5031'
+          '5032'
+          '5033'
+          '5034'
+          '5035'
+          '5036'
+          '5037'
+          '5038'
+          '5039'
+          '5040'
+          '5041'
+          '5042'
+          '5043'
+          '5044'
+          '5045'
+          '5046'
+          '5047'
+          '5048'
+          '5049'
+          '5050'
           '6000'
           '6001'
           '6002'
@@ -22510,6 +23644,47 @@ object Form1: TForm1
           '6007'
           '6008'
           '6009'
+          '6010'
+          '6011'
+          '6012'
+          '6013'
+          '6014'
+          '6015'
+          '6016'
+          '6017'
+          '6018'
+          '6019'
+          '6020'
+          '6021'
+          '6022'
+          '6023'
+          '6024'
+          '6025'
+          '6026'
+          '6027'
+          '6028'
+          '6029'
+          '6030'
+          '6031'
+          '6032'
+          '6033'
+          '6034'
+          '6035'
+          '6036'
+          '6037'
+          '6038'
+          '6039'
+          '6040'
+          '6041'
+          '6042'
+          '6043'
+          '6044'
+          '6045'
+          '6046'
+          '6047'
+          '6048'
+          '6049'
+          '6050'
           '7000'
           '7001'
           '7002'
@@ -22520,6 +23695,47 @@ object Form1: TForm1
           '7007'
           '7008'
           '7009'
+          '7010'
+          '7011'
+          '7012'
+          '7013'
+          '7014'
+          '7015'
+          '7016'
+          '7017'
+          '7018'
+          '7019'
+          '7020'
+          '7021'
+          '7022'
+          '7023'
+          '7024'
+          '7025'
+          '7026'
+          '7027'
+          '7028'
+          '7029'
+          '7030'
+          '7031'
+          '7032'
+          '7033'
+          '7034'
+          '7035'
+          '7036'
+          '7037'
+          '7038'
+          '7039'
+          '7040'
+          '7041'
+          '7042'
+          '7043'
+          '7044'
+          '7045'
+          '7046'
+          '7047'
+          '7048'
+          '7049'
+          '7050'
           '8000'
           '8001'
           '8002'
@@ -22530,6 +23746,47 @@ object Form1: TForm1
           '8007'
           '8008'
           '8009'
+          '8010'
+          '8011'
+          '8012'
+          '8013'
+          '8014'
+          '8015'
+          '8016'
+          '8017'
+          '8018'
+          '8019'
+          '8020'
+          '8021'
+          '8022'
+          '8023'
+          '8024'
+          '8025'
+          '8026'
+          '8027'
+          '8028'
+          '8029'
+          '8030'
+          '8031'
+          '8032'
+          '8033'
+          '8034'
+          '8035'
+          '8036'
+          '8037'
+          '8038'
+          '8039'
+          '8040'
+          '8041'
+          '8042'
+          '8043'
+          '8044'
+          '8045'
+          '8046'
+          '8047'
+          '8048'
+          '8049'
+          '8050'
           '9000'
           '9001'
           '9002'
@@ -22539,7 +23796,48 @@ object Form1: TForm1
           '9006'
           '9007'
           '9008'
-          '9009')
+          '9009'
+          '9010'
+          '9011'
+          '9012'
+          '9013'
+          '9014'
+          '9015'
+          '9016'
+          '9017'
+          '9018'
+          '9019'
+          '9020'
+          '9021'
+          '9022'
+          '9023'
+          '9024'
+          '9025'
+          '9026'
+          '9027'
+          '9028'
+          '9029'
+          '9030'
+          '9031'
+          '9032'
+          '9033'
+          '9034'
+          '9035'
+          '9036'
+          '9037'
+          '9038'
+          '9039'
+          '9040'
+          '9041'
+          '9042'
+          '9043'
+          '9044'
+          '9045'
+          '9046'
+          '9047'
+          '9048'
+          '9049'
+          '9050')
       end
       object Edit96: TEdit
         Left = 288
@@ -22860,6 +24158,13 @@ object Form1: TForm1
           2B2E126209000000000000004C0000000114020000000000C000000000000046
           8000000000000000000000000000000000000000000000000000000000000000
           00000000000000000100000000000000000000000000000000000000}
+      end
+      object Memo2: TMemo
+        Left = 576
+        Top = 16
+        Width = 153
+        Height = 25
+        TabOrder = 1
       end
     end
   end
@@ -23212,5 +24517,34 @@ object Form1: TForm1
     OnTimer = DigitempTimerTimer
     Left = 944
     Top = 248
+  end
+  object IdHTTP1: TIdHTTP
+    MaxLineAction = maException
+    ReadTimeout = 0
+    AllowCookies = True
+    ProxyParams.BasicAuthentication = False
+    ProxyParams.ProxyPort = 0
+    Request.ContentLength = -1
+    Request.ContentRangeEnd = 0
+    Request.ContentRangeStart = 0
+    Request.ContentType = 'text/html'
+    Request.Accept = 'text/html, */*'
+    Request.BasicAuthentication = False
+    Request.UserAgent = 'Mozilla/3.0 (compatible; Indy Library)'
+    HTTPOptions = [hoForceEncodeParams]
+    Left = 688
+  end
+  object HendiTimer: TTimer
+    Interval = 6000000
+    OnTimer = HendiTimerTimer
+    Left = 816
+    Top = 280
+  end
+  object HendiBreakTimer: TTimer
+    Enabled = False
+    Interval = 5000
+    OnTimer = HendiBreakTimerTimer
+    Left = 848
+    Top = 280
   end
 end

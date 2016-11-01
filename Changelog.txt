@@ -1,5 +1,23 @@
 Change-Log:
 
+V 1.63
+Versionsprüfung über Internet beim Programmstart
+Info-Links zur Hardware zugefügt
+ICStation-Relais zugefügt
+Kochtemperaturbereich für KBH Import auf 90-110°C erweitert
+Auswahlmöglichkeit für Dauerheizen zum Erreichen und Halten der Kochtemperatur zugefügt
+Kühlung schaltet nicht zu bei eingeschalteter Heizung 
+Pausieren, Starten und Stoppen der Brauerei durch den Arduino möglich
+Temperaturdifferenzen für Heizungsalarm einstellbar gemacht
+Hysterese-, Gradient, Pulsen, Sensor- und Heizungsüberwachung in Einstellungen verschoben
+Einstellungen aufgeräumt
+Hintergrundfarbe rot "gefälliger" gemacht
+Bug bei manueller Steuerung der Kühlung während des Brauprozesses begoben
+Hendi-Dauerbetrieb 2 Stunden-Bug durch kurzes aus und wieder einschalten verhindern
+Multi-Kessel Arduino-Mega Sketch zugefügt
+Bereich für Arduino LAN-Ports erweitert
+Kesselbezeichnung eingefügt
+
 V 1.62
 Zusatzprogramm zur Temeraturmessung mit 1wire-Tester von LEDgenial.de (HIDControl) zugefügt
 WEMOS-WLAN-Hardware und Sketch zugefügt 

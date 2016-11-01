@@ -56,7 +56,6 @@ type
     Edit53: TEdit;
     Label60: TLabel;
     Gauge11: TGauge;
-    CheckBox34: TCheckBox;
     Button17: TButton;
     Panel4: TPanel;
     Label63: TLabel;
@@ -67,45 +66,13 @@ type
     Button23: TButton;
     LogUpdateTimer: TTimer;
     Button24: TButton;
-    CheckBox33: TCheckBox;
     Ueberwachungstimer: TTimer;
     PrintDialog1: TPrintDialog;
     USB_Update_Tmr: TTimer;
     TabSheet4: TTabSheet;
-    GroupBox4: TGroupBox;
-    Label88: TLabel;
-    ComboBox13: TComboBox;
-    Label90: TLabel;
-    Label81: TLabel;
-    Label86: TLabel;
-    ComboBox14: TComboBox;
-    Label87: TLabel;
-    ComboBox15: TComboBox;
-    Label89: TLabel;
     Label91: TLabel;
     Label92: TLabel;
-    Label93: TLabel;
-    Label94: TLabel;
-    ComboBox17: TComboBox;
-    ComboBox18: TComboBox;
-    Label96: TLabel;
-    Label97: TLabel;
-    Label100: TLabel;
-    ComboBox19: TComboBox;
-    ComboBox20: TComboBox;
-    ComboBox21: TComboBox;
-    ComboBox22: TComboBox;
-    Label102: TLabel;
-    Label104: TLabel;
-    ComboBox23: TComboBox;
-    ComboBox24: TComboBox;
-    Label107: TLabel;
-    ComboBox25: TComboBox;
-    Label109: TLabel;
-    Label110: TLabel;
     Batch_Update_Tmr: TTimer;
-    CheckBox36: TCheckBox;
-    CheckBox37: TCheckBox;
     Edit62: TEdit;
     TimerDlgMove: TTimer;
     StartTimer: TTimer;
@@ -125,10 +92,6 @@ type
     Timer3: TTimer;
     Button1: TButton;
     TrackBar1: TTrackBar;
-    GroupBox7: TGroupBox;
-    Label112: TLabel;
-    Label113: TLabel;
-    ComboBox26: TComboBox;
     Panel6: TPanel;
     Button29: TButton;
     Button30: TButton;
@@ -185,21 +148,10 @@ type
     TimerKSet: TTimer;
     TimerKEin: TTimer;
     TimerKAus: TTimer;
-    ComboBox29: TComboBox;
-    Label95: TLabel;
-    Label98: TLabel;
-    Button2: TButton;
     ApplicationEvents1: TApplicationEvents;
-    Edit83: TEdit;
-    Edit84: TEdit;
-    Edit85: TEdit;
-    Edit86: TEdit;
-    Edit87: TEdit;
-    Edit88: TEdit;
     Label114: TLabel;
     Label117: TLabel;
     ComboBox44: TComboBox;
-    CheckBox41: TCheckBox;
     TimerRSet: TTimer;
     TabSheet5: TTabSheet;
     Label118: TLabel;
@@ -250,11 +202,6 @@ type
     Button14: TButton;
     Button15: TButton;
     Button16: TButton;
-    Label130: TLabel;
-    Label131: TLabel;
-    Label132: TLabel;
-    Label133: TLabel;
-    Label134: TLabel;
     CheckBox31: TCheckBox;
     Label136: TLabel;
     TabSheet8: TTabSheet;
@@ -636,6 +583,89 @@ type
     ComboBox54: TComboBox;
     Label155: TLabel;
     BitBtn17: TBitBtn;
+    IdHTTP1: TIdHTTP;
+    Memo2: TMemo;
+    CheckBox1: TCheckBox;
+    CheckBox2: TCheckBox;
+    Button2: TButton;
+    Rastname1: TLabel;
+    Rastname2: TLabel;
+    Rastname3: TLabel;
+    Rastname4: TLabel;
+    Rastname5: TLabel;
+    Rastname6: TLabel;
+    Rastname7: TLabel;
+    Rastname8: TLabel;
+    Rastname9: TLabel;
+    Rastname10: TLabel;
+    PageControl4: TPageControl;
+    TabSheet15: TTabSheet;
+    TabSheet16: TTabSheet;
+    Label88: TLabel;
+    Label90: TLabel;
+    Label81: TLabel;
+    Label86: TLabel;
+    Label87: TLabel;
+    Label89: TLabel;
+    Label93: TLabel;
+    Label94: TLabel;
+    Label96: TLabel;
+    Label97: TLabel;
+    Label100: TLabel;
+    Label102: TLabel;
+    Label104: TLabel;
+    Label107: TLabel;
+    Label109: TLabel;
+    Label110: TLabel;
+    Label130: TLabel;
+    Label131: TLabel;
+    Label132: TLabel;
+    Label133: TLabel;
+    Label134: TLabel;
+    ComboBox13: TComboBox;
+    ComboBox14: TComboBox;
+    ComboBox15: TComboBox;
+    ComboBox17: TComboBox;
+    ComboBox18: TComboBox;
+    ComboBox19: TComboBox;
+    ComboBox20: TComboBox;
+    ComboBox21: TComboBox;
+    ComboBox22: TComboBox;
+    ComboBox23: TComboBox;
+    ComboBox24: TComboBox;
+    ComboBox25: TComboBox;
+    Edit84: TEdit;
+    Edit85: TEdit;
+    Edit86: TEdit;
+    Edit87: TEdit;
+    Edit88: TEdit;
+    Edit83: TEdit;
+    Label112: TLabel;
+    Label113: TLabel;
+    Label95: TLabel;
+    Label98: TLabel;
+    ComboBox26: TComboBox;
+    ComboBox29: TComboBox;
+    CheckBox37: TCheckBox;
+    CheckBox36: TCheckBox;
+    CheckBox34: TCheckBox;
+    TabSheet17: TTabSheet;
+    CheckBox33: TCheckBox;
+    CheckBox41: TCheckBox;
+    ComboBox55: TComboBox;
+    Label156: TLabel;
+    Label157: TLabel;
+    ComboBox56: TComboBox;
+    CheckBox3: TCheckBox;
+    HendiTimer: TTimer;
+    HendiBreakTimer: TTimer;
+    Edit1: TEdit;
+    Label158: TLabel;
+    BitBtn19: TBitBtn;
+    BitBtn20: TBitBtn;
+    BitBtn21: TBitBtn;
+    BitBtn22: TBitBtn;
+    BitBtn18: TBitBtn;
     procedure Button8Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
@@ -856,6 +886,13 @@ type
     procedure Edit93KeyPress(Sender: TObject; var Key: Char);
     procedure ComboBox54Change(Sender: TObject);
     procedure BitBtn17Click(Sender: TObject);
+    procedure HendiTimerTimer(Sender: TObject);
+    procedure HendiBreakTimerTimer(Sender: TObject);
+    procedure BitBtn19Click(Sender: TObject);
+    procedure BitBtn18Click(Sender: TObject);
+    procedure BitBtn21Click(Sender: TObject);
+    procedure BitBtn20Click(Sender: TObject);
+    procedure BitBtn22Click(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -863,7 +900,7 @@ type
   end;
 
 const
-  Version = 'V01.62';
+  Version = 'V 1.63 Trial';
 
 procedure TimerDialogClose;
 procedure Funktionstextuebernahme;
@@ -894,7 +931,8 @@ var
   myImportSettingsFile: TextFile;
   pause,start,stop,AlarmEin,Rastende,PauseLogTimerHEin,PauseLogTimerHAus,
   PauseLogTimerHSet,PauseLogTimerREin,PauseLogTimerRAus,PauseLogTimerKEin,
-  PauseLogTimerKAus,PauseLogTimerKSet,Rastnullges,USBStarted,LANStarted: boolean;
+  PauseLogTimerKAus,PauseLogTimerKSet,Rastnullges,USBStarted,LANStarted,
+  HendiBreak: boolean;
   USBHWert,USBRWert,USBPWert,USBAWert: char;
   Gradientgetter: Array[1..60] of Extended;
   ser: TBlockSerial;
@@ -1038,7 +1076,7 @@ begin
     (Form1.FindComponent('RastNameWahl' + IntToStr(1+i)) as TEdit).Text := (Form1.FindComponent('RastNameWahl' + IntToStr(i)) as TEdit).Text;
     (Form1.FindComponent('RastMeldeWahl' + IntToStr(1+i)) as TEdit).Text := (Form1.FindComponent('RastMeldeWahl' + IntToStr(i)) as TEdit).Text;
     (Form1.FindComponent('Rastwahl' + IntToStr(1+i)) as TCheckBox).Checked := (Form1.FindComponent('Rastwahl' + IntToStr(i)) as TCheckBox).Checked;
-    (Form1.FindComponent('Rastwahl' + IntToStr(1+i)) as TCheckBox).Caption := (Form1.FindComponent('Rastwahl' + IntToStr(i)) as TCheckBox).Caption;
+    (Form1.FindComponent('Rastname' + IntToStr(1+i)) as TLabel).Caption := (Form1.FindComponent('Rastname' + IntToStr(i)) as TLabel).Caption;
     (Form1.FindComponent('Solltempwahl' + IntToStr(i+1)) as TEdit).Text := (Form1.FindComponent('Solltempwahl' + IntToStr(i)) as TEdit).Text;
     (Form1.FindComponent('Solldauerwahl' + IntToStr(i+1)) as TEdit).Text := (Form1.FindComponent('Solldauerwahl' + IntToStr(i)) as TEdit).Text;
     (Form1.FindComponent('BrauerrufWahl' + IntToStr(1+i)) as TCheckBox).Checked := (Form1.FindComponent('BrauerrufWahl' + IntToStr(i)) as TCheckBox).Checked;
@@ -1050,7 +1088,7 @@ begin
   (Form1.FindComponent('RastNameWahl' + IntToStr(Rastnummer)) as TEdit).Text := 'neue Rast';
   (Form1.FindComponent('RastMeldeWahl' + IntToStr(Rastnummer)) as TEdit).Text := '';
   (Form1.FindComponent('Rastwahl' + IntToStr(Rastnummer)) as TCheckBox).Checked := true;
-  (Form1.FindComponent('Rastwahl' + IntToStr(Rastnummer)) as TCheckBox).Caption := 'neue Rast';
+  (Form1.FindComponent('Rastname' + IntToStr(Rastnummer)) as TLabel).Caption := 'neue Rast';
   (Form1.FindComponent('Solltempwahl' + IntToStr(Rastnummer)) as TEdit).Text := '20';
   (Form1.FindComponent('Solldauerwahl' + IntToStr(Rastnummer)) as TEdit).Text := '60';
   (Form1.FindComponent('BrauerrufWahl' + IntToStr(Rastnummer)) as TCheckBox).Checked := false;
@@ -1071,7 +1109,7 @@ begin
       (Form1.FindComponent('RastNameWahl' + IntToStr(i)) as TEdit).Text := (Form1.FindComponent('RastNameWahl' + IntToStr(1+i)) as TEdit).Text;
       (Form1.FindComponent('RastMeldeWahl' + IntToStr(i)) as TEdit).Text := (Form1.FindComponent('RastMeldeWahl' + IntToStr(1+i)) as TEdit).Text;
       (Form1.FindComponent('Rastwahl' + IntToStr(i)) as TCheckBox).Checked := (Form1.FindComponent('Rastwahl' + IntToStr(i+1)) as TCheckBox).Checked;
-      (Form1.FindComponent('Rastwahl' + IntToStr(i)) as TCheckBox).Caption := (Form1.FindComponent('Rastwahl' + IntToStr(i+1)) as TCheckBox).Caption;
+      (Form1.FindComponent('Rastname' + IntToStr(i)) as TLabel).Caption := (Form1.FindComponent('Rastname' + IntToStr(i+1)) as TLabel).Caption;
       (Form1.FindComponent('Solltempwahl' + IntToStr(i)) as TEdit).Text := (Form1.FindComponent('Solltempwahl' + IntToStr(i+1)) as TEdit).Text;
       (Form1.FindComponent('Solldauerwahl' + IntToStr(i)) as TEdit).Text := (Form1.FindComponent('Solldauerwahl' + IntToStr(i+1)) as TEdit).Text;
       (Form1.FindComponent('BrauerrufWahl' + IntToStr(i)) as TCheckBox).Checked := (Form1.FindComponent('BrauerrufWahl' + IntToStr(1+i)) as TCheckBox).Checked;
@@ -1082,8 +1120,8 @@ begin
     end;
     Form1.RastNameWahl10.Text := 'neue Rast';
     Form1.RastMeldeWahl10.Text := '';
-    Form1.Rastwahl10.Checked := true;
-    Form1.Rastwahl10.Caption := 'neue Rast';
+    Form1.Rastwahl10.Checked := false;
+    Form1.Rastname10.Caption := 'neue Rast';
     Form1.Solltempwahl10.Text := '20';
     Form1.Solldauerwahl10.Text := '60';
     Form1.BrauerrufWahl10.Checked := false;
@@ -1107,9 +1145,9 @@ begin
   y := (Form1.FindComponent('Rastwahl' + IntToStr(Rastnummer+1)) as TCheckBox).Checked;
   (Form1.FindComponent('Rastwahl' + IntToStr(Rastnummer+1)) as TCheckBox).Checked := (Form1.FindComponent('Rastwahl' + IntToStr(Rastnummer)) as TCheckBox).Checked;
   (Form1.FindComponent('Rastwahl' + IntToStr(Rastnummer)) as TCheckBox).Checked := y;
-  x := (Form1.FindComponent('Rastwahl' + IntToStr(Rastnummer)) as TCheckBox).Caption;
-  (Form1.FindComponent('Rastwahl' + IntToStr(Rastnummer)) as TCheckBox).Caption := (Form1.FindComponent('Rastwahl' + IntToStr(Rastnummer+1)) as TCheckBox).Caption;
-  (Form1.FindComponent('Rastwahl' + IntToStr(Rastnummer+1)) as TCheckBox).Caption := x;
+  x := (Form1.FindComponent('Rastname' + IntToStr(Rastnummer)) as TLabel).Caption;
+  (Form1.FindComponent('Rastname' + IntToStr(Rastnummer)) as TLabel).Caption := (Form1.FindComponent('Rastname' + IntToStr(Rastnummer+1)) as TLabel).Caption;
+  (Form1.FindComponent('Rastname' + IntToStr(Rastnummer+1)) as TLabel).Caption := x;
   x := (Form1.FindComponent('Solltempwahl' + IntToStr(Rastnummer)) as TEdit).Text;
   (Form1.FindComponent('Solltempwahl' + IntToStr(Rastnummer)) as TEdit).Text := (Form1.FindComponent('Solltempwahl' + IntToStr(Rastnummer)) as TEdit).Text;
   (Form1.FindComponent('Solltempwahl' + IntToStr(Rastnummer+1)) as TEdit).Text := x;
@@ -1146,9 +1184,9 @@ begin
   y := (Form1.FindComponent('Rastwahl' + IntToStr(Rastnummer)) as TCheckBox).Checked;
   (Form1.FindComponent('Rastwahl' + IntToStr(Rastnummer)) as TCheckBox).Checked := (Form1.FindComponent('Rastwahl' + IntToStr(Rastnummer+1)) as TCheckBox).Checked;
   (Form1.FindComponent('Rastwahl' + IntToStr(Rastnummer+1)) as TCheckBox).Checked := y;
-  x := (Form1.FindComponent('Rastwahl' + IntToStr(Rastnummer+1)) as TCheckBox).Caption;
-  (Form1.FindComponent('Rastwahl' + IntToStr(Rastnummer+1)) as TCheckBox).Caption := (Form1.FindComponent('Rastwahl' + IntToStr(Rastnummer)) as TCheckBox).Caption;
-  (Form1.FindComponent('Rastwahl' + IntToStr(Rastnummer)) as TCheckBox).Caption := x;
+  x := (Form1.FindComponent('Rastname' + IntToStr(Rastnummer+1)) as TLabel).Caption;
+  (Form1.FindComponent('Rastname' + IntToStr(Rastnummer+1)) as TLabel).Caption := (Form1.FindComponent('Rastname' + IntToStr(Rastnummer)) as TLabel).Caption;
+  (Form1.FindComponent('Rastname' + IntToStr(Rastnummer)) as TLabel).Caption := x;
   x := (Form1.FindComponent('Solltempwahl' + IntToStr(Rastnummer+1)) as TEdit).Text;
   (Form1.FindComponent('Solltempwahl' + IntToStr(Rastnummer+1)) as TEdit).Text := (Form1.FindComponent('Solltempwahl' + IntToStr(Rastnummer)) as TEdit).Text;
   (Form1.FindComponent('Solltempwahl' + IntToStr(Rastnummer)) as TEdit).Text := x;
@@ -1382,6 +1420,19 @@ begin
   if (Pumpe<>0) then LPTCode:=LPTCode+LPTPIntWert;
 end;
 
+procedure USBOpenLine ;
+begin with Form1 do begin
+  ser.Connect(USBPort);
+  if ser.LastError<>sOK then begin Edit51.Text:='Err' ; exit ; end;
+  ser.Config({Baud}9600, {Bits}8, {Parity}'N', {StopBits}0, {Xon/Xoff}false, {DTR/CTS}false);
+  if ser.LastError<>sOK then begin Edit51.Text:='Err' ; exit ; end;
+end ; end ;
+
+procedure USBCloseLine ;
+begin with Form1 do begin
+  ser.CloseSocket ;
+end ; end ;
+
 //Denkovi:
 procedure USB2OUT;
 begin
@@ -1484,19 +1535,6 @@ begin
 end;
 
 //KMTronic:
-procedure USBOpenLine ;
-begin with Form1 do begin
-  ser.Connect(USBPort);
-  if ser.LastError<>sOK then begin Edit51.Text:='Err' ; exit ; end;
-  ser.Config({Baud}9600, {Bits}8, {Parity}'N', {StopBits}0, {Xon/Xoff}false, {DTR/CTS}false);
-  if ser.LastError<>sOK then begin Edit51.Text:='Err' ; exit ; end;
-end ; end ;
-
-procedure USBCloseLine ;
-begin with Form1 do begin
-  ser.CloseSocket ;
-end ; end ;
-
 procedure USBOut ;
 var i:integer;
 begin
@@ -1514,6 +1552,22 @@ begin
   if i>3 then begin ser.SendString(char($FF)+char(3)+char($01)); i:=i-4; end else ser.SendString(char($FF)+char(3)+char($00));
   if i>1 then begin ser.SendString(char($FF)+char(2)+char($01)); i:=i-2; end else ser.SendString(char($FF)+char(2)+char($00));
   if i>0 then begin ser.SendString(char($FF)+char(1)+char($01)); end else ser.SendString(char($FF)+char(1)+char($00));
+  USBCloseLine;
+end;
+
+
+//ICStation:
+procedure USB5Out ;
+var i:integer;
+begin
+  USBOpenLine;
+  i:=0;
+  if (Ruehrwerk<>0) then i:=USBRIntWert;
+  if (Heizung<>0) then i:=i+USBHIntWert;
+  if (Alarm<>0) then i:=i+USBAIntWert;
+  if (Pumpe<>0) then i:=i+USBPIntWert;
+  i:=255-i;
+  ser.SendString(char($50)+char($51)+char(i));
   USBCloseLine;
 end;
 
@@ -1582,7 +1636,7 @@ begin
   If Form.Combobox10.ItemIndex+1=1 then LPTRIntWert:=1 else if Form.Combobox10.ItemIndex+1=2 then LPTRIntWert:=2 else if Form.Combobox10.ItemIndex+1=3 then LPTRIntWert:=4 else if Form.Combobox10.ItemIndex+1=4 then LPTRIntWert:=8 else if Form.Combobox10.ItemIndex+1=5 then LPTRIntWert:=16 else if Form.Combobox10.ItemIndex+1=6 then LPTRIntWert:=32 else if Form.Combobox10.ItemIndex+1=7 then LPTRIntWert:=64 else if Form.Combobox10.ItemIndex+1=8 then LPTRIntWert:=128 else LPTRIntWert:=Form1.ComboBox51.itemindex+1;
   If Form.Combobox12.ItemIndex+1=1 then LPTAIntWert:=1 else if Form.Combobox12.ItemIndex+1=2 then LPTAIntWert:=2 else if Form.Combobox12.ItemIndex+1=3 then LPTAIntWert:=4 else if Form.Combobox12.ItemIndex+1=4 then LPTAIntWert:=8 else if Form.Combobox12.ItemIndex+1=5 then LPTAIntWert:=16 else if Form.Combobox12.ItemIndex+1=6 then LPTAIntWert:=32 else if Form.Combobox12.ItemIndex+1=7 then LPTAIntWert:=64 else if Form.Combobox12.ItemIndex+1=8 then LPTAIntWert:=128 else LPTAIntWert:=Form1.ComboBox52.itemindex+1;
   If Form.Combobox11.ItemIndex+1=1 then LPTPIntWert:=1 else if Form.Combobox11.ItemIndex+1=2 then LPTPIntWert:=2 else if Form.Combobox11.ItemIndex+1=3 then LPTPIntWert:=4 else if Form.Combobox11.ItemIndex+1=4 then LPTPIntWert:=8 else if Form.Combobox11.ItemIndex+1=5 then LPTPIntWert:=16 else if Form.Combobox11.ItemIndex+1=6 then LPTPIntWert:=32 else if Form.Combobox11.ItemIndex+1=7 then LPTPIntWert:=64 else if Form.Combobox11.ItemIndex+1=8 then LPTPIntWert:=118 else LPTPIntWert:=Form1.ComboBox53.itemindex+1;
-  if (usbtyp='IO-Warrior-Basis') or (usbtyp='SainSmart') or (usbtyp='KMTronic') then               //USB-Code errechnen
+  if (usbtyp='IO-Warrior-Basis') or (usbtyp='SainSmart') or (usbtyp='KMTronic')  or (usbtyp='ICStation') then               //USB-Code errechnen
   begin
     If USBHWert=char(1) then USBHIntWert:=1 else if USBHWert=char(2) then USBHIntWert:=2 else if USBHWert=char(3) then USBHIntWert:=4 else if USBHWert=char(4) then USBHIntWert:=8 else if USBHWert=char(5) then USBHIntWert:=16 else if USBHWert=char(6) then USBHIntWert:=32 else if USBHWert=char(7) then USBHIntWert:=64 else if USBHWert=char(8) then USBHIntWert:=128 else USBHIntWert:=Form1.ComboBox46.itemindex+1;
     If USBRWert=char(1) then USBRIntWert:=1 else if USBRWert=char(2) then USBRIntWert:=2 else if USBRWert=char(3) then USBRIntWert:=4 else if USBRWert=char(4) then USBRIntWert:=8 else if USBRWert=char(5) then USBRIntWert:=16 else if USBRWert=char(6) then USBRIntWert:=32 else if USBRWert=char(7) then USBRIntWert:=64 else if USBRWert=char(8) then USBRIntWert:=128 else USBRIntWert:=Form1.ComboBox47.itemindex+1;
@@ -1602,6 +1656,7 @@ begin
   if Form1.BATCH.checked=true then BatchOut;  //LPT-Code als Batch ausgeben
   if Form1.WLAN.checked=true then WLANOut;    //LPT-Code als Batch ausgeben
   if (Form1.USB.checked=true) and (usbtyp='KMTronic') then begin if Form1.LPT.checked=false then Form1.Edit51.Text:=USBPort; USBOut; end; //USB-Code an USB-Port ausgeben
+  if (Form1.USB.checked=true) and (usbtyp='ICStation') then begin if Form1.LPT.checked=false then Form1.Edit51.Text:=USBPort; USB5Out; end; //USB-Code an USB-Port ausgeben
   if (Form1.USB.checked=true) and (usbtyp='Denkovi') then begin if Form1.LPT.checked=false then Form1.Edit51.Text:=inttostr(DeviceIndex); USB2Out; end; //USB-Code an USB-Port ausgeben
   if (Form1.USB.checked=true) and (usbtyp='SainSmart') then begin if Form1.LPT.checked=false then Form1.Edit51.Text:=inttostr(DeviceIndex); USB3Out; end; //USB-Code an USB-Port ausgeben
   if (Form1.USB.checked=true) and (usbtyp='IO-Warrior-Basis') then USB4Out;  //USB-Code an USB-Port ausgeben
@@ -1630,16 +1685,11 @@ end;
 procedure settings_speichern(Form:TForm1; filename:string);
 begin
   WriteLn(myFile, Form.Button1.Caption);        // zusätzliche Settingsdate speichern (nur mit Rezeptdaten)
-  WriteLn(myFile, Form.CheckBox33.Checked);
-  WriteLn(myFile, Form.CheckBox34.Checked);
-  WriteLn(myFile, Form.CheckBox36.Checked);
-  WriteLn(myFile, Form.CheckBox37.Checked);
   WriteLn(myFile, Form.Button31.Caption);
   WriteLn(myFile, Form2.CheckBox1.Checked);
   WriteLn(myFile, Form2.CheckBox2.Checked);
   WriteLn(myFile, Form2.CheckBox3.Checked);
   WriteLn(myFile, Form2.Edit2.Text);
-  WriteLn(myFile, Form.CheckBox41.Checked);
 end;
 
 procedure laden(Form:TForm1; filename:string);
@@ -1666,16 +1716,13 @@ procedure settings_laden(Form:TForm1; filename:string);
 begin
   Timerstartbatstatus:=0;
   ReadLn(myFile, xwert); Form.Button1.Caption:=xwert;    // zusätzliche Settingsdate laden (nur mit Rezeptdaten)
-  ReadLn(myFile, xwert); Form.CheckBox33.Checked:=strtobool(xwert);
-  ReadLn(myFile, xwert); Form.CheckBox34.Checked:=strtobool(xwert);
-  ReadLn(myFile, xwert); Form.CheckBox36.Checked:=strtobool(xwert);
-  ReadLn(myFile, xwert); Form.CheckBox37.Checked:=strtobool(xwert);
+
   ReadLn(myFile, xwert); Form.Button31.Caption:=xwert;
   ReadLn(myFile, xwert); if strtobool(xwert)=true then Timerstartbatstatus:=1;
   ReadLn(myFile, xwert); if strtobool(xwert)=true then Timerstartbatstatus:=2;
   ReadLn(myFile, xwert); if strtobool(xwert)=true then Timerstartbatstatus:=3;
   ReadLn(myFile, xwert); sensorverzoegerung:=xwert;
-  ReadLn(myFile, xwert); Form.CheckBox41.Checked:=strtobool(xwert);
+
   gesamtanzeigegeaendert;
 end;
 
@@ -1695,7 +1742,7 @@ begin
   WriteLn(mySetup,'LPT-Ruehrwerk;'+Form.ComboBox10.Text);
   WriteLn(mySetup,'LPT-Pumpe;'+Form.ComboBox11.Text);
   WriteLn(mySetup,'LPT-Alarm;'+Form.ComboBox12.Text);
-  WriteLn(mySetup,'USB-Karten-Typ "Denkovi", "KMTronic", "IOWarrior" oder "SainSmart";'+Form.ComboBox2.Text);
+  WriteLn(mySetup,'USB-Karten-Typ "Denkovi", "KMTronic", "ICStation", "IOWarrior" oder "SainSmart";'+Form.ComboBox2.Text);
   WriteLn(mySetup,'Device-Index;'+Form.ComboBox16.Text);
   WriteLn(mySetup,'USB-Port;'+Form.ComboBox7.Text);
   WriteLn(mySetup,'USB-Heizung;'+Form.ComboBox3.Text);
@@ -1819,6 +1866,18 @@ begin
   WriteLn(mySetup,'LPTCode4;'+Form.ComboBox53.Text);
   dummyfilename:=stringreplace(Form.ComboBox54.Text,' ','€€€',[rfReplaceAll]);
   WriteLn(mySetup,'Fensterfarbe;'+dummyfilename);
+  if Form.CheckBox1.Checked=true then WriteLn(mySetup,'Versionsprüfung;1') else WriteLn(mySetup,'Versionsprüfung;0');
+  if Form.CheckBox2.Checked=true then WriteLn(mySetup,'Dauerheizen zum Kochen;1') else WriteLn(mySetup,'Dauerheizen zum Kochen;0');
+
+  if Form.CheckBox33.Checked=true then WriteLn(mySetup,'Sensorueberwachung;1') else WriteLn(mySetup,'Sensorueberwachung;0');
+  if Form.CheckBox34.Checked=true then WriteLn(mySetup,'Gepulste Heizung;1') else WriteLn(mySetup,'Gepulste Heizung;0');
+  if Form.CheckBox36.Checked=true then WriteLn(mySetup,'Gradientbegrenzte Heizung;1') else WriteLn(mySetup,'Gradientbegrenzte Heizung;0');
+  if Form.CheckBox37.Checked=true then WriteLn(mySetup,'Hysterese verwenden;1') else WriteLn(mySetup,'Hysterese verwenden;0');
+  if Form.CheckBox41.Checked=true then WriteLn(mySetup,'Heizung ueberwachen;1') else WriteLn(mySetup,'Heizung ueberwachen;0');
+  WriteLn(mySetup,'Überschwingungstemperatur;'+Form.ComboBox55.Text);
+  WriteLn(mySetup,'Unterschwingungstemperatur;'+Form.ComboBox56.Text);
+  if Form.CheckBox3.Checked=true then WriteLn(mySetup,'HendiBreak;1') else WriteLn(mySetup,'HendiBreak;0');
+  WriteLn(mySetup,'Fensterskalierungsfaktor;'+Form.Edit1.Text);
   CloseFile(mySetup);
   LPTPort:=strtoint(Form.ComboBox8.Text);
   USBTyp:=Form.ComboBox2.Text;
@@ -1993,7 +2052,7 @@ begin
       sl2.DelimitedText:=sl[60];
       try Form.Combobox1.ItemIndex := Form.Combobox1.Items.IndexOf(stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll])); except Form.ComboBox1.Text:='5 Sekunden'; end;
       sl2.DelimitedText:=sl[61];
-      try Form.Combobox34.ItemIndex := Form.Combobox34.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox7.ItemIndex := 1; end;
+      try Form.Combobox34.ItemIndex := Form.Combobox34.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox7.ItemIndex := 11; end;
       sl2.DelimitedText:=sl[62];
       try Form.Edit93.Text := sl2[sl2.Count-1]; except Form.Edit93.Text := '0.0'; end;
       Form1.Edit93Exit(Form1);
@@ -2107,6 +2166,33 @@ begin
       try Form.Combobox53.ItemIndex := Form.Combobox53.Items.IndexOf(sl2[sl2.Count-1]); except Form.Combobox53.ItemIndex := 7 end;
       sl2.DelimitedText:=sl[111];
       try Form.Combobox54.ItemIndex := Form.Combobox54.Items.IndexOf(stringreplace(sl2[sl2.Count-1],'€€€',' ',[rfReplaceAll])); except Form.Combobox54.ItemIndex := 0; end;
+      sl2.DelimitedText:=sl[112];
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox1.Checked:=true else Form.CheckBox1.Checked:=false; except Form.CheckBox1.Checked:=false end;
+      sl2.DelimitedText:=sl[113];
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox2.Checked:=true else Form.CheckBox2.Checked:=false; except Form.CheckBox2.Checked:=false end;
+
+      sl2.DelimitedText:=sl[114];
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox33.Checked:=true else Form.CheckBox33.Checked:=false; except Form.CheckBox33.Checked:=false end;
+      sl2.DelimitedText:=sl[115];
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox34.Checked:=true else Form.CheckBox34.Checked:=false; except Form.CheckBox34.Checked:=false end;
+      sl2.DelimitedText:=sl[116];
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox36.Checked:=true else Form.CheckBox36.Checked:=false; except Form.CheckBox36.Checked:=false end;
+      sl2.DelimitedText:=sl[117];
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox37.Checked:=true else Form.CheckBox37.Checked:=false; except Form.CheckBox37.Checked:=false end;
+      sl2.DelimitedText:=sl[118];
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox41.Checked:=true else Form.CheckBox41.Checked:=false; except Form.CheckBox41.Checked:=false end;
+
+      sl2.DelimitedText:=sl[119];
+      try ttext:=sl2[sl2.Count-1]; Form.Combobox55.ItemIndex := Form.Combobox55.Items.IndexOf(sl2[sl2.Count-1]); except Form.ComboBox55.ItemIndex:=0; end;
+      sl2.DelimitedText:=sl[120];
+      try ttext:=sl2[sl2.Count-1]; Form.Combobox56.ItemIndex := Form.Combobox56.Items.IndexOf(sl2[sl2.Count-1]); except Form.ComboBox56.ItemIndex:=0; end;
+
+      sl2.DelimitedText:=sl[121];
+      try if sl2[sl2.Count-1]='1' then Form.CheckBox3.Checked:=true else Form.CheckBox3.Checked:=false; except Form.CheckBox3.Checked:=false end;
+
+      sl2.DelimitedText:=sl[122];
+      try Form.Edit95.Text := sl2[sl2.Count-1]; except Form.Edit95.Text := '1.0'; end;
+
       AusIst:=strtoint(Form.ComboBox15.Text);
       EinIst:=strtoint(Form.ComboBox14.Text);
       If Form1.USB.checked=true then Form1.USB_Update_Tmr.Enabled:=true;
@@ -2473,13 +2559,16 @@ begin
   GetGradient(Sender);
   setup_speichern(Form1, pfad+'Setup\setup.txt');
   Schalten(Form1);
-  application.Title:= 'Brauerei ' + floattostr(round((tf))) +'°C, ' + inttostr(fortschritt) +'%';
+  application.Title:= Edit1.Text + ' - ' + floattostr(round((tf))) +'°C, ' + inttostr(fortschritt) +'%';
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 var
-  i: integer;
+  i,buttonSelected: integer;
 begin
+  DateSeparator:='.';
+  ShortDateFormat:='dd mm yyyy';
+  Datensatz:=99999;
   IdUDPClient1.Active:=False;
   SetLength(rasttemp, 10);
   SetLength(rastnull, 10);
@@ -2533,7 +2622,7 @@ begin
   Form1.ComboBox30Change(Sender);
   Form1.ComboBox32Change(Sender);
   Form1.ComboBox33Change(Sender);
-  form1.Caption:='Brauerei '+ Version;
+  form1.Caption:='Brauerei ' + Version + ' - ' + Edit1.Text;
   if FileExists(pfad+'Setup\settings.txt') then
   begin
     laden(Form1, pfad+'Setup\settings.txt');
@@ -2541,6 +2630,24 @@ begin
     CloseFile(myFile);
   end;
   PageControl1Change(Sender);
+  if CheckBox1.Checked=true then
+  begin
+    try
+      Memo2.Text:=idHTTP1.Get('http://www.schopfschoppe.de/Help/version.html');
+      if (Version=Memo2.Lines.Strings[0]) or (Version=Memo2.Lines.Strings[1]) or (Version=Memo2.Lines.Strings[2]) or (Version=Memo2.Lines.Strings[3]) then
+        Memo2.Text:='Version aktuell'
+      else
+      begin
+        Memo2.Text:='Version nicht aktuell';
+        buttonSelected:=MyMessageDlgPos('Neue Version verfügbar! Zur Downloadseite wechseln?', mtInformation, [mbOK, mbAbort], ['Ja', 'Nein'], Form1.Left, 350, Form1.Top, 250);
+        if buttonSelected = mrOK then ShellExecute(Handle, 'open', 'http://www.schopfschoppe.de/Download.html', nil, nil, SW_SHOWNORMAL);
+      end;
+    except
+      MyMessageDlgPos('www.schopfschoppe.de nicht erreichbar!', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
+    end;
+  end
+  else
+  Memo2.Text:='Versionsprüfung aus';
 end;
 
 procedure TForm1.BitBtn9Click(Sender: TObject);
@@ -2550,7 +2657,7 @@ begin
     if DeleteFile(SaveDialog1.FileName) then MyMessageDlgPos('Rezept wurde überschrieben!', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
     speichern(Form1, SaveDialog1.FileName);
   	Rezeptname:= changefileext(ExtractFileName(SaveDialog1.FileName),'');   //hinzu
-    form1.Caption:='Brauerei '+ Version + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
+    form1.Caption:='Brauerei '+ Version + ' - ' + Edit1.Text + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
     CloseFile(myFile);
   end;
 end;
@@ -2562,7 +2669,7 @@ begin
   begin;
     laden(Form1, OpenDialog1.FileName);
   	Rezeptname:= changefileext(ExtractFileName(OpenDialog1.FileName),'');   //hinzu
-    form1.Caption:='Brauerei '+ Version + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
+    form1.Caption:='Brauerei '+ Version + ' - ' + Edit1.Text + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
     CloseFile(myFile);
   end;
   Form1.Button30Click(Sender);
@@ -2577,7 +2684,7 @@ begin
     begin
       laden(Form1, Form3.Edit1.Text);
      	Rezeptname:= changefileext(ExtractFileName(Form3.Edit1.Text),'');   //hinzu
-      form1.Caption:='Brauerei '+ Version + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
+      form1.Caption:='Brauerei '+ Version + ' - ' + Edit1.Text + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
       CloseFile(myFile);
       Form3.Edit1.Text:='';
     end
@@ -2585,7 +2692,7 @@ begin
     begin
       laden(Form1, Form3.Edit2.Text);
      	Rezeptname:= changefileext(ExtractFileName(Form3.Edit2.Text),'');   //hinzu
-      form1.Caption:='Brauerei '+ Version + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
+      form1.Caption:='Brauerei '+ Version + ' - ' + Edit1.Text + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
       CloseFile(myFile);
       Form3.Edit2.Text:='';
     end
@@ -2593,7 +2700,7 @@ begin
     begin
       laden(Form1, Form3.Edit3.Text);
      	Rezeptname:= changefileext(ExtractFileName(Form3.Edit3.Text),'');   //hinzu
-      form1.Caption:='Brauerei '+ Version + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
+      form1.Caption:='Brauerei '+ Version + ' - ' + Edit1.Text + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
       CloseFile(myFile);
       Form3.Edit3.Text:='';
     end
@@ -2601,7 +2708,7 @@ begin
     begin
       laden(Form1, Form3.Edit4.Text);
      	Rezeptname:= changefileext(ExtractFileName(Form3.Edit4.Text),'');   //hinzu
-      form1.Caption:='Brauerei '+ Version + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
+      form1.Caption:='Brauerei '+ Version + ' - ' + Edit1.Text + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
       CloseFile(myFile);
       Form3.Edit4.Text:='';
     end
@@ -2609,7 +2716,7 @@ begin
     begin
       laden(Form1, Form3.Edit5.Text);
      	Rezeptname:= changefileext(ExtractFileName(Form3.Edit5.Text),'');   //hinzu
-      form1.Caption:='Brauerei '+ Version + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
+      form1.Caption:='Brauerei '+ Version + ' - ' + Edit1.Text + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
       CloseFile(myFile);
       Form3.Edit5.Text:='';
     end
@@ -2697,7 +2804,7 @@ begin
       for i:= 1 to 10 do
       begin
         if (FindComponent('RastTypBtn' + IntToStr(i)) as TBitBtn).HelpKeyword = 'Bei Rasttemperaturüberschreitung' then
-           (FindComponent('Gauge' + IntToStr(i)) as TGauge).BackColor := clRed
+           (FindComponent('Gauge' + IntToStr(i)) as TGauge).BackColor := 65536*140 + 256*140 + 255
         else if (FindComponent('RastTypBtn' + IntToStr(i)) as TBitBtn).HelpKeyword = 'Bei Rasttemperaturunterschreitung' then
            (FindComponent('Gauge' + IntToStr(i)) as TGauge).BackColor := clSkyBlue
         else
@@ -2777,6 +2884,7 @@ begin
   (Form1.FindComponent('Gauge' + IntToStr(akt)) as TGauge).Progress:=fortschritt;
   rast:=akt;
   (Form1.FindComponent('Rastwahl' + IntToStr(akt)) as TCheckBox).Color:=clInfoBk;
+  (Form1.FindComponent('Rastname' + IntToStr(akt)) as TLabel).Color:=clInfoBk;
   if Rasttemp[akt]=true then Rastnull[akt]:=false;
   if ((Form1.FindComponent('Edit' + IntToStr(20+akt)) as TEdit).Text='0') and (Rastnull[akt]=false) and ((Form1.FindComponent('ZF_RE' + IntToStr(akt)) as TComboBox).ItemIndex>0) then
     Funktionsinfo[(Form1.FindComponent('ZF_RE' + IntToStr(akt)) as TComboBox).ItemIndex]:=true;
@@ -2792,7 +2900,7 @@ begin
     if heizcounter=1 then alarmtemp:=tempfloat
     else if heizcounter>1 then
     begin
-      if tempfloat<alarmtemp-2 then
+      if tempfloat<alarmtemp-(ComboBox56.ItemIndex/10) then
       begin
         Form1.BitBtn2Click(Sender);
         Form1.TimerAEinTimer(Sender);
@@ -2813,7 +2921,7 @@ begin
     if heizcounter2=1 then alarmtemp2:=tempfloat
     else if heizcounter2>1 then
     begin
-      if tempfloat>alarmtemp2+4 then
+      if tempfloat>alarmtemp2+(ComboBox55.ItemIndex/10) then
       begin
         Form1.BitBtn2Click(Sender);
         Form1.TimerAEinTimer(Sender);
@@ -2848,15 +2956,14 @@ begin
     Rastende:=true;
   end;
   for i:= 1 to rast-1 do Rasttemp[i]:=true;
-  if rast<10 then Rastwahl10.Color:=clBtnFace;
-  if rast<9 then Rastwahl9.Color:=clBtnFace;
-  if rast<8 then Rastwahl8.Color:=clBtnFace;
-  if rast<7 then Rastwahl7.Color:=clBtnFace;
-  if rast<6 then Rastwahl6.Color:=clBtnFace;
-  if rast<5 then Rastwahl5.Color:=clBtnFace;
-  if rast<4 then Rastwahl4.Color:=clBtnFace;
-  if rast<3 then Rastwahl3.Color:=clBtnFace;
-  if rast<2 then Rastwahl2.Color:=clBtnFace;
+  for i:= 10 to 2 do
+  begin
+    if rast<i then
+    begin
+      (Form1.FindComponent('Rastwahl' + IntToStr(i)) as TCheckBox).Color:=clInfoBk;
+      (Form1.FindComponent('Rastname' + IntToStr(i)) as TLabel).Color:=clInfoBk;
+    end;
+  end;
   Form1.GesUpdateTimerTimer(Sender);
   if solltemp<strtoint(Edit83.Text) then
   begin EinIst:=strtoint(Form1.ComboBox14.Text); AusIst:=strtoint(Form1.ComboBox15.Text); end
@@ -2933,9 +3040,14 @@ begin
     LogUpdateTimer.Enabled:=false;
     Button23.Caption:='AutoUpdate Ein';
     if checkbox32.Checked=true then CloseFile(myLogFile);
-    MyMessageDlgPos('Brauvorgang wurde beendet ' + #13 + '- mit OK fortsetzen!', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
+    if BitBtn3.HelpKeyword<>'auto' then
+    begin
+      MyMessageDlgPos('Brauvorgang wurde beendet ' + #13 + '- mit OK fortsetzen!', mtInformation, [mbOK], ['Ok'], Form1.Left, 350, Form1.Top, 250);
+      BitBtn3.HelpKeyword:='';
+    end;
   end;
   for i:= 1 to 10 do (FindComponent('Rastwahl' + IntToStr(i)) as TCheckBox).Color := clBtnFace;
+  for i:= 1 to 10 do (FindComponent('Rastname' + IntToStr(i)) as TLabel).Color := clBtnFace;
   for i:= 1 to 10 do (FindComponent('Gauge' + IntToStr(i)) as TGauge).BackColor := clWhite;
   Panel15.Visible:=true;
   stop:=true;
@@ -3038,24 +3150,24 @@ begin
   begin
     if (Rastwahl10.Checked=true) and (Solldauerwahl10.Text='0') and (Rastnull[10]=false) then begin Edit30.Text:=Solldauerwahl10.Text; Gauge10.Progress:=0; Rasttemp[10]:=false; Rastnull[10]:=true; end
     else if (Rastwahl10.Checked=true) and (Gauge10.Progress<>0) then begin Edit30.Text:=Solldauerwahl10.Text; Gauge10.Progress:=0; Rasttemp[10]:=false; end
-    else if (Rastwahl9.Checked=true) and (Solldauerwahl9.Text='0') and (Rastnull[9]=false) then begin Edit29.Text:=Solldauerwahl9.Text; Gauge9.Progress:=0; Rasttemp[9]:=false; Rastnull[9]:=true; Rastwahl10.Color:=clBtnFace; end
-    else if (Rastwahl9.Checked=true) and (Gauge9.Progress<>0) then begin Edit29.Text:=Solldauerwahl9.Text; Gauge9.Progress:=0; Rasttemp[9]:=false; Rastwahl10.Color:=clBtnFace; end
-    else if (Rastwahl8.Checked=true) and (Solldauerwahl8.Text='0') and (Rastnull[8]=false) then begin Edit28.Text:=Solldauerwahl8.Text; Gauge8.Progress:=0; Rasttemp[8]:=false; Rastnull[8]:=true; Rastwahl9.Color:=clBtnFace; end
-    else if (Rastwahl8.Checked=true) and (Gauge8.Progress<>0) then begin Edit28.Text:=Solldauerwahl8.Text; Gauge8.Progress:=0; Rasttemp[8]:=false; Rastwahl9.Color:=clBtnFace; end
-    else if (Rastwahl7.Checked=true) and (Solldauerwahl7.Text='0') and (Rastnull[7]=false) then begin Edit27.Text:=Solldauerwahl7.Text; Gauge7.Progress:=0; Rasttemp[7]:=false; Rastnull[7]:=true; Rastwahl8.Color:=clBtnFace; end
-    else if (Rastwahl7.Checked=true) and (Gauge7.Progress<>0) then begin Edit27.Text:=Solldauerwahl7.Text; Gauge7.Progress:=0; Rasttemp[7]:=false; Rastwahl8.Color:=clBtnFace; end
-    else if (Rastwahl6.Checked=true) and (Solldauerwahl6.Text='0') and (Rastnull[6]=false) then begin Edit26.Text:=Solldauerwahl6.Text; Gauge6.Progress:=0; Rasttemp[6]:=false; Rastnull[6]:=true; Rastwahl7.Color:=clBtnFace; end
-    else if (Rastwahl6.Checked=true) and (Gauge6.Progress<>0) then begin Edit26.Text:=Solldauerwahl6.Text; Gauge6.Progress:=0; Rasttemp[6]:=false; Rastwahl7.Color:=clBtnFace; end
-    else if (Rastwahl5.Checked=true) and (Solldauerwahl5.Text='0') and (Rastnull[5]=false) then begin Edit25.Text:=Solldauerwahl5.Text; Gauge5.Progress:=0; Rasttemp[5]:=false; Rastnull[5]:=true; Rastwahl6.Color:=clBtnFace; end
-    else if (Rastwahl5.Checked=true) and (Gauge5.Progress<>0) then begin Edit25.Text:=Solldauerwahl5.Text; Gauge5.Progress:=0; Rasttemp[5]:=false; Rastwahl6.Color:=clBtnFace; end
-    else if (Rastwahl4.Checked=true) and (Solldauerwahl4.Text='0') and (Rastnull[4]=false) then begin Edit24.Text:=Solldauerwahl4.Text; Gauge4.Progress:=0; Rasttemp[4]:=false; Rastnull[4]:=true; Rastwahl5.Color:=clBtnFace; end
-    else if (Rastwahl4.Checked=true) and (Gauge4.Progress<>0) then begin Edit24.Text:=Solldauerwahl4.Text; Gauge4.Progress:=0; Rasttemp[4]:=false; Rastwahl5.Color:=clBtnFace; end
-    else if (Rastwahl3.Checked=true) and (Solldauerwahl3.Text='0') and (Rastnull[3]=false) then begin Edit23.Text:=Solldauerwahl3.Text; Gauge3.Progress:=0; Rasttemp[3]:=false; Rastnull[3]:=true; Rastwahl4.Color:=clBtnFace; end
-    else if (Rastwahl3.Checked=true) and (Gauge3.Progress<>0) then begin Edit23.Text:=Solldauerwahl3.Text; Gauge3.Progress:=0; Rasttemp[3]:=false; Rastwahl4.Color:=clBtnFace; end
-    else if (Rastwahl2.Checked=true) and (Solldauerwahl2.Text='0') and (Rastnull[2]=false) then begin Edit22.Text:=Solldauerwahl2.Text; Gauge2.Progress:=0; Rasttemp[2]:=false; Rastnull[2]:=true; Rastwahl3.Color:=clBtnFace; end
-    else if (Rastwahl2.Checked=true) and (Gauge2.Progress<>0) then begin Edit22.Text:=Solldauerwahl2.Text; Gauge2.Progress:=0; Rasttemp[2]:=false; Rastwahl3.Color:=clBtnFace; end
-    else if (Rastwahl1.Checked=true) and (Solldauerwahl1.Text='0') and (Rastnull[1]=false) then begin Edit21.Text:=Solldauerwahl1.Text; Gauge1.Progress:=0; Rasttemp[1]:=false; Rastnull[1]:=true; Rastwahl2.Color:=clBtnFace; end
-    else if (Rastwahl1.Checked=true) and (Gauge1.Progress<>0) then begin Edit21.Text:=Solldauerwahl1.Text; Gauge1.Progress:=0; Rasttemp[1]:=false; Rastwahl2.Color:=clBtnFace; end;
+    else if (Rastwahl9.Checked=true) and (Solldauerwahl9.Text='0') and (Rastnull[9]=false) then begin Edit29.Text:=Solldauerwahl9.Text; Gauge9.Progress:=0; Rasttemp[9]:=false; Rastnull[9]:=true; Rastwahl10.Color:=clBtnFace; Rastname10.Color:=clBtnFace; end
+    else if (Rastwahl9.Checked=true) and (Gauge9.Progress<>0) then begin Edit29.Text:=Solldauerwahl9.Text; Gauge9.Progress:=0; Rasttemp[9]:=false; Rastwahl10.Color:=clBtnFace; Rastname10.Color:=clBtnFace; end
+    else if (Rastwahl8.Checked=true) and (Solldauerwahl8.Text='0') and (Rastnull[8]=false) then begin Edit28.Text:=Solldauerwahl8.Text; Gauge8.Progress:=0; Rasttemp[8]:=false; Rastnull[8]:=true; Rastwahl9.Color:=clBtnFace; Rastname9.Color:=clBtnFace; end
+    else if (Rastwahl8.Checked=true) and (Gauge8.Progress<>0) then begin Edit28.Text:=Solldauerwahl8.Text; Gauge8.Progress:=0; Rasttemp[8]:=false; Rastwahl9.Color:=clBtnFace; Rastname9.Color:=clBtnFace; end
+    else if (Rastwahl7.Checked=true) and (Solldauerwahl7.Text='0') and (Rastnull[7]=false) then begin Edit27.Text:=Solldauerwahl7.Text; Gauge7.Progress:=0; Rasttemp[7]:=false; Rastnull[7]:=true; Rastwahl8.Color:=clBtnFace; Rastname8.Color:=clBtnFace; end
+    else if (Rastwahl7.Checked=true) and (Gauge7.Progress<>0) then begin Edit27.Text:=Solldauerwahl7.Text; Gauge7.Progress:=0; Rasttemp[7]:=false; Rastwahl8.Color:=clBtnFace; Rastname8.Color:=clBtnFace; end
+    else if (Rastwahl6.Checked=true) and (Solldauerwahl6.Text='0') and (Rastnull[6]=false) then begin Edit26.Text:=Solldauerwahl6.Text; Gauge6.Progress:=0; Rasttemp[6]:=false; Rastnull[6]:=true; Rastwahl7.Color:=clBtnFace; Rastname7.Color:=clBtnFace; end
+    else if (Rastwahl6.Checked=true) and (Gauge6.Progress<>0) then begin Edit26.Text:=Solldauerwahl6.Text; Gauge6.Progress:=0; Rasttemp[6]:=false; Rastwahl7.Color:=clBtnFace; Rastname7.Color:=clBtnFace; end
+    else if (Rastwahl5.Checked=true) and (Solldauerwahl5.Text='0') and (Rastnull[5]=false) then begin Edit25.Text:=Solldauerwahl5.Text; Gauge5.Progress:=0; Rasttemp[5]:=false; Rastnull[5]:=true; Rastwahl6.Color:=clBtnFace; Rastname6.Color:=clBtnFace; end
+    else if (Rastwahl5.Checked=true) and (Gauge5.Progress<>0) then begin Edit25.Text:=Solldauerwahl5.Text; Gauge5.Progress:=0; Rasttemp[5]:=false; Rastwahl6.Color:=clBtnFace; Rastname6.Color:=clBtnFace; end
+    else if (Rastwahl4.Checked=true) and (Solldauerwahl4.Text='0') and (Rastnull[4]=false) then begin Edit24.Text:=Solldauerwahl4.Text; Gauge4.Progress:=0; Rasttemp[4]:=false; Rastnull[4]:=true; Rastwahl5.Color:=clBtnFace; Rastname5.Color:=clBtnFace; end
+    else if (Rastwahl4.Checked=true) and (Gauge4.Progress<>0) then begin Edit24.Text:=Solldauerwahl4.Text; Gauge4.Progress:=0; Rasttemp[4]:=false; Rastwahl5.Color:=clBtnFace; Rastname5.Color:=clBtnFace; end
+    else if (Rastwahl3.Checked=true) and (Solldauerwahl3.Text='0') and (Rastnull[3]=false) then begin Edit23.Text:=Solldauerwahl3.Text; Gauge3.Progress:=0; Rasttemp[3]:=false; Rastnull[3]:=true; Rastwahl4.Color:=clBtnFace; Rastname4.Color:=clBtnFace; end
+    else if (Rastwahl3.Checked=true) and (Gauge3.Progress<>0) then begin Edit23.Text:=Solldauerwahl3.Text; Gauge3.Progress:=0; Rasttemp[3]:=false; Rastwahl4.Color:=clBtnFace; Rastname4.Color:=clBtnFace; end
+    else if (Rastwahl2.Checked=true) and (Solldauerwahl2.Text='0') and (Rastnull[2]=false) then begin Edit22.Text:=Solldauerwahl2.Text; Gauge2.Progress:=0; Rasttemp[2]:=false; Rastnull[2]:=true; Rastwahl3.Color:=clBtnFace; Rastname3.Color:=clBtnFace; end
+    else if (Rastwahl2.Checked=true) and (Gauge2.Progress<>0) then begin Edit22.Text:=Solldauerwahl2.Text; Gauge2.Progress:=0; Rasttemp[2]:=false; Rastwahl3.Color:=clBtnFace; Rastname3.Color:=clBtnFace; end
+    else if (Rastwahl1.Checked=true) and (Solldauerwahl1.Text='0') and (Rastnull[1]=false) then begin Edit21.Text:=Solldauerwahl1.Text; Gauge1.Progress:=0; Rasttemp[1]:=false; Rastnull[1]:=true; Rastwahl2.Color:=clBtnFace; Rastname2.Color:=clBtnFace; end
+    else if (Rastwahl1.Checked=true) and (Gauge1.Progress<>0) then begin Edit21.Text:=Solldauerwahl1.Text; Gauge1.Progress:=0; Rasttemp[1]:=false; Rastwahl2.Color:=clBtnFace; Rastname2.Color:=clBtnFace; end;
     Form1.Timer2Timer(Sender);
   end;
 end;
@@ -3092,11 +3204,12 @@ begin
   if Button13.Caption='Manuell' then
   begin
     Heizung:=Form1.Combobox9.ItemIndex+1;
-    Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-ein.bmp');
+    if TimerHAus.Interval=9999998 then Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-dauerein.bmp') else Image2.Picture.LoadFromFile(pfad + 'Graphics\Feuer-ein.bmp');
     Schalten(Form1);
   end;
   TimerHEin.Enabled:=false;
   TimerHAus.Enabled:=true;
+  if checkbox3.checked=true then HendiTimer.Enabled:=true;
 end;
 
 procedure TForm1.TimerHAusTimer(Sender: TObject);
@@ -3109,6 +3222,7 @@ begin
   end;
   TimerHAus.Enabled:=false;
   TimerHEin.Enabled:=true;
+  HendiTimer.Enabled:=false;
 end;
 
 procedure TForm1.TimerHSetTimer(Sender: TObject);
@@ -3116,7 +3230,7 @@ begin
   Deltatemp:=Solltemp-Tempfloat;
   if (TimerHEin.Interval=999) and (CheckBox37.Checked=true) and (Rasttemp[Rast]=true) then Deltatemp:=Deltatemp-Hysterese;
   if CheckBox36.Checked=true then GradientUebergabe:=GradientWert else GradientUebergabe:=999.9;
-  if Alarmheizstatus=1 then
+  if (Alarmheizstatus=1) or (HendiBreak=true) then
   begin
     TimerHEin.Interval:=9999999;
     TimerHAus.Interval:=900;
@@ -3127,6 +3241,15 @@ begin
     TimerHEin.Interval:=900;
     TimerHAus.Interval:=9999999;
     Form1.TimerHEinTimer(Sender);
+  end
+  else if (Solltemp>=strtoint(ComboBox34.Text)) and (CheckBox2.Checked=true) then
+  begin
+    if TimerHEin.Interval<>900 then
+    begin
+      TimerHEin.Interval:=900;
+      TimerHAus.Interval:=9999998;
+      Form1.TimerHEinTimer(Sender);
+    end;
   end
   else if Deltatemp>TWert then
   begin
@@ -3348,31 +3471,30 @@ begin
   end;
   if PageControl1.ActivePage=TabSheet5 then
   begin
-  Datensatz:=99999;
-  if FileExists(pfad+'import\file.txt') then
-  begin
-    AssignFile(myImportSettingsFile, pfad+'import\file.txt');
-    Reset(myImportSettingsFile);
-    ReadLn(myImportSettingsFile, tempstr);
-    if FileExists(tempstr) then else tempstr:=pfad+'import\no.sqlite';
-    ReadLn(myImportSettingsFile, pfad2);
-    OpenDialog2.FileName:=tempstr;
-    SaveDialog2.InitialDir:=pfad2;
-    ReadLn(myImportSettingsFile, tempstr);
-    CheckBox44.OnClick := nil;
-    if tempstr='TRUE' then CheckBox44.Checked:=true else CheckBox44.Checked:=false;
-    CheckBox44.OnClick := CheckBox44Click;
-    ReadLn(myImportSettingsFile, tempstr);
-    CheckBox51.OnClick := nil;
-    if tempstr='TRUE' then CheckBox51.Checked:=true else CheckBox51.Checked:=false;
-    CheckBox51.OnClick := CheckBox51Click;
-    ReadLn(myImportSettingsFile, tempstr);
-    Edit91.Text:=tempstr;
-    ReadLn(myImportSettingsFile, tempstr);
-    Edit92.Text:=tempstr;
-    CloseFile(myImportSettingsFile);
-    SQLBrowse;
-  end; 
+    if FileExists(pfad+'import\file.txt') then
+    begin
+      AssignFile(myImportSettingsFile, pfad+'import\file.txt');
+      Reset(myImportSettingsFile);
+      ReadLn(myImportSettingsFile, tempstr);
+      if FileExists(tempstr) then else tempstr:=pfad+'import\no.sqlite';
+      ReadLn(myImportSettingsFile, pfad2);
+      OpenDialog2.FileName:=tempstr;
+      SaveDialog2.InitialDir:=pfad2;
+      ReadLn(myImportSettingsFile, tempstr);
+      CheckBox44.OnClick := nil;
+      if tempstr='TRUE' then CheckBox44.Checked:=true else CheckBox44.Checked:=false;
+      CheckBox44.OnClick := CheckBox44Click;
+      ReadLn(myImportSettingsFile, tempstr);
+      CheckBox51.OnClick := nil;
+      if tempstr='TRUE' then CheckBox51.Checked:=true else CheckBox51.Checked:=false;
+      CheckBox51.OnClick := CheckBox51Click;
+      ReadLn(myImportSettingsFile, tempstr);
+      Edit91.Text:=tempstr;
+      ReadLn(myImportSettingsFile, tempstr);
+      Edit92.Text:=tempstr;
+      CloseFile(myImportSettingsFile);
+      SQLBrowse;
+    end;
   end;
 end;
 
@@ -3710,6 +3832,14 @@ begin
     Label111.Visible:=false;
     Label76.Visible:=true;
   end
+  else if Combobox2.Text = 'ICStation' then
+  begin
+    usbtyp:='ICStation';
+    ComboBox16.Visible:=false;
+    ComboBox7.Visible:=true;
+    Label111.Visible:=false;
+    Label76.Visible:=true;
+  end 
   else
   begin
     usbtyp:='IO-Warrior-Basis';
@@ -3838,16 +3968,16 @@ end;
 procedure TForm1.Button30Click(Sender: TObject);
 begin
   Button30.Visible:=false;
-  Rastwahl1.Caption:=RastNameWahl1.Text;
-  Rastwahl2.Caption:=RastNameWahl2.Text;
-  Rastwahl3.Caption:=RastNameWahl3.Text;
-  Rastwahl4.Caption:=RastNameWahl4.Text;
-  Rastwahl5.Caption:=RastNameWahl5.Text;
-  Rastwahl6.Caption:=RastNameWahl6.Text;
-  Rastwahl7.Caption:=RastNameWahl7.Text;
-  Rastwahl8.Caption:=RastNameWahl8.Text;
-  Rastwahl9.Caption:=RastNameWahl9.Text;
-  Rastwahl10.Caption:=RastNameWahl10.Text;
+  Rastname1.Caption:=RastNameWahl1.Text;
+  Rastname2.Caption:=RastNameWahl2.Text;
+  Rastname3.Caption:=RastNameWahl3.Text;
+  Rastname4.Caption:=RastNameWahl4.Text;
+  Rastname5.Caption:=RastNameWahl5.Text;
+  Rastname6.Caption:=RastNameWahl6.Text;
+  Rastname7.Caption:=RastNameWahl7.Text;
+  Rastname8.Caption:=RastNameWahl8.Text;
+  Rastname9.Caption:=RastNameWahl9.Text;
+  Rastname10.Caption:=RastNameWahl10.Text;
   Button29.Visible:=true;
   Panel8.Visible:=false;
   Panel10.Visible:=false;
@@ -4174,7 +4304,7 @@ procedure TForm1.TimerKSetTimer(Sender: TObject);
 begin
   Deltatemp2:=Tempfloat-Solltemp;
   if (TimerKEin.Interval=999) and (CheckBox37.Checked=true) and (Rasttemp[Rast]=true) then Deltatemp2:=Deltatemp2-Hysterese2;
-  if Alarmheizstatus<>0 then
+  if (Alarmheizstatus<>0) or (Heizung<>0) then
   begin
     TimerKEin.Interval:=9999999;
     TimerKAus.Interval:=900;
@@ -4224,7 +4354,7 @@ end;
 
 procedure TForm1.TimerKAusTimer(Sender: TObject);
 begin
-  if Button13.Caption='Manuell' then
+  if Button15.Caption='Manuell' then
   begin
     Pumpe:=0;
     Image4.Picture.LoadFromFile(pfad + 'Graphics\Kühlung-aus.bmp');
@@ -4598,7 +4728,7 @@ begin
   exportieren(Form1, pfad+'Import\temp.rzt');
   laden(Form1, pfad+'Import\temp.rzt');
   Rezeptname:= 'temp';
-  Form1.Caption:='Brauerei '+ Version + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
+  Form1.Caption:='Brauerei '+ Version + ' - ' + Edit1.Text + ' - Maischen - ' +  ebName.Text; //Ausgabe des gespeicherten Rezepts
   CloseFile(myFile);
   Form1.Button30Click(Sender);
 end;
@@ -4657,7 +4787,7 @@ begin
   exportieren2(Form1, pfad+'Import\temp2.rzt');
   laden(Form1, pfad+'Import\temp2.rzt');
   Rezeptname:= 'temp';
-  Form1.Caption:='Brauerei '+ Version + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
+  Form1.Caption:='Brauerei '+ Version + ' - ' + Edit1.Text + ' - Kochen - ' +  ebName.Text; //Ausgabe des gespeicherten Rezepts
   CloseFile(myFile);
   Form1.Button30Click(Sender);
 end;
@@ -4717,7 +4847,7 @@ begin
   exportieren3(Form1, pfad+'Import\temp3.rzt');
   laden(Form1, pfad+'Import\temp3.rzt');
   Rezeptname:= 'temp';
-  Form1.Caption:='Brauerei '+ Version + ' - ' +  Rezeptname; //Ausgabe des gespeicherten Rezepts
+  Form1.Caption:='Brauerei '+ Version + ' - ' + Edit1.Text + ' - Gesamt - ' +  ebName.Text; //Ausgabe des gespeicherten Rezepts
   CloseFile(myFile);
   Form1.Button30Click(Sender);
 end;
@@ -4972,8 +5102,11 @@ begin
   SetLength(RecText, AData.Size);
   AData.ReadBuffer(PChar(RecText)^, AData.Size);
   DecimalSeparator := '.';
-  if ((ComboBox39.Text='ARDUINO') and ((ComboBox35.Text='NTC10000') or (ComboBox35.Text='DS18B20')) and (RecText[1]='T') and (RecText[6]='t'))then
+  if ((ComboBox39.Text='ARDUINO') and ((ComboBox35.Text='NTC10000') or (ComboBox35.Text='DS18B20')) and (RecText[1]='T') and ((RecText[6]='t') or (RecText[6]='p') or (RecText[6]='s') or (RecText[6]='e')))then
   begin
+    if (RecText[6]='p') and (pause=false) then BitBtn2Click(Form1);
+    if (RecText[6]='s') and (start=false) then BitBtn1Click(Form1);
+    if (RecText[6]='e') and (stop=false) then BitBtn3Click(Form1);
     Memo1.Lines.Append('');
     arduinofloattempalt:=arduinofloattemp;
     try arduinotfs:= copy(RecText, 2, 4); arduinofloattemp:=strtofloat(arduinotfs); except end;
@@ -4994,6 +5127,7 @@ procedure TForm1.Tmr_RcvTimer(Sender: TObject);
 var line2, temp: string;
     itemp,iisttemp,isolltemp,i:integer;
     Ch: Byte ;
+    lastch: boolean;
 begin
   Tmr_Rcv.Enabled := false ;
   DecimalSeparator := '.';
@@ -5044,27 +5178,35 @@ begin
         begin
           if (Ch=13) then
           begin
-              arduinofloattempalt:=arduinofloattemp;
-              try arduinotfs:=temp; arduinofloattemp:=strtofloat(temp); except temp:=''; end;
-              arduinotempdelta:=arduinofloattemp-arduinofloattempalt;
-              if (arduinofloattemp<0) or (arduinofloattemp>=110) or (arduinotempdelta<-5) or (arduinotempdelta>5) then
-              begin
-                Memo1.Lines.Append('');
-                Memo1.Lines.Strings[Memo1.Lines.Count-1]:='Temperaturwert unplausibel';
-              end
-              else
-              begin
-                Memo1.Lines.Append('');
-                Memo1.Lines.Strings[Memo1.Lines.Count-1]:=('USB-IN - '+DateTimeToStr(Now)+' - '+temp+' °C'); //Text hinzufügen
-                tfsuebergabe:=arduinotfs;
-              end;
-           end
-          else if (Ch<>13)and(Ch<>10) then
-          temp := temp + chr(Ch);
+            lastch:=false;
+            arduinofloattempalt:=arduinofloattemp;
+            try arduinotfs:=temp; arduinofloattemp:=strtofloat(temp); except temp:=''; end;
+            arduinotempdelta:=arduinofloattemp-arduinofloattempalt;
+            if (arduinofloattemp<0) or (arduinofloattemp>=110) or (arduinotempdelta<-5) or (arduinotempdelta>5) then
+            begin
+              Memo1.Lines.Append('');
+              Memo1.Lines.Strings[Memo1.Lines.Count-1]:='Temperaturwert unplausibel';
+            end
+            else
+            begin
+              Memo1.Lines.Append('');
+              Memo1.Lines.Strings[Memo1.Lines.Count-1]:=('USB-IN - '+DateTimeToStr(Now)+' - '+temp+' °C'); //Text hinzufügen
+              tfsuebergabe:=arduinotfs;
+            end;
+          end
+          else if ((Ch=112) and (pause=false) and (lastch=true)) then BitBtn2Click(Form1)     // p=Pause
+          else if ((Ch=115) and (start=false) and (lastch=true)) then BitBtn1Click(Form1)     // s=Start
+          else if ((Ch=101) and (stop=false) and (lastch=true)) then begin BitBtn3.HelpKeyword:='auto'; BitBtn3Click(Form1); end     // e=Stop
+
+          else if ((Ch=112) or (Ch=115) or (Ch=101) or (Ch=116)) then       // do nothing
+
+          else if (Ch=35) then lastch:=true
+          else if (Ch<>10) then temp := temp + chr(Ch);
         end;
       end
       until (ser.LastError=ErrTimeout) or (ser.WaitingData>0) ;
     end;
+
     iisttemp:=round(Tempfloat*10);
     isolltemp:=round(solltemp);
   end;
@@ -5231,7 +5373,8 @@ begin
   if ComboBox54.ItemIndex=1 then Form1.Color:=clBtnHighlight
   else if ComboBox54.ItemIndex=2 then Form1.Color:=clMoneyGreen
   else if ComboBox54.ItemIndex=3 then Form1.Color:=clSkyBlue
-  else if ComboBox54.ItemIndex=4 then Form1.Color:=clRed
+  else if ComboBox54.ItemIndex=4 then Form1.Color:=65536*140 + 256*140 + 255
+
   else Form1.Color:=clBtnFace;
   Form1.Refresh;
 end;
@@ -5247,6 +5390,49 @@ begin
     Form3.BitBtn1.HelpKeyWord:='false';
     Form3.Visible:=true;
   end;
+end;
+
+procedure TForm1.HendiTimerTimer(Sender: TObject);
+begin
+  HendiBreak:=true;
+  HendiBreakTimer.Enabled:=true;
+end;
+
+procedure TForm1.HendiBreakTimerTimer(Sender: TObject);
+begin
+  HendiBreak:=false;
+  HendiBreakTimer.Enabled:=false;
+end;
+
+procedure TForm1.BitBtn19Click(Sender: TObject);
+begin
+  if combobox2.ItemIndex=0 then ShellExecute(Handle, 'open', 'http://kmtronic.com/index.php?route=product/product&path=33&product_id=53', nil, nil, SW_SHOWNORMAL)
+  else if combobox2.ItemIndex=1 then ShellExecute(Handle, 'open', 'http://denkovi.com/usb-relay-board-four-channels-for-home-automation-v2', nil, nil, SW_SHOWNORMAL)
+  else if combobox2.ItemIndex=2 then ShellExecute(Handle, 'open', 'http://www.sainsmart.com/sainsmart-4-channel-5v-usb-relay-board-module-controller-for-automation-robotics.html', nil, nil, SW_SHOWNORMAL)
+  else if combobox2.ItemIndex=3 then ShellExecute(Handle, 'open', 'https://shop.strato.de/epages/61125483.mobile/de_AT/?ObjectPath=/Shops/61125483/Products/RK10-05USB.V1', nil, nil, SW_SHOWNORMAL)
+  else if combobox2.ItemIndex=4 then ShellExecute(Handle, 'open', 'http://www.icstation.com/icstation-micro-control-channel-relay-module-p-4012.html', nil, nil, SW_SHOWNORMAL);
+end;
+
+procedure TForm1.BitBtn18Click(Sender: TObject);
+begin
+  if combobox39.ItemIndex=0 then ShellExecute(Handle, 'open', 'http://www.schopfschoppe.de/Help/Temp.html', nil, nil, SW_SHOWNORMAL)
+  else if combobox39.ItemIndex=1 then ShellExecute(Handle, 'open', 'http://www.fuchs-shop.com/de/shop/17/1/13372195/', nil, nil, SW_SHOWNORMAL)
+  else if combobox39.ItemIndex=2 then ShellExecute(Handle, 'open', 'http://www.schopfschoppe.de/Help/Arduino.html', nil, nil, SW_SHOWNORMAL);
+end;
+
+procedure TForm1.BitBtn21Click(Sender: TObject);
+begin
+  ShellExecute(Handle, 'open', 'http://denkovi.com/lpt-8-relay-board-for-your-project-12v', nil, nil, SW_SHOWNORMAL);
+end;
+
+procedure TForm1.BitBtn20Click(Sender: TObject);
+begin
+  ShellExecute(Handle, 'open', 'http://www.edimax.com/edimax/merchandise/merchandise_detail/data/edimax/global/home_automation_smart_plug/sp-2101w/', nil, nil, SW_SHOWNORMAL);
+end;
+
+procedure TForm1.BitBtn22Click(Sender: TObject);
+begin
+  ShellExecute(Handle, 'open', 'http://www.schopfschoppe.de/Help/Arduino.html', nil, nil, SW_SHOWNORMAL);
 end;
 
 end.

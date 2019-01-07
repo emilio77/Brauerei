@@ -1,4 +1,21 @@
 Change-Log:
+V 1.65
+Negative Kochzeiten für WP Hopfen aus dem kleinen Brauhelfer
+
+V 1.64
+Arduino-Zusatzfunktionen während des Brauvorgangs veränderbar gemacht, Position geändert und farblich abgesetzt
+Arduino-Zusatzfunktionen optimiert und während des Brauvorgangs editierbar gemacht
+Bug Solltemperatur wird im Arduino-LAN-Server nicht angezeigt behoben 
+Pausieren, Starten und Stoppen der Brauerei durch den Arduino auch über separate UDP-Nachrichten möglich
+Edimax-Steckdosen um Befehle für neuste FW 2.04 erweitert
+Automatische Sicherung und Wiederherstellung von Einstellungsdateien falls Datei korrupt
+Korrupte Rezepte werden nicht geladen
+IThermometer und Arduino Sketch durch Link zu GitHub ersetzt
+Alarm Puls-/Pausendauer einstellbar gemacht
+Bug beim Ausblenden der Fortschrittsanzeige behoben
+Bug bei Zahlenwert-Eingabe "00" behoben
+Bug Skalierung beeinflusst Kesselnamen und umgekehrt behoben
+Port für Arduino/Wemos frei wählbar gemacht
 
 V 1.63
 Versionsprüfung über Internet beim Programmstart
@@ -13,10 +30,12 @@ Hysterese-, Gradient, Pulsen, Sensor- und Heizungsüberwachung in Einstellungen v
 Einstellungen aufgeräumt
 Hintergrundfarbe rot "gefälliger" gemacht
 Bug bei manueller Steuerung der Kühlung während des Brauprozesses begoben
+Bug Textdatei-Name kann nicht eingegeben werden korrigiert
 Hendi-Dauerbetrieb 2 Stunden-Bug durch kurzes aus und wieder einschalten verhindern
 Multi-Kessel Arduino-Mega Sketch zugefügt
 Bereich für Arduino LAN-Ports erweitert
 Kesselbezeichnung eingefügt
+IThermometer auf Basis der ISpindel zugefügt - Temperatur messen per WLAN !
 
 V 1.62
 Zusatzprogramm zur Temeraturmessung mit 1wire-Tester von LEDgenial.de (HIDControl) zugefügt
